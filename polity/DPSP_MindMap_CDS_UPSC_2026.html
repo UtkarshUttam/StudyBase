@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DPSP Mind Map — CDS + UPSC 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0c10;
+  --surface: #111318;
+  --surface2: #181c24;
+  --border: #1e2330;
+  --border2: #262d3d;
+  --text: #e8eaf0;
+  --muted: #7a8199;
+  --accent: #c9a84c;
+  --accent2: #e8c97a;
+  --blue: #4a9eff;
+  --blue2: #6fb3ff;
+  --green: #3dba7e;
+  --green2: #5dd89c;
+  --red: #e05252;
+  --red2: #f07070;
+  --purple: #9d6fff;
+  --purple2: #b48cff;
+  --teal: #2ecbcb;
+  --orange: #f0894a;
+  --pink: #e060a0;
+  --font-display: 'Crimson Pro', Georgia, serif;
+  --font-body: 'Outfit', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 14px; line-height: 1.6; }
+
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 100; background: rgba(10,12,16,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; gap: 0; overflow-x: auto; }
+.nav-title { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--accent); white-space: nowrap; padding: 12px 1.5rem 12px 0; border-right: 1px solid var(--border); margin-right: 1rem; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 12px; font-weight: 500; padding: 14px 12px; white-space: nowrap; border-bottom: 2px solid transparent; transition: all 0.2s; letter-spacing: 0.02em; }
+.nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* PAGE */
+.page { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+/* HERO */
+.hero { text-align: center; padding: 3rem 0 2.5rem; position: relative; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%); pointer-events: none; }
+.hero-tag { display: inline-block; font-family: var(--font-mono); font-size: 11px; color: var(--accent); border: 1px solid rgba(201,168,76,0.3); border-radius: 20px; padding: 4px 14px; letter-spacing: 0.1em; margin-bottom: 1rem; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; color: var(--text); line-height: 1.15; margin-bottom: 0.75rem; }
+.hero h1 span { color: var(--accent); font-style: italic; }
+.hero-sub { color: var(--muted); font-size: 14px; max-width: 560px; margin: 0 auto; }
+.hero-stats { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-num { font-family: var(--font-mono); font-size: 22px; color: var(--accent); font-weight: 600; }
+.stat-lbl { font-size: 11px; color: var(--muted); letter-spacing: 0.05em; margin-top: 2px; }
+
+/* SECTION HEADERS */
+.sec-header { display: flex; align-items: center; gap: 12px; margin-bottom: 1.5rem; margin-top: 3rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
+.sec-num { font-family: var(--font-mono); font-size: 11px; color: var(--accent); border: 1px solid rgba(201,168,76,0.4); border-radius: 4px; padding: 2px 8px; }
+.sec-title { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--text); }
+.sec-badge { font-size: 11px; color: var(--muted); font-family: var(--font-mono); background: var(--surface2); border: 1px solid var(--border); padding: 2px 8px; border-radius: 4px; margin-left: auto; }
+
+/* CARDS */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; position: relative; overflow: hidden; }
+.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--card-accent, var(--accent)); opacity: 0.6; }
+.card.blue { --card-accent: var(--blue); }
+.card.green { --card-accent: var(--green); }
+.card.red { --card-accent: var(--red); }
+.card.purple { --card-accent: var(--purple); }
+.card.teal { --card-accent: var(--teal); }
+.card.orange { --card-accent: var(--orange); }
+.card.pink { --card-accent: var(--pink); }
+.card-title { font-weight: 600; font-size: 13px; color: var(--text); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+.card-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--card-accent, var(--accent)); flex-shrink: 0; }
+
+/* GRID */
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1rem; }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+
+/* MIND MAP NODES */
+.mm-root { background: linear-gradient(135deg, rgba(201,168,76,0.15), rgba(201,168,76,0.05)); border: 1.5px solid rgba(201,168,76,0.5); border-radius: 12px; padding: 1rem 1.5rem; text-align: center; font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; color: var(--accent2); margin-bottom: 1.5rem; }
+.branch { border-left: 2px solid var(--border2); margin-left: 1rem; padding-left: 1.25rem; margin-bottom: 0.5rem; }
+.branch-title { font-weight: 600; font-size: 13px; color: var(--text); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 6px; }
+.branch-title::before { content: '▶'; font-size: 8px; color: var(--accent); }
+.sub { margin-left: 1rem; border-left: 1px solid var(--border); padding-left: 1rem; margin-bottom: 0.25rem; }
+.sub-title { font-size: 12px; color: var(--muted); margin-bottom: 0.25rem; display: flex; align-items: flex-start; gap: 6px; }
+.sub-title::before { content: '–'; color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+.micro { font-size: 11.5px; color: #5a6180; margin-left: 1.5rem; line-height: 1.5; }
+.micro::before { content: '·  '; color: var(--border2); }
+
+/* TAGS / PILLS */
+.pill { display: inline-block; font-family: var(--font-mono); font-size: 10px; padding: 2px 8px; border-radius: 20px; margin: 1px; font-weight: 600; }
+.pill-art { background: rgba(74,158,255,0.12); color: var(--blue2); border: 1px solid rgba(74,158,255,0.25); }
+.pill-case { background: rgba(224,82,82,0.1); color: var(--red2); border: 1px solid rgba(224,82,82,0.2); }
+.pill-amend { background: rgba(157,111,255,0.1); color: var(--purple2); border: 1px solid rgba(157,111,255,0.2); }
+.pill-scheme { background: rgba(61,186,126,0.1); color: var(--green2); border: 1px solid rgba(61,186,126,0.2); }
+.pill-mnem { background: rgba(240,137,74,0.1); color: var(--orange); border: 1px solid rgba(240,137,74,0.25); }
+.pill-trap { background: rgba(224,96,160,0.1); color: var(--pink); border: 1px solid rgba(224,96,160,0.2); }
+
+/* ARTICLE TABLE */
+.art-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.art-table th { background: var(--surface2); color: var(--accent); font-weight: 600; padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border2); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.05em; }
+.art-table td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text); }
+.art-table tr:hover td { background: var(--surface2); }
+.art-table .art-num { font-family: var(--font-mono); color: var(--blue2); font-weight: 600; white-space: nowrap; }
+.art-table .mnem-cell { font-family: var(--font-mono); font-size: 11px; color: var(--orange); }
+.art-table .cat-s { color: var(--red2); font-size: 11px; font-weight: 600; }
+.art-table .cat-g { color: var(--green2); font-size: 11px; font-weight: 600; }
+.art-table .cat-l { color: var(--purple2); font-size: 11px; font-weight: 600; }
+
+/* COMPARISON TABLE */
+.comp-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.comp-table th { padding: 10px 14px; font-weight: 600; font-size: 12px; }
+.comp-table td { padding: 9px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.comp-table .h-fr { background: rgba(74,158,255,0.08); color: var(--blue2); }
+.comp-table .h-dp { background: rgba(61,186,126,0.08); color: var(--green2); }
+.comp-table .h-fd { background: rgba(157,111,255,0.08); color: var(--purple2); }
+.comp-table tr:hover td { background: var(--surface2); }
+
+/* CASE LAW CARD */
+.case-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; margin-bottom: 0.75rem; }
+.case-name { font-weight: 600; font-size: 13px; color: var(--red2); margin-bottom: 4px; }
+.case-year { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.case-issue { font-size: 12px; color: var(--muted); margin: 4px 0; }
+.case-verdict { font-size: 12.5px; color: var(--text); line-height: 1.5; margin: 4px 0; }
+.case-takeaway { font-size: 11.5px; font-style: italic; color: var(--accent); margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
+
+/* MNEMONIC BOX */
+.mnem-box { background: linear-gradient(135deg, rgba(240,137,74,0.08), rgba(240,137,74,0.03)); border: 1px solid rgba(240,137,74,0.25); border-radius: 10px; padding: 1rem 1.25rem; margin: 0.75rem 0; }
+.mnem-label { font-family: var(--font-mono); font-size: 10px; color: var(--orange); letter-spacing: 0.1em; margin-bottom: 6px; }
+.mnem-text { font-family: var(--font-display); font-size: 1.05rem; color: var(--accent2); font-style: italic; line-height: 1.5; }
+.mnem-decode { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-left: 2rem; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--border2); }
+.tl-item { position: relative; margin-bottom: 1.25rem; }
+.tl-dot { position: absolute; left: -2.35rem; top: 3px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+.tl-year { font-family: var(--font-mono); font-size: 11px; color: var(--accent); margin-bottom: 2px; }
+.tl-event { font-size: 13px; color: var(--text); font-weight: 500; }
+.tl-detail { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+/* HIGHLIGHT BOXES */
+.highlight { padding: 0.75rem 1rem; border-radius: 8px; margin: 0.5rem 0; font-size: 12.5px; line-height: 1.6; }
+.hl-warn { background: rgba(240,137,74,0.08); border-left: 3px solid var(--orange); color: var(--text); }
+.hl-tip { background: rgba(61,186,126,0.07); border-left: 3px solid var(--green); color: var(--text); }
+.hl-key { background: rgba(74,158,255,0.07); border-left: 3px solid var(--blue); color: var(--text); }
+.hl-trap { background: rgba(224,96,160,0.07); border-left: 3px solid var(--pink); color: var(--text); }
+
+/* QUIZ SECTION */
+.q-item { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+.q-num { font-family: var(--font-mono); font-size: 10px; color: var(--accent); margin-bottom: 6px; }
+.q-text { font-size: 13.5px; color: var(--text); font-weight: 500; margin-bottom: 0.75rem; line-height: 1.5; }
+.q-opts { list-style: none; }
+.q-opts li { font-size: 12.5px; color: var(--muted); padding: 3px 0; }
+.q-opts li::before { content: attr(data-opt) ') '; color: var(--accent); font-family: var(--font-mono); font-size: 11px; }
+.q-ans { font-family: var(--font-mono); font-size: 11px; color: var(--green2); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+.q-exp { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+details { cursor: pointer; }
+details summary { font-size: 11px; color: var(--muted); font-family: var(--font-mono); list-style: none; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
+details summary::before { content: '▶ '; color: var(--accent); font-size: 9px; }
+details[open] summary::before { content: '▼ '; }
+
+/* ULTRA REVISION */
+.rev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; margin-top: 1rem; }
+.rev-card { background: var(--surface2); border: 1px solid var(--border2); border-radius: 8px; padding: 0.75rem; }
+.rev-art { font-family: var(--font-mono); font-size: 12px; color: var(--blue2); font-weight: 600; margin-bottom: 4px; }
+.rev-kw { font-size: 11.5px; color: var(--muted); line-height: 1.5; }
+
+/* MAINS */
+.mains-q { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+.mains-num { font-family: var(--font-mono); font-size: 10px; color: var(--purple2); margin-bottom: 6px; letter-spacing: 0.1em; }
+.mains-text { font-size: 14px; font-weight: 600; color: var(--text); line-height: 1.5; margin-bottom: 0.75rem; }
+.mains-framework { font-size: 12.5px; color: var(--muted); line-height: 1.7; }
+.mains-framework strong { color: var(--text); font-weight: 500; }
+
+.label { font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.1em; color: var(--muted); margin-bottom: 6px; }
+ul.dotlist { list-style: none; }
+ul.dotlist li { font-size: 12.5px; color: var(--muted); line-height: 1.6; padding: 2px 0; }
+ul.dotlist li::before { content: '→ '; color: var(--accent); }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+.spacer { height: 1rem; }
+
+/* PRINT OPTIMIZATIONS */
+@media print {
+  body { background: white; color: black; }
+  .nav { display: none; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-title">DPSP Mind Map</div>
+  <a href="#background">Background</a>
+  <a href="#articles">Articles 36–51</a>
+  <a href="#classification">Classification</a>
+  <a href="#vs-fr">DPSP vs FR</a>
+  <a href="#cases">Case Laws</a>
+  <a href="#amendments">Amendments</a>
+  <a href="#schemes">Schemes</a>
+  <a href="#revision">Quick Revision</a>
+  <a href="#prelims">Prelims Q</a>
+  <a href="#mains">Mains Q</a>
+</nav>
+
+<div class="page">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">CDS 2 · UPSC 2026 · PART IV DEEP DIVE</div>
+  <h1>Directive Principles<br>of <span>State Policy</span></h1>
+  <p class="hero-sub">Premium revision mind map covering constitutional background, all Articles 36–51, case laws, amendments, schemes, and exam strategy</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">16</div><div class="stat-lbl">Articles (36–51)</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Classifications</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-lbl">Landmark Cases</div></div>
+    <div class="stat"><div class="stat-num">4</div><div class="stat-lbl">Key Amendments</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 1: CONSTITUTIONAL BACKGROUND -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="background">
+<div class="sec-header">
+  <span class="sec-num">01</span>
+  <h2 class="sec-title">Constitutional Background</h2>
+  <span class="sec-badge">PART IV · ART. 36–51</span>
+</div>
+
+<div class="mm-root">DIRECTIVE PRINCIPLES OF STATE POLICY — The Conscience of the Constitution</div>
+
+<div class="grid2">
+<div class="card blue">
+  <div class="card-title"><span class="dot"></span>Origin & Borrowing</div>
+  <div class="branch">
+    <div class="branch-title">Primary Source: Irish Constitution (1937)</div>
+    <div class="sub"><div class="sub-title">Ireland borrowed the concept from Spanish Constitution of 1937</div></div>
+    <div class="sub"><div class="sub-title">Spain → Ireland → India (the chain of inspiration)</div></div>
+  </div>
+  <div class="branch">
+    <div class="branch-title">Philosophical Sources</div>
+    <div class="sub"><div class="sub-title">Gandhian Philosophy → Village Panchayats, Khadi, Prohibition, Cow protection</div></div>
+    <div class="sub"><div class="sub-title">Socialist Principles → Welfare state, equitable distribution, labor rights</div></div>
+    <div class="sub"><div class="sub-title">Liberal-Intellectual tradition → UCC, environment, international peace</div></div>
+    <div class="sub"><div class="sub-title">Nehru's vision → Planned economy, social justice, secular state</div></div>
+  </div>
+  <div class="highlight hl-key" style="margin-top:8px;"><strong>TRAP:</strong> DPSP is from Irish Constitution, NOT Spanish. Spanish Constitution influenced Ireland, which then influenced India.</div>
+</div>
+
+<div class="card green">
+  <div class="card-title"><span class="dot"></span>Why Non-Justiciable Yet Included?</div>
+  <div class="branch">
+    <div class="branch-title">Dr. B.R. Ambedkar's Argument</div>
+    <div class="sub"><div class="sub-title">"Novel feature" — a middle path between justiciable rights and mere pious declarations</div></div>
+    <div class="sub"><div class="sub-title">India was too poor to make all social-economic rights enforceable immediately</div></div>
+    <div class="sub"><div class="sub-title">Left to the government of the day to implement as resources permit</div></div>
+  </div>
+  <div class="branch">
+    <div class="branch-title">Granville Austin's View</div>
+    <div class="sub"><div class="sub-title">DPSP + Fundamental Rights = "Conscience of the Constitution"</div></div>
+    <div class="sub"><div class="sub-title">Together they form the "Core of the commitment to social revolution"</div></div>
+  </div>
+  <div class="mnem-box">
+    <div class="mnem-label">MEMORY</div>
+    <div class="mnem-text">"India was poor but had big dreams — DPSP are those dreams written into law."</div>
+  </div>
+</div>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="dot"></span>Constituent Assembly Debates — Key Points</div>
+  <div class="grid3">
+    <div>
+      <div class="label">SUPPORT</div>
+      <ul class="dotlist">
+        <li>Jawaharlal Nehru: "Substance of our future Constitution"</li>
+        <li>K.M. Munshi: Not mere pious wishes — binding in spirit</li>
+        <li>Ambedkar: "Instrument of Instructions" to future governments</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">CRITICISM</div>
+      <ul class="dotlist">
+        <li>K.T. Shah: Called them "pious superfluities"</li>
+        <li>T.T. Krishnamachari: "A veritable dustbin of sentiments"</li>
+        <li>Nasiruddin: Vague and unenforceable</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">FINAL VERDICT</div>
+      <ul class="dotlist">
+        <li>Article 37: State SHALL endeavor — moral obligation</li>
+        <li>Not enforceable in courts BUT fundamental to governance</li>
+        <li>Guide legislative + executive action</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 2: ARTICLES 36–51 FULL TABLE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="articles">
+<div class="sec-header">
+  <span class="sec-num">02</span>
+  <h2 class="sec-title">Article-wise Complete Mapping (36–51)</h2>
+  <span class="sec-badge">MOST ASKED</span>
+</div>
+
+<div class="mnem-box" style="margin-bottom:1.25rem;">
+  <div class="mnem-label">MASTER MNEMONIC — Articles 36 to 51 in sequence</div>
+  <div class="mnem-text">"Sita Defines EEWE, Living Poor Villagers Can Escape By Organizing Pretty Children In Jungles Peacefully"</div>
+  <div class="mnem-decode">36-State · 37-Defines DPSP · 38-Equal/just order · 39-Welfare (Economic) · 39A-Equal justice · 40-Local bodies (Panchayats) · 41-Poor/sick employment · 42-Work conditions · 43-Cottage industry · 43A-Co-management · 44-UCC · 45-Children · 46-Backward classes · 47-Nutrition/Prohibition · 48-Agriculture/Cow · 48A-Environment · 49-Monuments · 50-Separation judiciary · 51-International Peace</div>
+</div>
+
+<div style="overflow-x:auto; border: 1px solid var(--border); border-radius: 10px; overflow:hidden;">
+<table class="art-table">
+<thead>
+<tr>
+  <th>ART.</th>
+  <th>SUBJECT</th>
+  <th>KEY OBJECTIVE</th>
+  <th>CAT.</th>
+  <th>MNEMONIC / KEYWORD</th>
+  <th>LINKED SCHEME / LAW</th>
+  <th>EXAM TRAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="art-num">36</td>
+  <td>Definition of State</td>
+  <td>Same as Art. 12 definition for Part III — applies to DPSP</td>
+  <td class="cat-l">L</td>
+  <td class="mnem-cell">36 = mirrors 12</td>
+  <td>—</td>
+  <td>Often asked if 36 defines "state" differently — it doesn't, same as Art. 12</td>
+</tr>
+<tr>
+  <td class="art-num">37</td>
+  <td>Application of DPSP</td>
+  <td>Fundamental to governance, not enforceable — State SHALL apply</td>
+  <td class="cat-l">L</td>
+  <td class="mnem-cell">37 = binding but not justiciable</td>
+  <td>—</td>
+  <td>"Non-justiciable" ≠ "unimportant" — courts use DPSP to interpret laws</td>
+</tr>
+<tr>
+  <td class="art-num">38</td>
+  <td>Social Order for Welfare</td>
+  <td>State shall promote welfare — secure social, economic, political justice; minimize inequalities (38(2) added by 44th Amend.)</td>
+  <td class="cat-s">S</td>
+  <td class="mnem-cell">38 = Welfare State Core</td>
+  <td>MGNREGA, PMAY</td>
+  <td>38(2) added by 44th Amendment 1978 — minimize inequalities in status, facilities, opportunities</td>
+</tr>
+<tr>
+  <td class="art-num">39</td>
+  <td>Certain Policy Principles</td>
+  <td>(a) Right to livelihood; (b) Material resources distribution; (c) No concentration of wealth; (d) Equal pay for equal work; (e) No economic abuse of workers; (f) Child development</td>
+  <td class="cat-s">S</td>
+  <td class="mnem-cell">39 = 6 sub-clauses = LAMP-CD</td>
+  <td>Equal Remuneration Act 1976; MGNREGA</td>
+  <td>Art. 39(b)(c) — basis of nationalization laws; 42nd Amend gave them precedence over Art. 14, 19 (later reversed by Minerva Mills)</td>
+</tr>
+<tr>
+  <td class="art-num">39A</td>
+  <td>Equal Justice & Free Legal Aid</td>
+  <td>Equal justice; free legal aid to poor — added by 42nd Amendment 1976</td>
+  <td class="cat-s">S</td>
+  <td class="mnem-cell">39A = NALSA origin</td>
+  <td>Legal Services Authorities Act 1987; NALSA</td>
+  <td>39A added by 42nd Amendment — not original; NALSA v. UOI 2014 used Art. 39A for transgender rights</td>
+</tr>
+<tr>
+  <td class="art-num">40</td>
+  <td>Village Panchayats</td>
+  <td>Organize village panchayats; give them powers for self-government</td>
+  <td class="cat-g">G</td>
+  <td class="mnem-cell">40 = Panchayat (4-0 = for zero = grassroots)</td>
+  <td>73rd Amendment 1992; Panchayati Raj Act</td>
+  <td>Originally DPSP; 73rd Amend made Panchayats justiciable — moved to Part IX (Art. 243)</td>
+</tr>
+<tr>
+  <td class="art-num">41</td>
+  <td>Right to Work, Education, Public Assistance</td>
+  <td>Right to work, education, public assistance in unemployment, old age, sickness, disability — within limits of economic capacity</td>
+  <td class="cat-s">S</td>
+  <td class="mnem-cell">41 = 4 rights: Work+Edu+Sick+Old</td>
+  <td>MGNREGA 2005; Ayushman Bharat; SSA</td>
+  <td>"Within limits of economic capacity" — qualifies the right; Art. 41 basis for MGNREGA</td>
+</tr>
+<tr>
+  <td class="art-num">42</td>
+  <td>Just & Humane Work Conditions</td>
+  <td>Just and humane conditions of work + maternity relief</td>
+  <td class="cat-s">S</td>
+  <td class="mnem-cell">42 = Maternity + Labour</td>
+  <td>Maternity Benefit Act 1961; Factories Act; Labour Codes 2020</td>
+  <td>Art. 42 is basis for Maternity Benefit Amendment 2017 (26 weeks leave)</td>
+</tr>
+<tr>
+  <td class="art-num">43</td>
+  <td>Living Wage for Workers</td>
+  <td>Living wage + decent standard of life + cottage industries</td>
+  <td class="cat-g">G</td>
+  <td class="mnem-cell">43 = Gandhian WAGE + KHADI</td>
+  <td>Minimum Wages Act; Khadi & Village Industries Commission</td>
+  <td>Art. 43 has TWO aspects: living wage (socialist) + cottage industries (Gandhian) — note the dual nature</td>
+</tr>
+<tr>
+  <td class="art-num">43A</td>
+  <td>Worker Participation in Management</td>
+  <td>State shall take steps to ensure participation of workers in management of industries — added by 42nd Amendment</td>
+  <td class="cat-s">S</td>
+  <td class="mnem-cell">43A = Co-determination (Germany model)</td>
+  <td>Industrial Disputes Act; Labour Codes 2020</td>
+  <td>43A added by 42nd Amend 1976 — workers' participation in management of industries</td>
+</tr>
+<tr>
+  <td class="art-num">43B</td>
+  <td>Promotion of Co-operatives</td>
+  <td>Promotion of cooperative societies — added by 97th Amendment 2011</td>
+  <td class="cat-g">G</td>
+  <td class="mnem-cell">43B = Co-op (97th Amend)</td>
+  <td>Multi-State Co-operative Societies Act; New Ministry of Co-operation (2021)</td>
+  <td>43B added by 97th Amendment 2011 — latest addition to DPSP. Part IXB added for co-operatives.</td>
+</tr>
+<tr>
+  <td class="art-num">44</td>
+  <td>Uniform Civil Code</td>
+  <td>State shall endeavor to secure UCC for all citizens throughout India</td>
+  <td class="cat-l">L</td>
+  <td class="mnem-cell">44 = UCC (controversial)</td>
+  <td>Shah Bano Case 1985; Triple Talaq Act 2019</td>
+  <td>Art. 44 — most politically controversial DPSP. Currently NOT implemented. Shah Bano case reversed by Muslim Women (Protection) Act 1986 — SC said Parliament bypassed Art. 44</td>
+</tr>
+<tr>
+  <td class="art-num">45</td>
+  <td>Early Childhood Care & Education</td>
+  <td>Originally: free and compulsory education for children up to 14 years. NOW (after 86th Amend): Early childhood care for children below 6 years</td>
+  <td class="cat-g">G</td>
+  <td class="mnem-cell">45 = Kids below 6 (post-86th Amend)</td>
+  <td>86th Amendment; Right to Education Act 2009 (Art. 21A)</td>
+  <td>CRITICAL TRAP: After 86th Amendment 2002, education for 6–14 years moved to Art. 21A (Fundamental Right). Art. 45 now covers only below 6 years.</td>
+</tr>
+<tr>
+  <td class="art-num">46</td>
+  <td>Promotion of SC/ST & Weaker Sections</td>
+  <td>Promote educational and economic interests of SCs, STs, and weaker sections; protect from social injustice and exploitation</td>
+  <td class="cat-g">G</td>
+  <td class="mnem-cell">46 = SC/ST upliftment</td>
+  <td>SC/ST Prevention of Atrocities Act; Scholarships; Reservations</td>
+  <td>Art. 46 basis for reservation policies — balances with Art. 14 (equality)</td>
+</tr>
+<tr>
+  <td class="art-num">47</td>
+  <td>Nutrition, Standard of Living, Prohibition</td>
+  <td>Raise level of nutrition + standard of living + public health; prohibition of intoxicating drinks and drugs injurious to health</td>
+  <td class="cat-g">G</td>
+  <td class="mnem-cell">47 = Nutrition + No Alcohol (Gandhian)</td>
+  <td>Bihar/Gujarat prohibition; POSHAN Abhiyaan; PMSBY</td>
+  <td>State may prohibit alcohol under Art. 47 — does not violate Art. 19(1)(g) right to trade in alcohol</td>
+</tr>
+<tr>
+  <td class="art-num">48</td>
+  <td>Agriculture & Cattle Preservation</td>
+  <td>Organize agriculture on modern lines; prohibit slaughter of cows, calves, draught/milch cattle</td>
+  <td class="cat-g">G</td>
+  <td class="mnem-cell">48 = Cow + Scientific farming</td>
+  <td>State Cow Slaughter Acts; Green Revolution policies</td>
+  <td>Art. 48 protects cows — but does NOT ban beef absolutely (state subject). Cannot override Art. 21 right to food/occupation without reasonable restriction.</td>
+</tr>
+<tr>
+  <td class="art-num">48A</td>
+  <td>Environment Protection</td>
+  <td>State shall protect and improve environment; safeguard forests and wildlife — added by 42nd Amendment 1976</td>
+  <td class="cat-l">L</td>
+  <td class="mnem-cell">48A = Environment (Earth 1976)</td>
+  <td>Forest Conservation Act 1980; Environment Protection Act 1986; Wildlife Protection Act 1972</td>
+  <td>Art. 48A added by 42nd Amend; Art. 51A(g) = citizens' duty for environment — pair these in exams</td>
+</tr>
+<tr>
+  <td class="art-num">49</td>
+  <td>Protection of Monuments</td>
+  <td>State shall protect monuments, places, objects of historical/artistic/scientific interest</td>
+  <td class="cat-l">L</td>
+  <td class="mnem-cell">49 = ASI / Heritage</td>
+  <td>Ancient Monuments Act 1958; ASI; UNESCO WHC</td>
+  <td>Art. 49 is basis for ASI's powers; recently debated in Ram Mandir/Babri context</td>
+</tr>
+<tr>
+  <td class="art-num">50</td>
+  <td>Separation of Judiciary from Executive</td>
+  <td>State shall take steps to separate judiciary from executive in public services</td>
+  <td class="cat-l">L</td>
+  <td class="mnem-cell">50 = Judicial independence</td>
+  <td>CrPC; Magistrate functions separated; District judiciary reforms</td>
+  <td>Art. 50 applies to PUBLIC SERVICES only — not High Courts/Supreme Court (they have separate provisions)</td>
+</tr>
+<tr>
+  <td class="art-num">51</td>
+  <td>Promotion of International Peace</td>
+  <td>(a) Promote international peace and security; (b) Maintain just relations between nations; (c) Foster respect for international law; (d) Encourage settlement by arbitration</td>
+  <td class="cat-l">L</td>
+  <td class="mnem-cell">51 = India's Foreign Policy DNA</td>
+  <td>Panchsheel; India's UN commitments; ICJ jurisdiction</td>
+  <td>Art. 51 basis for India ratifying international treaties — but not self-executing without domestic legislation</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div style="margin-top:0.75rem; font-size:11px; color:var(--muted); font-family:var(--font-mono);">
+  CAT KEY: <span class="cat-s">S = Socialist</span> &nbsp; <span class="cat-g">G = Gandhian</span> &nbsp; <span class="cat-l">L = Liberal-Intellectual</span>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 3: CLASSIFICATION -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="classification">
+<div class="sec-header">
+  <span class="sec-num">03</span>
+  <h2 class="sec-title">Classification of DPSP</h2>
+</div>
+
+<div class="grid3">
+<div class="card red">
+  <div class="card-title"><span class="dot"></span>🔴 Socialist Principles</div>
+  <div class="label">ARTICLES</div>
+  <div style="margin-bottom:10px;">
+    <span class="pill pill-art">38</span><span class="pill pill-art">39</span><span class="pill pill-art">39A</span><span class="pill pill-art">41</span><span class="pill pill-art">42</span><span class="pill pill-art">43</span><span class="pill pill-art">43A</span><span class="pill pill-art">47</span>
+  </div>
+  <ul class="dotlist">
+    <li>Welfare State — equitable social order</li>
+    <li>Distribution of material resources (Art. 39b,c)</li>
+    <li>Equal pay for equal work (Art. 39d)</li>
+    <li>Right to work, education, assistance (Art. 41)</li>
+    <li>Humane work conditions + maternity (Art. 42)</li>
+    <li>Living wage for workers (Art. 43)</li>
+    <li>Workers' management participation (Art. 43A)</li>
+    <li>Prohibition + public health (Art. 47)</li>
+    <li>Free legal aid (Art. 39A)</li>
+  </ul>
+  <div class="mnem-box">
+    <div class="mnem-label">MNEMONIC</div>
+    <div class="mnem-text">"Welfare Workers Earn Equal Living Wages"</div>
+    <div class="mnem-decode">Welfare(38) · Workers(43A) · Equal(39) · Equal Legal aid(39A) · Living(43) · Wages = overall theme</div>
+  </div>
+</div>
+
+<div class="card green">
+  <div class="card-title"><span class="dot"></span>🟢 Gandhian Principles</div>
+  <div class="label">ARTICLES</div>
+  <div style="margin-bottom:10px;">
+    <span class="pill pill-art">40</span><span class="pill pill-art">43</span><span class="pill pill-art">43B</span><span class="pill pill-art">46</span><span class="pill pill-art">47</span><span class="pill pill-art">48</span>
+  </div>
+  <ul class="dotlist">
+    <li>Village Panchayats (Art. 40) — gram swaraj</li>
+    <li>Cottage industries, Khadi (Art. 43)</li>
+    <li>Cooperative societies (Art. 43B)</li>
+    <li>SC/ST upliftment (Art. 46)</li>
+    <li>Prohibition of alcohol (Art. 47)</li>
+    <li>Cow protection + modern agriculture (Art. 48)</li>
+  </ul>
+  <div class="mnem-box">
+    <div class="mnem-label">MNEMONIC</div>
+    <div class="mnem-text">"Gandhiji's Village Khadi Saved Cows"</div>
+    <div class="mnem-decode">Village(40) · Khadi/Cottage(43) · Saved(SC/ST-46) · Cows(48)</div>
+  </div>
+</div>
+
+<div class="card purple">
+  <div class="card-title"><span class="dot"></span>🟣 Liberal-Intellectual Principles</div>
+  <div class="label">ARTICLES</div>
+  <div style="margin-bottom:10px;">
+    <span class="pill pill-art">44</span><span class="pill pill-art">45</span><span class="pill pill-art">48A</span><span class="pill pill-art">49</span><span class="pill pill-art">50</span><span class="pill pill-art">51</span>
+  </div>
+  <ul class="dotlist">
+    <li>Uniform Civil Code (Art. 44)</li>
+    <li>Free education — now under 6 years (Art. 45)</li>
+    <li>Environment protection (Art. 48A)</li>
+    <li>Protect monuments/heritage (Art. 49)</li>
+    <li>Judicial independence (Art. 50)</li>
+    <li>International peace and security (Art. 51)</li>
+  </ul>
+  <div class="mnem-box">
+    <div class="mnem-label">MNEMONIC</div>
+    <div class="mnem-text">"Uniform Educated Environment Judges Peace"</div>
+    <div class="mnem-decode">Uniform(44) · Educated(45) · Environment(48A) · Judges independent(50) · Peace(51)</div>
+  </div>
+</div>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 4: DPSP vs FR vs FD -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="vs-fr">
+<div class="sec-header">
+  <span class="sec-num">04</span>
+  <h2 class="sec-title">DPSP vs Fundamental Rights vs Fundamental Duties</h2>
+</div>
+
+<div style="overflow-x:auto; border:1px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:1.25rem;">
+<table class="comp-table">
+<thead>
+<tr>
+  <th style="background:var(--surface2); color:var(--muted); width:22%;">PARAMETER</th>
+  <th class="h-fr" style="width:26%;">FUNDAMENTAL RIGHTS (Part III)</th>
+  <th class="h-dp" style="width:26%;">DPSP (Part IV)</th>
+  <th class="h-fd" style="width:26%;">FUNDAMENTAL DUTIES (Part IV-A)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="font-weight:500; font-size:12px; color:var(--text);">Articles</td>
+  <td class="h-fr" style="font-size:12px;">12–35</td>
+  <td class="h-dp" style="font-size:12px;">36–51</td>
+  <td class="h-fd" style="font-size:12px;">51A (11 duties)</td>
+</tr>
+<tr>
+  <td style="font-weight:500; font-size:12px; color:var(--text);">Justiciable?</td>
+  <td class="h-fr" style="font-size:12px;">✅ Yes — courts can enforce</td>
+  <td class="h-dp" style="font-size:12px;">❌ No — not enforceable in courts</td>
+  <td class="h-fd" style="font-size:12px;">❌ No — non-justiciable (except in certain laws)</td>
+</tr>
+<tr>
+  <td style="font-weight:500; font-size:12px; color:var(--text);">Nature</td>
+  <td class="h-fr" style="font-size:12px;">Negative — State shall NOT do</td>
+  <td class="h-dp" style="font-size:12px;">Positive — State SHALL do</td>
+  <td class="h-fd" style="font-size:12px;">Positive — citizens SHALL do</td>
+</tr>
+<tr>
+  <td style="font-weight:500; font-size:12px; color:var(--text);">Directed at</td>
+  <td class="h-fr" style="font-size:12px;">State (restrictions on state)</td>
+  <td class="h-dp" style="font-size:12px;">State (instructions to state)</td>
+  <td class="h-fd" style="font-size:12px;">Citizens (duties of citizens)</td>
+</tr>
+<tr>
+  <td style="font-weight:500; font-size:12px; color:var(--text);">Source</td>
+  <td class="h-fr" style="font-size:12px;">USA Bill of Rights; UK Magna Carta</td>
+  <td class="h-dp" style="font-size:12px;">Irish Constitution 1937</td>
+  <td class="h-fd" style="font-size:12px;">USSR Constitution; Swaran Singh Committee (1976)</td>
+</tr>
+<tr>
+  <td style="font-weight:500; font-size:12px; color:var(--text);">Added by</td>
+  <td class="h-fr" style="font-size:12px;">Original Constitution 1950</td>
+  <td class="h-dp" style="font-size:12px;">Original Constitution 1950</td>
+  <td class="h-fd" style="font-size:12px;">42nd Amendment 1976</td>
+</tr>
+<tr>
+  <td style="font-weight:500; font-size:12px; color:var(--text);">Conflict rule</td>
+  <td class="h-fr" style="font-size:12px;">Originally: FR > DPSP</td>
+  <td class="h-dp" style="font-size:12px;">Kesavananda: DPSP + FR = harmonized</td>
+  <td class="h-fd" style="font-size:12px;">Can help interpret FR and DPSP</td>
+</tr>
+<tr>
+  <td style="font-weight:500; font-size:12px; color:var(--text);">Relationship</td>
+  <td class="h-fr" style="font-size:12px;">Individual liberty — rights against state</td>
+  <td class="h-dp" style="font-size:12px;">Social welfare — what state must create</td>
+  <td class="h-fd" style="font-size:12px;">Social responsibilities of citizens</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="grid2">
+<div class="card orange">
+  <div class="card-title"><span class="dot"></span>Conflict Evolution Timeline</div>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">1951</div>
+      <div class="tl-event">Champakam Dorairajan vs State of Madras</div>
+      <div class="tl-detail">FR prevails over DPSP. Led to 1st Constitutional Amendment (Art. 15(4) added). <em>"FR are the Sun, DPSP are the satellite"</em></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">1967</div>
+      <div class="tl-event">Golaknath vs State of Punjab</div>
+      <div class="tl-detail">Parliament CANNOT amend FR. DPSP cannot override FR. FR are sacrosanct.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">1971</div>
+      <div class="tl-event">25th Amendment + Bank Nationalization</div>
+      <div class="tl-detail">Art. 31C added — laws giving effect to Art. 39(b)(c) shielded from Art. 14, 19.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">1973</div>
+      <div class="tl-event">Kesavananda Bharati — WATERSHED</div>
+      <div class="tl-detail">Basic Structure doctrine. Parliament can amend FR but not basic structure. DPSP and FR must be harmonized. Overruled Golaknath.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">1976</div>
+      <div class="tl-event">42nd Amendment — DPSP over FR</div>
+      <div class="tl-detail">Art. 31C expanded — ALL DPSP given precedence over Art. 14, 19, 31. Attempt to override Kesavananda.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">1980</div>
+      <div class="tl-event">Minerva Mills vs Union of India — FINAL WORD</div>
+      <div class="tl-detail">42nd Amend's blanket expansion of Art. 31C struck down. DPSP and FR must coexist — neither can destroy the other. <strong>Harmony doctrine finalized.</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="card teal">
+  <div class="card-title"><span class="dot"></span>Harmony Doctrine — Post Minerva Mills</div>
+  <div class="highlight hl-key">
+    <strong>Golden Rule:</strong> DPSP and Fundamental Rights are complementary. Neither is superior. Courts must read laws so as to give effect to BOTH.
+  </div>
+  <div class="spacer"></div>
+  <ul class="dotlist">
+    <li>Art. 31C (as valid): Laws for Art. 39(b)(c) not invalidated by Art. 14/19</li>
+    <li>Art. 13: Laws inconsistent with FR = void — DPSP laws must still pass FR test</li>
+    <li>SC uses DPSP as interpretive tools — rights read expansively</li>
+    <li>Art. 21 (Right to Life) now includes many DPSP via expansive reading</li>
+    <li>Unnikrishnan (1993): Right to education (Art. 45 DPSP) became part of Art. 21 — later formalized by 86th Amend</li>
+  </ul>
+  <div class="highlight hl-tip" style="margin-top:8px;">
+    <strong>Exam Gold:</strong> "The conflict between FR and DPSP was resolved by Minerva Mills — neither is absolute, both must coexist" — this is the standard answer.
+  </div>
+</div>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 5: CASE LAWS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="cases">
+<div class="sec-header">
+  <span class="sec-num">05</span>
+  <h2 class="sec-title">Landmark Supreme Court Cases</h2>
+</div>
+
+<div class="grid2">
+<div>
+<div class="case-card">
+  <div class="case-name">State of Madras vs Champakam Dorairajan</div>
+  <div class="case-year">1951 · First FR vs DPSP conflict</div>
+  <div class="case-issue">Issue: Madras reservation order (caste-based seats in college) — violated Art. 15/29</div>
+  <div class="case-verdict">SC held: FR prevail over DPSP. Communal order invalid. Parliament immediately passed 1st Constitutional Amendment adding Art. 15(4) to enable reservations.</div>
+  <div class="case-takeaway">⚡ First amendment was a direct response to SC ruling — DPSP triggered constitutional amendment</div>
+</div>
+
+<div class="case-card">
+  <div class="case-name">Golaknath vs State of Punjab</div>
+  <div class="case-year">1967 · Parliament cannot touch FR</div>
+  <div class="case-issue">Issue: Can Parliament amend Fundamental Rights to implement DPSP?</div>
+  <div class="case-verdict">11-judge bench: No. FR are transcendental — Parliament has NO power to abridge/abrogate them even for DPSP. FR superior to DPSP.</div>
+  <div class="case-takeaway">⚡ Led to 24th Amendment (1971) asserting Parliament's amending power. Overruled by Kesavananda 1973.</div>
+</div>
+
+<div class="case-card">
+  <div class="case-name">Kesavananda Bharati vs State of Kerala</div>
+  <div class="case-year">1973 · Most important constitutional case</div>
+  <div class="case-issue">Issue: Extent of Parliament's power to amend Constitution (esp. Kerala land reform laws)</div>
+  <div class="case-verdict">13-judge bench (7:6): Parliament can amend any part of Constitution BUT cannot destroy its "Basic Structure." DPSP and FR must harmonize. Overruled Golaknath.</div>
+  <div class="case-takeaway">⚡ Basic Structure doctrine born here. DPSP implementation cannot destroy FR's basic structure.</div>
+</div>
+
+<div class="case-card">
+  <div class="case-name">Minerva Mills Ltd vs Union of India</div>
+  <div class="case-year">1980 · Harmony doctrine finalized</div>
+  <div class="case-issue">Issue: Validity of 42nd Amendment giving DPSP blanket precedence over Art. 14, 19</div>
+  <div class="case-verdict">SC struck down Sec. 4 and 55 of 42nd Amendment. Balance between FR and DPSP is part of Basic Structure. Neither can be used to destroy the other.</div>
+  <div class="case-takeaway">⚡ FINAL WORD — harmony between DPSP and FR is a basic feature of Constitution.</div>
+</div>
+</div>
+
+<div>
+<div class="case-card">
+  <div class="case-name">NALSA vs Union of India</div>
+  <div class="case-year">2014 · DPSP for transgender rights</div>
+  <div class="case-issue">Issue: Legal recognition and rights of transgender persons</div>
+  <div class="case-verdict">SC used Art. 39A (free legal aid, equal justice) along with Art. 21 to recognize transgender persons as "third gender," directed welfare measures under DPSP framework.</div>
+  <div class="case-takeaway">⚡ DPSP used as constitutional basis for social justice to marginalized — modern application</div>
+</div>
+
+<div class="case-card">
+  <div class="case-name">M.C. Mehta vs Union of India (Series)</div>
+  <div class="case-year">1986 onwards · Environment DPSP</div>
+  <div class="case-issue">Issue: Pollution of Ganga, Delhi air quality, Taj Mahal protection</div>
+  <div class="case-verdict">SC invoked Art. 48A (environmental protection) + Art. 51A(g) (citizen duty) + Art. 21 (right to clean environment = right to life) to pass sweeping environmental directives.</div>
+  <div class="case-takeaway">⚡ Art. 48A + Art. 21 = right to clean environment is now a Fundamental Right via DPSP.</div>
+</div>
+
+<div class="case-card">
+  <div class="case-name">Unnikrishnan vs State of Andhra Pradesh</div>
+  <div class="case-year">1993 · Education as FR</div>
+  <div class="case-issue">Issue: Right to education — is it a Fundamental Right?</div>
+  <div class="case-verdict">SC: Art. 45 DPSP (free education) read with Art. 21 — right to education up to age 14 is part of Right to Life. Later formalized by 86th Amendment 2002 (Art. 21A).</div>
+  <div class="case-takeaway">⚡ Classic example of DPSP elevating into FR via judicial interpretation — Art. 45 became Art. 21A.</div>
+</div>
+
+<div class="case-card">
+  <div class="case-name">Shah Bano Case (Mohd. Ahmed Khan vs Shah Bano)</div>
+  <div class="case-year">1985 · UCC controversy</div>
+  <div class="case-issue">Issue: Maintenance to divorced Muslim woman under Cr.PC Sec. 125</div>
+  <div class="case-verdict">SC awarded maintenance; strongly urged Parliament to enact UCC under Art. 44. Parliament overrode judgment by passing Muslim Women (Protection of Rights on Divorce) Act 1986.</div>
+  <div class="case-takeaway">⚡ Classic political override of SC on Art. 44 — UCC debate still unresolved. 2023: Law Commission consulted on UCC.</div>
+</div>
+</div>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 6: AMENDMENTS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="amendments">
+<div class="sec-header">
+  <span class="sec-num">06</span>
+  <h2 class="sec-title">Key Constitutional Amendments Affecting DPSP</h2>
+</div>
+
+<div class="grid2">
+<div class="card purple">
+  <div class="card-title"><span class="dot"></span>42nd Amendment, 1976 — "Mini Constitution"</div>
+  <span class="pill pill-amend">MOST IMPORTANT</span>
+  <div class="spacer"></div>
+  <ul class="dotlist">
+    <li>Added Art. 39A (free legal aid)</li>
+    <li>Added Art. 43A (workers' participation in management)</li>
+    <li>Added Art. 48A (environment protection)</li>
+    <li>Expanded Art. 31C — ALL DPSP shielded from Art. 14, 19 challenge</li>
+    <li>Added "Socialist" and "Secular" to Preamble</li>
+    <li>Added Fundamental Duties (Art. 51A) — 10 duties originally</li>
+  </ul>
+  <div class="highlight hl-trap">⚠️ Art. 31C expansion struck down by Minerva Mills 1980 — only Art. 39(b)(c) retain protection</div>
+</div>
+
+<div class="card blue">
+  <div class="card-title"><span class="dot"></span>44th Amendment, 1978</div>
+  <span class="pill pill-amend">POST-EMERGENCY CORRECTION</span>
+  <div class="spacer"></div>
+  <ul class="dotlist">
+    <li>Added Art. 38(2) — minimize inequalities in status, facilities, opportunities between individuals and groups</li>
+    <li>Deleted Art. 31 (Right to Property) from FR — made it only a legal right under Art. 300A</li>
+    <li>Restored many provisions changed by 42nd Amend</li>
+    <li>Added Art. 20, 21 cannot be suspended even during Emergency</li>
+  </ul>
+  <div class="highlight hl-tip">Art. 38(2) is specifically from 44th Amendment — common MCQ!</div>
+</div>
+
+<div class="card green">
+  <div class="card-title"><span class="dot"></span>86th Amendment, 2002</div>
+  <span class="pill pill-amend">EDUCATION REFORM</span>
+  <div class="spacer"></div>
+  <ul class="dotlist">
+    <li>Inserted Art. 21A — Right to Education (6–14 years) as Fundamental Right</li>
+    <li>Modified Art. 45 — now covers early childhood care for below 6 years only</li>
+    <li>Added Art. 51A(k) — duty of parents to provide education to children 6–14</li>
+    <li>Led to Right to Education Act, 2009</li>
+  </ul>
+  <div class="highlight hl-trap">⚠️ After 86th Amend: Art. 45 = below 6 years. Art. 21A = 6–14 years FR. Two different provisions!</div>
+</div>
+
+<div class="card orange">
+  <div class="card-title"><span class="dot"></span>97th Amendment, 2011</div>
+  <span class="pill pill-amend">COOPERATIVES</span>
+  <div class="spacer"></div>
+  <ul class="dotlist">
+    <li>Added Art. 43B — promotion of cooperative societies (latest DPSP addition)</li>
+    <li>Added Part IX-B (Art. 243ZH to 243ZT) for cooperative societies</li>
+    <li>Added "cooperative societies" to Art. 19(1)(c) — right to form cooperatives</li>
+  </ul>
+  <div class="highlight hl-key">Part of SC's Gujarat Cooperative challenge — some state provisions struck down (2021)</div>
+</div>
+</div>
+
+<div class="card">
+  <div class="card-title"><span class="dot"></span>Other Significant Amendments</div>
+  <div class="grid3">
+    <div>
+      <div class="label">1st AMEND (1951)</div>
+      <ul class="dotlist">
+        <li>Added Art. 15(4) for SC/ST reservations after Champakam case</li>
+        <li>Added 9th Schedule (laws beyond judicial review)</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">25th AMEND (1971)</div>
+      <ul class="dotlist">
+        <li>Inserted Art. 31C — laws for Art. 39(b)(c) shielded from Art. 14, 19, 31</li>
+        <li>Reduced "compensation" to "amount" for property acquisition</li>
+      </ul>
+    </div>
+    <div>
+      <div class="label">73rd AMEND (1992)</div>
+      <ul class="dotlist">
+        <li>Art. 40 (Panchayats — Gandhian DPSP) given constitutional status</li>
+        <li>Part IX added — made Panchayati Raj justiciable</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 7: DPSP & GOVERNMENT SCHEMES -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="schemes">
+<div class="sec-header">
+  <span class="sec-num">07</span>
+  <h2 class="sec-title">DPSP ↔ Government Schemes & Laws</h2>
+</div>
+
+<div style="overflow-x:auto; border:1px solid var(--border); border-radius:10px; overflow:hidden;">
+<table class="art-table">
+<thead>
+<tr>
+  <th>ARTICLE</th>
+  <th>DPSP OBJECTIVE</th>
+  <th>LINKED SCHEME / LAW</th>
+  <th>YEAR</th>
+  <th>SIGNIFICANCE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="art-num">Art. 41</td>
+  <td>Right to work</td>
+  <td><span class="pill pill-scheme">MGNREGA</span></td>
+  <td>2005</td>
+  <td>100 days guaranteed rural employment — direct legislative implementation of Art. 41</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 47</td>
+  <td>Nutrition + health</td>
+  <td><span class="pill pill-scheme">Mid-Day Meal / PM POSHAN</span></td>
+  <td>1995/2021</td>
+  <td>School nutrition linked to Art. 47 — also SC directed in Unnikrishnan</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 47</td>
+  <td>Public health</td>
+  <td><span class="pill pill-scheme">Ayushman Bharat (PMJAY)</span></td>
+  <td>2018</td>
+  <td>₹5 lakh health cover — Art. 47 + Art. 21 (right to health)</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 39(b)</td>
+  <td>Distribution of resources</td>
+  <td><span class="pill pill-scheme">PM-KISAN</span></td>
+  <td>2019</td>
+  <td>Income support to farmers; resource distribution to agrarian poor</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 40</td>
+  <td>Village Panchayats</td>
+  <td><span class="pill pill-scheme">73rd Amendment + PRIs</span></td>
+  <td>1992</td>
+  <td>Operationalized Art. 40 — gram panchayats with constitutional backing</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 39A</td>
+  <td>Free legal aid</td>
+  <td><span class="pill pill-scheme">NALSA + Legal Services Authorities Act</span></td>
+  <td>1987</td>
+  <td>Lok Adalats, free legal services — direct implementation of Art. 39A</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 48A</td>
+  <td>Environment</td>
+  <td><span class="pill pill-scheme">Environment Protection Act; CAMPA</span></td>
+  <td>1986/2016</td>
+  <td>Forest conservation, pollution control — Art. 48A + Art. 21</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 45</td>
+  <td>Child education</td>
+  <td><span class="pill pill-scheme">Right to Education Act (Art. 21A)</span></td>
+  <td>2009</td>
+  <td>Art. 45 DPSP became Art. 21A FR via 86th Amend — RTE Act implements it</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 46</td>
+  <td>SC/ST welfare</td>
+  <td><span class="pill pill-scheme">Scheduled Castes Sub-Plan; SC/ST Act 1989</span></td>
+  <td>—</td>
+  <td>Art. 46 basis for targeted welfare for SCs, STs, and weaker sections</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 42</td>
+  <td>Maternity relief</td>
+  <td><span class="pill pill-scheme">Maternity Benefit (Amendment) Act 2017</span></td>
+  <td>2017</td>
+  <td>26 weeks paid leave — landmark implementation of Art. 42</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 43</td>
+  <td>Cottage industries</td>
+  <td><span class="pill pill-scheme">KVIC; PM Vishwakarma Scheme</span></td>
+  <td>—</td>
+  <td>Khadi, artisans, weavers — Gandhian DPSP in action</td>
+</tr>
+<tr>
+  <td class="art-num">Art. 51</td>
+  <td>International peace</td>
+  <td><span class="pill pill-scheme">Panchsheel (1954); UN commitments</span></td>
+  <td>1954</td>
+  <td>India's foreign policy anchored in Art. 51 — UN peacekeeping, ICJ jurisdiction</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 8: QUICK REVISION ONE-PAGER -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="revision">
+<div class="sec-header">
+  <span class="sec-num">08</span>
+  <h2 class="sec-title">Ultra-Short Revision Map — Last Day Use</h2>
+</div>
+
+<div class="card" style="background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(201,168,76,0.02));">
+  <div class="card-title"><span class="dot"></span>5-Point Constitutional Memory Framework</div>
+  <div class="grid3">
+    <div class="highlight hl-key"><strong>PART IV, Art. 36–51</strong><br>Non-justiciable but binding in governance. Source: Irish Constitution (via Spain). Added originally in 1950.</div>
+    <div class="highlight hl-key"><strong>3 CATEGORIES</strong><br>Socialist (38,39,39A,41,42,43,43A,47) | Gandhian (40,43,43B,46,47,48) | Liberal (44,45,48A,49,50,51)</div>
+    <div class="highlight hl-key"><strong>4 KEY ADDITIONS</strong><br>39A, 43A, 48A → 42nd (1976) | 38(2) → 44th (1978) | 45 modified → 86th (2002) | 43B → 97th (2011)</div>
+  </div>
+</div>
+
+<div class="rev-grid">
+  <div class="rev-card"><div class="rev-art">Art. 36–37</div><div class="rev-kw">Definition + Application. 37 = not justiciable but fundamental to governance</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 38</div><div class="rev-kw">Welfare state. 38(2) = minimize inequalities → 44th Amend</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 39</div><div class="rev-kw">6 sub-clauses. Equal pay, no wealth concentration, livelihood, child protection</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 39A</div><div class="rev-kw">Free legal aid. NALSA. 42nd Amend. NALSA v. UOI 2014</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 40</div><div class="rev-kw">Panchayats. Gandhian. Made justiciable by 73rd Amend 1992</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 41</div><div class="rev-kw">Work/education/assistance. Basis of MGNREGA. "Within economic capacity"</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 42</div><div class="rev-kw">Just work conditions + maternity. Maternity Benefit Act. 26 weeks</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 43</div><div class="rev-kw">Living wage + cottage industries. Dual nature: Socialist + Gandhian</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 43A</div><div class="rev-kw">Workers' participation in management. 42nd Amend</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 43B</div><div class="rev-kw">Co-operatives. 97th Amend 2011 — latest DPSP addition</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 44</div><div class="rev-kw">UCC. Most controversial. Shah Bano 1985. Still not enacted</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 45</div><div class="rev-kw">NOW: below 6 yrs only. 86th Amend moved 6-14 yrs to Art. 21A</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 46</div><div class="rev-kw">SC/ST upliftment. Reservations basis. Atrocities Act</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 47</div><div class="rev-kw">Nutrition + Prohibition. Gandhian. State can ban alcohol (Gujarat, Bihar)</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 48</div><div class="rev-kw">Cow protection + modern farming. State subject. Cannot override Art. 21</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 48A</div><div class="rev-kw">Environment. 42nd Amend. Paired with Art. 51A(g) duty</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 49</div><div class="rev-kw">Monuments. ASI. Ancient Monuments Act 1958</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 50</div><div class="rev-kw">Judiciary separation. Public services only. Not HC/SC</div></div>
+  <div class="rev-card"><div class="rev-art">Art. 51</div><div class="rev-kw">International peace. Panchsheel. India's foreign policy DNA</div></div>
+</div>
+
+<div class="mnem-box" style="margin-top:1.25rem;">
+  <div class="mnem-label">SEQUENCE MNEMONIC — 36 TO 51</div>
+  <div class="mnem-text">"State Defines — Equal Welfare, Equal Legal Aid — Panchayat Poor Villagers, Cottage Cooperatives, Uniform Children, Backward Nutrition, Cows & Environment, Monuments, Judiciary, Peace"</div>
+  <div class="mnem-decode">
+    36(State) · 37(Defines DPSP) · 38(Equal/welfare) · 39(Welfare policies) · 39A(Equal Legal Aid) · 40(Panchayat) · 41(Poor=employment/edu) · 42(Villagers=work conditions) · 43(Cottage+wages) · 43A(Co-management) · 43B(Cooperatives) · 44(Uniform Civil Code) · 45(Children below 6) · 46(Backward classes) · 47(Nutrition+Prohibition) · 48(Cows+farming) · 48A(Environment) · 49(Monuments) · 50(Judiciary) · 51(Peace)
+  </div>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 9: PRELIMS QUESTIONS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="prelims">
+<div class="sec-header">
+  <span class="sec-num">09</span>
+  <h2 class="sec-title">15 High-Yield Prelims Questions (UPSC/CDS Pattern)</h2>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.01 · UPSC Pattern</div>
+  <div class="q-text">Which of the following Articles was added to the Directive Principles of State Policy by the 42nd Constitutional Amendment, 1976?<br>1. Article 39A &nbsp; 2. Article 43A &nbsp; 3. Article 48A &nbsp; 4. Article 38(2)</div>
+  <ul class="q-opts">
+    <li data-opt="A">1, 2 and 3 only</li>
+    <li data-opt="B">1 and 3 only</li>
+    <li data-opt="C">2 and 4 only</li>
+    <li data-opt="D">1, 2, 3 and 4</li>
+  </ul>
+  <details><summary>Show Answer & Explanation</summary>
+  <div class="q-ans">ANSWER: A — 1, 2 and 3 only</div>
+  <div class="q-exp">39A (free legal aid), 43A (workers' participation), 48A (environment) were all added by the 42nd Amendment 1976. Art. 38(2) — minimizing inequalities — was added by the 44th Amendment 1978. This is a classic trap!</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.02 · CDS Pattern</div>
+  <div class="q-text">The Directive Principles of State Policy in the Indian Constitution have been borrowed from the Constitution of:</div>
+  <ul class="q-opts">
+    <li data-opt="A">USA</li>
+    <li data-opt="B">Canada</li>
+    <li data-opt="C">Ireland</li>
+    <li data-opt="D">Australia</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: C — Ireland</div>
+  <div class="q-exp">DPSP borrowed from Irish Constitution (1937). Ireland was itself influenced by the Spanish Constitution. The chain: Spain → Ireland → India.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.03 · UPSC 2022 Pattern</div>
+  <div class="q-text">Consider the following statements about Article 45 of the Indian Constitution after the 86th Constitutional Amendment (2002):<br>1. It now provides for free and compulsory education for children of age 6 to 14 years.<br>2. It now applies to early childhood care and education for children below 6 years.<br>3. Education for 6–14 year age group was moved to Article 21A as a Fundamental Right.<br>Which of the statements given above is/are correct?</div>
+  <ul class="q-opts">
+    <li data-opt="A">1 and 2 only</li>
+    <li data-opt="B">2 and 3 only</li>
+    <li data-opt="C">3 only</li>
+    <li data-opt="D">1, 2 and 3</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: B — 2 and 3 only</div>
+  <div class="q-exp">Statement 1 is WRONG — after 86th Amendment, Art. 45 covers only below 6 years. 6–14 years education moved to Art. 21A as Fundamental Right. Statements 2 and 3 are correct.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.04 · Classic MCQ</div>
+  <div class="q-text">In which landmark case did the Supreme Court establish the "Harmony Doctrine" — that Fundamental Rights and Directive Principles must coexist and neither can destroy the other?</div>
+  <ul class="q-opts">
+    <li data-opt="A">Golaknath vs State of Punjab (1967)</li>
+    <li data-opt="B">Kesavananda Bharati vs State of Kerala (1973)</li>
+    <li data-opt="C">Minerva Mills vs Union of India (1980)</li>
+    <li data-opt="D">Champakam Dorairajan vs State of Madras (1951)</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: C — Minerva Mills vs Union of India (1980)</div>
+  <div class="q-exp">Minerva Mills (1980) finalized the harmony doctrine — both FR and DPSP must coexist; the balance between them is part of the Basic Structure of the Constitution. The 42nd Amendment's blanket precedence to DPSP over FR was struck down.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.05 · CDS Pattern</div>
+  <div class="q-text">Which Article of the Indian Constitution directs the State to promote cottage industries on an individual or cooperative basis in rural areas?</div>
+  <ul class="q-opts">
+    <li data-opt="A">Article 40</li>
+    <li data-opt="B">Article 43</li>
+    <li data-opt="C">Article 43B</li>
+    <li data-opt="D">Article 46</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: B — Article 43</div>
+  <div class="q-exp">Art. 43 covers: (i) living wage for workers and (ii) promotion of cottage industries on individual or cooperative basis in rural areas. Art. 43B (added by 97th Amend 2011) is specifically about promotion of cooperative societies.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.06 · UPSC Prelims Pattern</div>
+  <div class="q-text">Which of the following correctly describes the provision of Article 39(d) of the Indian Constitution?</div>
+  <ul class="q-opts">
+    <li data-opt="A">Adequate means of livelihood for all citizens</li>
+    <li data-opt="B">Equal pay for equal work for both men and women</li>
+    <li data-opt="C">Distribution of material resources to serve the common good</li>
+    <li data-opt="D">No concentration of wealth to the common detriment</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: B — Equal pay for equal work for both men and women</div>
+  <div class="q-exp">Art. 39 sub-clauses: (a)=livelihood, (b)=distribution of material resources, (c)=no concentration of wealth, (d)=EQUAL PAY for equal work, (e)=no economic abuse of workers, (f)=children's healthy development. Art. 39(d) is the basis for Equal Remuneration Act 1976.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.07 · CDS Trap Question</div>
+  <div class="q-text">Article 50 of the Indian Constitution directs separation of judiciary from the executive. This provision applies to:</div>
+  <ul class="q-opts">
+    <li data-opt="A">All courts including High Courts and Supreme Court</li>
+    <li data-opt="B">Only the Supreme Court of India</li>
+    <li data-opt="C">Public services of the State</li>
+    <li data-opt="D">Both High Courts and District Courts</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: C — Public services of the State</div>
+  <div class="q-exp">Art. 50 applies to PUBLIC SERVICES of the State only — not to High Courts or the Supreme Court, which have their own separate constitutional provisions for independence. This is a favourite exam trap.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.08 · Amendment-based</div>
+  <div class="q-text">Article 43B relating to promotion of cooperative societies was inserted into the Constitution by the:</div>
+  <ul class="q-opts">
+    <li data-opt="A">73rd Amendment, 1992</li>
+    <li data-opt="B">86th Amendment, 2002</li>
+    <li data-opt="C">97th Amendment, 2011</li>
+    <li data-opt="D">42nd Amendment, 1976</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: C — 97th Amendment, 2011</div>
+  <div class="q-exp">Art. 43B is the latest addition to DPSP, inserted by 97th Constitutional Amendment 2011. It also added Part IX-B to the Constitution dealing with cooperative societies.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.09 · Case Law Based</div>
+  <div class="q-text">The case of Champakam Dorairajan (1951) resulted in which Constitutional Amendment?</div>
+  <ul class="q-opts">
+    <li data-opt="A">7th Amendment adding State Reorganisation provisions</li>
+    <li data-opt="B">1st Amendment adding Article 15(4) for backward class reservations</li>
+    <li data-opt="C">24th Amendment reaffirming Parliament's power to amend Constitution</li>
+    <li data-opt="D">44th Amendment deleting Article 31</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: B — 1st Amendment adding Article 15(4)</div>
+  <div class="q-exp">After SC ruled in Champakam that caste-based reservations violated Art. 15/29 (FR prevail over DPSP), Parliament immediately passed the 1st Constitutional Amendment (1951) adding Art. 15(4) — enabling special provisions for socially/educationally backward classes.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.10 · UPSC Pattern</div>
+  <div class="q-text">The concept that Article 37 makes Directive Principles "fundamental in the governance of the country" while declaring them non-justiciable means:</div>
+  <ul class="q-opts">
+    <li data-opt="A">Courts can enforce them directly like Fundamental Rights</li>
+    <li data-opt="B">They create a moral obligation on the State but cannot be enforced in courts</li>
+    <li data-opt="C">Citizens can sue the State for non-implementation</li>
+    <li data-opt="D">They automatically become Fundamental Rights after 10 years</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: B</div>
+  <div class="q-exp">DPSP are "fundamental in governance" — they guide legislative/executive action and courts use them as interpretive tools — but they cannot be directly enforced in courts (non-justiciable). However, if legislation is enacted to implement DPSP, that legislation CAN be challenged in courts.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.11 · Scheme Linkage</div>
+  <div class="q-text">MGNREGA (Mahatma Gandhi National Rural Employment Guarantee Act) draws its constitutional backing primarily from which Article?</div>
+  <ul class="q-opts">
+    <li data-opt="A">Article 39</li>
+    <li data-opt="B">Article 40</li>
+    <li data-opt="C">Article 41</li>
+    <li data-opt="D">Article 43</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: C — Article 41</div>
+  <div class="q-exp">Art. 41 directs the State to make effective provision for securing the right to work "within the limits of its economic capacity." MGNREGA (2005) is the direct legislative implementation of Art. 41 providing 100 days of guaranteed employment.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.12 · Tricky Category Question</div>
+  <div class="q-text">Which of the following is correctly classified as a Gandhian Directive Principle?<br>1. Prohibition of consumption of intoxicating drinks (Art. 47)<br>2. Promotion of cottage industries (Art. 43)<br>3. Equal pay for equal work (Art. 39d)<br>4. Organization of village panchayats (Art. 40)</div>
+  <ul class="q-opts">
+    <li data-opt="A">1, 2 and 4 only</li>
+    <li data-opt="B">1 and 4 only</li>
+    <li data-opt="C">2, 3 and 4 only</li>
+    <li data-opt="D">1, 2, 3 and 4</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: A — 1, 2 and 4 only</div>
+  <div class="q-exp">Art. 39(d) equal pay for equal work is a SOCIALIST principle, not Gandhian. Art. 40 (panchayats), Art. 43 (cottage industries), Art. 47 (prohibition) are all Gandhian principles.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.13 · Shah Bano / Art. 44</div>
+  <div class="q-text">After the Supreme Court's judgment in Shah Bano case (1985), Parliament passed the Muslim Women (Protection of Rights on Divorce) Act 1986. This was seen by critics as:</div>
+  <ul class="q-opts">
+    <li data-opt="A">Implementation of Article 44 (Uniform Civil Code)</li>
+    <li data-opt="B">Bypassing the Supreme Court's directive on Article 44</li>
+    <li data-opt="C">An amendment to the Constitution</li>
+    <li data-opt="D">Application of Article 25 (freedom of religion)</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: B — Bypassing the Supreme Court's directive on Article 44</div>
+  <div class="q-exp">The SC in Shah Bano strongly urged enacting UCC under Art. 44. Parliament's response was the Muslim Women Act 1986 which effectively reversed the SC judgment — widely criticized as bypassing/diluting Art. 44's mandate for a UCC.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.14 · Environment DPSP</div>
+  <div class="q-text">Article 48A was added to the Constitution to direct the State to protect and improve the environment. Which amendment inserted this Article, and what corresponding citizen duty exists?</div>
+  <ul class="q-opts">
+    <li data-opt="A">44th Amendment; Art. 51A(f)</li>
+    <li data-opt="B">42nd Amendment; Art. 51A(g)</li>
+    <li data-opt="C">86th Amendment; Art. 51A(k)</li>
+    <li data-opt="D">97th Amendment; Art. 51A(j)</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: B — 42nd Amendment; Art. 51A(g)</div>
+  <div class="q-exp">Art. 48A (State duty: protect environment) was inserted by the 42nd Amendment 1976. The corresponding Fundamental Duty for citizens is Art. 51A(g): "to protect and improve the natural environment including forests, lakes, rivers and wildlife." Always pair these two in exams.</div>
+  </details>
+</div>
+
+<div class="q-item">
+  <div class="q-num">Q.15 · High-Level Conceptual</div>
+  <div class="q-text">The phrase "Instrument of Instructions" used by Dr. B.R. Ambedkar while defending DPSP in the Constituent Assembly referred to:</div>
+  <ul class="q-opts">
+    <li data-opt="A">Instructions given by courts to the executive</li>
+    <li data-opt="B">Guidelines sent by the President to Governor-Generals under the Government of India Act 1935</li>
+    <li data-opt="C">International treaty obligations of India</li>
+    <li data-opt="D">Instructions from Parliament to the judiciary</li>
+  </ul>
+  <details><summary>Show Answer</summary>
+  <div class="q-ans">ANSWER: B</div>
+  <div class="q-exp">Ambedkar compared DPSP to the "Instrument of Instructions" issued under the Government of India Act 1935 to Governor-Generals — guidelines for governance that were not legally enforceable but were expected to guide policy. He called DPSP a modern democratic equivalent.</div>
+  </details>
+</div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 10: MAINS QUESTIONS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="mains">
+<div class="sec-header">
+  <span class="sec-num">10</span>
+  <h2 class="sec-title">5 Analytical Mains-Style Questions with Answer Frameworks</h2>
+</div>
+
+<div class="mains-q">
+  <div class="mains-num">MAINS Q.01 · GS-II / 150 words</div>
+  <div class="mains-text">"The Directive Principles of State Policy are not mere pious declarations but have gradually become enforceable through legislative action and judicial interpretation." Critically examine with examples.</div>
+  <div class="mains-framework">
+    <strong>INTRO:</strong> Define DPSP — Art. 37 makes them non-justiciable yet fundamental to governance. Quote Granville Austin's "conscience of the Constitution."<br><br>
+    <strong>BODY — 3 Dimensions:</strong><br>
+    1. <strong>Legislative Transformation:</strong> MGNREGA (Art. 41) → right to work legislated; RTE Act (Art. 45 → Art. 21A via 86th Amend); NALSA (Art. 39A); Maternity Benefit Act (Art. 42)<br>
+    2. <strong>Judicial Elevation:</strong> Unnikrishnan (Art. 45 → Art. 21); MC Mehta (Art. 48A + Art. 21 = right to clean environment); NALSA (Art. 39A + Art. 21 = transgender rights)<br>
+    3. <strong>Constitutional Interlinkage:</strong> Harmony doctrine (Minerva Mills) — DPSP and FR complement each other; Art. 31C protects Art. 39(b)(c) laws<br><br>
+    <strong>CRITICISM:</strong> UCC (Art. 44) unimplemented; living wage (Art. 43) aspirational; uniform civil code debate<br><br>
+    <strong>CONCLUSION:</strong> DPSP represent India's commitment to a welfare state — while the journey from aspiration to implementation is incomplete, the trajectory is clear.
+  </div>
+</div>
+
+<div class="mains-q">
+  <div class="mains-num">MAINS Q.02 · GS-II / 250 words</div>
+  <div class="mains-text">Trace the evolution of the relationship between Fundamental Rights and Directive Principles of State Policy from Champakam Dorairajan (1951) to Minerva Mills (1980). What is the current constitutional position?</div>
+  <div class="mains-framework">
+    <strong>INTRO:</strong> Constitutional framers envisioned FR and DPSP as complementary — but early SC judgments created tension. The story is of pendulum swings leading to balance.<br><br>
+    <strong>EVOLUTION TABLE FORMAT:</strong><br>
+    1951 Champakam → FR prevails → 1st Amend (Art. 15(4))<br>
+    1967 Golaknath → FR transcendental, Parliament cannot amend → 24th Amend reaffirms Parliament's power<br>
+    1971 25th Amend → Art. 31C: DPSP laws shielded from FR challenge<br>
+    1973 Kesavananda → Basic Structure; FR + DPSP must harmonize; overrules Golaknath<br>
+    1976 42nd Amend → ALL DPSP given precedence — attempt at supremacy<br>
+    1980 Minerva Mills → Balance = Basic Structure; 42nd Amend's expansion struck down<br><br>
+    <strong>CURRENT POSITION:</strong><br>
+    • Harmony doctrine: neither can destroy the other<br>
+    • Courts use DPSP to interpret FR expansively (Art. 21 = right to health, education, environment)<br>
+    • Art. 31C (limited): only Art. 39(b)(c) laws shielded from Art. 14/19<br>
+    • DPSP guide policy; FR guarantee enforcement<br><br>
+    <strong>ANALYTICAL POINT:</strong> India's constitutional design is unique — it bridges civil-political rights (FR) with socio-economic rights (DPSP) rather than choosing one model.
+  </div>
+</div>
+
+<div class="mains-q">
+  <div class="mains-num">MAINS Q.03 · GS-I / 150 words</div>
+  <div class="mains-text">How far have Gandhian Directive Principles been implemented in post-independence India? Are they still relevant in the 21st century?</div>
+  <div class="mains-framework">
+    <strong>GANDHIAN DPSP OVERVIEW:</strong> Art. 40, 43, 43B, 46, 47, 48 — rooted in gram swaraj, khadi, cow protection, prohibition.<br><br>
+    <strong>IMPLEMENTATIONS:</strong><br>
+    • Art. 40 → 73rd Amendment (1992): Panchayati Raj — most successful; 2.5 lakh gram panchayats<br>
+    • Art. 43 → KVIC, PM Vishwakarma (2023): Khadi still alive; cottage industry support<br>
+    • Art. 43B → New Ministry of Cooperation (2021); cooperative credit, dairy cooperatives (Amul)<br>
+    • Art. 46 → SC/ST reservations, Atrocities Act, Scholarships<br>
+    • Art. 47 → Prohibition in Bihar, Gujarat (partial); POSHAN Abhiyaan<br>
+    • Art. 48 → State cow slaughter laws; organic farming push<br><br>
+    <strong>LIMITATIONS:</strong> Cow protection politicized; prohibition creates black markets; full village economic self-sufficiency not achieved<br><br>
+    <strong>21ST CENTURY RELEVANCE:</strong> SDG 1 (no poverty) ↔ Art. 43; SDG 16 (institutions) ↔ Art. 40; sustainable agriculture ↔ Art. 48. Gandhian principles remain relevant — just need modern interpretation.
+  </div>
+</div>
+
+<div class="mains-q">
+  <div class="mains-num">MAINS Q.04 · GS-II / 250 words</div>
+  <div class="mains-text">"The debate on Uniform Civil Code remains the most contested dimension of the Directive Principles of State Policy." Analyze the constitutional, social, and political dimensions of implementing Article 44.</div>
+  <div class="mains-framework">
+    <strong>INTRO:</strong> Art. 44 — State shall endeavor to secure a UCC throughout India. In 75+ years, not enacted. Why?<br><br>
+    <strong>CONSTITUTIONAL DIMENSION:</strong><br>
+    • Art. 44 vs Art. 25-28 (freedom of religion) — tension at the core<br>
+    • SC in Shah Bano (1985), Sarla Mudgal (1995), John Vallamattom (2003) — all urged UCC<br>
+    • Goa has a UCC since colonial times (Portuguese Civil Code)<br>
+    • Parliament can legislate UCC under Entry 5, List III (Concurrent List)<br><br>
+    <strong>ARGUMENTS FOR:</strong><br>
+    • Gender justice — Muslim women, Hindu daughters (equal inheritance)<br>
+    • National integration — one law for all citizens<br>
+    • Constitutional mandate (Art. 44), SC directions<br>
+    • Anomalies: Hindu Code Bills (1950s) reformed Hindu law but personal laws of minorities untouched<br><br>
+    <strong>ARGUMENTS AGAINST:</strong><br>
+    • Minority fears: homogenization as cultural erasure<br>
+    • What will be the "uniform" code — whose customs prevail?<br>
+    • Federal concern: personal laws partly state subject<br>
+    • Better approach: optional civil code<br><br>
+    <strong>RECENT DEVELOPMENTS:</strong> Uttarakhand UCC Act (2024) — first state to pass UCC; Law Commission consultation (2023)<br><br>
+    <strong>CONCLUSION:</strong> UCC requires national consensus, not legislative imposition — the journey must be through dialogue, not division.
+  </div>
+</div>
+
+<div class="mains-q">
+  <div class="mains-num">MAINS Q.05 · GS-III / 150 words</div>
+  <div class="mains-text">Examine how India's approach to welfare state governance is reflected in the Directive Principles of State Policy. Connect the DPSP framework with India's commitments to the UN Sustainable Development Goals (SDGs).</div>
+  <div class="mains-framework">
+    <strong>WELFARE STATE CONCEPT:</strong> DPSP collectively embody the welfare state ideal — state actively ensures social-economic justice, not just negative freedoms.<br><br>
+    <strong>DPSP ↔ SDG MAPPING:</strong><br>
+    SDG 1 (No Poverty) ↔ Art. 39, 41, 43 — livelihood, employment, wages<br>
+    SDG 2 (Zero Hunger) ↔ Art. 47, PM POSHAN — nutrition and food<br>
+    SDG 3 (Good Health) ↔ Art. 47, Ayushman Bharat<br>
+    SDG 4 (Quality Education) ↔ Art. 45, 21A, RTE Act<br>
+    SDG 5 (Gender Equality) ↔ Art. 39(d), 42 — equal pay, maternity<br>
+    SDG 10 (Reduced Inequalities) ↔ Art. 38, 46<br>
+    SDG 13 (Climate Action) ↔ Art. 48A<br>
+    SDG 16 (Strong Institutions) ↔ Art. 40, 50, 39A<br>
+    SDG 17 (Global Partnerships) ↔ Art. 51<br><br>
+    <strong>CRITICAL ANALYSIS:</strong> India's welfare state remains aspirational — inequality has risen even as DPSP-backed schemes multiply. Need convergence between DPSP intent and governance delivery.<br><br>
+    <strong>CONCLUSION:</strong> DPSP are India's SDG commitment written 75 years before the SDGs — a prescient constitutional vision awaiting full realization.
+  </div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center; padding: 3rem 0 1rem; color:var(--muted); font-size:12px; font-family:var(--font-mono);">
+  <div style="color:var(--accent); font-size:14px; font-family:var(--font-display); font-style:italic; margin-bottom:6px;">CDS 2 · UPSC 2026 — All the best!</div>
+  Directive Principles of State Policy · Part IV · Articles 36–51<br>
+  Comprehensive Mind Map | Constitutional Law | Indian Polity
+</div>
+
+</div><!-- end page -->
+</body>
+</html>

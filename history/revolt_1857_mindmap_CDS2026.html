@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revolt of 1857 — CDS 2 2026 | UPSC Modern History Master Mind Map</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inconsolata:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+
+:root {
+  --bg: #0e0a06;
+  --surface: #16100a;
+  --surface2: #1e1510;
+  --surface3: #261b12;
+  --border: rgba(180,120,40,0.18);
+  --border2: rgba(180,120,40,0.32);
+  --text: #e8d8b8;
+  --text-muted: #8a7458;
+  --fire: #e8521a;
+  --gold: #d4a017;
+  --gold2: #f0c040;
+  --amber: #c87820;
+  --crimson: #c0282a;
+  --crimson2: #e03040;
+  --forest: #2a7a3a;
+  --teal: #1a8080;
+  --indigo: #3a3888;
+  --rose: #b04060;
+  --sage: #5a7a4a;
+  --glow-fire: 0 0 20px rgba(232,82,26,0.28);
+  --glow-gold: 0 0 18px rgba(212,160,23,0.28);
+  --shadow: 0 4px 32px rgba(0,0,0,0.7);
+  --r: 12px;
+  --r-sm: 7px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Lato',sans-serif;
+  font-weight:400;
+  line-height:1.65;
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(180,60,10,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 80%, rgba(120,80,10,0.05) 0%, transparent 50%);
+}
+
+/* ── SIDEBAR ── */
+#sb{
+  position:fixed;left:0;top:0;width:248px;height:100vh;
+  background:linear-gradient(180deg,#100c06 0%,#0e0a06 100%);
+  border-right:1px solid var(--border);
+  z-index:1000;overflow-y:auto;
+  transition:transform .3s cubic-bezier(.4,0,.2,1);
+}
+#sb::-webkit-scrollbar{width:3px;}
+#sb::-webkit-scrollbar-thumb{background:var(--surface3);border-radius:3px;}
+.sb-head{
+  padding:20px 18px 16px;
+  background:linear-gradient(135deg,rgba(180,60,10,0.22),rgba(120,60,5,0.14));
+  border-bottom:1px solid var(--border);
+}
+.sb-logo{
+  font-family:'Cinzel',serif;font-size:1.05rem;font-weight:900;
+  color:var(--gold2);line-height:1.25;
+}
+.sb-sub{font-size:.65rem;color:var(--text-muted);margin-top:4px;font-family:'Inconsolata',monospace;letter-spacing:.5px;}
+.tg{padding:8px 0 3px;}
+.tg-lbl{padding:4px 16px 5px;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);font-family:'Inconsolata',monospace;opacity:.7;}
+.ti{
+  display:flex;align-items:center;gap:7px;padding:6px 16px;
+  font-size:.73rem;color:var(--text-muted);cursor:pointer;
+  border-left:2px solid transparent;transition:all .18s;text-decoration:none;
+}
+.ti:hover,.ti.act{color:var(--gold2);border-left-color:var(--gold2);background:rgba(212,160,23,0.06);}
+.ti.red:hover,.ti.red.act{color:var(--crimson2);border-left-color:var(--crimson2);background:rgba(192,40,42,0.07);}
+.ti.gr:hover,.ti.gr.act{color:#5adc7a;border-left-color:#5adc7a;background:rgba(42,122,58,0.07);}
+.ti .ic{font-size:.82rem;flex-shrink:0;width:17px;text-align:center;}
+#mob-btn{
+  display:none;position:fixed;top:11px;left:11px;z-index:1100;
+  background:var(--surface2);border:1px solid var(--border2);
+  color:var(--gold2);width:40px;height:40px;border-radius:9px;
+  font-size:1.25rem;cursor:pointer;align-items:center;justify-content:center;
+  box-shadow:var(--glow-gold);
+}
+
+/* ── MAIN ── */
+#main{margin-left:248px;padding:36px 38px 80px;max-width:1180px;}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,#110807 0%,#1a0f07 45%,#0e0d06 100%);
+  border:1px solid rgba(180,80,20,0.28);
+  border-radius:18px;padding:50px 50px 42px;
+  margin-bottom:42px;position:relative;overflow:hidden;
+  box-shadow:0 8px 60px rgba(80,20,0,0.5);
+}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(200,80,20,0.12) 0%,transparent 65%);border-radius:50%;}
+.hero::after{content:'';position:absolute;bottom:-40px;left:5%;width:280px;height:200px;background:radial-gradient(ellipse,rgba(180,120,10,0.07) 0%,transparent 70%);}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(200,80,20,0.12);border:1px solid rgba(200,80,20,0.3);
+  color:var(--fire);font-size:.66rem;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;padding:4px 13px;border-radius:18px;
+  margin-bottom:16px;font-family:'Inconsolata',monospace;
+}
+.hero h1{
+  font-family:'Cinzel',serif;font-size:3.2rem;font-weight:900;
+  line-height:1.06;margin-bottom:14px;
+  background:linear-gradient(120deg,#e8d8b8 0%,#e8521a 45%,#d4a017 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-desc{color:var(--text-muted);font-size:.87rem;max-width:580px;margin-bottom:26px;line-height:1.7;}
+.hero-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{
+  background:var(--surface3);border:1px solid var(--border);
+  color:var(--text-muted);font-size:.68rem;padding:3px 11px;
+  border-radius:18px;font-family:'Inconsolata',monospace;transition:all .2s;
+}
+.chip.on{color:var(--gold2);border-color:rgba(212,160,23,0.32);background:rgba(212,160,23,0.07);}
+
+/* ── SECTION HEADER ── */
+.shdr{display:flex;align-items:center;gap:15px;margin:50px 0 22px;scroll-margin-top:20px;}
+.sbadge{
+  width:46px;height:46px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Inconsolata',monospace;font-size:.8rem;font-weight:700;flex-shrink:0;
+}
+.sf{background:rgba(232,82,26,.14);color:var(--fire);border:1px solid rgba(232,82,26,.28);}
+.sg{background:rgba(212,160,23,.14);color:var(--gold2);border:1px solid rgba(212,160,23,.28);}
+.sc{background:rgba(192,40,42,.14);color:var(--crimson2);border:1px solid rgba(192,40,42,.28);}
+.st{background:rgba(26,128,128,.14);color:#3adada;border:1px solid rgba(26,128,128,.28);}
+.sv{background:rgba(90,122,74,.14);color:#8ad87a;border:1px solid rgba(90,122,74,.28);}
+.si{background:rgba(58,56,136,.14);color:#8888ff;border:1px solid rgba(58,56,136,.28);}
+.sr{background:rgba(176,64,96,.14);color:#e87090;border:1px solid rgba(176,64,96,.28);}
+.sinfo h2{font-family:'Cinzel',serif;font-size:1.55rem;font-weight:700;color:var(--text);line-height:1.2;}
+.sinfo p{font-size:.75rem;color:var(--text-muted);margin-top:3px;}
+
+/* ── BRANCH ── */
+.br{
+  border:1px solid var(--border);border-radius:var(--r);
+  overflow:hidden;margin-bottom:13px;
+  background:var(--surface);box-shadow:var(--shadow);
+  transition:border-color .22s;
+}
+.br:hover{border-color:rgba(180,100,20,0.32);}
+.br-hdr{
+  padding:14px 19px;display:flex;align-items:center;
+  justify-content:space-between;cursor:pointer;user-select:none;
+  transition:background .17s;
+}
+.br-hdr:hover{background:rgba(255,255,255,.022);}
+.br-left{display:flex;align-items:center;gap:11px;}
+.bic{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0;}
+.bif{background:rgba(232,82,26,.12);}
+.big{background:rgba(212,160,23,.12);}
+.bic2{background:rgba(192,40,42,.12);}
+.bit{background:rgba(26,128,128,.12);}
+.biv{background:rgba(90,122,74,.12);}
+.bii{background:rgba(58,56,136,.12);}
+.bir{background:rgba(176,64,96,.12);}
+.btitle{font-weight:700;font-size:.9rem;}
+.bchv{color:var(--text-muted);font-size:.72rem;transition:transform .28s;flex-shrink:0;}
+.br-hdr.op .bchv{transform:rotate(90deg);}
+.br-body{display:none;padding:0 19px 20px;border-top:1px solid var(--border);}
+.br-body.op{display:block;}
+
+/* ── GRIDS ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:15px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px;margin-top:15px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:13px;}
+
+/* ── CARDS ── */
+.card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px;}
+.card h4{font-size:.8rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.card p,.card li{font-size:.77rem;color:var(--text-muted);line-height:1.65;}
+.card ul{padding-left:15px;}
+.card.bf{border-left:3px solid var(--fire);}
+.card.bg{border-left:3px solid var(--gold2);}
+.card.bc{border-left:3px solid var(--crimson2);}
+.card.bt{border-left:3px solid #3adada;}
+.card.bv{border-left:3px solid #8ad87a;}
+.card.bi{border-left:3px solid #8888ff;}
+.card.br2{border-left:3px solid #e87090;}
+
+/* ── FACT CARD ── */
+.fc{background:var(--surface3);border:1px solid rgba(212,160,23,.22);border-radius:var(--r-sm);padding:13px 17px;margin:11px 0;position:relative;}
+.fc::before{content:'KEY FACT';position:absolute;top:-1px;right:11px;background:var(--gold);color:#000;font-size:.57rem;font-weight:800;letter-spacing:1px;padding:2px 7px;border-radius:0 0 5px 5px;font-family:'Inconsolata',monospace;}
+.fc.red::before{background:var(--crimson2);color:#fff;content:'KEY FACT';}
+.fc.fire::before{background:var(--fire);color:#fff;content:'KEY FACT';}
+.fc.gr::before{background:var(--forest);color:#fff;content:'KEY FACT';}
+.fcm{font-family:'Inconsolata',monospace;font-size:.92rem;font-weight:600;color:var(--gold2);padding:6px 0 3px;}
+.fcs{font-size:.73rem;color:var(--text-muted);margin-top:3px;}
+.fcd{font-size:.71rem;color:var(--text-muted);margin-top:9px;padding-top:9px;border-top:1px solid var(--border);font-family:'Inconsolata',monospace;line-height:1.75;}
+
+/* ── TRAP CARD ── */
+.trap{background:rgba(192,40,42,.07);border:1px solid rgba(192,40,42,.22);border-radius:var(--r-sm);padding:13px;margin:11px 0;}
+.trap h4{color:var(--crimson2);font-size:.8rem;margin-bottom:7px;}
+.trap p,.trap li{font-size:.76rem;color:#e89090;line-height:1.65;}
+.trap ul{padding-left:15px;}
+
+/* ── MNEMONIC ── */
+.mn{background:rgba(58,56,136,.08);border:1px solid rgba(58,56,136,.22);border-radius:var(--r-sm);padding:14px;margin:11px 0;}
+.mn h4{color:#9898ff;font-size:.8rem;margin-bottom:7px;}
+.mn-hl{font-family:'Cinzel',serif;font-size:1.1rem;font-weight:700;color:#9898ff;margin:5px 0;}
+.mn p{font-size:.78rem;color:#a0a0d8;line-height:1.65;}
+
+/* ── PYQ CARD ── */
+.pyq{background:rgba(212,160,23,.06);border:1px solid rgba(212,160,23,.22);border-radius:var(--r-sm);padding:14px;margin:11px 0;}
+.pyq-lbl{display:inline-block;background:var(--gold);color:#000;font-size:.59rem;font-weight:800;letter-spacing:1.5px;padding:2px 7px;border-radius:4px;margin-bottom:9px;font-family:'Inconsolata',monospace;}
+.pyq p{font-size:.78rem;color:var(--text-muted);line-height:1.7;}
+.pyq .ans{color:var(--gold2);font-weight:700;margin-top:7px;font-size:.78rem;}
+
+/* ── QUICK RECALL ── */
+.qr{background:linear-gradient(135deg,rgba(212,160,23,.08),rgba(212,160,23,.03));border:1px solid rgba(212,160,23,.24);border-radius:var(--r);padding:18px 21px;margin:15px 0;}
+.qr::before{content:'⚡ QUICK RECALL';display:block;font-size:.6rem;font-weight:800;letter-spacing:2px;color:var(--gold2);font-family:'Inconsolata',monospace;margin-bottom:11px;}
+.qr-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:9px;}
+.qr-i{background:var(--surface2);border-radius:7px;padding:9px 12px;font-size:.75rem;}
+.qr-i strong{color:var(--gold2);display:block;font-size:.68rem;margin-bottom:2px;}
+
+/* ── TABLE ── */
+.ct{width:100%;border-collapse:collapse;font-size:.75rem;margin-top:13px;}
+.ct th{background:var(--surface3);color:var(--gold2);padding:9px 12px;text-align:left;font-weight:700;font-size:.7rem;border-bottom:1px solid var(--border);font-family:'Inconsolata',monospace;}
+.ct td{padding:8px 12px;border-bottom:1px solid rgba(100,60,10,.12);color:var(--text-muted);vertical-align:top;}
+.ct tr:hover td{background:rgba(255,255,255,.016);}
+.ct td.hl{color:var(--gold2);font-weight:600;}
+.ct td.red{color:var(--crimson2);}
+.ct td.gr{color:#8ad87a;}
+.ct td.fire{color:var(--fire);}
+
+/* ── TAGS ── */
+.tag{display:inline-block;font-size:.61rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:3px;font-family:'Inconsolata',monospace;letter-spacing:.4px;}
+.tf{background:rgba(232,82,26,.14);color:var(--fire);}
+.tg{background:rgba(212,160,23,.14);color:var(--gold2);}
+.tc{background:rgba(192,40,42,.14);color:var(--crimson2);}
+.tt{background:rgba(26,128,128,.14);color:#3adada;}
+.tv{background:rgba(90,122,74,.14);color:#8ad87a;}
+.ti2{background:rgba(58,56,136,.14);color:#8888ff;}
+
+/* ── HIGHLIGHTS ── */
+.hl{background:rgba(212,160,23,.14);color:var(--gold2);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hlf{background:rgba(232,82,26,.14);color:var(--fire);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hlc{background:rgba(192,40,42,.14);color:var(--crimson2);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hlg{background:rgba(90,122,74,.14);color:#8ad87a;padding:1px 4px;border-radius:3px;font-weight:700;}
+
+/* ── DIVIDER ── */
+.div{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:34px 0;}
+
+/* ── Q&A ── */
+.qa{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);margin-bottom:11px;overflow:hidden;}
+.qa-q{padding:13px 17px;cursor:pointer;display:flex;align-items:flex-start;gap:11px;transition:background .17s;}
+.qa-q:hover{background:rgba(255,255,255,.022);}
+.qa-n{background:var(--gold);color:#000;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:4px;flex-shrink:0;margin-top:2px;font-family:'Inconsolata',monospace;}
+.qa-n.u{background:var(--indigo);color:#fff;}
+.qa-t{font-size:.8rem;color:var(--text);flex:1;line-height:1.6;}
+.qa-a{display:none;padding:13px 17px 15px 46px;font-size:.77rem;color:var(--text-muted);line-height:1.75;border-top:1px solid var(--border);}
+.qa-a.op{display:block;}
+.qa-a .ok{color:#6ade8a;font-weight:700;}
+.qa-a .ex{margin-top:6px;}
+
+/* ── NIGHT FRAMEWORK ── */
+.nb{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:20px 20px 20px 24px;position:relative;overflow:hidden;}
+.nb::before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;}
+.n60::before{background:var(--fire);}
+.n30::before{background:var(--gold2);}
+.n10::before{background:#5adc7a;}
+.nb-lbl{font-family:'Inconsolata',monospace;font-size:1.6rem;font-weight:700;line-height:1;margin-bottom:3px;}
+.n60 .nb-lbl{color:var(--fire);}
+.n30 .nb-lbl{color:var(--gold2);}
+.n10 .nb-lbl{color:#5adc7a;}
+.nb-sub{font-size:.66rem;color:var(--text-muted);font-family:'Inconsolata',monospace;margin-bottom:13px;}
+.nb-ul{list-style:none;}
+.nb-ul li{font-size:.75rem;color:var(--text-muted);padding:4px 0 4px 15px;position:relative;border-bottom:1px solid rgba(100,60,10,.08);}
+.nb-ul li:last-child{border:none;}
+.nb-ul li::before{content:'→';position:absolute;left:0;color:var(--gold2);font-size:.7rem;}
+
+/* ── FACT WALL ── */
+.fw{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin:20px 0;}
+.fw h3{font-family:'Cinzel',serif;font-size:1.2rem;color:var(--gold2);margin-bottom:17px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.fw-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(188px,1fr));gap:11px;}
+.fw-i{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:13px;text-align:center;transition:border-color .2s,transform .2s;}
+.fw-i:hover{border-color:rgba(180,100,20,.4);transform:translateY(-2px);}
+.fw-lbl{font-size:.6rem;color:var(--text-muted);font-family:'Inconsolata',monospace;margin-bottom:7px;letter-spacing:.5px;}
+.fw-val{font-family:'Inconsolata',monospace;font-size:.86rem;font-weight:600;color:var(--gold2);line-height:1.4;}
+.fw-note{font-size:.6rem;color:var(--text-muted);margin-top:5px;}
+
+/* ── TIMELINE ── */
+.tl{position:relative;padding-left:30px;margin:16px 0;}
+.tl::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--fire),var(--gold),var(--forest));}
+.tl-item{position:relative;margin-bottom:16px;}
+.tl-dot{position:absolute;left:-26px;top:4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--gold);background:var(--surface);}
+.tl-date{font-family:'Inconsolata',monospace;font-size:.72rem;font-weight:700;color:var(--gold2);margin-bottom:3px;}
+.tl-title{font-size:.82rem;font-weight:700;color:var(--text);margin-bottom:3px;}
+.tl-desc{font-size:.75rem;color:var(--text-muted);line-height:1.6;}
+
+/* ── LEADER CARD ── */
+.ldr{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:15px;position:relative;overflow:hidden;}
+.ldr::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
+.ldr-f::before{background:linear-gradient(90deg,var(--fire),var(--gold));}
+.ldr-c::before{background:linear-gradient(90deg,var(--crimson),var(--rose));}
+.ldr-t::before{background:linear-gradient(90deg,var(--teal),var(--forest));}
+.ldr-i::before{background:linear-gradient(90deg,var(--indigo),var(--teal));}
+.ldr h4{font-family:'Cinzel',serif;font-size:.88rem;font-weight:700;margin-bottom:8px;color:var(--gold2);}
+.ldr .reg{font-size:.68rem;font-family:'Inconsolata',monospace;color:var(--fire);margin-bottom:7px;display:block;}
+.ldr p,.ldr li{font-size:.75rem;color:var(--text-muted);line-height:1.6;}
+.ldr ul{padding-left:14px;}
+
+/* ── CAUSE-EFFECT CHAIN ── */
+.chain{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0;}
+.chain-node{background:var(--surface3);border:1px solid var(--border);border-radius:6px;padding:5px 10px;font-size:.74rem;color:var(--text-muted);white-space:nowrap;}
+.chain-arrow{color:var(--gold2);font-size:.85rem;flex-shrink:0;}
+
+/* ── SUB BRANCH ── */
+.sbr{border-left:2px solid var(--border);margin-left:13px;padding-left:15px;margin-top:13px;}
+.sbr-t{font-size:.77rem;font-weight:700;color:var(--gold2);margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+
+/* ── NL LIST ── */
+.nl{list-style:none;padding:0;}
+.nl li{display:flex;align-items:flex-start;gap:9px;padding:7px 0;border-bottom:1px solid rgba(100,60,10,.09);font-size:.77rem;color:var(--text-muted);}
+.nl li:last-child{border:none;}
+.nl-n{width:21px;height:21px;border-radius:50%;background:var(--surface3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:var(--gold2);flex-shrink:0;font-family:'Inconsolata',monospace;}
+
+/* ── SPOKE ── */
+.spoke{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin:13px 0;}
+.spoke-c{background:linear-gradient(135deg,rgba(200,80,20,.2),rgba(180,100,10,.12));border:2px solid rgba(180,80,20,.35);border-radius:50%;width:120px;height:120px;display:flex;align-items:center;justify-content:center;flex-direction:column;margin:0 auto 16px;box-shadow:var(--glow-fire);text-align:center;}
+.spoke-c h3{font-family:'Cinzel',serif;font-size:.82rem;color:var(--fire);line-height:1.3;}
+.spoke-ns{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+.spoke-n{background:var(--surface3);border:1px solid var(--border);border-radius:8px;padding:8px 13px;font-size:.74rem;color:var(--text-muted);text-align:center;transition:all .18s;}
+.spoke-n:hover{border-color:rgba(180,80,20,.32);color:var(--text);transform:scale(1.02);}
+
+/* ── HISTORIOGRAPHY COMPARE ── */
+.hist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:15px;}
+.hist-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:15px;border-top:3px solid;}
+.hist-card.hb{border-top-color:var(--crimson2);}
+.hist-card.hn{border-top-color:var(--gold2);}
+.hist-card.hm{border-top-color:#8ad87a;}
+.hist-card.hr{border-top-color:#8888ff;}
+.hist-card h4{font-family:'Cinzel',serif;font-size:.8rem;font-weight:700;margin-bottom:7px;}
+.hist-card.hb h4{color:var(--crimson2);}
+.hist-card.hn h4{color:var(--gold2);}
+.hist-card.hm h4{color:#8ad87a;}
+.hist-card.hr h4{color:#8888ff;}
+.hist-card p{font-size:.74rem;color:var(--text-muted);line-height:1.65;}
+.hist-card .who{font-size:.68rem;font-family:'Inconsolata',monospace;margin-top:7px;opacity:.7;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:920px){
+  #sb{transform:translateX(-100%);}
+  #sb.op{transform:translateX(0);}
+  #mob-btn{display:flex;}
+  #main{margin-left:0;padding:58px 17px 58px;}
+  .hero{padding:34px 20px 26px;}
+  .hero h1{font-size:2.1rem;}
+  .g2,.g3,.g4{grid-template-columns:1fr;}
+  .fw-g{grid-template-columns:1fr 1fr;}
+  .hist-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){.fw-g{grid-template-columns:1fr;}}
+@media print{
+  #sb,#mob-btn{display:none!important;}
+  #main{margin-left:0;padding:18px;}
+  .br-body{display:block!important;}
+  *{color-adjust:exact;-webkit-print-color-adjust:exact;}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.hero{animation:fadeUp .6s ease both;}
+.br{animation:fadeUp .38s ease both;}
+</style>
+</head>
+<body>
+
+<button id="mob-btn" onclick="document.getElementById('sb').classList.toggle('op')">☰</button>
+
+<!-- ═══ SIDEBAR ═══ -->
+<nav id="sb">
+  <div class="sb-head">
+    <div class="sb-logo">Revolt of 1857<br>Mind Map</div>
+    <div class="sb-sub">CDS 2 2026 · UPSC Modern History</div>
+  </div>
+  <div class="tg"><div class="tg-lbl">Core Topics</div>
+    <div class="ti" onclick="gTo('s1')"><span class="ic">📜</span> Introduction & Background</div>
+    <div class="ti" onclick="gTo('s2')"><span class="ic">⚡</span> Causes of the Revolt</div>
+    <div class="ti" onclick="gTo('s3')"><span class="ic">🗡️</span> Course of the Revolt</div>
+    <div class="ti" onclick="gTo('s4')"><span class="ic">👑</span> Leaders of the Revolt</div>
+    <div class="ti" onclick="gTo('s5')"><span class="ic">🗺️</span> Centers & Map</div>
+    <div class="ti" onclick="gTo('s6')"><span class="ic">🏴</span> Suppression</div>
+    <div class="ti" onclick="gTo('s7')"><span class="ic">❌</span> Causes of Failure</div>
+    <div class="ti" onclick="gTo('s8')"><span class="ic">📋</span> Consequences</div>
+    <div class="ti" onclick="gTo('s9')"><span class="ic">⚖️</span> Govt. of India Act 1858</div>
+  </div>
+  <div class="tg"><div class="tg-lbl">Analysis</div>
+    <div class="ti" onclick="gTo('s10')"><span class="ic">🏛️</span> Historiography & Debates</div>
+    <div class="ti" onclick="gTo('s11')"><span class="ic">🔗</span> Revolt & Nationalism</div>
+    <div class="ti" onclick="gTo('s12')"><span class="ic">🌐</span> Advanced Connections</div>
+    <div class="ti" onclick="gTo('s13')"><span class="ic">📋</span> Facts Master Sheet</div>
+    <div class="ti red" onclick="gTo('s14')"><span class="ic">⚠️</span> Traps & Pitfalls</div>
+    <div class="ti" onclick="gTo('s15')"><span class="ic">🏆</span> PYQ Analysis</div>
+    <div class="ti" onclick="gTo('s16')"><span class="ic">🧠</span> Mnemonics</div>
+    <div class="ti" onclick="gTo('s17')"><span class="ic">📅</span> Timeline Master</div>
+  </div>
+  <div class="tg"><div class="tg-lbl">Final Prep</div>
+    <div class="ti" onclick="gTo('s18')"><span class="ic">📝</span> 25 CDS Prelims Qs</div>
+    <div class="ti" onclick="gTo('s19')"><span class="ic">🏛️</span> 15 UPSC Conceptual Qs</div>
+    <div class="ti gr" onclick="gTo('s20')"><span class="ic">🌙</span> Night Before Framework</div>
+  </div>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<main id="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🔥 MODERN HISTORY · REVOLT OF 1857 · CDS 2 2026</div>
+  <h1>The Revolt<br>of 1857</h1>
+  <p class="hero-desc">Premium digital revision dashboard for CDS 2 2026, UPSC Civil Services & NDA. Complete analytical coverage — causes, course, leaders, consequences, historiography, PYQ traps, memory systems, and 40 practice questions with explanations.</p>
+  <div class="hero-chips">
+    <span class="chip on">🎯 CDS Objective</span>
+    <span class="chip on">🏛️ UPSC Analytical</span>
+    <span class="chip on">🗺️ Map-Based</span>
+    <span class="chip">⏱️ Chronology</span>
+    <span class="chip">👑 Leaders & Regions</span>
+    <span class="chip">📜 Historiography</span>
+    <span class="chip">⚖️ GoI Act 1858</span>
+    <span class="chip">🔥 Cause-Effect</span>
+    <span class="chip">🧠 PYQ Patterns</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S1: INTRODUCTION
+══════════════════════════════ -->
+<div class="shdr" id="s1">
+  <div class="sbadge sf">01</div>
+  <div class="sinfo"><h2>Introduction & Background</h2><p>Nature · Historiography · Nomenclature · Multiple interpretations</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bif">📜</div><span class="btitle">What Was the Revolt of 1857?</span><span class="tag tf">NATURE DEBATE</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <div class="g2">
+      <div class="card bf">
+        <h4>📌 The Event</h4>
+        <p>A massive armed uprising that began on <span class="hl">10 May 1857</span> at Meerut and spread across large parts of India against British colonial rule. It shook the foundations of the East India Company's power and led to the transfer of governance to the British Crown.</p>
+      </div>
+      <div class="card bg">
+        <h4>📛 What to Call It? — The Nomenclature Debate</h4>
+        <table class="ct" style="margin-top:0;">
+          <tr><th>Name</th><th>Proposed By</th><th>Argument</th></tr>
+          <tr><td class="hl">Sepoy Mutiny</td><td>British historians</td><td>Limited to discontented soldiers</td></tr>
+          <tr><td class="hl">First War of Independence</td><td>V.D. Savarkar (1909)</td><td>National struggle for freedom</td></tr>
+          <tr><td class="hl">Revolt / Rebellion</td><td>Most Indian historians</td><td>Broader than mutiny, not all-India</td></tr>
+          <tr><td class="hl">National Rising</td><td>Nationalist school</td><td>Wide participation</td></tr>
+        </table>
+      </div>
+    </div>
+    <!-- Historiography compare -->
+    <div class="sbr">
+      <div class="sbr-t">🏛️ Historiographical Schools — Comparison</div>
+      <div class="hist-grid">
+        <div class="hist-card hb">
+          <h4>British / Colonial View</h4>
+          <p>A mutiny of discontented soldiers. No nationalist character. Triggered by cartridge issue — not systemic. Suppressed the legitimate Crown's authority restored order.</p>
+          <div class="who">Seeley, Kaye & Malleson, Lawrence, Outram</div>
+        </div>
+        <div class="hist-card hn">
+          <h4>Nationalist View</h4>
+          <p>First organized effort at independence. Expression of national consciousness. Represented aspirations of various sections — peasants, zamindars, soldiers, rulers.</p>
+          <div class="who">V.D. Savarkar, B.G. Tilak, S.N. Sen (partial)</div>
+        </div>
+        <div class="hist-card hm">
+          <h4>Marxist/Socialist View</h4>
+          <p>Feudal revolt by displaced aristocracy & peasantry. Not a national uprising — no bourgeois leadership. Response to economic exploitation. Class conflict angle.</p>
+          <div class="who">R.P. Dutt, Eric Stokes (partly)</div>
+        </div>
+        <div class="hist-card hr">
+          <h4>Liberal / Academic View</h4>
+          <p>Neither purely military nor nationalist. Combination of factors — military grievances + political dispossession + economic distress. Regional, not national in scope.</p>
+          <div class="who">R.C. Majumdar, S.N. Sen, Eric Stokes</div>
+        </div>
+      </div>
+    </div>
+    <div class="fc">
+      <div class="fcm">R.C. Majumdar's View — "Neither First, Nor National, Nor War of Independence"</div>
+      <div class="fcs">The most academically cited assessment of the Revolt's limited scope</div>
+      <div class="fcd">
+        NOT First: Earlier revolts existed (Vellore 1806, Sanyasi rebellion, etc.)<br>
+        NOT National: Large parts of India (Punjab, Bengal, South India) unaffected<br>
+        NOT War of Independence: No unified leadership, ideology, or goal of independence
+      </div>
+    </div>
+    <div class="mn">
+      <h4>🧠 Historiography Memory — "BNMR"</h4>
+      <div class="mn-hl">B·N·M·R</div>
+      <p><strong>B</strong>ritish (Mutiny/Sepoy) · <strong>N</strong>ationalist (1st War/Savarkar) · <strong>M</strong>arxist (Feudal revolt/Dutt) · <strong>R</strong>epresentative (Regional rising/Majumdar)</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S2: CAUSES
+══════════════════════════════ -->
+<div class="shdr" id="s2">
+  <div class="sbadge sc">02</div>
+  <div class="sinfo"><h2>Causes of the Revolt</h2><p>Political · Economic · Military · Social-Religious · Immediate cause</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bic2">🏛️</div><span class="btitle">Political Causes</span><span class="tag tc">MOST TESTED</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <div class="g2">
+      <div class="card bc">
+        <h4 style="color:var(--crimson2)">📜 Doctrine of Lapse</h4>
+        <ul>
+          <li>Introduced by Lord <span class="hl">Dalhousie (1848–1856)</span></li>
+          <li>If a ruler died without a natural heir, the state would "lapse" to the British</li>
+          <li>Adopted sons could not inherit thrones</li>
+          <li>States annexed: <span class="hlc">Satara (1848), Jhansi (1853), Nagpur (1854)</span>, Sambalpur, Jaitpur, Baghat</li>
+          <li>Outraged ruling classes → key political cause</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4>🗺️ Annexation Policies</h4>
+        <ul>
+          <li><span class="hl">Awadh (Oudh) Annexation: 1856</span> — on grounds of "misgovernment"</li>
+          <li>Most significant — Nawab Wajid Ali Shah deposed</li>
+          <li>Outraged Awadhi aristocracy, soldiers (most sepoys from Awadh)</li>
+          <li><span class="hlc">Subsidiary Alliance</span> (Wellesley) — indirect control over states</li>
+          <li>Peshwa's pension withdrawn by Dalhousie → Nana Sahib's grievance</li>
+          <li>Mughal emperor degraded — heir excluded from Red Fort</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fc gold" style="border-left:3px solid var(--gold);">
+      <div class="fcm">Awadh (Oudh) — The Powder Keg</div>
+      <div class="fcd">
+        Annexed 1856 under Lord Canning (not Dalhousie — common exam trap!)<br>
+        Actually Dalhousie recommended, Canning executed annexation<br>
+        ~75,000 sepoys in Bengal Army from Awadh → directly affected their families' lands & pensions<br>
+        Begum Hazrat Mahal led the Awadh resistance during the revolt
+      </div>
+    </div>
+    <div class="trap">
+      <h4>⚠️ CDS Trap — Doctrine of Lapse</h4>
+      <ul>
+        <li>Awadh was NOT annexed under Doctrine of Lapse — it was on "misgovernment" grounds</li>
+        <li>Dalhousie was the architect; Canning executed the Awadh annexation</li>
+        <li>Adopted sons were denied succession rights under Doctrine of Lapse</li>
+        <li>Punjab was annexed (1849) after Second Anglo-Sikh War — NOT under Doctrine of Lapse</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic big">💰</div><span class="btitle">Economic Causes</span><span class="tag tg">ANALYTICAL</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="chain">
+      <div class="chain-node">British economic policies</div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-node">Drain of wealth</div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-node">Decline of artisans</div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-node">Peasant indebtedness</div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-node">Rural distress</div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-node">Mass resentment</div>
+    </div>
+    <div class="g3">
+      <div class="card bg">
+        <h4>🌾 Peasant Grievances</h4>
+        <ul>
+          <li>Heavy land revenue (Ryotwari, Mahalwari)</li>
+          <li>No land security — frequent evictions</li>
+          <li>Money-lenders exploited dispossessed peasants</li>
+          <li>Famines and no relief mechanisms</li>
+          <li>Commercialization of agriculture disrupted subsistence farming</li>
+        </ul>
+      </div>
+      <div class="card bf">
+        <h4>🏭 Decline of Artisans</h4>
+        <ul>
+          <li>Cheap British machine-made goods flooded markets</li>
+          <li>Indian weavers, craftsmen rendered unemployed</li>
+          <li>Dacca muslin industry destroyed</li>
+          <li>Loss of royal patronage after annexations</li>
+          <li>One-way free trade — no protection for Indian industries</li>
+        </ul>
+      </div>
+      <div class="card bc">
+        <h4>💸 Drain of Wealth</h4>
+        <ul>
+          <li>Dadabhai Naoroji coined "Drain of Wealth" theory</li>
+          <li>Revenue extracted and NOT reinvested in India</li>
+          <li>Home charges: salaries, pensions, interest paid to Britain</li>
+          <li>Military costs of conquest borne by India</li>
+          <li>Zamindars dispossessed — new revenue settlement system</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bic2">⚔️</div><span class="btitle">Military Causes</span><span class="tag tc">CDS HIGH YIELD</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="card bc">
+        <h4>😤 Grievances of Sepoys</h4>
+        <ul>
+          <li>Racial discrimination — Europeans dominated officer ranks</li>
+          <li>Pay: Indian sepoy paid far less than European soldiers</li>
+          <li>Promotion blocked — no Indian could rise above Subedar</li>
+          <li>Loss of foreign service allowance (Batta) — Bengal Army serving across India</li>
+          <li>Religious fears — forced to cross seas (kala pani)</li>
+          <li>Annexation of Awadh hit Bengal Army hardest (most from Awadh)</li>
+        </ul>
+      </div>
+      <div class="card bf">
+        <h4>📜 Critical Legislation</h4>
+        <ul>
+          <li><span class="hl">General Service Enlistment Act, 1856</span> — sepoys required to serve overseas if needed (religious violation)</li>
+          <li>Abolition of extra allowances for certain services</li>
+          <li>New enlistment conditions disadvantaged existing soldiers</li>
+          <li>Ratio: 1 British soldier to 5 Indian (pre-1857) → changed post revolt</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fc fire">
+      <div class="fcm">The Greased Cartridge Issue — The Spark</div>
+      <div class="fcs">Immediate cause — but fell on ground already soaked in grievances</div>
+      <div class="fcd">
+        New Enfield rifle introduced (1856) → cartridges had to be bitten off before loading<br>
+        Rumour: cartridges greased with COW FAT (offensive to Hindus) + PIG LARD (offensive to Muslims)<br>
+        First refused: 90th Regiment at Ambala (Feb 1857) → Mangal Pandey at Barrackpore (March 1857)<br>
+        British response: offered paper cartridges — but trust already broken
+      </div>
+    </div>
+    <div class="trap">
+      <h4>⚠️ Military Cause Traps</h4>
+      <ul>
+        <li>General Service Enlistment Act (1856) — issued by Lord Canning, NOT Dalhousie</li>
+        <li>Cartridge issue: greased with cow fat AND pig lard — offensive to BOTH Hindus AND Muslims</li>
+        <li>Mangal Pandey incident: March 1857 (Barrackpore) → BEFORE the main revolt (May 1857)</li>
+        <li>Bengal Army — NOT Bombay or Madras — had the worst grievances</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bit">🕌</div><span class="btitle">Social & Religious Causes + Immediate Trigger</span><span class="tag tt">COMPLETE</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="card bt">
+        <h4>⛪ Missionary Activities</h4>
+        <ul>
+          <li>Christian missionaries spreading rapidly across India</li>
+          <li>Government appeared to support conversion activities</li>
+          <li>Missionary schools — fear of religious instruction</li>
+          <li>Greased cartridge seen as conspiracy to make Hindus and Muslims eat beef/pork → convert to Christianity</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4>😰 Social Reform Fears</h4>
+        <ul>
+          <li><span class="hl">Widow Remarriage Act 1856</span> — seen as attack on Hindu customs</li>
+          <li>Abolition of Sati (1829) — social intervention resented</li>
+          <li>Female education seen as Westernization threat</li>
+          <li>Property rights of widows — altered traditions</li>
+          <li>Caste prejudices threatened by army service</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sbr">
+      <div class="sbr-t">💥 Immediate Cause — Trigger Chain</div>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-date">January 1857</div><div class="tl-title">Rumour spreads</div><div class="tl-desc">New Enfield cartridges said to be greased with animal fat. Sepoys at Dum Dum (near Calcutta) first hear the rumour.</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--fire);"></div><div class="tl-date">29 March 1857</div><div class="tl-title">🔥 Mangal Pandey Incident — Barrackpore</div><div class="tl-desc">34th Native Infantry sepoy. Attacked British officers Baugh and Hewson. Cried "Rise, brothers!" — executed 8 April 1857. His regiment disbanded.</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--crimson2);"></div><div class="tl-date">9 May 1857</div><div class="tl-title">Meerut Sepoys Arrested</div><div class="tl-desc">85 sepoys of 3rd Light Cavalry court-martialled for refusing cartridges. Sentenced to 10 years imprisonment. Public humiliation — shackled before comrades.</div></div>
+        <div class="tl-item"><div class="tl-dot" style="border-color:var(--crimson);background:var(--crimson2);"></div><div class="tl-date">10 May 1857</div><div class="tl-title">🔥 REVOLT BEGINS — Meerut</div><div class="tl-desc">Indian sepoys freed imprisoned comrades, killed British officers, marched to Delhi. Revolt had begun.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S3: COURSE
+══════════════════════════════ -->
+<div class="shdr" id="s3">
+  <div class="sbadge sc">03</div>
+  <div class="sinfo"><h2>Course of the Revolt</h2><p>Chronological centers · Leaders · Key battles · British response</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bic2">🗡️</div><span class="btitle">Major Revolt Centers — Chronological Flow</span><span class="tag tc">MAP-BASED</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <!-- SVG schematic India map with revolt centers -->
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:16px;margin-bottom:16px;">
+      <p style="font-size:.7rem;font-family:'Inconsolata',monospace;color:var(--gold2);margin-bottom:10px;">REVOLT CENTERS — INDIA SCHEMATIC (North-Central Focus)</p>
+      <svg viewBox="0 0 620 420" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:600px;display:block;margin:0 auto;">
+        <rect width="620" height="420" fill="#16100a" rx="8"/>
+        <!-- India rough outline -->
+        <path d="M120,30 L200,20 L300,25 L400,18 L500,30 L520,80 L540,140 L530,200 L510,250 L480,300 L440,340 L400,380 L360,400 L320,410 L280,405 L260,390 L240,360 L220,320 L200,280 L170,240 L140,200 L110,160 L100,110 L105,70 Z" stroke="rgba(180,100,20,0.4)" stroke-width="1.5" fill="rgba(30,20,10,0.5)"/>
+        <!-- River lines (Ganga) -->
+        <path d="M160,100 C200,115 260,120 320,125 C380,130 430,140 480,160" stroke="rgba(26,128,128,0.3)" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+        <!-- REVOLT CENTER DOTS & LABELS -->
+        <!-- Delhi -->
+        <circle cx="270" cy="115" r="9" fill="rgba(192,40,42,0.8)" stroke="#e03040" stroke-width="2"/>
+        <text x="285" y="112" fill="#e03040" font-size="10" font-family="monospace" font-weight="bold">Delhi</text>
+        <text x="285" y="124" fill="#8a7458" font-size="8" font-family="monospace">Bahadur Shah Zafar</text>
+        <!-- Meerut -->
+        <circle cx="298" cy="90" r="7" fill="rgba(232,82,26,0.8)" stroke="#e8521a" stroke-width="2"/>
+        <text x="310" y="87" fill="#e8521a" font-size="10" font-family="monospace" font-weight="bold">Meerut</text>
+        <text x="310" y="99" fill="#8a7458" font-size="8" font-family="monospace">START 10 May</text>
+        <!-- Kanpur/Cawnpore -->
+        <circle cx="340" cy="165" r="8" fill="rgba(176,64,96,0.8)" stroke="#e87090" stroke-width="2"/>
+        <text x="353" y="162" fill="#e87090" font-size="10" font-family="monospace" font-weight="bold">Kanpur</text>
+        <text x="353" y="174" fill="#8a7458" font-size="8" font-family="monospace">Nana Sahib</text>
+        <!-- Lucknow -->
+        <circle cx="370" cy="148" r="8" fill="rgba(212,160,23,0.8)" stroke="#d4a017" stroke-width="2"/>
+        <text x="383" y="145" fill="#d4a017" font-size="10" font-family="monospace" font-weight="bold">Lucknow</text>
+        <text x="383" y="157" fill="#8a7458" font-size="8" font-family="monospace">Begum Hazrat Mahal</text>
+        <!-- Jhansi -->
+        <circle cx="295" cy="180" r="8" fill="rgba(232,82,26,0.8)" stroke="#e8521a" stroke-width="2"/>
+        <text x="246" y="177" fill="#e8521a" font-size="10" font-family="monospace" font-weight="bold">Jhansi</text>
+        <text x="220" y="189" fill="#8a7458" font-size="8" font-family="monospace">Rani Lakshmibai</text>
+        <!-- Gwalior -->
+        <circle cx="280" cy="200" r="7" fill="rgba(90,122,74,0.8)" stroke="#8ad87a" stroke-width="2"/>
+        <text x="235" y="205" fill="#8ad87a" font-size="10" font-family="monospace" font-weight="bold">Gwalior</text>
+        <text x="222" y="217" fill="#8a7458" font-size="8" font-family="monospace">Tantia Tope+Lakshmi</text>
+        <!-- Bareilly -->
+        <circle cx="316" cy="108" r="6" fill="rgba(58,56,136,0.8)" stroke="#8888ff" stroke-width="2"/>
+        <text x="300" y="100" fill="#8888ff" font-size="9" font-family="monospace">Bareilly</text>
+        <text x="286" y="110" fill="#8a7458" font-size="7" font-family="monospace">Khan Bahadur Khan</text>
+        <!-- Bihar (Arrah) -->
+        <circle cx="430" cy="168" r="6" fill="rgba(26,128,128,0.8)" stroke="#3adada" stroke-width="2"/>
+        <text x="438" y="166" fill="#3adada" font-size="9" font-family="monospace">Bihar(Arrah)</text>
+        <text x="438" y="177" fill="#8a7458" font-size="7" font-family="monospace">Kunwar Singh</text>
+        <!-- Faizabad -->
+        <circle cx="393" cy="132" r="5" fill="rgba(180,120,40,0.8)" stroke="#d4a017" stroke-width="1.5"/>
+        <text x="398" y="130" fill="#d4a017" font-size="8" font-family="monospace">Faizabad</text>
+        <text x="398" y="140" fill="#8a7458" font-size="7" font-family="monospace">Maulvi Ahmadullah</text>
+        <!-- Barrackpore -->
+        <circle cx="478" cy="210" r="5" fill="rgba(212,160,23,0.6)" stroke="#d4a017" stroke-width="1.5"/>
+        <text x="482" y="208" fill="#d4a017" font-size="8" font-family="monospace">Barrackpore</text>
+        <text x="482" y="218" fill="#8a7458" font-size="7" font-family="monospace">Mangal Pandey</text>
+        <!-- Arrows: Meerut to Delhi -->
+        <line x1="295" y1="95" x2="278" y2="108" stroke="#e8521a" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <polygon points="278,108 282,100 274,102" fill="#e8521a"/>
+        <!-- Legend -->
+        <circle cx="30" cy="360" r="6" fill="rgba(192,40,42,0.8)" stroke="#e03040" stroke-width="1.5"/>
+        <text x="42" y="365" fill="#e8d8b8" font-size="8" font-family="monospace">Major Center</text>
+        <circle cx="30" cy="378" r="5" fill="rgba(90,122,74,0.6)" stroke="#8ad87a" stroke-width="1.5"/>
+        <text x="42" y="383" fill="#8a7458" font-size="8" font-family="monospace">Secondary Center</text>
+        <text x="10" y="405" fill="#8a7458" font-size="8" font-family="monospace">--- River (Ganga)</text>
+        <!-- Title -->
+        <text x="310" y="400" fill="rgba(180,80,20,0.5)" font-size="9" font-family="monospace" text-anchor="middle">REVOLT CENTERS — NORTH & CENTRAL INDIA</text>
+      </svg>
+    </div>
+
+    <table class="ct">
+      <thead><tr><th>Center</th><th>Leader(s)</th><th>Date</th><th>Key Event</th><th>British Officer</th><th>Outcome</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">Meerut</td><td>Sepoys (3rd Light Cavalry)</td><td class="fire">10 May 1857</td><td>Revolt begins; freed prisoners; marched to Delhi</td><td>Brig. Archdale Wilson</td><td>Sepoys moved to Delhi</td></tr>
+        <tr><td class="hl">Delhi</td><td>Bahadur Shah Zafar (symbolic)</td><td class="fire">11 May 1857</td><td>Proclaimed emperor; General Bakht Khan led forces</td><td>John Nicholson (died), Hope Grant</td><td>Captured Sep 1857; Zafar exiled</td></tr>
+        <tr><td class="hl">Lucknow</td><td>Begum Hazrat Mahal</td><td class="fire">June 1857</td><td>Resident Lawrence killed; long siege of Residency</td><td>Henry Lawrence (died), Havelock, Campbell</td><td>Residency falls March 1858</td></tr>
+        <tr><td class="hl">Kanpur</td><td>Nana Sahib, Tantia Tope</td><td class="fire">June 1857</td><td>Wheeler's entrenchment surrendered; massacre</td><td>Gen. Wheeler, Havelock</td><td>Recaptured Jul 1857</td></tr>
+        <tr><td class="hl">Jhansi</td><td>Rani Lakshmibai</td><td class="fire">June 1857</td><td>Defended Jhansi Fort heroically</td><td>Gen. Hugh Rose</td><td>Jhansi fell April 1858; Rani died Gwalior June 1858</td></tr>
+        <tr><td class="hl">Gwalior</td><td>Tantia Tope, Rani Lakshmibai</td><td class="fire">June 1858</td><td>Last major confrontation; Rani Lakshmibai's final battle</td><td>Gen. Hugh Rose</td><td>Rani Lakshmibai martyred 18 Jun 1858</td></tr>
+        <tr><td class="hl">Bareilly</td><td>Khan Bahadur Khan</td><td class="fire">May 1857</td><td>Declared himself Nawab of Bareilly</td><td>Colin Campbell</td><td>Suppressed 1858; Khan Bahadur Khan hanged</td></tr>
+        <tr><td class="hl">Bihar (Arrah)</td><td>Kunwar Singh</td><td class="fire">Aug 1857</td><td>80-year-old zamindar; brilliant guerrilla tactics</td><td>Vincent Eyre</td><td>Died April 1858 (wounds); revolt continued</td></tr>
+        <tr><td class="hl">Faizabad</td><td>Maulvi Ahmadullah Shah</td><td class="fire">June 1857</td><td>"Light of the Revolt" — religious leadership</td><td>—</td><td>Killed 1858 by Raja of Puwayan (reward claimed)</td></tr>
+        <tr><td class="hl">Barrackpore</td><td>Mangal Pandey</td><td class="fire">29 Mar 1857</td><td>First visible act of defiance; attacked officers</td><td>Sgt. Baugh, Lt. Hewson</td><td>Executed 8 April 1857; regiment disbanded</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S4: LEADERS
+══════════════════════════════ -->
+<div class="shdr" id="s4">
+  <div class="sbadge sg">04</div>
+  <div class="sinfo"><h2>Important Leaders of the Revolt</h2><p>Regions · Roles · Fates · Strategic significance</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic big">👑</div><span class="btitle">Leader Profiles — All Major Figures</span><span class="tag tg">LEADER-REGION MATRIX</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <div class="g3">
+      <div class="ldr ldr-f">
+        <h4>⚔️ Rani Lakshmibai</h4>
+        <span class="reg">📍 Jhansi (Central India)</span>
+        <ul>
+          <li>Queen of Jhansi, widowed; adopted son denied by Doctrine of Lapse</li>
+          <li>Defended Jhansi fort against Gen. Hugh Rose (April 1858)</li>
+          <li>Escaped to Gwalior; died fighting 18 June 1858</li>
+          <li>Aged ~23 at death</li>
+          <li><span class="hl">Hugh Rose called her "best and bravest" enemy</span></li>
+          <li>Symbol of courage — "Mardani" in folk memory</li>
+        </ul>
+      </div>
+      <div class="ldr ldr-c">
+        <h4>👴 Bahadur Shah Zafar</h4>
+        <span class="reg">📍 Delhi (Mughal Emperor)</span>
+        <ul>
+          <li>Last Mughal Emperor; 82 years old in 1857</li>
+          <li>Sepoys proclaimed him as their symbolic leader</li>
+          <li>General Bakht Khan — effective military commander</li>
+          <li>Delhi captured by British Sep 1857</li>
+          <li>Exiled to Rangoon (Burma); died 1862</li>
+          <li>Sons killed before his eyes by British officer Hodson</li>
+        </ul>
+      </div>
+      <div class="ldr ldr-t">
+        <h4>🏃 Tantia Tope</h4>
+        <span class="reg">📍 Kanpur / Central India</span>
+        <ul>
+          <li>Nana Sahib's loyal general; real name Ramchandra Panduranga</li>
+          <li>Military commander at Kanpur siege</li>
+          <li>Brilliant guerrilla warfare across Central India</li>
+          <li>Fought alongside Rani Lakshmibai at Gwalior</li>
+          <li>Evaded British for months; betrayed by friend Man Singh</li>
+          <li>Captured & hanged April 1859</li>
+        </ul>
+      </div>
+      <div class="ldr ldr-f">
+        <h4>💔 Nana Sahib</h4>
+        <span class="reg">📍 Kanpur (Bithoor)</span>
+        <ul>
+          <li>Adopted son of Peshwa Baji Rao II</li>
+          <li>Pension denied by Dalhousie → key grievance</li>
+          <li>Led revolt at Kanpur; Massacre of Sati Chaura Ghat</li>
+          <li>Wheeler's force surrendered under promise of safe passage — broken</li>
+          <li>Disappeared after defeat; never captured; fate unknown</li>
+        </ul>
+      </div>
+      <div class="ldr ldr-c">
+        <h4>👸 Begum Hazrat Mahal</h4>
+        <span class="reg">📍 Lucknow (Awadh)</span>
+        <ul>
+          <li>Wife of deposed Nawab Wajid Ali Shah of Awadh</li>
+          <li>Led resistance of Lucknow; proclaimed son Birjis Qadr as Nawab</li>
+          <li>Resisted British for months (June 1857 – March 1858)</li>
+          <li>Escaped to Nepal; died 1879 in exile</li>
+          <li>Her proclamations highlighted British economic exploitation</li>
+        </ul>
+      </div>
+      <div class="ldr ldr-t">
+        <h4>💪 Kunwar Singh</h4>
+        <span class="reg">📍 Jagdishpur, Bihar</span>
+        <ul>
+          <li>Octogenarian (80+) zamindar of Jagdishpur, Bihar</li>
+          <li>Led revolt with remarkable energy despite age</li>
+          <li>Cut off his own gangrenous arm and threw it in Ganga</li>
+          <li>Brilliant tactical maneuvering against British</li>
+          <li>Died 26 April 1858 from battle wounds</li>
+          <li>Considered hero of Bihar</li>
+        </ul>
+      </div>
+      <div class="ldr ldr-i">
+        <h4>🕌 Khan Bahadur Khan</h4>
+        <span class="reg">📍 Bareilly (Rohilkhand)</span>
+        <ul>
+          <li>Grandson of Hafiz Rahmat Khan (Rohilla chief)</li>
+          <li>Proclaimed Nawab of Bareilly</li>
+          <li>Organized resistance in Rohilkhand</li>
+          <li>Captured, tried, and hanged 1860</li>
+        </ul>
+      </div>
+      <div class="ldr ldr-f">
+        <h4>🔥 Mangal Pandey</h4>
+        <span class="reg">📍 Barrackpore (Bengal)</span>
+        <ul>
+          <li>34th Native Infantry, Bengal Army</li>
+          <li>First individual act of revolt — 29 March 1857</li>
+          <li>Attacked British officers under influence of bhang (debated)</li>
+          <li>Executed 8 April 1857 — before main revolt</li>
+          <li>His unit was disbanded — but revolt could not be stopped</li>
+          <li>Name became synonym for "mutineer" in British usage</li>
+        </ul>
+      </div>
+      <div class="ldr ldr-c">
+        <h4>✨ Maulvi Ahmadullah Shah</h4>
+        <span class="reg">📍 Faizabad / Lucknow</span>
+        <ul>
+          <li>"Light of the Revolt" / "Danka Shah" (Drum Saint)</li>
+          <li>Religious leader who preached jihad against British</li>
+          <li>Imprisoned before revolt; freed when it began</li>
+          <li>Led forces around Awadh and Rohilkhand</li>
+          <li>Killed 1858 — reward paid by Raja of Puwayan</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mn" style="margin-top:16px;">
+      <h4>🧠 Leader-Region Memory — "BKJNBLKTM"</h4>
+      <div class="mn-hl">B·K·J·N·B·L·K·T·M</div>
+      <p>
+        <strong>B</strong>ahadur Shah (Delhi) · <strong>K</strong>unwar Singh (Bihar) · <strong>J</strong>hansi Rani (Jhansi) ·
+        <strong>N</strong>ana Sahib (Kanpur) · <strong>B</strong>egum Hazrat Mahal (Lucknow) · <strong>L</strong>ight=Maulvi Ahmadullah (Faizabad) ·
+        <strong>K</strong>han Bahadur Khan (Bareilly) · <strong>T</strong>antia Tope (Central India) · <strong>M</strong>angal Pandey (Barrackpore)
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S5: CENTERS & MAP
+══════════════════════════════ -->
+<div class="shdr" id="s5">
+  <div class="sbadge st">05</div>
+  <div class="sinfo"><h2>Centers of Revolt & Map Practice</h2><p>Revolt zones · Unaffected areas · British strongholds · Regional clustering</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bit">🗺️</div><span class="btitle">Geographical Analysis — Areas Affected vs Unaffected</span><span class="tag tt">MAP PYQs</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="card bf">
+        <h4 style="color:var(--crimson2)">🔥 Areas WITH Revolt</h4>
+        <ul>
+          <li>Bengal Presidency: Barrackpore, Bihar</li>
+          <li>NW Provinces: Meerut, Delhi, Agra, Aligarh</li>
+          <li>Awadh: Lucknow, Faizabad, Kanpur</li>
+          <li>Rohilkhand: Bareilly, Moradabad</li>
+          <li>Central India: Jhansi, Gwalior, Saugor</li>
+          <li>Rajputana: limited pockets</li>
+        </ul>
+      </div>
+      <div class="card bv">
+        <h4 style="color:#8ad87a">✅ Areas UNAFFECTED by Revolt</h4>
+        <ul>
+          <li><span class="hl">Punjab</span> — recently conquered (1849); Sikhs helped British</li>
+          <li><span class="hl">Bengal (Calcutta)</span> — educated class not involved</li>
+          <li><span class="hl">Bombay & Madras Presidencies</span> — largely quiet</li>
+          <li><span class="hl">Rajputana princes</span> — sided with British</li>
+          <li><span class="hl">Hyderabad Nizam</span> — remained loyal</li>
+          <li><span class="hl">Kashmir</span> — not affected</li>
+          <li><span class="hl">South India</span> — mostly unaffected</li>
+        </ul>
+      </div>
+    </div>
+    <div class="qr" style="margin-top:14px;">
+      <div class="qr-g">
+        <div class="qr-i"><strong>Why Punjab didn't revolt</strong>Sikhs resented Marathas/Mughals more than British; recently defeated (1849)</div>
+        <div class="qr-i"><strong>Why Bengal elites didn't revolt</strong>English-educated; benefiting from British reforms; no sepoy connection</div>
+        <div class="qr-i"><strong>Why South India calm</strong>Company rule longer there; different social structure; no Bengal Army grievances</div>
+        <div class="qr-i"><strong>Princely states role</strong>Most sided with British; Hyderabad, Travancore, Kashmir — loyal</div>
+        <div class="qr-i"><strong>Gurkhas</strong>Nepal-origin; fought alongside British to suppress revolt</div>
+        <div class="qr-i"><strong>Sikh Regiments</strong>Helped British retake Delhi and other key centers</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S6: SUPPRESSION
+══════════════════════════════ -->
+<div class="shdr" id="s6">
+  <div class="sbadge sc">06</div>
+  <div class="sinfo"><h2>Suppression of the Revolt</h2><p>British military response · Technology · Divide-and-rule</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bic2">🏴</div><span class="btitle">How the British Crushed the Revolt</span><span class="tag tc">STRATEGY</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g3">
+      <div class="card bc">
+        <h4>⚡ British Military Advantages</h4>
+        <ul>
+          <li>Better weapons — Enfield rifle, artillery</li>
+          <li>Disciplined European troops rushed from Crimean war</li>
+          <li>Naval power — could move troops faster</li>
+          <li>Reinforcements from England: August-Sept 1857</li>
+          <li>Sikh and Gurkha regiments remained loyal</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4>🔌 Technology as Weapon</h4>
+        <ul>
+          <li><span class="hl">Telegraph</span>: British could coordinate across India instantly — Indians couldn't</li>
+          <li><span class="hl">Railways</span>: moved troops & supplies at unprecedented speed</li>
+          <li>Photography: propaganda and intelligence</li>
+          <li>Steamships: rapid reinforcement from Britain</li>
+          <li>These very technologies Dalhousie had introduced!</li>
+        </ul>
+      </div>
+      <div class="card bf">
+        <h4>🎭 Divide and Conquer</h4>
+        <ul>
+          <li>Used Sikh vs Muslim vs Hindu divisions</li>
+          <li>Promised rewards to informers</li>
+          <li>Played princely states against rebels</li>
+          <li>Proclaimed amnesty to demoralize fighters</li>
+          <li>Queen Victoria's Proclamation (Nov 1858): promised no annexations</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl" style="margin-top:14px;">
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--crimson2);"></div><div class="tl-date">June 1857</div><div class="tl-title">British Recapture Kanpur</div><div class="tl-desc">General Havelock marches from Allahabad; recaptures Kanpur in July 1857.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-date">September 1857</div><div class="tl-title">Fall of Delhi</div><div class="tl-desc">John Nicholson leads assault (dies in battle). Bahadur Shah Zafar surrenders, exiled. Sons killed by Hodson.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-date">November 1857</div><div class="tl-title">Lucknow Relief</div><div class="tl-desc">Sir Colin Campbell relieves Lucknow; final suppression March 1858.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--forest);"></div><div class="tl-date">June 1858</div><div class="tl-title">Rani Lakshmibai Martyred</div><div class="tl-desc">Battle of Gwalior — Rani Lakshmibai dies fighting; Gwalior recaptured.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--forest);background:var(--forest);"></div><div class="tl-date">April 1859</div><div class="tl-title">Tantia Tope Captured & Hanged</div><div class="tl-desc">Betrayed by Man Singh; last major rebel executed. Revolt effectively over.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S7: CAUSES OF FAILURE
+══════════════════════════════ -->
+<div class="shdr" id="s7">
+  <div class="sbadge si">07</div>
+  <div class="sinfo"><h2>Causes of Failure</h2><p>Lack of unity · Limited spread · Poor resources · No ideology</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bii">❌</div><span class="btitle">Why the Revolt Failed — Analytical Assessment</span><span class="tag ti2">UPSC ANALYTICAL</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g3">
+      <div class="card bi">
+        <h4 style="color:#8888ff">🤝 Lack of Unity</h4>
+        <ul>
+          <li>No single unified leadership</li>
+          <li>Hindu-Muslim tensions exploited by British</li>
+          <li>Regional leaders didn't coordinate strategy</li>
+          <li>Peasants, zamindars, and soldiers had different goals</li>
+          <li>No common ideology binding the revolt</li>
+        </ul>
+      </div>
+      <div class="card bc">
+        <h4 style="color:var(--crimson2)">🗺️ Limited Geographical Spread</h4>
+        <ul>
+          <li>Confined to North and Central India</li>
+          <li>Bengal, Bombay, Madras barely affected</li>
+          <li>Punjab and South India unaffected</li>
+          <li>Princely states (most) stayed loyal to British</li>
+          <li>British controlled key ports and coasts</li>
+        </ul>
+      </div>
+      <div class="card bf">
+        <h4 style="color:var(--fire)">⚔️ British Superiority</h4>
+        <ul>
+          <li>Better weapons and military training</li>
+          <li>Telegraph and railways — decisive advantage</li>
+          <li>Sikh and Gurkha support</li>
+          <li>Reinforcements from Britain and colonies</li>
+          <li>Access to resources and funding</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4>📚 No Modern Ideology</h4>
+        <ul>
+          <li>Leaders were feudal — wanted old order restored (Mughal/Peshwa)</li>
+          <li>No concept of Indian nationhood</li>
+          <li>Peasants only wanted economic relief</li>
+          <li>No positive vision for future governance</li>
+        </ul>
+      </div>
+      <div class="card bv">
+        <h4>💰 Resource Asymmetry</h4>
+        <ul>
+          <li>British had vast financial reserves</li>
+          <li>India's resources being drained anyway</li>
+          <li>Rebels had no access to foreign support</li>
+          <li>Poor logistics and supply chains</li>
+        </ul>
+      </div>
+      <div class="card br2">
+        <h4>👑 Feudal Nature of Leadership</h4>
+        <ul>
+          <li>Bahadur Shah Zafar — old, reluctant, ineffective</li>
+          <li>Nana Sahib — personal grievance, no strategic vision</li>
+          <li>No professional military commander</li>
+          <li>Bakht Khan: capable but no political authority</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S8: CONSEQUENCES
+══════════════════════════════ -->
+<div class="shdr" id="s8">
+  <div class="sbadge sg">08</div>
+  <div class="sinfo"><h2>Consequences of the Revolt</h2><p>Political · Administrative · Military · Social · Economic</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic big">📋</div><span class="btitle">Before & After 1857 — Complete Transformation</span><span class="tag tg">MOST TESTED</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <div class="g2">
+      <div class="card bg">
+        <h4>🏛️ Political Consequences</h4>
+        <ul>
+          <li><span class="hl">End of East India Company rule</span> — ended 1858</li>
+          <li>Government of India Act 1858 — Crown takes over</li>
+          <li>Queen Victoria becomes "Empress of India" (1876)</li>
+          <li>Queen's Proclamation (Nov 1858) — no further annexations</li>
+          <li>Doctrine of Lapse abandoned</li>
+          <li>Mughal dynasty abolished — Bahadur Shah exiled</li>
+          <li>Peshwa title abolished permanently</li>
+        </ul>
+      </div>
+      <div class="card bc">
+        <h4>⚔️ Military Reorganization</h4>
+        <ul>
+          <li>Ratio of Indian to British troops changed: <span class="hlc">1:2 in Bengal Army</span></li>
+          <li>Artillery kept exclusively in British hands</li>
+          <li>Recruitment from "martial races": Gurkhas, Sikhs, Pathans preferred</li>
+          <li>Bengal Army reorganized; many units disbanded</li>
+          <li>Divide on religious/ethnic lines in army composition</li>
+          <li>Indian officers could not command Europeans</li>
+        </ul>
+      </div>
+      <div class="card bt">
+        <h4>📐 Administrative Changes</h4>
+        <ul>
+          <li>Secretary of State for India created (London)</li>
+          <li>Governor-General becomes <span class="hl">Viceroy</span></li>
+          <li>India Council (15 members) in London to advise</li>
+          <li>Centralization of administration</li>
+          <li>More direct British supervision of affairs</li>
+          <li>Systematic census, surveys, administrative records</li>
+        </ul>
+      </div>
+      <div class="card bv">
+        <h4>🌱 Social Consequences</h4>
+        <ul>
+          <li>British became more suspicious of Indians</li>
+          <li>Racial segregation increased in civil society</li>
+          <li>Divide-and-rule more systematic</li>
+          <li>Hindu-Muslim divide consciously widened</li>
+          <li>Policy of non-interference in social customs</li>
+          <li>Education: balanced English/Indian approach</li>
+        </ul>
+      </div>
+    </div>
+    <div class="chain" style="margin-top:14px;">
+      <div class="chain-node">1857 Revolt</div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-node">GoI Act 1858</div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-node">Crown Rule</div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-node">Viceroy System</div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-node">Indian Councils Act 1861</div>
+      <span class="chain-arrow">→</span>
+      <div class="chain-node">Rise of Nationalism</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S9: GOI ACT 1858
+══════════════════════════════ -->
+<div class="shdr" id="s9">
+  <div class="sbadge sg">09</div>
+  <div class="sinfo"><h2>Government of India Act 1858</h2><p>Features · Crown rule · Secretary of State · Viceroy · Constitutional evolution</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic big">⚖️</div><span class="btitle">GoI Act 1858 — The Great Constitutional Shift</span><span class="tag tg">POLITY-HISTORY</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g3">
+      <div class="card bg">
+        <h4>📜 Key Features</h4>
+        <ul>
+          <li>Abolished EIC; India governed by Crown</li>
+          <li>Created <span class="hl">Secretary of State for India</span> (in London Cabinet)</li>
+          <li>Secretary assisted by Council of India (15 members)</li>
+          <li>Governor-General re-designated as <span class="hl">Viceroy</span></li>
+          <li>First Viceroy: <span class="hl">Lord Canning</span></li>
+          <li>Board of Control (1784 Act) abolished</li>
+          <li>Court of Directors abolished</li>
+        </ul>
+      </div>
+      <div class="card bf">
+        <h4>🔄 Before vs After</h4>
+        <table class="ct" style="margin-top:0;">
+          <tr><th>Before 1858</th><th>After 1858</th></tr>
+          <tr><td>East India Company</td><td class="hl">British Crown</td></tr>
+          <tr><td>Board of Control</td><td class="hl">Secretary of State</td></tr>
+          <tr><td>Court of Directors</td><td class="hl">India Council</td></tr>
+          <tr><td>Governor-General</td><td class="hl">Viceroy</td></tr>
+          <tr><td>Dual Control</td><td class="hl">Centralized Crown</td></tr>
+        </table>
+      </div>
+      <div class="card bt">
+        <h4>👑 Queen's Proclamation — Nov 1858</h4>
+        <ul>
+          <li>Issued by Queen Victoria</li>
+          <li>No further annexations of Indian states</li>
+          <li>Equal treatment regardless of race/religion</li>
+          <li>Non-interference in Indian customs</li>
+          <li>Existing treaties respected</li>
+          <li>Called "Magna Carta of India" — <span class="hlc">though largely unfulfilled</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="tl" style="margin-top:14px;">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">1773</div><div class="tl-title">Regulating Act</div><div class="tl-desc">First British intervention in EIC affairs; Governor-General system created.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">1784</div><div class="tl-title">Pitt's India Act</div><div class="tl-desc">Board of Control created; dual government.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">1853</div><div class="tl-title">Charter Act 1853</div><div class="tl-desc">Last Charter Act; EIC lost governing powers; civil services opened.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--fire);background:var(--fire);"></div><div class="tl-date">1858</div><div class="tl-title">🔥 GoI Act 1858</div><div class="tl-desc">EIC abolished; Crown rule; Secretary of State; Viceroy; First Viceroy = Lord Canning.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">1861</div><div class="tl-title">Indian Councils Act 1861</div><div class="tl-desc">Legislative councils expanded; nominated Indians allowed; first step toward representation.</div></div>
+    </div>
+    <div class="trap">
+      <h4>⚠️ CDS Trap — GoI Act 1858</h4>
+      <ul>
+        <li>First Viceroy was Lord Canning — NOT Dalhousie (Dalhousie ended his term before the act)</li>
+        <li>Secretary of State = London Cabinet minister; NOT an Indian post</li>
+        <li>Council of India = 15 members assisting Secretary of State</li>
+        <li>GoI Act 1858 ≠ Indian Independence Act 1947</li>
+        <li>Queen's Proclamation was symbolic — policy of racial equality NOT implemented</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════════════════════════
+     S10: HISTORIOGRAPHY
+══════════════════════════════ -->
+<div class="shdr" id="s10">
+  <div class="sbadge si">10</div>
+  <div class="sinfo"><h2>Historiography & Debates</h2><p>Savarkar · Majumdar · S.N. Sen · Eric Stokes · Marxist · British views</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bii">🏛️</div><span class="btitle">Historian Views — Complete Matrix</span><span class="tag ti2">UPSC ANALYTICAL</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <table class="ct">
+      <thead><tr><th>Historian</th><th>School</th><th>View on 1857</th><th>Key Work</th><th>Exam Relevance</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">V.D. Savarkar</td><td>Nationalist</td><td>"First War of Indian Independence" — national uprising</td><td>The Indian War of Independence (1909)</td><td class="gold">⭐ Most tested</td></tr>
+        <tr><td class="hl">R.C. Majumdar</td><td>Liberal/Academic</td><td>NOT first, NOT national, NOT war of independence</td><td>The Sepoy Mutiny & Revolt (1957)</td><td class="gold">⭐ Very high</td></tr>
+        <tr><td class="hl">S.N. Sen</td><td>Moderate nationalist</td><td>What began as mutiny ended as war of independence; popular participation</td><td>Eighteen Fifty-Seven (1957)</td><td class="gold">⭐ High</td></tr>
+        <tr><td class="hl">Eric Stokes</td><td>British academic</td><td>Rural/peasant revolt; economic factors key; regional, not national</td><td>The Peasant Armed (1986)</td><td>Moderate</td></tr>
+        <tr><td class="hl">Karl Marx</td><td>Marxist</td><td>Wrote about revolt sympathetically; observed British barbarism; popular uprising</td><td>Articles in NY Tribune (1857–58)</td><td>Moderate</td></tr>
+        <tr><td class="hl">T.R. Holmes</td><td>British colonial</td><td>Sepoy mutiny; justified British suppression; law & order restored</td><td>History of Indian Mutiny (1883)</td><td>Low</td></tr>
+        <tr><td class="hl">John Kaye & Malleson</td><td>British colonial</td><td>Military mutiny; no popular/national character</td><td>History of the Indian Mutiny (1888)</td><td>Low</td></tr>
+        <tr><td class="hl">Surendra Nath Sen</td><td>Congress/Gov. commissioned</td><td>Official centenary history; acknowledged popular participation but not pan-Indian</td><td>Commissioned by Govt. of India 1957</td><td class="gold">⭐ High</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S11: REVOLT & NATIONALISM
+══════════════════════════════ -->
+<div class="shdr" id="s11">
+  <div class="sbadge sv">11</div>
+  <div class="sinfo"><h2>Revolt of 1857 & Indian Nationalism</h2><p>Cause → consequence → nationalism chain</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic biv">🔗</div><span class="btitle">How 1857 Shaped Indian Nationalism</span><span class="tag tv">CONCEPTUAL LINK</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="spoke">
+      <div class="spoke-c"><h3>REVOLT<br>OF 1857</h3></div>
+      <div class="spoke-ns">
+        <div class="spoke-n">📜 INC Founded 1885<br><span style="font-size:.63rem;color:var(--text-muted)">Political consciousness arose</span></div>
+        <div class="spoke-n">⚖️ GoI Act 1858<br><span style="font-size:.63rem;color:var(--text-muted)">Constitutional evolution</span></div>
+        <div class="spoke-n">🎓 Educated Middle Class<br><span style="font-size:.63rem;color:var(--text-muted)">New political leadership</span></div>
+        <div class="spoke-n">🗺️ Administrative Unity<br><span style="font-size:.63rem;color:var(--text-muted)">Centralization created India</span></div>
+        <div class="spoke-n">📡 Railways/Telegraph<br><span style="font-size:.63rem;color:var(--text-muted)">National communication</span></div>
+        <div class="spoke-n">🌹 Savarkar's Book 1909<br><span style="font-size:.63rem;color:var(--text-muted)">1857 as nationalist symbol</span></div>
+        <div class="spoke-n">💔 Racial Humiliation<br><span style="font-size:.63rem;color:var(--text-muted)">Motivated freedom struggle</span></div>
+        <div class="spoke-n">🔥 Martyrs' Memory<br><span style="font-size:.63rem;color:var(--text-muted)">Lakshmibai as cultural icon</span></div>
+      </div>
+    </div>
+    <div class="g2" style="margin-top:14px;">
+      <div class="card bg">
+        <h4>Legacy of 1857 — What Changed</h4>
+        <ul>
+          <li>Indians realized armed resistance alone insufficient</li>
+          <li>Need for political organization → Indian National Congress (1885)</li>
+          <li>British had to reckon with Indian opinion more carefully</li>
+          <li>Railway/telegraph network unified India economically → national market</li>
+          <li>GoI Act 1858 → later reforms (1861, 1892, 1909, 1919...) all linked</li>
+        </ul>
+      </div>
+      <div class="card bf">
+        <h4>What Didn't Change (British Perspective)</h4>
+        <ul>
+          <li>Economic exploitation intensified</li>
+          <li>Racial discrimination in law and practice</li>
+          <li>Indian representation remained negligible until 1909</li>
+          <li>Queen's proclamation promises largely hollow</li>
+          <li>Military still under complete British control</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S12: ADVANCED CONNECTIONS
+══════════════════════════════ -->
+<div class="shdr" id="s12">
+  <div class="sbadge sv">12</div>
+  <div class="sinfo"><h2>Advanced Conceptual Connections</h2><p>Colonialism · Peasant movements · Tribal uprisings · Military history</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic biv">🌐</div><span class="btitle">1857 in Wider Context — Interdisciplinary Links</span><span class="tag tv">ESSAY THEMES</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g3">
+      <div class="card bv">
+        <h4>🌾 Connection: Peasant Movements</h4>
+        <ul>
+          <li>Indigo Revolt (1859–60) — immediately after 1857</li>
+          <li>Deccan Riots (1875) — peasant economic grievances</li>
+          <li>Santhal Rebellion (1855–56) — just before 1857</li>
+          <li>All share: economic exploitation by colonial state</li>
+          <li>1857 created space for wider agrarian discontent</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4>🏹 Tribal Uprisings (Parallel)</h4>
+        <ul>
+          <li>Santhals (1855): Santhali uprising against zamindars/British</li>
+          <li>Mundas (Birsa Munda 1899): Ulgulan ("Great Tumult")</li>
+          <li>Bhils, Kols, Ramosis — all resisted colonial control</li>
+          <li>Pattern: land alienation + economic distress + cultural threat</li>
+          <li>UPSC: often connects 1857 with tribal resistance thread</li>
+        </ul>
+      </div>
+      <div class="card bf">
+        <h4>🪖 Military History Connection</h4>
+        <ul>
+          <li>Post-1857 Indian Army: Indianization began much later (1918+)</li>
+          <li>INA (1942) — Subhas Chandra Bose's army — spirit of 1857?</li>
+          <li>Royal Indian Navy Mutiny (1946) — direct echo</li>
+          <li>Post-independence: Indian Army — direct descendant of sepoy tradition</li>
+          <li>CDS angle: military loyalty, oath, morale — lessons from 1857</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════════════════════════
+     S13: FACTS MASTER SHEET
+══════════════════════════════ -->
+<div class="shdr" id="s13">
+  <div class="sbadge sg">13</div>
+  <div class="sinfo"><h2>Important Facts Master Sheet</h2><p>One-shot revision wall · Leader-location · Dates · Acts</p></div>
+</div>
+
+<div class="fw">
+  <h3>⚡ Revolt of 1857 — Complete Quick Reference</h3>
+  <div class="fw-g">
+    <div class="fw-i"><div class="fw-lbl">REVOLT START DATE</div><div class="fw-val">10 May 1857</div><div class="fw-note">Meerut — 3rd Light Cavalry</div></div>
+    <div class="fw-i"><div class="fw-lbl">MANGAL PANDEY DATE</div><div class="fw-val">29 March 1857</div><div class="fw-note">Barrackpore; executed 8 April</div></div>
+    <div class="fw-i"><div class="fw-lbl">DELHI FALLS</div><div class="fw-val">September 1857</div><div class="fw-note">John Nicholson; Zafar exiled</div></div>
+    <div class="fw-i"><div class="fw-lbl">RANI'S MARTYRDOM</div><div class="fw-val">18 June 1858</div><div class="fw-note">Gwalior; age ~23</div></div>
+    <div class="fw-i"><div class="fw-lbl">DOCTRINE OF LAPSE</div><div class="fw-val">Lord Dalhousie</div><div class="fw-note">1848–1856; Satara, Jhansi, Nagpur</div></div>
+    <div class="fw-i"><div class="fw-lbl">AWADH ANNEXED</div><div class="fw-val">1856</div><div class="fw-note">On grounds of misgovernment</div></div>
+    <div class="fw-i"><div class="fw-lbl">FIRST VICEROY</div><div class="fw-val">Lord Canning</div><div class="fw-note">After GoI Act 1858</div></div>
+    <div class="fw-i"><div class="fw-lbl">GOI ACT YEAR</div><div class="fw-val">1858</div><div class="fw-note">EIC abolished; Crown rule</div></div>
+    <div class="fw-i"><div class="fw-lbl">QUEEN'S PROCLAMATION</div><div class="fw-val">November 1858</div><div class="fw-note">No further annexations promised</div></div>
+    <div class="fw-i"><div class="fw-lbl">SAVARKAR'S BOOK</div><div class="fw-val">1909</div><div class="fw-note">"First War of Independence"</div></div>
+    <div class="fw-i"><div class="fw-lbl">JHANSI FALLS</div><div class="fw-val">April 1858</div><div class="fw-note">Gen. Hugh Rose captures Jhansi</div></div>
+    <div class="fw-i"><div class="fw-lbl">TANTIA TOPE HANGED</div><div class="fw-val">April 1859</div><div class="fw-note">Betrayed by Man Singh</div></div>
+    <div class="fw-i"><div class="fw-lbl">KUNWAR SINGH DIES</div><div class="fw-val">26 April 1858</div><div class="fw-note">Bihar leader; 80+ years</div></div>
+    <div class="fw-i"><div class="fw-lbl">ZAFAR EXILED TO</div><div class="fw-val">Rangoon (Burma)</div><div class="fw-note">Died 1862; "Na thha kuch to Khuda tha"</div></div>
+    <div class="fw-i"><div class="fw-lbl">GENERAL SERVICE ACT</div><div class="fw-val">1856</div><div class="fw-note">Compulsory overseas service</div></div>
+    <div class="fw-i"><div class="fw-lbl">MAJUMDAR'S VERDICT</div><div class="fw-val">NOT First/National/War</div><div class="fw-note">Three-pronged rejection</div></div>
+    <div class="fw-i"><div class="fw-lbl">NANA SAHIB'S FATE</div><div class="fw-val">Unknown (escaped)</div><div class="fw-note">Never captured; may have died in Nepal</div></div>
+    <div class="fw-i"><div class="fw-lbl">BAKHT KHAN</div><div class="fw-val">Delhi Military Commander</div><div class="fw-note">Effective soldier under Zafar</div></div>
+    <div class="fw-i"><div class="fw-lbl">WIDOW REMARRIAGE ACT</div><div class="fw-val">1856</div><div class="fw-note">Seen as social interference</div></div>
+    <div class="fw-i"><div class="fw-lbl">SANTHAL REBELLION</div><div class="fw-val">1855–56</div><div class="fw-note">Just BEFORE 1857 revolt</div></div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════════════════════════
+     S14: TRAPS
+══════════════════════════════ -->
+<div class="shdr" id="s14">
+  <div class="sbadge sc">14</div>
+  <div class="sinfo"><h2>Common CDS/UPSC Traps & Pitfalls</h2><p>Leader-region confusion · Date errors · Acts · Historiography traps</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bic2">🚨</div><span class="btitle">Top Exam Traps — Guard These Marks!</span><span class="tag tc">CRITICAL</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="trap" style="margin:0;">
+        <h4>Trap 1: Doctrine of Lapse vs Awadh</h4>
+        <ul>
+          <li>Awadh was NOT annexed under Doctrine of Lapse — on grounds of "misgovernment"</li>
+          <li>States annexed under Doctrine of Lapse: Satara, Jaitpur, Sambhalpur, Bhagat, Udaipur, Jhansi, Nagpur</li>
+          <li>Punjab was annexed after war — NOT under Doctrine of Lapse</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 2: Leader-Region Mismatches</h4>
+        <ul>
+          <li>Kunwar Singh = Bihar (Jagdishpur) — NOT UP or MP</li>
+          <li>Khan Bahadur Khan = Bareilly (Rohilkhand) — NOT Delhi</li>
+          <li>Maulvi Ahmadullah = Faizabad/Lucknow — NOT Delhi</li>
+          <li>Bakht Khan = military commander at Delhi (NOT Nana Sahib)</li>
+          <li>Nana Sahib = Kanpur/Bithoor — NOT Lucknow</li>
+          <li>Begum Hazrat Mahal = Lucknow — NOT Kanpur</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 3: Chronology Errors</h4>
+        <ul>
+          <li>Mangal Pandey: 29 March 1857 — BEFORE main revolt (10 May)</li>
+          <li>Revolt started at Meerut (10 May) NOT Barrackpore</li>
+          <li>Delhi captured: September 1857 (4 months after revolt start)</li>
+          <li>Rani Lakshmibai died: June 1858 — not 1857!</li>
+          <li>GoI Act: 1858 (NOT 1857)</li>
+          <li>Awadh annexation: 1856 (NOT 1857); Doctrine of Lapse ends: 1856</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 4: Historiography Confusion</h4>
+        <ul>
+          <li>Savarkar called it "First War" in 1909 — NOT 1857 itself</li>
+          <li>R.C. Majumdar REJECTED nationalist interpretation</li>
+          <li>S.N. Sen was MORE positive than Majumdar about popular nature</li>
+          <li>S.N. Sen's work was commissioned by Government of India (1957 centenary)</li>
+          <li>Eric Stokes emphasizes RURAL/PEASANT angle — not nationalist</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 5: Military Reorganization Post-1857</h4>
+        <ul>
+          <li>British increased ratio of European soldiers — NOT Indian</li>
+          <li>Artillery completely in British hands post-1857</li>
+          <li>"Martial races" theory: Gurkhas, Sikhs, Pathans — NOT Bengalis, Marathas preferred</li>
+          <li>Bengal Army was MOST reorganized — it had started the revolt</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 6: GoI Act 1858</h4>
+        <ul>
+          <li>First Viceroy = Lord Canning (NOT Dalhousie — he left in 1856)</li>
+          <li>Secretary of State = London-based; 15-member India Council assists</li>
+          <li>Board of Control AND Court of Directors BOTH abolished by GoI Act 1858</li>
+          <li>Empress title came in 1876 (Royal Titles Act) — NOT in GoI Act 1858</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S15: PYQ ANALYSIS
+══════════════════════════════ -->
+<div class="shdr" id="s15">
+  <div class="sbadge sg">15</div>
+  <div class="sinfo"><h2>PYQ Analysis — Pattern Recognition</h2><p>Frequent themes · Elimination tricks · Fast-answer strategies</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic big">🏆</div><span class="btitle">High-Frequency PYQ Topics & Patterns</span><span class="tag tg">EXAM STRATEGY</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="card bg">
+        <h4>🎯 Most Repeated CDS Topics</h4>
+        <ol class="nl">
+          <li><div class="nl-n">1</div><span>Immediate cause (greased cartridge) vs deep causes distinction</span></li>
+          <li><div class="nl-n">2</div><span>Leader → Region matching (Rani=Jhansi, Kunwar=Bihar, etc.)</span></li>
+          <li><div class="nl-n">3</div><span>Doctrine of Lapse — which states annexed, who introduced</span></li>
+          <li><div class="nl-n">4</div><span>GoI Act 1858 — features and first Viceroy</span></li>
+          <li><div class="nl-n">5</div><span>Historiography — Savarkar, Majumdar, S.N. Sen views</span></li>
+          <li><div class="nl-n">6</div><span>Chronology of revolt suppression center-by-center</span></li>
+          <li><div class="nl-n">7</div><span>Causes of failure — what didn't revolt in India</span></li>
+          <li><div class="nl-n">8</div><span>Military reorganization post-1857</span></li>
+        </ol>
+      </div>
+      <div class="card bc">
+        <h4>🏛️ UPSC Analytical Patterns</h4>
+        <ol class="nl">
+          <li><div class="nl-n">1</div><span>Was 1857 a nationalist uprising? Compare views analytically</span></li>
+          <li><div class="nl-n">2</div><span>Role of economic causes in fanning the revolt</span></li>
+          <li><div class="nl-n">3</div><span>How British administrative changes post-1857 shaped India</span></li>
+          <li><div class="nl-n">4</div><span>1857 as turning point in British India relationship</span></li>
+          <li><div class="nl-n">5</div><span>Role of women in 1857 — Rani Lakshmibai, Begum Hazrat Mahal</span></li>
+          <li><div class="nl-n">6</div><span>1857 and continuity with freedom movement</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="pyq">
+      <div class="pyq-lbl">FAST ELIMINATION TRICK</div>
+      <p><strong>Match the following (Leader-Region):</strong> If any option puts Kunwar Singh outside Bihar or Nana Sahib outside Kanpur → eliminate immediately.<br>
+      <strong>Historiography:</strong> R.C. Majumdar = AGAINST nationalist interpretation; Savarkar = FOR "First War" label → exact opposites.<br>
+      <strong>Causes:</strong> If question asks "immediate cause" → always cartridge issue. If "most important cause" → look for Awadh annexation or economic in deeper analysis questions.<br>
+      <strong>Doctrine of Lapse:</strong> Check if Awadh is listed → it was NOT under Doctrine of Lapse — eliminate any option listing it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S16: MNEMONICS
+══════════════════════════════ -->
+<div class="shdr" id="s16">
+  <div class="sbadge si">16</div>
+  <div class="sinfo"><h2>Memory Systems & Mnemonics</h2><p>Causes · Leaders · Timeline · Acts · British historians</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bii">🧠</div><span class="btitle">Complete Mnemonic System for 1857</span><span class="tag ti2">MEMORY</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="mn" style="margin:0;">
+        <h4>🔥 Causes of Revolt — "PEMS-IG"</h4>
+        <div class="mn-hl">P·E·M·S·I·G</div>
+        <p><strong>P</strong>olitical (Doctrine of Lapse, Awadh) · <strong>E</strong>conomic (drain, artisans) · <strong>M</strong>ilitary (cartridge, promotion) · <strong>S</strong>ocial/Religious (missions, reforms) · <strong>I</strong>mmediate (greased cartridge) · <strong>G</strong>rievance (general)</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>🗺️ States Under Doctrine of Lapse — "SUNS JNB"</h4>
+        <div class="mn-hl">S·U·N·S · J·N·B</div>
+        <p><strong>S</strong>atara · <strong>U</strong>daipur · <strong>N</strong>agpur · <strong>S</strong>ambalpur · <strong>J</strong>hansi · <strong>J</strong>aitpur · <strong>N</strong>agpur · <strong>B</strong>hagat</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>👑 Leader-Region — "BKJNBLKTM"</h4>
+        <div class="mn-hl">"Big Kings Jump Nervously Before Lions Kill The Mongoose"</div>
+        <p><strong>B</strong>ahadur Shah (Delhi) · <strong>K</strong>unwar Singh (Bihar) · <strong>J</strong>hansi Rani · <strong>N</strong>ana Sahib (Kanpur) · <strong>B</strong>egum Hazrat Mahal (Lucknow) · <strong>L</strong>ight=Maulvi (Faizabad) · <strong>K</strong>han Bahadur Khan (Bareilly) · <strong>T</strong>antia Tope (Central India) · <strong>M</strong>angal Pandey (Barrackpore)</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>📜 Historians' Views — "BMNSE"</h4>
+        <div class="mn-hl">B·M·N·S·E</div>
+        <p><strong>B</strong>ritish (mutiny/Kaye) · <strong>M</strong>ajumdar (Not First/National) · <strong>N</strong>ationalist/Savarkar (First War) · <strong>S</strong>.N.Sen (popular but regional) · <strong>E</strong>ric Stokes (peasant/rural)</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>⏱️ Key Dates Memory — "MMDJGR"</h4>
+        <div class="mn-hl">"Mangal Marches, Delhi Jhansi Gwalior Rescued"</div>
+        <p>Mar 1857 Mangal Pandey → May 1857 Meerut → Sep 1857 Delhi → April 1858 Jhansi → June 1858 Gwalior → April 1859 Tantia Tope hanged</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>📋 GoI Act 1858 Features — "SEVVC"</h4>
+        <div class="mn-hl">S·E·V·V·C</div>
+        <p><strong>S</strong>ecretary of State (London) · <strong>E</strong>IC abolished · <strong>V</strong>iceroy created · <strong>V</strong>ictoria's Proclamation · <strong>C</strong>anning was first Viceroy</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     S17: TIMELINE MASTER
+══════════════════════════════ -->
+<div class="shdr" id="s17">
+  <div class="sbadge sf">17</div>
+  <div class="sinfo"><h2>Timeline Master Visual</h2><p>1757 Plassey → 1857 Revolt → 1858 Crown Rule → Nationalism</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bif">📅</div><span class="btitle">Complete Chronological Timeline</span><span class="tag tf">CHRONOLOGY</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="tl">
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--text-muted);"></div><div class="tl-date">1757</div><div class="tl-title">Battle of Plassey</div><div class="tl-desc">British defeat Siraj-ud-Daulah; real beginning of British political power in India.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">1764</div><div class="tl-title">Battle of Buxar</div><div class="tl-desc">British defeat Mughal Emperor Shah Alam II + Nawabs; full military dominance established.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">1772–1785</div><div class="tl-title">Warren Hastings Era</div><div class="tl-desc">First Governor-General; administrative reforms; Regulating Act 1773.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">1798–1805</div><div class="tl-title">Lord Wellesley</div><div class="tl-desc">Subsidiary Alliance system; aggressive expansion policy.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-date">1829</div><div class="tl-title">Abolition of Sati</div><div class="tl-desc">Lord Bentinck; social reform that created religious fears among sepoys.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-date">1848–1856</div><div class="tl-title">Lord Dalhousie — Architect of Discontent</div><div class="tl-desc">Doctrine of Lapse; annexations of Satara, Jhansi, Nagpur; recommended Awadh annexation; railways, telegraph.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-date">1853</div><div class="tl-title">Charter Act 1853</div><div class="tl-desc">Last EIC Charter; Civil services opened; Dalhousie's telegraph and railways.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-date">1855–56</div><div class="tl-title">Santhal Rebellion</div><div class="tl-desc">Sidhu-Kanhu lead tribal uprising; precursor to 1857; suppressed brutally.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-date">1856</div><div class="tl-title">Multiple Triggers Set</div><div class="tl-desc">Awadh annexed; General Service Enlistment Act; Widow Remarriage Act; Enfield rifle introduced.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--fire);background:var(--fire);"></div><div class="tl-date">29 March 1857</div><div class="tl-title">🔥 Mangal Pandey — Barrackpore</div><div class="tl-desc">First individual act of defiance; executed 8 April.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--crimson2);background:var(--crimson2);"></div><div class="tl-date">10 May 1857</div><div class="tl-title">🔥🔥 REVOLT BEGINS — MEERUT</div><div class="tl-desc">3rd Light Cavalry rises; march to Delhi; sepoys free imprisoned comrades.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--crimson2);"></div><div class="tl-date">11 May 1857</div><div class="tl-title">Delhi Captured by Rebels</div><div class="tl-desc">Sepoys reach Delhi; Bahadur Shah Zafar proclaimed Emperor.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--crimson2);"></div><div class="tl-date">June 1857</div><div class="tl-title">Revolt Spreads — Lucknow, Kanpur, Jhansi</div><div class="tl-desc">Begum Hazrat Mahal at Lucknow; Nana Sahib at Kanpur; Rani Lakshmibai at Jhansi.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);"></div><div class="tl-date">July–Aug 1857</div><div class="tl-title">British Counterattack</div><div class="tl-desc">Havelock retakes Kanpur; reinforcements from Britain arrive.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--forest);"></div><div class="tl-date">September 1857</div><div class="tl-title">Delhi Falls to British</div><div class="tl-desc">John Nicholson leads assault; dies in battle. Zafar captured, exiled. Sons killed.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--forest);"></div><div class="tl-date">November 1857</div><div class="tl-title">Queen's Proclamation</div><div class="tl-desc">Victoria promises no annexations; tolerance of Indian customs; largely symbolic.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--forest);"></div><div class="tl-date">March 1858</div><div class="tl-title">Lucknow Finally Recaptured</div><div class="tl-desc">Begum Hazrat Mahal retreats to Nepal.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--fire);"></div><div class="tl-date">April–June 1858</div><div class="tl-title">Jhansi & Gwalior — Final Battles</div><div class="tl-desc">Jhansi taken April; Rani martyred 18 June 1858 at Gwalior.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--gold);background:var(--gold);"></div><div class="tl-date">2 August 1858</div><div class="tl-title">⚖️ Government of India Act 1858</div><div class="tl-desc">EIC rule ends; Crown takes over; Viceroy system created; First Viceroy: Lord Canning.</div></div>
+      <div class="tl-item"><div class="tl-dot" style="border-color:var(--forest);background:var(--forest);"></div><div class="tl-date">April 1859</div><div class="tl-title">Tantia Tope Hanged</div><div class="tl-desc">Last major rebel executed; Revolt effectively suppressed.</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">1861</div><div class="tl-title">Indian Councils Act 1861</div><div class="tl-desc">Legislative councils; beginning of constitutional evolution.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════════════════════════
+     S18: 25 CDS QUESTIONS
+══════════════════════════════ -->
+<div class="shdr" id="s18">
+  <div class="sbadge sg">18</div>
+  <div class="sinfo"><h2>25 Probable CDS Prelims Questions</h2><p>Click each question to reveal answer & explanation</p></div>
+</div>
+
+<div id="cds-qs">
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q1</div><div class="qa-t">The revolt of 1857 is described as 'the First War of Indian Independence' by which of the following?</div></div><div class="qa-a"><p class="ok">Answer: V.D. Savarkar — in his 1909 book "The Indian War of Independence"</p><p class="ex">Vinayak Damodar Savarkar wrote this book in 1909 while in London. It was so inflammatory that the British banned it before publication. The book argued that 1857 was a planned national uprising — not a mere military mutiny. This is the most tested historiography question in CDS.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q2</div><div class="qa-t">The Doctrine of Lapse was primarily associated with which Governor-General?</div></div><div class="qa-a"><p class="ok">Answer: Lord Dalhousie (1848–1856)</p><p class="ex">Dalhousie introduced the Doctrine of Lapse as a policy of annexation. If a ruler died without a natural heir, the state would lapse to British India. Key states: Satara (1848), Jaitpur, Sambalpur (1849), Bhagat, Udaipur (1852), Jhansi (1853), Nagpur (1854). Note: Awadh was NOT annexed under Doctrine of Lapse — this is the most common CDS trap.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q3</div><div class="qa-t">Who was the first sepoy to revolt against the British in the events leading to the 1857 uprising?</div></div><div class="qa-a"><p class="ok">Answer: Mangal Pandey — 29 March 1857, Barrackpore</p><p class="ex">Mangal Pandey of the 34th Native Infantry at Barrackpore attacked British officers (Sergeant Baugh and Lieutenant Hewson) on 29 March 1857. He was executed on 8 April 1857. His name became so synonymous with revolt that British soldiers called any rebellious soldier a "Munghi Pandy" (corrupted to Pandy). Important: this was BEFORE the main revolt began at Meerut (10 May 1857).</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q4</div><div class="qa-t">The immediate cause of the 1857 revolt was the introduction of which rifle?</div></div><div class="qa-a"><p class="ok">Answer: Pattern 1853 Enfield Rifle — cartridges greased with cow fat and pig lard</p><p class="ex">The new Enfield rifles required soldiers to bite off the paper cartridge before loading. Rumour spread that the grease was made from cow fat (offensive to Hindus) and pig lard (offensive to Muslims). While the British offered paper-greased alternatives, the trust was already broken. This cartridge issue was the IMMEDIATE cause — not the underlying/root cause of the revolt.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q5</div><div class="qa-t">Match the following leaders with their regions of revolt:</div></div><div class="qa-a"><p class="ok">Rani Lakshmibai → Jhansi | Begum Hazrat Mahal → Lucknow | Nana Sahib → Kanpur | Kunwar Singh → Bihar | Khan Bahadur Khan → Bareilly</p><p class="ex">This is the most tested "match the following" in CDS. Memory trick: "JLKBKB" — Jhansi-Lakshmi, Kanpur-Nana, Bihar-Kunwar, Bareilly-Khan. Maulvi Ahmadullah Shah = Faizabad. Bahadur Shah Zafar = Delhi. Tantia Tope = Central India/Kanpur. Never confuse Nana Sahib (Kanpur) with Begum Hazrat Mahal (Lucknow).</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q6</div><div class="qa-t">Who was the first Viceroy of India after the Government of India Act 1858?</div></div><div class="qa-a"><p class="ok">Answer: Lord Canning</p><p class="ex">The Government of India Act 1858 redesignated the Governor-General as Viceroy. Lord Canning, who was already Governor-General during the revolt, became the first Viceroy. He was also called "Clemency Canning" for his policy of leniency toward rebels after suppression. Dalhousie was the previous Governor-General but left India in 1856 before the revolt.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q7</div><div class="qa-t">Awadh (Oudh) was annexed by the British in 1856 on the grounds of:</div></div><div class="qa-a"><p class="ok">Answer: Misgovernance — NOT under the Doctrine of Lapse</p><p class="ex">This is the most common CDS trap. Awadh had a natural heir (Wajid Ali Shah had children). It was annexed citing misgovernance and breakdown of law and order. Dalhousie recommended annexation; Lord Canning (as Governor-General) executed it in 1856. The annexation was deeply resented — about 75,000 Bengal Army sepoys had families in Awadh whose land rights were disrupted.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q8</div><div class="qa-t">The 1857 revolt did NOT spread significantly to which of the following regions?</div></div><div class="qa-a"><p class="ok">Answer: Punjab, Bengal (educated class), Bombay Presidency, Madras Presidency, South India, Hyderabad</p><p class="ex">Punjab: Sikhs helped British suppress the revolt; recently defeated (1849), resented Mughal/Maratha power more. Bengal educated class: English-educated; benefiting from British system. Bombay/Madras: Different military culture; Bombay and Madras armies had different composition. Hyderabad Nizam stayed loyal. This geographical limitation is a key reason for failure.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q9</div><div class="qa-t">R.C. Majumdar's famous statement about 1857 was that it was:</div></div><div class="qa-a"><p class="ok">Answer: "Neither the First, nor National, nor a War of Independence"</p><p class="ex">R.C. Majumdar in "The Sepoy Mutiny and the Revolt of 1857" (1957) comprehensively rejected the nationalist interpretation. (1) Not First: Earlier revolts (Vellore 1806, Sanyasi rebellion, Santhal revolt); (2) Not National: Large parts of India unaffected; no pan-Indian participation; (3) Not War of Independence: No unified leadership or ideology demanding independence. This remains the most cited academic assessment.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q10</div><div class="qa-t">The General Service Enlistment Act of 1856 was resented by Indian soldiers because:</div></div><div class="qa-a"><p class="ok">Answer: It required sepoys to serve overseas if required — crossing the sea (kala pani) was considered religiously polluting</p><p class="ex">Hindu soldiers believed crossing the ocean (kala pani) would lead to loss of caste. The 1856 Act made overseas service mandatory for new recruits, threatening this religious belief. Combined with the cartridge issue and other grievances, it heightened religious insecurity in the Bengal Army. The act was issued under Lord Canning's governorship.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q11</div><div class="qa-t">Who was described as the 'Light of the Revolt' or 'Danka Shah'?</div></div><div class="qa-a"><p class="ok">Answer: Maulvi Ahmadullah Shah — religious leader from Faizabad</p><p class="ex">Maulvi Ahmadullah Shah was a Muslim religious leader who preached resistance against British rule before the revolt. He was imprisoned in Faizabad, freed when the revolt began, and became a powerful leader in Awadh and Rohilkhand. He was called "Danka Shah" (drum saint). He was killed in 1858 — the Raja of Puwayan shot him and claimed the British reward. Not to be confused with Khan Bahadur Khan (Bareilly).</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q12</div><div class="qa-t">Tantia Tope was ultimately captured because:</div></div><div class="qa-a"><p class="ok">Answer: He was betrayed by his friend and fellow rebel Man Singh (Raja of Narwar)</p><p class="ex">Tantia Tope conducted brilliant guerrilla warfare across Central India for nearly two years after the main revolt was suppressed. He was never defeated in direct battle. Man Singh, whom Tantia trusted, betrayed his location to the British. He was captured in April 1859, tried, and hanged. His real name was Ramchandra Panduranga and he was Nana Sahib's most capable general.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q13</div><div class="qa-t">Where was Bahadur Shah Zafar exiled after the fall of Delhi?</div></div><div class="qa-a"><p class="ok">Answer: Rangoon (Yangon), Burma — where he died in 1862</p><p class="ex">After Delhi fell in September 1857, Bahadur Shah Zafar surrendered at Humayun's Tomb to British officer William Hodson. His sons and grandson were shot dead by Hodson. Zafar was tried and exiled to Rangoon (Burma) where he died in 1862 at age 87. His famous verse: "Do gaz zameen bhi na mili kue yaar mein" (I didn't get even two yards of land in my beloved's land).</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q14</div><div class="qa-t">The government of India Act 1858 replaced the Board of Control with:</div></div><div class="qa-a"><p class="ok">Answer: Secretary of State for India (with a 15-member India Council)</p><p class="ex">The Act abolished both the Board of Control (Pitt's India Act 1784) and the Court of Directors (EIC's governing body). The Secretary of State for India was a member of the British Cabinet in London. Assisted by a Council of India (15 members — 8 appointed by Crown, 7 by Court of Directors). The Secretary had ultimate authority over Indian affairs. First Secretary of State: Lord Stanley (later Lord Derby).</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q15</div><div class="qa-t">Kunwar Singh, who led the revolt in Bihar, belongs to which of the following?</div></div><div class="qa-a"><p class="ok">Answer: He was an 80-year-old zamindar of Jagdishpur in Bihar (near Arrah/Bhojpur)</p><p class="ex">Kunwar Singh (Vir Kunwar Singh) was an elderly zamindar who joined the revolt despite his age. He conducted brilliant military operations against British forces in Bihar. In one incident, he cut off his own arm that had been hit by a British bullet and threw it into the Ganga as an offering before dying. He died on 26 April 1858 of battle wounds. Bihar celebrates 26 April as "Kunwar Singh Vijayotsav."</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q16</div><div class="qa-t">Which of the following statements about Rani Lakshmibai is CORRECT?</div></div><div class="qa-a"><p class="ok">Answer: She died fighting at Gwalior on 18 June 1858 (NOT at Jhansi). Jhansi had already fallen in April 1858.</p><p class="ex">Jhansi fell to Gen. Hugh Rose in April 1858 after a valiant defense. Rani Lakshmibai escaped and reached Gwalior. With Tantia Tope, she briefly captured Gwalior fort from the Scindia (who fled to the British). She died in battle at Gwalior on 18 June 1858. British General Hugh Rose said she was "the best and bravest of the rebel leaders." She was approximately 23 years old at death.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q17</div><div class="qa-t">Which of the following technologies played a decisive role in British suppression of the 1857 revolt?</div></div><div class="qa-a"><p class="ok">Answer: Telegraph and Railways — enabling rapid communication and troop movement</p><p class="ex">Dalhousie had introduced railways and telegraph in India. Ironically, these same technologies helped the British crush the revolt. Telegraph: British could coordinate instantly across India while rebels had no such system. Railways: troops and supplies could be moved at unprecedented speed — what took weeks by march now took days. The rebels could not counter this technological advantage.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q18</div><div class="qa-t">The Queen's Proclamation of November 1858 promised which of the following?</div></div><div class="qa-a"><p class="ok">Answer: No further annexations; respect for existing treaties; non-interference in Indian customs; equal treatment regardless of race/religion</p><p class="ex">Queen Victoria's Proclamation of 1 November 1858 (read by Lord Canning) announced: end of Doctrine of Lapse; no further territorial ambitions; existing treaties honored; Indians eligible for service regardless of religion/race; no interference in social/religious practices. It was called the "Magna Carta of India" by some, though most promises were not implemented in practice. The Empress of India title came later in 1876.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q19</div><div class="qa-t">Post-1857 military reorganization changed the ratio of Indian to European troops in Bengal Army to approximately:</div></div><div class="qa-a"><p class="ok">Answer: 1 European to 2 Indians (Bengal Army); artillery placed exclusively under British control</p><p class="ex">Before 1857: ratio was about 1 European to 5 Indians (Bengal Army). After 1857: ratio reduced to approximately 1:2. Artillery was completely transferred to British/European soldiers. Recruitment policy changed to favor "martial races" — Gurkhas, Sikhs, Pathans — who had helped suppress the revolt. Indian soldiers from Awadh region particularly distrusted.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q20</div><div class="qa-t">Nana Sahib's primary grievance against the British was:</div></div><div class="qa-a"><p class="ok">Answer: Denial of his pension by Lord Dalhousie — he was the adopted son of Peshwa Baji Rao II</p><p class="ex">Nana Sahib (Dhondu Pant) was the adopted son of the last Peshwa, Baji Rao II. Under the Doctrine of Lapse, the British refused to continue Baji Rao II's pension to Nana Sahib after the Peshwa's death in 1851. This personal grievance led him to actively support the revolt at Kanpur. His forces massacred British prisoners at Sati Chaura Ghat and Bibighar — these became British propaganda tools for the suppression.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q21</div><div class="qa-t">S.N. Sen's view on the 1857 revolt was that it:</div></div><div class="qa-a"><p class="ok">Answer: "What began as mutiny ended as a war of independence" — popular participation acknowledged but regional scope accepted</p><p class="ex">S.N. Sen wrote "Eighteen Fifty-Seven" (1957) commissioned by the Government of India for the revolt's centenary. His position was between Savarkar and Majumdar: acknowledged that what began as a military mutiny (cartridge issue) gradually acquired the character of a popular uprising, but was not pan-Indian. He recognized peasant and civilian participation in many regions. More nuanced than either extreme.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q22</div><div class="qa-t">The revolt of 1857 failed primarily because of:</div></div><div class="qa-a"><p class="ok">Answer: Lack of unity and coordination, limited geographic spread, no common ideology, British military superiority with telegraphic coordination</p><p class="ex">Key factors: (1) No unified leadership — regional leaders operated independently; (2) No pan-Indian participation — Punjab, Bengal, South India unaffected; (3) No positive ideology — only reactionary desire to restore old order (Mughal empire, Peshwa, zamindars' privileges); (4) Sikhs and Gurkhas helped British; (5) British used telegraph & railways for rapid coordination; (6) British had access to global resources and reinforcements.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q23</div><div class="qa-t">Which British officer died during the recapture of Delhi in 1857?</div></div><div class="qa-a"><p class="ok">Answer: General John Nicholson — died 23 September 1857 from wounds received during the assault</p><p class="ex">John Nicholson was one of the most feared British officers in India. He led the assault on Delhi through the Kashmir Gate. He was mortally wounded during the battle and died on 23 September 1857, just after Delhi was recaptured. William Hodson captured Bahadur Shah Zafar at Humayun's Tomb and killed Zafar's sons. Nicholson was considered crucial to the British military victory.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q24</div><div class="qa-t">Which of these revolts PRECEDED the 1857 uprising and is considered a precursor?</div></div><div class="qa-a"><p class="ok">Answer: Santhal Rebellion (1855–56) — led by Sidhu and Kanhu; and Vellore Mutiny (1806) — cartridge issue preceded 1857 by 51 years!</p><p class="ex">Santhal Rebellion: Sidhu and Kanhu led the Santhali tribal uprising (1855–56) against British and zamindars in Jharkhand/Bengal — suppressed brutally. Vellore Mutiny (1806): Soldiers at Vellore rose against new uniform regulations (leather cockade offensive to Hindus, metal clasp offensive to Muslims) — foreshadowed 1857's religious trigger. These show that 1857 was NOT unprecedented — significant for Majumdar's argument.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q25</div><div class="qa-t">The Indian Councils Act 1861 was significant because:</div></div><div class="qa-a"><p class="ok">Answer: It expanded legislative councils; allowed Indians to be nominated as non-official members; began the process of constitutional evolution post-1857</p><p class="ex">Indian Councils Act 1861 was the direct constitutional follow-up to GoI Act 1858. Key features: (1) Governor-General's Executive Council expanded for legislative purposes; (2) Indians could be nominated as non-official members (first time); (3) Portfolio system introduced; (4) Power to make regulations restored to Bombay and Madras. This began the long constitutional evolution: 1861 → 1892 → 1909 (Minto-Morley) → 1919 (Montagu-Chelmsford) → 1935 → 1947.</p></div></div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════════════════════════
+     S19: 15 UPSC QUESTIONS
+══════════════════════════════ -->
+<div class="shdr" id="s19">
+  <div class="sbadge si">19</div>
+  <div class="sinfo"><h2>15 UPSC-Level Conceptual Questions</h2><p>Analytical depth · Historiography · Policy linkage · Essay themes</p></div>
+</div>
+
+<div id="upsc-qs">
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U1</div><div class="qa-t">Critically analyze the statement: "The Revolt of 1857 was neither the first, nor national, nor a war of independence." (R.C. Majumdar's assessment)</div></div><div class="qa-a"><p class="ok">Accept Majumdar's framework but note its limitations through S.N. Sen and Savarkar's counter-arguments.</p><p class="ex"><strong>NOT FIRST:</strong> Vellore Mutiny (1806) preceded it; Santhal rebellion (1855–56); Pagal Panthi, Faraizi movements — multiple earlier resistances. <strong>NOT NATIONAL:</strong> Punjab, Bengal, Bombay, Madras, South India largely unaffected; no pan-Indian coordination; princely states mostly loyal to British. <strong>NOT WAR OF INDEPENDENCE:</strong> No unified demand for independence; leadership wanted to restore Mughal/Maratha order; no positive political vision. <strong>COUNTER:</strong> S.N. Sen acknowledges popular character despite limitations; participation of peasants, artisans, zamindars, princes, religious leaders shows it transcended military mutiny; regional wars can still have nationalist significance; Savarkar's symbolic interpretation has political power. <strong>CONCLUSION:</strong> Majumdar's academic critique is valid but 1857 remains historically significant as a watershed in British-Indian relations, the largest military challenge to British rule, and a foundational myth of Indian nationalism.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U2</div><div class="qa-t">Explain the role of economic factors in causing the 1857 revolt. How did colonial economic policies create conditions for widespread discontent?</div></div><div class="qa-a"><p class="ok">Economic factors were structural — they created the social base of the revolt extending beyond the military.</p><p class="ex"><strong>Drain of Wealth:</strong> Revenue extraction without reinvestment; salaries, pensions, interest paid to Britain from India's revenue; India's resources financing British expansion globally. <strong>Deindustrialization:</strong> Machine-made British goods destroyed Indian handicrafts; weavers of Dacca, Surat, Bengal — unemployed; loss of royal patronage after annexations. <strong>Land Revenue Systems:</strong> Ryotwari, Mahalwari — high rates; no security of tenure; peasants evicted; money-lenders filled the vacuum; zamindars dispossessed. <strong>Commercial Agriculture:</strong> Shift from food to cash crops; food insecurity; famines; no buffer. <strong>Impact on Revolt:</strong> Peasants and artisans — not just soldiers — participated because of economic desperation. Begum Hazrat Mahal's proclamations explicitly addressed economic exploitation. Eric Stokes' analysis of the "Peasant Armed" identifies this rural base. Without economic grievances, the military revolt would have been isolated — the economic base gave it popular character.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U3</div><div class="qa-t">Assess the significance of the Government of India Act 1858 as a turning point in the constitutional history of India.</div></div><div class="qa-a"><p class="ok">GoI Act 1858 created the institutional framework that would define British India's governance until independence.</p><p class="ex"><strong>Before 1858:</strong> Dual control — EIC (Court of Directors + Board of Control) and Parliament; Governor-General had limited accountability; policy inconsistency. <strong>Key Changes:</strong> Secretary of State for India in Cabinet — direct Crown responsibility; Viceroy (formerly Governor-General) — representative of Crown in India; India Council (15 members) — expertise but Secretary had overriding power; EIC's Board of Control and Court of Directors abolished. <strong>Constitutional Significance:</strong> Began the chain: GoI Act 1858 → Indian Councils Act 1861 (legislative councils) → Indian Councils Act 1892 (limited elections) → Morley-Minto 1909 (expanded councils, communal representation) → Montagu-Chelmsford 1919 (dyarchy) → GoI Act 1935 (provincial autonomy) → Independence 1947. <strong>Limitation:</strong> Centralized power in London and Viceroy — no Indian representation in 1858. Queen's Proclamation's promises of equality were largely unfulfilled. The act created efficient exploitation machinery, not democratization.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U4</div><div class="qa-t">How did Lord Dalhousie's policies cumulatively create conditions for the 1857 revolt? Was he the "architect of the revolt"?</div></div><div class="qa-a"><p class="ok">Dalhousie's policies were the proximate political-economic triggers, though deeper structural causes predated him.</p><p class="ex"><strong>Doctrine of Lapse:</strong> Satara, Jhansi, Nagpur — ruling families dispossessed; created enemies across India. <strong>Awadh Policy:</strong> Recommended annexation on misgovernance grounds (1856) — disrupted ~75,000 Bengal Army sepoys' family lands. <strong>Subsidiary Alliance Tightening:</strong> Princes reduced to dependency. <strong>Demotion of Mughal Dynasty:</strong> Insisted Bahadur Shah's heir could not use Red Fort. <strong>General Service Enlistment Act (1856):</strong> Though Canning implemented it, Dalhousie's aggressive policy culture made such legislation inevitable. <strong>Economic Policies:</strong> Free trade, one-way; railways/telegraph (used for suppression). <strong>Counter-argument:</strong> Dalhousie was product of a colonial system; exploitative economic policies predated him (Cornwallis, Wellesley, Bentinck); the Bengal Army's caste/religious grievances were older. <strong>Assessment:</strong> He accelerated and sharpened contradictions — fair to call him a major accelerant if not sole architect.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U5</div><div class="qa-t">Discuss the role of women in the 1857 revolt, particularly Rani Lakshmibai and Begum Hazrat Mahal. How do they represent different dimensions of resistance?</div></div><div class="qa-a"><p class="ok">Rani Lakshmibai (armed resistance/military symbol) and Begum Hazrat Mahal (political leadership/proclamations) represent complementary dimensions of women's role in 1857.</p><p class="ex"><strong>Rani Lakshmibai:</strong> Symbol of martial courage; personal grievance (Doctrine of Lapse denied her son); defended Jhansi fort against the well-equipped Gen. Hugh Rose; escaped with son on horseback; died fighting at Gwalior aged ~23. Hugh Rose's tribute: "the best and bravest of the rebel leaders." Became the iconic figure of armed resistance in folk memory and freedom movement symbolism. <strong>Begum Hazrat Mahal:</strong> Political leadership dimension; proclaimed her minor son Birjis Qadr as Nawab of Awadh; organized civil administration in Lucknow; her proclamations (issued in Persian) addressed British economic exploitation and religious interference — show sophisticated political understanding; resisted British for months; refused British amnesty; died in exile in Nepal (1879). <strong>Significance:</strong> Both challenged the colonial and patriarchal orders simultaneously; both remain symbols used in Indian nationalist narrative; neither has been fully integrated into mainstream history — their marginalization itself reveals historiographic limitations.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U6</div><div class="qa-t">How did the telegraph and railways — introduced by Lord Dalhousie — paradoxically help the British suppress the very revolt that his policies had triggered?</div></div><div class="qa-a"><p class="ok">Colonial infrastructure served colonial power — the modernization was for extraction, not Indian benefit, and this asymmetry of capability determined the revolt's outcome.</p><p class="ex"><strong>Telegraph Advantage:</strong> British commanders could communicate instantly across thousands of kilometers; when Meerut rose on 10 May, Delhi knew in hours; troops could be redirected rapidly; rebel movements could be tracked; no rebel commander had equivalent intelligence system. <strong>Railway Advantage:</strong> Troops from Calcutta could reach Allahabad in days instead of weeks; military supplies and artillery moved rapidly; reinforcements from Bombay, Madras, Punjab could converge quickly. <strong>Rebel Disadvantage:</strong> No telegraph lines under their control (those they disrupted were quickly repaired); no railway control; news traveled by horse and foot — British always had information advantage. <strong>Broader Lesson:</strong> This illustrates the colonial paradox — infrastructure investment (railways = 1/3 of EIC investment by 1860) was for resource extraction and military control, not development. Marx observed in 1858 that railways in India would serve imperialism first. Post-1857, this was even more explicitly acknowledged in British policy.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U7</div><div class="qa-t">Explain the concept of the "drain of wealth" in the context of 1857 and examine how it contributed to the economic causes of the revolt.</div></div><div class="qa-a"><p class="ok">Drain of wealth theory (Dadabhai Naoroji) explains the structural impoverishment of India under colonial rule — central to understanding why both peasantry and artisans joined the revolt.</p><p class="ex"><strong>The Drain Mechanism:</strong> "Home charges" — interest on Indian debt held in Britain, salaries of British officials, pensions, military costs — all extracted from Indian revenue but spent outside India. One-way free trade: British machine goods entered duty-free; Indian textiles faced tariffs in Britain. No investment in India's industry — only in railways (serving extraction) and limited education. <strong>Economic Devastation:</strong> Dacca muslin industry: 100,000 weavers → 6,000 (1800s to 1850s); similar in Bengal silk, Maharashtra cotton weaving. Artisans joined revolt not from cartridge issue but economic desperation. Peasants: zamindars dispossessed, money-lenders filled vacuum, no debt relief. <strong>Link to 1857:</strong> Begum Hazrat Mahal's proclamation explicitly mentioned British economic exploitation. Nana Sahib's revolt had material basis — pension denial. Kunwar Singh's zamindari under threat from new revenue settlements. <strong>Legacy:</strong> Drain theory became foundation of Congress economic critique; Dadabhai Naoroji's "Poverty and Un-British Rule in India" (1901); remains relevant for understanding colonial underdevelopment.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U8</div><div class="qa-t">Why did the 1857 revolt fail to spread to Bengal, Bombay, Madras, and Punjab? What does this geographical limitation tell us about the revolt's nature?</div></div><div class="qa-a"><p class="ok">The geographical limitation reveals that 1857 was primarily a North Indian revolt driven by specific Bengal Army and Awadhi/NW Provinces conditions — not a pan-Indian nationalist uprising.</p><p class="ex"><strong>Punjab:</strong> Sikhs had been defeated in 1849 and were still recovering their political identity; they resented Mughal/Maratha power more than British; Sikh soldiers actively helped British suppress Delhi. <strong>Bengal:</strong> English-educated bhadralok (middle class) was building careers within British system; social reform movements (Brahmo Samaj, etc.) were pro-reform; Bengal Army's grievances didn't resonate with civilian population. <strong>Bombay/Madras:</strong> Different military composition (not Bengal Army sepoys); longer under British rule; more integrated into British administrative system; fewer annexations in these regions. <strong>Hyderabad Nizam:</strong> Loyal to British; strategic calculation that British support = stability. <strong>What This Means:</strong> Revolt was specific to: Bengal Army's composition and grievances, North Indian political displacement (Awadh, Mughal Delhi, Maratha/Peshwa remnants), and new zamindari class economic displacement. It lacked the pan-Indian support that a genuine national movement would require — supporting Majumdar's "not national" argument while acknowledging significant popular participation in affected regions.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U9</div><div class="qa-t">How did the 1857 revolt influence British policies of "divide and rule" — particularly the Hindu-Muslim divide? Trace this to its long-term consequences.</div></div><div class="qa-a"><p class="ok">1857 showed British that Hindu-Muslim unity (the greased cartridge triggered both) was dangerous; post-1857 policy systematically cultivated communal divisions — with catastrophic long-term consequences.</p><p class="ex"><strong>During Revolt:</strong> Hindu-Muslim soldiers fought together (Bakht Khan was Muslim; Hindu and Muslim sepoys united); Begum Hazrat Mahal's proclamations appealed to both communities; Hindu zamindars supported Muslim leaders and vice versa. <strong>British Learning:</strong> Recognized joint resistance as existential threat; post-1857 policy explicitly cultivated divisions. <strong>Specific Measures:</strong> Military reorganization on religious/ethnic lines; separate electorates seed planted (formalized in Morley-Minto 1909); historical writings emphasizing Hindu-Muslim conflict; favoring one community against another alternately. <strong>Communal Representation:</strong> Each community made to feel its interests were best protected by British; Aligarh Movement (1870s) partly shaped by British encouragement of Muslim separatism as counter to Congress. <strong>Long-term Consequence:</strong> 1947 Partition — British divide-and-rule policy contributed to conditions that made partition "necessary." Two-nation theory had seeds in post-1857 British communal policy. This is UPSC's most tested analytical chain connecting 1857 to 1947.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U10</div><div class="qa-t">Compare and contrast the 1857 revolt with earlier tribal and peasant uprisings (Santhal Rebellion, Vellore Mutiny). What continuities and differences do you see?</div></div><div class="qa-a"><p class="ok">1857 was larger in scale and had feudal leadership, while tribal/peasant uprisings were more economically driven and genuinely grassroots — together they form a pattern of colonial resistance.</p><p class="ex"><strong>Vellore Mutiny 1806 (similarities):</strong> Military trigger; religious insecurity over uniform regulations; anti-British; suppressed brutally; shows Bengal Army pattern was not new. (Difference: much smaller scale; no civilian participation; quickly isolated). <strong>Santhal Rebellion 1855–56 (similarities):</strong> Economic exploitation (zamindars, money-lenders, colonial revenue); tribal land alienation; British seen as supporter of exploiters; just 2 years before 1857. (Difference: ethnic/tribal character; Sidhu-Kanhu's leadership was peasant/tribal, not feudal; no military component). <strong>1857 (unique features):</strong> Scale — multiple regions simultaneously; diversity of participants — feudal chiefs, sepoys, peasants, merchants, religious leaders; Bengal Army as organized core; political dimension (restoration of Mughal/Peshwa authority). <strong>Common Thread:</strong> All were responses to colonial economic extraction, land alienation, and cultural/religious threat. Together they form what historians call the "pattern of colonial resistance" — each individually limited, but collectively showing consistent anti-colonial feeling. This continuity is what Savarkar draws on for his "First War" argument.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U11</div><div class="qa-t">Examine how 1857 served as a founding myth of Indian nationalism even though it failed militarily. How did later leaders use its memory?</div></div><div class="qa-a"><p class="ok">Military failure does not negate historical significance — 1857 became a foundational myth, a cultural resource, and a political tool for successive generations of Indian nationalists.</p><p class="ex"><strong>Savarkar's Construction:</strong> 1909 book transformed 1857 from a mutiny into a heroic national epic — intentionally to inspire anti-British sentiment; Rani Lakshmibai, Mangal Pandey, Tantia Tope became martyrs. <strong>Congress Era:</strong> Leaders used 1857 as proof that Indians had spirit of resistance; 1857 was celebrated at centenary (1957) by independent India; Nehru's "Discovery of India" treats 1857 as significant turning point. <strong>Subhas Chandra Bose:</strong> INA drew inspiration from 1857 leaders; Azad Hind Fauj units named after 1857 heroes. <strong>Post-Independence:</strong> Rani Lakshmibai on currency; Tantia Tope and Mangal Pandey on stamps; 26 July (related dates) commemorated. <strong>Limits of the Myth:</strong> The nationalist narrative erased class conflicts within the revolt (some peasants fought against certain zamindari leaders); erased how Sikhs and Gurkhas helped British; created a homogeneous "Indian" resistance that didn't exist. <strong>Analytical Point:</strong> Nations need founding myths; 1857's historical ambiguity actually makes it MORE useful as myth — different groups can claim different aspects. UPSC expects this nuanced "myth vs. history" analysis.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U12</div><div class="qa-t">How did the 1857 revolt change British military policy in India? Analyze the 'martial races' theory and its implications.</div></div><div class="qa-a"><p class="ok">Post-1857 military reorganization introduced 'martial races' theory — a pseudo-scientific ethnic-military classification that served colonial divide-and-rule while reshaping Indian military culture.</p><p class="ex"><strong>Pre-1857 Problem:</strong> Bengal Army composed largely of high-caste Hindus (Brahmins, Rajputs) from Awadh — who had religious sensitivities and economic ties to the region being annexed. <strong>Post-1857 Response:</strong> Structural reorganization: ratio of British to Indian troops increased (1:2 in Bengal Army); artillery exclusively British; Indian soldiers disarmed of artillery. <strong>Martial Races Theory:</strong> Proposed by British officers (Roberts, MacMunn): certain ethnic groups "naturally" martial — Gurkhas, Sikhs, Pathans, Dogras; others "non-martial" — Bengalis, Tamils, Marathas. Pseudo-scientific racial theory. <strong>Reality:</strong> The "martial" groups were those who had helped suppress 1857 or were from regions with minimal 1857 participation. "Non-martial" = those who had resisted. A political classification, not biological. <strong>Implications:</strong> Punjabis, Gurkhas, Pathans became dominant in army — basis of post-independence Pakistan and Indian Army composition; Bengali "effeminacy" trope was deliberate colonial construction (countered by Bengal's intellectual dominance); regional military identities still visible today. <strong>Legacy:</strong> Post-independence India technically abolished martial races but actual recruitment patterns continued for decades.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U13</div><div class="qa-t">Evaluate the role of Bahadur Shah Zafar in the 1857 revolt. Was he a willing revolutionary or a reluctant figurehead?</div></div><div class="qa-a"><p class="ok">Bahadur Shah Zafar was primarily a reluctant symbolic figurehead — his real role was as a legitimizing presence, not an active military revolutionary.</p><p class="ex"><strong>Context:</strong> Zafar was 82 years old in 1857; had been a poet and mystic, not a military commander; his "empire" was effectively only the Red Fort precincts; he lived on a British pension; his sons were rivals for succession. <strong>The Revolt:</strong> Sepoys arrived at Delhi on 11 May 1857 and demanded he lead them — he reportedly was reluctant initially; eventually agreed under pressure (and perhaps some genuine anti-British feeling). <strong>His Role:</strong> Symbolic legitimacy — the Mughal Emperor's name gave the revolt a pan-India appeal; his proclamations issued; Bakht Khan was the actual military commander. <strong>As Reluctant Participant:</strong> Tried to negotiate with British at times; concerned about massacre of British civilians in Delhi; tried to exercise moderation. <strong>Fate:</strong> Captured at Humayun's Tomb; sons killed by Hodson; tried and exiled to Rangoon; died 1862. His final couplets express grief and resignation. <strong>Historical Significance:</strong> His involvement ended the Mughal era definitively; symbolically closed Indian medieval political history; opened the modern period. His poetry from exile ("Lagta nahin hai ji mera ujde dayar mein") remains among India's most poignant literature.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U14</div><div class="qa-t">How does the 1857 revolt connect to the larger theme of colonial resistance in India? Place it in the context of pre-1857 revolts and post-1857 nationalist movements.</div></div><div class="qa-a"><p class="ok">1857 is the fulcrum of Indian anti-colonial resistance history — too large to be a mere episode, too limited to be a national revolution, but transformative as the bridge between pre-modern resistance and modern nationalism.</p><p class="ex"><strong>Pre-1857 Resistance Pattern:</strong> Vellore (1806), Paika Revolt Odisha (1817), Kittur uprising (1824), Sanyasi/Fakir rebellions, Pagal Panthi, Moplah (early), Santhal (1855) — all were REGIONAL, RURAL, and lacked political ideology beyond resistance. <strong>1857 as Escalation:</strong> Scale qualitatively different; multiple regions simultaneously; cross-class participation; brief moment of Hindu-Muslim unity; feudal and peasant combined. <strong>Post-1857 Transition:</strong> British policy became more sophisticated and repressive; but also inadvertently created conditions for nationalism: railways unified economy; English education created pan-Indian class with common language of politics; GoI Acts began constitutional tradition that nationalists would demand; 1857's failure convinced educated classes that armed revolt needed political foundation → INC (1885). <strong>Freedom Movement:</strong> 1857 memory used by Tilak (Shivaji festivals), Gandhi (connected 1857's martyrs to non-cooperation), Bose (INA); 1857 symbols in nationalist art, literature, cinema throughout independence movement. <strong>Assessment:</strong> 1857 is both a product of colonial conditions and a producer of the political consciousness that eventually ended colonialism — making it genuinely transformative despite military failure.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">U15</div><div class="qa-t">Examine the Queen's Proclamation of 1858 as a constitutional document. How far were its promises kept?</div></div><div class="qa-a"><p class="ok">The Queen's Proclamation was constitutionally significant as a foundational document of Crown rule but was largely a political instrument — its promises were systematically unfulfilled.</p><p class="ex"><strong>Promises Made:</strong> (1) No further annexation of Indian states; (2) Equal treatment regardless of race/religion in civil/military service; (3) Non-interference in Indian social/religious customs; (4) Respect for existing treaties with princes; (5) Amnesty for revolt participants (with exceptions). <strong>Promise 1 — No Annexation:</strong> Largely kept for princely states; but actual sovereignty was hollow (paramountcy doctrine). <strong>Promise 2 — Equality:</strong> Thoroughly broken; Ilbert Bill Controversy (1883) showed racial discrimination; Indians excluded from senior positions until after World War I; racial discrimination in clubs, railways, civil society. <strong>Promise 3 — Social Non-interference:</strong> Relatively kept in orthodox matters; but Sati (already banned 1829) — continued; slave trade dealt with; Age of Consent controversy (1891) showed limits. <strong>Promise 4 — Treaties:</strong> Paramountcy doctrine made princes subordinate despite treaty promises. <strong>Constitutional Legacy:</strong> Indian nationalists cited the Proclamation repeatedly as a standard British failed to meet; it became a constitutional argument for self-governance ("if equality was promised, grant it"). Dadabhai Naoroji: "Un-British rule" — measured Britain by its own stated values. Thus, even unfulfilled, the Proclamation became a political weapon for nationalists.</p></div></div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════════════════════════
+     S20: NIGHT BEFORE FRAMEWORK
+══════════════════════════════ -->
+<div class="shdr" id="s20">
+  <div class="sbadge sv">20</div>
+  <div class="sinfo"><h2>Night Before Exam — Revision Framework</h2><p>60 min · 30 min · 10 min structured revision plans</p></div>
+</div>
+
+<div class="g3" style="margin-bottom:36px;">
+  <div class="nb n60">
+    <div class="nb-lbl">60</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-ul">
+      <li>Causes: Political (Doctrine of Lapse, Awadh) + Military (cartridge, GSEA) + Economic (5 min)</li>
+      <li>Chronology: Mangal Pandey (Mar) → Meerut (10 May) → Delhi → Lucknow → Jhansi → Gwalior (8 min)</li>
+      <li>Leader-Region matrix: all 9 leaders + regions (7 min)</li>
+      <li>Course of revolt center table: all 10 centers (10 min)</li>
+      <li>Suppression: Tech advantage + Sikh/Gurkha + Divide (5 min)</li>
+      <li>Consequences: GoI Act 1858 features + First Viceroy (8 min)</li>
+      <li>Historiography: Savarkar vs Majumdar vs S.N. Sen vs Eric Stokes (7 min)</li>
+      <li>All 25 CDS questions scan (10 min)</li>
+    </ul>
+  </div>
+  <div class="nb n30">
+    <div class="nb-lbl">30</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-ul">
+      <li>Facts Master Sheet quick scan (4 min)</li>
+      <li>Leader-Region (BKJNBLKTM mnemonic) (4 min)</li>
+      <li>Doctrine of Lapse: SUNS JNB states (3 min)</li>
+      <li>GoI Act 1858 features: SEVVC mnemonic (3 min)</li>
+      <li>Top 6 CDS traps review (6 min)</li>
+      <li>Historiography table: all 4 schools (5 min)</li>
+      <li>Causes mnemonic: PEMS-IG (3 min)</li>
+      <li>Key dates timeline strip (2 min)</li>
+    </ul>
+  </div>
+  <div class="nb n10">
+    <div class="nb-lbl">10</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-ul">
+      <li>Date: 10 May 1857 Meerut; 29 Mar Mangal Pandey (1 min)</li>
+      <li>Rani = Jhansi; Begum = Lucknow; Nana = Kanpur (2 min)</li>
+      <li>Awadh: misgovernance (NOT Doctrine of Lapse) (1 min)</li>
+      <li>First Viceroy = Lord Canning (1 min)</li>
+      <li>Majumdar: NOT First/National/War (1 min)</li>
+      <li>Savarkar: First War 1909 (1 min)</li>
+      <li>GoI Act 1858: EIC abolished; Crown rule (1 min)</li>
+      <li>Rani died: 18 June 1858 at Gwalior (1 min)</li>
+      <li>Cartridge: greased with cow fat + pig lard (1 min)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ULTRA SHORT REVISION MAP -->
+<div class="fw" style="margin-bottom:32px;">
+  <h3>🗺️ Ultra-Short Visual Revision Map — The Complete Picture</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;">
+    <div class="card bc" style="padding:14px;">
+      <h4 style="color:var(--crimson2);margin-bottom:8px;">🔥 CAUSES CHAIN</h4>
+      <p style="font-size:.74rem;line-height:1.75;color:var(--text-muted);">
+        <strong style="color:var(--gold2)">Political:</strong> Doctrine of Lapse (Dalhousie) → Awadh annexed 1856 (misgovernance) → Pension denied (Nana Sahib)<br>
+        <strong style="color:var(--gold2)">Military:</strong> General Service Enlistment Act 1856 + Greased cartridge rumour → Mangal Pandey (29 Mar) → Meerut (10 May)<br>
+        <strong style="color:var(--gold2)">Economic:</strong> Drain + Artisan ruin + Zamindari disruption<br>
+        <strong style="color:var(--gold2)">Social:</strong> Missionary activities + Reform fears
+      </p>
+    </div>
+    <div class="card bg" style="padding:14px;">
+      <h4 style="color:var(--gold2);margin-bottom:8px;">👑 LEADER-REGION MATRIX</h4>
+      <p style="font-size:.74rem;line-height:1.85;color:var(--text-muted);">
+        Bahadur Shah Zafar → Delhi | Rani Lakshmibai → Jhansi<br>
+        Nana Sahib → Kanpur | Begum Hazrat Mahal → Lucknow<br>
+        Tantia Tope → Central India | Kunwar Singh → Bihar<br>
+        Khan Bahadur Khan → Bareilly | Mangal Pandey → Barrackpore<br>
+        Maulvi Ahmadullah → Faizabad
+      </p>
+    </div>
+    <div class="card bt" style="padding:14px;">
+      <h4 style="color:#3adada;margin-bottom:8px;">📅 CRITICAL TIMELINE</h4>
+      <p style="font-size:.74rem;line-height:1.85;color:var(--text-muted);">
+        29 Mar 1857 → Mangal Pandey (Barrackpore)<br>
+        10 May 1857 → REVOLT BEGINS (Meerut)<br>
+        11 May 1857 → Delhi seized by rebels<br>
+        Sep 1857 → Delhi recaptured (John Nicholson)<br>
+        April 1858 → Jhansi falls (Hugh Rose)<br>
+        18 Jun 1858 → Rani Lakshmibai martyred (Gwalior)<br>
+        2 Aug 1858 → GoI Act 1858 (Crown rule)<br>
+        April 1859 → Tantia Tope hanged
+      </p>
+    </div>
+    <div class="card bv" style="padding:14px;">
+      <h4 style="color:#8ad87a;margin-bottom:8px;">📋 CONSEQUENCES</h4>
+      <p style="font-size:.74rem;line-height:1.85;color:var(--text-muted);">
+        EIC abolished → Crown rule via GoI Act 1858<br>
+        GG → Viceroy (First: Lord Canning)<br>
+        Secretary of State + India Council (15 members)<br>
+        Military: British:Indian ratio ↑; Artillery = British only<br>
+        Martial races theory; "Divide Hindu-Muslim"<br>
+        Queen's Proclamation Nov 1858 (largely unfulfilled)<br>
+        → Indian Councils Act 1861 → Constitutional evolution
+      </p>
+    </div>
+  </div>
+  <div class="card bf" style="padding:14px;">
+    <h4 style="color:var(--fire);margin-bottom:8px;">🏛️ HISTORIOGRAPHY QUICK REFERENCE</h4>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;">
+      <div style="font-size:.73rem;color:var(--text-muted);">🔥 <strong style="color:var(--fire)">Savarkar (1909):</strong> "First War of Independence" — nationalist; national uprising</div>
+      <div style="font-size:.73rem;color:var(--text-muted);">❌ <strong style="color:var(--crimson2)">R.C. Majumdar:</strong> NOT First/National/War — limited academic view</div>
+      <div style="font-size:.73rem;color:var(--text-muted);">⚖️ <strong style="color:var(--gold2)">S.N. Sen (1957):</strong> Mutiny→War; popular but regional; middle position</div>
+      <div style="font-size:.73rem;color:var(--text-muted);">🌾 <strong style="color:#8ad87a">Eric Stokes:</strong> Peasant/rural revolt; economic factors; "Peasant Armed"</div>
+      <div style="font-size:.73rem;color:var(--text-muted);">🇬🇧 <strong style="color:#8888ff">British (Kaye, Holmes):</strong> Sepoy Mutiny; military; no nationalist character</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center;padding:30px 0 18px;border-top:1px solid var(--border);">
+  <p style="font-family:'Cinzel',serif;font-size:1.1rem;color:var(--gold2);margin-bottom:7px;">🔥 1857 Mastered. CDS 2 2026 Ready. All the Best! 🎯</p>
+  <p style="font-size:.72rem;color:var(--text-muted);font-family:'Inconsolata',monospace;">Premium Mind Map · UPSC Modern History · Revolt of 1857 Master Revision</p>
+</div>
+
+</main>
+
+<script>
+function togBr(hdr) {
+  const body = hdr.nextElementSibling;
+  hdr.classList.toggle('op');
+  if (body) body.classList.toggle('op');
+  const ch = hdr.querySelector('.bchv');
+  if (ch) ch.classList.toggle('op');
+}
+function togQA(qEl) {
+  const ans = qEl.nextElementSibling;
+  if (ans) ans.classList.toggle('op');
+}
+function gTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (window.innerWidth < 920) document.getElementById('sb').classList.remove('op');
+}
+// Active sidebar link tracking
+const sids = ['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17','s18','s19','s20'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 120) cur = id;
+  });
+  document.querySelectorAll('.ti').forEach(item => {
+    item.classList.remove('act');
+    const oc = item.getAttribute('onclick') || '';
+    if (oc.includes("'"+cur+"'")) item.classList.add('act');
+  });
+});
+// Init open branches
+document.querySelectorAll('.br-hdr.op').forEach(h => {
+  const b = h.nextElementSibling;
+  if (b) b.classList.add('op');
+});
+</script>
+</body>
+</html>

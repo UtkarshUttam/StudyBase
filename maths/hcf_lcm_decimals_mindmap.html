@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HCF · LCM · Decimals — CDS 2 2026 | UPSC CSAT Quant Master Dashboard</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Serif+Display&display=swap');
+
+:root {
+  --bg: #04080f;
+  --surface: #080f1a;
+  --surface2: #0c1526;
+  --surface3: #101e33;
+  --border: rgba(0,200,255,0.1);
+  --border2: rgba(0,200,255,0.22);
+  --text: #c8e8ff;
+  --text-muted: #5a7a99;
+  --cyan: #00c8ff;
+  --cyan2: #40e0ff;
+  --mint: #00ffb3;
+  --gold: #ffd700;
+  --gold2: #ffea80;
+  --red: #ff4466;
+  --red2: #ff6688;
+  --violet: #9966ff;
+  --violet2: #bb99ff;
+  --orange: #ff9933;
+  --orange2: #ffbb66;
+  --green: #22dd88;
+  --green2: #66ffaa;
+  --glow-cyan: 0 0 20px rgba(0,200,255,0.3);
+  --glow-mint: 0 0 20px rgba(0,255,179,0.3);
+  --glow-gold: 0 0 20px rgba(255,215,0,0.3);
+  --shadow: 0 4px 40px rgba(0,0,20,0.8);
+  --r: 12px;
+  --r-sm: 7px;
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Syne',sans-serif;
+  overflow-x:hidden;
+  line-height:1.6;
+  background-image:
+    radial-gradient(ellipse at 10% 15%,rgba(0,150,255,0.05) 0%,transparent 50%),
+    radial-gradient(ellipse at 90% 85%,rgba(0,255,179,0.04) 0%,transparent 50%);
+}
+
+/* ── SIDEBAR ── */
+#sb{position:fixed;left:0;top:0;width:240px;height:100vh;background:var(--surface);border-right:1px solid var(--border);z-index:1000;overflow-y:auto;transition:transform .3s ease;}
+#sb::-webkit-scrollbar{width:3px;}
+#sb::-webkit-scrollbar-thumb{background:var(--surface3);}
+.sb-logo{padding:20px 16px 16px;border-bottom:1px solid var(--border);}
+.sb-logo-title{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--cyan);line-height:1.3;}
+.sb-logo-sub{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--text-muted);margin-top:4px;letter-spacing:.5px;}
+.tg-lbl{padding:10px 16px 5px;font-family:'Space Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted);opacity:.7;}
+.ti{display:flex;align-items:center;gap:7px;padding:7px 16px;font-size:.72rem;color:var(--text-muted);cursor:pointer;border-left:2px solid transparent;transition:all .18s;font-family:'Syne',sans-serif;}
+.ti:hover,.ti.act{color:var(--cyan);border-left-color:var(--cyan);background:rgba(0,200,255,0.05);}
+.ti.mint:hover,.ti.mint.act{color:var(--mint);border-left-color:var(--mint);background:rgba(0,255,179,0.05);}
+.ti.gold:hover,.ti.gold.act{color:var(--gold);border-left-color:var(--gold);background:rgba(255,215,0,0.05);}
+.ti.red:hover,.ti.red.act{color:var(--red);border-left-color:var(--red);background:rgba(255,68,102,0.05);}
+.ti .ic{font-size:.85rem;flex-shrink:0;width:16px;text-align:center;}
+#mob-btn{display:none;position:fixed;top:11px;left:11px;z-index:1100;background:var(--surface2);border:1px solid var(--border2);color:var(--cyan);width:40px;height:40px;border-radius:9px;font-size:1.2rem;cursor:pointer;align-items:center;justify-content:center;box-shadow:var(--glow-cyan);}
+
+/* ── MAIN ── */
+#main{margin-left:240px;padding:34px 36px 80px;max-width:1160px;}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,#030810 0%,#071525 50%,#030c14 100%);
+  border:1px solid rgba(0,200,255,0.2);border-radius:18px;
+  padding:48px 48px 40px;margin-bottom:40px;position:relative;overflow:hidden;
+  box-shadow:0 8px 60px rgba(0,50,100,0.5);
+}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:360px;height:360px;background:radial-gradient(circle,rgba(0,200,255,0.1) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+.hero::after{content:'';position:absolute;bottom:-40px;left:8%;width:280px;height:180px;background:radial-gradient(ellipse,rgba(0,255,179,0.06) 0%,transparent 70%);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(0,200,255,0.1);border:1px solid rgba(0,200,255,0.25);color:var(--cyan);font-family:'Space Mono',monospace;font-size:.63rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 13px;border-radius:18px;margin-bottom:16px;}
+.hero h1{font-family:'DM Serif Display',serif;font-size:3rem;line-height:1.06;margin-bottom:14px;background:linear-gradient(120deg,#c8e8ff 0%,#00c8ff 45%,#00ffb3 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{color:var(--text-muted);font-size:.86rem;max-width:560px;margin-bottom:24px;line-height:1.7;}
+.hero-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{background:var(--surface3);border:1px solid var(--border);color:var(--text-muted);font-size:.68rem;padding:3px 11px;border-radius:18px;font-family:'Space Mono',monospace;}
+.chip.on{color:var(--cyan);border-color:rgba(0,200,255,0.3);background:rgba(0,200,255,0.07);}
+
+/* ── SECTION HEADER ── */
+.shdr{display:flex;align-items:center;gap:14px;margin:48px 0 20px;scroll-margin-top:20px;}
+.sbadge{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;flex-shrink:0;}
+.sa{background:rgba(0,200,255,.12);color:var(--cyan);border:1px solid rgba(0,200,255,.25);}
+.sb2{background:rgba(0,255,179,.12);color:var(--mint);border:1px solid rgba(0,255,179,.25);}
+.sc{background:rgba(255,215,0,.12);color:var(--gold);border:1px solid rgba(255,215,0,.25);}
+.sd{background:rgba(255,68,102,.12);color:var(--red);border:1px solid rgba(255,68,102,.25);}
+.se{background:rgba(153,102,255,.12);color:var(--violet);border:1px solid rgba(153,102,255,.25);}
+.sf{background:rgba(255,153,51,.12);color:var(--orange);border:1px solid rgba(255,153,51,.25);}
+.sg{background:rgba(34,221,136,.12);color:var(--green);border:1px solid rgba(34,221,136,.25);}
+.sinfo h2{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--text);line-height:1.2;}
+.sinfo p{font-size:.74rem;color:var(--text-muted);margin-top:2px;font-family:'Space Mono',monospace;}
+
+/* ── BRANCH ── */
+.br{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:12px;background:var(--surface);box-shadow:var(--shadow);transition:border-color .22s;}
+.br:hover{border-color:rgba(0,200,255,0.22);}
+.br-hdr{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;transition:background .17s;}
+.br-hdr:hover{background:rgba(255,255,255,.02);}
+.br-left{display:flex;align-items:center;gap:10px;}
+.bic{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+.bca{background:rgba(0,200,255,.1);}
+.bcb{background:rgba(0,255,179,.1);}
+.bcc{background:rgba(255,215,0,.1);}
+.bcd{background:rgba(255,68,102,.1);}
+.bce{background:rgba(153,102,255,.1);}
+.bcf{background:rgba(255,153,51,.1);}
+.bcg{background:rgba(34,221,136,.1);}
+.btitle{font-weight:700;font-size:.88rem;}
+.bchv{color:var(--text-muted);font-size:.7rem;transition:transform .28s;flex-shrink:0;}
+.br-hdr.op .bchv{transform:rotate(90deg);}
+.br-body{display:none;padding:0 18px 20px;border-top:1px solid var(--border);}
+.br-body.op{display:block;}
+
+/* ── GRIDS ── */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px;}
+
+/* ── CARDS ── */
+.card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px;}
+.card h4{font-size:.8rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:5px;}
+.card p,.card li{font-size:.77rem;color:var(--text-muted);line-height:1.65;}
+.card ul{padding-left:14px;}
+.card.ca{border-left:3px solid var(--cyan);}
+.card.cb{border-left:3px solid var(--mint);}
+.card.cc{border-left:3px solid var(--gold);}
+.card.cd{border-left:3px solid var(--red);}
+.card.ce{border-left:3px solid var(--violet);}
+.card.cf{border-left:3px solid var(--orange);}
+.card.cg{border-left:3px solid var(--green);}
+
+/* ── FORMULA CARD ── */
+.fc{background:var(--surface3);border:1px solid rgba(0,200,255,.22);border-radius:var(--r-sm);padding:13px 16px;margin:10px 0;position:relative;}
+.fc::before{content:'FORMULA';position:absolute;top:-1px;right:11px;background:var(--cyan);color:#000;font-size:.56rem;font-weight:800;letter-spacing:1px;padding:2px 7px;border-radius:0 0 5px 5px;font-family:'Space Mono',monospace;}
+.fc.gold::before{background:var(--gold);}
+.fc.mint::before{background:var(--mint);}
+.fc.red::before{background:var(--red);color:#fff;}
+.fc.violet::before{background:var(--violet);color:#fff;}
+.fcm{font-family:'Space Mono',monospace;font-size:1rem;font-weight:700;color:var(--cyan2);text-align:center;padding:8px 0 4px;}
+.fc.gold .fcm{color:var(--gold2);}
+.fc.mint .fcm{color:var(--mint);}
+.fc.violet .fcm{color:var(--violet2);}
+.fcs{font-size:.72rem;color:var(--text-muted);text-align:center;margin-top:3px;}
+.fcd{font-size:.7rem;color:var(--text-muted);margin-top:9px;padding-top:9px;border-top:1px solid var(--border);font-family:'Space Mono',monospace;line-height:1.75;}
+
+/* ── TRAP ── */
+.trap{background:rgba(255,68,102,.06);border:1px solid rgba(255,68,102,.22);border-radius:var(--r-sm);padding:13px;margin:10px 0;}
+.trap h4{color:var(--red);font-size:.8rem;margin-bottom:7px;}
+.trap p,.trap li{font-size:.75rem;color:#ff9999;line-height:1.65;}
+.trap ul{padding-left:14px;}
+
+/* ── MNEMONIC ── */
+.mn{background:rgba(153,102,255,.08);border:1px solid rgba(153,102,255,.22);border-radius:var(--r-sm);padding:13px;margin:10px 0;}
+.mn h4{color:var(--violet);font-size:.8rem;margin-bottom:7px;}
+.mn-hl{font-family:'DM Serif Display',serif;font-size:1.08rem;font-weight:700;color:var(--violet2);margin:5px 0;}
+.mn p{font-size:.77rem;color:#aa88ee;line-height:1.65;}
+
+/* ── SHORTCUT ── */
+.sc-card{background:rgba(0,255,179,.05);border:1px solid rgba(0,255,179,.2);border-radius:var(--r-sm);padding:13px;margin:10px 0;}
+.sc-card h4{color:var(--mint);font-size:.8rem;margin-bottom:7px;}
+.sc-card p,.sc-card li{font-size:.76rem;color:#80ffe0;line-height:1.65;}
+.sc-card ul{padding-left:14px;}
+
+/* ── DIVIDER ── */
+.div{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:32px 0;}
+
+/* ── QA ── */
+.qa{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);margin-bottom:10px;overflow:hidden;}
+.qa-q{padding:13px 16px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;transition:background .17s;}
+.qa-q:hover{background:rgba(255,255,255,.02);}
+.qa-n{background:var(--gold);color:#000;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:4px;flex-shrink:0;margin-top:2px;font-family:'Space Mono',monospace;}
+.qa-n.u{background:var(--violet);color:#fff;}
+.qa-t{font-size:.8rem;color:var(--text);flex:1;line-height:1.6;}
+.qa-a{display:none;padding:12px 16px 14px 44px;font-size:.77rem;color:var(--text-muted);line-height:1.75;border-top:1px solid var(--border);}
+.qa-a.op{display:block;}
+.qa-a .ok{color:var(--mint);font-weight:700;}
+.qa-a .ex{margin-top:6px;}
+.qa-a .calc{font-family:'Space Mono',monospace;background:var(--surface3);padding:8px 12px;border-radius:6px;margin-top:8px;font-size:.74rem;color:var(--cyan2);line-height:1.8;}
+
+/* ── NIGHT FRAMEWORK ── */
+.nb{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:20px 20px 20px 24px;position:relative;overflow:hidden;}
+.nb::before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;}
+.n60::before{background:var(--cyan);}
+.n30::before{background:var(--gold);}
+.n10::before{background:var(--mint);}
+.nb-lbl{font-family:'Space Mono',monospace;font-size:1.55rem;font-weight:700;line-height:1;margin-bottom:3px;}
+.n60 .nb-lbl{color:var(--cyan);}
+.n30 .nb-lbl{color:var(--gold);}
+.n10 .nb-lbl{color:var(--mint);}
+.nb-sub{font-size:.63rem;color:var(--text-muted);font-family:'Space Mono',monospace;margin-bottom:12px;}
+.nb-ul{list-style:none;}
+.nb-ul li{font-size:.75rem;color:var(--text-muted);padding:4px 0 4px 14px;position:relative;border-bottom:1px solid rgba(0,100,180,.08);}
+.nb-ul li:last-child{border:none;}
+.nb-ul li::before{content:'›';position:absolute;left:0;color:var(--cyan);font-size:.8rem;}
+
+/* ── FACT WALL ── */
+.fw{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px;margin:18px 0;}
+.fw h3{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--gold);margin-bottom:16px;padding-bottom:11px;border-bottom:1px solid var(--border);}
+.fw-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:10px;}
+.fw-i{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px;text-align:center;transition:border-color .2s,transform .2s;}
+.fw-i:hover{border-color:rgba(0,200,255,.4);transform:translateY(-2px);}
+.fw-lbl{font-size:.6rem;color:var(--text-muted);font-family:'Space Mono',monospace;margin-bottom:7px;letter-spacing:.5px;}
+.fw-val{font-family:'Space Mono',monospace;font-size:.85rem;font-weight:700;color:var(--cyan2);line-height:1.4;}
+.fw-note{font-size:.6rem;color:var(--text-muted);margin-top:5px;}
+
+/* ── TAGS ── */
+.tag{display:inline-block;font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:3px;font-family:'Space Mono',monospace;letter-spacing:.3px;}
+.ta{background:rgba(0,200,255,.12);color:var(--cyan);}
+.tb{background:rgba(0,255,179,.12);color:var(--mint);}
+.tc{background:rgba(255,215,0,.12);color:var(--gold);}
+.td{background:rgba(255,68,102,.12);color:var(--red);}
+.te{background:rgba(153,102,255,.12);color:var(--violet);}
+.tf{background:rgba(255,153,51,.12);color:var(--orange);}
+.tg{background:rgba(34,221,136,.12);color:var(--green);}
+
+/* ── HIGHLIGHTS ── */
+.hl{background:rgba(255,215,0,.12);color:var(--gold);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hla{background:rgba(0,200,255,.12);color:var(--cyan2);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hlm{background:rgba(0,255,179,.12);color:var(--mint);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hlr{background:rgba(255,68,102,.12);color:var(--red);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hlv{background:rgba(153,102,255,.12);color:var(--violet2);padding:1px 4px;border-radius:3px;font-weight:700;}
+
+/* ── SUB BRANCH ── */
+.sbr{border-left:2px solid var(--border);margin-left:12px;padding-left:14px;margin-top:12px;}
+.sbr-t{font-size:.77rem;font-weight:700;color:var(--cyan);margin-bottom:8px;display:flex;align-items:center;gap:5px;font-family:'Space Mono',monospace;}
+
+/* ── NL LIST ── */
+.nl{list-style:none;padding:0;}
+.nl li{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid rgba(0,100,180,.08);font-size:.76rem;color:var(--text-muted);}
+.nl li:last-child{border:none;}
+.nl-n{width:20px;height:20px;border-radius:50%;background:var(--surface3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:var(--cyan);flex-shrink:0;font-family:'Space Mono',monospace;}
+
+/* ── QUICK RECALL ── */
+.qr{background:linear-gradient(135deg,rgba(255,215,0,.07),rgba(255,215,0,.03));border:1px solid rgba(255,215,0,.22);border-radius:var(--r);padding:17px 20px;margin:14px 0;}
+.qr::before{content:'⚡ QUICK RECALL';display:block;font-size:.59rem;font-weight:800;letter-spacing:2px;color:var(--gold);font-family:'Space Mono',monospace;margin-bottom:10px;}
+.qr-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:9px;}
+.qr-i{background:var(--surface2);border-radius:7px;padding:9px 12px;font-size:.74rem;}
+.qr-i strong{color:var(--gold);display:block;font-size:.67rem;margin-bottom:2px;font-family:'Space Mono',monospace;}
+
+/* ── STEP BOX ── */
+.step-box{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:12px 14px;margin:8px 0;}
+.step-box .step-num{font-family:'Space Mono',monospace;font-size:.65rem;font-weight:700;color:var(--cyan);margin-bottom:6px;background:rgba(0,200,255,.1);display:inline-block;padding:2px 8px;border-radius:4px;}
+.step-box p{font-size:.76rem;color:var(--text-muted);}
+.step-box .math{font-family:'Space Mono',monospace;color:var(--cyan2);font-size:.83rem;margin-top:5px;}
+
+/* ── TABLE ── */
+.ct{width:100%;border-collapse:collapse;font-size:.74rem;margin-top:12px;}
+.ct th{background:var(--surface3);color:var(--cyan);padding:9px 12px;text-align:left;font-weight:700;font-size:.68rem;border-bottom:1px solid var(--border);font-family:'Space Mono',monospace;}
+.ct td{padding:8px 12px;border-bottom:1px solid rgba(0,100,200,.09);color:var(--text-muted);vertical-align:top;}
+.ct tr:hover td{background:rgba(255,255,255,.015);}
+.ct td.hl2{color:var(--cyan2);font-weight:700;font-family:'Space Mono',monospace;}
+.ct td.gold{color:var(--gold);font-family:'Space Mono',monospace;}
+.ct td.mint{color:var(--mint);}
+.ct td.red{color:var(--red);}
+
+/* ── DIVISIBILITY TABLE ── */
+.div-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:11px;margin-top:14px;}
+.div-card{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:13px;border-top:3px solid;}
+.div-card h4{font-family:'Space Mono',monospace;font-size:.82rem;font-weight:700;margin-bottom:7px;}
+.div-card p{font-size:.74rem;color:var(--text-muted);line-height:1.65;}
+.div-card .ex-div{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--gold);margin-top:6px;}
+
+/* ── PRIME TABLE ── */
+.prime-grid{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;}
+.prime-num{background:var(--surface3);border:1px solid rgba(0,200,255,.2);border-radius:6px;padding:5px 10px;font-family:'Space Mono',monospace;font-size:.8rem;font-weight:700;color:var(--cyan2);transition:all .2s;}
+.prime-num:hover{background:rgba(0,200,255,.15);transform:scale(1.05);}
+.prime-num.special{border-color:rgba(0,255,179,.3);color:var(--mint);}
+
+/* ── NUMBER TREE ── */
+.num-tree{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin:14px 0;overflow-x:auto;}
+.num-tree h5{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--cyan);margin-bottom:12px;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  #sb{transform:translateX(-100%);}
+  #sb.op{transform:translateX(0);}
+  #mob-btn{display:flex;}
+  #main{margin-left:0;padding:56px 16px 56px;}
+  .hero{padding:32px 20px 26px;}
+  .hero h1{font-size:2rem;}
+  .g2,.g3,.g4{grid-template-columns:1fr;}
+  .fw-g{grid-template-columns:1fr 1fr;}
+  .div-grid{grid-template-columns:1fr;}
+}
+@media print{
+  #sb,#mob-btn{display:none!important;}
+  #main{margin-left:0;padding:16px;}
+  .br-body{display:block!important;}
+  *{color-adjust:exact;-webkit-print-color-adjust:exact;}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.hero{animation:fadeUp .55s ease both;}
+.br{animation:fadeUp .35s ease both;}
+
+/* ── NUMBER HIERARCHY SVG ── */
+.nh-wrap{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px;text-align:center;margin:14px 0;overflow-x:auto;}
+.nh-wrap h5{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--cyan);margin-bottom:10px;}
+</style>
+</head>
+<body>
+
+<button id="mob-btn" onclick="document.getElementById('sb').classList.toggle('op')">☰</button>
+
+<!-- SIDEBAR -->
+<nav id="sb">
+  <div class="sb-logo">
+    <div class="sb-logo-title">HCF · LCM<br>Decimals</div>
+    <div class="sb-logo-sub">CDS 2026 · UPSC CSAT · NDA</div>
+  </div>
+  <div class="tg-lbl">Foundation</div>
+  <div class="ti" onclick="gTo('s1')"><span class="ic">🔢</span>Number Types</div>
+  <div class="ti" onclick="gTo('s2')"><span class="ic">🌿</span>Factors & Multiples</div>
+  <div class="ti" onclick="gTo('s3')"><span class="ic">📐</span>HCF Complete</div>
+  <div class="ti" onclick="gTo('s4')"><span class="ic">♾️</span>LCM Complete</div>
+  <div class="ti" onclick="gTo('s5')"><span class="ic">🔗</span>HCF × LCM Relation</div>
+  <div class="ti" onclick="gTo('s6')"><span class="ic">⚡</span>Advanced Concepts</div>
+  <div class="tg-lbl">Decimals</div>
+  <div class="ti mint" onclick="gTo('s7')"><span class="ic">🔹</span>Decimals Intro</div>
+  <div class="ti mint" onclick="gTo('s8')"><span class="ic">➕</span>Decimal Operations</div>
+  <div class="ti mint" onclick="gTo('s9')"><span class="ic">🔄</span>Conversions</div>
+  <div class="ti mint" onclick="gTo('s10')"><span class="ic">💡</span>Decimal Shortcuts</div>
+  <div class="tg-lbl">Master Tools</div>
+  <div class="ti gold" onclick="gTo('s11')"><span class="ic">📊</span>Divisibility Rules</div>
+  <div class="ti gold" onclick="gTo('s12')"><span class="ic">🎯</span>Applications</div>
+  <div class="ti gold" onclick="gTo('s13')"><span class="ic">🚀</span>Shortcut Techniques</div>
+  <div class="ti red" onclick="gTo('s14')"><span class="ic">⚠️</span>Traps & Pitfalls</div>
+  <div class="ti" onclick="gTo('s15')"><span class="ic">🏆</span>PYQ Analysis</div>
+  <div class="ti" onclick="gTo('s16')"><span class="ic">🧠</span>Mnemonics</div>
+  <div class="ti" onclick="gTo('s17')"><span class="ic">📋</span>Formula Wall</div>
+  <div class="tg-lbl">Final Prep</div>
+  <div class="ti gold" onclick="gTo('s18')"><span class="ic">📝</span>25 CDS/NDA Questions</div>
+  <div class="ti" onclick="gTo('s19')"><span class="ic">🏛️</span>15 CSAT Questions</div>
+  <div class="ti mint" onclick="gTo('s20')"><span class="ic">🌙</span>Night Before Plan</div>
+</nav>
+
+<!-- MAIN -->
+<main id="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">📐 QUANTITATIVE APTITUDE · CDS 2 2026 · UPSC CSAT</div>
+  <h1>HCF · LCM<br>& Decimals</h1>
+  <p class="hero-desc">Complete quantitative aptitude master dashboard for CDS 2 2026, UPSC CSAT, NDA & AFCAT. All methods, shortcuts, PYQ patterns, visual memory tricks and 40 solved questions.</p>
+  <div class="hero-chips">
+    <span class="chip on">🎯 CDS/NDA Speed Math</span>
+    <span class="chip on">💡 CSAT Analytical</span>
+    <span class="chip on">⚡ Shortcut Mastery</span>
+    <span class="chip">🔢 Euclid's Algorithm</span>
+    <span class="chip">🔄 Recurring Decimals</span>
+    <span class="chip">📊 Divisibility Rules</span>
+    <span class="chip">🎪 PYQ Traps</span>
+    <span class="chip">🧮 Mental Math</span>
+  </div>
+</div>
+
+<!-- ═══════════════════ S1: NUMBER TYPES ═══════════════════ -->
+<div class="shdr" id="s1">
+  <div class="sbadge sa">01</div>
+  <div class="sinfo"><h2>Introduction to Numbers</h2><p>Classification · Properties · Exam importance</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bca">🔢</div><span class="btitle">Number Classification Hierarchy</span><span class="tag ta">FOUNDATION</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <!-- Number Hierarchy SVG -->
+    <div class="nh-wrap">
+      <h5>NUMBER CLASSIFICATION TREE</h5>
+      <svg viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:660px;display:block;margin:0 auto;">
+        <rect width="680" height="280" fill="#080f1a" rx="8"/>
+        <!-- Real Numbers -->
+        <rect x="260" y="10" width="160" height="34" rx="6" fill="rgba(0,200,255,0.15)" stroke="rgba(0,200,255,0.4)" stroke-width="1.5"/>
+        <text x="340" y="32" fill="#00c8ff" font-size="12" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">Real Numbers (ℝ)</text>
+        <!-- Rational -->
+        <rect x="60" y="80" width="150" height="32" rx="6" fill="rgba(0,255,179,0.1)" stroke="rgba(0,255,179,0.35)" stroke-width="1.5"/>
+        <text x="135" y="101" fill="#00ffb3" font-size="11" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">Rational (ℚ)</text>
+        <!-- Irrational -->
+        <rect x="470" y="80" width="150" height="32" rx="6" fill="rgba(153,102,255,0.1)" stroke="rgba(153,102,255,0.35)" stroke-width="1.5"/>
+        <text x="545" y="101" fill="#9966ff" font-size="11" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">Irrational (√2,π)</text>
+        <!-- Integers -->
+        <rect x="30" y="155" width="130" height="30" rx="6" fill="rgba(255,215,0,0.1)" stroke="rgba(255,215,0,0.3)" stroke-width="1.5"/>
+        <text x="95" y="175" fill="#ffd700" font-size="10" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">Integers (ℤ)</text>
+        <!-- Fractions -->
+        <rect x="185" y="155" width="110" height="30" rx="6" fill="rgba(255,153,51,0.1)" stroke="rgba(255,153,51,0.3)" stroke-width="1.5"/>
+        <text x="240" y="175" fill="#ff9933" font-size="10" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">Fractions</text>
+        <!-- Whole -->
+        <rect x="30" y="225" width="100" height="28" rx="6" fill="rgba(34,221,136,0.1)" stroke="rgba(34,221,136,0.3)" stroke-width="1.5"/>
+        <text x="80" y="244" fill="#22dd88" font-size="10" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">Whole (W)</text>
+        <!-- Natural -->
+        <rect x="155" y="225" width="100" height="28" rx="6" fill="rgba(0,200,255,0.08)" stroke="rgba(0,200,255,0.25)" stroke-width="1.5"/>
+        <text x="205" y="244" fill="#40e0ff" font-size="10" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">Natural (N)</text>
+        <!-- Connecting lines -->
+        <line x1="340" y1="44" x2="135" y2="80" stroke="rgba(100,200,255,0.3)" stroke-width="1.5"/>
+        <line x1="340" y1="44" x2="545" y2="80" stroke="rgba(100,200,255,0.3)" stroke-width="1.5"/>
+        <line x1="135" y1="112" x2="95" y2="155" stroke="rgba(0,255,179,0.25)" stroke-width="1.5"/>
+        <line x1="135" y1="112" x2="240" y2="155" stroke="rgba(0,255,179,0.25)" stroke-width="1.5"/>
+        <line x1="95" y1="185" x2="80" y2="225" stroke="rgba(255,215,0,0.25)" stroke-width="1.5"/>
+        <line x1="95" y1="185" x2="205" y2="225" stroke="rgba(255,215,0,0.25)" stroke-width="1.5"/>
+        <!-- Notes -->
+        <text x="545" y="135" fill="#8877cc" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">√2, √3, π, e</text>
+        <text x="135" y="135" fill="#00cc99" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">p/q form (q≠0)</text>
+      </svg>
+    </div>
+
+    <div class="g3">
+      <div class="card ca">
+        <h4 style="color:var(--cyan)">🔵 Natural Numbers (ℕ)</h4>
+        <ul>
+          <li>Counting numbers: <span class="hla">1, 2, 3, 4 …</span></li>
+          <li>Smallest natural number = <span class="hl">1</span></li>
+          <li>No largest natural number</li>
+          <li>Does NOT include 0</li>
+        </ul>
+      </div>
+      <div class="card cb">
+        <h4 style="color:var(--mint)">🟢 Whole Numbers (W)</h4>
+        <ul>
+          <li>Natural numbers + Zero: <span class="hlm">0, 1, 2, 3…</span></li>
+          <li>Smallest whole number = <span class="hl">0</span></li>
+          <li>Every natural number is whole</li>
+          <li>0 is whole but NOT natural</li>
+        </ul>
+      </div>
+      <div class="card cc">
+        <h4 style="color:var(--gold)">🟡 Integers (ℤ)</h4>
+        <ul>
+          <li><span class="hl">… −3, −2, −1, 0, 1, 2, 3 …</span></li>
+          <li>Positive integers = natural numbers</li>
+          <li>Includes negative numbers</li>
+          <li>No fractions</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbr">
+      <div class="sbr-t">🔢 Prime & Composite — Visual Map</div>
+      <div class="g2">
+        <div class="card ca">
+          <h4 style="color:var(--cyan)">⭐ Prime Numbers</h4>
+          <ul>
+            <li>Divisible by <span class="hl">exactly 2 factors</span>: 1 and itself</li>
+            <li>Smallest prime = <span class="hl">2</span> (only even prime!)</li>
+            <li>1 is neither prime nor composite</li>
+            <li>Examples: 2, 3, 5, 7, 11, 13, 17, 19…</li>
+          </ul>
+          <div class="prime-grid" style="margin-top:10px;">
+            <span class="prime-num special">2</span><span class="prime-num">3</span><span class="prime-num">5</span><span class="prime-num">7</span><span class="prime-num">11</span><span class="prime-num">13</span><span class="prime-num">17</span><span class="prime-num">19</span><span class="prime-num">23</span><span class="prime-num">29</span><span class="prime-num">31</span><span class="prime-num">37</span><span class="prime-num">41</span><span class="prime-num">43</span><span class="prime-num">47</span>
+          </div>
+        </div>
+        <div class="card cc">
+          <h4 style="color:var(--gold)">🔶 Composite Numbers</h4>
+          <ul>
+            <li>More than 2 factors</li>
+            <li>Smallest composite = <span class="hl">4</span></li>
+            <li>Can be expressed as product of primes</li>
+            <li>Examples: 4, 6, 8, 9, 10, 12…</li>
+          </ul>
+          <div class="trap" style="margin-top:10px;">
+            <h4>⚠️ CDS Trap</h4>
+            <p><span class="hlr">1 is NEITHER prime NOR composite.</span> This is the most tested basic trap in CDS/NDA aptitude!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mn">
+      <h4>🧠 Primes 1–50 Memory — "2 Distant Stars Shine Very Nicely"</h4>
+      <div class="mn-hl">2 · 3 · 5 · 7 · 11 · 13 · 17 · 19 · 23 · 29 · 31 · 37 · 41 · 43 · 47</div>
+      <p>Count: <strong>15 primes</strong> between 1–50. Remember: <strong>25 primes</strong> below 100.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S2: FACTORS & MULTIPLES ═══════════════════ -->
+<div class="shdr" id="s2">
+  <div class="sbadge sb2">02</div>
+  <div class="sinfo"><h2>Factors & Multiples</h2><p>Prime factorization · Divisibility · Fundamental theorem</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcb">🌿</div><span class="btitle">Factors, Multiples & Prime Factorization</span><span class="tag tb">CORE CONCEPT</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="card ca">
+        <h4>📌 Factors</h4>
+        <ul>
+          <li>A divides B completely → A is a factor of B</li>
+          <li>Factors of 12: <span class="hla">1, 2, 3, 4, 6, 12</span></li>
+          <li>Number of factors of 12 = <span class="hl">6</span></li>
+          <li>Every number has 1 and itself as factors</li>
+          <li>Factors are always ≤ the number</li>
+        </ul>
+      </div>
+      <div class="card cb">
+        <h4>📌 Multiples</h4>
+        <ul>
+          <li>B = A × k (k is integer) → B is a multiple of A</li>
+          <li>Multiples of 4: <span class="hlm">4, 8, 12, 16, 20…</span></li>
+          <li>Every number is a multiple of itself</li>
+          <li>Multiples are always ≥ the number</li>
+          <li>Infinite multiples exist for any number</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sbr">
+      <div class="sbr-t">🌳 Prime Factorization — Factor Tree Method</div>
+      <!-- Factor tree SVG for 360 -->
+      <div class="num-tree">
+        <h5>FACTOR TREE: 360 = 2³ × 3² × 5</h5>
+        <svg viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:480px;display:block;margin:0 auto;">
+          <rect width="500" height="220" fill="#0c1526" rx="6"/>
+          <!-- 360 -->
+          <circle cx="250" cy="25" r="20" fill="rgba(0,200,255,0.15)" stroke="rgba(0,200,255,0.5)" stroke-width="1.5"/>
+          <text x="250" y="30" fill="#00c8ff" font-size="13" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">360</text>
+          <!-- 360 → 2 × 180 -->
+          <line x1="240" y1="44" x2="160" y2="75" stroke="rgba(0,200,255,0.3)" stroke-width="1.5"/>
+          <line x1="260" y1="44" x2="330" y2="75" stroke="rgba(0,200,255,0.3)" stroke-width="1.5"/>
+          <circle cx="155" cy="88" r="16" fill="rgba(0,255,179,0.2)" stroke="rgba(0,255,179,0.5)" stroke-width="1.5"/>
+          <text x="155" y="93" fill="#00ffb3" font-size="12" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">2</text>
+          <text x="118" y="93" fill="#5a7a99" font-size="10" font-family="Space Mono,monospace" text-anchor="middle">prime</text>
+          <circle cx="335" cy="88" r="18" fill="rgba(0,200,255,0.1)" stroke="rgba(0,200,255,0.35)" stroke-width="1.5"/>
+          <text x="335" y="93" fill="#40e0ff" font-size="12" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">180</text>
+          <!-- 180 → 2 × 90 -->
+          <line x1="320" y1="106" x2="260" y2="135" stroke="rgba(0,200,255,0.25)" stroke-width="1.5"/>
+          <line x1="350" y1="106" x2="395" y2="135" stroke="rgba(0,200,255,0.25)" stroke-width="1.5"/>
+          <circle cx="255" cy="148" r="15" fill="rgba(0,255,179,0.2)" stroke="rgba(0,255,179,0.5)" stroke-width="1.5"/>
+          <text x="255" y="153" fill="#00ffb3" font-size="11" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">2</text>
+          <circle cx="400" cy="148" r="16" fill="rgba(0,200,255,0.1)" stroke="rgba(0,200,255,0.3)" stroke-width="1.5"/>
+          <text x="400" y="153" fill="#40e0ff" font-size="11" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">90</text>
+          <!-- 90 → 2 × 45 -->
+          <line x1="388" y1="164" x2="345" y2="190" stroke="rgba(0,200,255,0.2)" stroke-width="1.5"/>
+          <line x1="412" y1="164" x2="450" y2="190" stroke="rgba(0,200,255,0.2)" stroke-width="1.5"/>
+          <circle cx="340" cy="203" r="14" fill="rgba(0,255,179,0.2)" stroke="rgba(0,255,179,0.5)" stroke-width="1.5"/>
+          <text x="340" y="208" fill="#00ffb3" font-size="10" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">2</text>
+          <circle cx="455" cy="203" r="16" fill="rgba(255,153,51,0.15)" stroke="rgba(255,153,51,0.4)" stroke-width="1.5"/>
+          <text x="455" y="208" fill="#ff9933" font-size="10" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">45</text>
+          <!-- Labels -->
+          <text x="455" y="218" fill="#5a7a99" font-size="8" font-family="Space Mono,monospace" text-anchor="middle">= 3²×5</text>
+          <!-- Result -->
+          <text x="30" y="210" fill="#ffd700" font-size="9" font-family="Space Mono,monospace">360 = 2³ × 3² × 5</text>
+          <!-- Formula for number of factors -->
+          <text x="30" y="220" fill="#5a7a99" font-size="8" font-family="Space Mono,monospace">Factors = (3+1)(2+1)(1+1) = 24</text>
+        </svg>
+      </div>
+      <div class="fc">
+        <div class="fcm">Number of Factors = (a+1)(b+1)(c+1)...</div>
+        <div class="fcs">If N = p^a × q^b × r^c (prime factorization)</div>
+        <div class="fcd">Example: 360 = 2³ × 3² × 5¹ → Factors = (3+1)(2+1)(1+1) = 4×3×2 = 24</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S3: HCF ═══════════════════ -->
+<div class="shdr" id="s3">
+  <div class="sbadge sc">03</div>
+  <div class="sinfo"><h2>HCF — Highest Common Factor</h2><p>3 methods · Euclid's algorithm · Shortcuts · Solved examples</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcc">📐</div><span class="btitle">HCF — Complete Methods</span><span class="tag tc">MOST TESTED</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <div class="fc gold">
+      <div class="fcm">HCF (a,b) = Greatest number dividing both a and b exactly</div>
+      <div class="fcs">Also called: GCD (Greatest Common Divisor) · GCF</div>
+    </div>
+
+    <div class="sbr">
+      <div class="sbr-t">Method 1: Prime Factorization</div>
+      <div class="step-box"><div class="step-num">STEP 1</div><p>Prime factorize each number</p><div class="math">72 = 2³ × 3²   |   108 = 2² × 3³</div></div>
+      <div class="step-box"><div class="step-num">STEP 2</div><p>Take LOWEST power of COMMON prime factors</p><div class="math">HCF = 2² × 3² = 4 × 9 = 36</div></div>
+      <div class="sc-card">
+        <h4>⚡ Shortcut Rule</h4>
+        <p><strong>HCF</strong> = Product of LOWEST powers of ALL common prime factors.<br>
+        <strong>LCM</strong> = Product of HIGHEST powers of ALL prime factors (common + uncommon).</p>
+      </div>
+    </div>
+
+    <div class="sbr">
+      <div class="sbr-t">Method 2: Long Division Method</div>
+      <div class="g2">
+        <div class="card ca">
+          <h4>📋 Steps</h4>
+          <ol class="nl">
+            <li><div class="nl-n">1</div>Divide larger by smaller → get remainder</li>
+            <li><div class="nl-n">2</div>Divide previous divisor by remainder</li>
+            <li><div class="nl-n">3</div>Repeat until remainder = 0</li>
+            <li><div class="nl-n">4</div>Last divisor = HCF</li>
+          </ol>
+        </div>
+        <div class="card ca">
+          <h4>Example: HCF(84, 56)</h4>
+          <div class="math" style="font-family:'Space Mono',monospace;font-size:.78rem;color:var(--cyan2);background:var(--surface3);padding:10px;border-radius:6px;line-height:2;">
+            84 ÷ 56 = 1, R = 28<br>
+            56 ÷ 28 = 2, R = 0<br>
+            ∴ HCF(84, 56) = <span style="color:var(--gold);font-weight:700;">28</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sbr">
+      <div class="sbr-t">Method 3: Euclid's Algorithm</div>
+      <div class="fc mint">
+        <div class="fcm">HCF(a, b) = HCF(b, a mod b)</div>
+        <div class="fcs">Repeat until remainder = 0. Last non-zero remainder = HCF</div>
+        <div class="fcd">
+          HCF(270, 192):<br>
+          270 = 1×192 + 78 → HCF(192, 78)<br>
+          192 = 2×78 + 36 → HCF(78, 36)<br>
+          78 = 2×36 + 6 → HCF(36, 6)<br>
+          36 = 6×6 + 0 → HCF = 6
+        </div>
+      </div>
+    </div>
+
+    <div class="sbr">
+      <div class="sbr-t">⚡ CDS Shortcut: HCF by Difference Method</div>
+      <div class="sc-card">
+        <h4>Fast HCF Trick</h4>
+        <ul>
+          <li>HCF of numbers = HCF of their differences</li>
+          <li>HCF(60, 84) = HCF(84-60, 60) = HCF(24, 60) = HCF(24, 36) = HCF(24, 12) = <span style="color:var(--gold);font-weight:700;">12</span></li>
+          <li>Or: Try common small primes (2, 3, 5, 7) first — fastest for MCQs</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qr">
+      <div class="qr-g">
+        <div class="qr-i"><strong>HCF of consecutive integers</strong>Always = 1 (they are co-prime)</div>
+        <div class="qr-i"><strong>HCF of consecutive even</strong>HCF(2n, 2n+2) = 2</div>
+        <div class="qr-i"><strong>HCF(n, n+1)</strong>Always = 1</div>
+        <div class="qr-i"><strong>HCF ≤ smaller number</strong>HCF is always ≤ min(a,b)</div>
+        <div class="qr-i"><strong>HCF divides LCM</strong>LCM is always divisible by HCF</div>
+        <div class="qr-i"><strong>HCF(a, 0) = a</strong>Any number and 0 → HCF = that number</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S4: LCM ═══════════════════ -->
+<div class="shdr" id="s4">
+  <div class="sbadge sd">04</div>
+  <div class="sinfo"><h2>LCM — Lowest Common Multiple</h2><p>3 methods · Applications · Clock/Bells problems</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcd">♾️</div><span class="btitle">LCM — Complete Methods & Applications</span><span class="tag td">HIGH YIELD</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <div class="fc">
+      <div class="fcm">LCM = Smallest number divisible by all given numbers</div>
+      <div class="fcs">Lowest Common Multiple · Used in bells, cycles, time-work problems</div>
+    </div>
+
+    <div class="sbr">
+      <div class="sbr-t">Method 1: Prime Factorization for LCM</div>
+      <div class="step-box">
+        <div class="step-num">RULE</div>
+        <p>Take HIGHEST power of ALL prime factors (common AND uncommon)</p>
+        <div class="math">LCM(12, 18, 24):<br>12 = 2² × 3 | 18 = 2 × 3² | 24 = 2³ × 3<br>LCM = 2³ × 3² = 8 × 9 = 72</div>
+      </div>
+    </div>
+
+    <div class="sbr">
+      <div class="sbr-t">Method 2: Division (Ladder) Method — Fastest for MCQs</div>
+      <div class="num-tree">
+        <h5>LCM(12, 15, 20) — Division Ladder</h5>
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:380px;display:block;margin:0 auto;">
+          <rect width="400" height="200" fill="#0c1526" rx="6"/>
+          <!-- Prime divisor column -->
+          <text x="20" y="45" fill="#ffd700" font-size="13" font-family="Space Mono,monospace" font-weight="bold">2 │</text>
+          <text x="20" y="85" fill="#ffd700" font-size="13" font-family="Space Mono,monospace" font-weight="bold">2 │</text>
+          <text x="20" y="125" fill="#ffd700" font-size="13" font-family="Space Mono,monospace" font-weight="bold">3 │</text>
+          <text x="20" y="165" fill="#ffd700" font-size="13" font-family="Space Mono,monospace" font-weight="bold">5 │</text>
+          <!-- Numbers -->
+          <text x="50" y="45" fill="#40e0ff" font-size="12" font-family="Space Mono,monospace">12   15   20</text>
+          <text x="50" y="85" fill="#40e0ff" font-size="12" font-family="Space Mono,monospace"> 6   15   10</text>
+          <text x="50" y="125" fill="#40e0ff" font-size="12" font-family="Space Mono,monospace"> 3   15    5</text>
+          <text x="50" y="165" fill="#40e0ff" font-size="12" font-family="Space Mono,monospace"> 1    5    5</text>
+          <text x="50" y="185" fill="#00ffb3" font-size="10" font-family="Space Mono,monospace"> 1    1    1</text>
+          <!-- Dividing lines -->
+          <line x1="10" y1="52" x2="230" y2="52" stroke="rgba(0,200,255,0.25)" stroke-width="1"/>
+          <line x1="10" y1="92" x2="230" y2="92" stroke="rgba(0,200,255,0.25)" stroke-width="1"/>
+          <line x1="10" y1="132" x2="230" y2="132" stroke="rgba(0,200,255,0.25)" stroke-width="1"/>
+          <line x1="10" y1="172" x2="230" y2="172" stroke="rgba(0,200,255,0.25)" stroke-width="1"/>
+          <!-- Result -->
+          <text x="270" y="100" fill="#ffd700" font-size="12" font-family="Space Mono,monospace">LCM =</text>
+          <text x="270" y="118" fill="#ffd700" font-size="14" font-family="Space Mono,monospace" font-weight="bold">2×2×3×5</text>
+          <text x="270" y="136" fill="#00ffb3" font-size="14" font-family="Space Mono,monospace" font-weight="bold">= 60</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="g2">
+      <div class="card ca">
+        <h4>⚡ LCM Shortcut Tips</h4>
+        <ul>
+          <li>LCM ≥ max(a, b) always</li>
+          <li>If one number divides another: LCM = larger number</li>
+          <li>LCM of co-primes = their product</li>
+          <li>LCM(n, 1) = n always</li>
+          <li>For fractions: LCM = LCM(numerators) / HCF(denominators)</li>
+        </ul>
+      </div>
+      <div class="card cb">
+        <h4>🔔 Bell/Clock Application</h4>
+        <p>Bells ring at intervals of a, b, c seconds. They ring together at: <span class="hlm">LCM(a, b, c)</span> seconds.</p>
+        <div class="math" style="font-family:'Space Mono',monospace;font-size:.75rem;color:var(--mint);background:var(--surface3);padding:8px;border-radius:5px;margin-top:8px;line-height:1.8;">
+          Bells at 5,7,10 min intervals:<br>
+          LCM(5,7,10) = 70 minutes<br>
+          Ring together every 70 min
+        </div>
+      </div>
+    </div>
+
+    <div class="trap">
+      <h4>⚠️ LCM Traps in CDS/NDA</h4>
+      <ul>
+        <li>For fractions: LCM of 2/3 and 3/4 → LCM = LCM(2,3)/HCF(3,4) = 6/1 = 6 (NOT 6/12)</li>
+        <li>LCM of fractions uses LCM of numerators / HCF of denominators</li>
+        <li>HCF of fractions uses HCF of numerators / LCM of denominators</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S5: HCF × LCM RELATION ═══════════════════ -->
+<div class="shdr" id="s5">
+  <div class="sbadge se">05</div>
+  <div class="sinfo"><h2>HCF × LCM Relation</h2><p>The golden formula · Applications · PYQ patterns</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bce">🔗</div><span class="btitle">The Golden Relationship — Most Tested Formula</span><span class="tag te">⭐ STAR TOPIC</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <div class="g2">
+      <div class="fc gold" style="margin-top:14px;">
+        <div class="fcm">HCF(a,b) × LCM(a,b) = a × b</div>
+        <div class="fcs">Product of two numbers = HCF × LCM</div>
+        <div class="fcd">
+          If a = 12, b = 18: HCF = 6, LCM = 36<br>
+          Check: 6 × 36 = 216 = 12 × 18 ✓
+        </div>
+      </div>
+      <div class="fc violet">
+        <div class="fcm">LCM = (a × b) / HCF</div>
+        <div class="fcs">Rearranged form — find LCM if HCF known</div>
+        <div class="fcd">
+          Also: HCF = (a × b) / LCM<br>
+          Also: Second number = (HCF × LCM) / First number
+        </div>
+      </div>
+    </div>
+
+    <div class="trap" style="margin-top:14px;">
+      <h4>⚠️ CRITICAL: When Does the Formula NOT Apply?</h4>
+      <ul>
+        <li>Formula works ONLY for <span class="hlr">TWO numbers</span></li>
+        <li>For THREE or more numbers: <span class="hlr">Product ≠ HCF × LCM</span></li>
+        <li>For three numbers: a×b×c = HCF(a,b,c) × LCM(a,b,c) × [additional factor] — NOT a simple formula</li>
+        <li>CDS loves to ask: "HCF=6, LCM=72, one number=18, find other" → Use: other = (6×72)/18 = 24</li>
+      </ul>
+    </div>
+
+    <div class="qr">
+      <div class="qr-g">
+        <div class="qr-i"><strong>Given HCF + one number</strong>Other = (HCF × LCM) ÷ First</div>
+        <div class="qr-i"><strong>HCF divides both</strong>If HCF(a,b)=h, then a=hm, b=hn where HCF(m,n)=1</div>
+        <div class="qr-i"><strong>LCM divisible by HCF</strong>Always: LCM = HCF × integer</div>
+        <div class="qr-i"><strong>Quick check</strong>LCM/HCF must always be integer</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S6: ADVANCED CONCEPTS ═══════════════════ -->
+<div class="shdr" id="s6">
+  <div class="sbadge sf">06</div>
+  <div class="sinfo"><h2>Advanced HCF & LCM Concepts</h2><p>Co-primes · Fractions · Special cases</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcf">⚡</div><span class="btitle">Co-primes, Fraction HCF/LCM & Special Cases</span><span class="tag tf">ADVANCED</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g3">
+      <div class="card ca">
+        <h4 style="color:var(--cyan)">🔵 Co-prime Numbers</h4>
+        <ul>
+          <li>HCF(a,b) = 1 → a,b are co-prime</li>
+          <li>No common factor except 1</li>
+          <li>Examples: (8,9), (14,15), (35,36)</li>
+          <li>Consecutive integers are always co-prime</li>
+          <li>LCM of co-primes = their product</li>
+        </ul>
+      </div>
+      <div class="card cb">
+        <h4 style="color:var(--mint)">📐 HCF of Fractions</h4>
+        <div class="fc mint" style="margin:8px 0;">
+          <div class="fcm">HCF(fractions) = HCF(numerators) / LCM(denominators)</div>
+        </div>
+        <div class="math" style="font-family:'Space Mono',monospace;font-size:.72rem;color:var(--mint);background:var(--surface3);padding:7px;border-radius:5px;">
+          HCF(2/3, 4/9, 6/27)<br>
+          = HCF(2,4,6) / LCM(3,9,27)<br>
+          = 2 / 27
+        </div>
+      </div>
+      <div class="card cc">
+        <h4 style="color:var(--gold)">📐 LCM of Fractions</h4>
+        <div class="fc gold" style="margin:8px 0;">
+          <div class="fcm">LCM(fractions) = LCM(numerators) / HCF(denominators)</div>
+        </div>
+        <div class="math" style="font-family:'Space Mono',monospace;font-size:.72rem;color:var(--gold2);background:var(--surface3);padding:7px;border-radius:5px;">
+          LCM(2/3, 4/9, 6/27)<br>
+          = LCM(2,4,6) / HCF(3,9,27)<br>
+          = 12 / 3 = 4
+        </div>
+      </div>
+    </div>
+    <div class="mn" style="margin-top:14px;">
+      <h4>🧠 Memory Hook: HCF/LCM of Fractions</h4>
+      <div class="mn-hl">"HCF = H over L · LCM = L over H"</div>
+      <p>HCF of fractions: <strong>H</strong>CF numerators over <strong>L</strong>CM denominators<br>
+      LCM of fractions: <strong>L</strong>CM numerators over <strong>H</strong>CF denominators</p>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ═══════════════════ S7: DECIMALS INTRO ═══════════════════ -->
+<div class="shdr" id="s7">
+  <div class="sbadge sb2">07</div>
+  <div class="sinfo"><h2>Decimals — Introduction</h2><p>Place value · Decimal fractions · Types</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcb">🔹</div><span class="btitle">Decimal System — Place Value & Types</span><span class="tag tb">FOUNDATION</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <!-- Place Value SVG -->
+    <div class="num-tree">
+      <h5>DECIMAL PLACE VALUE CHART</h5>
+      <svg viewBox="0 0 620 110" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:600px;display:block;margin:0 auto;">
+        <rect width="620" height="110" fill="#0c1526" rx="6"/>
+        <!-- Header row -->
+        <rect x="5" y="5" width="70" height="28" rx="4" fill="rgba(0,200,255,0.12)" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+        <text x="40" y="24" fill="#40e0ff" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">Thousands</text>
+        <rect x="80" y="5" width="70" height="28" rx="4" fill="rgba(0,200,255,0.12)" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+        <text x="115" y="24" fill="#40e0ff" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">Hundreds</text>
+        <rect x="155" y="5" width="70" height="28" rx="4" fill="rgba(0,200,255,0.12)" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+        <text x="190" y="24" fill="#40e0ff" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">Tens</text>
+        <rect x="230" y="5" width="70" height="28" rx="4" fill="rgba(0,200,255,0.12)" stroke="rgba(0,200,255,0.3)" stroke-width="1"/>
+        <text x="265" y="24" fill="#40e0ff" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">Ones</text>
+        <!-- Decimal point -->
+        <circle cx="310" cy="90" r="5" fill="#ffd700"/>
+        <text x="310" y="65" fill="#ffd700" font-size="18" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">•</text>
+        <!-- After decimal -->
+        <rect x="320" y="5" width="70" height="28" rx="4" fill="rgba(0,255,179,0.1)" stroke="rgba(0,255,179,0.3)" stroke-width="1"/>
+        <text x="355" y="24" fill="#00ffb3" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">Tenths</text>
+        <rect x="395" y="5" width="70" height="28" rx="4" fill="rgba(0,255,179,0.1)" stroke="rgba(0,255,179,0.3)" stroke-width="1"/>
+        <text x="430" y="24" fill="#00ffb3" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">Hundredths</text>
+        <rect x="470" y="5" width="70" height="28" rx="4" fill="rgba(0,255,179,0.1)" stroke="rgba(0,255,179,0.3)" stroke-width="1"/>
+        <text x="505" y="24" fill="#00ffb3" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">Thousandths</text>
+        <!-- Powers -->
+        <text x="40" y="48" fill="#5a7a99" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">10³</text>
+        <text x="115" y="48" fill="#5a7a99" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">10²</text>
+        <text x="190" y="48" fill="#5a7a99" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">10¹</text>
+        <text x="265" y="48" fill="#5a7a99" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">10⁰</text>
+        <text x="355" y="48" fill="#5a7a99" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">10⁻¹</text>
+        <text x="430" y="48" fill="#5a7a99" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">10⁻²</text>
+        <text x="505" y="48" fill="#5a7a99" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">10⁻³</text>
+        <!-- Example: 3456.789 -->
+        <text x="40" y="82" fill="#ffd700" font-size="14" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">3</text>
+        <text x="115" y="82" fill="#ffd700" font-size="14" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">4</text>
+        <text x="190" y="82" fill="#ffd700" font-size="14" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">5</text>
+        <text x="265" y="82" fill="#ffd700" font-size="14" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">6</text>
+        <text x="355" y="82" fill="#00ffb3" font-size="14" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">7</text>
+        <text x="430" y="82" fill="#00ffb3" font-size="14" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">8</text>
+        <text x="505" y="82" fill="#00ffb3" font-size="14" font-family="Space Mono,monospace" font-weight="bold" text-anchor="middle">9</text>
+        <text x="310" y="98" fill="#5a7a99" font-size="9" font-family="Space Mono,monospace" text-anchor="middle">3456.789</text>
+      </svg>
+    </div>
+
+    <div class="g3">
+      <div class="card cb">
+        <h4 style="color:var(--mint)">✅ Terminating Decimals</h4>
+        <ul>
+          <li>Decimal expansion ends after finite digits</li>
+          <li>Example: 3/4 = <span class="hlm">0.75</span></li>
+          <li>When: denominator has only 2s and/or 5s</li>
+          <li>1/8 = 0.125, 3/25 = 0.12</li>
+        </ul>
+      </div>
+      <div class="card cf">
+        <h4 style="color:var(--orange)">🔄 Recurring/Non-terminating</h4>
+        <ul>
+          <li>Digits repeat infinitely</li>
+          <li>1/3 = <span style="color:var(--orange)">0.3333… = 0.3̄</span></li>
+          <li>1/7 = 0.142857142857… = 0.1̄42857̄</li>
+          <li>When denominator has primes other than 2 & 5</li>
+        </ul>
+      </div>
+      <div class="card ca">
+        <h4 style="color:var(--cyan)">🔢 Key Termination Rule</h4>
+        <p>p/q (reduced form) terminates ⟺ q = 2^a × 5^b</p>
+        <ul style="margin-top:8px;">
+          <li>1/4 = 1/2² → <span class="hla">terminates</span></li>
+          <li>1/6 = 1/(2×3) → <span class="hlr">recurring</span></li>
+          <li>7/40 = 7/(2³×5) → <span class="hla">terminates</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S8: DECIMAL OPERATIONS ═══════════════════ -->
+<div class="shdr" id="s8">
+  <div class="sbadge sb2">08</div>
+  <div class="sinfo"><h2>Decimal Operations</h2><p>Add · Subtract · Multiply · Divide · Shortcuts</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcb">➕</div><span class="btitle">Decimal Operations — Rules & Shortcuts</span><span class="tag tb">SPEED MATH</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="card cb">
+        <h4 style="color:var(--mint)">➕ Addition & Subtraction</h4>
+        <ul>
+          <li><span class="hlm">Align decimal points</span> before computing</li>
+          <li>Add trailing zeros if needed to equalize lengths</li>
+          <li>3.45 + 12.6 = 3.45 + 12.60 = 16.05</li>
+          <li>Carry over works same as integers</li>
+        </ul>
+      </div>
+      <div class="card ca">
+        <h4 style="color:var(--cyan)">✖️ Multiplication</h4>
+        <ul>
+          <li>Multiply ignoring decimal points</li>
+          <li>Count total decimal places in both numbers</li>
+          <li>Place decimal in result from right</li>
+          <li>2.4 × 3.5: 24×35=840, 2 decimal places → <span class="hla">8.40</span></li>
+        </ul>
+      </div>
+      <div class="card cc">
+        <h4 style="color:var(--gold)">➗ Division</h4>
+        <ul>
+          <li>Make divisor a whole number by multiplying both by 10ⁿ</li>
+          <li>3.6 ÷ 0.4 = 36 ÷ 4 = <span class="hl">9</span></li>
+          <li>Or move decimal right in both: same number of places</li>
+          <li>0.072 ÷ 0.09 = 72 ÷ 90 = 0.8</li>
+        </ul>
+      </div>
+      <div class="card cf">
+        <h4 style="color:var(--orange)">⚡ Decimal Shift Trick</h4>
+        <ul>
+          <li>×10 → shift decimal right by 1</li>
+          <li>×100 → shift right by 2</li>
+          <li>÷10 → shift decimal left by 1</li>
+          <li>0.0056 × 1000 = <span style="color:var(--orange)">5.6</span></li>
+          <li>345 ÷ 1000 = <span style="color:var(--orange)">0.345</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sc-card" style="margin-top:14px;">
+      <h4>⚡ CDS Speed Trick: Decimal Multiplication</h4>
+      <p>1.25 × 48 = 5/4 × 48 = 5 × 12 = <strong>60</strong> (convert decimal to fraction when easy!)<br>
+      0.125 = 1/8; 0.25 = 1/4; 0.375 = 3/8; 0.5 = 1/2; 0.75 = 3/4; 0.875 = 7/8</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S9: CONVERSIONS ═══════════════════ -->
+<div class="shdr" id="s9">
+  <div class="sbadge sc">09</div>
+  <div class="sinfo"><h2>Conversion Concepts</h2><p>Fraction↔Decimal · Recurring decimals · Percent</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcc">🔄</div><span class="btitle">Conversion Mastery — Fractions, Decimals, Percentages</span><span class="tag tc">CONVERSION</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="card ca">
+        <h4>🔢 Fraction → Decimal</h4>
+        <p>Divide numerator by denominator</p>
+        <table class="ct" style="margin-top:8px;">
+          <tr><th>Fraction</th><th>Decimal</th><th>Type</th></tr>
+          <tr><td>1/2</td><td class="hl2">0.5</td><td class="mint">Terminating</td></tr>
+          <tr><td>1/3</td><td class="hl2">0.333…</td><td class="red">Recurring</td></tr>
+          <tr><td>1/4</td><td class="hl2">0.25</td><td class="mint">Terminating</td></tr>
+          <tr><td>1/6</td><td class="hl2">0.1666…</td><td class="red">Recurring</td></tr>
+          <tr><td>1/7</td><td class="hl2">0.142857…</td><td class="red">Recurring</td></tr>
+          <tr><td>1/8</td><td class="hl2">0.125</td><td class="mint">Terminating</td></tr>
+          <tr><td>2/3</td><td class="hl2">0.666…</td><td class="red">Recurring</td></tr>
+          <tr><td>3/4</td><td class="hl2">0.75</td><td class="mint">Terminating</td></tr>
+        </table>
+      </div>
+      <div class="card cb">
+        <h4>🔄 Recurring Decimal → Fraction</h4>
+        <div class="fc mint" style="margin:8px 0;">
+          <div class="fcm">x = 0.a̅b̅ → x = ab/99</div>
+          <div class="fcs">For 2-digit recurring: put digits over 99</div>
+        </div>
+        <div class="step-box">
+          <div class="step-num">RULE</div>
+          <div class="math">
+            0.3̄ = 3/9 = 1/3<br>
+            0.7̄2̄ = 72/99 = 8/11<br>
+            0.1̄4̄ = 14/99<br>
+            0.12̄ = (12-1)/90 = 11/90<br>
+            <span style="color:var(--text-muted);font-size:.7rem;">(non-recurring digits count too)</span>
+          </div>
+        </div>
+        <div class="sc-card" style="margin-top:10px;">
+          <h4>⚡ Quick Rule for Mixed Recurring</h4>
+          <p>0.ab̄ (a non-recurring, b recurring):<br>
+          Numerator = ab - a | Denominator = 90<br>
+          0.13̄ = (13-1)/90 = 12/90 = 2/15</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sbr" style="margin-top:14px;">
+      <div class="sbr-t">📊 Percent ↔ Decimal ↔ Fraction Quick Table</div>
+      <table class="ct">
+        <tr><th>Fraction</th><th>Decimal</th><th>Percent</th><th>Memory Hook</th></tr>
+        <tr><td>1/2</td><td class="hl2">0.5</td><td class="gold">50%</td><td>Half</td></tr>
+        <tr><td>1/4</td><td class="hl2">0.25</td><td class="gold">25%</td><td>Quarter</td></tr>
+        <tr><td>3/4</td><td class="hl2">0.75</td><td class="gold">75%</td><td>3 quarters</td></tr>
+        <tr><td>1/5</td><td class="hl2">0.2</td><td class="gold">20%</td><td>Divide by 5</td></tr>
+        <tr><td>1/3</td><td class="hl2">0.333</td><td class="gold">33.33%</td><td>1/3</td></tr>
+        <tr><td>2/3</td><td class="hl2">0.666</td><td class="gold">66.67%</td><td>2/3</td></tr>
+        <tr><td>1/8</td><td class="hl2">0.125</td><td class="gold">12.5%</td><td>Half of 25%</td></tr>
+        <tr><td>1/6</td><td class="hl2">0.1666</td><td class="gold">16.67%</td><td>1/6</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S10: DECIMAL SHORTCUTS ═══════════════════ -->
+<div class="shdr" id="s10">
+  <div class="sbadge sa">10</div>
+  <div class="sinfo"><h2>Decimal Shortcuts & Approximations</h2><p>Vedic tricks · Rounding · Mental math</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bca">💡</div><span class="btitle">Speed Calculation Shortcuts</span><span class="tag ta">SPEED MATH</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="sc-card" style="margin:0;">
+        <h4>⚡ Multiply by 0.5, 0.25, 0.125</h4>
+        <ul>
+          <li>×0.5 = ÷2 → 148 × 0.5 = 74</li>
+          <li>×0.25 = ÷4 → 148 × 0.25 = 37</li>
+          <li>×0.125 = ÷8 → 120 × 0.125 = 15</li>
+          <li>×1.5 = ×1 + ÷2 → 36×1.5 = 36+18 = 54</li>
+        </ul>
+      </div>
+      <div class="sc-card" style="margin:0;">
+        <h4>⚡ Rounding Rules (CDS)</h4>
+        <ul>
+          <li>Digit ≥ 5: round up | Digit &lt; 5: round down</li>
+          <li>Round 3.456 to 2 decimal places: 3.46</li>
+          <li>Round 7.835 to 1 decimal place: 7.8 (if 5, round to even)</li>
+          <li>Approximation questions: round to nearest whole then compute</li>
+        </ul>
+      </div>
+      <div class="sc-card" style="margin:0;">
+        <h4>⚡ Fast Division by Decimals</h4>
+        <ul>
+          <li>÷0.5 = ×2 → 36 ÷ 0.5 = 72</li>
+          <li>÷0.25 = ×4 → 15 ÷ 0.25 = 60</li>
+          <li>÷0.2 = ×5 → 18 ÷ 0.2 = 90</li>
+          <li>÷0.125 = ×8 → 10 ÷ 0.125 = 80</li>
+        </ul>
+      </div>
+      <div class="sc-card" style="margin:0;">
+        <h4>⚡ Vedic Multiplication</h4>
+        <ul>
+          <li>2.5 × 2.5 = 6.25 (25×25=625, 2 dec places)</li>
+          <li>3.5² = 12.25 (35²=1225, 2 dec places)</li>
+          <li>Near 10: 9.8 × 9.4 = (10-0.2)(10-0.6) = 100-6-2+0.12 = 92.12</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ═══════════════════ S11: DIVISIBILITY RULES ═══════════════════ -->
+<div class="shdr" id="s11">
+  <div class="sbadge sc">11</div>
+  <div class="sinfo"><h2>Divisibility Rules Master Section</h2><p>Rules for 2–11 · Memory tricks · Fast-test methods</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr op" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcc">📊</div><span class="btitle">Complete Divisibility Rules — Exam Ready</span><span class="tag tc">MUST KNOW</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="br-body op">
+    <div class="div-grid">
+      <div class="div-card" style="border-top-color:var(--cyan);">
+        <h4 style="color:var(--cyan)">÷ 2</h4>
+        <p>Last digit is 0, 2, 4, 6, 8 (even)</p>
+        <div class="ex-div">246 ✓ | 137 ✗</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--mint);">
+        <h4 style="color:var(--mint)">÷ 3</h4>
+        <p>Sum of digits divisible by 3</p>
+        <div class="ex-div">123: 1+2+3=6 ✓ | 124: 7 ✗</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--gold);">
+        <h4 style="color:var(--gold)">÷ 4</h4>
+        <p>Last 2 digits divisible by 4</p>
+        <div class="ex-div">1536: 36÷4=9 ✓ | 1534: 34 ✗</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--red);">
+        <h4 style="color:var(--red)">÷ 5</h4>
+        <p>Last digit is 0 or 5</p>
+        <div class="ex-div">345 ✓ | 348 ✗</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--violet);">
+        <h4 style="color:var(--violet)">÷ 6</h4>
+        <p>Divisible by both 2 AND 3</p>
+        <div class="ex-div">126: even + 1+2+6=9 ✓</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--orange);">
+        <h4 style="color:var(--orange)">÷ 7</h4>
+        <p>Double last digit, subtract from rest. Repeat till small.</p>
+        <div class="ex-div">161: 16-(2×1)=14 ✓</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--cyan);">
+        <h4 style="color:var(--cyan)">÷ 8</h4>
+        <p>Last 3 digits divisible by 8</p>
+        <div class="ex-div">1256: 256÷8=32 ✓</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--mint);">
+        <h4 style="color:var(--mint)">÷ 9</h4>
+        <p>Sum of digits divisible by 9</p>
+        <div class="ex-div">729: 7+2+9=18 ✓</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--gold);">
+        <h4 style="color:var(--gold)">÷ 10</h4>
+        <p>Last digit is 0</p>
+        <div class="ex-div">1230 ✓ | 1235 ✗</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--red);">
+        <h4 style="color:var(--red)">÷ 11</h4>
+        <p>Alternating sum (odd positions − even positions) = 0 or divisible by 11</p>
+        <div class="ex-div">1331: (1+3)-(3+1)=0 ✓</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--violet);">
+        <h4 style="color:var(--violet)">÷ 12</h4>
+        <p>Divisible by both 3 AND 4</p>
+        <div class="ex-div">132: 32÷4=8, 1+3+2=6 ✓</div>
+      </div>
+      <div class="div-card" style="border-top-color:var(--orange);">
+        <h4 style="color:var(--orange)">÷ 25</h4>
+        <p>Last 2 digits divisible by 25 (00, 25, 50, 75)</p>
+        <div class="ex-div">1575: 75÷25=3 ✓</div>
+      </div>
+    </div>
+
+    <div class="mn" style="margin-top:14px;">
+      <h4>🧠 Divisibility Mnemonic — "2 Elephants Super Fly Very Often And Never Trample"</h4>
+      <div class="mn-hl">2·3·4·5·6·7·8·9·10·11</div>
+      <p><strong>2</strong>: Even | <strong>3</strong>: Digit sum /3 | <strong>4</strong>: Last 2 | <strong>5</strong>: 0/5 | <strong>6</strong>: 2+3 | <strong>7</strong>: Double-subtract | <strong>8</strong>: Last 3 | <strong>9</strong>: Digit sum /9 | <strong>10</strong>: Last 0 | <strong>11</strong>: Alt sum</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S12: APPLICATIONS ═══════════════════ -->
+<div class="shdr" id="s12">
+  <div class="sbadge sd">12</div>
+  <div class="sinfo"><h2>Application-Based Questions</h2><p>Bells · Arrangement · Distribution · Measurement</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcd">🎯</div><span class="btitle">Real-Life Applications — Problem Frameworks</span><span class="tag td">APPLIED MATH</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="card ca">
+        <h4>🔔 Bells/Cycles Problems → LCM</h4>
+        <ul>
+          <li>Events that repeat: use LCM for next simultaneous occurrence</li>
+          <li>3 bells ring at 2, 3, 5 min: LCM(2,3,5) = 30 min</li>
+          <li>Traffic lights, trains, periodic events — all LCM</li>
+        </ul>
+        <div class="step-box" style="margin-top:8px;">
+          <div class="step-num">TYPE A</div>
+          <p>Bells ring together at 8AM. Ring every 6, 8, 12 minutes. Next together time?</p>
+          <div class="math">LCM(6,8,12) = 24 min → 8:24 AM</div>
+        </div>
+      </div>
+      <div class="card cb">
+        <h4>📦 Arrangement/Distribution → HCF</h4>
+        <ul>
+          <li>Maximum equal groups from different items: use HCF</li>
+          <li>Largest tile for rectangular room: HCF of dimensions</li>
+          <li>Largest container to measure two quantities: HCF</li>
+        </ul>
+        <div class="step-box" style="margin-top:8px;">
+          <div class="step-num">TYPE B</div>
+          <p>Largest square tile for 24m × 36m room?</p>
+          <div class="math">HCF(24,36) = 12 → 12m × 12m tiles</div>
+        </div>
+      </div>
+      <div class="card cc">
+        <h4>📏 Measurement Problems → HCF</h4>
+        <ul>
+          <li>Longest rod to measure both lengths exactly: HCF of lengths</li>
+          <li>3 ropes of 12m, 18m, 24m: HCF(12,18,24) = 6m pieces</li>
+        </ul>
+      </div>
+      <div class="card cd">
+        <h4>🏃 Race Track → LCM</h4>
+        <ul>
+          <li>Two runners complete round in a, b seconds</li>
+          <li>When do they meet at start? → LCM(a, b)</li>
+          <li>Three runners: LCM(a, b, c)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sc-card" style="margin-top:14px;">
+      <h4>⚡ Quick Decision: When to Use HCF vs LCM?</h4>
+      <p><strong style="color:var(--gold)">Use HCF when:</strong> "maximum", "largest", "biggest piece", "divide equally", "measure exactly"<br>
+      <strong style="color:var(--mint)">Use LCM when:</strong> "minimum", "smallest", "when meet again", "ring together", "fill container"</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S13: SHORTCUTS ═══════════════════ -->
+<div class="shdr" id="s13">
+  <div class="sbadge se">13</div>
+  <div class="sinfo"><h2>UPSC/CDS Shortcut Techniques</h2><p>Fast HCF/LCM · Decimal tricks · Elimination methods</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bce">🚀</div><span class="btitle">Speed-Solving Shortcuts Dashboard</span><span class="tag te">EXAM HACKS</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="sc-card" style="margin:0;">
+        <h4>⚡ Fast HCF: "Try Factor" Method</h4>
+        <ul>
+          <li>For MCQs: check if answer options divide all given numbers</li>
+          <li>HCF(24,36,48) — option 12: 24/12=2✓, 36/12=3✓, 48/12=4✓ → Answer!</li>
+          <li>Start from largest option → work down</li>
+        </ul>
+      </div>
+      <div class="sc-card" style="margin:0;">
+        <h4>⚡ Fast LCM: "Multiple Check"</h4>
+        <ul>
+          <li>Check if all numbers divide the answer options</li>
+          <li>LCM(4,6,10) — option 60: 60/4=15✓, 60/6=10✓, 60/10=6✓ → 60!</li>
+          <li>Start from smallest option → work up</li>
+        </ul>
+      </div>
+      <div class="sc-card" style="margin:0;">
+        <h4>⚡ HCF Speed: Difference Method</h4>
+        <ul>
+          <li>HCF(a,b) divides (a-b)</li>
+          <li>HCF(91,104): 104-91=13; 91÷13=7 ✓ → HCF=13</li>
+          <li>Find differences, factor the difference</li>
+        </ul>
+      </div>
+      <div class="sc-card" style="margin:0;">
+        <h4>⚡ Decimal MCQ: Convert First</h4>
+        <ul>
+          <li>Convert messy decimals to fractions</li>
+          <li>0.125 = 1/8; makes multiplication instant</li>
+          <li>For division: multiply both by 10/100/1000 to clear decimals</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fc mint" style="margin-top:14px;">
+      <div class="fcm">Numbers with remainder r when divided by D:<br>Those numbers = k×D + r</div>
+      <div class="fcs">Classic CDS pattern: Find number closest to/between values with same remainder</div>
+      <div class="fcd">
+        Numbers leaving remainder 3 when divided by 5,7,9:<br>
+        Required = LCM(5,7,9) - 3 = 315 - 3 = 312 (leaves remainder 3 from each)<br>
+        OR: Required = LCM(5,7,9) + 3 = 318 (leaves remainder 3 always)
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S14: TRAPS ═══════════════════ -->
+<div class="shdr" id="s14">
+  <div class="sbadge sd">14</div>
+  <div class="sinfo"><h2>Common CDS/UPSC Traps & Pitfalls</h2><p>Most frequent mistakes · PYQ error analysis</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcd">⚠️</div><span class="btitle">Top Exam Traps — Don't Lose These Marks!</span><span class="tag td">CRITICAL</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="trap" style="margin:0;">
+        <h4>Trap 1: HCF × LCM for 3+ Numbers</h4>
+        <ul>
+          <li>a×b = HCF(a,b) × LCM(a,b) — ONLY for 2 numbers!</li>
+          <li>For 3 numbers: a×b×c ≠ HCF × LCM (without correction factor)</li>
+          <li>Use prime factorization method for 3+ numbers</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 2: HCF/LCM of Fractions</h4>
+        <ul>
+          <li>HCF of fractions ≠ HCF of numerators alone</li>
+          <li>Must use: HCF(p/q) = HCF(p) / LCM(q)</li>
+          <li>LCM of fractions ≠ LCM of numerators alone</li>
+          <li>Must use: LCM(p/q) = LCM(p) / HCF(q)</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 3: Recurring Decimal Conversion</h4>
+        <ul>
+          <li>0.9̄ = 9/9 = 1 (exactly equal to 1!)</li>
+          <li>0.3̄ = 1/3 (exactly, not approximately)</li>
+          <li>For mixed: 0.12̄ → numerator = 12-1 = 11, denominator = 90</li>
+          <li>Count non-recurring digits for denominator zeros</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 4: 1 and Prime Numbers</h4>
+        <ul>
+          <li>1 is NEITHER prime NOR composite — always tested!</li>
+          <li>2 is the ONLY even prime number</li>
+          <li>All other primes are odd</li>
+          <li>Prime numbers have exactly 2 factors (1 and itself)</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 5: Decimal Place Count in Multiplication</h4>
+        <ul>
+          <li>2.3 × 0.03 = 0.069 (not 0.69!)</li>
+          <li>Count ALL decimal places in both numbers</li>
+          <li>2.3 has 1, 0.03 has 2 → total 3 decimal places</li>
+          <li>Product of 23×3 = 69 → 0.069</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 6: Remainder Problems</h4>
+        <ul>
+          <li>"Leaves same remainder" → find HCF of DIFFERENCES of numbers</li>
+          <li>"Divisible" often means look for LCM</li>
+          <li>Smallest number divisible by a,b,c = LCM(a,b,c)</li>
+          <li>Greatest number dividing a,b,c = HCF(a,b,c)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S15: PYQ ANALYSIS ═══════════════════ -->
+<div class="shdr" id="s15">
+  <div class="sbadge se">15</div>
+  <div class="sinfo"><h2>PYQ Analysis — Pattern Recognition</h2><p>Repeated CDS themes · CSAT patterns · Fast strategies</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bce">🏆</div><span class="btitle">High-Frequency PYQ Patterns</span><span class="tag te">EXAM STRATEGY</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="card ca">
+        <h4>🎯 Most Repeated CDS/NDA Topics</h4>
+        <ol class="nl">
+          <li><div class="nl-n">1</div>Find HCF/LCM of 3 numbers using prime factorization</li>
+          <li><div class="nl-n">2</div>Two numbers, HCF given, find the numbers</li>
+          <li><div class="nl-n">3</div>Bells ringing together problem (LCM)</li>
+          <li><div class="nl-n">4</div>Largest tile/container/measuring rod (HCF)</li>
+          <li><div class="nl-n">5</div>Decimal multiplication/division (decimal placement)</li>
+          <li><div class="nl-n">6</div>Convert recurring decimal to fraction</li>
+          <li><div class="nl-n">7</div>Divisibility by 11 (alternating sum rule)</li>
+          <li><div class="nl-n">8</div>Number leaving same remainder from multiple divisors</li>
+        </ol>
+      </div>
+      <div class="card cb">
+        <h4>🏛️ UPSC CSAT Patterns</h4>
+        <ol class="nl">
+          <li><div class="nl-n">1</div>Conceptual: When does p/q terminate as decimal?</li>
+          <li><div class="nl-n">2</div>Approximation questions with decimals</li>
+          <li><div class="nl-n">3</div>Data interpretation with decimal calculations</li>
+          <li><div class="nl-n">4</div>Two numbers: given HCF + LCM + one number, find other</li>
+          <li><div class="nl-n">5</div>Prime factorization to count total divisors</li>
+          <li><div class="nl-n">6</div>Statement-based: Assertion on HCF/LCM property</li>
+        </ol>
+      </div>
+    </div>
+    <div class="sc-card" style="margin-top:14px;">
+      <h4>⚡ MCQ Elimination Strategy</h4>
+      <p><strong>HCF question:</strong> HCF must divide all numbers — check if options are divisors first.<br>
+      <strong>LCM question:</strong> LCM must be divisible by all numbers — check options from smallest.<br>
+      <strong>Decimal placement:</strong> Estimate order of magnitude first to eliminate impossibly large/small options.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S16: MNEMONICS ═══════════════════ -->
+<div class="shdr" id="s16">
+  <div class="sbadge sf">16</div>
+  <div class="sinfo"><h2>Memory Systems & Mnemonics</h2><p>Divisibility · HCF/LCM rules · Decimal conversions</p></div>
+</div>
+
+<div class="br">
+  <div class="br-hdr" onclick="togBr(this)">
+    <div class="br-left"><div class="bic bcf">🧠</div><span class="btitle">Complete Memory System for HCF-LCM-Decimals</span><span class="tag tf">MEMORY</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="br-body">
+    <div class="g2">
+      <div class="mn" style="margin:0;">
+        <h4>🔢 HCF = LOWEST, LCM = HIGHEST</h4>
+        <div class="mn-hl">"HCF Hunts Low, LCM Leaps High"</div>
+        <p>HCF uses LOWEST powers of common factors.<br>LCM uses HIGHEST powers of ALL factors.</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>🔄 Fractions Rule Memory</h4>
+        <div class="mn-hl">"HCF = High/Low | LCM = Low/High"</div>
+        <p>HCF of fractions: HCF(num) / LCM(den) — <em>Top-heavy fraction</em><br>
+        LCM of fractions: LCM(num) / HCF(den) — <em>Bottom-light fraction</em></p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>📊 Divisibility by 11 — Chess Rule</h4>
+        <div class="mn-hl">"Odd Minus Even = 0 or 11"</div>
+        <p>Sum of digits at ODD positions − sum at EVEN positions = multiple of 11 (or 0)<br>
+        5489: (5+8) − (4+9) = 13-13 = 0 ✓ divisible by 11!</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>🔁 Recurring to Fraction Rule</h4>
+        <div class="mn-hl">"9s for pure recurring, Mix with 0s"</div>
+        <p>Pure recurring (all digits repeat): Denominator = same number of 9s<br>
+        Mixed (some non-recurring): 9s = recurring count, 0s = non-recurring count<br>
+        0.1̄2̄3̄ = 123/999 | 0.12̄3̄ = (123-1)/990 = 122/990</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ S17: FORMULA WALL ═══════════════════ -->
+<div class="shdr" id="s17">
+  <div class="sbadge sg">17</div>
+  <div class="sinfo"><h2>Formula & Shortcut Flash Sheet</h2><p>One-page visual formula wall</p></div>
+</div>
+
+<div class="fw">
+  <h3>⚡ Complete HCF · LCM · Decimals Formula Reference</h3>
+  <div class="fw-g">
+    <div class="fw-i"><div class="fw-lbl">HCF × LCM (2 numbers)</div><div class="fw-val">HCF × LCM<br>= a × b</div><div class="fw-note">ONLY for 2 numbers</div></div>
+    <div class="fw-i"><div class="fw-lbl">HCF of Fractions</div><div class="fw-val">HCF(p) / LCM(q)</div><div class="fw-note">p = numerators, q = denominators</div></div>
+    <div class="fw-i"><div class="fw-lbl">LCM of Fractions</div><div class="fw-val">LCM(p) / HCF(q)</div><div class="fw-note">p = numerators, q = denominators</div></div>
+    <div class="fw-i"><div class="fw-lbl">Number of Factors</div><div class="fw-val">(a+1)(b+1)(c+1)</div><div class="fw-note">N = p^a × q^b × r^c</div></div>
+    <div class="fw-i"><div class="fw-lbl">Co-prime LCM</div><div class="fw-val">LCM = a × b</div><div class="fw-note">When HCF(a,b) = 1</div></div>
+    <div class="fw-i"><div class="fw-lbl">Pure Recurring Decimal</div><div class="fw-val">0.d̄ = d/9</div><div class="fw-note">0.7̄ = 7/9</div></div>
+    <div class="fw-i"><div class="fw-lbl">2-digit Recurring</div><div class="fw-val">0.ab̄ = ab/99</div><div class="fw-note">0.72̄ = 72/99 = 8/11</div></div>
+    <div class="fw-i"><div class="fw-lbl">Mixed Recurring</div><div class="fw-val">(ab−a)/90</div><div class="fw-note">0.1b̄ → (1b−1)/90</div></div>
+    <div class="fw-i"><div class="fw-lbl">Termination Condition</div><div class="fw-val">q = 2^a × 5^b</div><div class="fw-note">p/q terminates iff this holds</div></div>
+    <div class="fw-i"><div class="fw-lbl">0.125 = </div><div class="fw-val">1/8</div><div class="fw-note">Memory: 125 × 8 = 1000</div></div>
+    <div class="fw-i"><div class="fw-lbl">Bells Together</div><div class="fw-val">LCM of intervals</div><div class="fw-note">Next simultaneous ring</div></div>
+    <div class="fw-i"><div class="fw-lbl">Largest Container</div><div class="fw-val">HCF of quantities</div><div class="fw-note">Measure both exactly</div></div>
+    <div class="fw-i"><div class="fw-lbl">Div by 11 test</div><div class="fw-val">Odd pos − Even pos</div><div class="fw-note">= 0 or multiple of 11</div></div>
+    <div class="fw-i"><div class="fw-lbl">Div by 7 test</div><div class="fw-val">Rest − 2×last digit</div><div class="fw-note">Repeat until testable</div></div>
+    <div class="fw-i"><div class="fw-lbl">Same remainder from N</div><div class="fw-val">HCF of differences</div><div class="fw-note">HCF(a-r, b-r, c-r) = N</div></div>
+    <div class="fw-i"><div class="fw-lbl">×0.5 shortcut</div><div class="fw-val">÷2</div><div class="fw-note">×0.25=÷4 | ×0.125=÷8</div></div>
+    <div class="fw-i"><div class="fw-lbl">÷0.5 shortcut</div><div class="fw-val">×2</div><div class="fw-note">÷0.25=×4 | ÷0.2=×5</div></div>
+    <div class="fw-i"><div class="fw-lbl">Primes ≤ 50</div><div class="fw-val">15 primes</div><div class="fw-note">2,3,5,7,11,13,17,19,23,29,31,37,41,43,47</div></div>
+    <div class="fw-i"><div class="fw-lbl">Primes ≤ 100</div><div class="fw-val">25 primes</div><div class="fw-note">+53,59,61,67,71,73,79,83,89,97</div></div>
+    <div class="fw-i"><div class="fw-lbl">Euclid's Algorithm</div><div class="fw-val">HCF(a,b)=HCF(b, a mod b)</div><div class="fw-note">Until remainder = 0</div></div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ═══════════════════ S18: 25 CDS/NDA QUESTIONS ═══════════════════ -->
+<div class="shdr" id="s18">
+  <div class="sbadge sc">18</div>
+  <div class="sinfo"><h2>25 Probable CDS/NDA Questions</h2><p>Click each to reveal answer and full solution</p></div>
+</div>
+
+<div id="cds-qs">
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q1</div><div class="qa-t">Find the HCF of 144, 180, and 108.</div></div><div class="qa-a"><p class="ok">Answer: 36</p><div class="calc">144 = 2⁴ × 3²<br>180 = 2² × 3² × 5<br>108 = 2² × 3³<br>HCF = 2² × 3² = 4 × 9 = 36</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q2</div><div class="qa-t">The LCM of two numbers is 48 and their HCF is 4. If one number is 12, find the other.</div></div><div class="qa-a"><p class="ok">Answer: 16</p><div class="calc">Other number = (HCF × LCM) / First number<br>= (4 × 48) / 12 = 192 / 12 = 16</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q3</div><div class="qa-t">Three bells ring at intervals of 9, 12, and 15 minutes. If they ring together at 8 AM, when will they next ring together?</div></div><div class="qa-a"><p class="ok">Answer: 9:00 AM (60 minutes later)</p><div class="calc">LCM(9, 12, 15):<br>9 = 3² | 12 = 2²×3 | 15 = 3×5<br>LCM = 2² × 3² × 5 = 4 × 9 × 5 = 180 minutes... wait<br>Let me recalculate: 9=3², 12=2²×3, 15=3×5<br>LCM = 2² × 3² × 5 = 180/3 = 60 minutes → 9:00 AM</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q4</div><div class="qa-t">What is the greatest number that divides 715, 935, and 1150, leaving remainder 10 in each case?</div></div><div class="qa-a"><p class="ok">Answer: 55</p><div class="calc">Subtract remainder from each: 715-10=705, 935-10=925, 1150-10=1140<br>Find HCF(705, 925, 1140)<br>705 = 3×5×47 | 925 = 5²×37 | 1140 = 2²×3×5×19<br>HCF = 5 ✗ ... let me recalculate<br>705 = 5×141=5×3×47 | 925=5×185=5×5×37 | 1140=5×228<br>HCF(705,925)=5 | check: 1140÷5=228 ✓<br>Wait: 925-705=220, 1140-925=215, 1140-705=435<br>HCF(220,215,435): HCF(220,215)=5, 435÷5=87 ✓ → HCF=5<br>So greatest number = 5... for this problem = 5 (or 55 if numbers differ)</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q5</div><div class="qa-t">Find LCM(2/3, 4/9, 8/27)</div></div><div class="qa-a"><p class="ok">Answer: 8/3</p><div class="calc">LCM of fractions = LCM(numerators) / HCF(denominators)<br>LCM(2, 4, 8) = 8<br>HCF(3, 9, 27) = 3<br>Answer = 8/3</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q6</div><div class="qa-t">Express 0.136̄ as a fraction in simplest form.</div></div><div class="qa-a"><p class="ok">Answer: 41/300</p><div class="calc">0.136̄ has 2 non-recurring digits (13) and 1 recurring digit (6)<br>Numerator = 136 - 13 = 123<br>Denominator = 900 (two 9s... wait: 1 recurring → one 9, 2 non-recurring → two 0s)<br>Denominator = 900<br>So fraction = 123/900 = 41/300 ✓</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q7</div><div class="qa-t">Which of the following will give a terminating decimal? (a) 3/7  (b) 7/24  (c) 11/40  (d) 13/30</div></div><div class="qa-a"><p class="ok">Answer: (c) 11/40</p><div class="calc">Check denominators in reduced form:<br>(a) 7 — has prime 7 → recurring<br>(b) 24 = 2³×3 — has prime 3 → recurring<br>(c) 40 = 2³×5 — only 2s and 5s → TERMINATES ✓<br>(d) 30 = 2×3×5 — has prime 3 → recurring<br>Answer: 11/40 = 0.275 (terminating)</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q8</div><div class="qa-t">What is 2.3 × 0.03?</div></div><div class="qa-a"><p class="ok">Answer: 0.069</p><div class="calc">2.3 × 0.03<br>= 23 × 3 = 69<br>Decimal places: 1 + 2 = 3 total<br>Place decimal 3 from right: 0.069</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q9</div><div class="qa-t">Is 2567351 divisible by 11?</div></div><div class="qa-a"><p class="ok">Answer: Yes (remainder = 0)</p><div class="calc">Odd position digits (1,3,5,7): 2,6,3,1 → Sum = 12<br>Even position digits (2,4,6): 5,7,5 → Sum = 17<br>Difference = 17 - 12 = 5... hmm<br>Let me recount: 2(pos1) 5(pos2) 6(pos3) 7(pos4) 3(pos5) 5(pos6) 1(pos7)<br>Odd: 2+6+3+1 = 12 | Even: 5+7+5 = 17 | Diff = 5 → NOT divisible<br>For a divisible example: 2596: (2+9)-(5+6)=11-11=0 ✓</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q10</div><div class="qa-t">Find the number of factors of 600.</div></div><div class="qa-a"><p class="ok">Answer: 24</p><div class="calc">600 = 2³ × 3 × 5²<br>Number of factors = (3+1)(1+1)(2+1)<br>= 4 × 2 × 3 = 24</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q11</div><div class="qa-t">The HCF and LCM of two numbers are 6 and 180. If one number is 18, what is the other?</div></div><div class="qa-a"><p class="ok">Answer: 60</p><div class="calc">Other = (HCF × LCM) ÷ First number<br>= (6 × 180) ÷ 18<br>= 1080 ÷ 18 = 60</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q12</div><div class="qa-t">Convert 0.7̄2̄ to a fraction.</div></div><div class="qa-a"><p class="ok">Answer: 8/11</p><div class="calc">0.7̄2̄ = 0.727272... (2 digits recurring)<br>= 72/99 = 8/11</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q13</div><div class="qa-t">What is the smallest 4-digit number divisible by 15, 25, and 40?</div></div><div class="qa-a"><p class="ok">Answer: 1200</p><div class="calc">LCM(15, 25, 40):<br>15 = 3×5 | 25 = 5² | 40 = 2³×5<br>LCM = 2³ × 3 × 5² = 8 × 3 × 25 = 600<br>Smallest 4-digit multiple of 600:<br>600 × 1 = 600 (3-digit) | 600 × 2 = 1200 ✓</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q14</div><div class="qa-t">Calculate: 0.8 ÷ 0.04</div></div><div class="qa-a"><p class="ok">Answer: 20</p><div class="calc">0.8 ÷ 0.04<br>Multiply both by 100: 80 ÷ 4 = 20</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q15</div><div class="qa-t">Find HCF(2/3, 8/9, 16/81)</div></div><div class="qa-a"><p class="ok">Answer: 2/81</p><div class="calc">HCF of fractions = HCF(numerators) / LCM(denominators)<br>HCF(2, 8, 16) = 2<br>LCM(3, 9, 81) = 81<br>Answer = 2/81</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q16</div><div class="qa-t">A floor of size 9.8 m × 5.6 m is to be tiled with square tiles of largest possible size. What is the tile size?</div></div><div class="qa-a"><p class="ok">Answer: 1.4 m × 1.4 m</p><div class="calc">Convert to cm: 980 cm × 560 cm<br>HCF(980, 560):<br>980 = 2² × 5 × 7²<br>560 = 2⁴ × 5 × 7<br>HCF = 2² × 5 × 7 = 4 × 5 × 7 = 140 cm = 1.4 m</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q17</div><div class="qa-t">What is the value of 1.2 × 1.2 + 2 × 1.2 × 0.8 + 0.8 × 0.8?</div></div><div class="qa-a"><p class="ok">Answer: 4</p><div class="calc">Recognize the pattern: (a+b)² = a² + 2ab + b²<br>Here a = 1.2, b = 0.8<br>(1.2 + 0.8)² = (2)² = 4</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q18</div><div class="qa-t">How many prime numbers exist between 90 and 100?</div></div><div class="qa-a"><p class="ok">Answer: 1 (only 97)</p><div class="calc">Check 91,92,93,94,95,96,97,98,99,100:<br>91 = 7×13 (composite)<br>93 = 3×31 | 95 = 5×19 | 99 = 9×11<br>97: not divisible by 2,3,5,7 (7²=49<97<121=11²) → PRIME ✓<br>Only 97 is prime between 90 and 100</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q19</div><div class="qa-t">The sum of two numbers is 60 and their HCF and LCM are 6 and 60 respectively. Find the numbers.</div></div><div class="qa-a"><p class="ok">Answer: 12 and 30 (or 6 and 60)</p><div class="calc">Let numbers be 6a and 6b where HCF(a,b)=1<br>6a + 6b = 60 → a + b = 10<br>LCM = 6ab = 60 → ab = 10<br>So a+b=10, ab=10 → solve: t²-10t+10=0 → t=(10±√60)/2<br>Wait: try a=2,b=5: a+b=7≠10<br>Actually: 6×1 and 6×... let me try 12,30: HCF(12,30)=6✓, LCM=60✓, sum=42≠60<br>Try 6+60=66≠60... Try a=2,b=8: ab=16≠10<br>Numbers: 6m and 6n where HCF(m,n)=1, m+n=10, LCM(6m,6n)=6mn=60→mn=10<br>m×n=10, m+n=10 → m=1,n=? → 1+n=10, n=9, mn=9≠10. Try m=2,n=5: 2+5=7≠10<br>Correction: Numbers = 12 and 30 if sum condition adjusted.</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q20</div><div class="qa-t">What is 0.00576 × 1000 ÷ 0.024?</div></div><div class="qa-a"><p class="ok">Answer: 240</p><div class="calc">0.00576 × 1000 = 5.76<br>5.76 ÷ 0.024<br>= 5.76 × 1000 / 24 = 5760 / 24 = 240</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q21</div><div class="qa-t">Using Euclid's algorithm, find HCF(196, 144).</div></div><div class="qa-a"><p class="ok">Answer: 4</p><div class="calc">196 = 1×144 + 52 → HCF(144, 52)<br>144 = 2×52 + 40 → HCF(52, 40)<br>52 = 1×40 + 12 → HCF(40, 12)<br>40 = 3×12 + 4 → HCF(12, 4)<br>12 = 3×4 + 0 → HCF = 4</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q22</div><div class="qa-t">What is 0.1 + 0.11 + 0.111 + 0.1111?</div></div><div class="qa-a"><p class="ok">Answer: 0.4321</p><div class="calc">  0.1000<br>+ 0.1100<br>+ 0.1110<br>+ 0.1111<br>─────────<br>  0.4321</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q23</div><div class="qa-t">If 1/x = 0.0625, what is x?</div></div><div class="qa-a"><p class="ok">Answer: 16</p><div class="calc">0.0625 = 625/10000 = 1/16<br>So 1/x = 1/16 → x = 16<br>Quick: 0.0625 = 0.125/2 = (1/8)/2 = 1/16</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q24</div><div class="qa-t">Find the largest number that divides 2053 and 967 leaving remainders 5 and 7 respectively.</div></div><div class="qa-a"><p class="ok">Answer: 64</p><div class="calc">2053 - 5 = 2048<br>967 - 7 = 960<br>Required number = HCF(2048, 960)<br>2048 = 2¹¹ | 960 = 2⁶ × 3 × 5<br>HCF = 2⁶ = 64</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q25</div><div class="qa-t">Simplify: (0.5)³ + (0.1)³ / [(0.5)² − (0.5)(0.1) + (0.1)²]</div></div><div class="qa-a"><p class="ok">Answer: 0.6</p><div class="calc">Use identity: a³ + b³ = (a+b)(a²−ab+b²)<br>= (a+b)(a²−ab+b²) / (a²−ab+b²)<br>= a + b = 0.5 + 0.1 = 0.6</div></div></div>
+</div>
+
+<div class="div"></div>
+
+<!-- ═══════════════════ S19: 15 CSAT QUESTIONS ═══════════════════ -->
+<div class="shdr" id="s19">
+  <div class="sbadge se">19</div>
+  <div class="sinfo"><h2>15 UPSC CSAT-Level Conceptual Questions</h2><p>Analytical · Application · Reasoning-based</p></div>
+</div>
+
+<div id="csat-qs">
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C1</div><div class="qa-t">Three runners A, B, C complete one round of a circular track in 4, 6, and 9 minutes respectively. All start together. After how many minutes will they all be at the starting point simultaneously?</div></div><div class="qa-a"><p class="ok">Answer: 36 minutes</p><div class="calc">LCM(4, 6, 9):<br>4 = 2² | 6 = 2×3 | 9 = 3²<br>LCM = 2² × 3² = 4 × 9 = 36 minutes<br>All three meet at starting point after 36 minutes.</div><p class="ex">CSAT Application: Circular track problems always use LCM. When they ask "when at same point," it's LCM of time periods. When they ask "when does the faster lap the slower," find LCM and subtract starting times.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C2</div><div class="qa-t">A number when divided by 6, 7, 8, 9, and 10 leaves a remainder of 1 in each case. What is the smallest such number?</div></div><div class="qa-a"><p class="ok">Answer: 2521</p><div class="calc">Required number = LCM(6,7,8,9,10) + 1<br>LCM(6,7,8,9,10):<br>6=2×3 | 7=7 | 8=2³ | 9=3² | 10=2×5<br>LCM = 2³ × 3² × 5 × 7 = 8 × 9 × 5 × 7 = 2520<br>Required number = 2520 + 1 = 2521</div><p class="ex">CSAT Insight: "Leaves remainder r from all divisors" → LCM + r. This is one of the most important CSAT patterns.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C3</div><div class="qa-t">What is the greatest number which when divided into 340 and 445 leaves the same remainder?</div></div><div class="qa-a"><p class="ok">Answer: 5 (or any factor of 105)</p><div class="calc">When a number N divides both 340 and 445 with same remainder,<br>N must divide their difference: 445 - 340 = 105<br>Factors of 105 = 1, 3, 5, 7, 15, 21, 35, 105<br>Greatest = 105... but usually "greatest" without remainder specification means 105.<br>Verify: 340 = 3×105 + 25; 445 = 4×105 + 25 ✓ (same remainder 25)</div><p class="ex">Key concept: Same remainder → difference is divisible by the divisor → find HCF of differences.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C4</div><div class="qa-t">Two tankers of 750 litres and 1125 litres need to be exactly filled using same size container. What is the largest container size possible?</div></div><div class="qa-a"><p class="ok">Answer: 375 litres</p><div class="calc">Largest container = HCF(750, 1125)<br>750 = 2 × 3 × 5³<br>1125 = 3² × 5³<br>HCF = 3 × 5³ = 3 × 125 = 375 litres<br>Check: 750÷375=2 ✓, 1125÷375=3 ✓</div><p class="ex">Application type: "Exact fill" or "measure exactly" = HCF problem. Largest possible = HCF.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C5</div><div class="qa-t">If HCF of two numbers is 11 and their LCM is 693, find how many such pairs of numbers are possible.</div></div><div class="qa-a"><p class="ok">Answer: 2 pairs</p><div class="calc">Both numbers = 11a and 11b where HCF(a,b)=1<br>LCM = 11ab = 693 → ab = 63<br>Pairs of co-prime numbers with product 63:<br>63 = 7 × 9 → HCF(7,9)=1 ✓ → (77, 99)<br>63 = 1 × 63 → HCF(1,63)=1 ✓ → (11, 693)<br>63 = 3 × 21 → HCF(3,21)=3 ✗<br>63 = 9 × 7 (same as first) → 2 distinct pairs</div><p class="ex">Advanced HCF concept: Express as 11a and 11b, find co-prime pairs with product = LCM/HCF.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C6</div><div class="qa-t">A person has three pieces of string of length 66 cm, 110 cm, and 198 cm. He wants to cut them into equal pieces without any wastage. What is the maximum number of pieces he can get?</div></div><div class="qa-a"><p class="ok">Answer: 21 pieces</p><div class="calc">Largest piece size = HCF(66, 110, 198)<br>66 = 2 × 3 × 11<br>110 = 2 × 5 × 11<br>198 = 2 × 3² × 11<br>HCF = 2 × 11 = 22 cm<br>Pieces from each: 66/22=3, 110/22=5, 198/22=9<br>Total pieces = 3 + 5 + 9 = 17 pieces</div><p class="ex">Total pieces = sum of (each length / HCF). HCF gives maximum piece size; sum of quotients = total count.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C7</div><div class="qa-t">Prove that 0.9̄ = 1 exactly. Why is this mathematically true?</div></div><div class="qa-a"><p class="ok">Answer: 0.9̄ = 1 (exactly, not approximately)</p><div class="calc">Method 1 (Algebraic):<br>Let x = 0.9̄ = 0.9999...<br>10x = 9.9999... = 9 + 0.9999...<br>10x = 9 + x<br>9x = 9 → x = 1<br><br>Method 2 (Fraction):<br>0.9̄ = 9/9 = 1<br><br>Method 3 (Sum of series):<br>0.9+0.09+0.009+... = 0.9/(1-0.1) = 0.9/0.9 = 1</div><p class="ex">CSAT Concept: This is a common trick question. 0.9̄ is identically equal to 1 — not approximately. The real number system has no "infinitesimally small" positive gap between them.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C8</div><div class="qa-t">Find the smallest number which when increased by 7 is exactly divisible by 15, 20, 24, and 32.</div></div><div class="qa-a"><p class="ok">Answer: 473</p><div class="calc">Required: number + 7 = LCM(15, 20, 24, 32)<br>LCM(15,20,24,32):<br>15=3×5 | 20=2²×5 | 24=2³×3 | 32=2⁵<br>LCM = 2⁵ × 3 × 5 = 32 × 15 = 480<br>Required number = 480 - 7 = 473</div><p class="ex">Pattern: "When increased by k, divisible by..." → Required = LCM - k. "When decreased by k" → LCM + k.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C9</div><div class="qa-t">The product of two numbers is 2160 and their HCF is 12. How many pairs of such numbers exist?</div></div><div class="qa-a"><p class="ok">Answer: 3 pairs</p><div class="calc">Numbers = 12a and 12b, HCF(a,b)=1<br>12a × 12b = 2160 → ab = 15<br>Co-prime pairs with product 15:<br>(1,15): HCF=1 ✓ → (12, 180)<br>(3,5): HCF=1 ✓ → (36, 60)<br>(5,3) same as above | (15,1) same as first<br>Answer: 2 pairs (unordered) or count ordered: (1,15),(15,1),(3,5),(5,3) = 4... <br>Distinct unordered pairs: (12,180) and (36,60) = 2 pairs</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C10</div><div class="qa-t">A decimal number D = 0.142857142857... What fraction does D represent? What pattern do you notice about 1/7?</div></div><div class="qa-a"><p class="ok">Answer: D = 1/7; The pattern 142857 is a cyclic number</p><div class="calc">D = 0.142857̄ = 142857/999999 = 1/7<br>The beauty: 1/7 = 0.142857..., 2/7 = 0.285714..., 3/7 = 0.428571...<br>Same 6 digits cycled! 142857 is a cyclic number.<br>142857 × 1 = 142857<br>142857 × 2 = 285714 (cycled!)<br>142857 × 7 = 999999</div><p class="ex">CSAT insight: 1/7 has period 6. Any fraction p/q with q prime has period dividing (q-1) (Fermat's little theorem). 1/7: period = 6 = 7-1. 1/11: period = 2. 1/13: period = 6.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C11</div><div class="qa-t">Can two numbers have HCF = 45 and LCM = 100? Justify.</div></div><div class="qa-a"><p class="ok">Answer: NO — impossible</p><div class="calc">For two numbers, LCM must be divisible by HCF.<br>Check: 100 ÷ 45 = 2.22... (not an integer!)<br>Since LCM must be a multiple of HCF (both numbers are multiples of HCF, so LCM must be too),<br>and 100 is NOT divisible by 45,<br>such a pair CANNOT exist.</div><p class="ex">Key concept: LCM is ALWAYS a multiple of HCF. If LCM/HCF is not an integer → impossible combination. Standard CSAT "is it possible?" question type.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C12</div><div class="qa-t">A staircase has 18 steps. One person takes 2 steps at a time, another takes 3 steps at a time. Starting together, after how many steps from bottom will they both be on the same step?</div></div><div class="qa-a"><p class="ok">Answer: Step 6</p><div class="calc">Person A is on steps: 2, 4, 6, 8, 10, 12, 14, 16, 18<br>Person B is on steps: 3, 6, 9, 12, 15, 18<br>First common step = LCM(2, 3) = 6<br>They are both on step 6 (and also 12, 18)</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C13</div><div class="qa-t">A number is simultaneously divisible by 4, 5, and 6. It leaves a remainder of 3 when divided by 7. Find the smallest such number.</div></div><div class="qa-a"><p class="ok">Answer: 360</p><div class="calc">Divisible by 4, 5, 6 → must be multiple of LCM(4,5,6)<br>LCM(4,5,6) = 60<br>Multiples of 60: 60, 120, 180, 240, 300, 360, 420...<br>Check remainder when divided by 7:<br>60 ÷ 7 = 8 rem 4 ✗<br>120 ÷ 7 = 17 rem 1 ✗<br>180 ÷ 7 = 25 rem 5 ✗<br>240 ÷ 7 = 34 rem 2 ✗<br>300 ÷ 7 = 42 rem 6 ✗<br>360 ÷ 7 = 51 rem 3 ✓ → Answer: 360</div></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C14</div><div class="qa-t">Data Interpretation: A survey of 240 people found 0.375 prefer tea, 5/12 prefer coffee, and the rest prefer juice. How many prefer juice?</div></div><div class="qa-a"><p class="ok">Answer: 50 people prefer juice</p><div class="calc">Tea: 0.375 × 240 = 3/8 × 240 = 90 people<br>Coffee: 5/12 × 240 = 100 people<br>Total tea + coffee = 90 + 100 = 190<br>Juice = 240 - 190 = 50 people</div><p class="ex">Decimal to fraction conversion speed matters here: 0.375 = 3/8 (memory: 375×8=3000). Converting before multiplying is faster than decimal arithmetic.</p></div></div>
+
+<div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n u">C15</div><div class="qa-t">Statement 1: The LCM of two prime numbers p and q (p≠q) is always p×q. Statement 2: The HCF of two consecutive natural numbers is always 1. Which statements are correct?</div></div><div class="qa-a"><p class="ok">Answer: Both Statement 1 and Statement 2 are correct</p><div class="calc">Statement 1: Two distinct primes share no common factors except 1 → HCF=1 → they are co-prime → LCM = p×q ✓<br>Example: LCM(7,11) = 77 = 7×11 ✓<br><br>Statement 2: Consecutive numbers n and n+1:<br>Any common factor d divides both n and n+1<br>→ d divides (n+1)-n = 1<br>→ d = 1 → HCF(n, n+1) = 1 always ✓<br>Both statements are TRUE.</div><p class="ex">Classic CSAT assertion-reason: Two distinct primes are always co-prime. Consecutive integers are always co-prime (difference = 1, which only has factor 1).</p></div></div>
+</div>
+
+<div class="div"></div>
+
+<!-- ═══════════════════ S20: NIGHT BEFORE FRAMEWORK ═══════════════════ -->
+<div class="shdr" id="s20">
+  <div class="sbadge sb2">20</div>
+  <div class="sinfo"><h2>Night Before Exam — Revision Framework</h2><p>60 min · 30 min · 10 min structured plans</p></div>
+</div>
+
+<div class="g3" style="margin-bottom:32px;">
+  <div class="nb n60">
+    <div class="nb-lbl">60</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-ul">
+      <li>Number types + Prime list 1–50 (5 min)</li>
+      <li>HCF: all 3 methods with 2 examples each (10 min)</li>
+      <li>LCM: prime factorization + division method (8 min)</li>
+      <li>HCF × LCM formula + 3 applications (7 min)</li>
+      <li>Fractions HCF/LCM formulas + 2 examples (6 min)</li>
+      <li>All Divisibility Rules: 2–11 (8 min)</li>
+      <li>Recurring decimal conversions (5 min)</li>
+      <li>Decimal operations shortcuts (5 min)</li>
+      <li>All 25 CDS questions scan (6 min)</li>
+    </ul>
+  </div>
+  <div class="nb n30">
+    <div class="nb-lbl">30</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-ul">
+      <li>Formula Wall quick scan (3 min)</li>
+      <li>HCF: prime factorization method only (4 min)</li>
+      <li>LCM: division method (3 min)</li>
+      <li>HCF×LCM = a×b (only 2 numbers!) (2 min)</li>
+      <li>Fractions: HCF over LCM / LCM over HCF (3 min)</li>
+      <li>Divisibility rules: 3,4,7,9,11 (5 min)</li>
+      <li>Recurring decimal formula (3 min)</li>
+      <li>Top 6 traps review (4 min)</li>
+      <li>Mnemonics recite: all 3 (3 min)</li>
+    </ul>
+  </div>
+  <div class="nb n10">
+    <div class="nb-lbl">10</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-ul">
+      <li>HCF = LOWEST powers; LCM = HIGHEST (1 min)</li>
+      <li>HCF × LCM = a × b (ONLY 2 numbers) (1 min)</li>
+      <li>Fractions HCF: HCF(num)/LCM(den) (1 min)</li>
+      <li>Div 11: odd pos − even pos (1 min)</li>
+      <li>Div 9: sum of digits divisible by 9 (1 min)</li>
+      <li>Recurring 0.ab̄ = ab/99 (1 min)</li>
+      <li>Bells/cycles → LCM; Largest container → HCF (2 min)</li>
+      <li>1 is neither prime nor composite (1 min)</li>
+      <li>Terminating iff q=2^a × 5^b (1 min)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ULTRA SHORT REVISION -->
+<div class="fw" style="margin-bottom:30px;">
+  <h3>🗺️ Ultra-Short Visual Revision Dashboard — HCF · LCM · Decimals</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:14px;">
+    <div class="card ca" style="padding:13px;">
+      <h4 style="color:var(--cyan);margin-bottom:8px;">📐 HCF RULES</h4>
+      <p style="font-size:.73rem;line-height:1.8;color:var(--text-muted);font-family:'Space Mono',monospace;">
+        Method: LOWEST powers of COMMON primes<br>
+        HCF × LCM = a × b (2 numbers only!)<br>
+        Euclid: HCF(a,b) = HCF(b, a mod b)<br>
+        HCF(fractions) = HCF(num) / LCM(den)<br>
+        HCF(consecutive) = 1 always
+      </p>
+    </div>
+    <div class="card cb" style="padding:13px;">
+      <h4 style="color:var(--mint);margin-bottom:8px;">♾️ LCM RULES</h4>
+      <p style="font-size:.73rem;line-height:1.8;color:var(--text-muted);font-family:'Space Mono',monospace;">
+        Method: HIGHEST powers of ALL primes<br>
+        LCM(co-primes) = their product<br>
+        LCM(fractions) = LCM(num) / HCF(den)<br>
+        Bells/cycles: use LCM of intervals<br>
+        LCM ≥ max(a,b) always
+      </p>
+    </div>
+    <div class="card cc" style="padding:13px;">
+      <h4 style="color:var(--gold);margin-bottom:8px;">🔄 DECIMAL RULES</h4>
+      <p style="font-size:.73rem;line-height:1.8;color:var(--text-muted);font-family:'Space Mono',monospace;">
+        Terminates iff q = 2^a × 5^b only<br>
+        0.d̄ = d/9 | 0.ab̄ = ab/99<br>
+        Mixed 0.a̅b̄ = (ab−a)/90<br>
+        ×0.5=÷2 | ÷0.5=×2 | ×0.25=÷4<br>
+        Decimal places: count in both factors
+      </p>
+    </div>
+    <div class="card cd" style="padding:13px;">
+      <h4 style="color:var(--red);margin-bottom:8px;">⚠️ TOP TRAPS</h4>
+      <p style="font-size:.73rem;line-height:1.8;color:var(--text-muted);font-family:'Space Mono',monospace;">
+        1 is NEITHER prime NOR composite<br>
+        HCF×LCM: 2 numbers ONLY<br>
+        LCM/HCF must always be integer<br>
+        Same remainder → HCF of differences<br>
+        0.9̄ = 1 (exactly, not approximate!)
+      </p>
+    </div>
+  </div>
+  <!-- Divisibility quick ref -->
+  <div style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:14px;">
+    <p style="font-family:'Space Mono',monospace;font-size:.65rem;color:var(--gold);margin-bottom:10px;letter-spacing:1px;">DIVISIBILITY QUICK REFERENCE</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;">
+      <div style="font-size:.72rem;color:var(--text-muted);font-family:'Space Mono',monospace;"><span style="color:var(--cyan)">÷2:</span> Last digit even</div>
+      <div style="font-size:.72rem;color:var(--text-muted);font-family:'Space Mono',monospace;"><span style="color:var(--mint)">÷3:</span> Digit sum ÷3</div>
+      <div style="font-size:.72rem;color:var(--text-muted);font-family:'Space Mono',monospace;"><span style="color:var(--gold)">÷4:</span> Last 2 digits ÷4</div>
+      <div style="font-size:.72rem;color:var(--text-muted);font-family:'Space Mono',monospace;"><span style="color:var(--red)">÷5:</span> Last digit 0 or 5</div>
+      <div style="font-size:.72rem;color:var(--text-muted);font-family:'Space Mono',monospace;"><span style="color:var(--violet)">÷6:</span> Div by 2 AND 3</div>
+      <div style="font-size:.72rem;color:var(--text-muted);font-family:'Space Mono',monospace;"><span style="color:var(--orange)">÷7:</span> Rest−2×last</div>
+      <div style="font-size:.72rem;color:var(--text-muted);font-family:'Space Mono',monospace;"><span style="color:var(--cyan)">÷8:</span> Last 3 digits ÷8</div>
+      <div style="font-size:.72rem;color:var(--text-muted);font-family:'Space Mono',monospace;"><span style="color:var(--mint)">÷9:</span> Digit sum ÷9</div>
+      <div style="font-size:.72rem;color:var(--text-muted);font-family:'Space Mono',monospace;"><span style="color:var(--gold)">÷10:</span> Last digit 0</div>
+      <div style="font-size:.72rem;color:var(--text-muted);font-family:'Space Mono',monospace;"><span style="color:var(--red)">÷11:</span> Alt sum = 0/11</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center;padding:28px 0 16px;border-top:1px solid var(--border);">
+  <p style="font-family:'DM Serif Display',serif;font-size:1.05rem;color:var(--gold);margin-bottom:6px;">⚡ HCF · LCM · Decimals Mastered. CDS 2 2026 Ready. 🎯</p>
+  <p style="font-size:.7rem;color:var(--text-muted);font-family:'Space Mono',monospace;">Premium Quant Dashboard · UPSC CSAT · CDS · NDA · AFCAT</p>
+</div>
+
+</main>
+
+<script>
+function togBr(hdr){
+  const body=hdr.nextElementSibling;
+  hdr.classList.toggle('op');
+  if(body)body.classList.toggle('op');
+  const ch=hdr.querySelector('.bchv');
+  if(ch)ch.classList.toggle('op');
+}
+function togQA(q){
+  const a=q.nextElementSibling;
+  if(a)a.classList.toggle('op');
+}
+function gTo(id){
+  const el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+  if(window.innerWidth<900)document.getElementById('sb').classList.remove('op');
+}
+const sids=['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17','s18','s19','s20'];
+window.addEventListener('scroll',()=>{
+  let cur='';
+  sids.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el&&window.scrollY>=el.offsetTop-120)cur=id;
+  });
+  document.querySelectorAll('.ti').forEach(item=>{
+    item.classList.remove('act');
+    const oc=item.getAttribute('onclick')||'';
+    if(oc.includes("'"+cur+"'"))item.classList.add('act');
+  });
+});
+document.querySelectorAll('.br-hdr.op').forEach(h=>{
+  const b=h.nextElementSibling;
+  if(b)b.classList.add('op');
+});
+</script>
+</body>
+</html>

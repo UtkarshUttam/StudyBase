@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earth — Physical Geography Master Map | CDS 2026 + UPSC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;0,900;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg:#08090e;--bg2:#0d0f1a;--bg3:#121628;--bg4:#181e35;--bg5:#1e2640;
+  --earth:#4a9eff;--lava:#ff6b3d;--forest:#3ddc84;--sand:#e8c96a;--deep:#9b72ff;--ocean:#2dd4bf;
+  --text:#eeeae0;--text2:#8f8b9e;--text3:#4a4760;
+  --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.13);
+  --glow-earth:rgba(74,158,255,0.15);--glow-lava:rgba(255,107,61,0.15);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+/* STARS BG */
+body::before{
+  content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+  background:radial-gradient(ellipse at 20% 50%,rgba(74,158,255,0.03) 0%,transparent 60%),
+             radial-gradient(ellipse at 80% 20%,rgba(155,114,255,0.03) 0%,transparent 60%);
+  pointer-events:none;z-index:0;
+}
+
+/* ── NAV ── */
+#nav{
+  position:fixed;top:0;left:0;width:230px;height:100vh;
+  background:rgba(13,15,26,0.97);border-right:1px solid var(--bd2);
+  overflow-y:auto;z-index:100;padding-bottom:2rem;
+  scrollbar-width:thin;scrollbar-color:var(--bg5) transparent;
+}
+#nav::-webkit-scrollbar{width:3px}
+#nav::-webkit-scrollbar-thumb{background:var(--bg5)}
+.nav-hd{
+  padding:1.2rem 1rem 0.8rem;border-bottom:1px solid var(--bd);
+  background:linear-gradient(135deg,rgba(74,158,255,.08),rgba(155,114,255,.05));
+}
+.nav-hd .logo{font-family:'Fraunces',serif;font-size:14px;font-weight:700;color:var(--earth);letter-spacing:.5px}
+.nav-hd small{font-size:10px;color:var(--text3);display:block;margin-top:2px}
+.nav-sec{font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:var(--text3);font-weight:700;padding:8px 1rem 3px}
+.nav-a{
+  display:flex;align-items:center;gap:8px;padding:7px 1rem;
+  font-size:11.5px;color:var(--text2);cursor:pointer;
+  border-left:2px solid transparent;transition:all .15s;text-decoration:none;
+}
+.nav-a:hover,.nav-a.on{color:var(--text);background:var(--bg3);border-left-color:var(--earth)}
+.nav-a .ni{width:18px;text-align:center;font-size:12px;flex-shrink:0}
+
+/* ── MAIN ── */
+#main{margin-left:230px;padding:2rem 2rem 5rem;position:relative;z-index:1}
+#mob-btn{display:none;position:fixed;top:10px;left:10px;z-index:200;
+  background:var(--bg3);border:1px solid var(--bd2);color:var(--text);
+  padding:6px 10px;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px}
+
+/* ── SECTIONS ── */
+.sec{display:none}.sec.on{display:block}
+
+/* ── HERO ── */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(74,158,255,.07) 0%,rgba(155,114,255,.05) 50%,rgba(61,220,132,.04) 100%);
+  border:1px solid var(--bd2);border-radius:14px;padding:2.5rem;margin-bottom:2rem;
+}
+.hero-globe{
+  position:absolute;right:-20px;top:50%;transform:translateY(-50%);
+  width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,rgba(74,158,255,.3),rgba(74,158,255,.05) 60%,transparent);
+  border:1px solid rgba(74,158,255,.15);opacity:.4;
+}
+.hero h1{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:var(--earth);line-height:1.1;margin-bottom:6px}
+.hero p{font-size:13px;color:var(--text2);max-width:500px}
+.hbadges{display:flex;gap:7px;margin-top:14px;flex-wrap:wrap}
+.hb{font-size:10px;padding:3px 10px;border-radius:20px;font-weight:600;letter-spacing:.3px}
+.hb-e{background:rgba(74,158,255,.14);color:var(--earth);border:1px solid rgba(74,158,255,.3)}
+.hb-l{background:rgba(255,107,61,.12);color:var(--lava);border:1px solid rgba(255,107,61,.25)}
+.hb-f{background:rgba(61,220,132,.12);color:var(--forest);border:1px solid rgba(61,220,132,.25)}
+.hb-s{background:rgba(232,201,106,.12);color:var(--sand);border:1px solid rgba(232,201,106,.25)}
+
+/* ── SECTION TITLE ── */
+.stitle{display:flex;align-items:center;gap:10px;margin:1.5rem 0 1rem;padding-bottom:8px;border-bottom:1px solid var(--bd2)}
+.stitle h2{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700}
+.stnum{font-family:'DM Mono',monospace;font-size:10px;color:var(--bg);background:var(--earth);padding:2px 8px;border-radius:4px;font-weight:700}
+.stag{font-size:10px;color:var(--text3);background:var(--bg4);padding:2px 8px;border-radius:4px;margin-left:auto}
+
+/* ── BRANCH ── */
+.br{border:1px solid var(--bd);border-radius:10px;margin-bottom:1rem;overflow:hidden}
+.br-hd{display:flex;align-items:center;gap:10px;padding:11px 14px;cursor:pointer;background:var(--bg2);border-bottom:1px solid var(--bd);transition:background .15s;user-select:none}
+.br-hd:hover{background:var(--bg3)}
+.bi{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.bt{font-size:13.5px;font-weight:600;flex:1}
+.bb{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;font-family:'DM Mono',monospace}
+.ch{font-size:10px;color:var(--text3);transition:transform .25s}
+.br.on .ch{transform:rotate(90deg)}
+.br-bd{display:none;padding:1rem 1.2rem;background:var(--bg)}
+.br.on .br-bd{display:block}
+
+/* color themes */
+.ce .br-hd{border-left:3px solid var(--earth)}.ce .bi{background:rgba(74,158,255,.12);color:var(--earth)}.ce .bt{color:var(--earth)}.ce .bb{background:rgba(74,158,255,.14);color:var(--earth)}
+.cl .br-hd{border-left:3px solid var(--lava)}.cl .bi{background:rgba(255,107,61,.1);color:var(--lava)}.cl .bt{color:var(--lava)}.cl .bb{background:rgba(255,107,61,.13);color:var(--lava)}
+.cf .br-hd{border-left:3px solid var(--forest)}.cf .bi{background:rgba(61,220,132,.1);color:var(--forest)}.cf .bt{color:var(--forest)}.cf .bb{background:rgba(61,220,132,.12);color:var(--forest)}
+.cs .br-hd{border-left:3px solid var(--sand)}.cs .bi{background:rgba(232,201,106,.1);color:var(--sand)}.cs .bt{color:var(--sand)}.cs .bb{background:rgba(232,201,106,.13);color:var(--sand)}
+.cd .br-hd{border-left:3px solid var(--deep)}.cd .bi{background:rgba(155,114,255,.1);color:var(--deep)}.cd .bt{color:var(--deep)}.cd .bb{background:rgba(155,114,255,.12);color:var(--deep)}
+.co .br-hd{border-left:3px solid var(--ocean)}.co .bi{background:rgba(45,212,191,.1);color:var(--ocean)}.co .bt{color:var(--ocean)}.co .bb{background:rgba(45,212,191,.12);color:var(--ocean)}
+
+/* ── CONTENT STYLES ── */
+.g2{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:8px 0}
+.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:9px;margin:8px 0}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:11px 13px}
+.card .ch2{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.card p,.card li{font-size:12.5px;color:var(--text2);line-height:1.65}
+.card ul{padding-left:14px}.card li{margin-bottom:2px}
+.card strong{color:var(--text);font-weight:500}
+
+.fbox{background:var(--bg3);border:1px solid var(--bd2);border-radius:8px;padding:10px 14px;margin:8px 0;font-family:'DM Mono',monospace;font-size:12px;color:var(--sand);line-height:1.7}
+.fbox .flbl{font-family:'DM Sans',sans-serif;font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.fbox .fex{font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--text2);margin-top:5px}
+
+.mnem{background:rgba(61,220,132,.06);border:1px solid rgba(61,220,132,.2);border-radius:8px;padding:10px 13px;margin:8px 0}
+.mnem .mt{font-size:10px;color:var(--forest);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.mnem .mc{font-family:'Fraunces',serif;font-size:14px;color:var(--text);line-height:1.5;font-style:italic}
+.mnem .md{font-size:11.5px;color:var(--text2);margin-top:4px}
+
+.trap{background:rgba(255,107,61,.07);border:1px solid rgba(255,107,61,.2);border-radius:8px;padding:10px 13px;margin:8px 0}
+.trap .tt{font-size:10px;color:var(--lava);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.trap .tc{font-size:12px;color:var(--text2);line-height:1.6}
+.trap .tc strong{color:var(--lava)}
+
+.fact{background:rgba(74,158,255,.06);border:1px solid rgba(74,158,255,.18);border-radius:8px;padding:10px 13px;margin:8px 0}
+.fact .ft{font-size:10px;color:var(--earth);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.fact .fc{font-size:12.5px;color:var(--text2);line-height:1.65}
+.fact .fc strong{color:var(--text)}
+
+.sh{background:rgba(232,201,106,.06);border:1px solid rgba(232,201,106,.2);border-radius:8px;padding:10px 13px;margin:8px 0}
+.sh .st{font-size:10px;color:var(--sand);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.sh .sc{font-size:12.5px;color:var(--text);line-height:1.65}
+.sh .sc code{font-family:'DM Mono',monospace;color:var(--sand);font-size:12px}
+
+.mi{font-size:12.5px;color:var(--text2);line-height:1.65;padding:2px 0;display:flex;gap:8px;margin-left:18px}
+.mi::before{content:'›';color:var(--text3);flex-shrink:0}
+.mi strong{color:var(--text);font-weight:500}
+.sub{font-size:12.5px;font-weight:600;color:var(--text);margin:10px 0 5px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'';width:12px;height:2px;background:currentColor;opacity:.5;display:inline-block}
+
+.tg{display:inline-block;font-size:10px;padding:1px 7px;border-radius:8px;margin:1px 2px;font-weight:600;font-family:'DM Mono',monospace}
+.te{background:rgba(74,158,255,.14);color:var(--earth)}
+.tl{background:rgba(255,107,61,.13);color:var(--lava)}
+.tf{background:rgba(61,220,132,.11);color:var(--forest)}
+.ts{background:rgba(232,201,106,.13);color:var(--sand)}
+.td{background:rgba(155,114,255,.11);color:var(--deep)}
+.to{background:rgba(45,212,191,.11);color:var(--ocean)}
+
+hr.dv{border:none;border-top:1px solid var(--bd);margin:10px 0}
+
+/* ── DATA TABLE ── */
+.dt{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+.dt th{background:var(--bg3);padding:7px 10px;text-align:left;font-weight:600;color:var(--text2);border-bottom:1px solid var(--bd2);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.dt td{padding:6px 10px;border-bottom:1px solid var(--bd);color:var(--text2);vertical-align:top;line-height:1.5}
+.dt tr:hover td{background:var(--bg2)}
+.dt .hl{color:var(--sand);font-weight:600;font-family:'DM Mono',monospace}
+.dt .he{color:var(--earth);font-weight:600}
+.dt .hl2{color:var(--lava);font-weight:600}
+.dt .hf{color:var(--forest);font-weight:600}
+
+/* ── EARTH INTERIOR SVG ── */
+.earth-svg-wrap{display:flex;justify-content:center;margin:1rem 0}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding-left:24px;margin:8px 0}
+.timeline::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--earth),var(--deep),var(--lava))}
+.tl-item{position:relative;margin-bottom:1rem;padding-left:20px}
+.tl-item::before{content:'';position:absolute;left:-18px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--bg3);border:2px solid var(--earth);flex-shrink:0}
+.tl-item .tl-era{font-size:13px;font-weight:600;color:var(--text)}
+.tl-item .tl-time{font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);margin-bottom:2px}
+.tl-item .tl-desc{font-size:12px;color:var(--text2);line-height:1.55}
+
+/* ── FLOW ── */
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0}
+.fb{background:var(--bg3);border:1px solid var(--bd2);border-radius:6px;padding:6px 12px;font-size:12px;color:var(--text);font-weight:500}
+.fa{font-size:14px;color:var(--earth);flex-shrink:0}
+.fb.he{background:rgba(74,158,255,.1);border-color:rgba(74,158,255,.25);color:var(--earth)}
+.fb.hf{background:rgba(61,220,132,.08);border-color:rgba(61,220,132,.22);color:var(--forest)}
+.fb.hl{background:rgba(255,107,61,.08);border-color:rgba(255,107,61,.22);color:var(--lava)}
+
+/* ── QUIZ ── */
+.qcard{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-bottom:12px}
+.qn{font-family:'DM Mono',monospace;font-size:10px;color:var(--text3);margin-bottom:5px}
+.qt{font-size:13.5px;font-weight:500;color:var(--text);margin-bottom:10px;line-height:1.55}
+.qopts{display:flex;flex-direction:column;gap:5px}
+.qo{background:var(--bg3);border:1px solid var(--bd);border-radius:6px;padding:8px 12px;cursor:pointer;font-size:12.5px;color:var(--text2);transition:all .15s;text-align:left;width:100%;font-family:'DM Sans',sans-serif}
+.qo:hover:not(:disabled){background:var(--bg4);color:var(--text);border-color:var(--bd2)}
+.qo.ok{background:rgba(61,220,132,.14);border-color:var(--forest);color:var(--forest)}
+.qo.no{background:rgba(255,107,61,.12);border-color:var(--lava);color:var(--lava)}
+.qexp{display:none;margin-top:9px;padding:8px 12px;background:var(--bg4);border-radius:6px;font-size:11.5px;color:var(--text2);line-height:1.55;border-left:2px solid var(--ocean)}
+.qexp.on{display:block}
+.qnxt{display:none;margin-top:10px;background:var(--earth);color:var(--bg);border:none;padding:7px 18px;border-radius:6px;font-family:'DM Sans',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer}
+.qnxt:hover{opacity:.85}
+.qsc{text-align:center;padding:3rem 1rem;display:none}
+.qscn{font-size:3.5rem;font-family:'DM Mono',monospace;color:var(--earth);font-weight:700}
+.qscl{font-size:13px;color:var(--text2);margin-top:6px}
+.qscr{margin-top:1.5rem;background:none;border:1px solid var(--bd2);color:var(--text);padding:8px 22px;border-radius:6px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12.5px}
+.qpw{height:3px;background:var(--bg3);border-radius:2px;margin-bottom:1.5rem}
+.qpf{height:100%;background:var(--earth);border-radius:2px;transition:width .3s}
+
+/* ── REVISION ── */
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:8px 0}
+.rev-card{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:14px}
+.rev-card h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.rev-card ul{list-style:none}
+.rev-card li{font-size:11.5px;color:var(--text2);padding:2px 0 2px 13px;position:relative;line-height:1.5}
+.rev-card li::before{content:'▸';position:absolute;left:0;color:var(--text3);font-size:9px;top:4px}
+.rev-card li strong{color:var(--text);font-weight:500}
+
+/* ── FACT WALL ── */
+.fw{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin:8px 0}
+.fw-c{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:12px}
+.fw-c .fwt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.fw-c .fwi{font-family:'DM Mono',monospace;font-size:11.5px;color:var(--sand);background:var(--bg3);padding:5px 9px;border-radius:5px;margin:3px 0;line-height:1.5}
+.fw-c .fwn{font-size:11px;color:var(--text3);margin-top:4px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  #nav{transform:translateX(-100%)}
+  #nav.on{transform:translateX(0)}
+  #main{margin-left:0;padding:1rem 1rem 4rem}
+  #mob-btn{display:block}
+  .hero h1{font-size:1.5rem}
+}
+@media print{
+  #nav,#mob-btn{display:none}
+  #main{margin-left:0}
+  .br-bd{display:block!important}
+  .ch{display:none}
+}
+</style>
+</head>
+<body>
+
+<button id="mob-btn" onclick="document.getElementById('nav').classList.toggle('on')">☰</button>
+
+<nav id="nav">
+  <div class="nav-hd">
+    <div class="logo">🌍 EARTH — PHYSICAL GEO</div>
+    <small>CDS 2026 + UPSC + NDA Master Map</small>
+  </div>
+  <div class="nav-sec">Earth & Space</div>
+  <a class="nav-a on" onclick="show('intro')"><span class="ni">🌐</span>Introduction</a>
+  <a class="nav-a" onclick="show('origin')"><span class="ni">💥</span>Origin & Evolution</a>
+  <div class="nav-sec">Structure</div>
+  <a class="nav-a" onclick="show('interior')"><span class="ni">🔴</span>Earth's Interior</a>
+  <a class="nav-a" onclick="show('latlong')"><span class="ni">🗺️</span>Lat & Longitude</a>
+  <a class="nav-a" onclick="show('movement')"><span class="ni">🔄</span>Earth's Movements</a>
+  <div class="nav-sec">Geology</div>
+  <a class="nav-a" onclick="show('geotime')"><span class="ni">⏳</span>Geological Time Scale</a>
+  <a class="nav-a" onclick="show('plates')"><span class="ni">🧩</span>Plate Tectonics</a>
+  <a class="nav-a" onclick="show('eq')"><span class="ni">⚡</span>Earthquakes & Volcanoes</a>
+  <a class="nav-a" onclick="show('rocks')"><span class="ni">🪨</span>Rocks & Minerals</a>
+  <a class="nav-a" onclick="show('landforms')"><span class="ni">⛰️</span>Geomorphology</a>
+  <div class="nav-sec">Spheres</div>
+  <a class="nav-a" onclick="show('atmo')"><span class="ni">🌬️</span>Atmosphere</a>
+  <a class="nav-a" onclick="show('hydro')"><span class="ni">🌊</span>Hydrosphere</a>
+  <a class="nav-a" onclick="show('bio')"><span class="ni">🌿</span>Biosphere</a>
+  <div class="nav-sec">Exam Tools</div>
+  <a class="nav-a" onclick="show('traps')"><span class="ni">⚠️</span>Traps & Errors</a>
+  <a class="nav-a" onclick="show('facts')"><span class="ni">📋</span>Fact Master Sheet</a>
+  <a class="nav-a" onclick="show('revision')"><span class="ni">⚡</span>Quick Revision</a>
+  <a class="nav-a" onclick="show('quiz')"><span class="ni">✅</span>CDS Test (25 Qs)</a>
+  <a class="nav-a" onclick="show('upsc')"><span class="ni">🏛️</span>UPSC Qs (15)</a>
+</nav>
+
+<div id="main">
+
+<!-- ══════ INTRODUCTION ══════ -->
+<div id="intro" class="sec on">
+  <div class="hero">
+    <div class="hero-globe"></div>
+    <h1>Earth — Physical Geography</h1>
+    <p>CDS 2 2026 · UPSC Civil Services · NDA — Complete Revision System</p>
+    <div class="hbadges">
+      <span class="hb hb-e">4th Planet from Sun</span>
+      <span class="hb hb-l">4.6 Billion Years Old</span>
+      <span class="hb hb-f">Only Life-Bearing Planet</span>
+      <span class="hb hb-s">Oblate Spheroid</span>
+    </div>
+  </div>
+
+  <div class="stitle"><span class="stnum">01</span><h2>Introduction to Earth</h2><span class="stag">FOUNDATION</span></div>
+
+  <div class="br ce on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🌍</div><div class="bt">Earth as a Planet — Key Facts</div><span class="bb">MUST KNOW</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="g3">
+        <div class="card"><div class="ch2" style="color:var(--earth)">Position</div><p><strong>3rd planet</strong> from Sun (NOT 4th). Distance: <strong>1 AU = 149.6 million km</strong>. Part of inner/rocky planets.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--sand)">Size</div><p>Equatorial radius: <strong>6,378 km</strong>. Polar radius: <strong>6,357 km</strong>. Polar flattening = ~21 km difference.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--lava)">Mass & Density</div><p>Mass: <strong>5.97 × 10²⁴ kg</strong>. Mean density: <strong>5.5 g/cm³</strong> (highest among solar planets). Density increases with depth.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--forest)">Age</div><p><strong>4.6 billion years</strong>. Measured by: radioactive decay (uranium-lead method). Solar system: ~4.57 billion years.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--deep)">Axial Tilt</div><p><strong>23.5°</strong> to orbital plane. Causes: seasons, solstices, equinoxes. Without tilt = no seasons.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--ocean)">Unique Features</div><p>Only planet with: <strong>liquid water</strong>, <strong>plate tectonics</strong>, <strong>life</strong>, oxygen atmosphere, magnetic field protecting from solar wind.</p></div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ CDS Trap: Earth's Position</div>
+        <div class="tc">Earth is the <strong>3rd planet</strong> from Sun, not 4th (Mars is 4th). Order: Mercury-Venus-Earth-Mars-Jupiter-Saturn-Uranus-Neptune.<br>Mnemonic: <strong>"My Very Educated Mother Just Served Us Nachos"</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cs">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🔵</div><div class="bt">Shape of Earth — Geoid & Oblate Spheroid</div><span class="bb">SHAPE</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--sand)">Oblate Spheroid</div><p>Flattened at poles, bulging at equator. Equatorial circumference > Polar circumference.<br><strong>Equatorial: 40,075 km | Polar: 40,008 km</strong></p></div>
+        <div class="card"><div class="ch2" style="color:var(--sand)">Geoid</div><p>True shape of Earth = "Geoid" (earth-shaped). Irregular surface of equal gravitational potential. Differs from perfect sphere/spheroid due to uneven mass distribution.</p></div>
+      </div>
+      <!-- SVG Earth Cross-section -->
+      <div class="earth-svg-wrap">
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="100" cy="100" rx="95" ry="90" fill="none" stroke="rgba(74,158,255,0.3)" stroke-width="1"/>
+          <ellipse cx="100" cy="100" rx="95" ry="90" fill="rgba(74,158,255,0.05)"/>
+          <text x="100" y="55" text-anchor="middle" fill="rgba(74,158,255,0.6)" font-size="9" font-family="DM Sans">Equatorial Radius</text>
+          <text x="100" y="65" text-anchor="middle" fill="rgba(232,201,106,0.8)" font-size="8" font-family="DM Mono">6,378 km</text>
+          <text x="190" y="105" text-anchor="end" fill="rgba(61,220,132,0.6)" font-size="9" font-family="DM Sans">Polar Radius</text>
+          <text x="190" y="115" text-anchor="end" fill="rgba(232,201,106,0.8)" font-size="8" font-family="DM Mono">6,357 km</text>
+          <line x1="100" y1="10" x2="100" y2="190" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4,3"/>
+          <line x1="5" y1="100" x2="195" y2="100" stroke="rgba(255,255,255,0.1)" stroke-dasharray="4,3"/>
+          <circle cx="100" cy="100" r="4" fill="var(--lava)"/>
+          <text x="105" y="98" fill="rgba(255,255,255,0.5)" font-size="8" font-family="DM Sans">Core</text>
+          <text x="100" y="185" text-anchor="middle" fill="rgba(74,158,255,0.5)" font-size="9" font-family="DM Sans">Oblate Spheroid (exaggerated)</text>
+        </svg>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Geoid vs Spheroid Trap</div>
+        <div class="tc">True shape = <strong>Geoid</strong> (irregular). Mathematical approximation = <strong>Oblate Spheroid</strong>. For most geographic purposes, we use oblate spheroid. Questions may ask "closest to actual shape" → answer = Geoid.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cd">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">☀️</div><div class="bt">Earth in Solar System — Comparative Facts</div><span class="bb">CONTEXT</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <table class="dt">
+        <tr><th>Planet</th><th>Position</th><th>Distinguishing Feature</th></tr>
+        <tr><td class="he">Mercury</td><td>1st</td><td>Smallest, closest to Sun, no atmosphere</td></tr>
+        <tr><td class="he">Venus</td><td>2nd</td><td>Hottest (greenhouse effect), brightest, retrograde rotation</td></tr>
+        <tr><td class="he">Earth</td><td>3rd</td><td>Life, liquid water, largest rocky planet</td></tr>
+        <tr><td class="he">Mars</td><td>4th</td><td>Red planet, Olympus Mons (largest volcano)</td></tr>
+        <tr><td class="he">Jupiter</td><td>5th</td><td>Largest planet, Great Red Spot</td></tr>
+        <tr><td class="he">Saturn</td><td>6th</td><td>Rings, least dense (floats on water)</td></tr>
+        <tr><td class="he">Uranus</td><td>7th</td><td>Rotates on its side (98° tilt)</td></tr>
+        <tr><td class="he">Neptune</td><td>8th</td><td>Farthest, strongest winds</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ ORIGIN ══════ -->
+<div id="origin" class="sec">
+  <div class="stitle"><span class="stnum">02</span><h2>Origin & Evolution of Earth</h2><span class="stag">THEORIES</span></div>
+
+  <div class="br ce on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">💥</div><div class="bt">Major Theories of Earth's Origin</div><span class="bb">COMPARISON</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <table class="dt">
+        <tr><th>Theory</th><th>Proponent</th><th>Core Idea</th><th>Status</th></tr>
+        <tr><td class="he">Nebular Hypothesis</td><td class="hl">Kant (1755), Laplace (1796)</td><td>Solar system formed from rotating nebula (gas/dust cloud). Rings shed → planets</td><td class="hf">Largely accepted (modified)</td></tr>
+        <tr><td class="he">Planetesimal Theory</td><td class="hl">Chamberlin & Moulton</td><td>Sun + passing star → ejection of material → planetesimals → planets</td><td>Partly rejected</td></tr>
+        <tr><td class="he">Tidal/Gaseous Theory</td><td class="hl">Jeans & Jeffreys</td><td>Another star pulled tidal bulge from Sun → cigar-shaped filament → planets</td><td>Largely rejected</td></tr>
+        <tr><td class="he">Big Bang Theory</td><td class="hl">George Lemaitre (1927), Hubble (evidence)</td><td>Universe origin 13.8 billion years ago from singularity explosion. Earth formed 4.6 bya from solar nebula</td><td class="hf">Most accepted</td></tr>
+        <tr><td class="he">Modern Nebular</td><td class="hl">Von Weizsacker, Kuiper</td><td>Refined: solar nebula collapsed due to gravity, formed protostar + protoplanetary disc</td><td class="hf">Currently accepted</td></tr>
+      </table>
+      <div class="mnem">
+        <div class="mt">🧠 Mnemonic — Theory Order</div>
+        <div class="mc">"Kant's Lovely Planets Joined Together Brilliantly"</div>
+        <div class="md">Kant-Laplace (Nebular) → Planetesimal → Jeans-Jeffreys (Tidal) → Big Bang → Modern Nebular</div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ CDS Trap</div>
+        <div class="tc">Big Bang = origin of <strong>Universe</strong>. Earth's origin = ~4.6 billion years ago from solar nebula. Universe age = <strong>13.8 billion years</strong>. Earth ≠ as old as Universe!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cs">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🌡️</div><div class="bt">Early Earth Evolution</div><span class="bb">STAGES</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-time">4.6 bya</div><div class="tl-era">Accretion of Earth</div><div class="tl-desc">Planetesimals collide and accrete; gravitational compression causes heating; Earth becomes molten (magma ocean)</div></div>
+        <div class="tl-item"><div class="tl-time">4.5 bya</div><div class="tl-era">Differentiation</div><div class="tl-desc">Heavy iron/nickel sinks to form core; lighter silicates float → crust. Moon formed by giant impact (Theia hypothesis)</div></div>
+        <div class="tl-item"><div class="tl-time">4.4 bya</div><div class="tl-era">First Crust & Water</div><div class="tl-desc">Cooling forms solid crust; water arrives via comets/asteroids; earliest rocks (zircon crystals from Jack Hills, Australia)</div></div>
+        <div class="tl-item"><div class="tl-time">3.8 bya</div><div class="tl-era">First Life</div><div class="tl-desc">Simple prokaryotic life in oceans; photosynthesis begins oxygen production</div></div>
+        <div class="tl-item"><div class="tl-time">2.4 bya</div><div class="tl-era">Great Oxidation Event</div><div class="tl-desc">Oxygen builds up in atmosphere; major extinction of anaerobic organisms</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ INTERIOR ══════ -->
+<div id="interior" class="sec">
+  <div class="stitle"><span class="stnum">03</span><h2>Earth's Interior</h2><span class="stag">HIGH YIELD</span></div>
+
+  <!-- Earth Interior SVG Cross-Section -->
+  <div class="earth-svg-wrap" style="margin-bottom:1rem">
+    <svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+      <!-- Inner core -->
+      <circle cx="160" cy="160" r="35" fill="rgba(255,107,61,0.6)" stroke="rgba(255,107,61,0.8)" stroke-width="1.5"/>
+      <text x="160" y="163" text-anchor="middle" fill="white" font-size="8" font-family="DM Mono" font-weight="700">INNER</text>
+      <text x="160" y="172" text-anchor="middle" fill="white" font-size="8" font-family="DM Mono" font-weight="700">CORE</text>
+      <!-- Outer core -->
+      <circle cx="160" cy="160" r="70" fill="rgba(255,150,60,0.2)" stroke="rgba(255,150,60,0.5)" stroke-width="1.5"/>
+      <text x="160" y="105" text-anchor="middle" fill="rgba(255,150,60,0.9)" font-size="8" font-family="DM Mono">OUTER CORE</text>
+      <!-- Mantle -->
+      <circle cx="160" cy="160" r="120" fill="rgba(155,114,255,0.08)" stroke="rgba(155,114,255,0.35)" stroke-width="1.5"/>
+      <text x="160" y="52" text-anchor="middle" fill="rgba(155,114,255,0.9)" font-size="9" font-family="DM Mono">MANTLE</text>
+      <!-- Crust -->
+      <circle cx="160" cy="160" r="148" fill="rgba(74,158,255,0.06)" stroke="rgba(74,158,255,0.4)" stroke-width="2"/>
+      <text x="160" y="18" text-anchor="middle" fill="rgba(74,158,255,0.9)" font-size="9" font-family="DM Mono">CRUST</text>
+      <!-- Discontinuity labels -->
+      <line x1="195" y1="160" x2="240" y2="130" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="243" y="128" fill="rgba(232,201,106,0.7)" font-size="7" font-family="DM Sans">Lehmann</text>
+      <line x1="230" y1="160" x2="262" y2="140" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="265" y="138" fill="rgba(232,201,106,0.7)" font-size="7" font-family="DM Sans">Gutenberg</text>
+      <line x1="280" y1="160" x2="295" y2="145" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="297" y="143" fill="rgba(232,201,106,0.7)" font-size="7" font-family="DM Sans">Moho</text>
+      <text x="160" y="175" text-anchor="middle" fill="rgba(255,255,255,0.3)" font-size="7" font-family="DM Sans">Solid Fe-Ni</text>
+      <text x="160" y="120" text-anchor="middle" fill="rgba(255,150,60,0.5)" font-size="7" font-family="DM Sans">Liquid Fe-Ni</text>
+      <text x="85" y="85" text-anchor="middle" fill="rgba(155,114,255,0.5)" font-size="7" font-family="DM Sans">Silicates</text>
+    </svg>
+  </div>
+
+  <div class="br cl on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🔴</div><div class="bt">Layers of the Earth — Complete Details</div><span class="bb">LAYERED</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <table class="dt">
+        <tr><th>Layer</th><th>Thickness</th><th>Composition</th><th>Density (g/cm³)</th><th>Temperature</th><th>State</th></tr>
+        <tr><td class="he">Continental Crust (Sial)</td><td>30–70 km</td><td>Silica + Aluminium</td><td>2.7–2.8</td><td>~200–400°C</td><td>Solid</td></tr>
+        <tr><td class="he">Oceanic Crust (Sima)</td><td>5–10 km</td><td>Silica + Magnesium</td><td>3.0</td><td>~200°C</td><td>Solid</td></tr>
+        <tr><td class="he">Upper Mantle</td><td>to 700 km</td><td>Peridotite, olivine</td><td>3.3–4.3</td><td>700–1400°C</td><td>Semi-solid (asthenosphere)</td></tr>
+        <tr><td class="he">Lower Mantle</td><td>700–2900 km</td><td>Silicates, oxides</td><td>4.3–5.4</td><td>1400–3700°C</td><td>Solid (high pressure)</td></tr>
+        <tr><td class="he">Outer Core</td><td>2900–5100 km</td><td>Iron + Nickel (liquid)</td><td>9.9–12.2</td><td>3700–4300°C</td><td><strong>Liquid</strong></td></tr>
+        <tr><td class="he">Inner Core</td><td>5100–6371 km</td><td>Iron + Nickel (solid)</td><td>12.2–13.1</td><td>4300–6000°C</td><td><strong>Solid</strong></td></tr>
+      </table>
+      <div class="mnem">
+        <div class="mt">🧠 Mnemonic — Layers</div>
+        <div class="mc">"Can Monkeys Conquer Our Incredible Core?"</div>
+        <div class="md">Crust → Mantle → (Asthenosphere) → Outer Core → Inner Core</div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Trap: Outer Core vs Inner Core</div>
+        <div class="tc">Outer Core is <strong>LIQUID</strong> (responsible for Earth's magnetic field). Inner Core is <strong>SOLID</strong> despite higher temperature because of extreme pressure. This is a classic UPSC/CDS trap!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br ce">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">📍</div><div class="bt">Seismic Discontinuities</div><span class="bb">BOUNDARIES</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <table class="dt">
+        <tr><th>Discontinuity</th><th>Depth</th><th>Between</th><th>Significance</th></tr>
+        <tr><td class="he">Conrad Discontinuity</td><td>~20 km</td><td>Upper & Lower Continental Crust (Sial/Sima)</td><td>Separates granitic (upper) and basaltic (lower) crust</td></tr>
+        <tr><td class="he">Mohorovicic (Moho)</td><td>~35 km (continents), 5–10 km (oceans)</td><td>Crust & Mantle</td><td>P-wave velocity jumps from 6.9 to 8 km/s; most important boundary</td></tr>
+        <tr><td class="he">Repetti Discontinuity</td><td>~660 km</td><td>Upper & Lower Mantle</td><td>Marks transition zone in mantle</td></tr>
+        <tr><td class="he">Gutenberg Discontinuity</td><td>~2900 km</td><td>Mantle & Core</td><td>S-waves cannot pass (liquid outer core); P-wave velocity drops</td></tr>
+        <tr><td class="he">Lehmann Discontinuity</td><td>~5100 km</td><td>Outer & Inner Core</td><td>P-wave velocity increases; marks solid inner core</td></tr>
+      </table>
+      <div class="mnem">
+        <div class="mt">🧠 Mnemonic — Discontinuities from surface</div>
+        <div class="mc">"Conrad Met Repetti, Gutenberg Left"</div>
+        <div class="md">Conrad → Moho → Repetti → Gutenberg → Lehmann (deepest)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cd">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">〰️</div><div class="bt">Seismic Waves — P, S & Surface Waves</div><span class="bb">WAVES</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <table class="dt">
+        <tr><th>Type</th><th>Full Name</th><th>Speed</th><th>Medium</th><th>Motion</th><th>Damage</th></tr>
+        <tr><td class="he">P waves</td><td>Primary/Compressional</td><td>Fastest (~8 km/s)</td><td>Solid, Liquid, Gas</td><td>Parallel to wave direction (like sound)</td><td>Less destructive</td></tr>
+        <tr><td class="he">S waves</td><td>Secondary/Shear</td><td>Slower (~4 km/s)</td><td>Solid ONLY</td><td>Perpendicular to wave direction</td><td>More destructive</td></tr>
+        <tr><td class="he">L waves</td><td>Love waves (surface)</td><td>Slowest</td><td>Surface only</td><td>Horizontal ground motion</td><td>Most destructive</td></tr>
+        <tr><td class="he">R waves</td><td>Rayleigh waves</td><td>Slowest</td><td>Surface only</td><td>Rolling/elliptical</td><td>Very destructive</td></tr>
+      </table>
+      <div class="fact">
+        <div class="ft">🔬 Shadow Zone — Critical Concept</div>
+        <div class="fc">
+          <strong>P-wave shadow zone:</strong> 103°–143° from epicenter (due to refraction at core boundary)<br>
+          <strong>S-wave shadow zone:</strong> Beyond 103° (S-waves don't pass through liquid outer core)<br>
+          Evidence for liquid outer core: absence of S-waves in shadow zone
+        </div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ S-wave vs P-wave Trap</div>
+        <div class="tc">S-waves cannot travel through liquids. This is how we KNOW outer core is liquid — S-waves disappear after 103°. P-waves travel through everything but are refracted/slowed at liquid zones.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ LAT LONG ══════ -->
+<div id="latlong" class="sec">
+  <div class="stitle"><span class="stnum">04</span><h2>Latitude & Longitude</h2><span class="stag">NUMERICALS</span></div>
+
+  <div class="br ce on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🌐</div><div class="bt">Latitude — Complete Guide</div><span class="bb">PARALLELS</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="fbox">
+        <div class="flbl">Key Definition</div>
+        Angular distance North/South of Equator (0° to 90°N/S)
+        <div class="fex">Total parallels: 181 (0° to 90° × 2 + equator). Equator = 0°, Poles = 90°</div>
+      </div>
+      <div class="sub" style="color:var(--earth)">Important Latitudes</div>
+      <table class="dt">
+        <tr><th>Latitude</th><th>Name</th><th>Significance</th></tr>
+        <tr><td class="hl">0°</td><td class="he">Equator</td><td>Longest parallel, divides N/S hemispheres, 12h day throughout year</td></tr>
+        <tr><td class="hl">23.5°N</td><td class="he">Tropic of Cancer</td><td>Sun overhead on Summer Solstice (June 21). Northern tropic.</td></tr>
+        <tr><td class="hl">23.5°S</td><td class="he">Tropic of Capricorn</td><td>Sun overhead on Winter Solstice (Dec 22). Southern tropic.</td></tr>
+        <tr><td class="hl">66.5°N</td><td class="he">Arctic Circle</td><td>Midnight sun/Polar night begins. 24h day on June 21.</td></tr>
+        <tr><td class="hl">66.5°S</td><td class="he">Antarctic Circle</td><td>Southern equivalent. 24h day on Dec 22.</td></tr>
+        <tr><td class="hl">90°N/S</td><td class="he">North/South Poles</td><td>6 months day, 6 months night. All meridians meet.</td></tr>
+      </table>
+      <div class="g2" style="margin-top:10px">
+        <div class="card"><div class="ch2" style="color:var(--earth)">Heat Zones</div>
+          <ul>
+            <li><strong>Torrid Zone:</strong> 23.5°N to 23.5°S (hottest)</li>
+            <li><strong>Temperate Zones:</strong> 23.5°–66.5° (N&S)</li>
+            <li><strong>Frigid Zones:</strong> 66.5°–90° (N&S, coldest)</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--sand)">Distance Facts</div>
+          <ul>
+            <li>1° of latitude = <strong>111 km</strong></li>
+            <li>1' (minute) = ~1.85 km (1 nautical mile)</li>
+            <li>Latitude spacing = uniform (circles parallel)</li>
+            <li>Longitude spacing varies (converges at poles)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cs">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">📍</div><div class="bt">Longitude & Time Calculation</div><span class="bb">TIME ZONES</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="fbox">
+        <div class="flbl">Key Formula — Time Difference</div>
+        1° longitude = 4 minutes time difference
+        15° longitude = 1 hour difference
+        360° ÷ 24 hours = 15° per hour
+        <div class="fex">East → time is ahead · West → time is behind Greenwich (0°)</div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--sand)">Prime Meridian (0°)</div><p>Passes through <strong>Greenwich, London, UK</strong>. Divides E/W hemispheres. Based on <strong>Greenwich Mean Time (GMT)</strong>.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--lava)">International Date Line (180°)</div><p>Opposite of Prime Meridian. <strong>Zigzags</strong> to avoid land/island groups. Cross eastward = lose a day; westward = gain a day.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--forest)">India Standard Time</div><p>IST = GMT + 5:30. Longitude: <strong>82°30'E</strong>. Passes through Mirzapur (UP). India has ONE time zone despite size.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--earth)">Standard Time</div><p>Countries adopt single time zone. <strong>USA has 6 zones, Russia has 11 zones</strong> (most). China uses 1 zone despite spanning 5.</p></div>
+      </div>
+      <div class="sh">
+        <div class="st">⚡ Time Calculation Shortcut</div>
+        <div class="sc">Q: If GMT is 10:00, what is time at 75°E?<br><code>75° × 4 min = 300 min = 5 hours ahead → 15:00 (3 PM)</code><br>Q: What is time at 45°W when IST (82.5°E) is 2 PM?<br><code>IST to GMT: 2PM - 5:30 = 8:30 AM. Then: 45°W = 3h behind GMT = 5:30 AM</code></div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ IDL Confusion Trap</div>
+        <div class="tc">IDL is NOT a straight line at 180°. It bends to avoid Aleutian Islands (USA), Fiji, Kiribati. Crossing eastward (west→east across IDL) you go back a day. Westward = gain a day.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ MOVEMENTS ══════ -->
+<div id="movement" class="sec">
+  <div class="stitle"><span class="stnum">05</span><h2>Earth's Movements</h2><span class="stag">CORE CONCEPT</span></div>
+
+  <div class="br ce on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🔄</div><div class="bt">Rotation — Effects & Significance</div><span class="bb">ROTATION</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="g3">
+        <div class="card"><div class="ch2" style="color:var(--earth)">Basic Facts</div><p>Period: <strong>23h 56m 4s</strong> (sidereal day). Solar day = 24h. Direction: West to East (anti-clockwise from North Pole). Speed: <strong>~1670 km/h</strong> at equator, zero at poles.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--forest)">Day & Night</div><p>Rotation causes day/night cycle. Circle of illumination divides day/night halves. Duration varies by latitude (except equator = always 12h).</p></div>
+        <div class="card"><div class="ch2" style="color:var(--sand)">Coriolis Force</div><p>Apparent deflection due to Earth's rotation. NH: deflects RIGHT. SH: deflects LEFT. Affects: winds, ocean currents, cyclones. <strong>Zero at equator.</strong></p></div>
+        <div class="card"><div class="ch2" style="color:var(--deep)">Other Effects</div><p>Tides (lunar), Earth's bulge at equator, time zones (15°/hr), trade winds direction, hurricanes spin direction.</p></div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 Coriolis Rule</div>
+        <div class="mc">"North Turns Right, South Turns Left"</div>
+        <div class="md">In Northern Hemisphere → deflects RIGHT (anticyclones clockwise, cyclones anticlockwise). Southern Hemisphere → deflects LEFT (reverse of NH).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cs">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🌍</div><div class="bt">Revolution — Seasons, Solstices & Equinoxes</div><span class="bb">REVOLUTION</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="fbox">
+        <div class="flbl">Key Facts</div>
+        Period: 365 days, 5h, 48m, 46s (= 365.25 days → Leap year every 4 years)
+        Orbital path: Elliptical (Kepler's 1st Law)
+        Perihelion: Jan 3 (closest to Sun, ~147M km)
+        Aphelion: July 4 (farthest from Sun, ~152M km)
+        <div class="fex">Seasons NOT caused by distance but by axial tilt (23.5°)!</div>
+      </div>
+      <table class="dt">
+        <tr><th>Event</th><th>Date</th><th>NH Day</th><th>SH Day</th><th>Sun over</th></tr>
+        <tr><td class="he">Summer Solstice</td><td class="hl">June 21</td><td>Longest day</td><td>Shortest day</td><td>Tropic of Cancer (23.5°N)</td></tr>
+        <tr><td class="he">Winter Solstice</td><td class="hl">Dec 22</td><td>Shortest day</td><td>Longest day</td><td>Tropic of Capricorn (23.5°S)</td></tr>
+        <tr><td class="he">Vernal Equinox</td><td class="hl">Mar 21</td><td>Equal day/night</td><td>Equal day/night</td><td>Equator (0°)</td></tr>
+        <tr><td class="he">Autumnal Equinox</td><td class="hl">Sep 23</td><td>Equal day/night</td><td>Equal day/night</td><td>Equator (0°)</td></tr>
+      </table>
+      <div class="trap">
+        <div class="tt">⚠️ Season Trap — Most Repeated in CDS</div>
+        <div class="tc">Earth is CLOSEST to Sun in January (perihelion) yet NH has WINTER. Seasons are caused by <strong>axial tilt (23.5°)</strong>, NOT distance. At perihelion, sunlight hits Earth at oblique angle in NH → less heating despite closer distance.</div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Leap Year Rule</div>
+        <div class="tc">Divisible by 4 = leap year. BUT century years (100, 200...) are NOT leap years unless divisible by 400. So 1900 = NOT leap year. 2000 = leap year. 2100 = NOT leap year.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ GEOLOGICAL TIME ══════ -->
+<div id="geotime" class="sec">
+  <div class="stitle"><span class="stnum">06</span><h2>Geological Time Scale</h2><span class="stag">EVOLUTION</span></div>
+
+  <div class="br cd on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">⏳</div><div class="bt">Eons, Eras & Periods — Complete Timeline</div><span class="bb">TIMELINE</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="timeline">
+        <div class="tl-item" style="--c:var(--deep)">
+          <div class="tl-time">4600–541 MYA</div>
+          <div class="tl-era" style="color:var(--deep)">Precambrian (Proterozoic + Archean + Hadean)</div>
+          <div class="tl-desc">Formation of Earth, oceans, first life (bacteria, algae). No complex multicellular life. Great Oxidation Event (2400 MYA). Shields/cratons formed.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">541–252 MYA</div>
+          <div class="tl-era" style="color:var(--forest)">Paleozoic Era</div>
+          <div class="tl-desc">
+            <strong>Cambrian Explosion</strong> (541 MYA): most animal phyla appear suddenly.<br>
+            Periods: Cambrian→Ordovician→Silurian→Devonian→Carboniferous→Permian.<br>
+            First fish, amphibians, reptiles, forests. Ended with <strong>Permian Mass Extinction</strong> (96% species lost).
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">252–66 MYA</div>
+          <div class="tl-era" style="color:var(--lava)">Mesozoic Era (Age of Reptiles/Dinosaurs)</div>
+          <div class="tl-desc">
+            Periods: <strong>Triassic→Jurassic→Cretaceous</strong>.<br>
+            Dinosaurs dominate. First mammals, birds, flowering plants.<br>
+            Pangaea breaks up → continents drift apart. Ended with <strong>K-Pg extinction</strong> (asteroid impact, 66 MYA).
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-time">66 MYA–Present</div>
+          <div class="tl-era" style="color:var(--sand)">Cenozoic Era (Age of Mammals/Humans)</div>
+          <div class="tl-desc">
+            Epochs: Paleocene→Eocene→Oligocene→Miocene→Pliocene→Pleistocene→Holocene.<br>
+            Himalayas formed (~50 MYA). Ice Ages. Homo sapiens: ~0.3 MYA.<br>
+            <strong>Holocene:</strong> last 11,700 years (our current epoch).
+          </div>
+        </div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 Mnemonic — Eras</div>
+        <div class="mc">"Pretty Messy Cenozoic" = Pre-Paleozoic → Mesozoic → Cenozoic</div>
+        <div class="md">Paleozoic periods: "Can One Silly Devonian Carboniferous Permians?" = Cambrian, Ordovician, Silurian, Devonian, Carboniferous, Permian</div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Himalaya Formation Trap</div>
+        <div class="tc">Himalayas formed in <strong>Cenozoic Era</strong> (not Mesozoic). Indian plate colliding with Eurasian plate began ~50 MYA. Alps, Andes, Rockies also formed in Cenozoic. Dinosaurs were GONE by the time Himalayas began forming!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ PLATE TECTONICS ══════ -->
+<div id="plates" class="sec">
+  <div class="stitle"><span class="stnum">07</span><h2>Plate Tectonics</h2><span class="stag">CRITICAL</span></div>
+
+  <div class="br cl on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🧩</div><div class="bt">Continental Drift to Plate Tectonics — Theory Evolution</div><span class="bb">THEORIES</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--lava)">Continental Drift (Wegener, 1912)</div><p>All continents once united as <strong>Pangaea</strong> surrounded by <strong>Panthalassa</strong> ocean. Broke apart ~200 MYA. Evidence: jigsaw fit, Glossopteris fossil, Mesosaurus, similar rock strata, glacial deposits.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--earth)">Sea-Floor Spreading (Hess, 1960s)</div><p>New oceanic crust formed at <strong>mid-ocean ridges</strong> (constructive margins). Older crust subducted at trenches. Explains drift mechanism. Evidence: magnetic striping, young age of ocean floor.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--forest)">Plate Tectonics</div><p>Lithosphere divided into 7 major + several minor plates. Plates float on <strong>asthenosphere</strong>. Driven by: mantle convection currents. Unifying theory of Earth sciences.</p></div>
+      </div>
+      <div class="sub" style="color:var(--sand)">7 Major Tectonic Plates</div>
+      <div class="sh">
+        <div class="st">⚡ Major Plates — Memorize</div>
+        <div class="sc"><code>Pacific (largest), North American, Eurasian, African, Indo-Australian, Antarctic, South American</code><br>Minor plates: Arabian, Caribbean, Cocos, Nazca, Philippine, Scotia</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br ce">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">↔️</div><div class="bt">Plate Boundaries — Types & Features</div><span class="bb">BOUNDARIES</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <table class="dt">
+        <tr><th>Type</th><th>Motion</th><th>Feature Formed</th><th>Example</th><th>Earthquakes/Volcanoes</th></tr>
+        <tr><td class="he">Divergent</td><td>Moving apart</td><td>Mid-ocean ridges, Rift valleys</td><td>Mid-Atlantic Ridge, East African Rift</td><td>Low-magnitude EQ, shield volcanoes</td></tr>
+        <tr><td class="he">Convergent (Oceanic-Continental)</td><td>Ocean plate subducts</td><td>Trench, volcanic arc, fold mountains</td><td>Andes, Cascade Mountains</td><td>Deep EQ, explosive volcanoes</td></tr>
+        <tr><td class="he">Convergent (Oceanic-Oceanic)</td><td>Denser subducts</td><td>Deep trench, island arc</td><td>Mariana Trench, Japan Islands</td><td>Deep EQ, andesitic volcanoes</td></tr>
+        <tr><td class="he">Convergent (Continental-Continental)</td><td>Collision, buckling up</td><td>Fold mountains (no subduction)</td><td>Himalayas (India-Eurasia)</td><td>Strong EQ, no volcanoes</td></tr>
+        <tr><td class="he">Transform/Conservative</td><td>Sliding past each other</td><td>Fault lines, no new crust</td><td>San Andreas Fault</td><td>Strong EQ, no volcanoes</td></tr>
+      </table>
+      <div class="trap">
+        <div class="tt">⚠️ Himalayas Formation Trap</div>
+        <div class="tc">Himalayas = Continental-Continental convergence = <strong>NO subduction</strong> (both continental crusts are less dense, neither sinks). Therefore: <strong>NO volcanoes</strong> but very strong earthquakes. This is frequently tested!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ EQ & VOLCANOES ══════ -->
+<div id="eq" class="sec">
+  <div class="stitle"><span class="stnum">08</span><h2>Earthquakes & Volcanoes</h2><span class="stag">DISASTER</span></div>
+
+  <div class="br cl on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">⚡</div><div class="bt">Earthquakes — Complete Analysis</div><span class="bb">SEISMOLOGY</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--lava)">Focus & Epicenter</div><p><strong>Focus/Hypocenter:</strong> Point inside Earth where EQ originates.<br><strong>Epicenter:</strong> Point on surface directly above focus. Maximum damage at epicenter.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--sand)">Depth Classification</div><p><strong>Shallow:</strong> 0–70 km (most destructive)<br><strong>Intermediate:</strong> 70–300 km<br><strong>Deep focus:</strong> 300–700 km (Mariana-type subduction zones)</p></div>
+        <div class="card"><div class="ch2" style="color:var(--earth)">Measurement Scales</div><p><strong>Richter Scale:</strong> Magnitude (energy released), logarithmic. Each unit = 10× energy.<br><strong>Mercalli Scale:</strong> Intensity (damage/felt), I to XII. Subjective.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--forest)">Seismic Zones (India)</div><p>India has 5 zones (I–V). Zone V = highest risk (Himalayan, NE India, Andaman). Zone II = lowest. Delhi = Zone IV.</p></div>
+      </div>
+      <div class="fact">
+        <div class="ft">📌 Earthquake Distribution</div>
+        <div class="fc">
+          <strong>Ring of Fire:</strong> ~90% of world's earthquakes. Pacific Ocean rim.<br>
+          <strong>Alpine Belt (Tethys/Mediterranean):</strong> ~5–6% (Himalayas, Alps, Andes).<br>
+          <strong>Mid-Atlantic Ridge:</strong> Remaining — mostly underwater, low magnitude.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cs">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🌋</div><div class="bt">Volcanoes — Types, Lava & Landforms</div><span class="bb">VOLCANOLOGY</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <table class="dt">
+        <tr><th>Type</th><th>Activity</th><th>Example</th><th>Key Feature</th></tr>
+        <tr><td class="he">Active Volcano</td><td>Currently erupting or recently active</td><td>Barren Island (India's only active), Kilauea, Etna</td><td>Continuous magma supply</td></tr>
+        <tr><td class="he">Dormant Volcano</td><td>Not erupting but can erupt</td><td>Vesuvius, Fujiyama, Narcondam (India)</td><td>May reawaken</td></tr>
+        <tr><td class="he">Extinct Volcano</td><td>Not expected to erupt again</td><td>Aconcagua, Ben Nevis, Mt. Kenya</td><td>No magma supply</td></tr>
+      </table>
+      <div class="g2" style="margin-top:10px">
+        <div class="card"><div class="ch2" style="color:var(--lava)">Volcano Types by Shape</div>
+          <ul>
+            <li><strong>Shield volcano:</strong> Broad, gently sloping; basaltic lava; Hawaiian type (Mauna Loa)</li>
+            <li><strong>Cinder cone:</strong> Steep, small; loose pyroclastic material (Paricutin, Mexico)</li>
+            <li><strong>Composite/Stratovolcano:</strong> Tall, symmetric; explosive; Mt. Fuji, Vesuvius</li>
+            <li><strong>Caldera:</strong> Large crater from collapse; Crater Lake, Oregon</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--sand)">Lava Types</div>
+          <ul>
+            <li><strong>Basaltic/Mafic:</strong> Low silica, low viscosity, fluid; shield volcanoes</li>
+            <li><strong>Andesitic:</strong> Medium silica, intermediate; stratovolcanoes</li>
+            <li><strong>Rhyolitic/Felsic:</strong> High silica, high viscosity, explosive</li>
+            <li><strong>Aa lava:</strong> Rough, blocky | <strong>Pahoehoe:</strong> Smooth, ropy</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 India's Volcanic Islands</div>
+        <div class="mc">"Barren Burns, Narcondam Naps"</div>
+        <div class="md">Barren Island = ACTIVE (India's only). Narcondam = DORMANT. Both in Andaman & Nicobar Islands.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ ROCKS ══════ -->
+<div id="rocks" class="sec">
+  <div class="stitle"><span class="stnum">09</span><h2>Rocks & Minerals</h2><span class="stag">ROCK CYCLE</span></div>
+
+  <div class="br cf on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🪨</div><div class="bt">Rock Cycle & Three Rock Types</div><span class="bb">CLASSIFICATION</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="flow">
+        <div class="fb hl">Magma</div><div class="fa">→</div>
+        <div class="fb he">Igneous Rock</div><div class="fa">→ weathering/erosion →</div>
+        <div class="fb hf">Sediments</div><div class="fa">→ compaction →</div>
+        <div class="fb">Sedimentary Rock</div><div class="fa">→ heat+pressure →</div>
+        <div class="fb">Metamorphic Rock</div><div class="fa">→ melting →</div>
+        <div class="fb hl">Back to Magma</div>
+      </div>
+      <div class="g3" style="margin-top:12px">
+        <div class="card"><div class="ch2" style="color:var(--lava)">Igneous Rocks</div>
+          <p><strong>Formation:</strong> Cooling of magma/lava<br>
+          <strong>Intrusive:</strong> Inside Earth → coarse-grained (granite, diorite, gabbro)<br>
+          <strong>Extrusive:</strong> On surface → fine-grained (basalt, rhyolite, obsidian)<br>
+          <strong>No fossils.</strong> Primary rocks.</p>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--sand)">Sedimentary Rocks</div>
+          <p><strong>Formation:</strong> Compaction/cementation of sediments<br>
+          <strong>Examples:</strong> Sandstone, limestone, shale, coal, conglomerate<br>
+          <strong>Contains FOSSILS.</strong> Stratified (layered).<br>
+          Cover 75% of Earth's surface but only 5% of crust volume.</p>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--deep)">Metamorphic Rocks</div>
+          <p><strong>Formation:</strong> Heat + pressure transformation<br>
+          <strong>Examples:</strong> Marble (from limestone), quartzite (sandstone), slate (shale), diamond<br>
+          May contain fossils destroyed. Foliated (banded).</p>
+        </div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 Rock Type Mnemonic</div>
+        <div class="mc">"I See Magnificent Rocks" → Igneous→Sedimentary→Metamorphic</div>
+        <div class="md">Igneous→Sedimentary: weathering/erosion | Sedimentary→Metamorphic: heat+pressure | Any→Igneous: melting+cooling</div>
+      </div>
+      <table class="dt" style="margin-top:10px">
+        <tr><th>Original Rock</th><th>→ Metamorphic</th></tr>
+        <tr><td>Limestone</td><td class="hf">Marble</td></tr>
+        <tr><td>Sandstone</td><td class="hf">Quartzite</td></tr>
+        <tr><td>Shale/Clay</td><td class="hf">Slate → Phyllite → Schist → Gneiss</td></tr>
+        <tr><td>Coal</td><td class="hf">Graphite → Diamond</td></tr>
+        <tr><td>Granite</td><td class="hf">Gneiss</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ LANDFORMS ══════ -->
+<div id="landforms" class="sec">
+  <div class="stitle"><span class="stnum">10</span><h2>Geomorphology & Landforms</h2><span class="stag">LANDFORMS</span></div>
+
+  <div class="br cs on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">⛰️</div><div class="bt">Mountains — Types & Formation</div><span class="bb">MOUNTAINS</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <table class="dt">
+        <tr><th>Type</th><th>Formation</th><th>Features</th><th>Examples</th></tr>
+        <tr><td class="he">Fold Mountains</td><td>Compression of sedimentary rocks in geosynclines</td><td>Young (steep) or Old (rounded). Richest in minerals.</td><td><strong>Young:</strong> Himalayas, Alps, Rockies, Andes. <strong>Old:</strong> Aravallis, Appalachians</td></tr>
+        <tr><td class="he">Block/Fault Mountains</td><td>Upward displacement of land between faults (Horst)</td><td>Flat-topped (mesa), steep sides</td><td>Black Forest (Germany), Vosges (France), Vindhyas (India)</td></tr>
+        <tr><td class="he">Volcanic Mountains</td><td>Volcanic material accumulation</td><td>Cone-shaped</td><td>Mt. Kilimanjaro, Mt. Fuji, Mt. Etna</td></tr>
+        <tr><td class="he">Residual/Relict Mountains</td><td>Erosion of plateaus</td><td>Isolated, worn-down</td><td>Nilgiris, Mt. Manmad (India)</td></tr>
+      </table>
+      <div class="g2" style="margin-top:10px">
+        <div class="card"><div class="ch2" style="color:var(--sand)">Rift Valley / Graben</div><p>Land subsides between parallel faults. Opposite of block mountain (Horst). Examples: <strong>East African Rift Valley, Rhine Graben, Dead Sea, Jordan Valley</strong>. Contains: Red Sea, Dead Sea.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--earth)">Plateaus</div><p><strong>Tablelands:</strong> elevated, flat-topped. Types: Dissected (Colorado), Lava/Volcanic (Deccan, Columbia), Piedmont (Piedmont, Patagonian), Intermontane (Tibet, highest in world).</p></div>
+        <div class="card"><div class="ch2" style="color:var(--forest)">Plains</div><p>Low-lying flat areas. Types: <strong>Alluvial plains</strong> (river deposition, most fertile), <strong>Coastal plains</strong>, <strong>Flood plains</strong>, <strong>Glacial plains</strong> (prairies, steppes).</p></div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Horst vs Graben</div>
+        <div class="tc"><strong>Horst</strong> = land rises between faults = Block/Fault Mountain (Black Forest, Vosges)<br><strong>Graben</strong> = land SINKS between faults = Rift Valley (East Africa, Rhine)<br>They always occur together! Same fault system, different movement.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ ATMOSPHERE ══════ -->
+<div id="atmo" class="sec">
+  <div class="stitle"><span class="stnum">11</span><h2>Atmosphere Connection</h2><span class="stag">AIR-EARTH</span></div>
+
+  <div class="br ce on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🌬️</div><div class="bt">Atmosphere — Layers & Key Facts</div><span class="bb">LAYERS</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <table class="dt">
+        <tr><th>Layer</th><th>Height</th><th>Key Feature</th><th>Lapse Rate</th></tr>
+        <tr><td class="he">Troposphere</td><td>0–12 km (avg)</td><td>Weather occurs here; ~80% of air mass; ozone near top (tropopause)</td><td>-6.5°C/km</td></tr>
+        <tr><td class="he">Stratosphere</td><td>12–50 km</td><td>Ozone layer (15–35 km); absorbs UV; jet aircraft fly here</td><td>Temperature rises</td></tr>
+        <tr><td class="he">Mesosphere</td><td>50–80 km</td><td>Coldest layer (-90°C); meteors burn here</td><td>Temperature falls</td></tr>
+        <tr><td class="he">Thermosphere/Ionosphere</td><td>80–700 km</td><td>Aurora borealis/australis; radio waves reflect here (D,E,F layers)</td><td>Temperature rises sharply</td></tr>
+        <tr><td class="he">Exosphere</td><td>700 km+</td><td>Merges with space; satellites orbit here; very low density</td></tr>
+      </table>
+      <div class="mnem">
+        <div class="mt">🧠 Atmospheric Layers</div>
+        <div class="mc">"The Silly Monkey Tries Escaping"</div>
+        <div class="md">Troposphere → Stratosphere → Mesosphere → Thermosphere → Exosphere</div>
+      </div>
+      <div class="g2" style="margin-top:10px">
+        <div class="card"><div class="ch2" style="color:var(--earth)">Composition of Atmosphere</div>
+          <ul>
+            <li><strong>N₂: 78.09%</strong> (most abundant)</li>
+            <li><strong>O₂: 20.95%</strong></li>
+            <li><strong>Ar: 0.93%</strong></li>
+            <li><strong>CO₂: 0.04%</strong> (increasing!)</li>
+            <li>Water vapour: variable (0–4%)</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--sand)">Pressure Belts</div>
+          <ul>
+            <li><strong>ITCZ (0°):</strong> Low pressure (convergence)</li>
+            <li><strong>Horse Latitudes (30°N/S):</strong> High pressure (subsidence)</li>
+            <li><strong>Sub-polar Low (60°N/S):</strong> Low pressure</li>
+            <li><strong>Polar High (90°N/S):</strong> High pressure</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ HYDROSPHERE ══════ -->
+<div id="hydro" class="sec">
+  <div class="stitle"><span class="stnum">12</span><h2>Hydrosphere Connection</h2><span class="stag">WATER</span></div>
+
+  <div class="br co on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🌊</div><div class="bt">Earth's Water — Distribution & Oceans</div><span class="bb">WATER</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="g3">
+        <div class="card"><div class="ch2" style="color:var(--ocean)">Water Distribution</div>
+          <ul>
+            <li><strong>97.5%</strong> — Saltwater (oceans)</li>
+            <li><strong>2.5%</strong> — Freshwater</li>
+            <li>Of freshwater: <strong>69%</strong> — glaciers/ice caps</li>
+            <li><strong>30%</strong> — groundwater</li>
+            <li>Only <strong>0.3%</strong> — accessible surface water</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--earth)">Oceans (Largest→Smallest)</div>
+          <ul>
+            <li><strong>Pacific:</strong> Largest (165M km²), deepest</li>
+            <li><strong>Atlantic:</strong> 2nd largest, S-shaped, most shipping</li>
+            <li><strong>Indian:</strong> Warmest, landlocked on 3 sides</li>
+            <li><strong>Southern/Antarctic:</strong> 4th</li>
+            <li><strong>Arctic:</strong> Smallest, mostly frozen</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--sand)">Deepest Points</div>
+          <ul>
+            <li><strong>Mariana Trench</strong> (Pacific): 11,034 m (deepest)</li>
+            <li><strong>Puerto Rico Trench</strong> (Atlantic): 8,376 m</li>
+            <li><strong>Java/Sunda Trench</strong> (Indian): 7,258 m</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fbox">
+        <div class="flbl">Hydrological Cycle (Water Cycle)</div>
+        Evaporation → Condensation → Precipitation → Runoff/Infiltration → Back to Evaporation
+        <div class="fex">Sun drives the cycle (evaporation). Gravity drives surface flow. 97% of water locked in oceans.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ BIOSPHERE ══════ -->
+<div id="bio" class="sec">
+  <div class="stitle"><span class="stnum">13</span><h2>Biosphere Connection</h2><span class="stag">LIFE ZONES</span></div>
+  <div class="br cf on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🌿</div><div class="bt">Biosphere & Life Zones</div><span class="bb">ECOLOGY</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="fact">
+        <div class="ft">📌 Biosphere Basics</div>
+        <div class="fc">
+          Biosphere = zone of life on Earth. Extends from <strong>~10 km deep</strong> in oceans to <strong>~8 km above</strong> sea level.<br>
+          Biodiversity hotspots: Western Ghats + Sri Lanka, Eastern Himalayas, Indo-Burma, Sundaland (in South Asia).<br>
+          India has <strong>4 biodiversity hotspots</strong> of world's 36.
+        </div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--forest)">Biomes (Latitudinal Zones)</div>
+          <ul>
+            <li><strong>Tropical Rainforest:</strong> 0°–10° (Amazon, Congo, SE Asia)</li>
+            <li><strong>Tropical Grassland (Savanna):</strong> 10°–20°</li>
+            <li><strong>Desert:</strong> ~30° (Horse latitudes) — Sahara, Thar</li>
+            <li><strong>Temperate Grassland:</strong> ~45° (Prairies, Steppes)</li>
+            <li><strong>Taiga/Boreal Forest:</strong> 50°–70°</li>
+            <li><strong>Tundra:</strong> 70°–80°</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--ocean)">Earth-Life Interaction</div>
+          <ul>
+            <li>Photosynthesis: regulates CO₂/O₂ balance</li>
+            <li>Weathering: plants accelerate rock breakdown</li>
+            <li>Soil formation: humus from decomposition</li>
+            <li>Climate regulation: forests = carbon sinks</li>
+            <li>Ocean-atmosphere exchange via phytoplankton</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ TRAPS ══════ -->
+<div id="traps" class="sec">
+  <div class="stitle"><span class="stnum">14</span><h2>CDS/UPSC Traps & Common Errors</h2><span class="stag">AVOID MISTAKES</span></div>
+
+  <div class="br cl on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">⚠️</div><div class="bt">15 Deadly Geography Traps</div><span class="bb">CRITICAL</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="trap"><div class="tt">🪤 Earth's Position in Solar System</div><div class="tc">Earth = <strong>3rd</strong> planet (NOT 4th). Mercury(1)→Venus(2)→Earth(3)→Mars(4). Frequently confused under exam pressure.</div></div>
+      <div class="trap"><div class="tt">🪤 Perihelion ≠ Summer in NH</div><div class="tc">Earth is CLOSEST to Sun in January (perihelion) → but NH has WINTER. Seasons = axial tilt, not distance.</div></div>
+      <div class="trap"><div class="tt">🪤 Outer Core is LIQUID, Inner Core is SOLID</div><div class="tc">Outer core = liquid Fe-Ni (generates magnetic field). Inner core = solid Fe-Ni (extreme pressure despite higher temperature). Often reversed in questions!</div></div>
+      <div class="trap"><div class="tt">🪤 Himalayas = No Volcanoes</div><div class="tc">Continental-continental collision = no subduction = no volcanoes. Himalayas have earthquakes but NO active volcanoes.</div></div>
+      <div class="trap"><div class="tt">🪤 S-waves Through Liquids</div><div class="tc">S-waves CANNOT travel through liquids. This proves outer core is liquid. P-waves can travel through all states.</div></div>
+      <div class="trap"><div class="tt">🪤 Rotation vs Revolution</div><div class="tc">Rotation = spinning on axis (24h) → day/night. Revolution = orbit around Sun (365.25 days) → seasons. Don't confuse effects!</div></div>
+      <div class="trap"><div class="tt">🪤 Coriolis Force at Equator = ZERO</div><div class="tc">Coriolis force is ZERO at equator and MAXIMUM at poles. Cyclones cannot form near equator (within ~5° latitude).</div></div>
+      <div class="trap"><div class="tt">🪤 Equinox ≠ Equal Day/Night Everywhere</div><div class="tc">At equinoxes, equator has 12h day/night. But poles experience transitional conditions. Strict equal day-night = only at equator on equinox days.</div></div>
+      <div class="trap"><div class="tt">🪤 Pacific = Largest AND Deepest</div><div class="tc">Pacific is both the largest ocean (165M km²) AND contains the deepest point (Mariana Trench). Sometimes questions try to separate these facts.</div></div>
+      <div class="trap"><div class="tt">🪤 Moho vs Gutenberg</div><div class="tc">Moho = Crust-Mantle boundary (~35 km). Gutenberg = Mantle-Core boundary (~2900 km). Gutenberg is where S-waves stop.</div></div>
+      <div class="trap"><div class="tt">🪤 Block Mountain = Horst (not the valley)</div><div class="tc">Black Forest and Vosges are HORSTS (block mountains = raised blocks). Rhine Valley between them is a GRABEN (rift valley). Often confused!</div></div>
+      <div class="trap"><div class="tt">🪤 Tropic vs Arctic Circle</div><div class="tc">Tropic of Cancer = 23.5°N (where sun is directly overhead on June 21). Arctic Circle = 66.5°N (where 24h day begins June 21). Very different latitudes!</div></div>
+      <div class="trap"><div class="tt">🪤 Leap Year Century Rule</div><div class="tc">2000 = leap year (÷400). 1900 = NOT leap year (÷100 but not ÷400). 2100 = NOT leap year. Most students forget the century exception.</div></div>
+      <div class="trap"><div class="tt">🪤 IST Longitude</div><div class="tc">India Standard Time = GMT+5:30 at <strong>82°30'E</strong> (82.5°E). Passes through Mirzapur, UP (near Allahabad/Prayagraj). Often asked as: "what longitude is IST based on?"</div></div>
+      <div class="trap"><div class="tt">🪤 Wegener vs Hess</div><div class="tc">Wegener = Continental Drift (1912) theory. Hess = Sea-floor spreading (1960s) — gave MECHANISM for drift. Both together = Plate Tectonics theory.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ FACTS SHEET ══════ -->
+<div id="facts" class="sec">
+  <div class="stitle"><span class="stnum">15</span><h2>Fact Master Sheet</h2><span class="stag">ONE-SHOT REVISION</span></div>
+
+  <div class="fw">
+    <div class="fw-c"><div class="fwt" style="color:var(--earth)">🌍 Earth Numbers</div>
+      <div class="fwi">Age: 4.6 billion years</div>
+      <div class="fwi">Equatorial radius: 6,378 km</div>
+      <div class="fwi">Polar radius: 6,357 km</div>
+      <div class="fwi">Mass: 5.97 × 10²⁴ kg</div>
+      <div class="fwi">Density: 5.5 g/cm³</div>
+      <div class="fwi">Axial tilt: 23.5°</div>
+      <div class="fwi">1 AU = 149.6 million km</div>
+    </div>
+    <div class="fw-c"><div class="fwt" style="color:var(--lava)">🔴 Earth Interior</div>
+      <div class="fwi">Crust depth: 5–70 km</div>
+      <div class="fwi">Moho depth: ~35 km (cont)</div>
+      <div class="fwi">Gutenberg: 2900 km</div>
+      <div class="fwi">Lehmann: 5100 km</div>
+      <div class="fwi">Outer core: liquid Fe-Ni</div>
+      <div class="fwi">Inner core: solid Fe-Ni</div>
+      <div class="fwi">Core temp: up to 6000°C</div>
+    </div>
+    <div class="fw-c"><div class="fwt" style="color:var(--sand)">🌐 Important Latitudes</div>
+      <div class="fwi">0° = Equator</div>
+      <div class="fwi">23.5°N = Tropic of Cancer</div>
+      <div class="fwi">23.5°S = Tropic of Capricorn</div>
+      <div class="fwi">66.5°N = Arctic Circle</div>
+      <div class="fwi">66.5°S = Antarctic Circle</div>
+      <div class="fwi">82.5°E = IST (India)</div>
+      <div class="fwi">0° = Prime Meridian (Greenwich)</div>
+    </div>
+    <div class="fw-c"><div class="fwt" style="color:var(--forest)">🧩 Plate Tectonics</div>
+      <div class="fwi">7 major tectonic plates</div>
+      <div class="fwi">Pacific = largest plate</div>
+      <div class="fwi">Pangaea broke ~200 MYA</div>
+      <div class="fwi">Himalayas: cont-cont collision</div>
+      <div class="fwi">Ring of Fire: ~90% EQs</div>
+      <div class="fwi">Mariana Trench: 11,034 m</div>
+      <div class="fwi">Mid-Atlantic Ridge: divergent</div>
+    </div>
+    <div class="fw-c"><div class="fwt" style="color:var(--deep)">⏳ Geological Eras</div>
+      <div class="fwi">Precambrian: 4600–541 MYA</div>
+      <div class="fwi">Paleozoic: 541–252 MYA</div>
+      <div class="fwi">Mesozoic: 252–66 MYA</div>
+      <div class="fwi">Cenozoic: 66 MYA–Now</div>
+      <div class="fwi">Himalaya formation: ~50 MYA</div>
+      <div class="fwi">K-Pg extinction: 66 MYA</div>
+      <div class="fwi">Homo sapiens: ~0.3 MYA</div>
+    </div>
+    <div class="fw-c"><div class="fwt" style="color:var(--ocean)">🌊 Hydrosphere Facts</div>
+      <div class="fwi">97.5% saltwater</div>
+      <div class="fwi">Pacific: largest ocean</div>
+      <div class="fwi">Arctic: smallest ocean</div>
+      <div class="fwi">Indian Ocean: warmest</div>
+      <div class="fwi">Mariana Trench: deepest</div>
+      <div class="fwi">Dead Sea: saltiest lake</div>
+      <div class="fwi">Caspian Sea: largest lake</div>
+    </div>
+    <div class="fw-c"><div class="fwt" style="color:var(--lava)">🌋 Volcanoes India</div>
+      <div class="fwi">Barren Island: only ACTIVE</div>
+      <div class="fwi">Narcondam: DORMANT</div>
+      <div class="fwi">Both in Andaman Islands</div>
+      <div class="fwi">Ring of Fire: Pacific rim</div>
+      <div class="fwi">Shield: Mauna Loa, Hawaii</div>
+      <div class="fwi">Stratovolcano: Mt. Fuji</div>
+      <div class="fwi">Caldera: Crater Lake, Oregon</div>
+    </div>
+    <div class="fw-c"><div class="fwt" style="color:var(--earth)">⏰ Time & Movement</div>
+      <div class="fwi">Rotation: 23h 56m 4s</div>
+      <div class="fwi">Revolution: 365d 5h 48m</div>
+      <div class="fwi">1° longitude = 4 minutes</div>
+      <div class="fwi">15° = 1 hour time zone</div>
+      <div class="fwi">Perihelion: January 3</div>
+      <div class="fwi">Aphelion: July 4</div>
+      <div class="fwi">Summer Solstice NH: June 21</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ REVISION ══════ -->
+<div id="revision" class="sec">
+  <div class="stitle"><span class="stnum">16</span><h2>Night Before Exam — Revision Framework</h2><span class="stag">FINAL PREP</span></div>
+
+  <div class="rev-grid">
+    <div class="rev-card" style="border-top:3px solid var(--earth)">
+      <h4 style="color:var(--earth)">⏱️ 60-Min Plan</h4>
+      <ul>
+        <li><strong>0–10:</strong> Earth facts (position, shape, size)</li>
+        <li><strong>10–20:</strong> Interior layers + discontinuities</li>
+        <li><strong>20–30:</strong> Seismic waves (P/S/surface)</li>
+        <li><strong>30–40:</strong> Lat/Long, solstices, equinoxes</li>
+        <li><strong>40–50:</strong> Plate tectonics + boundary types</li>
+        <li><strong>50–60:</strong> All traps + 10 practice MCQs</li>
+      </ul>
+    </div>
+    <div class="rev-card" style="border-top:3px solid var(--lava)">
+      <h4 style="color:var(--lava)">⏱️ 30-Min Sprint</h4>
+      <ul>
+        <li><strong>0–5:</strong> 6 key latitudes (0,23.5N/S,66.5N/S,90)</li>
+        <li><strong>5–10:</strong> Layers: Crust→Mantle→Outer(L)→Inner(S)</li>
+        <li><strong>10–15:</strong> 4 discontinuities (Conrad→Moho→Gutenberg→Lehmann)</li>
+        <li><strong>15–20:</strong> 4 boundary types + examples</li>
+        <li><strong>20–25:</strong> Solstices/equinox dates</li>
+        <li><strong>25–30:</strong> Top 10 traps only</li>
+      </ul>
+    </div>
+    <div class="rev-card" style="border-top:3px solid var(--forest)">
+      <h4 style="color:var(--forest)">⏱️ 10-Min Flash</h4>
+      <ul>
+        <li>Earth = <strong>3rd</strong> from Sun</li>
+        <li>Outer core = <strong>LIQUID</strong></li>
+        <li>S-waves = solid only</li>
+        <li>Seasons = axial tilt <strong>23.5°</strong></li>
+        <li>Solstice June 21 = NH longest</li>
+        <li>Himalayas = NO volcanoes</li>
+        <li>1° longitude = <strong>4 minutes</strong></li>
+        <li>IST = <strong>82.5°E</strong></li>
+      </ul>
+    </div>
+    <div class="rev-card" style="border-top:3px solid var(--sand)">
+      <h4 style="color:var(--sand)">🧠 Mnemonic Quick-Fire</h4>
+      <ul>
+        <li>Planets: <strong>My Very Educated Mother...</strong></li>
+        <li>Layers: <strong>Can Monkeys Conquer Our...</strong></li>
+        <li>Discontinuities: <strong>Conrad Met Gutenberg Left</strong></li>
+        <li>Atmo layers: <strong>The Silly Monkey Tries Escaping</strong></li>
+        <li>Eras: <strong>Pretty Messy Cenozoic</strong></li>
+        <li>Rocks: <strong>I See Magnificent Rocks</strong></li>
+        <li>India volcanoes: <strong>Barren Burns, Narcondam Naps</strong></li>
+      </ul>
+    </div>
+    <div class="rev-card" style="border-top:3px solid var(--deep)">
+      <h4 style="color:var(--deep)">📊 CDS High-Yield Topics</h4>
+      <ul>
+        <li>Earth's position + shape</li>
+        <li>Interior layers (esp. outer/inner core)</li>
+        <li>Lat/Long time calculations</li>
+        <li>Solstice/equinox dates</li>
+        <li>Plate boundary types + examples</li>
+        <li>Himalayas = no volcanoes</li>
+        <li>Ring of Fire distribution</li>
+        <li>Rock cycle + metamorphic pairs</li>
+        <li>Barren Island = India's active volcano</li>
+        <li>IST = 82.5°E</li>
+      </ul>
+    </div>
+    <div class="rev-card" style="border-top:3px solid var(--ocean)">
+      <h4 style="color:var(--ocean)">🔢 Critical Numbers</h4>
+      <ul>
+        <li><strong>4.6 bya</strong> = Earth's age</li>
+        <li><strong>23.5°</strong> = axial tilt</li>
+        <li><strong>2900 km</strong> = Gutenberg depth</li>
+        <li><strong>5100 km</strong> = Lehmann depth</li>
+        <li><strong>11,034 m</strong> = Mariana Trench</li>
+        <li><strong>82.5°E</strong> = IST longitude</li>
+        <li><strong>15°/hr</strong> = time zone spacing</li>
+        <li><strong>111 km</strong> = 1° of latitude</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ QUIZ ══════ -->
+<div id="quiz" class="sec">
+  <div class="stitle"><span class="stnum">17</span><h2>CDS Practice Test — 25 Questions</h2><span class="stag">EXAM SIMULATION</span></div>
+  <div style="max-width:680px">
+    <div class="qpw"><div class="qpf" id="qpf" style="width:0%"></div></div>
+    <div id="qbody"></div>
+    <div class="qsc" id="qsc">
+      <div class="qscn" id="qscn"></div>
+      <div class="qscl" id="qscl"></div>
+      <button class="qscr" onclick="startQ()">Restart Quiz</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ UPSC ══════ -->
+<div id="upsc" class="sec">
+  <div class="stitle"><span class="stnum">18</span><h2>UPSC Conceptual Questions</h2><span class="stag">ANALYTICAL</span></div>
+
+  <div class="br cd on">
+    <div class="br-hd" onclick="tb(this)"><div class="bi">🏛️</div><div class="bt">15 UPSC-Level Analytical Questions</div><span class="bb">SOLUTIONS</span><span class="ch">▶</span></div>
+    <div class="br-bd">
+      <div class="qcard"><div class="qn">UPSC Q1</div><div class="qt">Why do the Himalayan region experience more frequent and intense earthquakes compared to the Deccan Plateau?</div>
+        <div class="fbox"><div class="flbl">Model Answer</div>Himalayas = active convergent plate boundary (Indian + Eurasian plates still converging at ~5 cm/yr). Active tectonic stresses = frequent earthquakes. Deccan = stable craton (old, rigid Precambrian basement) sitting in middle of Indo-Australian plate = far from active boundaries = infrequent, low-magnitude earthquakes. <div class="fex">Key concept: Active plate boundaries = high seismicity. Stable cratons = low seismicity.</div></div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q2</div><div class="qt">Explain how the liquid outer core of Earth contributes to the habitability of Earth.</div>
+        <div class="fbox"><div class="flbl">Model Answer</div>Liquid outer core: convection of molten Fe-Ni → generates Earth's magnetic field (geodynamo theory). Magnetic field (magnetosphere) deflects solar wind and cosmic radiation. Without magnetosphere: solar wind would strip away atmosphere (as happened to Mars). Earth's atmosphere → enables liquid water → enables life. <div class="fex">Chain: Liquid core → Magnetic field → Atmospheric protection → Water → Life</div></div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q3</div><div class="qt">Despite Earth being closest to the Sun in January, why does the Northern Hemisphere experience winter during this period?</div>
+        <div class="fbox"><div class="flbl">Model Answer</div>Seasons caused by axial tilt (23.5°), NOT Earth-Sun distance. In January (perihelion): Earth's axis tilted away from Sun in NH → sunlight strikes at oblique angle over large area → less energy per unit area → winter. The 3% closer distance is insignificant compared to the heating difference from angle of incidence. Sun's rays at equatorial angle = 2× more intense than at 60° angle.</div></div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q4</div><div class="qt">How does the shadow zone concept provide evidence for Earth's internal structure?</div>
+        <div class="fbox"><div class="flbl">Model Answer</div>P-wave shadow zone (103°–143°): P-waves refracted/bent at liquid outer core boundary → creates zone of no P-waves. S-wave shadow zone (beyond 103°): S-waves cannot pass through liquid → total absence beyond 103°. This proves: 1) There is a distinct boundary at ~2900 km (Gutenberg), 2) Outer core is liquid, 3) Inner core is solid (P-waves detected inside shadow zone from refraction). Shadow zones = seismic "X-ray" of Earth's interior.</div></div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q5</div><div class="qt">Discuss how plate tectonics unifies concepts of earthquakes, volcanoes, mountain building and ocean formation.</div>
+        <div class="fbox"><div class="flbl">Model Answer</div>Plate Tectonics = Unified Theory: 1) Divergent = ocean creation (Mid-Atlantic Ridge), shield volcanoes, low EQ. 2) Convergent (oceanic-continental) = fold mountains + volcanic arcs + deep trenches + strong EQ (Andes). 3) Continental collision = fold mountains, deep EQ, no volcanoes (Himalayas). 4) Transform = strong EQ, no crust creation/destruction (San Andreas). Pre-plate tectonics: EQ, volcanoes, mountains seemed unrelated. Plate tectonics explains their geographic distribution as one coherent system.</div></div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q6–15 (Framework Questions)</div>
+        <div class="qn" style="margin-top:8px">Q6: Explain the role of the Coriolis effect in determining wind patterns and cyclone formation.</div>
+        <div class="qn">Q7: How does sea-floor spreading explain the young age of oceanic crust compared to continental crust?</div>
+        <div class="qn">Q8: Explain why the geoid differs from an oblate spheroid and its significance in modern GPS systems.</div>
+        <div class="qn">Q9: How does the rock cycle connect the lithosphere, hydrosphere and atmosphere?</div>
+        <div class="qn">Q10: Explain the difference between Richter and Mercalli scales and when each is more appropriate.</div>
+        <div class="qn">Q11: Why do fold mountains like Himalayas have marine fossils at their peaks?</div>
+        <div class="qn">Q12: Analyze why the Indian Ocean is considered the warmest ocean.</div>
+        <div class="qn">Q13: How does the International Date Line cause date confusion, and how is it practically managed?</div>
+        <div class="qn">Q14: Explain the formation of the East African Rift Valley and its future geographic implications.</div>
+        <div class="qn">Q15: Compare the volcanic landforms formed at divergent vs convergent plate boundaries.</div>
+        <div class="fbox" style="margin-top:8px"><div class="flbl">Q11 Answer — Marine Fossils in Himalayas</div>Himalayas formed from sedimentary rocks deposited in ancient Tethys Sea (ancient ocean between Indian and Eurasian plates). When plates collided, sediments uplifted. Marine fossils preserved in limestone/sedimentary rocks now found at 5000+ m elevation. Same evidence used by Wegener for continental drift theory.<div class="fex">Key: Himalayas = compressed ocean floor sediments = fossils possible</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- #main -->
+
+<script>
+// Navigation
+function show(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.nav-a').forEach(a=>a.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  event.currentTarget.classList.add('on');
+  document.getElementById('nav').classList.remove('on');
+  window.scrollTo(0,0);
+  if(id==='quiz') startQ();
+}
+function tb(h){h.parentElement.classList.toggle('on')}
+document.querySelectorAll('.br').forEach((b,i)=>{if(i===0)b.classList.add('on')});
+
+// Quiz questions
+const QS=[
+  {q:"Earth is the ___ planet from the Sun.",opts:["2nd","3rd","4th","5th"],a:1,e:"Earth is the 3rd planet: Mercury→Venus→Earth→Mars→Jupiter→Saturn→Uranus→Neptune."},
+  {q:"The true shape of Earth is called:",opts:["Oblate Spheroid","Perfect Sphere","Geoid","Prolate Spheroid"],a:2,e:"True shape = Geoid (irregular, Earth-shaped). Oblate Spheroid is the mathematical approximation used in geography."},
+  {q:"Which discontinuity separates the Earth's crust from the mantle?",opts:["Conrad","Gutenberg","Lehmann","Mohorovicic (Moho)"],a:3,e:"Mohorovicic (Moho) discontinuity separates crust from mantle at ~35 km depth under continents and ~5-10 km under oceans."},
+  {q:"The outer core of Earth is:",opts:["Solid iron-nickel","Liquid iron-nickel","Semi-solid silicates","Gaseous state"],a:1,e:"Outer core is LIQUID iron-nickel. Inner core is SOLID. The liquid outer core generates Earth's magnetic field through convection (geodynamo)."},
+  {q:"Which seismic waves CANNOT travel through liquids?",opts:["P waves","S waves","Love waves","Rayleigh waves"],a:1,e:"S (Secondary/Shear) waves cannot travel through liquids. This is how we know the outer core is liquid — S-waves disappear beyond 103° from epicenter."},
+  {q:"The Tropic of Cancer is at:",opts:["23.5°S","23.5°N","66.5°N","0°"],a:1,e:"Tropic of Cancer = 23.5°N. Sun is directly overhead on June 21 (Summer Solstice in NH). Tropic of Capricorn = 23.5°S."},
+  {q:"What is the IST longitude?",opts:["75°E","80°E","82.5°E","90°E"],a:2,e:"India Standard Time = 82°30'E (82.5°E). IST = GMT + 5:30 hours. Passes through Mirzapur, Uttar Pradesh."},
+  {q:"Earth is closest to the Sun (perihelion) in:",opts:["June","July","January","April"],a:2,e:"Perihelion (closest to Sun) = January 3. Aphelion (farthest) = July 4. Despite being closer in January, NH has winter because of axial tilt (seasons depend on tilt, not distance)."},
+  {q:"The Himalayan Mountains have NO active volcanoes because:",opts:["Too high altitude","They are old mountains","Continental-continental collision without subduction","No magma below them"],a:2,e:"Himalayas formed by continental-continental collision (India+Eurasia). Neither plate subducts (both too light). Without subduction, no magma generation, no volcanoes."},
+  {q:"Which theory provides the mechanism for continental drift?",opts:["Nebular Hypothesis","Sea-floor spreading","Tidal Theory","Big Bang"],a:1,e:"Sea-floor spreading (Harry Hess, 1960s) provided the mechanism: new crust at mid-ocean ridges pushes older crust apart, driving continental drift. Together they form Plate Tectonics."},
+  {q:"India's ONLY active volcano is:",opts:["Narcondam Island","Barren Island","Andaman Islands (unspecified)","There are none"],a:1,e:"Barren Island in Andaman & Nicobar Islands is India's only active volcano. Narcondam is dormant. Both are in the Andaman chain."},
+  {q:"The Gutenberg Discontinuity lies at approximately:",opts:["35 km","2900 km","5100 km","700 km"],a:1,e:"Gutenberg Discontinuity at ~2900 km separates the mantle from the outer core. S-waves stop here (outer core is liquid)."},
+  {q:"The Summer Solstice in the Northern Hemisphere occurs on approximately:",opts:["March 21","June 21","September 23","December 22"],a:1,e:"Summer Solstice (NH) = June 21: longest day, shortest night. Sun directly overhead at Tropic of Cancer (23.5°N). Arctic Circle has 24-hour daylight."},
+  {q:"The Ring of Fire accounts for approximately what percentage of world's earthquakes?",opts:["50%","70%","90%","99%"],a:2,e:"The Ring of Fire (Pacific Ocean rim) accounts for ~90% of world's earthquakes and 75% of volcanoes. It marks the boundary of the Pacific Plate."},
+  {q:"Which rock contains fossils?",opts:["Igneous","Metamorphic","Sedimentary","All rocks"],a:2,e:"Sedimentary rocks contain fossils. They form by compaction of sediments layer by layer, trapping organisms. Igneous rocks form from cooling magma (no fossils). Metamorphic = heat+pressure destroys fossils."},
+  {q:"1 degree of longitude equals how many minutes of time?",opts:["1 minute","2 minutes","4 minutes","6 minutes"],a:2,e:"1° longitude = 4 minutes. 15° = 1 hour. 360° = 24 hours. To find time: multiply longitude difference by 4 to get minutes difference."},
+  {q:"The Mariana Trench is located in which ocean?",opts:["Atlantic","Indian","Pacific","Arctic"],a:2,e:"Mariana Trench (deepest point: 11,034 m / Challenger Deep) is in the Pacific Ocean, near the Mariana Islands. It forms where the Pacific Plate subducts under the Mariana Plate."},
+  {q:"Which ERA is known as the 'Age of Dinosaurs'?",opts:["Paleozoic","Precambrian","Mesozoic","Cenozoic"],a:2,e:"Mesozoic Era (252–66 MYA) = Age of Reptiles/Dinosaurs. Divided into Triassic, Jurassic, Cretaceous. Ended with K-Pg extinction (asteroid impact, 66 MYA)."},
+  {q:"Coriolis force is ZERO at:",opts:["Poles","Equator","Tropics","Arctic Circle"],a:1,e:"Coriolis force = zero at equator, maximum at poles. This is why cyclones cannot form within ~5° of equator — insufficient Coriolis effect to create rotation."},
+  {q:"A Horst in plate tectonics refers to:",opts:["A rift valley (sunken block)","A raised block between faults","The ocean floor spreading","A subduction zone feature"],a:1,e:"Horst = raised block between two normal faults = Block/Fault Mountain (Black Forest, Vosges). Graben = sunken block = Rift Valley (Rhine Valley, East Africa)."},
+  {q:"Pangaea started breaking apart approximately:",opts:["500 MYA","200 MYA","100 MYA","50 MYA"],a:1,e:"Pangaea (Wegener's supercontinent) began breaking apart ~200 MYA in the Mesozoic Era (Triassic period). This led to current continental positions over millions of years."},
+  {q:"Which type of plate boundary is the San Andreas Fault?",opts:["Convergent","Divergent","Transform/Conservative","Subduction zone"],a:2,e:"San Andreas Fault = Transform fault (plates slide horizontally past each other). Causes strong earthquakes (no subduction/spreading). Strong earthquakes but no volcanoes."},
+  {q:"The Lehmann Discontinuity separates:",opts:["Crust and Mantle","Mantle and Outer Core","Outer Core and Inner Core","Upper and Lower Mantle"],a:2,e:"Lehmann Discontinuity at ~5100 km separates Outer Core (liquid) from Inner Core (solid). P-wave velocity increases here, confirming solid inner core."},
+  {q:"Which seismic wave causes the MOST damage during an earthquake?",opts:["P waves","S waves","Love waves (L waves)","Body waves"],a:2,e:"Surface waves (Love and Rayleigh waves) cause the most damage — they travel along Earth's surface and create ground-rolling motion. Among these, Love waves create horizontal shaking and are most destructive to buildings."},
+  {q:"The East African Rift Valley is an example of which plate boundary?",opts:["Convergent","Transform","Divergent","Subduction zone"],a:2,e:"East African Rift = Divergent boundary (African Plate splitting into Somali and Nubian plates). Over millions of years, East Africa will separate and form a new ocean (like the Red Sea, which is an early-stage rift)."}
+];
+
+let cur=0,sc=0;
+function startQ(){
+  cur=0;sc=0;
+  document.getElementById('qsc').style.display='none';
+  document.getElementById('qbody').style.display='block';
+  renderQ();
+}
+function renderQ(){
+  if(cur>=QS.length){
+    document.getElementById('qbody').style.display='none';
+    const s=document.getElementById('qsc');s.style.display='block';
+    const p=Math.round(sc/QS.length*100);
+    document.getElementById('qscn').textContent=sc+'/'+QS.length;
+    const m=p>=80?'🎯 Geography Expert!':p>=60?'👍 Good — Review traps':'📚 Focus on key facts!';
+    document.getElementById('qscl').textContent=p+'% — '+m;
+    return;
+  }
+  document.getElementById('qpf').style.width=Math.round(cur/QS.length*100)+'%';
+  const q=QS[cur];
+  document.getElementById('qbody').innerHTML=`
+    <div class="qcard">
+      <div class="qn">Question ${cur+1} of ${QS.length}</div>
+      <div class="qt">${q.q}</div>
+      <div class="qopts">${q.opts.map((o,i)=>`<button class="qo" id="qo${i}" onclick="ans(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div>
+      <div class="qexp" id="qexp">${q.e}</div>
+    </div>
+    <button class="qnxt" id="qnxt" onclick="nxtQ()">Next →</button>`;
+}
+function ans(i){
+  const q=QS[cur];
+  document.querySelectorAll('.qo').forEach(b=>b.disabled=true);
+  document.getElementById('qo'+i).classList.add(i===q.a?'ok':'no');
+  document.getElementById('qo'+q.a).classList.add('ok');
+  document.getElementById('qexp').classList.add('on');
+  if(i===q.a)sc++;
+  document.getElementById('qnxt').style.display='inline-block';
+}
+function nxtQ(){cur++;renderQ();}
+startQ();
+</script>
+</body>
+</html>

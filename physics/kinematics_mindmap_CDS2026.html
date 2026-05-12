@@ -1,0 +1,2728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinematics Master Mind Map — CDS 2 2026 | UPSC Physics</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;600&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg: #0a0d14;
+    --surface: #111520;
+    --surface2: #161b2e;
+    --surface3: #1c2340;
+    --border: rgba(100,120,200,0.18);
+    --text: #e8ecf8;
+    --text-muted: #7a84a8;
+    --accent-gold: #f0c040;
+    --accent-blue: #4a9eff;
+    --accent-cyan: #00d4ff;
+    --accent-green: #22d472;
+    --accent-red: #ff5566;
+    --accent-purple: #b060ff;
+    --accent-orange: #ff8c42;
+    --glow-blue: 0 0 18px rgba(74,158,255,0.3);
+    --glow-gold: 0 0 18px rgba(240,192,64,0.3);
+    --glow-green: 0 0 18px rgba(34,212,114,0.3);
+    --shadow: 0 4px 32px rgba(0,0,10,0.6);
+    --r: 14px;
+    --r-sm: 8px;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* === SIDEBAR TOC === */
+  #sidebar {
+    position: fixed;
+    left: 0; top: 0;
+    width: 240px;
+    height: 100vh;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px 0;
+    transition: transform 0.3s ease;
+  }
+  #sidebar::-webkit-scrollbar { width: 4px; }
+  #sidebar::-webkit-scrollbar-thumb { background: var(--surface3); border-radius: 4px; }
+
+  .sidebar-logo {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+  .sidebar-logo h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--accent-gold);
+    line-height: 1.3;
+  }
+  .sidebar-logo span {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+
+  .toc-section { margin-bottom: 8px; }
+  .toc-section-title {
+    padding: 6px 20px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .toc-link {
+    display: block;
+    padding: 7px 20px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .toc-link:hover, .toc-link.active {
+    color: var(--accent-blue);
+    border-left-color: var(--accent-blue);
+    background: rgba(74,158,255,0.06);
+  }
+  .toc-link.gold:hover, .toc-link.gold.active { color: var(--accent-gold); border-left-color: var(--accent-gold); background: rgba(240,192,64,0.06); }
+  .toc-link.green:hover, .toc-link.green.active { color: var(--accent-green); border-left-color: var(--accent-green); background: rgba(34,212,114,0.06); }
+  .toc-link.red:hover, .toc-link.red.active { color: var(--accent-red); border-left-color: var(--accent-red); background: rgba(255,85,102,0.06); }
+  .toc-link.purple:hover, .toc-link.purple.active { color: var(--accent-purple); border-left-color: var(--accent-purple); background: rgba(176,96,255,0.06); }
+
+  #sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 14px; left: 14px;
+    z-index: 1100;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* === MAIN CONTENT === */
+  #main {
+    margin-left: 240px;
+    padding: 40px 40px 80px;
+    max-width: 1200px;
+  }
+
+  /* === HERO HEADER === */
+  .hero {
+    background: linear-gradient(135deg, #0d1528 0%, #111a35 40%, #0a1225 100%);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px 48px 40px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content:'';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(74,158,255,0.12), transparent 70%);
+    border-radius: 50%;
+  }
+  .hero::after {
+    content:'';
+    position: absolute;
+    bottom: -40px; left: 30%;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(240,192,64,0.08), transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(240,192,64,0.12);
+    border: 1px solid rgba(240,192,64,0.3);
+    color: var(--accent-gold);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.1;
+    background: linear-gradient(120deg, #e8ecf8 0%, #4a9eff 50%, #f0c040 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 14px;
+  }
+  .hero-sub {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    max-width: 560px;
+    margin-bottom: 28px;
+  }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .hero-tag {
+    background: var(--surface3);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .hero-tag.active { color: var(--accent-cyan); border-color: rgba(0,212,255,0.3); background: rgba(0,212,255,0.06); }
+
+  /* === SECTION HEADERS === */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 48px 0 24px;
+  }
+  .section-num {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .section-num.blue { background: rgba(74,158,255,0.15); color: var(--accent-blue); border: 1px solid rgba(74,158,255,0.3); }
+  .section-num.gold { background: rgba(240,192,64,0.15); color: var(--accent-gold); border: 1px solid rgba(240,192,64,0.3); }
+  .section-num.green { background: rgba(34,212,114,0.15); color: var(--accent-green); border: 1px solid rgba(34,212,114,0.3); }
+  .section-num.red { background: rgba(255,85,102,0.15); color: var(--accent-red); border: 1px solid rgba(255,85,102,0.3); }
+  .section-num.purple { background: rgba(176,96,255,0.15); color: var(--accent-purple); border: 1px solid rgba(176,96,255,0.3); }
+  .section-num.cyan { background: rgba(0,212,255,0.15); color: var(--accent-cyan); border: 1px solid rgba(0,212,255,0.3); }
+  .section-num.orange { background: rgba(255,140,66,0.15); color: var(--accent-orange); border: 1px solid rgba(255,140,66,0.3); }
+
+  .section-title-wrap h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .section-title-wrap p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* === MIND MAP BRANCH === */
+  .branch-container {
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    overflow: hidden;
+    margin-bottom: 16px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transition: border-color 0.3s;
+  }
+  .branch-container:hover { border-color: rgba(74,158,255,0.3); }
+
+  .branch-header {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+  }
+  .branch-header:hover { background: rgba(255,255,255,0.03); }
+
+  .branch-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .branch-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .bi-blue { background: rgba(74,158,255,0.15); }
+  .bi-gold { background: rgba(240,192,64,0.15); }
+  .bi-green { background: rgba(34,212,114,0.15); }
+  .bi-red { background: rgba(255,85,102,0.15); }
+  .bi-purple { background: rgba(176,96,255,0.15); }
+  .bi-cyan { background: rgba(0,212,255,0.15); }
+  .bi-orange { background: rgba(255,140,66,0.15); }
+
+  .branch-chevron {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    transition: transform 0.3s;
+  }
+  .branch-header.open .branch-chevron { transform: rotate(90deg); }
+
+  .branch-body {
+    display: none;
+    padding: 0 20px 20px;
+    border-top: 1px solid var(--border);
+  }
+  .branch-body.open { display: block; }
+
+  /* === GRID LAYOUTS === */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 16px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 16px; }
+
+  /* === CARDS === */
+  .card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    padding: 16px;
+  }
+  .card h4 {
+    font-size: 0.82rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .card p, .card li { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+  .card ul { padding-left: 16px; }
+  .card.blue-border { border-left: 3px solid var(--accent-blue); }
+  .card.gold-border { border-left: 3px solid var(--accent-gold); }
+  .card.green-border { border-left: 3px solid var(--accent-green); }
+  .card.red-border { border-left: 3px solid var(--accent-red); }
+  .card.purple-border { border-left: 3px solid var(--accent-purple); }
+  .card.cyan-border { border-left: 3px solid var(--accent-cyan); }
+  .card.orange-border { border-left: 3px solid var(--accent-orange); }
+
+  /* === FORMULA CARD === */
+  .formula-card {
+    background: var(--surface3);
+    border: 1px solid rgba(74,158,255,0.25);
+    border-radius: var(--r-sm);
+    padding: 14px 18px;
+    margin: 12px 0;
+    position: relative;
+  }
+  .formula-card::before {
+    content: 'FORMULA';
+    position: absolute;
+    top: -1px; right: 12px;
+    background: var(--accent-blue);
+    color: #000;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 0 0 6px 6px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .formula-card.gold::before { background: var(--accent-gold); content: 'FORMULA'; }
+  .formula-card.green::before { background: var(--accent-green); content: 'FORMULA'; }
+  .formula-main {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    text-align: center;
+    padding: 8px 0;
+  }
+  .formula-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 4px;
+  }
+  .formula-where {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.8;
+  }
+
+  /* === TRAP CARD === */
+  .trap-card {
+    background: rgba(255,85,102,0.06);
+    border: 1px solid rgba(255,85,102,0.25);
+    border-radius: var(--r-sm);
+    padding: 14px;
+    margin: 12px 0;
+  }
+  .trap-card h4 { color: var(--accent-red); font-size: 0.82rem; margin-bottom: 8px; }
+  .trap-card p, .trap-card li { font-size: 0.78rem; color: #ff8899; line-height: 1.6; }
+  .trap-card ul { padding-left: 16px; }
+
+  /* === MNEMONIC CARD === */
+  .mnemonic-card {
+    background: rgba(176,96,255,0.07);
+    border: 1px solid rgba(176,96,255,0.25);
+    border-radius: var(--r-sm);
+    padding: 14px;
+    margin: 12px 0;
+  }
+  .mnemonic-card h4 { color: var(--accent-purple); font-size: 0.82rem; margin-bottom: 8px; }
+  .mnemonic-card p { font-size: 0.8rem; color: #c890ff; line-height: 1.6; }
+  .mnemonic-highlight {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--accent-purple);
+    font-weight: 700;
+    margin: 6px 0;
+  }
+
+  /* === PYQ CARD === */
+  .pyq-card {
+    background: rgba(240,192,64,0.06);
+    border: 1px solid rgba(240,192,64,0.25);
+    border-radius: var(--r-sm);
+    padding: 16px;
+    margin: 12px 0;
+  }
+  .pyq-card .pyq-label {
+    display: inline-block;
+    background: var(--accent-gold);
+    color: #000;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .pyq-card p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.7; }
+  .pyq-card .answer { color: var(--accent-gold); font-weight: 600; margin-top: 8px; font-size: 0.8rem; }
+
+  /* === COMPARISON TABLE === */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.78rem;
+    margin-top: 14px;
+  }
+  .comp-table th {
+    background: var(--surface3);
+    color: var(--accent-blue);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+  }
+  .comp-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(100,120,200,0.1);
+    color: var(--text-muted);
+    vertical-align: top;
+  }
+  .comp-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .comp-table td.highlight { color: var(--accent-cyan); font-weight: 500; }
+
+  /* === QUICK RECALL STICKY === */
+  .quick-recall {
+    background: linear-gradient(135deg, rgba(240,192,64,0.08), rgba(240,192,64,0.04));
+    border: 1px solid rgba(240,192,64,0.3);
+    border-radius: var(--r);
+    padding: 20px 24px;
+    margin: 16px 0;
+    position: relative;
+  }
+  .quick-recall::before {
+    content: '⚡ QUICK RECALL';
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-gold);
+    font-family: 'JetBrains Mono', monospace;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .quick-recall-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+  .qr-item {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 0.78rem;
+  }
+  .qr-item strong { color: var(--accent-gold); display: block; font-size: 0.72rem; margin-bottom: 3px; }
+
+  /* === SVG GRAPH ILLUSTRATIONS === */
+  .graph-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    padding: 16px;
+    text-align: center;
+  }
+  .graph-card h5 {
+    font-size: 0.78rem;
+    color: var(--accent-blue);
+    margin-bottom: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+  .graph-card p { font-size: 0.72rem; color: var(--text-muted); margin-top: 8px; }
+
+  /* === TAGS === */
+  .tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+  .tag-blue { background: rgba(74,158,255,0.15); color: var(--accent-blue); }
+  .tag-gold { background: rgba(240,192,64,0.15); color: var(--accent-gold); }
+  .tag-green { background: rgba(34,212,114,0.15); color: var(--accent-green); }
+  .tag-red { background: rgba(255,85,102,0.15); color: var(--accent-red); }
+  .tag-purple { background: rgba(176,96,255,0.15); color: var(--accent-purple); }
+
+  /* === INLINE CONNECTOR === */
+  .connector-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 0.8rem;
+  }
+  .connector-row .node {
+    background: var(--surface3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+  .connector-row .arrow { color: var(--accent-blue); font-size: 0.9rem; }
+
+  /* === NUMBER BULLETS === */
+  .num-list { list-style: none; padding: 0; }
+  .num-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(100,120,200,0.08);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+  .num-list li:last-child { border-bottom: none; }
+  .num-bullet {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--surface3);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--accent-blue);
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* === DIVIDER === */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 32px 0;
+  }
+
+  /* === Q&A BLOCK === */
+  .qa-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .qa-q {
+    padding: 14px 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: background 0.2s;
+  }
+  .qa-q:hover { background: rgba(255,255,255,0.03); }
+  .qa-num {
+    background: var(--accent-gold);
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .qa-num.upsc { background: var(--accent-purple); color: #fff; }
+  .qa-text { font-size: 0.82rem; color: var(--text); flex: 1; line-height: 1.6; }
+  .qa-ans {
+    display: none;
+    padding: 0 18px 16px 50px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+  }
+  .qa-ans.open { display: block; }
+  .qa-ans .correct { color: var(--accent-green); font-weight: 600; }
+  .qa-ans .explanation { margin-top: 6px; color: var(--text-muted); }
+
+  /* === NIGHT BEFORE FRAMEWORK === */
+  .time-block {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .time-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+  }
+  .time-block.t60::before { background: var(--accent-blue); }
+  .time-block.t30::before { background: var(--accent-gold); }
+  .time-block.t10::before { background: var(--accent-green); }
+  .time-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .time-block.t60 .time-label { color: var(--accent-blue); }
+  .time-block.t30 .time-label { color: var(--accent-gold); }
+  .time-block.t10 .time-label { color: var(--accent-green); }
+  .time-sub { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 14px; font-family: 'JetBrains Mono', monospace; }
+  .time-items { list-style: none; padding: 0; }
+  .time-items li {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    padding: 4px 0;
+    padding-left: 14px;
+    position: relative;
+  }
+  .time-items li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+    font-size: 0.75rem;
+  }
+
+  /* === FORMULA WALL === */
+  .formula-wall {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 24px;
+    margin: 20px 0;
+  }
+  .formula-wall h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .fw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .fw-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    padding: 14px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .fw-item:hover { border-color: rgba(74,158,255,0.4); transform: translateY(-2px); }
+  .fw-label { font-size: 0.65rem; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; margin-bottom: 8px; letter-spacing: 0.5px; }
+  .fw-formula { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 600; color: var(--accent-cyan); }
+  .fw-unit { font-size: 0.65rem; color: var(--text-muted); margin-top: 6px; }
+
+  /* === CONCEPT CONNECTOR VISUAL === */
+  .concept-map {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    padding: 20px;
+    margin: 16px 0;
+    overflow-x: auto;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 900px) {
+    #sidebar { transform: translateX(-100%); }
+    #sidebar.open { transform: translateX(0); }
+    #sidebar-toggle { display: flex; }
+    #main { margin-left: 0; padding: 60px 20px 60px; }
+    .hero { padding: 36px 24px 28px; }
+    .hero h1 { font-size: 2rem; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    .fw-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* === PRINT STYLES === */
+  @media print {
+    #sidebar, #sidebar-toggle { display: none !important; }
+    #main { margin-left: 0; padding: 20px; }
+    .branch-body { display: block !important; }
+    .branch-header .branch-chevron { display: none; }
+    * { color-adjust: exact; -webkit-print-color-adjust: exact; }
+  }
+
+  /* === ANIMATIONS === */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero { animation: fadeUp 0.6s ease both; }
+  .branch-container { animation: fadeUp 0.4s ease both; }
+
+  /* === HIGHLIGHTS === */
+  .highlight { background: rgba(240,192,64,0.12); color: var(--accent-gold); padding: 1px 5px; border-radius: 3px; font-weight: 600; }
+  .hl-blue { background: rgba(74,158,255,0.12); color: var(--accent-blue); padding: 1px 5px; border-radius: 3px; font-weight: 600; }
+  .hl-green { background: rgba(34,212,114,0.12); color: var(--accent-green); padding: 1px 5px; border-radius: 3px; font-weight: 600; }
+  .hl-red { background: rgba(255,85,102,0.12); color: var(--accent-red); padding: 1px 5px; border-radius: 3px; font-weight: 600; }
+
+  .sub-branch {
+    border-left: 2px solid var(--border);
+    margin-left: 12px;
+    padding-left: 16px;
+    margin-top: 12px;
+  }
+  .sub-branch-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .info-row {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin: 8px 0;
+  }
+
+  .section-anchor { scroll-margin-top: 20px; }
+
+  .center-node {
+    background: linear-gradient(135deg, rgba(74,158,255,0.2), rgba(0,212,255,0.1));
+    border: 2px solid rgba(74,158,255,0.4);
+    border-radius: 50%;
+    padding: 20px;
+    text-align: center;
+    width: 140px; height: 140px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    box-shadow: var(--glow-blue);
+  }
+  .center-node h3 { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--accent-cyan); line-height: 1.3; }
+
+  .spoke-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .spoke-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-align: center;
+    flex: 0 0 auto;
+    transition: all 0.2s;
+  }
+  .spoke-item:hover { border-color: rgba(74,158,255,0.3); color: var(--text); transform: scale(1.02); }
+
+  .full-formula-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+  .full-formula-table th { background: var(--surface3); color: var(--accent-blue); padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+  .full-formula-table td { padding: 9px 12px; border-bottom: 1px solid rgba(100,120,200,0.08); color: var(--text-muted); }
+  .full-formula-table td:first-child { color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+  .full-formula-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .breadcrumb {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .breadcrumb span { color: var(--border); }
+</style>
+</head>
+<body>
+
+<!-- Sidebar Toggle (mobile) -->
+<button id="sidebar-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<!-- Sidebar -->
+<nav id="sidebar">
+  <div class="sidebar-logo">
+    <h2>Kinematics<br>Mind Map</h2>
+    <span>CDS 2 2026 · UPSC Physics</span>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title">Core Topics</div>
+    <a class="toc-link blue" onclick="scrollTo('s1')">01 · Foundations</a>
+    <a class="toc-link blue" onclick="scrollTo('s2')">02 · Types of Motion</a>
+    <a class="toc-link gold" onclick="scrollTo('s3')">03 · Equations of Motion</a>
+    <a class="toc-link green" onclick="scrollTo('s4')">04 · Graphs</a>
+    <a class="toc-link blue" onclick="scrollTo('s5')">05 · Projectile Motion</a>
+    <a class="toc-link purple" onclick="scrollTo('s6')">06 · Circular Motion</a>
+    <a class="toc-link cyan" onclick="scrollTo('s7')">07 · Relative Motion</a>
+    <a class="toc-link orange" onclick="scrollTo('s8')">08 · Advanced Links</a>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title">Revision Tools</div>
+    <a class="toc-link gold" onclick="scrollTo('s9')">Formula Master Sheet</a>
+    <a class="toc-link red" onclick="scrollTo('s10')">Traps & Pitfalls</a>
+    <a class="toc-link gold" onclick="scrollTo('s11')">PYQ Analysis</a>
+    <a class="toc-link green" onclick="scrollTo('s12')">High Yield Zone</a>
+    <a class="toc-link purple" onclick="scrollTo('s13')">Mnemonics</a>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title">Final Prep</div>
+    <a class="toc-link gold" onclick="scrollTo('s14')">Practice MCQs</a>
+    <a class="toc-link gold" onclick="scrollTo('s15')">20 CDS Prelim Qs</a>
+    <a class="toc-link purple" onclick="scrollTo('s16')">10 UPSC Conceptual Qs</a>
+    <a class="toc-link green" onclick="scrollTo('s17')">Night Before Framework</a>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<main id="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-badge">📐 PHYSICS · KINEMATICS · CDS 2 2026</div>
+    <h1>Kinematics<br>Master Mind Map</h1>
+    <p class="hero-sub">Premium revision dashboard for CDS 2 2026 & UPSC Civil Services Physics. Complete conceptual coverage with formula cards, PYQ traps, memory systems, and exam-ready annotations.</p>
+    <div class="hero-tags">
+      <span class="hero-tag active">🎯 CDS Objective</span>
+      <span class="hero-tag active">🏛️ UPSC Analytical</span>
+      <span class="hero-tag active">⚡ NDA Numericals</span>
+      <span class="hero-tag">📊 Graph Mastery</span>
+      <span class="hero-tag">🚀 Projectile Motion</span>
+      <span class="hero-tag">🔄 Circular Motion</span>
+      <span class="hero-tag">🎲 Relative Motion</span>
+      <span class="hero-tag">📝 PYQ Patterns</span>
+    </div>
+  </div>
+
+  <!-- ============================
+       SECTION 1: FOUNDATIONS
+       ============================ -->
+  <div class="section-header section-anchor" id="s1">
+    <div class="section-num blue">01</div>
+    <div class="section-title-wrap">
+      <h2>Foundation of Kinematics</h2>
+      <p>Core definitions · Frame of reference · Scalars vs Vectors · Motion basics</p>
+    </div>
+  </div>
+
+  <!-- Branch: What is Kinematics -->
+  <div class="branch-container">
+    <div class="branch-header open" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-blue">🔬</div>
+        <span>What is Kinematics?</span>
+        <span class="tag tag-blue">DEFINITION</span>
+      </div>
+      <span class="branch-chevron open">▶</span>
+    </div>
+    <div class="branch-body open">
+      <div class="grid-2">
+        <div class="card blue-border">
+          <h4>📌 Definition</h4>
+          <p>Branch of mechanics that describes the <span class="highlight">motion of objects</span> without considering the <span class="hl-red">cause (force)</span> of motion. It deals with position, velocity, acceleration, and time.</p>
+          <div class="info-row" style="margin-top:10px;">
+            <span class="tag tag-blue">No Force</span>
+            <span class="tag tag-gold">Position</span>
+            <span class="tag tag-green">Time</span>
+          </div>
+        </div>
+        <div class="card gold-border">
+          <h4>🆚 Kinematics vs Dynamics</h4>
+          <table class="comp-table" style="margin-top:0;">
+            <tr><th>Kinematics</th><th>Dynamics</th></tr>
+            <tr><td class="highlight">How objects move</td><td>Why objects move</td></tr>
+            <tr><td>No forces involved</td><td>Forces analyzed</td></tr>
+            <tr><td>Position, velocity, time</td><td>Mass, force, energy</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="sub-branch">
+        <div class="sub-branch-title">🌐 Frame of Reference</div>
+        <div class="grid-3">
+          <div class="card">
+            <h4 style="color:var(--accent-cyan)">Definition</h4>
+            <p>A coordinate system relative to which motion is measured. <span class="highlight">Motion is relative</span> — same object can be in motion in one frame, at rest in another.</p>
+          </div>
+          <div class="card">
+            <h4 style="color:var(--accent-cyan)">Inertial Frame</h4>
+            <p>Frame at rest or moving with <span class="hl-blue">constant velocity</span>. Newton's laws are valid. Example: ground frame (approximately).</p>
+          </div>
+          <div class="card">
+            <h4 style="color:var(--accent-cyan)">Non-Inertial Frame</h4>
+            <p>Accelerating or rotating frame. Newton's laws need <span class="hl-red">pseudo forces</span>. Example: accelerating car, rotating earth.</p>
+          </div>
+        </div>
+        <div class="trap-card">
+          <h4>⚠️ CDS Trap: Frame of Reference</h4>
+          <ul>
+            <li>A person sitting in a moving train sees the platform moving — but the platform is at rest in ground frame.</li>
+            <li>CDS often asks: "Which observer sees the object at rest?" → The one moving <em>with</em> the object.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Branch: Rest vs Motion -->
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-gold">⚖️</div>
+        <span>Rest vs Motion | Distance vs Displacement</span>
+        <span class="tag tag-gold">SCALAR vs VECTOR</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <table class="comp-table">
+        <thead>
+          <tr><th>Property</th><th>Rest</th><th>Motion</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Definition</td><td>No change in position w.r.t. frame</td><td>Change in position w.r.t. frame</td></tr>
+          <tr><td>Absolute?</td><td colspan="2" style="color:var(--accent-red);">NEITHER — both are relative to frame of reference</td></tr>
+          <tr><td>Example</td><td>Tree w.r.t. ground</td><td>Ball thrown upward</td></tr>
+        </tbody>
+      </table>
+
+      <div class="grid-2" style="margin-top:16px;">
+        <div class="card blue-border">
+          <h4>📏 Distance vs Displacement</h4>
+          <table class="comp-table" style="margin-top:0;">
+            <tr><th>Distance</th><th>Displacement</th></tr>
+            <tr><td class="highlight">Scalar</td><td class="highlight">Vector</td></tr>
+            <tr><td>Total path length</td><td>Shortest path (start→end)</td></tr>
+            <tr><td>Always ≥ 0</td><td>Can be negative/zero</td></tr>
+            <tr><td>Path dependent</td><td>Path independent</td></tr>
+            <tr><td>Unit: m</td><td>Unit: m (with direction)</td></tr>
+          </table>
+        </div>
+        <div class="card gold-border">
+          <h4>🏃 Speed vs Velocity</h4>
+          <table class="comp-table" style="margin-top:0;">
+            <tr><th>Speed</th><th>Velocity</th></tr>
+            <tr><td class="highlight">Scalar</td><td class="highlight">Vector</td></tr>
+            <tr><td>Distance / time</td><td>Displacement / time</td></tr>
+            <tr><td>Always ≥ 0</td><td>Can be negative</td></tr>
+            <tr><td>|v| can = v</td><td>Magnitude of velocity = speed</td></tr>
+          </table>
+          <div class="formula-card" style="margin-top:12px;">
+            <div class="formula-main">v = Δx / Δt</div>
+            <div class="formula-sub">Average velocity = Displacement / Time</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-recall">
+        <div class="quick-recall-grid">
+          <div class="qr-item"><strong>Scalar Quantities</strong>Distance, Speed, Mass, Time, Energy</div>
+          <div class="qr-item"><strong>Vector Quantities</strong>Displacement, Velocity, Acceleration, Force</div>
+          <div class="qr-item"><strong>Key Insight</strong>Speed = |Velocity| only when motion is in straight line without reversal</div>
+          <div class="qr-item"><strong>CDS Fact</strong>If a body goes and returns: displacement = 0, distance = 2×path</div>
+        </div>
+      </div>
+
+      <div class="trap-card">
+        <h4>⚠️ Classic PYQ Trap</h4>
+        <ul>
+          <li>A car goes 60 km East, then 80 km North. Distance = 140 km. Displacement = <span style="color:var(--accent-gold)">100 km (Pythagoras: √(60²+80²))</span></li>
+          <li>Average speed ≠ Average velocity (unless straight line, no reversal)</li>
+          <li>Instantaneous speed = magnitude of instantaneous velocity ✓ (Always true)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Branch: Acceleration -->
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-red">⚡</div>
+        <span>Acceleration — The Rate Changer</span>
+        <span class="tag tag-red">VECTOR</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="grid-2">
+        <div>
+          <div class="formula-card">
+            <div class="formula-main">a = Δv / Δt = (v - u) / t</div>
+            <div class="formula-sub">Rate of change of velocity</div>
+            <div class="formula-where">
+              a = acceleration (m/s²)<br>
+              v = final velocity (m/s)<br>
+              u = initial velocity (m/s)<br>
+              t = time (s)
+            </div>
+          </div>
+          <div class="formula-card" style="margin-top:12px;">
+            <div class="formula-main">a = dv/dt = d²x/dt²</div>
+            <div class="formula-sub">Instantaneous acceleration (calculus form)</div>
+          </div>
+        </div>
+        <div>
+          <div class="card blue-border">
+            <h4>📊 Types of Acceleration</h4>
+            <ul>
+              <li><span class="hl-green">Uniform:</span> Constant a → equations of motion apply</li>
+              <li><span class="hl-blue">Non-uniform:</span> Variable a → integration needed</li>
+              <li><span class="hl-gold">Zero:</span> Constant velocity (uniform motion)</li>
+              <li><span class="hl-red">Negative (Retardation):</span> Deceleration — velocity decreasing</li>
+              <li><span class="hl-purple">Centripetal:</span> Toward center in circular motion</li>
+            </ul>
+          </div>
+          <div class="trap-card" style="margin-top:12px;">
+            <h4>⚠️ Retardation Trap</h4>
+            <p>Retardation = <em>negative acceleration</em>. A body can have negative acceleration but still move in positive direction (slowing down). CDS frequently tests this.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 2: TYPES OF MOTION
+       ============================ -->
+  <div class="section-header section-anchor" id="s2">
+    <div class="section-num blue">02</div>
+    <div class="section-title-wrap">
+      <h2>Types of Motion</h2>
+      <p>Rectilinear · Circular · Projectile · Relative · Uniform · Non-uniform</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-blue">📊</div>
+        <span>Classification of Motion</span>
+        <span class="tag tag-blue">OVERVIEW</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="grid-3">
+        <div class="card blue-border">
+          <h4>➡️ Rectilinear (Linear)</h4>
+          <ul>
+            <li>Motion along <span class="highlight">straight line</span></li>
+            <li>1D — only one axis needed</li>
+            <li>Equations of motion fully apply</li>
+            <li>Example: free fall, car on highway</li>
+            <li>Graphs: straight or curved lines</li>
+          </ul>
+        </div>
+        <div class="card gold-border">
+          <h4>🔄 Circular Motion</h4>
+          <ul>
+            <li>Path is a <span class="highlight">circle</span></li>
+            <li>Direction constantly changes</li>
+            <li>Speed may be constant, <span class="hl-red">velocity changes</span></li>
+            <li>Centripetal acceleration always present</li>
+            <li>Example: fan blade, satellite orbit</li>
+          </ul>
+        </div>
+        <div class="card green-border">
+          <h4>🚀 Projectile Motion</h4>
+          <ul>
+            <li>2D motion under gravity</li>
+            <li>Horizontal: <span class="hl-blue">uniform motion</span></li>
+            <li>Vertical: <span class="hl-red">uniformly accelerated</span></li>
+            <li>Path: <span class="highlight">parabola</span></li>
+            <li>Example: ball thrown at angle, bomb dropped</li>
+          </ul>
+        </div>
+        <div class="card purple-border">
+          <h4>↔️ Uniform Motion</h4>
+          <ul>
+            <li>Equal distances in <span class="highlight">equal time intervals</span></li>
+            <li>Constant velocity</li>
+            <li>Acceleration = 0</li>
+            <li>d-t graph: straight line</li>
+            <li>v-t graph: horizontal line</li>
+          </ul>
+        </div>
+        <div class="card red-border">
+          <h4>📈 Non-Uniform Motion</h4>
+          <ul>
+            <li>Unequal distances in equal time</li>
+            <li>Velocity changes (a ≠ 0)</li>
+            <li>d-t graph: <span class="highlight">curved line</span></li>
+            <li>Can be uniformly accelerated or random</li>
+          </ul>
+        </div>
+        <div class="card cyan-border">
+          <h4>🌊 Oscillatory Motion</h4>
+          <ul>
+            <li>Back-and-forth about mean position</li>
+            <li>Periodic in nature</li>
+            <li>Example: pendulum, spring-mass</li>
+            <li>Displacement changes sign</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mnemonic-card" style="margin-top:16px;">
+        <h4>🧠 Memory Trick — Types of Motion</h4>
+        <div class="mnemonic-highlight">"Really Cool Projectiles Usually Need Oscillations"</div>
+        <p><strong>R</strong>ectilinear · <strong>C</strong>ircular · <strong>P</strong>rojectile · <strong>U</strong>niform · <strong>N</strong>on-uniform · <strong>O</strong>scillatory</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 3: EQUATIONS OF MOTION
+       ============================ -->
+  <div class="section-header section-anchor" id="s3">
+    <div class="section-num gold">03</div>
+    <div class="section-title-wrap">
+      <h2>Equations of Motion</h2>
+      <p>Three golden equations · Derivations · Sign convention · PYQ patterns</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header open" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-gold">📐</div>
+        <span>The Three Golden Equations</span>
+        <span class="tag tag-gold">MUST KNOW</span>
+      </div>
+      <span class="branch-chevron open">▶</span>
+    </div>
+    <div class="branch-body open">
+      <div class="quick-recall" style="margin-bottom:16px;">
+        <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:8px;"><strong style="color:var(--accent-gold)">Applicability Conditions:</strong> These equations apply ONLY when acceleration is <span class="highlight">uniform (constant)</span> throughout the motion.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="formula-card gold">
+          <div class="formula-main">v = u + at</div>
+          <div class="formula-sub">1st Equation — Velocity-Time</div>
+          <div class="formula-where">
+            Derived from: a = (v-u)/t<br>
+            Dimension: [LT⁻¹]<br>
+            No 's' involved<br>
+            Relation: v,u,a,t
+          </div>
+        </div>
+        <div class="formula-card gold">
+          <div class="formula-main">s = ut + ½at²</div>
+          <div class="formula-sub">2nd Equation — Displacement-Time</div>
+          <div class="formula-where">
+            Derived from integrating v = u+at<br>
+            Dimension: [L]<br>
+            No final velocity<br>
+            Relation: s,u,a,t
+          </div>
+        </div>
+        <div class="formula-card gold">
+          <div class="formula-main">v² = u² + 2as</div>
+          <div class="formula-sub">3rd Equation — Velocity-Displacement</div>
+          <div class="formula-where">
+            Derived by eliminating t<br>
+            Dimension: [L²T⁻²]<br>
+            No time involved<br>
+            Relation: v,u,a,s
+          </div>
+        </div>
+      </div>
+
+      <!-- Derivation Cards -->
+      <div class="sub-branch">
+        <div class="sub-branch-title">📖 Quick Derivations</div>
+        <div class="grid-2">
+          <div class="card blue-border">
+            <h4>Graphical Derivation of v = u + at</h4>
+            <p>On v-t graph, initial velocity = u (y-intercept). Slope = a.</p>
+            <p style="margin-top:6px; color:var(--text);">v = u + (slope × t) = <span class="hl-blue">u + at ✓</span></p>
+          </div>
+          <div class="card blue-border">
+            <h4>Graphical Derivation of s = ut + ½at²</h4>
+            <p>Area under v-t graph = displacement</p>
+            <p style="margin-top:6px; color:var(--text);">Area = rectangle + triangle = ut + <span class="hl-blue">½at² ✓</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special Cases -->
+      <div class="sub-branch">
+        <div class="sub-branch-title">🎯 Special Applications</div>
+        <div class="grid-2">
+          <div class="card gold-border">
+            <h4>🍎 Free Fall (a = g = 10 m/s²)</h4>
+            <div class="formula-card" style="margin-top:8px;">
+              <div class="formula-main">v = u + gt</div>
+              <div class="formula-sub">Taking downward as positive</div>
+            </div>
+            <p style="margin-top:8px; font-size:0.75rem; color:var(--text-muted);">
+              • Object thrown up: u positive, a = −g (decelerating)<br>
+              • Object dropped: u = 0, s = ½gt²<br>
+              • Time to fall height h: t = √(2h/g)
+            </p>
+          </div>
+          <div class="card gold-border">
+            <h4>🚗 Braking Distance</h4>
+            <p>A vehicle at speed v brakes with deceleration a:</p>
+            <div class="formula-card" style="margin-top:8px;">
+              <div class="formula-main">s = v² / 2a</div>
+              <div class="formula-sub">From v² = u² + 2as with final v = 0</div>
+            </div>
+            <p style="margin-top:8px; font-size:0.75rem; color:var(--text-muted);">Braking distance ∝ v² (double speed → 4× distance)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign Convention -->
+      <div class="sub-branch">
+        <div class="sub-branch-title">⊕⊖ Sign Convention — Critical!</div>
+        <div class="grid-2">
+          <div class="card red-border">
+            <h4>Sign Convention Rules</h4>
+            <ul>
+              <li>Choose <span class="hl-blue">positive direction</span> first (up/right usually)</li>
+              <li>Stick to it throughout the problem</li>
+              <li>Displacement can be <span class="hl-red">negative</span> (opposite direction)</li>
+              <li>Acceleration <span class="hl-red">negative</span> when opposing motion</li>
+            </ul>
+          </div>
+          <div class="trap-card" style="margin:0;">
+            <h4>⚠️ Sign Convention Traps in CDS</h4>
+            <ul>
+              <li>Ball thrown up: <br>u = +20 m/s, a = −10 m/s² → at top: v = 0, <br>Time = 2s, max height = 20m</li>
+              <li>Don't make g positive when direction is already set as up-positive</li>
+              <li>s in v²=u²+2as is <em>displacement</em> not distance!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- nth second formula -->
+      <div class="sub-branch">
+        <div class="sub-branch-title">🏆 Bonus: Distance in nth Second</div>
+        <div class="formula-card">
+          <div class="formula-main">sₙ = u + a(n - ½)</div>
+          <div class="formula-sub">Distance covered in the nth second</div>
+          <div class="formula-where">
+            Derived: sₙ = s_total(t=n) − s_total(t=n-1)<br>
+            Highly tested in NDA/CDS numericals
+          </div>
+        </div>
+        <div class="pyq-card">
+          <div class="pyq-label">CDS PYQ PATTERN</div>
+          <p>Q: A body starts from rest. Find ratio of distances covered in 1st, 2nd, 3rd second.</p>
+          <p class="answer">Answer: s₁:s₂:s₃ = 1:3:5 (odd number series with u=0)</p>
+          <p style="margin-top:6px; font-size:0.75rem;">Using sₙ = 0 + a(n−½) → 1a/2 : 3a/2 : 5a/2 = 1:3:5</p>
+        </div>
+      </div>
+
+      <div class="mnemonic-card">
+        <h4>🧠 Memory: The 3 Equations — "VUS-SAV Triangle"</h4>
+        <div class="connector-row">
+          <div class="node">v = u + at</div>
+          <span class="arrow">→ links</span>
+          <div class="node">v, u, a, t</div>
+        </div>
+        <div class="connector-row">
+          <div class="node">s = ut + ½at²</div>
+          <span class="arrow">→ links</span>
+          <div class="node">s, u, a, t</div>
+        </div>
+        <div class="connector-row">
+          <div class="node">v² = u² + 2as</div>
+          <span class="arrow">→ links</span>
+          <div class="node">v, u, a, s</div>
+        </div>
+        <p style="margin-top:10px; font-size:0.78rem;">Find the missing variable → pick equation NOT containing it → eliminate!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 4: GRAPHS
+       ============================ -->
+  <div class="section-header section-anchor" id="s4">
+    <div class="section-num green">04</div>
+    <div class="section-title-wrap">
+      <h2>Graphs in Kinematics</h2>
+      <p>d-t · s-t · v-t · a-t graphs · Slope · Area · Traps</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header open" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-green">📈</div>
+        <span>Graph Mastery — Slope & Area</span>
+        <span class="tag tag-green">HIGH YIELD</span>
+      </div>
+      <span class="branch-chevron open">▶</span>
+    </div>
+    <div class="branch-body open">
+      <div class="quick-recall">
+        <div class="quick-recall-grid">
+          <div class="qr-item"><strong>Slope of d-t</strong>Speed (scalar)</div>
+          <div class="qr-item"><strong>Slope of s-t</strong>Velocity (vector)</div>
+          <div class="qr-item"><strong>Slope of v-t</strong>Acceleration</div>
+          <div class="qr-item"><strong>Area under v-t</strong>Displacement</div>
+          <div class="qr-item"><strong>Area under a-t</strong>Change in velocity (Δv)</div>
+          <div class="qr-item"><strong>Area under s-t</strong>No physical meaning!</div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:16px;">
+
+        <!-- d-t graph -->
+        <div class="graph-card">
+          <h5>DISTANCE-TIME GRAPH</h5>
+          <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto">
+            <rect width="200" height="160" fill="#161b2e" rx="6"/>
+            <!-- axes -->
+            <line x1="30" y1="130" x2="185" y2="130" stroke="#3a4060" stroke-width="1.5"/>
+            <line x1="30" y1="20" x2="30" y2="130" stroke="#3a4060" stroke-width="1.5"/>
+            <text x="190" y="134" fill="#7a84a8" font-size="9" font-family="monospace">t</text>
+            <text x="22" y="18" fill="#7a84a8" font-size="9" font-family="monospace">d</text>
+            <!-- uniform motion line -->
+            <line x1="30" y1="120" x2="100" y2="55" stroke="#4a9eff" stroke-width="2"/>
+            <text x="60" y="75" fill="#4a9eff" font-size="8">Uniform</text>
+            <!-- non-uniform curve -->
+            <path d="M30 120 Q120 100 170 40" stroke="#22d472" stroke-width="2" fill="none"/>
+            <text x="130" y="65" fill="#22d472" font-size="8">Accelerating</text>
+            <!-- rest = horizontal -->
+            <line x1="30" y1="105" x2="170" y2="105" stroke="#f0c040" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="100" y="98" fill="#f0c040" font-size="8">Rest</text>
+            <!-- labels -->
+            <text x="60" y="148" fill="#7a84a8" font-size="8">Slope = Speed</text>
+          </svg>
+          <p>Slope = speed. Steeper = faster. Horizontal = rest. Negative slope impossible (distance never decreases).</p>
+        </div>
+
+        <!-- s-t graph -->
+        <div class="graph-card">
+          <h5>DISPLACEMENT-TIME GRAPH</h5>
+          <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto">
+            <rect width="200" height="160" fill="#161b2e" rx="6"/>
+            <line x1="30" y1="80" x2="185" y2="80" stroke="#3a4060" stroke-width="1.5"/>
+            <line x1="30" y1="20" x2="30" y2="145" stroke="#3a4060" stroke-width="1.5"/>
+            <text x="190" y="84" fill="#7a84a8" font-size="9" font-family="monospace">t</text>
+            <text x="22" y="18" fill="#7a84a8" font-size="9" font-family="monospace">s</text>
+            <text x="25" y="84" fill="#7a84a8" font-size="8">0</text>
+            <!-- going forward -->
+            <line x1="30" y1="80" x2="90" y2="35" stroke="#4a9eff" stroke-width="2"/>
+            <text x="50" y="50" fill="#4a9eff" font-size="8">+ve v</text>
+            <!-- returning (negative slope) -->
+            <line x1="90" y1="35" x2="160" y2="80" stroke="#ff5566" stroke-width="2"/>
+            <text x="110" y="50" fill="#ff5566" font-size="8">−ve v</text>
+            <!-- zero displacement line -->
+            <line x1="30" y1="80" x2="90" y2="80" stroke="#f0c040" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="45" y="76" fill="#f0c040" font-size="8">Rest</text>
+            <text x="55" y="152" fill="#7a84a8" font-size="8">Slope = Velocity (±)</text>
+          </svg>
+          <p>Slope = velocity. <span style="color:var(--accent-red)">Negative slope = returning</span>. Horizontal = at rest. CDS trap: negative slope ≠ going back in time!</p>
+        </div>
+
+        <!-- v-t graph -->
+        <div class="graph-card">
+          <h5>VELOCITY-TIME GRAPH</h5>
+          <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto">
+            <rect width="200" height="160" fill="#161b2e" rx="6"/>
+            <line x1="30" y1="80" x2="185" y2="80" stroke="#3a4060" stroke-width="1.5"/>
+            <line x1="30" y1="20" x2="30" y2="145" stroke="#3a4060" stroke-width="1.5"/>
+            <text x="190" y="84" fill="#7a84a8" font-size="9" font-family="monospace">t</text>
+            <text x="22" y="18" fill="#7a84a8" font-size="9" font-family="monospace">v</text>
+            <!-- uniform acceleration (straight line) -->
+            <line x1="30" y1="120" x2="170" y2="30" stroke="#22d472" stroke-width="2"/>
+            <text x="55" y="100" fill="#22d472" font-size="8">Uniform a</text>
+            <!-- horizontal = zero a -->
+            <line x1="30" y1="55" x2="130" y2="55" stroke="#4a9eff" stroke-width="1.5" stroke-dasharray="4,3"/>
+            <text x="80" y="50" fill="#4a9eff" font-size="8">a = 0</text>
+            <!-- shaded area -->
+            <polygon points="30,120 170,30 170,80 30,80" fill="rgba(240,192,64,0.1)" stroke="none"/>
+            <text x="90" y="95" fill="#f0c040" font-size="8">Area = s</text>
+            <text x="35" y="152" fill="#7a84a8" font-size="8">Slope=a | Area=displacement</text>
+          </svg>
+          <p>Slope = acceleration. <span style="color:var(--accent-gold)">Area under curve = displacement</span>. Most tested graph in CDS!</p>
+        </div>
+
+        <!-- a-t graph -->
+        <div class="graph-card">
+          <h5>ACCELERATION-TIME GRAPH</h5>
+          <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto">
+            <rect width="200" height="160" fill="#161b2e" rx="6"/>
+            <line x1="30" y1="100" x2="185" y2="100" stroke="#3a4060" stroke-width="1.5"/>
+            <line x1="30" y1="20" x2="30" y2="140" stroke="#3a4060" stroke-width="1.5"/>
+            <text x="190" y="104" fill="#7a84a8" font-size="9" font-family="monospace">t</text>
+            <text x="22" y="18" fill="#7a84a8" font-size="9" font-family="monospace">a</text>
+            <!-- uniform a = horizontal line -->
+            <line x1="30" y1="55" x2="170" y2="55" stroke="#b060ff" stroke-width="2"/>
+            <polygon points="30,55 170,55 170,100 30,100" fill="rgba(176,96,255,0.12)" stroke="none"/>
+            <text x="85" y="82" fill="#b060ff" font-size="8">Area = Δv</text>
+            <text x="50" y="48" fill="#b060ff" font-size="8">Uniform acceleration</text>
+            <!-- zero line -->
+            <line x1="30" y1="100" x2="170" y2="100" stroke="#f0c040" stroke-width="1" stroke-dasharray="3,3"/>
+            <text x="55" y="155" fill="#7a84a8" font-size="8">Area = change in velocity</text>
+          </svg>
+          <p>Area under a-t = <span style="color:var(--accent-purple)">change in velocity</span>. Horizontal line = uniform acceleration. Most conceptually tested!</p>
+        </div>
+      </div>
+
+      <div class="trap-card" style="margin-top:16px;">
+        <h4>⚠️ Graph Traps in CDS/NDA</h4>
+        <ul>
+          <li>v-t graph: if line crosses time axis → body reverses direction</li>
+          <li>d-t graph can never have negative slope or go below x-axis (distance ≥ 0)</li>
+          <li>s-t graph negative slope ✓ (displacement can be negative)</li>
+          <li>Area under v-t can be negative (displacement) but not distance!</li>
+          <li>Curved v-t graph → non-uniform acceleration (not constant a)</li>
+          <li>Steeper slope on s-t doesn't mean larger acceleration, just higher velocity</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 5: PROJECTILE MOTION
+       ============================ -->
+  <div class="section-header section-anchor" id="s5">
+    <div class="section-num blue">05</div>
+    <div class="section-title-wrap">
+      <h2>Projectile Motion</h2>
+      <p>Horizontal & Angular projection · Range · Height · Trajectory · Special angles</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header open" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-green">🚀</div>
+        <span>Projectile Motion — Complete Analysis</span>
+        <span class="tag tag-green">MOST TESTED</span>
+      </div>
+      <span class="branch-chevron open">▶</span>
+    </div>
+    <div class="branch-body open">
+
+      <!-- Assumptions -->
+      <div class="card cyan-border" style="margin-top:12px;">
+        <h4>📋 Assumptions (State in CDS answers!)</h4>
+        <div class="grid-2">
+          <ul style="font-size:0.78rem; color:var(--text-muted);">
+            <li>✓ Gravity is uniform (g = constant)</li>
+            <li>✓ Air resistance neglected</li>
+            <li>✓ Earth is flat (not rotating)</li>
+          </ul>
+          <ul style="font-size:0.78rem; color:var(--text-muted);">
+            <li>✓ Horizontal velocity remains constant</li>
+            <li>✓ Only gravity acts vertically</li>
+            <li>✓ Initial acceleration = 0 horizontally</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:14px;">
+        <!-- Horizontal Projection -->
+        <div>
+          <div class="card blue-border">
+            <h4>📦 Horizontal Projection (θ = 0°)</h4>
+            <p style="font-size:0.75rem; color:var(--text-muted);">Object thrown horizontally with velocity u from height h</p>
+          </div>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">T = √(2h/g)</div>
+            <div class="formula-sub">Time of flight</div>
+          </div>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">R = u·√(2h/g)</div>
+            <div class="formula-sub">Horizontal range</div>
+          </div>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">v = √(u² + g²t²)</div>
+            <div class="formula-sub">Velocity at time t</div>
+          </div>
+        </div>
+        <!-- Angular Projection -->
+        <div>
+          <div class="card green-border">
+            <h4>🎯 Angular Projection (at angle θ)</h4>
+            <p style="font-size:0.75rem; color:var(--text-muted);">Object launched at angle θ with velocity u</p>
+          </div>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">T = 2u·sinθ / g</div>
+            <div class="formula-sub">Time of flight</div>
+          </div>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">H = u²·sin²θ / 2g</div>
+            <div class="formula-sub">Maximum height</div>
+          </div>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">R = u²·sin2θ / g</div>
+            <div class="formula-sub">Horizontal range</div>
+          </div>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">y = x·tanθ − gx²/(2u²cos²θ)</div>
+            <div class="formula-sub">Trajectory equation (parabola)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special Angles -->
+      <div class="sub-branch">
+        <div class="sub-branch-title">🎯 Special Angles — Exam Ready</div>
+        <table class="comp-table">
+          <thead>
+            <tr><th>Angle θ</th><th>sin2θ</th><th>Range</th><th>Special Property</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="highlight">45°</td><td>1 (max)</td><td class="highlight">R_max = u²/g</td><td>Maximum range</td></tr>
+            <tr><td>30°</td><td>0.866</td><td>u²√3/(2g)</td><td>Complementary to 60°</td></tr>
+            <tr><td>60°</td><td>0.866</td><td>u²√3/(2g)</td><td>Same range as 30°</td></tr>
+            <tr><td>90°</td><td>0</td><td>0</td><td>Vertical throw — no horizontal range</td></tr>
+            <tr><td>15° & 75°</td><td>0.5</td><td>u²/(2g)</td><td>Equal ranges, complementary</td></tr>
+          </tbody>
+        </table>
+        <div class="pyq-card" style="margin-top:12px;">
+          <div class="pyq-label">CDS EXAM TRAP</div>
+          <p><strong>Complementary Angles:</strong> θ and (90°−θ) give the same horizontal range. So 30° and 60° give equal range. Very frequently asked in CDS and NDA!</p>
+          <p class="answer">Key: R(θ) = R(90°−θ) → Use R = u²sin2θ/g, sin2(90°−θ) = sin(180°−2θ) = sin2θ ✓</p>
+        </div>
+      </div>
+
+      <!-- Symmetry -->
+      <div class="sub-branch">
+        <div class="sub-branch-title">🔄 Symmetry in Projectile Motion</div>
+        <div class="grid-3">
+          <div class="card blue-border">
+            <h4>⏱️ Time Symmetry</h4>
+            <p>Time to reach maximum height = T/2 = u·sinθ/g</p>
+            <p style="margin-top:6px;">Time of ascent = Time of descent</p>
+          </div>
+          <div class="card gold-border">
+            <h4>🎯 Velocity Symmetry</h4>
+            <p>At same height on way up and way down: speed is same, horizontal velocity same, vertical velocity reversed in sign</p>
+          </div>
+          <div class="card green-border">
+            <h4>📐 At Maximum Height</h4>
+            <p>Vertical velocity = 0</p>
+            <p style="margin-top:4px;">Only horizontal component remains: v = u·cosθ</p>
+            <p style="margin-top:4px; color:var(--accent-gold);">Acceleration = g (downward) always!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mnemonic-card">
+        <h4>🧠 Projectile Formulas Memory: "T-H-R Rocket"</h4>
+        <div class="mnemonic-highlight">T = 2u sinθ / g &nbsp;|&nbsp; H = u² sin²θ / 2g &nbsp;|&nbsp; R = u² sin2θ / g</div>
+        <p><strong>T</strong>wice the sin · <strong>H</strong>alf with sin-squared · <strong>R</strong>ange gets double angle</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 6: CIRCULAR MOTION
+       ============================ -->
+  <div class="section-header section-anchor" id="s6">
+    <div class="section-num purple">06</div>
+    <div class="section-title-wrap">
+      <h2>Circular Motion Basics</h2>
+      <p>Angular quantities · Centripetal acceleration · Linear-angular relations</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-purple">🔄</div>
+        <span>Circular Motion — Core Formulas</span>
+        <span class="tag tag-purple">VECTOR INSIGHT</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="grid-2">
+        <div>
+          <div class="formula-card">
+            <div class="formula-main">ω = θ / t = v / r</div>
+            <div class="formula-sub">Angular velocity (rad/s)</div>
+            <div class="formula-where">ω = 2π/T = 2πf</div>
+          </div>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">v = rω</div>
+            <div class="formula-sub">Linear velocity from angular</div>
+          </div>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">aₓ = v²/r = rω²</div>
+            <div class="formula-sub">Centripetal acceleration</div>
+            <div class="formula-where">Directed toward center · Always perpendicular to v</div>
+          </div>
+        </div>
+        <div>
+          <table class="comp-table">
+            <tr><th>Linear</th><th>Angular</th><th>Relation</th></tr>
+            <tr><td>s (displacement)</td><td>θ (angular displ.)</td><td>s = rθ</td></tr>
+            <tr><td>v (velocity)</td><td>ω (angular vel.)</td><td>v = rω</td></tr>
+            <tr><td>a (acceleration)</td><td>α (angular accl.)</td><td>a = rα</td></tr>
+            <tr><td>v = u + at</td><td>ω = ω₀ + αt</td><td>—</td></tr>
+            <tr><td>s = ut + ½at²</td><td>θ = ω₀t + ½αt²</td><td>—</td></tr>
+            <tr><td>v² = u² + 2as</td><td>ω² = ω₀² + 2αθ</td><td>—</td></tr>
+          </table>
+          <div class="trap-card" style="margin-top:12px;">
+            <h4>⚠️ Uniform Circular Motion</h4>
+            <ul>
+              <li>Speed = constant, but <span style="color:var(--accent-gold)">velocity is NOT constant</span> (direction changes)</li>
+              <li>Acceleration is NOT zero — centripetal acceleration exists!</li>
+              <li>Net work by centripetal force = 0 (⊥ to velocity)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-recall" style="margin-top:12px;">
+        <div class="quick-recall-grid">
+          <div class="qr-item"><strong>Time Period</strong>T = 2π/ω = 2πr/v</div>
+          <div class="qr-item"><strong>Frequency</strong>f = 1/T = ω/2π</div>
+          <div class="qr-item"><strong>Centripetal Force</strong>F = mv²/r = mrω²</div>
+          <div class="qr-item"><strong>No centrifugal force</strong>It's a pseudo-force (non-inertial frame only)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 7: RELATIVE MOTION
+       ============================ -->
+  <div class="section-header section-anchor" id="s7">
+    <div class="section-num cyan">07</div>
+    <div class="section-title-wrap">
+      <h2>Relative Motion</h2>
+      <p>Relative velocity · River-boat · Rain-man · Train problems</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-cyan">🚤</div>
+        <span>Relative Velocity & Applications</span>
+        <span class="tag tag-blue">VECTOR ADDITION</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="formula-card">
+        <div class="formula-main">v⃗_AB = v⃗_A − v⃗_B</div>
+        <div class="formula-sub">Velocity of A relative to B</div>
+        <div class="formula-where">v⃗_BA = −v⃗_AB (opposite direction)</div>
+      </div>
+
+      <div class="grid-3" style="margin-top:16px;">
+        <div class="card blue-border">
+          <h4>🚢 River-Boat Problem</h4>
+          <p>Boat speed = v_b, River speed = v_r, Width = d</p>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">t = d / v_b</div>
+            <div class="formula-sub">For minimum time (boat ⊥ river)</div>
+          </div>
+          <div class="formula-card" style="margin-top:6px;">
+            <div class="formula-main">θ = sin⁻¹(v_r/v_b)</div>
+            <div class="formula-sub">Angle to aim for straight crossing</div>
+          </div>
+          <p style="font-size:0.72rem; color:var(--text-muted); margin-top:8px;">
+            Min time: boat perpendicular to river<br>
+            Min drift: boat angled upstream at sin⁻¹(v_r/v_b)
+          </p>
+        </div>
+        <div class="card gold-border">
+          <h4>🌧️ Rain-Man Problem</h4>
+          <p>Rain velocity = v_r (vertical), Man velocity = v_m (horizontal)</p>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">v_rain_rel = √(v_r² + v_m²)</div>
+            <div class="formula-sub">Relative velocity of rain w.r.t. man</div>
+          </div>
+          <p style="font-size:0.72rem; color:var(--text-muted); margin-top:8px;">
+            Man should hold umbrella at angle:<br>
+            tan θ = v_m/v_r (forward tilt)<br>
+            To keep dry, tilt toward direction of motion
+          </p>
+        </div>
+        <div class="card green-border">
+          <h4>🚂 Train Problems</h4>
+          <p>Trains A and B:</p>
+          <ul style="margin-top:8px;">
+            <li>Same direction: v_rel = |v_A − v_B|</li>
+            <li>Opposite direction: v_rel = v_A + v_B</li>
+            <li>Time to cross = (L_A + L_B) / v_rel</li>
+            <li>Platform crossing: t = (L_train + L_platform) / v_train</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="trap-card" style="margin-top:12px;">
+        <h4>⚠️ Relative Velocity Traps</h4>
+        <ul>
+          <li>Two trains moving same direction at same speed: relative velocity = 0 (they appear stationary to each other)</li>
+          <li>Velocity of A w.r.t. B = −(velocity of B w.r.t. A)</li>
+          <li>Rain problem: if man stands still, he sees rain falling at angle θ to vertical = tan⁻¹(v_m/v_r)</li>
+          <li>For straight crossing: boat needs to aim upstream, NOT perpendicular</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 8: ADVANCED CONNECTIONS
+       ============================ -->
+  <div class="section-header section-anchor" id="s8">
+    <div class="section-num orange">08</div>
+    <div class="section-title-wrap">
+      <h2>Advanced Conceptual Connections</h2>
+      <p>Newton's laws · Calculus intuition · Defence applications · Everyday physics</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-orange">🔗</div>
+        <span>Kinematics ↔ Broader Physics</span>
+        <span class="tag tag-gold">UPSC ANALYTICAL</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="concept-map">
+        <div style="text-align:center; margin-bottom:16px;">
+          <div class="center-node">
+            <h3>KINE-<br>MATICS</h3>
+          </div>
+        </div>
+        <div class="spoke-container">
+          <div class="spoke-item">⚖️ Newton's 1st Law<br><span style="font-size:0.65rem; color:var(--text-muted);">Uniform motion when F=0</span></div>
+          <div class="spoke-item">🎯 Newton's 2nd Law<br><span style="font-size:0.65rem; color:var(--text-muted);">F=ma links to kinematics</span></div>
+          <div class="spoke-item">📐 Vectors<br><span style="font-size:0.65rem; color:var(--text-muted);">Displacement, velocity, accel</span></div>
+          <div class="spoke-item">∫ Calculus<br><span style="font-size:0.65rem; color:var(--text-muted);">v=dx/dt, a=dv/dt</span></div>
+          <div class="spoke-item">🛰️ Satellite Motion<br><span style="font-size:0.65rem; color:var(--text-muted);">Circular + gravity = orbit</span></div>
+          <div class="spoke-item">💣 Ballistics<br><span style="font-size:0.65rem; color:var(--text-muted);">Projectile = artillery basis</span></div>
+          <div class="spoke-item">✈️ Aviation<br><span style="font-size:0.65rem; color:var(--text-muted);">Relative motion in navigation</span></div>
+          <div class="spoke-item">🌊 Wave Motion<br><span style="font-size:0.65rem; color:var(--text-muted);">Periodic oscillatory motion</span></div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top:16px;">
+        <div class="card orange-border">
+          <h4>💣 Defence Applications (CDS Specific)</h4>
+          <ul>
+            <li>Artillery shells follow projectile path</li>
+            <li>Angle 45° for maximum range of cannon</li>
+            <li>Bomb dropped from aircraft: horizontal velocity = aircraft velocity</li>
+            <li>Interception: relative motion calculations</li>
+            <li>Naval navigation: river-crossing type problems</li>
+          </ul>
+        </div>
+        <div class="card blue-border">
+          <h4>∫ Calculus Intuition</h4>
+          <div class="formula-card" style="margin-top:8px;">
+            <div class="formula-main">v = dx/dt &nbsp;&nbsp; a = dv/dt</div>
+            <div class="formula-sub">Derivative form</div>
+          </div>
+          <div class="formula-card" style="margin-top:6px;">
+            <div class="formula-main">x = ∫v dt &nbsp;&nbsp; v = ∫a dt</div>
+            <div class="formula-sub">Integral form — area under graph</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 9: FORMULA MASTER SHEET
+       ============================ -->
+  <div class="section-header section-anchor" id="s9">
+    <div class="section-num gold">09</div>
+    <div class="section-title-wrap">
+      <h2>Formula Master Sheet</h2>
+      <p>One-shot formula wall · Units · Dimensions · Conditions</p>
+    </div>
+  </div>
+
+  <div class="formula-wall">
+    <h3>⚡ Complete Kinematics Formula Reference</h3>
+    <table class="full-formula-table">
+      <thead>
+        <tr><th>Formula</th><th>Name</th><th>Variables</th><th>Unit/Dimension</th><th>Condition</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>v = u + at</td><td>1st Eq. of Motion</td><td>v,u,a,t (no s)</td><td>m/s · [LT⁻¹]</td><td>Uniform acceleration</td></tr>
+        <tr><td>s = ut + ½at²</td><td>2nd Eq. of Motion</td><td>s,u,a,t (no v)</td><td>m · [L]</td><td>Uniform acceleration</td></tr>
+        <tr><td>v² = u² + 2as</td><td>3rd Eq. of Motion</td><td>v,u,a,s (no t)</td><td>m²/s² · [L²T⁻²]</td><td>Uniform acceleration</td></tr>
+        <tr><td>sₙ = u + a(n−½)</td><td>nth Second Distance</td><td>sₙ,u,a,n</td><td>m</td><td>u=0 → sₙ∝(2n−1)</td></tr>
+        <tr><td>v̄ = (u+v)/2</td><td>Average velocity</td><td>v̄,u,v</td><td>m/s</td><td>Uniform acceleration only</td></tr>
+        <tr><td>T = 2u sinθ/g</td><td>Projectile: Time of flight</td><td>T,u,θ,g</td><td>s · [T]</td><td>Angular projection</td></tr>
+        <tr><td>H = u²sin²θ/2g</td><td>Projectile: Max height</td><td>H,u,θ,g</td><td>m · [L]</td><td>Angular projection</td></tr>
+        <tr><td>R = u²sin2θ/g</td><td>Projectile: Range</td><td>R,u,θ,g</td><td>m · [L]</td><td>Max at θ=45°</td></tr>
+        <tr><td>v = rω</td><td>Circular: Linear vel.</td><td>v,r,ω</td><td>m/s</td><td>Uniform circular motion</td></tr>
+        <tr><td>aₓ = v²/r = rω²</td><td>Centripetal acceleration</td><td>aₓ,v,r,ω</td><td>m/s² · [LT⁻²]</td><td>Any circular motion</td></tr>
+        <tr><td>ω = 2π/T = 2πf</td><td>Angular velocity</td><td>ω,T,f</td><td>rad/s · [T⁻¹]</td><td>—</td></tr>
+        <tr><td>v_AB = v_A − v_B</td><td>Relative velocity</td><td>v_AB,v_A,v_B</td><td>m/s (vector)</td><td>Subtract velocities</td></tr>
+        <tr><td>t = √(2h/g)</td><td>Free fall time</td><td>t,h,g</td><td>s</td><td>u=0, vertical fall</td></tr>
+        <tr><td>v = √(2gh)</td><td>Free fall velocity</td><td>v,g,h</td><td>m/s</td><td>u=0</td></tr>
+        <tr><td>a = dv/dt = d²x/dt²</td><td>Instantaneous accel.</td><td>—</td><td>m/s²</td><td>Calculus form</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 10: TRAPS
+       ============================ -->
+  <div class="section-header section-anchor" id="s10">
+    <div class="section-num red">10</div>
+    <div class="section-title-wrap">
+      <h2>Common CDS/UPSC Traps</h2>
+      <p>Sign errors · Scalar-vector confusion · Graph misreads · Exam pitfalls</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-red">🚨</div>
+        <span>Top Exam Traps — Don't Lose These Marks!</span>
+        <span class="tag tag-red">CRITICAL</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="grid-2">
+        <div class="trap-card" style="margin:0;">
+          <h4>Trap 1: Scalar vs Vector</h4>
+          <ul>
+            <li>Speed is scalar → CANNOT be negative</li>
+            <li>Velocity is vector → CAN be negative</li>
+            <li>Distance is scalar → CANNOT be negative</li>
+            <li>"Speed increased by 5 m/s" ≠ "velocity increased by 5 m/s"</li>
+          </ul>
+        </div>
+        <div class="trap-card" style="margin:0;">
+          <h4>Trap 2: Average Speed vs Velocity</h4>
+          <ul>
+            <li>Average speed = Total distance / Total time</li>
+            <li>Average velocity = Total displacement / Total time</li>
+            <li>If return journey: displacement = 0 → avg velocity = 0!</li>
+            <li>Avg speed for equal distances: 2v₁v₂/(v₁+v₂)</li>
+          </ul>
+        </div>
+        <div class="trap-card" style="margin:0;">
+          <h4>Trap 3: Free Fall Confusion</h4>
+          <ul>
+            <li>g = 9.8 m/s² (use 10 for CDS unless stated)</li>
+            <li>At maximum height: velocity = 0, but a = g ≠ 0!</li>
+            <li>Heavier body does NOT fall faster (ignore air resistance)</li>
+            <li>Object thrown up: acceleration is ALWAYS downward</li>
+          </ul>
+        </div>
+        <div class="trap-card" style="margin:0;">
+          <h4>Trap 4: Projectile Misconceptions</h4>
+          <ul>
+            <li>Horizontal velocity is CONSTANT throughout</li>
+            <li>Acceleration at any point = g (downward), including at peak</li>
+            <li>Path is parabolic, NOT circular</li>
+            <li>R(30°) = R(60°) — same range, different paths!</li>
+          </ul>
+        </div>
+        <div class="trap-card" style="margin:0;">
+          <h4>Trap 5: Graph Reading Errors</h4>
+          <ul>
+            <li>Steeper slope on s-t doesn't = more acceleration</li>
+            <li>Area under v-t = displacement (not distance if crosses axis)</li>
+            <li>Area under s-t = no physical meaning</li>
+            <li>Slope of s-t = velocity, NOT speed (can be negative)</li>
+          </ul>
+        </div>
+        <div class="trap-card" style="margin:0;">
+          <h4>Trap 6: Circular Motion</h4>
+          <ul>
+            <li>Uniform circular motion ≠ constant velocity</li>
+            <li>Centripetal force is resultant, not an extra force</li>
+            <li>Centrifugal force is pseudo-force (non-inertial frame only)</li>
+            <li>Speed constant → KE constant, but momentum changes!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 11: PYQ ANALYSIS
+       ============================ -->
+  <div class="section-header section-anchor" id="s11">
+    <div class="section-num gold">11</div>
+    <div class="section-title-wrap">
+      <h2>PYQ Analysis — Pattern Recognition</h2>
+      <p>Repeated themes · Quick elimination · CDS/NDA/UPSC styles</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-gold">🏆</div>
+        <span>High-Frequency CDS/NDA Topics</span>
+        <span class="tag tag-gold">PYQ PATTERNS</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="grid-2">
+        <div class="card gold-border">
+          <h4>🎯 Most Repeated CDS Themes</h4>
+          <ol class="num-list">
+            <li><div class="num-bullet">1</div><span>Projectile range at 45°, complementary angles</span></li>
+            <li><div class="num-bullet">2</div><span>Free fall calculations (h = ½gt², v = √2gh)</span></li>
+            <li><div class="num-bullet">3</div><span>v-t graph area = displacement problems</span></li>
+            <li><div class="num-bullet">4</div><span>Average speed vs average velocity traps</span></li>
+            <li><div class="num-bullet">5</div><span>Ratio of distances in 1st, 2nd, 3rd second (1:3:5)</span></li>
+            <li><div class="num-bullet">6</div><span>Relative velocity of trains (same/opposite direction)</span></li>
+            <li><div class="num-bullet">7</div><span>Equations of motion with sign convention</span></li>
+          </ol>
+        </div>
+        <div class="card blue-border">
+          <h4>🏛️ UPSC Conceptual Patterns</h4>
+          <ol class="num-list">
+            <li><div class="num-bullet">1</div><span>Frame of reference conceptual questions</span></li>
+            <li><div class="num-bullet">2</div><span>Circular motion — uniform vs non-uniform comparison</span></li>
+            <li><div class="num-bullet">3</div><span>Real-life applications (satellite, river navigation)</span></li>
+            <li><div class="num-bullet">4</div><span>Dimensional analysis of kinematic quantities</span></li>
+            <li><div class="num-bullet">5</div><span>Assertion-reason: velocity vs speed</span></li>
+            <li><div class="num-bullet">6</div><span>Projectile motion assumptions</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="pyq-card" style="margin-top:16px;">
+        <div class="pyq-label">PYQ SHORTCUT: QUICK ELIMINATION</div>
+        <p><strong>When stuck on MCQ:</strong> Check units first → eliminate dimensionally wrong options. Then check extreme cases (θ=0° or 90°) → eliminate impossible answers. Usually reduces 4 options to 2!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 12: HIGH YIELD
+       ============================ -->
+  <div class="section-header section-anchor" id="s12">
+    <div class="section-num green">12</div>
+    <div class="section-title-wrap">
+      <h2>High-Yield Revision Zone</h2>
+      <p>1-hour map · Must-memorize · Most probable questions</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-green">⭐</div>
+        <span>Top 15 Must-Know Facts for CDS 2026</span>
+        <span class="tag tag-green">HIGH YIELD</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="grid-2">
+        <ol class="num-list">
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">1</div><span>At max height in projectile: <span class="hl-blue">v_y = 0, a = g downward</span></span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">2</div><span>Complementary angles give <span class="hl-green">same range</span></span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">3</div><span>Free fall ratio: s₁:s₂:s₃ = <span class="highlight">1:3:5</span></span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">4</div><span>Avg speed (equal dist.) = <span class="hl-blue">2v₁v₂/(v₁+v₂)</span> (harmonic mean)</span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">5</div><span>Braking: distance ∝ v² (<span class="hl-red">double speed = 4× distance</span>)</span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">6</div><span>UCM: speed constant, velocity NOT constant</span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">7</div><span>v-t area = displacement (sign sensitive)</span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">8</div><span>Maximum range (projectile) = u²/g at θ = 45°</span></li>
+        </ol>
+        <ol class="num-list" start="9">
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">9</div><span>Motion is always <span class="highlight">relative</span> — no absolute motion</span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">10</div><span>Horizontal: uniform; Vertical: uniformly accelerated in projectile</span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">11</div><span>Acceleration = 0 in uniform motion, not rest</span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">12</div><span>v = rω links linear and angular velocities</span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">13</div><span>Slope of s-t = velocity; slope of v-t = acceleration</span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">14</div><span>Opposite trains: v_rel = v_A + v_B; Same direction: v_A − v_B</span></li>
+          <li><div class="num-bullet" style="background:rgba(240,192,64,0.2); color:var(--accent-gold);">15</div><span>Trajectory of projectile = parabola (y = ax − bx²)</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 13: MNEMONICS
+       ============================ -->
+  <div class="section-header section-anchor" id="s13">
+    <div class="section-num purple">13</div>
+    <div class="section-title-wrap">
+      <h2>Memory Systems & Mnemonics</h2>
+      <p>Acronyms · Visual hooks · Story-based recall</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-purple">🧠</div>
+        <span>Complete Mnemonic System</span>
+        <span class="tag tag-purple">MEMORY</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="grid-2">
+        <div class="mnemonic-card" style="margin:0;">
+          <h4>📐 Equations of Motion</h4>
+          <div class="mnemonic-highlight">"Very Usefully Satisfied"</div>
+          <p><strong>V</strong> = u + at → uses V,u,a,t<br>
+          <strong>U</strong>nder → s = Ut + ½at² → uses s,u,a,t<br>
+          <strong>S</strong>atisfied → v² = u² + 2as → uses v,u,a,s</p>
+        </div>
+        <div class="mnemonic-card" style="margin:0;">
+          <h4>📊 Graph Rules: "SAVES"</h4>
+          <div class="mnemonic-highlight">S-A-V-E-S</div>
+          <p><strong>S</strong>lope of s-t = <strong>A</strong>verage velocity<br>
+          <strong>V</strong>elocity-time slope = acceleration<br>
+          <strong>E</strong>very area under v-t = displacement<br>
+          <strong>S</strong>lope of v-t = acceleration always</p>
+        </div>
+        <div class="mnemonic-card" style="margin:0;">
+          <h4>🚀 Projectile: "THR Rocket"</h4>
+          <div class="mnemonic-highlight">T · H · R</div>
+          <p><strong>T</strong>wo times sin: T = 2u sinθ/g<br>
+          <strong>H</strong>alf with sin²: H = u²sin²θ/2g<br>
+          <strong>R</strong>ange has double: R = u²sin2θ/g</p>
+        </div>
+        <div class="mnemonic-card" style="margin:0;">
+          <h4>🔄 Circular Connections: "VATF"</h4>
+          <div class="mnemonic-highlight">V = rω · A = v²/r · T = 2π/ω · F = mrω²</div>
+          <p><strong>V</strong>elocity from radius × omega<br>
+          <strong>A</strong>cceleration = v²/r center-pointing<br>
+          <strong>T</strong>ime = 2π/omega<br>
+          <strong>F</strong>orce = m × r × omega²</p>
+        </div>
+        <div class="mnemonic-card" style="margin:0;">
+          <h4>🔢 Free Fall Ratio: "ODD SERIES"</h4>
+          <div class="mnemonic-highlight">1 : 3 : 5 : 7 : (2n-1)</div>
+          <p>Distance in 1st, 2nd, 3rd, 4th second from rest.<br>
+          Story: "One odd body that falls 3, 5, 7 seconds later..."</p>
+        </div>
+        <div class="mnemonic-card" style="margin:0;">
+          <h4>🚢 River Problem: "Min-T, Min-D"</h4>
+          <div class="mnemonic-highlight">Min TIME → ⊥ · Min DRIFT → angle upstream</div>
+          <p>Minimum <strong>T</strong>ime: aim perpendicular to river (t = d/v_b)<br>
+          Minimum <strong>D</strong>rift: aim upstream at sin⁻¹(v_r/v_b)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 14: PRACTICE MCQs
+       ============================ -->
+  <div class="section-header section-anchor" id="s14">
+    <div class="section-num gold">14</div>
+    <div class="section-title-wrap">
+      <h2>Practice & Application</h2>
+      <p>Mini solved examples · CDS-style numericals · Speed-solving methods</p>
+    </div>
+  </div>
+
+  <div class="branch-container">
+    <div class="branch-header" onclick="toggleBranch(this)">
+      <div class="branch-title">
+        <div class="branch-icon bi-gold">🧮</div>
+        <span>Solved Examples — CDS Style</span>
+        <span class="tag tag-gold">PRACTICE</span>
+      </div>
+      <span class="branch-chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="grid-2">
+        <div class="pyq-card">
+          <div class="pyq-label">EXAMPLE 1</div>
+          <p>A ball is dropped from a height of 80m. Find the velocity just before hitting the ground. (g = 10 m/s²)</p>
+          <p class="answer">v² = 2gh = 2×10×80 = 1600 → v = 40 m/s</p>
+          <p style="font-size:0.72rem; color:var(--text-muted);">Use v²=u²+2as, u=0, s=80m, a=g=10</p>
+        </div>
+        <div class="pyq-card">
+          <div class="pyq-label">EXAMPLE 2</div>
+          <p>A projectile is fired at 30 m/s at 30°. Find range. (g=10 m/s²)</p>
+          <p class="answer">R = u²sin2θ/g = (30)²×sin60°/10 = 900×0.866/10 = 77.9 m</p>
+        </div>
+        <div class="pyq-card">
+          <div class="pyq-label">EXAMPLE 3</div>
+          <p>A car decelerates from 20 m/s to rest in 4 seconds. Find braking distance.</p>
+          <p class="answer">a = (0−20)/4 = −5 m/s². s = v²/2|a| = 400/10 = 40 m</p>
+        </div>
+        <div class="pyq-card">
+          <div class="pyq-label">EXAMPLE 4</div>
+          <p>Two trains 100m and 150m long travel at 36 km/h and 54 km/h in opposite directions. Find crossing time.</p>
+          <p class="answer">v_rel = 36+54 = 90 km/h = 25 m/s. t = (100+150)/25 = 10 s</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 15: 20 CDS QUESTIONS
+       ============================ -->
+  <div class="section-header section-anchor" id="s15">
+    <div class="section-num gold">15</div>
+    <div class="section-title-wrap">
+      <h2>20 Probable CDS Prelims Questions</h2>
+      <p>Click each question to reveal the answer and explanation</p>
+    </div>
+  </div>
+
+  <div id="cds-questions">
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q1</div>
+        <div class="qa-text">A body is thrown vertically upward with velocity u. The ratio of distances covered by it in the 1st and 3rd second is:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: (2u−g) : (2u−5g)</p>
+        <p class="explanation">Using sₙ = u + a(n−½), with a = −g:<br>s₁ = u − g/2 = (2u−g)/2 · s₃ = u − 5g/2 = (2u−5g)/2<br>Ratio = (2u−g):(2u−5g)</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q2</div>
+        <div class="qa-text">A projectile is fired with velocity u at angle θ. For maximum range, θ should be:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: 45°</p>
+        <p class="explanation">R = u²sin2θ/g. This is maximum when sin2θ = 1 → 2θ = 90° → θ = 45°. R_max = u²/g.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q3</div>
+        <div class="qa-text">A ball is dropped from height H and another is thrown horizontally from same height. Which reaches ground first?</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: Both reach simultaneously</p>
+        <p class="explanation">Vertical motion is independent of horizontal motion. Both have same initial vertical velocity (zero) and same vertical acceleration (g). Time = √(2H/g) for both.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q4</div>
+        <div class="qa-text">A body starts from rest and moves with uniform acceleration. The ratio of distances covered in 1st, 2nd, and 3rd second is:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: 1 : 3 : 5</p>
+        <p class="explanation">Using sₙ = u + a(n−½) with u=0: s₁=a/2, s₂=3a/2, s₃=5a/2. Ratio = 1:3:5. This is the classic odd-number series!</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q5</div>
+        <div class="qa-text">Two projectiles are fired at angles 30° and 60° with same speed. Their ranges are:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: Equal</p>
+        <p class="explanation">Complementary angles (30°+60°=90°) give equal ranges. R = u²sin2θ/g. sin(2×30°)=sin60°=sin(2×60°)=sin120°. Both equal √3/2.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q6</div>
+        <div class="qa-text">A car moving at 72 km/h applies brakes and stops in 8 seconds. The retardation is:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: 2.5 m/s²</p>
+        <p class="explanation">72 km/h = 20 m/s. v = u + at → 0 = 20 − a×8 → a = 20/8 = 2.5 m/s²</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q7</div>
+        <div class="qa-text">The slope of a displacement-time graph gives:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: Velocity</p>
+        <p class="explanation">Slope = Δs/Δt = velocity. It can be positive, negative, or zero. Note: slope of distance-time gives speed (always ≥ 0).</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q8</div>
+        <div class="qa-text">A stone is thrown vertically upward with 20 m/s. How high will it go? (g = 10 m/s²)</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: 20 m</p>
+        <p class="explanation">v² = u² − 2gh → 0 = 400 − 2(10)h → h = 400/20 = 20 m</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q9</div>
+        <div class="qa-text">In uniform circular motion, what remains constant?</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: Speed (not velocity)</p>
+        <p class="explanation">Direction changes continuously, so velocity (vector) changes. Speed (magnitude) remains constant. Angular velocity, time period, and centripetal acceleration magnitude are also constant.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q10</div>
+        <div class="qa-text">A man walks 3 km North then 4 km East. His displacement is:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: 5 km (Northeast)</p>
+        <p class="explanation">Displacement = √(3² + 4²) = √(9+16) = √25 = 5 km. The Pythagorean 3-4-5 triangle! Distance = 7 km, Displacement = 5 km.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q11</div>
+        <div class="qa-text">Area under a velocity-time graph represents:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: Displacement</p>
+        <p class="explanation">∫v dt = displacement (not distance). If the graph goes below the time axis, that area is negative (backward displacement). For distance, take |area|.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q12</div>
+        <div class="qa-text">A body has zero displacement but non-zero distance. What type of motion is this?</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: Motion with return to starting point</p>
+        <p class="explanation">Example: going 5 km and returning. Distance = 10 km, Displacement = 0. Circular path also gives zero displacement for one complete loop.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q13</div>
+        <div class="qa-text">Which equation of motion does NOT contain the final velocity?</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: s = ut + ½at²</p>
+        <p class="explanation">The 2nd equation s = ut + ½at² contains s, u, a, t — no final velocity v. The 1st has v, the 3rd has v².</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q14</div>
+        <div class="qa-text">A stone thrown at 45° has range R. If thrown with double the speed, range becomes:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: 4R</p>
+        <p class="explanation">R = u²sin2θ/g ∝ u². Doubling u → R' = (2u)²sin2θ/g = 4u²sin2θ/g = 4R.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q15</div>
+        <div class="qa-text">Two trains move in opposite directions at 40 km/h and 60 km/h. What is relative velocity?</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: 100 km/h</p>
+        <p class="explanation">Opposite directions: v_rel = v_A + v_B = 40 + 60 = 100 km/h. Same direction would give |40−60| = 20 km/h.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q16</div>
+        <div class="qa-text">At maximum height in projectile motion, the acceleration is:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: g (downward)</p>
+        <p class="explanation">Acceleration due to gravity acts throughout the motion — even at maximum height where vertical velocity is zero. a = g = 9.8 m/s² downward always.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q17</div>
+        <div class="qa-text">A body covers equal distances in equal time intervals. This is:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: Uniform motion</p>
+        <p class="explanation">Equal distance in equal time = constant velocity = uniform motion. Acceleration = zero. d-t graph is a straight line with constant slope.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q18</div>
+        <div class="qa-text">A river 100m wide flows at 5 m/s. A boat can do 10 m/s in still water. Minimum time to cross:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: 10 seconds</p>
+        <p class="explanation">For minimum time, boat aims perpendicular to river. t = width/v_boat = 100/10 = 10 s. (River speed doesn't affect crossing time in perpendicular case.)</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q19</div>
+        <div class="qa-text">The trajectory of a projectile is a:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: Parabola</p>
+        <p class="explanation">Equation: y = x·tanθ − gx²/(2u²cos²θ). This is of the form y = ax − bx², which is a parabola (second-degree equation in x).</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num">Q20</div>
+        <div class="qa-text">A body starts from rest with acceleration 2 m/s². Distance covered in 5th second is:</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Answer: 9 m</p>
+        <p class="explanation">sₙ = u + a(n − ½) = 0 + 2(5 − 0.5) = 2 × 4.5 = 9 m</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 16: UPSC CONCEPTUAL
+       ============================ -->
+  <div class="section-header section-anchor" id="s16">
+    <div class="section-num purple">16</div>
+    <div class="section-title-wrap">
+      <h2>10 UPSC-Level Conceptual Questions</h2>
+      <p>Analytical depth · Assertion-Reason · Conceptual clarity</p>
+    </div>
+  </div>
+
+  <div id="upsc-questions">
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num upsc">U1</div>
+        <div class="qa-text">Assertion (A): A particle can have zero velocity but non-zero acceleration.<br>Reason (R): Acceleration depends on change in velocity, not velocity itself.</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Both A and R are true, and R is the correct explanation of A.</p>
+        <p class="explanation">At the highest point of vertical throw: v = 0 but a = g ≠ 0. Also, in SHM at mean position: acceleration is proportional to displacement (non-zero) but velocity is maximum. The reason perfectly explains the assertion.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num upsc">U2</div>
+        <div class="qa-text">Why does a bomb dropped from a horizontally flying aircraft travel ahead of the aircraft rather than falling straight down?</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Because the bomb retains the horizontal velocity of the aircraft.</p>
+        <p class="explanation">At the moment of release, the bomb has the same horizontal velocity as the aircraft. Since no horizontal force acts (ignoring air resistance), this horizontal velocity is maintained. The bomb follows a parabolic path and remains ahead (horizontally below) the aircraft throughout the fall.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num upsc">U3</div>
+        <div class="qa-text">Can the magnitude of average velocity of a body be greater than its average speed? Justify.</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">No — average speed ≥ |average velocity| always.</p>
+        <p class="explanation">Average speed = total distance/time. Average velocity = displacement/time. Since distance ≥ |displacement| (by triangle inequality — shortest path is straight line), average speed ≥ |average velocity|. Equality holds only for straight-line motion without reversal.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num upsc">U4</div>
+        <div class="qa-text">Explain why the equations of motion (v = u + at, etc.) are not applicable when acceleration is non-uniform.</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">These are derived assuming constant acceleration throughout.</p>
+        <p class="explanation">The derivation uses: Δv = a·Δt (only valid for constant a) and area under v-t = ut + ½at² (only for straight v-t line). If a varies with time, the v-t graph is curved, and we need integration: s = ∫v dt, where v = ∫a dt. The simple formulas break down entirely.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num upsc">U5</div>
+        <div class="qa-text">A satellite in circular orbit has constant speed. Yet it undergoes acceleration. Explain this apparent contradiction.</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Acceleration doesn't require change in speed — change in direction is sufficient.</p>
+        <p class="explanation">Acceleration is the rate of change of velocity (vector). In circular orbit, the direction of velocity changes constantly toward the center. This centripetal acceleration = v²/r is provided by gravity. Speed remains constant, but the vector velocity changes — so acceleration is real and non-zero.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num upsc">U6</div>
+        <div class="qa-text">Why does a projectile launched at 45° achieve maximum range? What happens at angles greater than 45°?</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Because sin2θ is maximized at θ=45°, giving sin90°=1.</p>
+        <p class="explanation">R = u²sin2θ/g. Since −1 ≤ sin2θ ≤ 1, maximum range when sin2θ=1, i.e., 2θ=90°, θ=45°. Above 45°: more height, less range (vertical component "wastes" time). Below 45°: more horizontal, but less time aloft. At 45°: optimal balance. Note: R(θ) = R(90°−θ) shows the symmetry.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num upsc">U7</div>
+        <div class="qa-text">Assertion: In the absence of air resistance, a heavier body and lighter body dropped from the same height hit the ground simultaneously. Reason: Acceleration due to gravity is independent of mass.</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Both A and R are correct, R explains A.</p>
+        <p class="explanation">From Newton's 2nd Law: F = ma, and F = mg (gravity). So a = g — the mass cancels! This is the equivalence principle demonstrated by Galileo. All bodies fall with the same acceleration g regardless of mass (in vacuum). Air resistance breaks this because drag force is not proportional to mass in the same way.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num upsc">U8</div>
+        <div class="qa-text">How does the concept of relative motion explain why rain appears to fall diagonally when viewed from a moving vehicle?</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">Relative velocity of rain with respect to the moving observer has both vertical and horizontal components.</p>
+        <p class="explanation">In ground frame: rain falls vertically at v_r. Person in vehicle moves horizontally at v_m. Relative velocity of rain w.r.t. person = v_rain − v_person. The horizontal component is −v_m (backward direction for person). So the person sees rain at angle θ = tan⁻¹(v_m/v_r) from vertical, appearing to fall forward/diagonally.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num upsc">U9</div>
+        <div class="qa-text">Is it possible for a body to have: (a) constant speed but changing velocity? (b) constant velocity but changing speed? Justify.</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">(a) Yes — circular motion. (b) No — impossible.</p>
+        <p class="explanation">(a) In uniform circular motion, |v| = speed is constant, but direction changes → velocity changes. (b) Velocity is a vector whose magnitude is speed. If velocity is constant (fixed magnitude AND direction), speed (=magnitude of velocity) cannot change. If speed changed, the magnitude of velocity would change, meaning velocity changed — contradiction.</p>
+      </div>
+    </div>
+
+    <div class="qa-item">
+      <div class="qa-q" onclick="toggleQA(this)">
+        <div class="qa-num upsc">U10</div>
+        <div class="qa-text">Explain the significance of the parabolic trajectory in projectile motion. How is this used in military ballistics?</div>
+      </div>
+      <div class="qa-ans">
+        <p class="correct">The trajectory y = x·tanθ − gx²/(2u²cos²θ) is a parabola; range and height can be precisely calculated.</p>
+        <p class="explanation">The parabolic path results from the superposition of uniform horizontal motion and uniformly accelerated vertical motion. In ballistics: guns are aimed at 45° for maximum range; for specific targets at known distances, angles can be calculated using R = u²sin2θ/g. Two solutions exist for any sub-maximum range (θ and 90°−θ). Artillery elevation tables are essentially pre-computed range-angle tables based on this physics.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================
+       SECTION 17: NIGHT BEFORE FRAMEWORK
+       ============================ -->
+  <div class="section-header section-anchor" id="s17">
+    <div class="section-num green">17</div>
+    <div class="section-title-wrap">
+      <h2>Night Before Exam — Revision Framework</h2>
+      <p>60 min · 30 min · 10 min structured revision plans</p>
+    </div>
+  </div>
+
+  <div class="grid-3" style="margin-bottom:40px;">
+    <div class="time-block t60">
+      <div class="time-label">60</div>
+      <div class="time-sub">MINUTES PLAN</div>
+      <ul class="time-items">
+        <li>Read all 3 equations of motion + derivation logic (8 min)</li>
+        <li>Revise projectile formulas T, H, R + special angles (10 min)</li>
+        <li>Graph interpretation — all 4 types (8 min)</li>
+        <li>Circular motion — v=rω, centripetal, UCM (8 min)</li>
+        <li>Relative velocity + train/river shortcuts (8 min)</li>
+        <li>Do all 20 CDS questions in this map (12 min)</li>
+        <li>Quick run through all traps (6 min)</li>
+      </ul>
+    </div>
+    <div class="time-block t30">
+      <div class="time-label">30</div>
+      <div class="time-sub">MINUTES PLAN</div>
+      <ul class="time-items">
+        <li>Formula wall — scan all formulas (5 min)</li>
+        <li>3 equations: v=u+at, s=ut+½at², v²=u²+2as (4 min)</li>
+        <li>Projectile: T=2usinθ/g, H, R=u²sin2θ/g (5 min)</li>
+        <li>Graph: slope and area rules (4 min)</li>
+        <li>Top 6 CDS traps (5 min)</li>
+        <li>High yield 15 facts — quick scan (7 min)</li>
+      </ul>
+    </div>
+    <div class="time-block t10">
+      <div class="time-label">10</div>
+      <div class="time-sub">MINUTES PLAN</div>
+      <ul class="time-items">
+        <li>3 equations of motion (1 min)</li>
+        <li>R_max = u²/g at 45°; complementary angles = equal range (2 min)</li>
+        <li>1:3:5 ratio for free fall (1 min)</li>
+        <li>Slope rules: s-t → v; v-t → a; area under v-t → s (2 min)</li>
+        <li>v_rel (opposite = add, same = subtract) (2 min)</li>
+        <li>At max height: v=0, a=g (2 min)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ULTRA SHORT REVISION MAP -->
+  <div class="formula-wall" style="margin-bottom:32px;">
+    <h3>🗺️ Ultra-Short Visual Revision Map</h3>
+    <div class="fw-grid">
+      <div class="fw-item">
+        <div class="fw-label">EQUATION 1</div>
+        <div class="fw-formula">v = u + at</div>
+        <div class="fw-unit">No displacement</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">EQUATION 2</div>
+        <div class="fw-formula">s = ut + ½at²</div>
+        <div class="fw-unit">No final velocity</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">EQUATION 3</div>
+        <div class="fw-formula">v² = u² + 2as</div>
+        <div class="fw-unit">No time</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">nth SECOND</div>
+        <div class="fw-formula">sₙ = u + a(n−½)</div>
+        <div class="fw-unit">High-frequency CDS</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">FREE FALL H</div>
+        <div class="fw-formula">h = ½gt²</div>
+        <div class="fw-unit">u = 0, vertical</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">FREE FALL V</div>
+        <div class="fw-formula">v = √(2gh)</div>
+        <div class="fw-unit">Final velocity</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">PROJ: TIME</div>
+        <div class="fw-formula">T = 2u sinθ/g</div>
+        <div class="fw-unit">Total flight time</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">PROJ: HEIGHT</div>
+        <div class="fw-formula">H = u²sin²θ/2g</div>
+        <div class="fw-unit">Max height</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">PROJ: RANGE</div>
+        <div class="fw-formula">R = u²sin2θ/g</div>
+        <div class="fw-unit">Max at θ=45°</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">MAX RANGE</div>
+        <div class="fw-formula">R_max = u²/g</div>
+        <div class="fw-unit">θ = 45° always</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">CIRCULAR V</div>
+        <div class="fw-formula">v = rω</div>
+        <div class="fw-unit">Linear ↔ Angular</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">CENTRIPETAL a</div>
+        <div class="fw-formula">a = v²/r = rω²</div>
+        <div class="fw-unit">Toward center</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">PERIOD</div>
+        <div class="fw-formula">T = 2π/ω = 2πr/v</div>
+        <div class="fw-unit">Circular motion</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">RELATIVE V</div>
+        <div class="fw-formula">v_AB = v_A − v_B</div>
+        <div class="fw-unit">Vector subtraction</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">AVG SPEED</div>
+        <div class="fw-formula">= 2v₁v₂/(v₁+v₂)</div>
+        <div class="fw-unit">Equal distances</div>
+      </div>
+      <div class="fw-item">
+        <div class="fw-label">BRAKING DIST</div>
+        <div class="fw-formula">s = v²/2a</div>
+        <div class="fw-unit">∝ v² (double speed → 4×)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="text-align:center; padding:32px 0 20px; border-top:1px solid var(--border);">
+    <p style="font-family:'Playfair Display',serif; font-size:1.1rem; color:var(--accent-gold); margin-bottom:8px;">Kinematics Mastered. CDS 2 2026 Ready. 🎯</p>
+    <p style="font-size:0.75rem; color:var(--text-muted);">Premium Mind Map · UPSC Physics · Built for Toppers</p>
+  </div>
+
+</main>
+
+<script>
+  function toggleBranch(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.branch-chevron');
+    header.classList.toggle('open');
+    if (body) body.classList.toggle('open');
+    if (chevron) chevron.classList.toggle('open');
+  }
+
+  function toggleQA(qEl) {
+    const ans = qEl.nextElementSibling;
+    if (ans) ans.classList.toggle('open');
+  }
+
+  function scrollTo(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // close sidebar on mobile
+      if (window.innerWidth < 900) {
+        document.getElementById('sidebar').classList.remove('open');
+      }
+    }
+  }
+
+  // Highlight active TOC link on scroll
+  const sections = ['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17'];
+  const tocLinks = document.querySelectorAll('.toc-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        if (window.scrollY >= el.offsetTop - 100) current = id;
+      }
+    });
+    tocLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Open first branch of section 3 on load
+  document.querySelectorAll('.branch-header.open').forEach(h => {
+    h.nextElementSibling && h.nextElementSibling.classList.add('open');
+  });
+</script>
+</body>
+</html>

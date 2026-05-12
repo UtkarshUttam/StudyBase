@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oceans & Oceanography — CDS 2 2026 | UPSC Geography Master Mind Map</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700;800&family=Fira+Code:wght@400;500;600&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #03080f;
+  --surface: #071220;
+  --surface2: #0a1a2e;
+  --surface3: #0f2240;
+  --border: rgba(0,180,255,0.12);
+  --border2: rgba(0,180,255,0.22);
+  --text: #d8eeff;
+  --text-muted: #6a90b8;
+  --ocean-deep: #003d6b;
+  --ocean-mid: #0077b6;
+  --ocean-light: #00b4d8;
+  --ocean-surface: #90e0ef;
+  --accent-teal: #00cfcf;
+  --accent-gold: #ffd166;
+  --accent-coral: #ff6b6b;
+  --accent-green: #06d6a0;
+  --accent-purple: #7b5ea7;
+  --accent-orange: #f4a261;
+  --accent-lime: #80b918;
+  --glow-ocean: 0 0 24px rgba(0,180,255,0.25);
+  --glow-gold: 0 0 20px rgba(255,209,102,0.25);
+  --shadow: 0 4px 40px rgba(0,0,20,0.7);
+  --r: 14px;
+  --r-sm: 8px;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(0,100,180,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 90%, rgba(0,60,120,0.05) 0%, transparent 50%);
+}
+
+/* ===== WAVES HEADER BG ===== */
+.wave-bg {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* ===== SIDEBAR ===== */
+#sidebar {
+  position: fixed;
+  left: 0; top: 0;
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(180deg, #071522 0%, #03080f 100%);
+  border-right: 1px solid var(--border);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 0;
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+}
+#sidebar::-webkit-scrollbar { width: 3px; }
+#sidebar::-webkit-scrollbar-thumb { background: var(--ocean-deep); border-radius: 3px; }
+
+.sb-header {
+  padding: 22px 20px 18px;
+  background: linear-gradient(135deg, rgba(0,119,182,0.25), rgba(0,60,120,0.15));
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.sb-header::before {
+  content: '🌊';
+  position: absolute;
+  right: 12px; top: 12px;
+  font-size: 2rem;
+  opacity: 0.15;
+}
+.sb-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--ocean-surface);
+  line-height: 1.3;
+}
+.sb-subtitle {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-family: 'Fira Code', monospace;
+  letter-spacing: 0.5px;
+}
+
+.toc-group { padding: 10px 0 4px; }
+.toc-group-label {
+  padding: 4px 18px 6px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: 'Fira Code', monospace;
+  opacity: 0.7;
+}
+.toc-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 18px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: all 0.2s;
+  text-decoration: none;
+  user-select: none;
+}
+.toc-item:hover { color: var(--ocean-light); border-left-color: var(--ocean-light); background: rgba(0,180,255,0.05); }
+.toc-item.active { color: var(--accent-teal); border-left-color: var(--accent-teal); background: rgba(0,207,207,0.07); }
+.toc-item .toc-icon { font-size: 0.85rem; flex-shrink: 0; width: 18px; text-align: center; }
+.toc-item.gold:hover, .toc-item.gold.active { color: var(--accent-gold); border-left-color: var(--accent-gold); background: rgba(255,209,102,0.06); }
+.toc-item.coral:hover, .toc-item.coral.active { color: var(--accent-coral); border-left-color: var(--accent-coral); background: rgba(255,107,107,0.06); }
+.toc-item.green:hover, .toc-item.green.active { color: var(--accent-green); border-left-color: var(--accent-green); background: rgba(6,214,160,0.06); }
+
+#mob-toggle {
+  display: none;
+  position: fixed;
+  top: 12px; left: 12px;
+  z-index: 1100;
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  color: var(--ocean-light);
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--glow-ocean);
+}
+
+/* ===== MAIN CONTENT ===== */
+#main {
+  margin-left: 250px;
+  padding: 36px 40px 80px;
+  max-width: 1160px;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, #030d1c 0%, #071a33 50%, #03100a 100%);
+  border: 1px solid rgba(0,180,255,0.2);
+  border-radius: 20px;
+  padding: 52px 52px 44px;
+  margin-bottom: 44px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 60px rgba(0,50,120,0.4);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(0,119,182,0.15) 0%, transparent 65%);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -50px; left: 10%;
+  width: 300px; height: 200px;
+  background: radial-gradient(ellipse, rgba(0,207,207,0.06) 0%, transparent 70%);
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,180,255,0.1);
+  border: 1px solid rgba(0,180,255,0.25);
+  color: var(--ocean-light);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  font-family: 'Fira Code', monospace;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 16px;
+  background: linear-gradient(120deg, #d8eeff 0%, #00b4d8 45%, #ffd166 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-desc {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  max-width: 580px;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+.hero-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  background: var(--surface3);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-family: 'Fira Code', monospace;
+  transition: all 0.2s;
+}
+.chip.active { color: var(--accent-teal); border-color: rgba(0,207,207,0.3); background: rgba(0,207,207,0.07); }
+
+/* ===== SECTION HEADER ===== */
+.sec-hdr {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 52px 0 24px;
+  scroll-margin-top: 24px;
+}
+.sec-badge {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.sb-ocean { background: rgba(0,180,255,0.12); color: var(--ocean-light); border: 1px solid rgba(0,180,255,0.25); }
+.sb-teal { background: rgba(0,207,207,0.12); color: var(--accent-teal); border: 1px solid rgba(0,207,207,0.25); }
+.sb-gold { background: rgba(255,209,102,0.12); color: var(--accent-gold); border: 1px solid rgba(255,209,102,0.25); }
+.sb-coral { background: rgba(255,107,107,0.12); color: var(--accent-coral); border: 1px solid rgba(255,107,107,0.25); }
+.sb-green { background: rgba(6,214,160,0.12); color: var(--accent-green); border: 1px solid rgba(6,214,160,0.25); }
+.sb-purple { background: rgba(123,94,167,0.12); color: var(--accent-purple); border: 1px solid rgba(123,94,167,0.25); }
+.sb-orange { background: rgba(244,162,97,0.12); color: var(--accent-orange); border: 1px solid rgba(244,162,97,0.25); }
+.sb-lime { background: rgba(128,185,24,0.12); color: var(--accent-lime); border: 1px solid rgba(128,185,24,0.25); }
+
+.sec-info h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 800; color: var(--text); line-height: 1.2; }
+.sec-info p { font-size: 0.76rem; color: var(--text-muted); margin-top: 3px; }
+
+/* ===== BRANCH (collapsible) ===== */
+.branch {
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  margin-bottom: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: border-color 0.25s;
+}
+.branch:hover { border-color: rgba(0,180,255,0.28); }
+.branch-hdr {
+  padding: 15px 20px;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.18s;
+}
+.branch-hdr:hover { background: rgba(255,255,255,0.025); }
+.branch-left { display: flex; align-items: center; gap: 12px; }
+.b-icon {
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.bi-o { background: rgba(0,180,255,0.12); }
+.bi-t { background: rgba(0,207,207,0.12); }
+.bi-g { background: rgba(255,209,102,0.12); }
+.bi-c { background: rgba(255,107,107,0.12); }
+.bi-gr { background: rgba(6,214,160,0.12); }
+.bi-p { background: rgba(123,94,167,0.12); }
+.bi-or { background: rgba(244,162,97,0.12); }
+.bi-l { background: rgba(128,185,24,0.12); }
+
+.branch-title { font-weight: 700; font-size: 0.92rem; }
+.b-chevron { color: var(--text-muted); font-size: 0.75rem; transition: transform 0.3s; flex-shrink: 0; }
+.branch-hdr.open .b-chevron { transform: rotate(90deg); }
+.branch-body { display: none; padding: 0 20px 22px; border-top: 1px solid var(--border); }
+.branch-body.open { display: block; }
+
+/* ===== GRIDS ===== */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 16px; }
+.g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 14px; }
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 15px;
+}
+.card h4 { font-size: 0.82rem; font-weight: 700; margin-bottom: 9px; display: flex; align-items: center; gap: 6px; }
+.card p, .card li { font-size: 0.79rem; color: var(--text-muted); line-height: 1.65; }
+.card ul { padding-left: 16px; }
+.card.bl { border-left: 3px solid var(--ocean-light); }
+.card.bt { border-left: 3px solid var(--accent-teal); }
+.card.bg { border-left: 3px solid var(--accent-gold); }
+.card.bc { border-left: 3px solid var(--accent-coral); }
+.card.bgr { border-left: 3px solid var(--accent-green); }
+.card.bp { border-left: 3px solid var(--accent-purple); }
+.card.bo { border-left: 3px solid var(--accent-orange); }
+
+/* ===== FACT CARD ===== */
+.fact-card {
+  background: var(--surface3);
+  border: 1px solid rgba(0,180,255,0.22);
+  border-radius: var(--r-sm);
+  padding: 14px 18px;
+  margin: 12px 0;
+  position: relative;
+}
+.fact-card::before {
+  content: 'KEY FACT';
+  position: absolute; top: -1px; right: 12px;
+  background: var(--ocean-light);
+  color: #000;
+  font-size: 0.58rem; font-weight: 800;
+  letter-spacing: 1.2px; padding: 2px 8px;
+  border-radius: 0 0 6px 6px;
+  font-family: 'Fira Code', monospace;
+}
+.fact-card.gold::before { background: var(--accent-gold); content: 'KEY FACT'; }
+.fact-card.coral::before { background: var(--accent-coral); color: #fff; content: 'KEY FACT'; }
+.fact-card.green::before { background: var(--accent-green); color: #000; content: 'KEY FACT'; }
+.fact-main { font-family: 'Fira Code', monospace; font-size: 0.95rem; font-weight: 600; color: var(--accent-teal); padding: 8px 0 4px; }
+.fact-sub { font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; }
+.fact-detail { font-size: 0.72rem; color: var(--text-muted); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); line-height: 1.75; font-family: 'Fira Code', monospace; }
+
+/* ===== TRAP CARD ===== */
+.trap {
+  background: rgba(255,107,107,0.06);
+  border: 1px solid rgba(255,107,107,0.22);
+  border-radius: var(--r-sm);
+  padding: 14px;
+  margin: 12px 0;
+}
+.trap h4 { color: var(--accent-coral); font-size: 0.82rem; margin-bottom: 8px; }
+.trap p, .trap li { font-size: 0.78rem; color: #ff9999; line-height: 1.65; }
+.trap ul { padding-left: 16px; }
+
+/* ===== MNEMONIC ===== */
+.mnem {
+  background: rgba(123,94,167,0.08);
+  border: 1px solid rgba(123,94,167,0.22);
+  border-radius: var(--r-sm);
+  padding: 15px;
+  margin: 12px 0;
+}
+.mnem h4 { color: var(--accent-purple); font-size: 0.82rem; margin-bottom: 8px; }
+.mnem-hl { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--accent-purple); margin: 6px 0; }
+.mnem p { font-size: 0.79rem; color: #b090e0; line-height: 1.65; }
+
+/* ===== PYQ CARD ===== */
+.pyq {
+  background: rgba(255,209,102,0.06);
+  border: 1px solid rgba(255,209,102,0.22);
+  border-radius: var(--r-sm);
+  padding: 15px;
+  margin: 12px 0;
+}
+.pyq-lbl {
+  display: inline-block;
+  background: var(--accent-gold);
+  color: #000;
+  font-size: 0.6rem; font-weight: 800;
+  letter-spacing: 1.5px; padding: 2px 8px;
+  border-radius: 4px; margin-bottom: 10px;
+  font-family: 'Fira Code', monospace;
+}
+.pyq p { font-size: 0.79rem; color: var(--text-muted); line-height: 1.7; }
+.pyq .ans { color: var(--accent-gold); font-weight: 700; margin-top: 8px; font-size: 0.79rem; }
+
+/* ===== QUICK RECALL ===== */
+.qr-box {
+  background: linear-gradient(135deg, rgba(255,209,102,0.07), rgba(255,209,102,0.03));
+  border: 1px solid rgba(255,209,102,0.25);
+  border-radius: var(--r);
+  padding: 20px 22px;
+  margin: 16px 0;
+}
+.qr-box::before {
+  content: '⚡ QUICK RECALL';
+  display: block;
+  font-size: 0.62rem; font-weight: 800;
+  letter-spacing: 2px; color: var(--accent-gold);
+  font-family: 'Fira Code', monospace;
+  margin-bottom: 12px;
+}
+.qr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px,1fr)); gap: 10px; }
+.qr-item {
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: 10px 13px;
+  font-size: 0.77rem;
+}
+.qr-item strong { color: var(--accent-gold); display: block; font-size: 0.7rem; margin-bottom: 3px; }
+
+/* ===== TABLE ===== */
+.ctable { width: 100%; border-collapse: collapse; font-size: 0.77rem; margin-top: 14px; }
+.ctable th { background: var(--surface3); color: var(--ocean-light); padding: 10px 13px; text-align: left; font-weight: 700; font-size: 0.72rem; border-bottom: 1px solid var(--border); }
+.ctable td { padding: 9px 13px; border-bottom: 1px solid rgba(0,100,180,0.1); color: var(--text-muted); vertical-align: top; }
+.ctable tr:hover td { background: rgba(255,255,255,0.018); }
+.ctable td.hl { color: var(--accent-teal); font-weight: 600; }
+.ctable td.gold { color: var(--accent-gold); font-weight: 600; }
+.ctable td.coral { color: var(--accent-coral); }
+
+/* ===== CONNECTOR ROW ===== */
+.conn-row { display: flex; align-items: center; gap: 8px; margin: 7px 0; font-size: 0.79rem; flex-wrap: wrap; }
+.conn-node { background: var(--surface3); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; white-space: nowrap; font-size: 0.77rem; }
+.conn-arrow { color: var(--ocean-light); font-size: 0.85rem; }
+.conn-arrow.warm { color: var(--accent-coral); }
+.conn-arrow.cold { color: var(--ocean-surface); }
+
+/* ===== TAGS ===== */
+.tag { display: inline-block; font-size: 0.63rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-right: 4px; font-family: 'Fira Code', monospace; letter-spacing: 0.4px; }
+.to { background: rgba(0,180,255,0.13); color: var(--ocean-light); }
+.tt { background: rgba(0,207,207,0.13); color: var(--accent-teal); }
+.tg { background: rgba(255,209,102,0.13); color: var(--accent-gold); }
+.tc { background: rgba(255,107,107,0.13); color: var(--accent-coral); }
+.tgr { background: rgba(6,214,160,0.13); color: var(--accent-green); }
+.tp { background: rgba(123,94,167,0.13); color: var(--accent-purple); }
+
+/* ===== HIGHLIGHT ===== */
+.hl { background: rgba(255,209,102,0.12); color: var(--accent-gold); padding: 1px 5px; border-radius: 3px; font-weight: 700; }
+.hl-o { background: rgba(0,180,255,0.12); color: var(--ocean-surface); padding: 1px 5px; border-radius: 3px; font-weight: 700; }
+.hl-c { background: rgba(255,107,107,0.12); color: var(--accent-coral); padding: 1px 5px; border-radius: 3px; font-weight: 700; }
+.hl-g { background: rgba(6,214,160,0.12); color: var(--accent-green); padding: 1px 5px; border-radius: 3px; font-weight: 700; }
+
+/* ===== DIVIDER ===== */
+.div { height: 1px; background: linear-gradient(90deg, transparent, var(--border2), transparent); margin: 36px 0; }
+
+/* ===== Q&A ===== */
+.qa { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 12px; overflow: hidden; }
+.qa-q { padding: 14px 18px; cursor: pointer; display: flex; align-items: flex-start; gap: 12px; transition: background 0.18s; }
+.qa-q:hover { background: rgba(255,255,255,0.025); }
+.qa-n { background: var(--accent-gold); color: #000; font-size: 0.62rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; flex-shrink: 0; margin-top: 2px; font-family: 'Fira Code', monospace; }
+.qa-n.upsc { background: var(--accent-purple); color: #fff; }
+.qa-txt { font-size: 0.82rem; color: var(--text); flex: 1; line-height: 1.6; }
+.qa-ans { display: none; padding: 14px 18px 16px 50px; font-size: 0.79rem; color: var(--text-muted); line-height: 1.75; border-top: 1px solid var(--border); }
+.qa-ans.open { display: block; }
+.qa-ans .correct { color: var(--accent-green); font-weight: 700; }
+.qa-ans .exp { margin-top: 7px; }
+
+/* ===== CURRENT CARDS ===== */
+.cur-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 13px 15px;
+}
+.cur-card.warm { border-top: 3px solid var(--accent-coral); }
+.cur-card.cold { border-top: 3px solid var(--ocean-surface); }
+.cur-card h5 { font-size: 0.8rem; font-weight: 700; margin-bottom: 7px; display: flex; align-items: center; gap: 6px; }
+.cur-card.warm h5 { color: var(--accent-coral); }
+.cur-card.cold h5 { color: var(--ocean-surface); }
+.cur-card p { font-size: 0.74rem; color: var(--text-muted); line-height: 1.6; }
+
+/* ===== NIGHT FRAMEWORK ===== */
+.night-block {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 22px 22px 22px 26px;
+  position: relative; overflow: hidden;
+}
+.night-block::before { content:''; position:absolute; left:0;top:0; width:4px; height:100%; }
+.nb-60::before { background: var(--ocean-light); }
+.nb-30::before { background: var(--accent-gold); }
+.nb-10::before { background: var(--accent-green); }
+.nb-label { font-family:'Fira Code',monospace; font-size:1.7rem; font-weight:700; line-height:1; margin-bottom:3px; }
+.nb-60 .nb-label { color: var(--ocean-light); }
+.nb-30 .nb-label { color: var(--accent-gold); }
+.nb-10 .nb-label { color: var(--accent-green); }
+.nb-sub { font-size:0.68rem; color:var(--text-muted); font-family:'Fira Code',monospace; margin-bottom:14px; }
+.nb-list { list-style:none; }
+.nb-list li { font-size:0.77rem; color:var(--text-muted); padding:4px 0 4px 16px; position:relative; border-bottom:1px solid rgba(0,100,180,0.07); }
+.nb-list li:last-child { border:none; }
+.nb-list li::before { content:'→'; position:absolute; left:0; color:var(--accent-teal); font-size:0.72rem; }
+
+/* ===== FORMULA WALL ===== */
+.fw { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 26px; margin: 22px 0; }
+.fw h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--accent-gold); margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.fw-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(195px,1fr)); gap: 12px; }
+.fw-item { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 14px; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+.fw-item:hover { border-color: rgba(0,180,255,0.4); transform: translateY(-2px); }
+.fw-lbl { font-size: 0.62rem; color: var(--text-muted); font-family: 'Fira Code', monospace; margin-bottom: 8px; letter-spacing: 0.5px; }
+.fw-val { font-family: 'Fira Code', monospace; font-size: 0.9rem; font-weight: 600; color: var(--accent-teal); line-height: 1.4; }
+.fw-note { font-size: 0.62rem; color: var(--text-muted); margin-top: 6px; }
+
+/* ===== OCEAN PROFILE SVG ===== */
+.ocean-profile { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r-sm); padding: 16px; text-align: center; }
+.ocean-profile h5 { font-size: 0.78rem; color: var(--ocean-light); margin-bottom: 12px; font-family: 'Fira Code', monospace; }
+.ocean-profile p { font-size: 0.72rem; color: var(--text-muted); margin-top: 8px; }
+
+/* ===== CURRENT FLOW MAP SVG ===== */
+.cur-map-wrap { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; margin: 16px 0; overflow-x: auto; }
+.cur-map-wrap h5 { font-size: 0.78rem; color: var(--ocean-light); margin-bottom: 12px; font-family: 'Fira Code', monospace; }
+
+/* ===== SUB BRANCH ===== */
+.sub-br { border-left: 2px solid var(--border); margin-left: 14px; padding-left: 16px; margin-top: 14px; }
+.sub-br-title { font-size: 0.79rem; font-weight: 700; color: var(--ocean-light); margin-bottom: 9px; display: flex; align-items: center; gap: 6px; }
+
+/* ===== NUM LIST ===== */
+.nl { list-style: none; padding: 0; }
+.nl li { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid rgba(0,80,160,0.08); font-size: 0.79rem; color: var(--text-muted); }
+.nl li:last-child { border: none; }
+.nl-num { width: 22px; height: 22px; border-radius: 50%; background: var(--surface3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.62rem; font-weight: 800; color: var(--ocean-light); flex-shrink: 0; font-family: 'Fira Code', monospace; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 920px) {
+  #sidebar { transform: translateX(-100%); }
+  #sidebar.open { transform: translateX(0); }
+  #mob-toggle { display: flex; }
+  #main { margin-left: 0; padding: 60px 18px 60px; }
+  .hero { padding: 36px 22px 28px; }
+  .hero h1 { font-size: 2.2rem; }
+  .g2,.g3,.g4 { grid-template-columns: 1fr; }
+  .fw-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) { .fw-grid { grid-template-columns: 1fr; } }
+
+/* ===== PRINT ===== */
+@media print {
+  #sidebar, #mob-toggle { display: none !important; }
+  #main { margin-left: 0; padding: 20px; }
+  .branch-body { display: block !important; }
+  * { color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
+.hero { animation: fadeUp 0.65s ease both; }
+.branch { animation: fadeUp 0.4s ease both; }
+
+/* ===== OCEAN DEPTH PROFILE ===== */
+.depth-layer {
+  padding: 8px 14px;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dl1 { background: rgba(144,224,239,0.18); color: var(--ocean-surface); }
+.dl2 { background: rgba(0,180,255,0.15); color: var(--ocean-light); }
+.dl3 { background: rgba(0,119,182,0.2); color: #6dbfff; }
+.dl4 { background: rgba(0,61,107,0.35); color: #4a9adb; }
+.dl5 { background: rgba(0,30,60,0.5); color: #3070a0; }
+
+/* ===== SALINITY SCALE ===== */
+.sal-scale { display: flex; border-radius: 6px; overflow: hidden; height: 28px; margin: 10px 0; }
+.sal-seg { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-family: 'Fira Code', monospace; font-weight: 700; }
+
+/* ===== CONCEPT SPOKE ===== */
+.spoke-wrap { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--r); padding: 20px; margin: 14px 0; }
+.spoke-center {
+  background: linear-gradient(135deg, rgba(0,119,182,0.25), rgba(0,207,207,0.15));
+  border: 2px solid rgba(0,180,255,0.35);
+  border-radius: 50%;
+  width: 130px; height: 130px;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column;
+  margin: 0 auto 18px;
+  box-shadow: var(--glow-ocean);
+  text-align: center;
+}
+.spoke-center h3 { font-family: 'Cormorant Garamond', serif; font-size: 0.88rem; color: var(--accent-teal); line-height: 1.3; }
+.spoke-nodes { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.spoke-node {
+  background: var(--surface3); border: 1px solid var(--border);
+  border-radius: 9px; padding: 9px 14px;
+  font-size: 0.76rem; color: var(--text-muted);
+  text-align: center; transition: all 0.2s;
+}
+.spoke-node:hover { border-color: rgba(0,180,255,0.3); color: var(--text); transform: scale(1.03); }
+
+.facts-table { width: 100%; border-collapse: collapse; font-size: 0.77rem; }
+.facts-table th { background: var(--surface3); color: var(--ocean-light); padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.7rem; font-family: 'Fira Code', monospace; }
+.facts-table td { padding: 9px 12px; border-bottom: 1px solid rgba(0,80,160,0.08); color: var(--text-muted); }
+.facts-table td:first-child { color: var(--accent-teal); font-family: 'Fira Code', monospace; font-weight: 600; font-size: 0.75rem; }
+.facts-table tr:hover td { background: rgba(255,255,255,0.02); }
+</style>
+</head>
+<body>
+
+<button id="mob-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰</button>
+
+<!-- ======= SIDEBAR ======= -->
+<nav id="sidebar">
+  <div class="sb-header">
+    <div class="sb-title">Oceans &<br>Oceanography</div>
+    <div class="sb-subtitle">CDS 2 2026 · UPSC Geography</div>
+  </div>
+
+  <div class="toc-group">
+    <div class="toc-group-label">Core Topics</div>
+    <div class="toc-item" onclick="goTo('s1')"><span class="toc-icon">🌊</span> Foundations</div>
+    <div class="toc-item" onclick="goTo('s2')"><span class="toc-icon">🗻</span> Ocean Floor</div>
+    <div class="toc-item" onclick="goTo('s3')"><span class="toc-icon">🌡️</span> Temperature</div>
+    <div class="toc-item" onclick="goTo('s4')"><span class="toc-icon">🧂</span> Salinity</div>
+    <div class="toc-item" onclick="goTo('s5')"><span class="toc-icon">🌀</span> Ocean Currents</div>
+    <div class="toc-item" onclick="goTo('s6')"><span class="toc-icon">🌕</span> Waves, Tides & Tsunamis</div>
+    <div class="toc-item" onclick="goTo('s7')"><span class="toc-icon">💎</span> Marine Resources</div>
+    <div class="toc-item" onclick="goTo('s8')"><span class="toc-icon">🪸</span> Coral Reefs</div>
+    <div class="toc-item" onclick="goTo('s9')"><span class="toc-icon">🌤️</span> Ocean-Atmosphere</div>
+    <div class="toc-item" onclick="goTo('s10')"><span class="toc-icon">🇮🇳</span> Indian Ocean Focus</div>
+  </div>
+  <div class="toc-group">
+    <div class="toc-group-label">Revision Tools</div>
+    <div class="toc-item gold" onclick="goTo('s11')"><span class="toc-icon">🔗</span> Advanced Connections</div>
+    <div class="toc-item gold" onclick="goTo('s12')"><span class="toc-icon">📋</span> Facts Master Sheet</div>
+    <div class="toc-item coral" onclick="goTo('s13')"><span class="toc-icon">⚠️</span> Traps & Pitfalls</div>
+    <div class="toc-item gold" onclick="goTo('s14')"><span class="toc-icon">🏆</span> PYQ Analysis</div>
+    <div class="toc-item" onclick="goTo('s15')"><span class="toc-icon">🧠</span> Mnemonics</div>
+    <div class="toc-item" onclick="goTo('s16')"><span class="toc-icon">🗺️</span> Map Practice</div>
+  </div>
+  <div class="toc-group">
+    <div class="toc-group-label">Final Prep</div>
+    <div class="toc-item gold" onclick="goTo('s17')"><span class="toc-icon">📝</span> 20 CDS Prelims Qs</div>
+    <div class="toc-item" onclick="goTo('s18')"><span class="toc-icon">🏛️</span> 10 UPSC Conceptual Qs</div>
+    <div class="toc-item green" onclick="goTo('s19')"><span class="toc-icon">🌙</span> Night Before Framework</div>
+  </div>
+</nav>
+
+<!-- ======= MAIN ======= -->
+<main id="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">🌊 GEOGRAPHY · OCEANOGRAPHY · CDS 2 2026</div>
+  <h1>Oceans &<br>Oceanography</h1>
+  <p class="hero-desc">Premium digital revision dashboard for CDS 2 2026 & UPSC Civil Services Geography. Complete conceptual coverage of all oceanographic topics with exam-ready annotations, PYQ traps, memory systems, and current affairs linkages.</p>
+  <div class="hero-chips">
+    <span class="chip active">🎯 CDS Objective</span>
+    <span class="chip active">🏛️ UPSC Analytical</span>
+    <span class="chip active">🗺️ Map-Based Questions</span>
+    <span class="chip">🌀 Ocean Currents</span>
+    <span class="chip">🧂 Salinity Patterns</span>
+    <span class="chip">🌡️ Thermocline</span>
+    <span class="chip">🇮🇳 Indian Ocean Strategy</span>
+    <span class="chip">🪸 Coral Reefs</span>
+    <span class="chip">🌊 ENSO · El Niño</span>
+  </div>
+</div>
+
+<!-- ====================== S1: FOUNDATIONS ====================== -->
+<div class="sec-hdr" id="s1">
+  <div class="sec-badge sb-ocean">01</div>
+  <div class="sec-info"><h2>Foundation of Oceanography</h2><p>Hydrosphere · Ocean distribution · Floor relief · Strategic importance</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr open" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-o">🌊</div><span class="branch-title">Oceanography — Definition & Scope</span><span class="tag to">DEFINITION</span></div>
+    <span class="b-chevron open">▶</span>
+  </div>
+  <div class="branch-body open">
+    <div class="g2">
+      <div class="card bl">
+        <h4>📌 What is Oceanography?</h4>
+        <p>The scientific study of the <span class="hl-o">oceans</span> — their physical, chemical, biological, and geological characteristics. Encompasses currents, tides, marine life, ocean floor, and ocean-atmosphere interactions.</p>
+        <div style="margin-top:10px;" class="g2">
+          <div><span class="tag to">Physical</span><p style="font-size:0.72rem;margin-top:4px;color:var(--text-muted)">Temperature, currents, waves, tides</p></div>
+          <div><span class="tag tgr">Biological</span><p style="font-size:0.72rem;margin-top:4px;color:var(--text-muted)">Marine ecosystems, fisheries</p></div>
+          <div><span class="tag tt">Chemical</span><p style="font-size:0.72rem;margin-top:4px;color:var(--text-muted)">Salinity, dissolved gases, nutrients</p></div>
+          <div><span class="tag tg">Geological</span><p style="font-size:0.72rem;margin-top:4px;color:var(--text-muted)">Sea floor, trenches, ridges</p></div>
+        </div>
+      </div>
+      <div class="card bg">
+        <h4>🌐 Hydrosphere — Key Numbers</h4>
+        <ul>
+          <li>Earth's surface: <span class="hl">71% ocean</span>, 29% land</li>
+          <li>Total water: <span class="hl">97.5% in oceans</span> (saline)</li>
+          <li>Freshwater: only 2.5% of total</li>
+          <li>Average ocean depth: <span class="hl-o">3,688 m</span></li>
+          <li>Deepest point: Mariana Trench — <span class="hl-c">11,034 m</span></li>
+          <li>Largest ocean: Pacific (~<span class="hl">165 million km²</span>)</li>
+          <li>Southern Ocean (5th ocean): recognized in 2000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="g3" style="margin-top:14px;">
+      <div class="card bl">
+        <h4>🗺️ Ocean Size Ranking</h4>
+        <ol class="nl">
+          <li><div class="nl-num">1</div><span><span class="hl-o">Pacific</span> — 165.25 million km² (largest + deepest)</span></li>
+          <li><div class="nl-num">2</div><span><span class="hl-o">Atlantic</span> — 106.4 million km² (S-shaped)</span></li>
+          <li><div class="nl-num">3</div><span><span class="hl-o">Indian</span> — 70.56 million km² (landlocked on 3 sides)</span></li>
+          <li><div class="nl-num">4</div><span><span class="hl-o">Southern</span> — 21.96 million km² (5th ocean)</span></li>
+          <li><div class="nl-num">5</div><span><span class="hl-o">Arctic</span> — 14.06 million km² (smallest)</span></li>
+        </ol>
+      </div>
+      <div class="card bg">
+        <h4>🌟 Strategic Importance of Oceans</h4>
+        <ul>
+          <li>~90% of world trade by sea</li>
+          <li>Regulate global climate & weather</li>
+          <li>Food security — fisheries, aquaculture</li>
+          <li>Mineral & energy resources</li>
+          <li>Defence — naval power projection</li>
+          <li>Carbon sink — absorbs 30% of CO₂</li>
+          <li>Tourism & coastal livelihoods</li>
+        </ul>
+      </div>
+      <div class="card bc">
+        <h4>⚠️ Indian Ocean — Unique Features</h4>
+        <ul>
+          <li>Only ocean named after a country (India)</li>
+          <li>Bordered by Asia, Africa, Australia</li>
+          <li>Semi-enclosed — no northern opening</li>
+          <li>Seasonal current reversal (monsoon driven)</li>
+          <li>Hosts critical chokepoints: Hormuz, Malacca, Bab-el-Mandeb</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>🧠 Ocean Ranking Mnemonic — "PAISA"</h4>
+      <div class="mnem-hl">P·A·I·S·A</div>
+      <p><strong>P</strong>acific · <strong>A</strong>tlantic · <strong>I</strong>ndian · <strong>S</strong>outhern · <strong>A</strong>rctic — in descending order of size</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S2: OCEAN FLOOR ====================== -->
+<div class="sec-hdr" id="s2">
+  <div class="sec-badge sb-teal">02</div>
+  <div class="sec-info"><h2>Ocean Floor Topography</h2><p>Continental shelf · Slope · Abyssal plains · Ridges · Trenches · Seamounts</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr open" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-t">🗻</div><span class="branch-title">Ocean Floor — Zones & Features</span><span class="tag tt">HIGH YIELD</span></div>
+    <span class="b-chevron open">▶</span>
+  </div>
+  <div class="branch-body open">
+    <!-- SVG Ocean Profile -->
+    <div class="ocean-profile">
+      <h5>OCEAN FLOOR PROFILE (Cross-section)</h5>
+      <svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:680px;">
+        <rect width="700" height="220" fill="#071220" rx="8"/>
+        <!-- Water fill gradient -->
+        <defs>
+          <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#003d6b" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#001525" stop-opacity="0.9"/>
+          </linearGradient>
+        </defs>
+        <!-- Sea level line -->
+        <line x1="0" y1="30" x2="700" y2="30" stroke="#90e0ef" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="8" y="26" fill="#90e0ef" font-size="9" font-family="monospace">Sea Level</text>
+        <!-- Ocean floor profile path -->
+        <path d="M0,30 L0,55 L80,60 L160,75 L200,125 L240,155 L270,185 L310,190 L350,190 L390,185 L430,155 L460,125 L500,75 L540,60 L600,52 L630,48 L700,45 L700,30 Z" 
+              fill="url(#waterGrad)" stroke="none"/>
+        <!-- Floor line -->
+        <path d="M0,55 L80,60 L160,75 L200,125 L240,155 L270,185 L310,190 L350,190 L390,185 L430,155 L460,125 L500,75 L540,60 L600,52 L630,48 L700,45"
+              stroke="#00b4d8" stroke-width="2" fill="none"/>
+        <!-- Continental shelf -->
+        <rect x="0" y="55" width="160" height="5" fill="#00cfcf" rx="1"/>
+        <text x="60" y="50" fill="#00cfcf" font-size="9" font-family="monospace" text-anchor="middle">Continental Shelf</text>
+        <!-- Continental slope -->
+        <text x="190" y="100" fill="#ffd166" font-size="9" font-family="monospace">Slope</text>
+        <!-- Trench indicator -->
+        <line x1="310" y1="192" x2="310" y2="215" stroke="#ff6b6b" stroke-width="1.5"/>
+        <text x="290" y="213" fill="#ff6b6b" font-size="9" font-family="monospace">Trench</text>
+        <!-- Abyssal plain -->
+        <text x="350" y="208" fill="#6a90b8" font-size="9" font-family="monospace" text-anchor="middle">Abyssal Plain</text>
+        <!-- Mid ocean ridge right -->
+        <path d="M580,52 L600,38 L620,32 L640,38 L660,52" stroke="#06d6a0" stroke-width="2" fill="none"/>
+        <text x="620" y="28" fill="#06d6a0" font-size="9" font-family="monospace" text-anchor="middle">MOR</text>
+        <!-- Depth labels -->
+        <text x="680" y="65" fill="#3a6080" font-size="8" font-family="monospace">200m</text>
+        <text x="680" y="130" fill="#3a6080" font-size="8" font-family="monospace">2000m</text>
+        <text x="680" y="195" fill="#3a6080" font-size="8" font-family="monospace">6000m+</text>
+        <!-- Seamount left -->
+        <path d="M100,60 L115,45 L130,60" stroke="#f4a261" stroke-width="1.5" fill="none"/>
+        <text x="115" y="42" fill="#f4a261" font-size="8" font-family="monospace" text-anchor="middle">Seamount</text>
+      </svg>
+      <p>Cross-section showing major ocean floor zones from continental shelf to deep sea trenches</p>
+    </div>
+
+    <!-- Depth layers visual -->
+    <div style="margin-top:16px;">
+      <div class="depth-layer dl1"><span>🌤️ Sunlight Zone (Epipelagic)</span><span>0 – 200 m</span></div>
+      <div class="depth-layer dl2"><span>🌒 Twilight Zone (Mesopelagic)</span><span>200 – 1,000 m</span></div>
+      <div class="depth-layer dl3"><span>🌑 Midnight Zone (Bathypelagic)</span><span>1,000 – 4,000 m</span></div>
+      <div class="depth-layer dl4"><span>⬛ Abyssal Zone (Abyssopelagic)</span><span>4,000 – 6,000 m</span></div>
+      <div class="depth-layer dl5"><span>🔲 Hadal Zone (Hadalpelagic)</span><span>6,000 m+ (Trenches)</span></div>
+    </div>
+
+    <div class="g3" style="margin-top:16px;">
+      <div class="card bt">
+        <h4 style="color:var(--accent-teal)">🏝️ Continental Shelf</h4>
+        <ul>
+          <li>Gentle slope extension of continent</li>
+          <li>Depth: <span class="hl-o">0–200 m</span></li>
+          <li>Width: 70–80 km (avg); varies 0–1500 km</li>
+          <li><span class="hl">Richest fishing grounds</span></li>
+          <li>Major oil & gas deposits</li>
+          <li>India's EEZ extends over Continental Shelf</li>
+          <li>Example: Grand Banks (Atlantic fisheries)</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4 style="color:var(--accent-gold)">📉 Continental Slope</h4>
+        <ul>
+          <li>Steep descent from shelf edge</li>
+          <li>Depth: <span class="hl">200–4,000 m</span></li>
+          <li>Angle: 3°–6° (steeper than shelf)</li>
+          <li>True boundary between continent & ocean floor</li>
+          <li>Submarine canyons cut through slope</li>
+          <li>Turbidity currents deposit sediments</li>
+        </ul>
+      </div>
+      <div class="card bl">
+        <h4 style="color:var(--ocean-light)">⬛ Abyssal Plains</h4>
+        <ul>
+          <li>Deep, flat ocean floor</li>
+          <li>Depth: <span class="hl-o">3,000–6,000 m</span></li>
+          <li>Covers ~50% of ocean floor</li>
+          <li>Flattest regions on Earth</li>
+          <li>Covered by fine sediments (ooze)</li>
+          <li>Contains manganese nodules (mineral wealth)</li>
+          <li>Example: Brazil Basin, Somali Basin</li>
+        </ul>
+      </div>
+      <div class="card bgr">
+        <h4 style="color:var(--accent-green)">⛰️ Mid-Oceanic Ridges (MOR)</h4>
+        <ul>
+          <li>Longest mountain chain on Earth (~<span class="hl">65,000 km</span>)</li>
+          <li>Formed by <span class="hl-g">divergent plate boundaries</span></li>
+          <li>New crust created (seafloor spreading)</li>
+          <li>Central rift valley along crest</li>
+          <li>Hydrothermal vents — unique ecosystems</li>
+          <li>Examples: Mid-Atlantic Ridge, East Pacific Rise, Carlsberg Ridge (Indian Ocean)</li>
+        </ul>
+      </div>
+      <div class="card bc">
+        <h4 style="color:var(--accent-coral)">🕳️ Oceanic Trenches</h4>
+        <ul>
+          <li>Deepest parts of ocean floor</li>
+          <li>Formed by <span class="hl-c">convergent plate boundaries</span></li>
+          <li>V-shaped, elongated depressions</li>
+          <li>Mariana Trench: <span class="hl-c">11,034 m</span> (Challenger Deep) — deepest</li>
+          <li>Tonga Trench (Pacific): 2nd deepest</li>
+          <li>Java (Sunda) Trench: deepest in Indian Ocean</li>
+          <li>Puerto Rico Trench: deepest in Atlantic</li>
+        </ul>
+      </div>
+      <div class="card bo">
+        <h4 style="color:var(--accent-orange)">🏔️ Seamounts & Guyots</h4>
+        <ul>
+          <li><strong>Seamount:</strong> Submerged volcanic mountain (summit underwater)</li>
+          <li><strong>Guyot:</strong> Flat-topped seamount (eroded by wave action)</li>
+          <li>Pacific has most seamounts (~25,000)</li>
+          <li>Rich fishing grounds (upwelling)</li>
+          <li>Strategic for submarine navigation</li>
+          <li>Emperor Seamount Chain (Pacific)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fact-card gold" style="margin-top:16px;">
+      <div class="fact-main">Important Trench Locations</div>
+      <div class="fact-detail">
+        Pacific: Mariana (deepest) · Tonga · Philippine · Japan · Kermadec<br>
+        Atlantic: Puerto Rico (deepest in Atlantic, ~8,376m)<br>
+        Indian: Java/Sunda Trench (deepest in Indian Ocean, ~7,450m)<br>
+        Arctic: Eurasia Basin
+      </div>
+    </div>
+
+    <div class="trap">
+      <h4>⚠️ CDS Floor Topography Traps</h4>
+      <ul>
+        <li>Mid-Oceanic Ridges are sites of <em>seafloor spreading</em> (NEW crust), NOT subduction</li>
+        <li>Trenches form at <em>convergent</em> boundaries, MOR at <em>divergent</em></li>
+        <li>Continental shelf is NOT deep ocean — it's submerged continental crust (up to 200m)</li>
+        <li>Guyot ≠ Seamount — Guyot has a flat top (wave-eroded)</li>
+        <li>Carlsberg Ridge is in the Indian Ocean (not Atlantic!)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S3: TEMPERATURE ====================== -->
+<div class="sec-hdr" id="s3">
+  <div class="sec-badge sb-gold">03</div>
+  <div class="sec-info"><h2>Temperature of Oceans</h2><p>Horizontal & vertical distribution · Thermocline · Climate impact</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-g">🌡️</div><span class="branch-title">Ocean Temperature — Distribution & Factors</span><span class="tag tg">CONCEPTUAL</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="g2">
+      <div class="card bg">
+        <h4>📊 Horizontal Temperature Distribution</h4>
+        <ul>
+          <li>Temperature decreases from equator to poles</li>
+          <li>Equatorial belt: <span class="hl">26–28°C</span></li>
+          <li>Tropical seas: 20–25°C</li>
+          <li>Polar seas: <span class="hl-c">−2°C to 2°C</span></li>
+          <li>Eastern margins of oceans are <span class="hl">warmer</span> (warm currents)</li>
+          <li>Western margins can be cooler (cold currents)</li>
+          <li>Southern Hemisphere: more uniform (more ocean area)</li>
+          <li>Pacific has higher avg temp than Atlantic</li>
+        </ul>
+      </div>
+      <div class="card bl">
+        <h4>📉 Vertical Temperature Distribution</h4>
+        <div class="depth-layer dl1" style="margin:8px 0 4px;"><span>Surface layer</span><span>25–30°C (0–200m)</span></div>
+        <div class="depth-layer dl2" style="margin:4px 0;"><span>Thermocline</span><span>Rapid drop (200–1000m)</span></div>
+        <div class="depth-layer dl3" style="margin:4px 0;"><span>Deep layer</span><span>2–4°C (1000–4000m)</span></div>
+        <div class="depth-layer dl4" style="margin:4px 0;"><span>Abyssal</span><span>~0–2°C (4000m+)</span></div>
+        <p style="margin-top:8px; font-size:0.72rem; color:var(--text-muted)">🔑 Below 1000m, temperature is uniformly cold everywhere</p>
+      </div>
+    </div>
+
+    <div class="sub-br">
+      <div class="sub-br-title">🌊 The Thermocline — Key Concept</div>
+      <div class="g2">
+        <div class="card bt">
+          <h4 style="color:var(--accent-teal)">Definition & Significance</h4>
+          <p>Layer of rapid temperature decrease with depth. Acts as a <span class="hl-o">barrier</span> between warm surface water and cold deep water. Most pronounced in tropical regions (5°–20° latitude).</p>
+          <ul style="margin-top:8px;">
+            <li>Absent/weak in polar regions</li>
+            <li>Critical for submarine operations (sound shadow zone)</li>
+            <li>Prevents mixing — limits nutrients to surface</li>
+            <li>Seasonal thermocline in temperate regions</li>
+          </ul>
+        </div>
+        <div class="card bg">
+          <h4>Factors Affecting Ocean Temperature</h4>
+          <ul>
+            <li>🌞 <span class="hl">Latitude</span> — primary factor</li>
+            <li>🌊 Ocean currents (warm/cold)</li>
+            <li>💨 Prevailing winds</li>
+            <li>🏔️ Unequal distribution of land & sea</li>
+            <li>🌀 Upwelling (brings cold water up)</li>
+            <li>⛅ Evaporation (cools surface)</li>
+            <li>🌧️ Precipitation (dilutes, cools)</li>
+            <li>❄️ Ice melting (reduces temp)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="qr-box">
+      <div class="qr-grid">
+        <div class="qr-item"><strong>Hottest Ocean</strong>Indian Ocean (avg surface ~27°C)</div>
+        <div class="qr-item"><strong>Coldest Ocean</strong>Arctic Ocean (below 0°C in winter)</div>
+        <div class="qr-item"><strong>Highest Surface Temp</strong>Persian Gulf — up to 35°C in summer</div>
+        <div class="qr-item"><strong>Thermocline Depth</strong>200–1000 m (tropical oceans)</div>
+        <div class="qr-item"><strong>Below 1000m</strong>Temperature uniformly 2–4°C globally</div>
+        <div class="qr-item"><strong>Warm Current Effect</strong>Raises temperature of coasts they touch</div>
+      </div>
+    </div>
+
+    <div class="trap">
+      <h4>⚠️ Temperature Traps</h4>
+      <ul>
+        <li>Bay of Bengal is warmer than Arabian Sea (lower salinity, less evaporation)</li>
+        <li>Eastern margins are NOT always warmer — depends on current system</li>
+        <li>Temperature inversion: below thermocline, cold bottom water underlies warm deep water in some cases</li>
+        <li>Polar regions: NO thermocline — water is uniformly cold from surface to bottom</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S4: SALINITY ====================== -->
+<div class="sec-hdr" id="s4">
+  <div class="sec-badge sb-teal">04</div>
+  <div class="sec-info"><h2>Salinity of Oceans</h2><p>Distribution · Factors · High & low zones · Temperature-salinity relation</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr open" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-t">🧂</div><span class="branch-title">Ocean Salinity — Measurement, Patterns & Significance</span><span class="tag tt">MOST TESTED</span></div>
+    <span class="b-chevron open">▶</span>
+  </div>
+  <div class="branch-body open">
+    <div class="g2">
+      <div class="card bt">
+        <h4>📐 Measurement & Basics</h4>
+        <ul>
+          <li>Salinity = amount of salt in <span class="hl">1000g of water</span> (parts per thousand, ‰ or ppt)</li>
+          <li>Average ocean salinity: <span class="hl">35‰</span> (3.5%)</li>
+          <li>Scale: Very Low (&lt;30‰) → Average (35‰) → High (&gt;37‰)</li>
+          <li>Dead Sea: <span class="hl-c">~340‰</span> (not an ocean — landlocked)</li>
+          <li>Expressed as: g/kg or ppt or PSU (Practical Salinity Units)</li>
+        </ul>
+        <div class="sal-scale" style="margin-top:12px;">
+          <div class="sal-seg" style="background:#003d6b; color:#90e0ef; flex:1.5">Baltic<br>7‰</div>
+          <div class="sal-seg" style="background:#0077b6; color:#d8eeff; flex:2">Average<br>35‰</div>
+          <div class="sal-seg" style="background:#ffd166; color:#000; flex:1.5">Red Sea<br>42‰</div>
+          <div class="sal-seg" style="background:#ff6b6b; color:#fff; flex:1">Persian Gulf<br>37–40‰</div>
+        </div>
+      </div>
+      <div class="card bg">
+        <h4>🗺️ World Salinity Patterns</h4>
+        <table class="ctable" style="margin-top:0;">
+          <tr><th>Zone</th><th>Salinity</th><th>Reason</th></tr>
+          <tr><td>Sub-tropical (20–30°)</td><td class="gold">36–37‰</td><td>High evaporation, less rain</td></tr>
+          <tr><td>Equatorial</td><td>34–35‰</td><td>High rain dilutes salt</td></tr>
+          <tr><td>Polar regions</td><td class="hl" style="background:none;padding:0;">32–33‰</td><td>Ice melting dilutes</td></tr>
+          <tr><td>Red Sea</td><td class="coral">42–43‰</td><td>No rivers, high evaporation</td></tr>
+          <tr><td>Baltic Sea</td><td>7–8‰</td><td>Many rivers, low evaporation</td></tr>
+          <tr><td>Mediterranean</td><td>38–39‰</td><td>Enclosed, high evaporation</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="sub-br">
+      <div class="sub-br-title">⚖️ Factors Affecting Salinity</div>
+      <div class="g3">
+        <div class="card bl">
+          <h4 style="color:var(--ocean-light)">Increases Salinity</h4>
+          <ul>
+            <li>High evaporation rate</li>
+            <li>Low rainfall / arid climate</li>
+            <li>Semi-enclosed seas (evaporation trap)</li>
+            <li>Low freshwater river input</li>
+            <li>Trade winds (accelerate evaporation)</li>
+          </ul>
+        </div>
+        <div class="card bc">
+          <h4 style="color:var(--accent-coral)">Decreases Salinity</h4>
+          <ul>
+            <li>High rainfall</li>
+            <li>Melting ice / glaciers</li>
+            <li>Large river discharge</li>
+            <li>Proximity to poles</li>
+            <li>Humid climate</li>
+          </ul>
+        </div>
+        <div class="card bgr">
+          <h4 style="color:var(--accent-green)">Vertical Distribution</h4>
+          <ul>
+            <li>Surface: varies by region</li>
+            <li>Halocline: zone of rapid salinity change</li>
+            <li>Deep water: more uniform (~34–35‰)</li>
+            <li>Thermohaline circulation driven by density differences</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fact-card coral">
+      <div class="fact-main">T-S (Temperature-Salinity) Relationship</div>
+      <div class="fact-sub">Governs ocean water density — drives thermohaline circulation</div>
+      <div class="fact-detail">
+        High salinity + Low temperature = HIGHEST density → water sinks (Deep Water Formation)<br>
+        Low salinity + High temperature = LOWEST density → water stays at surface<br>
+        North Atlantic Deep Water (NADW) forms here — drives global conveyor belt
+      </div>
+    </div>
+
+    <div class="trap">
+      <h4>⚠️ Salinity Traps in CDS/UPSC</h4>
+      <ul>
+        <li>Red Sea (42‰) is saltier than Dead Sea (340‰) argument — Dead Sea is a LAKE, not a sea!</li>
+        <li>Bay of Bengal is <em>LESS saline</em> than Arabian Sea (Ganga-Brahmaputra dilution + more rainfall)</li>
+        <li>Highest ocean salinity is around <em>subtropical high-pressure zones</em>, NOT at equator</li>
+        <li>Baltic Sea (7‰) is one of the least saline bodies — rivers + low evaporation in cold climate</li>
+        <li>Mediterranean is saltier than Atlantic → surface water flows from Atlantic to Med, deep water flows opposite!</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S5: OCEAN CURRENTS ====================== -->
+<div class="sec-hdr" id="s5">
+  <div class="sec-badge sb-coral">05</div>
+  <div class="sec-info"><h2>Ocean Currents</h2><p>Warm & cold currents · Thermohaline · Coriolis · Atlantic · Pacific · Indian Ocean</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr open" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-c">🌀</div><span class="branch-title">Causes & Mechanisms of Ocean Currents</span><span class="tag tc">MOST TESTED</span></div>
+    <span class="b-chevron open">▶</span>
+  </div>
+  <div class="branch-body open">
+    <div class="g3">
+      <div class="card bl">
+        <h4>💨 Primary Causes</h4>
+        <ul>
+          <li><span class="hl">Planetary winds</span> — main driver of surface currents</li>
+          <li>Trade winds (equatorial) → westward flow</li>
+          <li>Westerlies (temperate) → eastward flow</li>
+          <li><span class="hl-o">Coriolis effect</span> — deflects currents right (NH), left (SH)</li>
+          <li>Density differences (T & S)</li>
+          <li>Pressure gradient</li>
+          <li>Shape of ocean basin</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4>🔄 Gyre System</h4>
+        <p>Large circular current patterns in each ocean:</p>
+        <ul style="margin-top:8px;">
+          <li>Northern Hemisphere: <span class="hl">Clockwise</span></li>
+          <li>Southern Hemisphere: <span class="hl-c">Counter-clockwise</span></li>
+          <li>Driven by Coriolis + trade winds + westerlies</li>
+          <li>5 major gyres: N. Pacific, S. Pacific, N. Atlantic, S. Atlantic, Indian Ocean</li>
+          <li>Eastern boundary: cold currents (upwelling)</li>
+          <li>Western boundary: warm, fast currents (intensification)</li>
+        </ul>
+      </div>
+      <div class="card bgr">
+        <h4>⬇️ Thermohaline Circulation</h4>
+        <p>Deep ocean circulation driven by <span class="hl">density differences</span> (temperature + salinity):</p>
+        <ul style="margin-top:8px;">
+          <li>Cold, dense water sinks at poles</li>
+          <li>Travels along ocean floor</li>
+          <li>Upwells in tropics</li>
+          <li>Completes in ~1000–2000 years</li>
+          <li><span class="hl-g">Global Conveyor Belt</span> = Great Ocean Conveyor</li>
+          <li>North Atlantic Deep Water (NADW) — key component</li>
+          <li>Disruption could trigger climate change</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Schematic current map -->
+    <div class="cur-map-wrap">
+      <h5>MAJOR OCEAN CURRENTS — SCHEMATIC (World)</h5>
+      <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" width="100%" style="min-width:500px;">
+        <rect width="720" height="320" fill="#071220" rx="6"/>
+        <!-- Ocean base -->
+        <rect x="0" y="0" width="720" height="320" fill="#071a2e" rx="6"/>
+        <!-- Equator line -->
+        <line x1="0" y1="160" x2="720" y2="160" stroke="#3a6080" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="5" y="157" fill="#3a6080" font-size="8" font-family="monospace">Equator</text>
+        <!-- Tropics lines -->
+        <line x1="0" y1="110" x2="720" y2="110" stroke="#1a3040" stroke-width="0.8" stroke-dasharray="3,5"/>
+        <line x1="0" y1="210" x2="720" y2="210" stroke="#1a3040" stroke-width="0.8" stroke-dasharray="3,5"/>
+        <!-- ATLANTIC CURRENTS -->
+        <!-- Gulf Stream (warm, N.Atl) -->
+        <path d="M200,180 C210,140 230,90 260,70 C290,50 320,55 340,60" stroke="#ff6b6b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <polygon points="338,56 346,60 338,64" fill="#ff6b6b"/>
+        <text x="255" y="100" fill="#ff6b6b" font-size="8" font-family="monospace">Gulf Stream ♨</text>
+        <!-- N.Atlantic Drift (warm) -->
+        <path d="M340,60 C370,50 400,55 430,65 C460,75 480,95 490,110" stroke="#f4a261" stroke-width="2" fill="none"/>
+        <text x="400" y="50" fill="#f4a261" font-size="8" font-family="monospace">N.Atl.Drift</text>
+        <!-- Canary Current (cold, E.boundary) -->
+        <path d="M310,120 C290,140 260,160 240,180" stroke="#90e0ef" stroke-width="2" fill="none"/>
+        <polygon points="240,176 244,184 236,184" fill="#90e0ef"/>
+        <text x="278" y="148" fill="#90e0ef" font-size="7" font-family="monospace">Canary</text>
+        <!-- Brazil Current (warm, W.boundary S.Atl) -->
+        <path d="M240,180 C235,205 230,235 228,255" stroke="#ff6b6b" stroke-width="1.8" fill="none"/>
+        <text x="230" y="225" fill="#ff6b6b" font-size="7" font-family="monospace">Brazil</text>
+        <!-- Benguela Current (cold) -->
+        <path d="M285,280 C295,255 300,235 305,210 C308,195 308,178 305,165" stroke="#90e0ef" stroke-width="2" fill="none"/>
+        <text x="308" y="240" fill="#90e0ef" font-size="7" font-family="monospace">Benguela</text>
+        <!-- PACIFIC CURRENTS -->
+        <!-- Kuroshio (warm, W.boundary) -->
+        <path d="M530,190 C528,160 530,130 540,100 C550,70 565,55 580,50" stroke="#ff6b6b" stroke-width="2.5" fill="none"/>
+        <polygon points="578,46 586,50 578,54" fill="#ff6b6b"/>
+        <text x="550" y="90" fill="#ff6b6b" font-size="8" font-family="monospace">Kuroshio ♨</text>
+        <!-- N.Pacific Drift -->
+        <path d="M580,50 C610,50 640,55 665,70" stroke="#f4a261" stroke-width="1.8" fill="none"/>
+        <text x="615" y="46" fill="#f4a261" font-size="7" font-family="monospace">N.Pac.Drift</text>
+        <!-- California Current (cold) -->
+        <path d="M670,80 C665,110 658,140 650,165" stroke="#90e0ef" stroke-width="2" fill="none"/>
+        <text x="672" y="125" fill="#90e0ef" font-size="7" font-family="monospace">California</text>
+        <!-- N.Equatorial (Pacific) -->
+        <path d="M645,165 C600,165 555,165 530,165 C505,168 490,180 490,190" stroke="#ff9966" stroke-width="1.5" fill="none" stroke-dasharray="5,3"/>
+        <text x="565" y="158" fill="#ff9966" font-size="7" font-family="monospace">N.Equatorial</text>
+        <!-- Peru/Humboldt (cold) -->
+        <path d="M590,290 C585,265 578,240 570,210 C562,185 552,178 540,175" stroke="#90e0ef" stroke-width="2.5" fill="none"/>
+        <polygon points="540,171 548,175 540,179" fill="#90e0ef"/>
+        <text x="562" y="240" fill="#90e0ef" font-size="8" font-family="monospace">Peru/Humboldt ❄</text>
+        <!-- INDIAN OCEAN -->
+        <!-- Monsoon Drift (Summer) -->
+        <path d="M400,200 C420,185 440,178 460,175 C490,172 510,175 525,178" stroke="#ffd166" stroke-width="2" fill="none" stroke-dasharray="6,3"/>
+        <polygon points="523,174 531,178 523,182" fill="#ffd166"/>
+        <text x="435" y="195" fill="#ffd166" font-size="7" font-family="monospace">Monsoon Drift (seasonal)</text>
+        <!-- Agulhas Current (warm) -->
+        <path d="M395,240 C380,265 368,275 360,280" stroke="#ff6b6b" stroke-width="2" fill="none"/>
+        <text x="360" y="260" fill="#ff6b6b" font-size="7" font-family="monospace">Agulhas</text>
+        <!-- Labels -->
+        <text x="260" y="20" fill="#3a6080" font-size="9" font-family="monospace">ATLANTIC</text>
+        <text x="565" y="20" fill="#3a6080" font-size="9" font-family="monospace">PACIFIC</text>
+        <text x="420" y="20" fill="#3a6080" font-size="9" font-family="monospace">INDIAN</text>
+        <!-- Legend -->
+        <rect x="10" y="285" width="12" height="3" fill="#ff6b6b" rx="1"/>
+        <text x="26" y="292" fill="#ff6b6b" font-size="8" font-family="monospace">Warm Current</text>
+        <rect x="120" y="285" width="12" height="3" fill="#90e0ef" rx="1"/>
+        <text x="136" y="292" fill="#90e0ef" font-size="8" font-family="monospace">Cold Current</text>
+        <rect x="230" y="285" width="12" height="3" fill="#ffd166" rx="1" opacity="0.8"/>
+        <text x="246" y="292" fill="#ffd166" font-size="8" font-family="monospace">Seasonal</text>
+      </svg>
+    </div>
+
+    <!-- Current tables -->
+    <div class="g2" style="margin-top:14px;">
+      <div>
+        <p style="font-size:0.78rem; font-weight:700; color:var(--accent-coral); margin-bottom:8px;">🔥 Major WARM Currents</p>
+        <div class="cur-card warm" style="margin-bottom:10px;">
+          <h5>🌊 Gulf Stream (Atlantic)</h5>
+          <p><span class="hl">Fastest ocean current</span> (~2m/s). Flows NE from Gulf of Mexico along US coast, then becomes North Atlantic Drift. Warms Western Europe. Climate significance: keeps UK/Norway ice-free. <span class="hl-c">NATO strategic importance.</span></p>
+        </div>
+        <div class="cur-card warm" style="margin-bottom:10px;">
+          <h5>🌊 Kuroshio Current (Pacific)</h5>
+          <p>"Japan Current" — flows NE along Japan's coast. <span class="hl">Pacific equivalent of Gulf Stream</span>. Warms Japan & Pacific NW. Becomes N. Pacific Drift. Rich fishing grounds where it meets Oyashio.</p>
+        </div>
+        <div class="cur-card warm" style="margin-bottom:10px;">
+          <h5>🌊 Agulhas Current (Indian Ocean)</h5>
+          <p>Flows southward along East Africa. One of strongest boundary currents. Retroflects near Cape of Good Hope — strategic for shipping around Africa.</p>
+        </div>
+        <div class="cur-card warm">
+          <h5>🌊 Brazil Current (S. Atlantic)</h5>
+          <p>Flows southward along Brazilian coast. Converges with Falkland (cold) current → rich fishing zone off Argentina.</p>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.78rem; font-weight:700; color:var(--ocean-surface); margin-bottom:8px;">❄️ Major COLD Currents</p>
+        <div class="cur-card cold" style="margin-bottom:10px;">
+          <h5>🧊 Peru/Humboldt Current (Pacific)</h5>
+          <p>Flows northward along Pacific coast of S. America. <span class="hl">World's richest fishing ground</span> (anchoveta). Causes aridity of Atacama Desert. <span class="hl-c">El Niño disrupts it.</span> Upwelling rich in nutrients.</p>
+        </div>
+        <div class="cur-card cold" style="margin-bottom:10px;">
+          <h5>🧊 Benguela Current (S. Atlantic)</h5>
+          <p>Flows northward along SW Africa (Namibia/S. Africa). Causes Namib Desert aridity. Rich fishing. Cold upwelling — nutrient-rich.</p>
+        </div>
+        <div class="cur-card cold" style="margin-bottom:10px;">
+          <h5>🧊 Labrador Current (N. Atlantic)</h5>
+          <p>Cold current from Arctic along Canadian coast. Meets Gulf Stream → <span class="hl">Grand Banks</span> — world's best cod fishing. Brings icebergs (Titanic zone!).</p>
+        </div>
+        <div class="cur-card cold">
+          <h5>🧊 Canary Current (N. Atlantic)</h5>
+          <p>Cold eastern boundary current flowing south along NW Africa. Causes Saharan aridity. Connects to N. Equatorial current.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- El Niño / La Niña -->
+    <div class="sub-br" style="margin-top:16px;">
+      <div class="sub-br-title">🌡️ El Niño · La Niña · ENSO</div>
+      <div class="g3">
+        <div class="card bc">
+          <h4 style="color:var(--accent-coral)">🔥 El Niño</h4>
+          <ul>
+            <li>Warming of central-eastern Pacific</li>
+            <li>Trade winds weaken/reverse</li>
+            <li>Peru Current weakened → fisheries collapse</li>
+            <li>Effects: drought in Australia/India, floods in Peru/Ecuador</li>
+            <li>Indian monsoon: <span class="hl-c">weakened/deficit</span></li>
+            <li>Frequency: every 2–7 years</li>
+            <li>Upwelling near Peru suppressed</li>
+          </ul>
+        </div>
+        <div class="card bl">
+          <h4 style="color:var(--ocean-surface)">❄️ La Niña</h4>
+          <ul>
+            <li>Cooling of central-eastern Pacific</li>
+            <li>Trade winds strengthen</li>
+            <li>Enhanced upwelling off Peru</li>
+            <li>Effects: heavy rains in Australia/India, drought in S. America</li>
+            <li>Indian monsoon: <span class="hl-g">enhanced/excess</span></li>
+            <li>Often follows El Niño</li>
+          </ul>
+        </div>
+        <div class="card bgr">
+          <h4 style="color:var(--accent-green)">🔄 ENSO</h4>
+          <ul>
+            <li>El Niño Southern Oscillation</li>
+            <li>Coupled ocean-atmosphere system</li>
+            <li>Walker Circulation disrupted in El Niño</li>
+            <li>Southern Oscillation Index (SOI): measures pressure difference Darwin-Tahiti</li>
+            <li>Negative SOI = El Niño; Positive = La Niña</li>
+            <li>Major driver of global climate variability</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mnem">
+      <h4>🧠 Warm Currents Mnemonic — Atlantic: "George's Neat Brazil Attempt"</h4>
+      <div class="mnem-hl">G·N·B·A → Gulf Stream, N.Atlantic Drift, Brazil, Antilles</div>
+      <p>Pacific Warm: <strong>Kuroshio · N.Equatorial · El Niño Counter Current · E.Australian</strong> → "Killer Ninja Elephants Eat"</p>
+    </div>
+
+    <div class="trap">
+      <h4>⚠️ Current Direction Traps</h4>
+      <ul>
+        <li>Cold currents flow from <em>poles to equator</em>; Warm currents from equator/tropics to poles</li>
+        <li>Eastern boundary currents are COLD (California, Peru, Benguela, Canary)</li>
+        <li>Western boundary currents are WARM & fast (Gulf Stream, Kuroshio, Brazil, Agulhas)</li>
+        <li>Indian Ocean currents REVERSE seasonally (no Coriolis dominance — monsoon overrides)</li>
+        <li>El Niño → WARM Pacific → WEAK Indian monsoon (NOT always, complex link)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S6: WAVES, TIDES & TSUNAMIS ====================== -->
+<div class="sec-hdr" id="s6">
+  <div class="sec-badge sb-purple">06</div>
+  <div class="sec-info"><h2>Waves, Tides & Tsunamis</h2><p>Formation · Spring & neap tides · Tsunamis · Storm surges · Disaster links</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-p">🌊</div><span class="branch-title">Waves, Tides, Tsunamis — Complete Coverage</span><span class="tag tp">DISASTER MGMT</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="g3">
+      <div class="card bl">
+        <h4>🌊 Ocean Waves</h4>
+        <ul>
+          <li>Caused by <span class="hl">wind friction</span> on surface</li>
+          <li>Water particles move in <span class="hl-o">circular orbits</span> — no net forward movement of water</li>
+          <li>Wave height depends on: wind speed, fetch, duration</li>
+          <li>Swell: waves that travel beyond storm area</li>
+          <li>Breakers: waves near shore (water depth < ½ wavelength)</li>
+          <li>Largest waves: Southern Ocean (westerlies + fetch)</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4>🌕 Tides</h4>
+        <ul>
+          <li>Caused by <span class="hl">gravitational pull</span> of Moon (mainly) + Sun</li>
+          <li>Moon's influence: 2.17× greater than Sun's</li>
+          <li>Semi-diurnal: 2 high + 2 low tides/day (most coasts)</li>
+          <li>Diurnal: 1 high + 1 low tide/day</li>
+          <li>Mixed: combination</li>
+          <li>Tidal range: difference between high & low tide</li>
+          <li>Bay of Fundy (Canada): highest tidal range ~17m</li>
+        </ul>
+      </div>
+      <div class="card bgr">
+        <h4>💡 Spring vs Neap Tides</h4>
+        <p style="font-weight:700;color:var(--accent-gold);font-size:0.8rem;margin-bottom:6px;">Spring Tides (higher range):</p>
+        <ul>
+          <li>Sun, Moon, Earth in a <span class="hl">straight line</span> (Syzygy)</li>
+          <li>Full moon + New moon</li>
+          <li>Gravitational forces combined</li>
+        </ul>
+        <p style="font-weight:700;color:var(--ocean-light);font-size:0.8rem;margin:8px 0 6px;">Neap Tides (lower range):</p>
+        <ul>
+          <li>Moon at <span class="hl-o">right angle</span> to Sun-Earth line</li>
+          <li>First quarter + Third quarter moon</li>
+          <li>Gravitational forces partially cancel</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tide diagram -->
+    <div class="ocean-profile" style="margin-top:16px;">
+      <h5>MOON PHASES & TIDE TYPES</h5>
+      <svg viewBox="0 0 580 160" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:560px;">
+        <rect width="580" height="160" fill="#071220" rx="6"/>
+        <!-- Earth -->
+        <circle cx="290" cy="80" r="18" fill="#1a4a6a" stroke="#00b4d8" stroke-width="1.5"/>
+        <text x="290" y="85" fill="#90e0ef" font-size="9" font-family="monospace" text-anchor="middle">Earth</text>
+        <!-- Spring tide: new moon (left) -->
+        <circle cx="100" cy="80" r="12" fill="#ffd166" opacity="0.9"/>
+        <text x="100" y="108" fill="#ffd166" font-size="8" font-family="monospace" text-anchor="middle">New Moon</text>
+        <text x="100" y="120" fill="#ffd166" font-size="7" font-family="monospace" text-anchor="middle">SPRING TIDE</text>
+        <line x1="112" y1="80" x2="272" y2="80" stroke="#ffd166" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <!-- Spring tide: full moon (right) -->
+        <circle cx="480" cy="80" r="12" fill="#e0e0e0" opacity="0.9"/>
+        <text x="480" y="108" fill="#e0e0e0" font-size="8" font-family="monospace" text-anchor="middle">Full Moon</text>
+        <text x="480" y="120" fill="#e0e0e0" font-size="7" font-family="monospace" text-anchor="middle">SPRING TIDE</text>
+        <line x1="308" y1="80" x2="468" y2="80" stroke="#e0e0e0" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <!-- Neap tide: quarter moon (top) -->
+        <circle cx="290" cy="20" r="10" fill="#b090ff" opacity="0.8"/>
+        <text x="348" y="22" fill="#b090ff" font-size="8" font-family="monospace">Quarter Moon → NEAP TIDE</text>
+        <line x1="290" y1="30" x2="290" y2="62" stroke="#b090ff" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <!-- Neap tide: bottom -->
+        <circle cx="290" cy="140" r="10" fill="#b090ff" opacity="0.8"/>
+        <line x1="290" y1="98" x2="290" y2="130" stroke="#b090ff" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <!-- Sun indicator -->
+        <text x="10" y="85" fill="#ffd166" font-size="9" font-family="monospace">☀️</text>
+        <line x1="22" y1="80" x2="88" y2="80" stroke="#ffd166" stroke-width="0.8" stroke-dasharray="2,3"/>
+      </svg>
+      <p>Syzygy (straight line) = Spring tides; Quadrature (right angle) = Neap tides</p>
+    </div>
+
+    <div class="g2" style="margin-top:14px;">
+      <div class="card bc">
+        <h4 style="color:var(--accent-coral)">🌊 Tsunamis</h4>
+        <ul>
+          <li>Japanese: "harbor wave" (tsu = harbor, nami = wave)</li>
+          <li>Caused by: <span class="hl-c">submarine earthquakes</span>, volcanic eruptions, landslides</li>
+          <li>Speed: <span class="hl-c">800–900 km/h</span> in deep ocean (speed of jet plane)</li>
+          <li>Wavelength: 100–700 km (very long)</li>
+          <li>Height in open ocean: &lt;1m (unnoticeable)</li>
+          <li>Near coast: slows, height increases dramatically</li>
+          <li>2004 Indian Ocean Tsunami: 9.1 Mw, 227,000 deaths</li>
+          <li>DART buoys, ITEWS for early warning</li>
+        </ul>
+      </div>
+      <div class="card bo">
+        <h4 style="color:var(--accent-orange)">⛈️ Storm Surges & Coastal Flooding</h4>
+        <ul>
+          <li>Abnormal rise of sea level due to cyclone/storm</li>
+          <li>Low pressure sucks up water + wind pushes water onshore</li>
+          <li>Combined with high tide = catastrophic flooding</li>
+          <li>Bangladesh, Odisha (India): most vulnerable to storm surges</li>
+          <li>Bay of Bengal funnels surges → amplifies impact</li>
+          <li>Super Cyclone Orissa 1999, Bhola 1970 — extreme storm surge events</li>
+        </ul>
+      </div>
+    </div>
+    <div class="qr-box">
+      <div class="qr-grid">
+        <div class="qr-item"><strong>Tidal Energy</strong>Bay of Fundy, Gulf of Khambhat (India) — tidal power potential</div>
+        <div class="qr-item"><strong>Indian Tsunami</strong>2004 — epicenter Aceh, Indonesia; hit India, Sri Lanka, Thailand</div>
+        <div class="qr-item"><strong>Pacific Warning</strong>PTWC (Pacific Tsunami Warning Center) — established post-1960 Chile quake</div>
+        <div class="qr-item"><strong>Navigation</strong>Tides critical for port entry — Chart Datum reference level</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S7: MARINE RESOURCES ====================== -->
+<div class="sec-hdr" id="s7">
+  <div class="sec-badge sb-green">07</div>
+  <div class="sec-info"><h2>Marine Resources & Blue Economy</h2><p>Fisheries · Minerals · Energy · EEZ · India's marine wealth</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-gr">💎</div><span class="branch-title">Marine Resources — Exploitation & Strategy</span><span class="tag tgr">CURRENT AFFAIRS</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="g3">
+      <div class="card bgr">
+        <h4>🐟 Fisheries & Marine Biodiversity</h4>
+        <ul>
+          <li>World's most productive fishing zones: <span class="hl">Continental shelves</span></li>
+          <li>Upwelling zones: Peru coast, Benguela, California — nutrient-rich</li>
+          <li>Grand Banks: cod, NE Atlantic (where Gulf Stream meets Labrador)</li>
+          <li>North Sea, Norwegian Sea: herring, mackerel</li>
+          <li>India: 8,118 km coastline; 2 million fishers</li>
+          <li>Marine capture: ~80 million tonnes/year global</li>
+        </ul>
+      </div>
+      <div class="card bl">
+        <h4>⛽ Energy Resources</h4>
+        <ul>
+          <li>Offshore oil & gas: continental shelf deposits</li>
+          <li>Mumbai High: India's major offshore oilfield</li>
+          <li>Methane hydrates: future energy (seabed)</li>
+          <li>Tidal energy: Gulf of Khambhat, Bay of Fundy</li>
+          <li>Wave energy: emerging technology</li>
+          <li>OTEC (Ocean Thermal Energy Conversion): uses T difference</li>
+          <li>Offshore wind: North Sea (major)</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4>⛏️ Mineral Resources</h4>
+        <ul>
+          <li><span class="hl">Polymetallic nodules</span>: Mn, Ni, Cu, Co — abyssal plains (Pacific)</li>
+          <li>India's allocation: <span class="hl">Central Indian Ocean Basin (CIOB)</span></li>
+          <li>Cobalt-rich crusts: seamount surfaces</li>
+          <li>Seafloor Massive Sulphides (SMS): hydrothermal vents</li>
+          <li>Salt, sand, gravel from shallow waters</li>
+          <li>Placer deposits: gold, tin, diamonds on continental shelf</li>
+        </ul>
+      </div>
+    </div>
+    <div class="g2" style="margin-top:14px;">
+      <div class="card bt">
+        <h4 style="color:var(--accent-teal)">🇮🇳 India's EEZ & Maritime Rights</h4>
+        <ul>
+          <li>EEZ: <span class="hl">200 nautical miles</span> from baseline</li>
+          <li>India's EEZ: ~2.02 million km² (larger than several Indian states combined)</li>
+          <li>UNCLOS (1982): defines maritime zones</li>
+          <li>Territorial waters: 12 nm (sovereign rights)</li>
+          <li>Contiguous zone: 24 nm</li>
+          <li>Continental shelf rights: up to 350 nm (extended)</li>
+          <li>India submitted extended CS claim to CLCS</li>
+        </ul>
+      </div>
+      <div class="card bgr">
+        <h4 style="color:var(--accent-green)">🌊 Blue Economy</h4>
+        <ul>
+          <li>Sustainable use of ocean resources for economic growth</li>
+          <li>India's Blue Economy vision: Sagarmala, Deep Ocean Mission</li>
+          <li>Deep Ocean Mission: deep-sea exploration, mining</li>
+          <li>IORA (Indian Ocean Rim Association): regional cooperation</li>
+          <li>Key sectors: fisheries, tourism, shipping, marine biotech</li>
+          <li>India's coast: 9 coastal states + 4 UTs</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fact-card green">
+      <div class="fact-main">India's Deep Ocean Mission (2021) — ₹4077 crore</div>
+      <div class="fact-sub">5-year program for deep-sea exploration & mining</div>
+      <div class="fact-detail">
+        Focus: polymetallic nodule exploration in CIOB · Development of Matsya 6000 submersible<br>
+        Deep sea biodiversity · Ocean climate change studies · Deep-sea tech development
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S8: CORAL REEFS ====================== -->
+<div class="sec-hdr" id="s8">
+  <div class="sec-badge sb-orange">08</div>
+  <div class="sec-info"><h2>Coral Reefs & Marine Ecosystems</h2><p>Types · Formation · Bleaching · Indian reefs · Conservation</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-or">🪸</div><span class="branch-title">Coral Reefs — Types, Formation & Threats</span><span class="tag tg">MAP-BASED</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="g3">
+      <div class="card bo">
+        <h4 style="color:var(--accent-orange)">🏝️ Fringing Reefs</h4>
+        <ul>
+          <li>Most common type</li>
+          <li>Adjacent to coastline — no lagoon (or very narrow)</li>
+          <li>Separated from land by shallow water</li>
+          <li>Examples: Red Sea coast, Lakshadweep islands</li>
+          <li>First stage of atoll formation (Darwin's theory)</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4 style="color:var(--accent-gold)">🌊 Barrier Reefs</h4>
+        <ul>
+          <li>Separated from land by wide, deep lagoon</li>
+          <li>Run parallel to coastline</li>
+          <li><span class="hl">Great Barrier Reef</span>: largest — 2,300 km, Queensland, Australia</li>
+          <li>Second largest: Belize Barrier Reef (Caribbean)</li>
+          <li>UNESCO World Heritage Sites</li>
+        </ul>
+      </div>
+      <div class="card bt">
+        <h4 style="color:var(--accent-teal)">🔵 Atolls</h4>
+        <ul>
+          <li>Ring-shaped reef enclosing a lagoon</li>
+          <li>Forms when island subsides (Darwin's theory)</li>
+          <li>Fringing → Barrier → Atoll (progression)</li>
+          <li>Examples: Maldives, Marshall Islands, Lakshadweep</li>
+          <li>Low-lying — highly vulnerable to sea level rise</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub-br">
+      <div class="sub-br-title">🌡️ Coral Bleaching & Threats</div>
+      <div class="g2">
+        <div class="card bc">
+          <h4 style="color:var(--accent-coral)">🔴 Coral Bleaching</h4>
+          <ul>
+            <li>Expulsion of symbiotic algae (zooxanthellae) from coral tissue</li>
+            <li>Causes: <span class="hl-c">ocean warming</span> (main), pollution, disease</li>
+            <li>Coral turns white — not dead yet, but stressed</li>
+            <li>If temperature stays high → coral dies</li>
+            <li>Great Barrier Reef: severe mass bleaching 1998, 2002, 2016, 2017, 2020, 2022</li>
+            <li>1°C above average for 4+ weeks triggers bleaching</li>
+          </ul>
+        </div>
+        <div class="card bg">
+          <h4>🇮🇳 Indian Coral Reefs</h4>
+          <ul>
+            <li><span class="hl">Lakshadweep</span>: atolls & fringing reefs; largest atoll region in India</li>
+            <li><span class="hl">Andaman & Nicobar</span>: fringing & barrier reefs</li>
+            <li>Gulf of Mannar: part of Gulf of Mannar Marine National Park</li>
+            <li>Gulf of Kutch: northernmost reefs in India</li>
+            <li>Malvan (Goa): small patch reefs</li>
+            <li>India's coral cover: declining due to warming + bleaching</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fact-card">
+      <div class="fact-main">Coral Reef Facts for CDS/UPSC</div>
+      <div class="fact-detail">
+        Reef conditions: 20–30°C | Clear, shallow water (sunlight) | Low sedimentation | Tropical/subtropical<br>
+        "Rainforest of the sea" — 25% of marine species, only 0.1% of ocean floor<br>
+        Darwin's Subsidence Theory: volcanic island subsides → fringing → barrier → atoll<br>
+        IUCN: 25–50% of coral reefs degraded globally
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S9: OCEAN-ATMOSPHERE ====================== -->
+<div class="sec-hdr" id="s9">
+  <div class="sec-badge sb-lime">09</div>
+  <div class="sec-info"><h2>Ocean–Atmosphere Interaction</h2><p>Monsoons · Cyclones · ENSO · Climate change · Heat balance</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-l">🌤️</div><span class="branch-title">Ocean-Atmosphere Coupling — Climate Drivers</span><span class="tag to">UPSC ANALYTICAL</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="spoke-wrap">
+      <div class="spoke-center"><h3>OCEAN–ATMOS<br>COUPLING</h3></div>
+      <div class="spoke-nodes">
+        <div class="spoke-node">☔ Indian Monsoon<br><span style="font-size:0.65rem;color:var(--text-muted)">SST → moisture → rain</span></div>
+        <div class="spoke-node">🌀 Cyclogenesis<br><span style="font-size:0.65rem;color:var(--text-muted)">Warm ocean &gt;26°C</span></div>
+        <div class="spoke-node">🌊 ENSO<br><span style="font-size:0.65rem;color:var(--text-muted)">Pacific SST anomaly</span></div>
+        <div class="spoke-node">🌡️ Global Warming<br><span style="font-size:0.65rem;color:var(--text-muted)">Ocean heat content</span></div>
+        <div class="spoke-node">💧 Evaporation<br><span style="font-size:0.65rem;color:var(--text-muted)">Water cycle driver</span></div>
+        <div class="spoke-node">❄️ Sea Ice<br><span style="font-size:0.65rem;color:var(--text-muted)">Albedo feedback</span></div>
+        <div class="spoke-node">🌬️ Jet Streams<br><span style="font-size:0.65rem;color:var(--text-muted)">SST gradient influence</span></div>
+        <div class="spoke-node">💨 Trade Winds<br><span style="font-size:0.65rem;color:var(--text-muted)">ENSO-driven change</span></div>
+      </div>
+    </div>
+
+    <div class="g2" style="margin-top:14px;">
+      <div class="card bl">
+        <h4>🌧️ Indian Monsoon Mechanism</h4>
+        <ul>
+          <li>Differential heating of land & ocean</li>
+          <li>Arabian Sea SST &gt; 28°C triggers SW monsoon onset</li>
+          <li><span class="hl">Bay of Bengal branch</span>: enters NE India first</li>
+          <li><span class="hl">Arabian Sea branch</span>: Kerala, Western Ghats, Mumbai</li>
+          <li>ITCZ shift northward over India in summer</li>
+          <li>Indian Ocean Dipole (IOD): positive IOD enhances monsoon</li>
+          <li>El Niño often weakens monsoon (not always)</li>
+        </ul>
+      </div>
+      <div class="card bc">
+        <h4>🌀 Cyclone Formation</h4>
+        <ul>
+          <li>SST (Sea Surface Temp) must be <span class="hl-c">&gt;26–27°C</span></li>
+          <li>Energy source: latent heat from warm ocean evaporation</li>
+          <li>Bay of Bengal: more cyclone-prone than Arabian Sea (warmer SST)</li>
+          <li>Coriolis effect: needed for rotation (absent at equator)</li>
+          <li>Cyclone intensification: depends on warm core maintenance</li>
+          <li>Climate change: more intense (but fewer) cyclones</li>
+        </ul>
+      </div>
+      <div class="card bgr">
+        <h4>🌡️ Oceans & Climate Change</h4>
+        <ul>
+          <li>Oceans absorb <span class="hl">93% of excess heat</span> from greenhouse effect</li>
+          <li>Ocean acidification: absorbs CO₂ → carbonic acid → pH drop</li>
+          <li>Sea level rise: thermal expansion + ice melt</li>
+          <li>Marine heatwaves: increasing frequency & intensity</li>
+          <li>Thermohaline slowdown: reduced AMOC threatens European climate</li>
+          <li>Arctic ice melt: positive feedback loop</li>
+        </ul>
+      </div>
+      <div class="card bg">
+        <h4>🌊 Indian Ocean Dipole (IOD)</h4>
+        <ul>
+          <li>Difference in SST between western & eastern Indian Ocean</li>
+          <li><span class="hl">Positive IOD</span>: warmer western IO (near Africa) → enhanced Indian monsoon</li>
+          <li>Negative IOD: cooler western IO → weaker monsoon</li>
+          <li>UPSC: often tested alongside ENSO interaction with monsoon</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S10: INDIAN OCEAN FOCUS ====================== -->
+<div class="sec-hdr" id="s10">
+  <div class="sec-badge sb-coral">10</div>
+  <div class="sec-info"><h2>Indian Ocean — Special Strategic Focus</h2><p>Currents · Chokepoints · Naval strategy · IORA · India's maritime doctrine</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-c">🇮🇳</div><span class="branch-title">Indian Ocean Region (IOR) — Geopolitics & Geography</span><span class="tag tc">DEFENCE FOCUS</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="g2">
+      <div class="card bl">
+        <h4>🌊 Indian Ocean Currents</h4>
+        <table class="ctable" style="margin-top:0;">
+          <tr><th>Current</th><th>Season</th><th>Direction</th><th>Nature</th></tr>
+          <tr><td>NE Monsoon Drift</td><td>Winter (Oct–Mar)</td><td class="hl" style="background:none;padding:4px;">Westward</td><td>Surface drift</td></tr>
+          <tr><td>SW Monsoon Drift</td><td>Summer (Jun–Sep)</td><td class="hl" style="background:none;padding:4px;">Eastward</td><td>Surface drift</td></tr>
+          <tr><td>Agulhas Current</td><td>Year-round</td><td class="coral">Southward</td><td>Warm, W.boundary</td></tr>
+          <tr><td>West Australian</td><td>Year-round</td><td>Northward</td><td>Cold, E.boundary</td></tr>
+          <tr><td>Somali Current</td><td>Summer</td><td>Northward</td><td>Becomes warm</td></tr>
+          <tr><td>Java Current</td><td>Seasonal</td><td>Westward</td><td>Warm</td></tr>
+        </table>
+      </div>
+      <div class="card bc">
+        <h4>🔑 Strategic Chokepoints</h4>
+        <ol class="nl">
+          <li><div class="nl-num">1</div><span><span class="hl">Strait of Hormuz</span>: 20% world oil transit; Iran-Oman; 39 km wide at narrowest</span></li>
+          <li><div class="nl-num">2</div><span><span class="hl">Strait of Malacca</span>: busiest shipping lane; connects Indian & Pacific Oceans; Singapore hub</span></li>
+          <li><div class="nl-num">3</div><span><span class="hl">Bab-el-Mandeb</span>: Red Sea entry; Yemen-Djibouti; Suez route access</span></li>
+          <li><div class="nl-num">4</div><span><span class="hl">Suez Canal</span>: Mediterranean-Red Sea link; 60% shorter Europe-Asia route</span></li>
+          <li><div class="nl-num">5</div><span><span class="hl">Mozambique Channel</span>: alternative Suez bypass</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="g3" style="margin-top:14px;">
+      <div class="card bg">
+        <h4>⚓ India's Maritime Strategy</h4>
+        <ul>
+          <li>SAGAR: Security and Growth for All in the Region</li>
+          <li>India's Maritime Security Strategy 2015</li>
+          <li>Project Mausam: cultural linkages in IOR</li>
+          <li>Andaman & Nicobar Command: tri-service command</li>
+          <li>String of Pearls (China): Gwadar, Hambantota, Chittagong</li>
+          <li>India's response: Necklace of Diamonds strategy</li>
+        </ul>
+      </div>
+      <div class="card bgr">
+        <h4>🤝 IORA (Indian Ocean Rim Association)</h4>
+        <ul>
+          <li>23 member states + 9 dialogue partners</li>
+          <li>Founded: 1997 in Mauritius</li>
+          <li>HQ: Ebene, Mauritius</li>
+          <li>Priorities: maritime safety, fisheries, blue economy</li>
+          <li>India is a founding member & major player</li>
+        </ul>
+      </div>
+      <div class="card bo">
+        <h4>🏝️ Island Territories</h4>
+        <ul>
+          <li>India: Andaman & Nicobar (Bay of Bengal), Lakshadweep (Arabian Sea)</li>
+          <li>Maldives: critical for Indian Ocean security</li>
+          <li>Diego Garcia (UK/US): strategic base in central Indian Ocean</li>
+          <li>Reunion, Mayotte (France): French presence in IOR</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mnem">
+      <h4>🧠 Chokepoints Memory — "HMBSS"</h4>
+      <div class="mnem-hl">H·M·B·S·S</div>
+      <p><strong>H</strong>ormuz (oil) · <strong>M</strong>alacca (trade) · <strong>B</strong>ab-el-Mandeb (Suez access) · <strong>S</strong>uez Canal · <strong>S</strong>trait of Gibraltar (Atlantic-Med)</p>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ====================== S11: ADVANCED CONNECTIONS ====================== -->
+<div class="sec-hdr" id="s11">
+  <div class="sec-badge sb-gold">11</div>
+  <div class="sec-info"><h2>Advanced Conceptual Connections</h2><p>Climate-ocean · Defence · Satellite oceanography · Maritime security</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-g">🔗</div><span class="branch-title">Oceanography ↔ Broader Geography & Current Affairs</span><span class="tag tg">UPSC LINK</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="g3">
+      <div class="card bg">
+        <h4>🛰️ Satellite Oceanography</h4>
+        <ul>
+          <li>Sea surface temperature mapping (SST)</li>
+          <li>Ocean color (chlorophyll — fisheries prediction)</li>
+          <li>Sea level monitoring (altimetry — TOPEX, Jason)</li>
+          <li>Ocean current tracking</li>
+          <li>ISRO's OceanSat-2, OceanSat-3 (India)</li>
+          <li>Cyclone tracking over ocean</li>
+        </ul>
+      </div>
+      <div class="card bt">
+        <h4>🌊 Submarine Warfare Basics</h4>
+        <ul>
+          <li>Thermocline as "acoustic shadow zone" — submarines hide below it</li>
+          <li>SOFAR channel (Sound Fixing And Ranging): sound propagation layer (~1000m)</li>
+          <li>SST knowledge crucial for anti-submarine warfare (ASW)</li>
+          <li>Bathymetric charts: essential for submarine navigation</li>
+          <li>IOR: strategic for submarine deployment (India, China, US)</li>
+        </ul>
+      </div>
+      <div class="card bc">
+        <h4>🌱 Environmental Connections</h4>
+        <ul>
+          <li>Ocean acidification: threatens coral reefs, shellfish</li>
+          <li>Plastic pollution: Great Pacific Garbage Patch</li>
+          <li>Dead zones: oxygen-depleted areas (fertilizer runoff)</li>
+          <li>Mangroves: coastal protection + carbon sequestration</li>
+          <li>Seagrass meadows: blue carbon sinks</li>
+          <li>Overfishing: major threat to marine biodiversity</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S12: FACTS MASTER SHEET ====================== -->
+<div class="sec-hdr" id="s12">
+  <div class="sec-badge sb-gold">12</div>
+  <div class="sec-info"><h2>Important Facts Master Sheet</h2><p>One-shot revision · Trenches · Currents · Reefs · Straits · Numbers</p></div>
+</div>
+
+<div class="fw">
+  <h3>⚡ Oceanography Complete Quick Reference</h3>
+  <div class="fw-grid">
+    <div class="fw-item"><div class="fw-lbl">DEEPEST OCEAN POINT</div><div class="fw-val">Challenger Deep<br>Mariana Trench</div><div class="fw-note">~11,034 m, Pacific</div></div>
+    <div class="fw-item"><div class="fw-lbl">LARGEST OCEAN</div><div class="fw-val">Pacific Ocean</div><div class="fw-note">165.25 million km²</div></div>
+    <div class="fw-item"><div class="fw-lbl">SALTIEST SEA (lake)</div><div class="fw-val">Dead Sea ~340‰</div><div class="fw-note">Red Sea: 42‰ (ocean)</div></div>
+    <div class="fw-item"><div class="fw-lbl">FASTEST CURRENT</div><div class="fw-val">Gulf Stream</div><div class="fw-note">~2 m/s; 200x Amazon river</div></div>
+    <div class="fw-item"><div class="fw-lbl">LARGEST REEF</div><div class="fw-val">Great Barrier Reef</div><div class="fw-note">2,300 km, Australia</div></div>
+    <div class="fw-item"><div class="fw-lbl">AVG OCEAN SALINITY</div><div class="fw-val">35‰</div><div class="fw-note">parts per thousand</div></div>
+    <div class="fw-item"><div class="fw-lbl">AVG OCEAN DEPTH</div><div class="fw-val">3,688 m</div><div class="fw-note">Pacific deepest avg</div></div>
+    <div class="fw-item"><div class="fw-lbl">HIGHEST TIDAL RANGE</div><div class="fw-val">Bay of Fundy</div><div class="fw-note">~17 m, Canada</div></div>
+    <div class="fw-item"><div class="fw-lbl">INDIAN EEZ</div><div class="fw-val">~2.02 million km²</div><div class="fw-note">200 nautical miles</div></div>
+    <div class="fw-item"><div class="fw-lbl">LONGEST MOR</div><div class="fw-val">Mid-Atlantic Ridge</div><div class="fw-note">65,000 km total (global)</div></div>
+    <div class="fw-item"><div class="fw-lbl">BALTIC SALINITY</div><div class="fw-val">~7‰</div><div class="fw-note">Lowest sea salinity</div></div>
+    <div class="fw-item"><div class="fw-lbl">TSUNAMI SPEED</div><div class="fw-val">800–900 km/h</div><div class="fw-note">Deep ocean, like jet plane</div></div>
+    <div class="fw-item"><div class="fw-lbl">INDIA'S COASTLINE</div><div class="fw-val">8,118 km</div><div class="fw-note">7516 km (islands incl.)</div></div>
+    <div class="fw-item"><div class="fw-lbl">WARMEST OCEAN</div><div class="fw-val">Indian Ocean</div><div class="fw-note">Avg ~27°C surface</div></div>
+    <div class="fw-item"><div class="fw-lbl">INDIAN TRENCH</div><div class="fw-val">Java/Sunda Trench</div><div class="fw-note">~7,450 m, Indian Ocean</div></div>
+    <div class="fw-item"><div class="fw-lbl">ATLANTIC TRENCH</div><div class="fw-val">Puerto Rico Trench</div><div class="fw-note">~8,376 m, deepest Atlantic</div></div>
+    <div class="fw-item"><div class="fw-lbl">UPWELLING RICHEST</div><div class="fw-val">Peru/Humboldt Coast</div><div class="fw-note">Anchoveta capital of world</div></div>
+    <div class="fw-item"><div class="fw-lbl">CARLSBERG RIDGE</div><div class="fw-val">Indian Ocean</div><div class="fw-note">NW Indian Ocean MOR</div></div>
+    <div class="fw-item"><div class="fw-lbl">OCEAN % OF EARTH</div><div class="fw-val">71%</div><div class="fw-note">361 million km²</div></div>
+    <div class="fw-item"><div class="fw-lbl">MALDIVES CONCERN</div><div class="fw-val">Sea level rise</div><div class="fw-note">Avg height &lt;2m above sea</div></div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ====================== S13: TRAPS ====================== -->
+<div class="sec-hdr" id="s13">
+  <div class="sec-badge sb-coral">13</div>
+  <div class="sec-info"><h2>Common CDS/UPSC Traps & Pitfalls</h2><p>Current confusion · Salinity myths · Tide traps · Map errors</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-c">🚨</div><span class="branch-title">Top Exam Traps — Guard These Marks!</span><span class="tag tc">CRITICAL</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="g2">
+      <div class="trap" style="margin:0;">
+        <h4>Trap 1: Current Nature Confusion</h4>
+        <ul>
+          <li>Eastern boundaries: COLD currents (California, Peru, Benguela, Canary, West Australia)</li>
+          <li>Western boundaries: WARM currents (Gulf Stream, Kuroshio, Brazil, Agulhas)</li>
+          <li>Labrador is COLD (comes from Arctic — west of Atlantic)</li>
+          <li>Indian Ocean currents are SEASONAL — both warm & cold depending on season</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 2: Salinity Misconceptions</h4>
+        <ul>
+          <li>Highest salinity at SUBTROPICS (~20–30°), NOT at equator</li>
+          <li>Bay of Bengal LESS saline than Arabian Sea (fresh water rivers)</li>
+          <li>Deeper ocean is NOT more saline — it's actually fairly uniform (~34–35‰)</li>
+          <li>Red Sea 42‰ (ocean) vs Dead Sea 340‰ (lake — NOT ocean)</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 3: Tide Misconceptions</h4>
+        <ul>
+          <li>Moon's gravitational pull is ~2.17x STRONGER than Sun's for tides</li>
+          <li>Spring tides occur at BOTH new moon AND full moon (not just full moon)</li>
+          <li>Neap tides occur at 1st & 3rd quarter moon (NOT halfway between spring)</li>
+          <li>High tide occurs on BOTH sides of Earth simultaneously (bulge on far side too)</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 4: El Niño / La Niña Confusion</h4>
+        <ul>
+          <li>El Niño = WARMING of Pacific (NOT cooling)</li>
+          <li>La Niña = COOLING of Pacific (NOT warming)</li>
+          <li>El Niño → Peru fishing collapses (upwelling suppressed)</li>
+          <li>El Niño effect on India: TENDS to weaken monsoon but NOT always</li>
+          <li>La Niña → often enhances Indian monsoon</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 5: Ocean Floor Features</h4>
+        <ul>
+          <li>Continental shelf = submerged part of continent (NOT ocean floor per se)</li>
+          <li>Mid-Oceanic Ridges = NEW crust formation (NOT subduction)</li>
+          <li>Trenches = OLD crust subducted (convergent plates)</li>
+          <li>Guyot has FLAT top (eroded); Seamount has pointed top</li>
+          <li>Carlsberg Ridge is in the INDIAN Ocean — not Atlantic!</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 6: Coral Reef Confusion</h4>
+        <ul>
+          <li>Lakshadweep: mainly ATOLLS (not just fringing reefs)</li>
+          <li>Andaman & Nicobar: fringing reefs (not atolls)</li>
+          <li>Coral bleaching does NOT mean coral is dead — it's stressed</li>
+          <li>Great Barrier Reef is a BARRIER reef, NOT atoll</li>
+          <li>Coral reefs need WARM, CLEAR, SHALLOW water — NOT cold water!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S14: PYQ ANALYSIS ====================== -->
+<div class="sec-hdr" id="s14">
+  <div class="sec-badge sb-gold">14</div>
+  <div class="sec-info"><h2>PYQ Analysis — Pattern Recognition</h2><p>Repeated CDS themes · UPSC patterns · Quick elimination strategies</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-g">🏆</div><span class="branch-title">High-Frequency PYQ Topics</span><span class="tag tg">EXAM PATTERNS</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="g2">
+      <div class="card bg">
+        <h4>🎯 Most Repeated CDS Ocean Topics</h4>
+        <ol class="nl">
+          <li><div class="nl-num">1</div><span>Nature of ocean currents (warm/cold) + their climatic effects</span></li>
+          <li><div class="nl-num">2</div><span>El Niño / La Niña effects on Indian monsoon</span></li>
+          <li><div class="nl-num">3</div><span>Ocean floor features (trench locations, MOR names)</span></li>
+          <li><div class="nl-num">4</div><span>Salinity distribution — Red Sea vs Baltic vs Bay of Bengal</span></li>
+          <li><div class="nl-num">5</div><span>Coral reef types (fringing, barrier, atoll) with examples</span></li>
+          <li><div class="nl-num">6</div><span>Spring vs neap tides — Moon phases</span></li>
+          <li><div class="nl-num">7</div><span>Strategic chokepoints (Hormuz, Malacca, Bab-el-Mandeb)</span></li>
+          <li><div class="nl-num">8</div><span>Thermohaline circulation / Global conveyor belt</span></li>
+        </ol>
+      </div>
+      <div class="card bl">
+        <h4>🏛️ UPSC Conceptual Patterns</h4>
+        <ol class="nl">
+          <li><div class="nl-num">1</div><span>Ocean-monsoon interaction (IOD + ENSO combined effects)</span></li>
+          <li><div class="nl-num">2</div><span>Ocean acidification and climate change</span></li>
+          <li><div class="nl-num">3</div><span>India's EEZ and maritime rights (UNCLOS)</span></li>
+          <li><div class="nl-num">4</div><span>Indian Ocean strategic importance — SAGAR, IORA</span></li>
+          <li><div class="nl-num">5</div><span>Upwelling zones and fisheries significance</span></li>
+          <li><div class="nl-num">6</div><span>Coral bleaching — causes, consequences, India's reefs</span></li>
+          <li><div class="nl-num">7</div><span>Blue economy policy questions</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="pyq" style="margin-top:16px;">
+      <div class="pyq-lbl">FAST ELIMINATION STRATEGY</div>
+      <p><strong>Current direction:</strong> If question asks about effect on climate → warm current = mild/wet winters; cold current = fog/aridity near coast.<br>
+      <strong>Map-based:</strong> Recall gyre directions (CW in NH, CCW in SH) → trace from there.<br>
+      <strong>Salinity:</strong> Enclosed + hot + no rivers = high; Open + cold + rivers = low.<br>
+      <strong>Tides:</strong> "Syzygy" = Spring tide; "Quadrature" = Neap tide — these words appear directly in CDS options!</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S15: MNEMONICS ====================== -->
+<div class="sec-hdr" id="s15">
+  <div class="sec-badge sb-purple">15</div>
+  <div class="sec-info"><h2>Memory Systems & Mnemonics</h2><p>Current directions · Reef types · Floor features · Straits · Salinity patterns</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-p">🧠</div><span class="branch-title">Complete Mnemonic System for Oceanography</span><span class="tag tp">MEMORY</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="g2">
+      <div class="mnem" style="margin:0;">
+        <h4>🌊 5 Oceans in Order (Largest→Smallest)</h4>
+        <div class="mnem-hl">"PAISA" — P·A·I·S·A</div>
+        <p><strong>P</strong>acific → <strong>A</strong>tlantic → <strong>I</strong>ndian → <strong>S</strong>outhern → <strong>A</strong>rctic</p>
+      </div>
+      <div class="mnem" style="margin:0;">
+        <h4>❄️ Cold Eastern Boundary Currents</h4>
+        <div class="mnem-hl">"California Bears Can Win" — C·B·C·W</div>
+        <p><strong>C</strong>alifornia · <strong>B</strong>enguela · <strong>C</strong>anary · <strong>W</strong>est Australian</p>
+      </div>
+      <div class="mnem" style="margin:0;">
+        <h4>🔥 Warm Western Boundary Currents</h4>
+        <div class="mnem-hl">"Great Kings Boldly Attack" — G·K·B·A</div>
+        <p><strong>G</strong>ulf Stream · <strong>K</strong>uroshio · <strong>B</strong>razil · <strong>A</strong>gulhas</p>
+      </div>
+      <div class="mnem" style="margin:0;">
+        <h4>🪸 Coral Reef Types — "FAB"</h4>
+        <div class="mnem-hl">F·A·B → Fringing → Atoll → Barrier</div>
+        <p>Darwin's progression: <strong>F</strong>ringing reef → island subsides → <strong>B</strong>arrier reef → more subsidence → <strong>A</strong>toll<br>
+        India: Lakshadweep = Atolls; Andaman = Fringing</p>
+      </div>
+      <div class="mnem" style="margin:0;">
+        <h4>🔑 Strategic Straits — "HMBSS"</h4>
+        <div class="mnem-hl">H·M·B·S·S</div>
+        <p><strong>H</strong>ormuz (oil) · <strong>M</strong>alacca (trade) · <strong>B</strong>ab-el-Mandeb (Suez) · <strong>S</strong>uez (canal) · <strong>S</strong>trait of Gibraltar</p>
+      </div>
+      <div class="mnem" style="margin:0;">
+        <h4>🧂 High Salinity Seas — "RAMP"</h4>
+        <div class="mnem-hl">R·A·M·P</div>
+        <p><strong>R</strong>ed Sea (42‰) · <strong>A</strong>rabian Sea · <strong>M</strong>editerranean (38–39‰) · <strong>P</strong>ersian Gulf (37–40‰)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====================== S16: MAP PRACTICE ====================== -->
+<div class="sec-hdr" id="s16">
+  <div class="sec-badge sb-lime">16</div>
+  <div class="sec-info"><h2>Map Practice Section</h2><p>Current flow directions · Trench locations · Fishing grounds · Coral reefs</p></div>
+</div>
+
+<div class="branch">
+  <div class="branch-hdr" onclick="togBranch(this)">
+    <div class="branch-left"><div class="b-icon bi-l">🗺️</div><span class="branch-title">Map-Based Revision — Quick Location Recall</span><span class="tag tt">MAP PYQs</span></div>
+    <span class="b-chevron">▶</span>
+  </div>
+  <div class="branch-body">
+    <div class="g2">
+      <div class="card bl">
+        <h4>📍 Pacific Ocean — Key Locations</h4>
+        <table class="ctable" style="margin-top:0;">
+          <tr><th>Feature</th><th>Location/Detail</th></tr>
+          <tr><td class="hl">Mariana Trench</td><td>W. Pacific, near Guam; deepest on Earth</td></tr>
+          <tr><td>East Pacific Rise</td><td>Mid-ocean ridge, E. Pacific</td></tr>
+          <tr><td>Kuroshio</td><td>Warm, W. Pacific, flows NE past Japan</td></tr>
+          <tr><td>Peru/Humboldt</td><td>Cold, E. Pacific, along S. America coast</td></tr>
+          <tr><td>GPGP</td><td>Great Pacific Garbage Patch, N. Pacific Gyre</td></tr>
+        </table>
+      </div>
+      <div class="card bg">
+        <h4>📍 Atlantic Ocean — Key Locations</h4>
+        <table class="ctable" style="margin-top:0;">
+          <tr><th>Feature</th><th>Location/Detail</th></tr>
+          <tr><td class="hl">Mid-Atlantic Ridge</td><td>N-S through Atlantic; Iceland sits on it</td></tr>
+          <tr><td>Puerto Rico Trench</td><td>N. Atlantic, deepest in Atlantic</td></tr>
+          <tr><td>Gulf Stream</td><td>Florida coast → NE → N. Atlantic Drift</td></tr>
+          <tr><td>Grand Banks</td><td>E. Canada; Gulf Stream + Labrador = rich fishing</td></tr>
+          <tr><td>Canary Current</td><td>E. boundary, NW Africa, flows S.</td></tr>
+        </table>
+      </div>
+      <div class="card bt">
+        <h4>📍 Indian Ocean — Key Locations</h4>
+        <table class="ctable" style="margin-top:0;">
+          <tr><th>Feature</th><th>Location/Detail</th></tr>
+          <tr><td class="hl">Java/Sunda Trench</td><td>S. of Java, Indonesia; deepest in IO</td></tr>
+          <tr><td>Carlsberg Ridge</td><td>NW Indian Ocean MOR</td></tr>
+          <tr><td>Agulhas Current</td><td>Warm, W. boundary, E. Africa</td></tr>
+          <tr><td>Lakshadweep</td><td>Arabian Sea; atolls (India)</td></tr>
+          <tr><td>Malacca Strait</td><td>Between Malay Peninsula & Sumatra</td></tr>
+        </table>
+      </div>
+      <div class="card bo">
+        <h4>📍 Major Fishing Grounds</h4>
+        <ul>
+          <li><span class="hl">Grand Banks</span>: Atlantic (cod, halibut)</li>
+          <li><span class="hl">Peru/Humboldt Coast</span>: Pacific (anchoveta)</li>
+          <li><span class="hl">Dogger Bank</span>: North Sea (herring, mackerel)</li>
+          <li><span class="hl">Newfoundland Banks</span>: Atlantic Canada</li>
+          <li><span class="hl">Yellow Sea / East China Sea</span>: W. Pacific</li>
+          <li>India: Bay of Bengal coast + EEZ waters</li>
+        </ul>
+      </div>
+    </div>
+    <div class="qr-box">
+      <div class="qr-grid">
+        <div class="qr-item"><strong>Map Tip 1</strong>Cold currents → deserts on adjacent coasts (Atacama, Namib, Sahara)</div>
+        <div class="qr-item"><strong>Map Tip 2</strong>Warm currents → moderate climate, more rainfall on coasts</div>
+        <div class="qr-item"><strong>Map Tip 3</strong>Gulf Stream + Labrador meet at Grand Banks = fog + fishing</div>
+        <div class="qr-item"><strong>Map Tip 4</strong>All trenches in Pacific (mostly), plus Java (IO), Puerto Rico (Atl)</div>
+        <div class="qr-item"><strong>Map Tip 5</strong>MORs run through centers of oceans; widest at East Pacific Rise</div>
+        <div class="qr-item"><strong>Map Tip 6</strong>Lakshadweep (Arabian Sea, atolls) ≠ Andaman (Bay of Bengal, fringing)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ====================== S17: 20 CDS QUESTIONS ====================== -->
+<div class="sec-hdr" id="s17">
+  <div class="sec-badge sb-gold">17</div>
+  <div class="sec-info"><h2>20 Probable CDS Prelims Questions</h2><p>Click each question to reveal the answer with explanation</p></div>
+</div>
+
+<div id="cds-qs">
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q1</div><div class="qa-txt">The Humboldt (Peru) Current flows along the western coast of South America. It is a:</div></div><div class="qa-ans"><p class="correct">Cold current flowing northward along the Pacific coast of South America (Peru & Chile)</p><p class="exp">The Peru/Humboldt Current is a cold, eastern boundary current. It flows northward from Antarctica along the Pacific coast. It causes the aridity of the Atacama Desert and supports the world's richest anchovy fisheries through upwelling. El Niño disrupts this current, causing massive fish kills.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q2</div><div class="qa-txt">Which of the following pairs of straits is the most important chokepoint for Middle Eastern oil exports?</div></div><div class="qa-ans"><p class="correct">Strait of Hormuz — ~20% of global oil trade passes through it</p><p class="exp">The Strait of Hormuz between Iran and Oman is the world's most important oil transit chokepoint. At its narrowest, it's only about 39 km wide. Nearly 21 million barrels of oil per day pass through it. Any disruption has immediate global energy price implications.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q3</div><div class="qa-txt">Spring tides are caused when:</div></div><div class="qa-ans"><p class="correct">The Sun, Earth, and Moon are aligned in a straight line (Syzygy) — occurs at new moon AND full moon</p><p class="exp">Spring tides (higher tidal range) occur when Sun, Moon, and Earth are in alignment (Syzygy). This happens at NEW MOON (Moon between Sun and Earth) AND at FULL MOON (Earth between Sun and Moon). The gravitational forces of Sun and Moon combine, producing higher high tides and lower low tides. Common trap: students think only full moon causes spring tides.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q4</div><div class="qa-txt">Which ocean has the most seasonal (reversing) current system?</div></div><div class="qa-ans"><p class="correct">Indian Ocean — currents reverse with monsoon seasons</p><p class="exp">The Indian Ocean is unique in that its surface currents reverse direction seasonally. In winter (NE Monsoon): currents flow westward. In summer (SW Monsoon): currents flow eastward. This is driven by the monsoon wind system, unlike Pacific and Atlantic where Coriolis and trade winds dominate throughout the year.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q5</div><div class="qa-txt">The salinity of the Bay of Bengal is lower than the Arabian Sea because:</div></div><div class="qa-ans"><p class="correct">Large freshwater input from major rivers (Ganga, Brahmaputra, Mahanadi) + higher rainfall in Bay of Bengal region</p><p class="exp">Bay of Bengal receives enormous freshwater discharge from Ganga, Brahmaputra, Mahanadi, Krishna, and Godavari rivers. It also receives heavy monsoon rainfall. Arabian Sea is more saline due to higher evaporation, less rainfall, and no major rivers. This salinity difference affects cyclone intensity too — lower salinity = lower heat content = less intense cyclones (one reason Bay of Bengal has more but slightly weaker cyclones).</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q6</div><div class="qa-txt">El Niño phenomenon is associated with:</div></div><div class="qa-ans"><p class="correct">Anomalous warming of the central and eastern equatorial Pacific Ocean, weakening of trade winds</p><p class="exp">El Niño = abnormal warming of central-eastern Pacific. Trade winds weaken or reverse. The warm water that normally pools in western Pacific (near Indonesia/Australia) spreads eastward to Peru coast. Effects: drought in Australia/SE Asia/India, floods in Peru/Ecuador. It disrupts the Humboldt current upwelling, collapsing Peruvian fisheries. El Niño years tend to produce weaker Indian monsoons.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q7</div><div class="qa-txt">Which is the deepest trench in the Indian Ocean?</div></div><div class="qa-ans"><p class="correct">Java Trench (also called Sunda Trench) — approximately 7,450 m deep, south of Java, Indonesia</p><p class="exp">Java (Sunda) Trench is the deepest part of the Indian Ocean at ~7,450m. It was formed at the subduction zone where the Indo-Australian plate subducts beneath the Eurasian plate. The 2004 Indian Ocean earthquake (9.1 Mw) occurred near this trench, triggering the devastating tsunami.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q8</div><div class="qa-txt">Continental shelf is significant because: (1) Rich fishing ground (2) Oil & gas deposits (3) EEZ claims base (4) Deep sea minerals</div></div><div class="qa-ans"><p class="correct">Statements 1, 2, and 3 are correct; Statement 4 is incorrect (deep sea minerals are on abyssal plains)</p><p class="exp">Continental shelf (0–200m depth) is: (1) World's richest fishing grounds — sunlight penetrates, nutrients available; (2) Major oil and gas deposits (Mumbai High, North Sea, Persian Gulf shelf); (3) Basis for EEZ and extended continental shelf claims under UNCLOS. Deep sea minerals (polymetallic nodules) are found on ABYSSAL PLAINS at 4,000–6,000m — NOT on the continental shelf.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q9</div><div class="qa-txt">What differentiates a Guyot from a Seamount?</div></div><div class="qa-ans"><p class="correct">A Guyot (Tablemount) has a flat top due to wave erosion when it was at sea level; a Seamount has a pointed/conical top</p><p class="exp">Both are submerged volcanic mountains. Seamounts have conical/pointed tops and remain fully submerged throughout their history. Guyots were originally seamounts that rose above sea level, allowing waves to erode their tops flat. When the volcanic island subsided (or sea level rose), the flat-topped mountain submerged, becoming a guyot. Most abundant in the Pacific Ocean.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q10</div><div class="qa-txt">The highest salinity in the world's oceans is found in:</div></div><div class="qa-ans"><p class="correct">Red Sea (42–43‰) and Persian Gulf (37–40‰) — subtropical, enclosed seas with high evaporation</p><p class="exp">Highest oceanic salinity (excluding lakes like Dead Sea): Red Sea at 42–43‰. Reasons: Enclosed sea, no major rivers, high evaporation rate in arid climate, hot desert surroundings. Persian Gulf is also very high. The key principle: enclosed water body + arid climate + high evaporation + no freshwater input = high salinity. Common trap: students often cite Dead Sea (340‰) but it's a lake, not ocean!</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q11</div><div class="qa-txt">Mid-Oceanic Ridges are sites of:</div></div><div class="qa-ans"><p class="correct">Seafloor spreading — new oceanic crust is created here at divergent plate boundaries</p><p class="exp">Mid-Oceanic Ridges (MOR) form at divergent plate boundaries where tectonic plates move apart. Magma wells up, cools, and creates new oceanic crust. This is seafloor spreading (Harry Hess theory, 1960s). The ridge is the youngest part of the ocean floor — age increases away from the ridge. The Mid-Atlantic Ridge is the longest, running N-S through the Atlantic. The Carlsberg Ridge is the MOR of the Indian Ocean (NW sector).</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q12</div><div class="qa-txt">Which current is responsible for the mild climate of Western Europe (particularly Norway and UK)?</div></div><div class="qa-ans"><p class="correct">North Atlantic Drift (continuation of Gulf Stream) — warm current that keeps Western European ports ice-free</p><p class="exp">The Gulf Stream originates in the Gulf of Mexico, flows NE along the US East Coast, then becomes the North Atlantic Drift crossing the Atlantic. This warm current releases heat to the atmosphere, keeping Western Europe's climate unusually mild for its latitude. Norway (65°N+) has ice-free ports due to this current. Without it, N. Europe's climate would be like Siberia or Labrador (same latitudes but ice-bound).</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q13</div><div class="qa-txt">Coral reefs are found mainly in:</div></div><div class="qa-ans"><p class="correct">Shallow, warm, clear tropical and subtropical waters — approximately 30°N to 30°S latitude, at depths less than 50m</p><p class="exp">Coral reefs need: (1) Water temperature 20–30°C; (2) Clear, low-turbidity water (sunlight needed for zooxanthellae algae); (3) Shallow water (usually &lt;50m depth); (4) High salinity (~35‰); (5) Low nutrient levels (paradox — reefs thriving in nutrient-poor waters). Found mainly in tropical belt. India: Lakshadweep (Arabian Sea), Andaman & Nicobar (Bay of Bengal), Gulf of Mannar, Gulf of Kutch.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q14</div><div class="qa-txt">The thermohaline circulation (Global Conveyor Belt) is driven by:</div></div><div class="qa-ans"><p class="correct">Density differences in ocean water caused by temperature (thermo) and salinity (haline) variations</p><p class="exp">Thermohaline circulation is the deep-ocean circulation system driven by density differences. Cold, salty water is denser and sinks at high latitudes (particularly North Atlantic and around Antarctica). This deep water travels along the ocean floor, gradually warming and rising (upwelling) in tropical regions. Surface water flows to replace it. The complete cycle takes ~1000–2000 years. It's called the "Global Ocean Conveyor Belt" and regulates climate globally. Weakening (AMOC slowdown) due to Arctic freshwater influx is a major climate concern.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q15</div><div class="qa-txt">Exclusive Economic Zone (EEZ) extends up to what distance from a country's baseline?</div></div><div class="qa-ans"><p class="correct">200 nautical miles (370 km) from the baseline under UNCLOS 1982</p><p class="exp">UNCLOS (United Nations Convention on the Law of the Sea, 1982) defines: Territorial Sea = 12 nm (sovereign rights); Contiguous Zone = 24 nm (enforcement rights); EEZ = 200 nm (economic rights — fisheries, minerals, energy). India's EEZ is approximately 2.02 million km². Countries can claim extended continental shelf up to 350 nm if they can prove the shelf extends that far geologically.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q16</div><div class="qa-txt">Upwelling zones in oceans are important because:</div></div><div class="qa-ans"><p class="correct">They bring nutrient-rich cold water from depths to the surface, supporting exceptional marine productivity and fisheries</p><p class="exp">Upwelling occurs when surface water is pushed away from coast (by wind/Coriolis) and replaced by cold, nutrient-rich deep water. Major upwelling zones: Peru coast (Humboldt current), Benguela coast (SW Africa), California coast, West Africa (Canary current). These zones are the world's most productive fisheries. El Niño suppresses upwelling along Peru coast, causing massive fishery collapse.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q17</div><div class="qa-txt">Lakshadweep Islands are primarily composed of:</div></div><div class="qa-ans"><p class="correct">Coral atolls — ring-shaped reefs enclosing lagoons in the Arabian Sea</p><p class="exp">Lakshadweep (Sanskrit: "Hundred Thousand Islands") consists of 36 islands, all coral atolls in the Arabian Sea. They are the only atolls in India. The islands are the exposed tops of the Lakshadweep-Chagos Ridge. They are part of India's EEZ and strategically important for monitoring the Arabian Sea. Key contrast: Andaman & Nicobar Islands in the Bay of Bengal are continental islands with fringing reefs.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q18</div><div class="qa-txt">Which of the following about the Indian Ocean Dipole (IOD) is correct?</div></div><div class="qa-ans"><p class="correct">A positive IOD (warmer western Indian Ocean near Africa, cooler eastern near Indonesia) tends to enhance the Indian summer monsoon</p><p class="exp">IOD measures the difference in Sea Surface Temperature (SST) between the western Indian Ocean (near East Africa/Arabian Sea) and eastern Indian Ocean (near Indonesia). Positive IOD: western IO warmer → enhanced rainfall over India and E. Africa; drought in Indonesia/Australia. Negative IOD: eastern IO warmer → suppressed Indian monsoon. IOD and ENSO often co-occur and sometimes amplify each other's effects on Indian monsoon.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q19</div><div class="qa-txt">The IORA (Indian Ocean Rim Association) is associated with:</div></div><div class="qa-ans"><p class="correct">IORA is a regional intergovernmental organisation for Indian Ocean Rim states, focusing on maritime cooperation, blue economy, and trade. HQ: Mauritius</p><p class="exp">Indian Ocean Rim Association (IORA) was established in 1997. 23 member states + 9 dialogue partners (including USA, China, Japan). India is a founding member. Key priorities: maritime safety & security, facilitation of trade, fisheries management, disaster risk management, blue economy. HQ in Ebene, Mauritius. India's SAGAR initiative aligns closely with IORA goals.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n">Q20</div><div class="qa-txt">Tsunamis in the open ocean are difficult to detect because:</div></div><div class="qa-ans"><p class="correct">In deep water, tsunamis have very long wavelengths (100–700 km) but very low heights (less than 1 metre), making them imperceptible to ships</p><p class="exp">Tsunamis travel at 800–900 km/h in deep ocean. Their wavelength is extremely long (100–700 km) but amplitude is tiny (&lt;1m). Ships in open ocean don't feel them. As the tsunami approaches shallow coastal waters, it SLOWS DOWN and the wave HEIGHT dramatically increases (shoaling effect), potentially reaching 30–40m at the coast. DART buoys (Deep-ocean Assessment and Reporting of Tsunamis) detect pressure changes on the ocean floor to provide early warning.</p></div></div>
+</div>
+
+<div class="div"></div>
+
+<!-- ====================== S18: 10 UPSC QUESTIONS ====================== -->
+<div class="sec-hdr" id="s18">
+  <div class="sec-badge sb-purple">18</div>
+  <div class="sec-info"><h2>10 UPSC-Level Conceptual Questions</h2><p>Analytical depth · Assertion-Reason · Policy linkage</p></div>
+</div>
+
+<div id="upsc-qs">
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n upsc">U1</div><div class="qa-txt">Assertion (A): The North Atlantic Drift keeps the ports of Northern Europe ice-free despite being at very high latitudes.<br>Reason (R): Ocean currents carry heat from tropical regions toward polar regions, moderating coastal climates.</div></div><div class="qa-ans"><p class="correct">Both A and R are correct, and R is the correct explanation of A.</p><p class="exp">The Gulf Stream (and its extension, the North Atlantic Drift) transports approximately 1.3 petawatts of heat northward — equivalent to millions of power plants. This heat is released into the atmosphere over the North Atlantic and Western Europe. Norway's coast (above 70°N) remains navigable year-round while similar-latitude ports in Canada and Russia freeze. This is a classic example of ocean current impact on climate — a core UPSC analytical connection.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n upsc">U2</div><div class="qa-txt">Explain how the thermohaline circulation acts as a "global ocean conveyor belt" and why its potential slowdown is a major climate concern.</div></div><div class="qa-ans"><p class="correct">Thermohaline circulation redistributes heat globally; AMOC slowdown could trigger regional cooling in Europe and alter global precipitation patterns.</p><p class="exp">The Thermohaline Circulation (THC) works as: dense cold+salty water sinks at North Atlantic → flows southward along Atlantic floor → spreads to Pacific and Indian Oceans → gradually warms, rises (upwells) → surface flow brings warm water back to North Atlantic. This global conveyor belt regulates heat distribution, precipitation, and marine oxygen/nutrient supply globally. Climate concern: Arctic ice melt introduces large volumes of freshwater into North Atlantic → reduces salinity → reduces sinking → slows AMOC → could trigger rapid cooling in Europe (paradoxically) amid global warming. Estimated AMOC has already slowed ~15% since mid-20th century.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n upsc">U3</div><div class="qa-txt">How does El Niño affect the Indian monsoon? Why is the relationship not always consistent?</div></div><div class="qa-ans"><p class="correct">El Niño tends to suppress Indian monsoon by weakening moisture convergence, but the relationship is modulated by IOD, EQUINOO, and Atlantic SST.</p><p class="exp">Mechanism: El Niño warms central-eastern Pacific → rising air anomaly over Pacific (Walker Circulation disruption) → descending air over Indian Ocean region → suppresses convection → weakens SW monsoon. However, relationship is not deterministic because: (1) Positive IOD can compensate for El Niño's suppressive effect; (2) EQUINOO (Equatorial Indian Ocean Oscillation) can modulate; (3) Eurasian snow cover; (4) Atlantic SST anomalies. Many El Niño years have had normal/above-normal monsoons (2019: El Niño + positive IOD → near-normal monsoon). UPSC tests this nuanced understanding rather than simple rule.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n upsc">U4</div><div class="qa-txt">Distinguish between ocean acidification and eutrophication. What are their respective consequences for marine ecosystems?</div></div><div class="qa-ans"><p class="correct">Ocean acidification: CO₂ absorption → carbonic acid → pH drop → coral/shellfish damage. Eutrophication: nutrient overload → algal blooms → oxygen depletion → dead zones.</p><p class="exp">Ocean Acidification: Oceans absorb ~30% of atmospheric CO₂ → CO₂ + H₂O → H₂CO₃ (carbonic acid) → pH has dropped from 8.2 to 8.1 since industrial revolution (30% more acidic). Consequences: dissolves calcium carbonate shells/skeletons → coral bleaching/erosion, shellfish collapse, pteropod mortality. Eutrophication: Agricultural runoff (nitrogen, phosphorus) → algal blooms → algae die → decomposition consumes oxygen → hypoxic "dead zones" (Gulf of Mexico has 22,000 km² dead zone). Kills fish, invertebrates. Both threaten food security and biodiversity but through different mechanisms.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n upsc">U5</div><div class="qa-txt">Critically analyse India's strategic interests in the Indian Ocean Region (IOR) in the context of China's String of Pearls strategy.</div></div><div class="qa-ans"><p class="correct">India seeks to maintain regional maritime dominance through SAGAR, Necklace of Diamonds, and multilateral frameworks against China's strategic encirclement via port development.</p><p class="exp">China's String of Pearls: developing port infrastructure in Gwadar (Pakistan), Hambantota (Sri Lanka), Chittagong (Bangladesh), Kyaukpyu (Myanmar) — strategic encirclement of India. India's response: (1) SAGAR doctrine (Security and Growth for All in the Region); (2) Developing Sabang (Indonesia), Duqm (Oman), Assumption Island (Seychelles) access; (3) Strengthening Andaman & Nicobar Command (guards Malacca approach); (4) IORA engagement; (5) Quad (India-US-Japan-Australia) — maritime security. Indian Ocean is India's backyard — ~95% of India's trade by sea. Energy security: 80% oil imports through IOR chokepoints. Blue economy + maritime surveillance crucial for strategic autonomy.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n upsc">U6</div><div class="qa-txt">Why are western boundary currents (Gulf Stream, Kuroshio) faster and narrower than eastern boundary currents? Explain the concept of western boundary intensification.</div></div><div class="qa-ans"><p class="correct">Coriolis effect intensifies currents on western boundaries of ocean basins due to Earth's rotation causing asymmetric gyre circulation.</p><p class="exp">Western Boundary Intensification (Stommel theory): As ocean gyres circulate, the Coriolis parameter (f) increases with latitude. In the western boundary, the gyre flow is constrained and must be faster/narrower to conserve angular momentum (vorticity). Result: Gulf Stream is ~100 km wide, moves at 2m/s; Canary Current (eastern boundary) is 1,000 km wide, moves at 0.1 m/s. Western boundary currents carry more heat poleward, have strong subsurface flows, and have major climate impacts. The stronger the wind-driven gyre circulation, the more intensified the western boundary current.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n upsc">U7</div><div class="qa-txt">How do cold ocean currents cause deserts along western margins of continents?</div></div><div class="qa-ans"><p class="correct">Cold currents cool the overlying air, preventing convection and rainfall, creating stable anticyclonic conditions → coastal deserts on western continental margins.</p><p class="exp">Mechanism: Cold eastern boundary currents (California, Benguela, Peru, Canary) flow along western coasts of continents. Cold water cools the overlying air → air temperature inverts (cold air near surface, warm air above) → temperature inversion prevents convective uplift → no rain. Examples: Atacama Desert (Peru Current), Namib Desert (Benguela Current), Sahara's Atlantic fringe (Canary Current). Additionally, cold coastal waters lead to fog formation (advection fog) rather than rain — the dense fog of Namib and Atacama coasts supports unique fog-adapted ecosystems. Combined with subtropical high pressure, these are among Earth's driest regions.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n upsc">U8</div><div class="qa-txt">Assess the significance of India's Deep Ocean Mission for the country's strategic and economic interests.</div></div><div class="qa-ans"><p class="correct">Deep Ocean Mission positions India for deep-sea resource extraction, scientific leadership, and technological sovereignty in the emerging blue economy.</p><p class="exp">India's Deep Ocean Mission (₹4,077 crore, 2021–2026): (1) Polymetallic nodule exploration in Central Indian Ocean Basin (CIOB) — India has Pioneer Investor status from ISA since 1987 for 75,000 km² area containing Mn, Ni, Cu, Co; (2) Matsya 6000 submersible — 3-person deep-sea vehicle to 6,000m; (3) Deep-sea biodiversity research; (4) Ocean climate change research; (5) Technology development. Strategic significance: reducing import dependence for critical minerals (crucial for EVs, electronics); scientific soft power; maritime domain awareness; Atmanirbhar Bharat in ocean tech. Challenges: deep-sea mining environmental concerns, high costs, international regulatory framework (UNCLOS Area regulations under ISA).</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n upsc">U9</div><div class="qa-txt">Explain Darwin's subsidence theory of atoll formation. How do Lakshadweep atolls fit this theory?</div></div><div class="qa-ans"><p class="correct">Darwin proposed volcanic islands progressively subside → fringing reef → barrier reef → atoll. Lakshadweep atolls are remnants of a submerged volcanic ridge.</p><p class="exp">Darwin's Subsidence Theory (1842): (1) Volcano emerges from sea → fringing reef forms on its shores; (2) Volcano begins to subside (or sea level rises) → fringing reef becomes barrier reef (lagoon forms between subsiding island and growing reef); (3) Continued subsidence → island disappears, only ring of reef remains around central lagoon = ATOLL. Modern addition: sea level changes and erosion also play roles. Lakshadweep: These atolls sit atop the Lakshadweep-Chagos Ridge, a submerged volcanic ridge. The islands are the exposed parts of coral reefs that grew atop this subsiding volcanic structure. They are classic textbook atolls — ring-shaped with central lagoons, very low elevation (&lt;4m), vulnerable to sea level rise from climate change.</p></div></div>
+
+  <div class="qa"><div class="qa-q" onclick="togQA(this)"><div class="qa-n upsc">U10</div><div class="qa-txt">How is the concept of 'Blue Carbon' relevant to India's climate commitments and coastal management?</div></div><div class="qa-ans"><p class="correct">Blue carbon ecosystems (mangroves, seagrasses, saltmarshes) sequester carbon at rates 10× faster than terrestrial forests and are crucial for India's NDC targets and coastal resilience.</p><p class="exp">Blue Carbon: carbon captured and stored by ocean and coastal ecosystems — mangroves, seagrasses, saltmarshes. Significance: (1) Sequestration rate 10× higher than terrestrial forests per unit area; (2) Store carbon in both biomass AND soil for millennia; (3) Coastal protection from storms/erosion; (4) Fisheries nurseries; (5) Biodiversity. India's relevance: India has 4,975 km² of mangroves (Sundarbans: largest in world, shared with Bangladesh); seagrass beds in Gulf of Mannar, Lakshadweep, Andaman. India's NDC includes forestry sector carbon sinks — expanding to Blue Carbon is logical extension. Threats: coastal development, shrimp farming (mangrove destruction), sea level rise. Blue Carbon credits emerging in voluntary carbon markets — economic opportunity for coastal communities.</p></div></div>
+</div>
+
+<div class="div"></div>
+
+<!-- ====================== S19: NIGHT BEFORE FRAMEWORK ====================== -->
+<div class="sec-hdr" id="s19">
+  <div class="sec-badge sb-green">19</div>
+  <div class="sec-info"><h2>Night Before Exam — Revision Framework</h2><p>60 min · 30 min · 10 min structured plans</p></div>
+</div>
+
+<div class="g3" style="margin-bottom:36px;">
+  <div class="night-block nb-60">
+    <div class="nb-label">60</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-list">
+      <li>Ocean rankings: PAISA mnemonic (5 min)</li>
+      <li>Ocean floor: shelf, slope, plains, MOR, trenches with depths (8 min)</li>
+      <li>Temperature & salinity distribution — all key numbers (8 min)</li>
+      <li>Major ocean currents — warm/cold, location, climate effect (12 min)</li>
+      <li>El Niño/La Niña — mechanism, Indian monsoon effects (7 min)</li>
+      <li>Coral reefs: 3 types + Darwin's theory + India's reefs (6 min)</li>
+      <li>Tides: spring/neap + Moon phases (5 min)</li>
+      <li>Chokepoints: HMBSS mnemonic (4 min)</li>
+      <li>All 20 CDS questions scan (5 min)</li>
+    </ul>
+  </div>
+  <div class="night-block nb-30">
+    <div class="nb-label">30</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-list">
+      <li>Facts Master Sheet quick scan (4 min)</li>
+      <li>Current nature table: warm/cold + locations (5 min)</li>
+      <li>Key salinity numbers: Red Sea 42‰, Baltic 7‰, Med 38‰ (3 min)</li>
+      <li>Top 6 traps review (5 min)</li>
+      <li>Mnemonics recite: PAISA, GKBA, CBCW, FAB, HMBSS (5 min)</li>
+      <li>Indian Ocean special: IOD + IORA + chokepoints (5 min)</li>
+      <li>EEZ = 200 nm, key UNCLOS zones (3 min)</li>
+    </ul>
+  </div>
+  <div class="night-block nb-10">
+    <div class="nb-label">10</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-list">
+      <li>PAISA ocean order (30 sec)</li>
+      <li>Deepest trench: Mariana 11,034m (30 sec)</li>
+      <li>Gulf Stream = warm, fastest; Peru = cold, richest fishing (1 min)</li>
+      <li>El Niño = warm Pacific → weak monsoon (1 min)</li>
+      <li>Spring tide = Syzygy; Neap = Quadrature (1 min)</li>
+      <li>Lakshadweep = Atolls; Andaman = Fringing (1 min)</li>
+      <li>Salinity max = Red Sea 42‰ (30 sec)</li>
+      <li>Hormuz = oil chokepoint (30 sec)</li>
+      <li>Bay of Bengal: less saline, more cyclones (1 min)</li>
+      <li>EEZ = 200 nautical miles (30 sec)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ULTRA SHORT REVISION MAP -->
+<div class="fw" style="margin-bottom:32px;">
+  <h3>🗺️ Ultra-Short Oceanography Mind Map — One Page Visual</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+    <div class="card bt" style="padding:16px;">
+      <h4 style="color:var(--accent-teal); margin-bottom:10px;">🌊 FLOOR</h4>
+      <p style="font-size:0.75rem; line-height:1.8; color:var(--text-muted);">
+        Shelf (0–200m) → Slope (200–4000m) → Abyssal Plain (3000–6000m)<br>
+        MOR: divergent, new crust | Trench: convergent, deepest<br>
+        Deepest: <span class="hl">Mariana 11,034m</span> | Indian: Java 7,450m
+      </p>
+    </div>
+    <div class="card bg" style="padding:16px;">
+      <h4 style="color:var(--accent-gold); margin-bottom:10px;">🧂 SALINITY</h4>
+      <p style="font-size:0.75rem; line-height:1.8; color:var(--text-muted);">
+        Avg: 35‰ | <span class="hl">Red Sea: 42‰</span> (highest ocean) | Baltic: 7‰<br>
+        Bay of Bengal &lt; Arabian Sea | Max at subtropics (20–30°)<br>
+        High evap + enclosed + no rivers = HIGH salinity
+      </p>
+    </div>
+    <div class="card bc" style="padding:16px;">
+      <h4 style="color:var(--accent-coral); margin-bottom:10px;">🌀 CURRENTS</h4>
+      <p style="font-size:0.75rem; line-height:1.8; color:var(--text-muted);">
+        Warm W.boundary: Gulf Stream, Kuroshio, Brazil, Agulhas<br>
+        Cold E.boundary: California, Peru, Benguela, Canary<br>
+        El Niño = warm Pacific → weak Indian monsoon | La Niña = opposite
+      </p>
+    </div>
+    <div class="card bgr" style="padding:16px;">
+      <h4 style="color:var(--accent-green); margin-bottom:10px;">🪸 REEFS</h4>
+      <p style="font-size:0.75rem; line-height:1.8; color:var(--text-muted);">
+        Fringing (no lagoon) → Barrier (wide lagoon) → Atoll (ring)<br>
+        Lakshadweep = Atolls | Andaman = Fringing | GBR = largest barrier<br>
+        Bleaching: &gt;1°C for 4 weeks → zooxanthellae expelled
+      </p>
+    </div>
+    <div class="card bl" style="padding:16px;">
+      <h4 style="color:var(--ocean-light); margin-bottom:10px;">🌊 TIDES</h4>
+      <p style="font-size:0.75rem; line-height:1.8; color:var(--text-muted);">
+        Spring (Syzygy): Sun-Moon-Earth aligned → Full+New moon<br>
+        Neap (Quadrature): right angle → 1st+3rd quarter moon<br>
+        Highest range: Bay of Fundy ~17m | Tidal energy: Gulf of Khambhat
+      </p>
+    </div>
+    <div class="card bo" style="padding:16px;">
+      <h4 style="color:var(--accent-orange); margin-bottom:10px;">🏛️ STRATEGIC</h4>
+      <p style="font-size:0.75rem; line-height:1.8; color:var(--text-muted);">
+        Hormuz (oil) · Malacca (trade) · Bab-el-Mandeb (Suez) · Suez (canal)<br>
+        India EEZ: 200 nm = 2.02 million km² | IORA HQ: Mauritius<br>
+        SAGAR doctrine | Deep Ocean Mission: ₹4077 cr
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center; padding:32px 0 20px; border-top:1px solid var(--border);">
+  <p style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--accent-gold); margin-bottom:8px;">🌊 Oceans Mastered. CDS 2 2026 Ready. All the Best! 🎯</p>
+  <p style="font-size:0.74rem; color:var(--text-muted); font-family:'Fira Code',monospace;">Premium Mind Map · UPSC Geography · Oceanography Master Revision</p>
+</div>
+
+</main>
+
+<script>
+function togBranch(hdr) {
+  const body = hdr.nextElementSibling;
+  hdr.classList.toggle('open');
+  if (body) body.classList.toggle('open');
+  const ch = hdr.querySelector('.b-chevron');
+  if (ch) ch.classList.toggle('open');
+}
+function togQA(qEl) {
+  const ans = qEl.nextElementSibling;
+  if (ans) ans.classList.toggle('open');
+}
+function goTo(id) {
+  const el = document.getElementById(id);
+  if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  if (window.innerWidth < 920) document.getElementById('sidebar').classList.remove('open');
+}
+// Sidebar active link on scroll
+const secIds = ['s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','s11','s12','s13','s14','s15','s16','s17','s18','s19'];
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 120) cur = id;
+  });
+  document.querySelectorAll('.toc-item').forEach(item => {
+    item.classList.remove('active');
+    if (item.getAttribute('onclick') && item.getAttribute('onclick').includes("'"+cur+"'")) item.classList.add('active');
+  });
+});
+// Initialize first branch open
+document.querySelectorAll('.branch-hdr.open').forEach(h => {
+  const b = h.nextElementSibling;
+  if (b) b.classList.add('open');
+});
+</script>
+</body>
+</html>

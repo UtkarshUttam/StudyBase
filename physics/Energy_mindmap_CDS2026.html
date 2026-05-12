@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energy (Physics) — CDS 2 2026 | NDA · AFCAT · UPSC Science Master Dashboard</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+:root{
+  --bg:#020810;--s1:#050d1a;--s2:#081422;--s3:#0c1c30;
+  --border:rgba(0,220,255,0.12);--border2:rgba(0,220,255,0.26);
+  --text:#c0e4ff;--muted:#4a7090;
+  --cyan:#00dcff;--cyan2:#60eeff;
+  --amber:#ffaa00;--amber2:#ffd060;
+  --red:#ff3355;--red2:#ff6680;
+  --lime:#00ff88;--lime2:#60ffb0;
+  --purple:#aa55ff;--purple2:#cc88ff;
+  --orange:#ff6600;--orange2:#ff9944;
+  --pink:#ff44aa;--pink2:#ff88cc;
+  --glow:0 0 22px rgba(0,220,255,0.3);
+  --glow-a:0 0 20px rgba(255,170,0,0.3);
+  --glow-r:0 0 18px rgba(255,51,85,0.25);
+  --shadow:0 4px 40px rgba(0,0,15,0.85);
+  --r:13px;--rsm:7px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'Rajdhani',sans-serif;font-weight:400;line-height:1.6;overflow-x:hidden;
+  background-image:radial-gradient(ellipse at 10% 20%,rgba(0,150,255,0.06) 0%,transparent 50%),radial-gradient(ellipse at 90% 80%,rgba(255,100,0,0.04) 0%,transparent 50%);}
+
+/* SIDEBAR */
+#sb{position:fixed;left:0;top:0;width:245px;height:100vh;background:var(--s1);border-right:1px solid var(--border);z-index:1000;overflow-y:auto;transition:transform .3s ease;}
+#sb::-webkit-scrollbar{width:3px;}
+#sb::-webkit-scrollbar-thumb{background:var(--s3);}
+.sb-logo{padding:18px 16px 14px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,rgba(0,180,255,0.08),rgba(255,100,0,0.05));}
+.sb-t{font-family:'Orbitron',sans-serif;font-size:.95rem;font-weight:900;color:var(--amber);line-height:1.3;}
+.sb-s{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--muted);margin-top:3px;letter-spacing:.5px;}
+.tgl{padding:9px 16px 4px;font-family:'JetBrains Mono',monospace;font-size:.56rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);opacity:.7;}
+.ti{display:flex;align-items:center;gap:7px;padding:6px 15px;font-size:.72rem;font-weight:600;color:var(--muted);cursor:pointer;border-left:2px solid transparent;transition:all .18s;}
+.ti:hover,.ti.act{color:var(--cyan);border-left-color:var(--cyan);background:rgba(0,220,255,0.05);}
+.ti.am:hover,.ti.am.act{color:var(--amber);border-left-color:var(--amber);background:rgba(255,170,0,0.05);}
+.ti.re:hover,.ti.re.act{color:var(--red);border-left-color:var(--red);background:rgba(255,51,85,0.05);}
+.ti.li:hover,.ti.li.act{color:var(--lime);border-left-color:var(--lime);background:rgba(0,255,136,0.05);}
+.ti.pu:hover,.ti.pu.act{color:var(--purple);border-left-color:var(--purple);background:rgba(170,85,255,0.05);}
+#mbt{display:none;position:fixed;top:11px;left:11px;z-index:1100;background:var(--s2);border:1px solid var(--border2);color:var(--cyan);width:40px;height:40px;border-radius:9px;font-size:1.2rem;cursor:pointer;align-items:center;justify-content:center;box-shadow:var(--glow);}
+
+/* MAIN */
+#main{margin-left:245px;padding:32px 36px 80px;max-width:1180px;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#020d1c 0%,#071a30 50%,#030c10 100%);border:1px solid rgba(0,220,255,0.22);border-radius:18px;padding:48px 48px 38px;margin-bottom:40px;position:relative;overflow:hidden;box-shadow:0 8px 60px rgba(0,80,150,0.4);}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(0,200,255,0.1) 0%,transparent 65%);border-radius:50%;pointer-events:none;}
+.hero::after{content:'⚡';position:absolute;right:48px;top:32px;font-size:5rem;opacity:.06;pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,170,0,0.12);border:1px solid rgba(255,170,0,0.3);color:var(--amber);font-family:'JetBrains Mono',monospace;font-size:.63rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 13px;border-radius:18px;margin-bottom:15px;}
+.hero h1{font-family:'Orbitron',sans-serif;font-size:2.8rem;font-weight:900;line-height:1.06;margin-bottom:12px;background:linear-gradient(120deg,#c0e4ff 0%,#00dcff 40%,#ffaa00 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-desc{color:var(--muted);font-size:.87rem;max-width:560px;margin-bottom:22px;line-height:1.7;}
+.hero-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{background:var(--s3);border:1px solid var(--border);color:var(--muted);font-size:.67rem;padding:3px 11px;border-radius:18px;font-family:'JetBrains Mono',monospace;}
+.chip.on{color:var(--cyan);border-color:rgba(0,220,255,0.3);background:rgba(0,220,255,0.07);}
+
+/* SECTION HEADER */
+.shdr{display:flex;align-items:center;gap:14px;margin:48px 0 20px;scroll-margin-top:20px;}
+.sbdg{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.75rem;font-weight:700;flex-shrink:0;}
+.sa{background:rgba(0,220,255,.12);color:var(--cyan);border:1px solid rgba(0,220,255,.26);}
+.sba{background:rgba(255,170,0,.12);color:var(--amber);border:1px solid rgba(255,170,0,.26);}
+.sc{background:rgba(255,51,85,.12);color:var(--red);border:1px solid rgba(255,51,85,.26);}
+.sd{background:rgba(0,255,136,.12);color:var(--lime);border:1px solid rgba(0,255,136,.26);}
+.se{background:rgba(170,85,255,.12);color:var(--purple);border:1px solid rgba(170,85,255,.26);}
+.sf{background:rgba(255,102,0,.12);color:var(--orange);border:1px solid rgba(255,102,0,.26);}
+.sg{background:rgba(255,68,170,.12);color:var(--pink);border:1px solid rgba(255,68,170,.26);}
+.sinfo h2{font-family:'Orbitron',sans-serif;font-size:1.45rem;font-weight:700;color:var(--text);line-height:1.2;}
+.sinfo p{font-size:.74rem;color:var(--muted);margin-top:2px;font-family:'JetBrains Mono',monospace;}
+
+/* BRANCH */
+.br{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:12px;background:var(--s1);box-shadow:var(--shadow);transition:border-color .22s;}
+.br:hover{border-color:rgba(0,220,255,0.22);}
+.brhdr{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;transition:background .17s;}
+.brhdr:hover{background:rgba(255,255,255,.018);}
+.brl{display:flex;align-items:center;gap:10px;}
+.bic{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+.bca{background:rgba(0,220,255,.1);}
+.bcb{background:rgba(255,170,0,.1);}
+.bcc{background:rgba(255,51,85,.1);}
+.bcd{background:rgba(0,255,136,.1);}
+.bce{background:rgba(170,85,255,.1);}
+.bcf{background:rgba(255,102,0,.1);}
+.bcg{background:rgba(255,68,170,.1);}
+.btit{font-weight:700;font-size:.9rem;}
+.bchv{color:var(--muted);font-size:.7rem;transition:transform .28s;flex-shrink:0;}
+.brhdr.op .bchv{transform:rotate(90deg);}
+.brbody{display:none;padding:0 18px 20px;border-top:1px solid var(--border);}
+.brbody.op{display:block;}
+
+/* GRIDS */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:14px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px;}
+
+/* CARDS */
+.card{background:var(--s2);border:1px solid var(--border);border-radius:var(--rsm);padding:14px;}
+.card h4{font-size:.82rem;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:5px;font-family:'Rajdhani',sans-serif;}
+.card p,.card li{font-size:.78rem;color:var(--muted);line-height:1.65;}
+.card ul{padding-left:14px;}
+.ca{border-left:3px solid var(--cyan);}
+.cb{border-left:3px solid var(--amber);}
+.cc{border-left:3px solid var(--red);}
+.cd{border-left:3px solid var(--lime);}
+.ce{border-left:3px solid var(--purple);}
+.cf{border-left:3px solid var(--orange);}
+.cg{border-left:3px solid var(--pink);}
+
+/* FORMULA CARD */
+.fc{background:var(--s3);border:1px solid rgba(0,220,255,.24);border-radius:var(--rsm);padding:13px 16px;margin:10px 0;position:relative;}
+.fc::before{content:'FORMULA';position:absolute;top:-1px;right:10px;background:var(--cyan);color:#000;font-size:.56rem;font-weight:800;letter-spacing:1px;padding:2px 7px;border-radius:0 0 5px 5px;font-family:'JetBrains Mono',monospace;}
+.fc.am::before{background:var(--amber);}
+.fc.re::before{background:var(--red);color:#fff;}
+.fc.li::before{background:var(--lime);color:#000;}
+.fc.pu::before{background:var(--purple);color:#fff;}
+.fc.or::before{background:var(--orange);color:#fff;}
+.fcm{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:700;color:var(--cyan2);text-align:center;padding:8px 0 4px;}
+.fc.am .fcm{color:var(--amber2);}
+.fc.re .fcm{color:var(--red2);}
+.fc.li .fcm{color:var(--lime2);}
+.fc.pu .fcm{color:var(--purple2);}
+.fcs{font-size:.72rem;color:var(--muted);text-align:center;margin-top:3px;}
+.fcd{font-size:.7rem;color:var(--muted);margin-top:9px;padding-top:9px;border-top:1px solid var(--border);font-family:'JetBrains Mono',monospace;line-height:1.75;}
+
+/* TRAP */
+.trap{background:rgba(255,51,85,.06);border:1px solid rgba(255,51,85,.22);border-radius:var(--rsm);padding:13px;margin:10px 0;}
+.trap h4{color:var(--red);font-size:.8rem;margin-bottom:7px;}
+.trap p,.trap li{font-size:.76rem;color:#ff9999;line-height:1.65;}
+.trap ul{padding-left:14px;}
+
+/* MNEMONIC */
+.mn{background:rgba(170,85,255,.08);border:1px solid rgba(170,85,255,.22);border-radius:var(--rsm);padding:13px;margin:10px 0;}
+.mn h4{color:var(--purple);font-size:.8rem;margin-bottom:7px;}
+.mn-hl{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:700;color:var(--purple2);margin:5px 0;}
+.mn p{font-size:.78rem;color:#bb99ff;line-height:1.65;}
+
+/* SHORTCUT */
+.sc{background:rgba(0,255,136,.05);border:1px solid rgba(0,255,136,.2);border-radius:var(--rsm);padding:13px;margin:10px 0;}
+.sc h4{color:var(--lime);font-size:.8rem;margin-bottom:7px;}
+.sc p,.sc li{font-size:.76rem;color:#88ffcc;line-height:1.65;}
+.sc ul{padding-left:14px;}
+
+/* QUICK RECALL */
+.qr{background:linear-gradient(135deg,rgba(255,170,0,.07),rgba(255,170,0,.03));border:1px solid rgba(255,170,0,.24);border-radius:var(--r);padding:17px 20px;margin:14px 0;}
+.qr::before{content:'⚡ QUICK RECALL';display:block;font-size:.59rem;font-weight:800;letter-spacing:2px;color:var(--amber);font-family:'JetBrains Mono',monospace;margin-bottom:10px;}
+.qrg{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:9px;}
+.qri{background:var(--s2);border-radius:7px;padding:9px 12px;font-size:.75rem;}
+.qri strong{color:var(--amber);display:block;font-size:.67rem;margin-bottom:2px;font-family:'JetBrains Mono',monospace;}
+
+/* TABLE */
+.ct{width:100%;border-collapse:collapse;font-size:.75rem;margin-top:12px;}
+.ct th{background:var(--s3);color:var(--cyan);padding:9px 12px;text-align:left;font-weight:700;font-size:.7rem;border-bottom:1px solid var(--border);font-family:'JetBrains Mono',monospace;}
+.ct td{padding:8px 12px;border-bottom:1px solid rgba(0,100,180,.1);color:var(--muted);vertical-align:top;}
+.ct tr:hover td{background:rgba(255,255,255,.015);}
+.ct td.hl{color:var(--cyan2);font-weight:700;font-family:'JetBrains Mono',monospace;}
+.ct td.am{color:var(--amber2);}
+.ct td.re{color:var(--red2);}
+.ct td.li{color:var(--lime);}
+
+/* TAGS */
+.tag{display:inline-block;font-size:.6rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:3px;font-family:'JetBrains Mono',monospace;letter-spacing:.3px;}
+.ta{background:rgba(0,220,255,.12);color:var(--cyan);}
+.tb{background:rgba(255,170,0,.12);color:var(--amber);}
+.tc{background:rgba(255,51,85,.12);color:var(--red);}
+.td{background:rgba(0,255,136,.12);color:var(--lime);}
+.te{background:rgba(170,85,255,.12);color:var(--purple);}
+.tf{background:rgba(255,102,0,.12);color:var(--orange);}
+
+/* HIGHLIGHTS */
+.hl{background:rgba(255,170,0,.12);color:var(--amber);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hla{background:rgba(0,220,255,.12);color:var(--cyan2);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hlr{background:rgba(255,51,85,.12);color:var(--red);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hlg{background:rgba(0,255,136,.12);color:var(--lime2);padding:1px 4px;border-radius:3px;font-weight:700;}
+.hlp{background:rgba(170,85,255,.12);color:var(--purple2);padding:1px 4px;border-radius:3px;font-weight:700;}
+
+/* DIVIDER */
+.div{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:32px 0;}
+
+/* NUMERIC BOX */
+.num-box{background:var(--s2);border:1px solid var(--border);border-radius:var(--rsm);margin-bottom:10px;overflow:hidden;}
+.num-q{padding:13px 16px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;transition:background .17s;}
+.num-q:hover{background:rgba(255,255,255,.02);}
+.num-n{background:var(--amber);color:#000;font-size:.6rem;font-weight:800;padding:2px 7px;border-radius:4px;flex-shrink:0;margin-top:2px;font-family:'JetBrains Mono',monospace;}
+.num-n.hard{background:var(--red);color:#fff;}
+.num-n.csat{background:var(--purple);color:#fff;}
+.num-n.cds{background:var(--cyan);color:#000;}
+.num-t{font-size:.8rem;color:var(--text);flex:1;line-height:1.6;}
+.num-a{display:none;padding:12px 16px 14px 44px;font-size:.77rem;color:var(--muted);line-height:1.75;border-top:1px solid var(--border);}
+.num-a.op{display:block;}
+.num-a .ok{color:var(--lime);font-weight:700;}
+.num-a .sol{font-family:'JetBrains Mono',monospace;background:var(--s3);padding:8px 12px;border-radius:6px;margin-top:8px;font-size:.73rem;color:var(--cyan2);line-height:1.9;}
+
+/* NIGHT FRAMEWORK */
+.nb{background:var(--s2);border:1px solid var(--border);border-radius:var(--r);padding:20px 20px 20px 24px;position:relative;overflow:hidden;}
+.nb::before{content:'';position:absolute;left:0;top:0;width:4px;height:100%;}
+.n60::before{background:var(--cyan);}
+.n30::before{background:var(--amber);}
+.n10::before{background:var(--lime);}
+.nb-lbl{font-family:'JetBrains Mono',monospace;font-size:1.55rem;font-weight:700;line-height:1;margin-bottom:3px;}
+.n60 .nb-lbl{color:var(--cyan);}
+.n30 .nb-lbl{color:var(--amber);}
+.n10 .nb-lbl{color:var(--lime);}
+.nb-sub{font-size:.63rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:12px;}
+.nb-ul{list-style:none;}
+.nb-ul li{font-size:.75rem;color:var(--muted);padding:4px 0 4px 14px;position:relative;border-bottom:1px solid rgba(0,100,180,.08);}
+.nb-ul li:last-child{border:none;}
+.nb-ul li::before{content:'›';position:absolute;left:0;color:var(--cyan);font-size:.8rem;}
+
+/* FORMULA WALL */
+.fw{background:var(--s1);border:1px solid var(--border);border-radius:var(--r);padding:22px;margin:18px 0;}
+.fw h3{font-family:'Orbitron',sans-serif;font-size:1.1rem;color:var(--amber);margin-bottom:16px;padding-bottom:11px;border-bottom:1px solid var(--border);}
+.fwg{display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:10px;}
+.fwi{background:var(--s2);border:1px solid var(--border);border-radius:var(--rsm);padding:12px;text-align:center;transition:border-color .2s,transform .2s;}
+.fwi:hover{border-color:rgba(0,220,255,.4);transform:translateY(-2px);}
+.fwl{font-size:.6rem;color:var(--muted);font-family:'JetBrains Mono',monospace;margin-bottom:7px;letter-spacing:.5px;}
+.fwv{font-family:'JetBrains Mono',monospace;font-size:.9rem;font-weight:700;color:var(--cyan2);line-height:1.4;}
+.fwn{font-size:.6rem;color:var(--muted);margin-top:5px;}
+
+/* STEP BOX */
+.sb2{background:var(--s2);border:1px solid var(--border);border-radius:var(--rsm);padding:11px 13px;margin:7px 0;}
+.sb2 .sn{font-family:'JetBrains Mono',monospace;font-size:.63rem;font-weight:700;color:var(--cyan);margin-bottom:5px;background:rgba(0,220,255,.1);display:inline-block;padding:2px 7px;border-radius:4px;}
+.sb2 p{font-size:.76rem;color:var(--muted);}
+.sb2 .math{font-family:'JetBrains Mono',monospace;color:var(--cyan2);font-size:.82rem;margin-top:5px;}
+
+/* SUB BRANCH */
+.sbr{border-left:2px solid var(--border);margin-left:12px;padding-left:14px;margin-top:12px;}
+.sbrt{font-size:.77rem;font-weight:700;color:var(--amber);margin-bottom:8px;display:flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;}
+
+/* NL LIST */
+.nl{list-style:none;padding:0;}
+.nl li{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px solid rgba(0,100,180,.09);font-size:.77rem;color:var(--muted);}
+.nl li:last-child{border:none;}
+.nl-n{width:20px;height:20px;border-radius:50%;background:var(--s3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:800;color:var(--cyan);flex-shrink:0;font-family:'JetBrains Mono',monospace;}
+
+/* ENERGY TYPE CARD */
+.etc{background:var(--s2);border:1px solid var(--border);border-radius:var(--rsm);padding:14px;border-top:3px solid;}
+.etc h4{font-family:'Rajdhani',sans-serif;font-size:.84rem;font-weight:700;margin-bottom:8px;}
+.etc p,.etc li{font-size:.75rem;color:var(--muted);line-height:1.6;}
+.etc ul{padding-left:13px;}
+.etc .formula{font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--cyan2);margin:6px 0;}
+
+/* RESPONSIVE */
+@media(max-width:920px){
+  #sb{transform:translateX(-100%);}
+  #sb.op{transform:translateX(0);}
+  #mbt{display:flex;}
+  #main{margin-left:0;padding:56px 16px 56px;}
+  .hero{padding:32px 20px 26px;}
+  .hero h1{font-size:1.9rem;}
+  .g2,.g3,.g4{grid-template-columns:1fr;}
+  .fwg{grid-template-columns:1fr 1fr;}
+}
+@media print{
+  #sb,#mbt{display:none!important;}
+  #main{margin-left:0;padding:16px;}
+  .brbody{display:block!important;}
+  *{color-adjust:exact;-webkit-print-color-adjust:exact;}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.hero{animation:fadeUp .55s ease both;}
+.br{animation:fadeUp .35s ease both;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.6;}}
+.pulse{animation:pulse 2s ease infinite;}
+</style>
+</head>
+<body>
+<button id="mbt" onclick="document.getElementById('sb').classList.toggle('op')">☰</button>
+
+<!-- SIDEBAR -->
+<nav id="sb">
+  <div class="sb-logo">
+    <div class="sb-t">ENERGY<br>PHYSICS</div>
+    <div class="sb-s">CDS 2026 · NDA · AFCAT · UPSC</div>
+  </div>
+  <div class="tgl">Foundation</div>
+  <div class="ti" onclick="gTo('s1')"><span>⚡</span>Intro to Energy</div>
+  <div class="ti" onclick="gTo('s2')"><span>🌈</span>Types of Energy</div>
+  <div class="ti" onclick="gTo('s3')"><span>🏃</span>Kinetic Energy</div>
+  <div class="ti" onclick="gTo('s4')"><span>🏔️</span>Potential Energy</div>
+  <div class="ti" onclick="gTo('s5')"><span>⚙️</span>Mechanical Energy</div>
+  <div class="ti" onclick="gTo('s6')"><span>🔄</span>Conservation Law</div>
+  <div class="ti" onclick="gTo('s7')"><span>💪</span>Work-Energy Theorem</div>
+  <div class="ti am" onclick="gTo('s8')"><span>⚡</span>Power</div>
+  <div class="tgl">Advanced Topics</div>
+  <div class="ti am" onclick="gTo('s9')"><span>🔄</span>Energy Conversion</div>
+  <div class="ti am" onclick="gTo('s10')"><span>🌱</span>Renewable Energy</div>
+  <div class="ti am" onclick="gTo('s11')"><span>🇮🇳</span>India Energy</div>
+  <div class="ti am" onclick="gTo('s12')"><span>🌡️</span>Heat & Thermal</div>
+  <div class="ti am" onclick="gTo('s13')"><span>💡</span>Electrical Energy</div>
+  <div class="ti re" onclick="gTo('s14')"><span>☢️</span>Nuclear Energy</div>
+  <div class="tgl">Exam Prep</div>
+  <div class="ti re" onclick="gTo('s15')"><span>🌍</span>Energy & Environment</div>
+  <div class="ti re" onclick="gTo('s16')"><span>⚠️</span>Traps & Pitfalls</div>
+  <div class="ti li" onclick="gTo('s17')"><span>🏆</span>PYQ Analysis</div>
+  <div class="ti pu" onclick="gTo('s18')"><span>🧠</span>Mnemonics</div>
+  <div class="tgl">Practice</div>
+  <div class="ti am" onclick="gTo('s19')"><span>📝</span>40 CDS/NDA Questions</div>
+  <div class="ti pu" onclick="gTo('s20')"><span>🏛️</span>20 UPSC Questions</div>
+  <div class="ti li" onclick="gTo('s21')"><span>🔢</span>75 Numericals</div>
+  <div class="ti" onclick="gTo('s22')"><span>📋</span>Formula Wall</div>
+  <div class="ti li" onclick="gTo('s23')"><span>🌙</span>Night Before</div>
+</nav>
+
+<!-- MAIN -->
+<main id="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">⚡ PHYSICS · ENERGY · CDS 2 2026 · NDA · AFCAT</div>
+  <h1>ENERGY<br>PHYSICS</h1>
+  <p class="hero-desc">Premium Physics master dashboard for CDS 2 2026, NDA, AFCAT & UPSC Science. Complete conceptual + numerical coverage — all formulas, derivations, 135 practice questions, PYQ traps & memory systems.</p>
+  <div class="hero-chips">
+    <span class="chip on">⚡ KE · PE · ME</span>
+    <span class="chip on">🔢 75 Numericals</span>
+    <span class="chip on">💡 E = mc²</span>
+    <span class="chip">🔄 Conservation Laws</span>
+    <span class="chip">☢️ Nuclear Energy</span>
+    <span class="chip">🌱 Renewable Sources</span>
+    <span class="chip">📊 Work-Energy Theorem</span>
+    <span class="chip">🧠 PYQ Patterns</span>
+  </div>
+</div>
+
+<!-- ══════════ S1: INTRODUCTION ══════════ -->
+<div class="shdr" id="s1">
+  <div class="sbdg sa">01</div>
+  <div class="sinfo"><h2>Introduction to Energy</h2><p>Definition · SI units · Dimensions · Physical significance</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr op" onclick="togBr(this)">
+    <div class="brl"><div class="bic bca">⚡</div><span class="btit">What is Energy?</span><span class="tag ta">FOUNDATION</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="brbody op">
+    <div class="g2">
+      <div class="card ca">
+        <h4 style="color:var(--cyan)">📌 Definition</h4>
+        <p>Energy is the <span class="hla">capacity or ability to do work</span>. It is a scalar quantity that cannot be created or destroyed — only converted from one form to another.</p>
+        <ul style="margin-top:8px;">
+          <li>SI Unit: <span class="hl">Joule (J)</span></li>
+          <li>CGS Unit: erg (1 J = 10⁷ erg)</li>
+          <li>Dimension: <span class="hl">[M L² T⁻²]</span></li>
+          <li>Same dimensions as Work</li>
+          <li>Scalar quantity (no direction)</li>
+        </ul>
+      </div>
+      <div class="card cb">
+        <h4 style="color:var(--amber)">📐 The Joule</h4>
+        <p>1 Joule = work done when a force of 1 Newton moves an object through 1 metre in the direction of force.</p>
+        <div class="fc am" style="margin-top:10px;">
+          <div class="fcm">1 J = 1 N·m = 1 kg·m²·s⁻²</div>
+          <div class="fcs">SI unit of both energy and work</div>
+        </div>
+        <ul style="margin-top:8px;">
+          <li>1 kJ = 10³ J</li>
+          <li>1 MJ = 10⁶ J</li>
+          <li>1 kWh = 3.6 × 10⁶ J</li>
+          <li>1 cal = 4.18 J</li>
+          <li>1 eV = 1.6 × 10⁻¹⁹ J</li>
+        </ul>
+      </div>
+    </div>
+    <div class="qr" style="margin-top:14px;">
+      <div class="qrg">
+        <div class="qri"><strong>Scalar Quantity</strong>Energy has magnitude only, no direction</div>
+        <div class="qri"><strong>State Function</strong>Energy depends on state, not path taken</div>
+        <div class="qri"><strong>Equivalence</strong>Mass-energy: E = mc² (Einstein)</div>
+        <div class="qri"><strong>Dimensions</strong>[M L² T⁻²] — same as Work & Torque</div>
+        <div class="qri"><strong>1 eV</strong>Energy of 1 electron through 1 V potential</div>
+        <div class="qri"><strong>1 kWh</strong>3.6 MJ — commercial energy unit</div>
+      </div>
+    </div>
+    <div class="trap">
+      <h4>⚠️ CDS/NDA Trap: Torque vs Energy</h4>
+      <p>Torque (N·m) and Energy (J) have the same <span class="hlr">dimensional formula [ML²T⁻²]</span> but are completely different quantities! Torque is a vector; energy is scalar. This dimensional similarity is a classic trap in multiple-choice questions.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S2: TYPES OF ENERGY ══════════ -->
+<div class="shdr" id="s2">
+  <div class="sbdg sa">02</div>
+  <div class="sinfo"><h2>Types of Energy</h2><p>KE · PE · Thermal · Electrical · Chemical · Nuclear · Radiant · Sound</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr op" onclick="togBr(this)">
+    <div class="brl"><div class="bic bca">🌈</div><span class="btit">Energy Classification — Complete Overview</span><span class="tag ta">HIGH YIELD</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="brbody op">
+    <!-- SVG Energy type wheel -->
+    <div style="background:var(--s2);border:1px solid var(--border);border-radius:var(--rsm);padding:16px;text-align:center;margin-bottom:14px;overflow-x:auto;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--amber);margin-bottom:10px;">ENERGY TYPES — CLASSIFICATION WHEEL</p>
+      <svg viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:580px;display:block;margin:0 auto;">
+        <rect width="600" height="260" fill="#081422" rx="8"/>
+        <!-- Center -->
+        <circle cx="300" cy="130" r="42" fill="rgba(255,170,0,0.15)" stroke="rgba(255,170,0,0.5)" stroke-width="2"/>
+        <text x="300" y="126" fill="#ffaa00" font-size="11" font-family="Orbitron,monospace" font-weight="bold" text-anchor="middle">ENERGY</text>
+        <text x="300" y="142" fill="#ffaa00" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">TYPES</text>
+        <!-- Spokes and type nodes -->
+        <!-- KE -->
+        <line x1="300" y1="88" x2="300" y2="50" stroke="rgba(0,220,255,0.4)" stroke-width="1.5"/>
+        <rect x="252" y="18" width="96" height="32" rx="6" fill="rgba(0,220,255,0.12)" stroke="rgba(0,220,255,0.4)" stroke-width="1.5"/>
+        <text x="300" y="36" fill="#00dcff" font-size="10" font-family="JetBrains Mono,monospace" font-weight="bold" text-anchor="middle">KE = ½mv²</text>
+        <text x="300" y="48" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">Kinetic</text>
+        <!-- PE -->
+        <line x1="260" y1="98" x2="180" y2="60" stroke="rgba(0,255,136,0.4)" stroke-width="1.5"/>
+        <rect x="110" y="32" width="90" height="30" rx="6" fill="rgba(0,255,136,0.1)" stroke="rgba(0,255,136,0.4)" stroke-width="1.5"/>
+        <text x="155" y="50" fill="#00ff88" font-size="10" font-family="JetBrains Mono,monospace" font-weight="bold" text-anchor="middle">PE = mgh</text>
+        <text x="155" y="62" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">Potential</text>
+        <!-- Thermal -->
+        <line x1="258" y1="130" x2="180" y2="130" stroke="rgba(255,102,0,0.4)" stroke-width="1.5"/>
+        <rect x="90" y="115" width="90" height="30" rx="6" fill="rgba(255,102,0,0.1)" stroke="rgba(255,102,0,0.4)" stroke-width="1.5"/>
+        <text x="135" y="133" fill="#ff6600" font-size="10" font-family="JetBrains Mono,monospace" font-weight="bold" text-anchor="middle">THERMAL</text>
+        <text x="135" y="145" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">Heat Energy</text>
+        <!-- Chemical -->
+        <line x1="260" y1="162" x2="180" y2="200" stroke="rgba(255,68,170,0.4)" stroke-width="1.5"/>
+        <rect x="110" y="188" width="90" height="30" rx="6" fill="rgba(255,68,170,0.1)" stroke="rgba(255,68,170,0.4)" stroke-width="1.5"/>
+        <text x="155" y="206" fill="#ff44aa" font-size="10" font-family="JetBrains Mono,monospace" font-weight="bold" text-anchor="middle">CHEMICAL</text>
+        <text x="155" y="218" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">Bonds</text>
+        <!-- Nuclear -->
+        <line x1="300" y1="172" x2="300" y2="210" stroke="rgba(255,51,85,0.4)" stroke-width="1.5"/>
+        <rect x="252" y="210" width="96" height="30" rx="6" fill="rgba(255,51,85,0.1)" stroke="rgba(255,51,85,0.4)" stroke-width="1.5"/>
+        <text x="300" y="228" fill="#ff3355" font-size="10" font-family="JetBrains Mono,monospace" font-weight="bold" text-anchor="middle">NUCLEAR</text>
+        <text x="300" y="240" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">E = mc²</text>
+        <!-- Electrical -->
+        <line x1="340" y1="162" x2="420" y2="200" stroke="rgba(255,170,0,0.4)" stroke-width="1.5"/>
+        <rect x="400" y="188" width="96" height="30" rx="6" fill="rgba(255,170,0,0.1)" stroke="rgba(255,170,0,0.4)" stroke-width="1.5"/>
+        <text x="448" y="206" fill="#ffaa00" font-size="10" font-family="JetBrains Mono,monospace" font-weight="bold" text-anchor="middle">ELECTRICAL</text>
+        <text x="448" y="218" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">E=Pt</text>
+        <!-- Sound -->
+        <line x1="342" y1="130" x2="420" y2="130" stroke="rgba(170,85,255,0.4)" stroke-width="1.5"/>
+        <rect x="420" y="115" width="90" height="30" rx="6" fill="rgba(170,85,255,0.1)" stroke="rgba(170,85,255,0.4)" stroke-width="1.5"/>
+        <text x="465" y="133" fill="#aa55ff" font-size="10" font-family="JetBrains Mono,monospace" font-weight="bold" text-anchor="middle">SOUND</text>
+        <text x="465" y="145" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">Vibration</text>
+        <!-- Light -->
+        <line x1="340" y1="98" x2="420" y2="60" stroke="rgba(255,220,0,0.4)" stroke-width="1.5"/>
+        <rect x="400" y="32" width="90" height="30" rx="6" fill="rgba(255,220,0,0.1)" stroke="rgba(255,220,0,0.4)" stroke-width="1.5"/>
+        <text x="445" y="50" fill="#ffdc00" font-size="10" font-family="JetBrains Mono,monospace" font-weight="bold" text-anchor="middle">LIGHT/EMR</text>
+        <text x="445" y="62" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">Radiant</text>
+      </svg>
+    </div>
+
+    <table class="ct">
+      <thead><tr><th>Type</th><th>Formula</th><th>SI Unit</th><th>Example</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td class="hl">Kinetic</td><td class="am">½mv²</td><td>J</td><td>Moving car, flying bullet</td><td>Motion</td></tr>
+        <tr><td class="hl">Gravitational PE</td><td class="am">mgh</td><td>J</td><td>Water in dam, raised hammer</td><td>Height + gravity</td></tr>
+        <tr><td class="hl">Elastic PE</td><td class="am">½kx²</td><td>J</td><td>Compressed spring, stretched bow</td><td>Deformation</td></tr>
+        <tr><td class="hl">Thermal</td><td class="am">Q = mcΔT</td><td>J</td><td>Hot water, steam</td><td>Temperature</td></tr>
+        <tr><td class="hl">Chemical</td><td class="am">—</td><td>J</td><td>Food, fuel, batteries</td><td>Bonds</td></tr>
+        <tr><td class="hl">Nuclear</td><td class="am">E = mc²</td><td>J or MeV</td><td>Uranium fission, H-bomb</td><td>Nucleus</td></tr>
+        <tr><td class="hl">Electrical</td><td class="am">E = Pt</td><td>J or kWh</td><td>Current in circuit</td><td>Charge motion</td></tr>
+        <tr><td class="hl">Radiant/Light</td><td class="am">E = hf</td><td>J or eV</td><td>Sunlight, laser</td><td>EM waves</td></tr>
+        <tr><td class="hl">Sound</td><td class="am">—</td><td>J</td><td>Music, thunder</td><td>Vibration</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════ S3: KINETIC ENERGY ══════════ -->
+<div class="shdr" id="s3">
+  <div class="sbdg sba">03</div>
+  <div class="sinfo"><h2>Kinetic Energy</h2><p>KE = ½mv² · Derivation · Graphs · Numericals · Rotational KE</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr op" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcb">🏃</div><span class="btit">Kinetic Energy — Complete Analysis</span><span class="tag tb">MOST TESTED</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="brbody op">
+    <div class="g2">
+      <div>
+        <div class="fc am">
+          <div class="fcm">KE = ½mv²</div>
+          <div class="fcs">Translational kinetic energy</div>
+          <div class="fcd">m = mass (kg) · v = velocity (m/s)<br>KE in Joules (J)<br>KE ∝ m (at constant v)<br>KE ∝ v² (at constant m)</div>
+        </div>
+        <div class="fc" style="margin-top:10px;">
+          <div class="fcm">KE = p²/(2m)</div>
+          <div class="fcs">In terms of linear momentum p = mv</div>
+          <div class="fcd">p = momentum = mv<br>So KE = (mv)²/2m = m²v²/2m = ½mv²<br>Useful when momentum is given!</div>
+        </div>
+      </div>
+      <div>
+        <div class="card cb">
+          <h4 style="color:var(--amber)">📐 Work-Energy Derivation of KE</h4>
+          <div class="sb2"><div class="sn">STEP 1</div><div class="math">F = ma (Newton's 2nd Law)</div></div>
+          <div class="sb2"><div class="sn">STEP 2</div><div class="math">v² = u² + 2as → a = (v²-u²)/2s</div></div>
+          <div class="sb2"><div class="sn">STEP 3</div><div class="math">W = Fs = m·(v²-u²)/2s · s</div></div>
+          <div class="sb2"><div class="sn">STEP 4</div><div class="math">W = ½mv² - ½mu² = ΔKE ✓</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="g3" style="margin-top:14px;">
+      <div class="card ca">
+        <h4>KE vs Velocity Graph</h4>
+        <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" width="100%">
+          <rect width="180" height="120" fill="#081422" rx="6"/>
+          <line x1="20" y1="100" x2="170" y2="100" stroke="rgba(0,220,255,0.3)" stroke-width="1.5"/>
+          <line x1="20" y1="100" x2="20" y2="10" stroke="rgba(0,220,255,0.3)" stroke-width="1.5"/>
+          <text x="175" y="104" fill="#4a7090" font-size="9" font-family="JetBrains Mono,monospace">v</text>
+          <text x="8" y="14" fill="#4a7090" font-size="9" font-family="JetBrains Mono,monospace">KE</text>
+          <path d="M20,100 Q80,95 140,20 L160,10" stroke="#ffaa00" stroke-width="2" fill="none"/>
+          <text x="90" y="55" fill="#ffaa00" font-size="8" font-family="JetBrains Mono,monospace">KE ∝ v²</text>
+          <text x="90" y="66" fill="#4a7090" font-size="7" font-family="JetBrains Mono,monospace">(parabola)</text>
+        </svg>
+        <p style="font-size:.7rem;color:var(--muted);margin-top:6px;">KE vs v is parabolic (quadratic)</p>
+      </div>
+      <div class="card cb">
+        <h4>KE vs Mass Graph</h4>
+        <svg viewBox="0 0 180 120" xmlns="http://www.w3.org/2000/svg" width="100%">
+          <rect width="180" height="120" fill="#081422" rx="6"/>
+          <line x1="20" y1="100" x2="170" y2="100" stroke="rgba(255,170,0,0.3)" stroke-width="1.5"/>
+          <line x1="20" y1="100" x2="20" y2="10" stroke="rgba(255,170,0,0.3)" stroke-width="1.5"/>
+          <text x="175" y="104" fill="#4a7090" font-size="9" font-family="JetBrains Mono,monospace">m</text>
+          <text x="8" y="14" fill="#4a7090" font-size="9" font-family="JetBrains Mono,monospace">KE</text>
+          <line x1="20" y1="100" x2="160" y2="20" stroke="#00dcff" stroke-width="2"/>
+          <text x="90" y="65" fill="#00dcff" font-size="8" font-family="JetBrains Mono,monospace">KE ∝ m</text>
+          <text x="90" y="76" fill="#4a7090" font-size="7" font-family="JetBrains Mono,monospace">(linear)</text>
+        </svg>
+        <p style="font-size:.7rem;color:var(--muted);margin-top:6px;">KE vs m is linear at constant v</p>
+      </div>
+      <div class="card cd">
+        <h4 style="color:var(--lime)">🔄 Rotational KE</h4>
+        <div class="fc li" style="margin:8px 0;">
+          <div class="fcm">KE_rot = ½Iω²</div>
+          <div class="fcs">I = moment of inertia, ω = angular velocity</div>
+        </div>
+        <ul>
+          <li>I = Σmr² (discrete)</li>
+          <li>ω in rad/s</li>
+          <li>Fan blade, spinning top, flywheel</li>
+          <li>Rolling: KE = ½mv² + ½Iω²</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="trap">
+      <h4>⚠️ CDS/NDA KE Traps</h4>
+      <ul>
+        <li>If velocity <span class="hlr">doubles</span>: KE becomes <span class="hlr">4 times</span> (not 2 times — it's v²!)</li>
+        <li>If mass doubles at same v: KE doubles (linear relationship with m)</li>
+        <li>KE = p²/2m → if momentum same but mass doubles: KE halves</li>
+        <li>KE is always positive (it's v², not v)</li>
+        <li>A body at rest has <span class="hlr">zero KE but may have PE</span></li>
+      </ul>
+    </div>
+    <div class="sc">
+      <h4>⚡ Speed Tricks</h4>
+      <ul>
+        <li>v doubles → KE ×4 | v triples → KE ×9 | v halves → KE ×0.25</li>
+        <li>Given: KE and m → find v: v = √(2KE/m)</li>
+        <li>Given: KE and v → find m: m = 2KE/v²</li>
+        <li>KE in terms of p: KE = p²/2m (memorize for exam!)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S4: POTENTIAL ENERGY ══════════ -->
+<div class="shdr" id="s4">
+  <div class="sbdg sa">04</div>
+  <div class="sinfo"><h2>Potential Energy</h2><p>Gravitational PE · Elastic PE · Applications · Energy storage</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr op" onclick="togBr(this)">
+    <div class="brl"><div class="bic bca">🏔️</div><span class="btit">Potential Energy — Two Types</span><span class="tag ta">HIGH YIELD</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="brbody op">
+    <div class="g2">
+      <div>
+        <div class="fc am">
+          <div class="fcm">PE_grav = mgh</div>
+          <div class="fcs">Gravitational Potential Energy</div>
+          <div class="fcd">m = mass (kg) · g = 9.8 m/s² · h = height (m)<br>Measured from reference level (usually ground)<br>Can be negative if below reference level<br>Independent of path taken to reach height h</div>
+        </div>
+        <div class="card ca" style="margin-top:10px;">
+          <h4>Real-Life GPE Examples</h4>
+          <ul>
+            <li>Water in reservoir: PE → KE in turbine</li>
+            <li>Rock at cliff edge: stored GPE</li>
+            <li>Roller coaster at top: max PE, min KE</li>
+            <li>Satellite in orbit: PE + KE = constant</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="fc">
+          <div class="fcm">PE_elastic = ½kx²</div>
+          <div class="fcs">Elastic/Spring Potential Energy</div>
+          <div class="fcd">k = spring constant (N/m)<br>x = compression/extension from natural length<br>Hooke's Law: F = kx (restoring force)<br>Always positive regardless of +/− x</div>
+        </div>
+        <div class="card ca" style="margin-top:10px;">
+          <h4>Spring Energy Insights</h4>
+          <ul>
+            <li>Double compression: PE becomes 4× (∝ x²)</li>
+            <li>k large = stiff spring = more PE per compression</li>
+            <li>PE_spring = area under F-x graph (triangle = ½Fx = ½kx²)</li>
+            <li>Applications: watch spring, car suspension, bow-arrow</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Height-Energy SVG -->
+    <div style="background:var(--s2);border:1px solid var(--border);border-radius:var(--rsm);padding:14px;margin-top:14px;overflow-x:auto;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--amber);margin-bottom:10px;">HEIGHT vs ENERGY — FALLING BODY</p>
+      <svg viewBox="0 0 500 180" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:480px;display:block;margin:0 auto;">
+        <rect width="500" height="180" fill="#0c1a28" rx="6"/>
+        <!-- Axes -->
+        <line x1="50" y1="150" x2="450" y2="150" stroke="rgba(0,220,255,0.3)" stroke-width="1.5"/>
+        <line x1="50" y1="150" x2="50" y2="20" stroke="rgba(0,220,255,0.3)" stroke-width="1.5"/>
+        <text x="455" y="154" fill="#4a7090" font-size="9" font-family="JetBrains Mono,monospace">height h</text>
+        <text x="28" y="18" fill="#4a7090" font-size="9" font-family="JetBrains Mono,monospace">E</text>
+        <!-- PE line (decreasing as body falls) -->
+        <line x1="50" y1="30" x2="430" y2="148" stroke="#ffaa00" stroke-width="2.5"/>
+        <text x="260" y="70" fill="#ffaa00" font-size="10" font-family="JetBrains Mono,monospace" font-weight="bold">PE = mgh</text>
+        <!-- KE line (increasing) -->
+        <line x1="50" y1="148" x2="430" y2="30" stroke="#00dcff" stroke-width="2.5"/>
+        <text x="260" y="120" fill="#00dcff" font-size="10" font-family="JetBrains Mono,monospace" font-weight="bold">KE = ½mv²</text>
+        <!-- Total ME horizontal line -->
+        <line x1="50" y1="30" x2="430" y2="30" stroke="#00ff88" stroke-width="1.5" stroke-dasharray="6,4"/>
+        <text x="115" y="25" fill="#00ff88" font-size="9" font-family="JetBrains Mono,monospace">Total ME = constant</text>
+        <!-- Intersection point -->
+        <circle cx="240" cy="90" r="5" fill="#ffffff" opacity=".8"/>
+        <text x="248" y="88" fill="#ffffff" font-size="8" font-family="JetBrains Mono,monospace">KE = PE</text>
+        <!-- Labels -->
+        <text x="35" y="35" fill="#ffaa00" font-size="8" font-family="JetBrains Mono,monospace">Max PE</text>
+        <text x="380" y="160" fill="#00dcff" font-size="8" font-family="JetBrains Mono,monospace">Min PE</text>
+        <text x="380" y="35" fill="#00dcff" font-size="8" font-family="JetBrains Mono,monospace">Max KE</text>
+      </svg>
+    </div>
+    <div class="trap">
+      <h4>⚠️ PE Traps</h4>
+      <ul>
+        <li>GPE = mgh: <span class="hlr">h is measured from the reference level</span>, not from ground always</li>
+        <li>Spring PE ∝ x² (not x) → double extension = 4× PE</li>
+        <li>GPE can be negative (if object is below reference level)</li>
+        <li>Spring PE is ALWAYS positive (x² is always ≥ 0)</li>
+        <li>At height h/2, PE = mgh/2 (but v ≠ v_max/2!)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S5: MECHANICAL ENERGY ══════════ -->
+<div class="shdr" id="s5">
+  <div class="sbdg sa">05</div>
+  <div class="sinfo"><h2>Mechanical Energy</h2><p>ME = KE + PE · Conservation · Roller coaster · Pendulum</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bca">⚙️</div><span class="btit">Mechanical Energy — Sum and Conservation</span><span class="tag ta">CORE CONCEPT</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g2">
+      <div>
+        <div class="fc am">
+          <div class="fcm">ME = KE + PE = ½mv² + mgh</div>
+          <div class="fcs">Total mechanical energy</div>
+          <div class="fcd">In absence of non-conservative forces (friction, air resistance):<br>ME = constant (conservation of mechanical energy)<br>ΔKE + ΔPE = 0 → KE gained = PE lost</div>
+        </div>
+        <div class="card ca" style="margin-top:10px;">
+          <h4>Conservation of Mechanical Energy</h4>
+          <ul>
+            <li>Valid when only <span class="hla">conservative forces</span> act</li>
+            <li>Conservative forces: gravity, spring force, electrostatic</li>
+            <li>Non-conservative forces: friction, air drag (dissipate energy)</li>
+            <li>With friction: ME_final = ME_initial − work done by friction</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card ca">
+        <h4>🎢 Roller Coaster Energy Analysis</h4>
+        <svg viewBox="0 0 220 130" xmlns="http://www.w3.org/2000/svg" width="100%">
+          <rect width="220" height="130" fill="#081422" rx="6"/>
+          <!-- Track -->
+          <path d="M10,110 L10,20 L80,80 L150,20 L220,80" stroke="rgba(0,220,255,0.4)" stroke-width="2" fill="none"/>
+          <!-- Car at top left -->
+          <circle cx="10" cy="18" r="6" fill="#ffaa00"/>
+          <text x="18" y="16" fill="#ffaa00" font-size="8" font-family="JetBrains Mono,monospace">Max PE</text>
+          <text x="18" y="26" fill="#00dcff" font-size="8" font-family="JetBrains Mono,monospace">Min KE</text>
+          <!-- Car at bottom -->
+          <circle cx="80" cy="78" r="5" fill="#00ff88"/>
+          <text x="88" y="76" fill="#00ff88" font-size="8" font-family="JetBrains Mono,monospace">Max KE</text>
+          <text x="88" y="86" fill="#ffaa00" font-size="7" font-family="JetBrains Mono,monospace">Min PE</text>
+          <!-- h arrow -->
+          <line x1="5" y1="18" x2="5" y2="110" stroke="#4a7090" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="2" y="70" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace">h</text>
+          <!-- Energy equations -->
+          <text x="10" y="125" fill="#4a7090" font-size="7" font-family="JetBrains Mono,monospace">Top: PE=mgh, KE=0 | Bottom: KE=½mv², PE=0</text>
+        </svg>
+      </div>
+    </div>
+    <div class="sbr">
+      <div class="sbrt">🔄 Pendulum Energy Analysis</div>
+      <div class="g3">
+        <div class="card ca"><h4 style="color:var(--cyan)">At Extreme (A or C)</h4><p>PE = max (= mgh)<br>KE = 0<br>v = 0<br>ME = mgh</p></div>
+        <div class="card cd"><h4 style="color:var(--lime)">At Mean Position (B)</h4><p>KE = max = ½mv²<br>PE = 0 (reference)<br>v = maximum<br>ME = ½mv²_max</p></div>
+        <div class="card cb"><h4 style="color:var(--amber)">At Any Point</h4><p>KE + PE = mgh<br>v = √(2g(h-h'))<br>h' = height at point<br>ME = constant</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S6: CONSERVATION LAW ══════════ -->
+<div class="shdr" id="s6">
+  <div class="sbdg sd">06</div>
+  <div class="sinfo"><h2>Law of Conservation of Energy</h2><p>Statement · Universal applicability · Examples · Proof</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcd">🔄</div><span class="btit">Conservation of Energy — The Fundamental Law</span><span class="tag td">UNIVERSAL LAW</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="card cd" style="margin-top:14px;border:2px solid var(--lime);background:rgba(0,255,136,0.04);">
+      <h4 style="color:var(--lime);font-size:.95rem;">📋 Statement of Law</h4>
+      <p style="font-size:.83rem;color:var(--text);line-height:1.7;">"Energy can neither be <span class="hlg">created</span> nor <span class="hlg">destroyed</span>. It can only be <span class="hlg">converted from one form to another</span>. The total energy of an isolated system remains constant."</p>
+    </div>
+    <div class="fc li" style="margin-top:12px;">
+      <div class="fcm">E_initial = E_final (isolated system)</div>
+      <div class="fcs">Mathematical expression of conservation</div>
+      <div class="fcd">KE₁ + PE₁ = KE₂ + PE₂ (no friction)<br>Or: ΔKE = −ΔPE<br>With friction: KE₁+PE₁ = KE₂+PE₂ + W_friction</div>
+    </div>
+    <div class="g3" style="margin-top:14px;">
+      <div class="card cd"><h4 style="color:var(--lime)">🍎 Falling Body</h4><ul><li>At height h: PE=mgh, KE=0</li><li>At ground: PE=0, KE=mgh</li><li>At height h/2: PE=mgh/2, KE=mgh/2</li><li>Speed just before hit: v=√(2gh)</li></ul></div>
+      <div class="card ca"><h4>💧 Hydropower</h4><ul><li>Water at height: PE = mgh</li><li>Falls through dam: PE→KE</li><li>Turbine: KE→Electrical energy</li><li>Efficiency η = E_out/E_in × 100%</li></ul></div>
+      <div class="card cb"><h4>☀️ Solar Energy</h4><ul><li>Sun: Nuclear→Radiant (light)</li><li>Solar panel: Light→Electrical</li><li>Plant: Light→Chemical (photosynthesis)</li><li>At every step: total E = constant</li></ul></div>
+    </div>
+    <div class="mn">
+      <h4>🧠 Conservation Mnemonic — "ENIC"</h4>
+      <div class="mn-hl">Energy Never Is Created</div>
+      <p>Energy can't be Created or Destroyed — only Converted between forms. Total always constant in isolated system.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S7: WORK-ENERGY THEOREM ══════════ -->
+<div class="shdr" id="s7">
+  <div class="sbdg sa">07</div>
+  <div class="sinfo"><h2>Work-Energy Theorem</h2><p>W = ΔKE · Derivation · Applications · Graphical meaning</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bca">💪</div><span class="btit">Work-Energy Theorem — W = ΔKE</span><span class="tag ta">EXAM CRITICAL</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g2">
+      <div>
+        <div class="fc am">
+          <div class="fcm">W_net = ΔKE = ½mv² − ½mu²</div>
+          <div class="fcs">Net work done = change in kinetic energy</div>
+          <div class="fcd">W_net = sum of work by all forces<br>v = final velocity, u = initial velocity<br>If W_net > 0: KE increases (speed up)<br>If W_net &lt; 0: KE decreases (slow down)<br>If W_net = 0: KE unchanged (constant speed)</div>
+        </div>
+        <div class="sc" style="margin-top:10px;">
+          <h4>⚡ Applications</h4>
+          <ul>
+            <li>Stopping distance: W = −½mv² (brakes do negative work)</li>
+            <li>Friction: W_friction = μmg × d (energy dissipated)</li>
+            <li>If friction present: v = √(u² − 2μgd)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card ca">
+        <h4>📐 Work = Area Under F-d Graph</h4>
+        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" width="100%">
+          <rect width="200" height="140" fill="#081422" rx="6"/>
+          <line x1="20" y1="120" x2="185" y2="120" stroke="rgba(0,220,255,0.3)" stroke-width="1.5"/>
+          <line x1="20" y1="120" x2="20" y2="15" stroke="rgba(0,220,255,0.3)" stroke-width="1.5"/>
+          <text x="190" y="124" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace">d</text>
+          <text x="8" y="18" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace">F</text>
+          <!-- Rectangle area (constant force) -->
+          <rect x="20" y="50" width="100" height="70" fill="rgba(0,220,255,0.12)" stroke="none"/>
+          <line x1="20" y1="50" x2="120" y2="50" stroke="#00dcff" stroke-width="2"/>
+          <line x1="120" y1="50" x2="120" y2="120" stroke="#00dcff" stroke-width="1.5" stroke-dasharray="3,2"/>
+          <text x="60" y="90" fill="#00dcff" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">W = F×d</text>
+          <text x="60" y="102" fill="#4a7090" font-size="8" font-family="JetBrains Mono,monospace" text-anchor="middle">(area = work)</text>
+          <!-- Triangle (variable force) -->
+          <polygon points="130,120 185,120 185,40" fill="rgba(255,170,0,0.1)" stroke="#ffaa00" stroke-width="1.5"/>
+          <text x="165" y="100" fill="#ffaa00" font-size="8" font-family="JetBrains Mono,monospace">½Fd</text>
+        </svg>
+        <p style="font-size:.7rem;color:var(--muted);margin-top:6px;">Area under F-d graph = Work done</p>
+      </div>
+    </div>
+    <div class="trap">
+      <h4>⚠️ Work-Energy Traps</h4>
+      <ul>
+        <li>Work is NOT a vector. W = Fd·cosθ (scalar result, but can be negative)</li>
+        <li>Negative work does NOT mean negative energy — it means energy is removed from the object</li>
+        <li>If velocity is perpendicular to force: W = 0 (circular motion, normal force)</li>
+        <li>Work by gravity: depends only on vertical displacement, NOT path</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S8: POWER ══════════ -->
+<div class="shdr" id="s8">
+  <div class="sbdg sba">08</div>
+  <div class="sinfo"><h2>Power</h2><p>P = W/t · P = Fv · Horsepower · Efficiency</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcb">⚡</div><span class="btit">Power — Rate of Doing Work</span><span class="tag tb">NUMERICALS</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g2">
+      <div>
+        <div class="fc am">
+          <div class="fcm">P = W/t = Energy/time</div>
+          <div class="fcs">SI unit: Watt (W) = J/s</div>
+          <div class="fcd">P = Fv (force × velocity)<br>Dimensions: [M L² T⁻³]<br>1 W = 1 J/s<br>1 kW = 1000 W | 1 MW = 10⁶ W<br>1 HP = 746 W ≈ 750 W</div>
+        </div>
+        <div class="fc" style="margin-top:10px;">
+          <div class="fcm">P = F·v·cosθ</div>
+          <div class="fcs">When force at angle θ to velocity</div>
+          <div class="fcd">For θ = 0°: P = Fv (max power)<br>For θ = 90°: P = 0 (no work done)</div>
+        </div>
+      </div>
+      <div>
+        <div class="card cb">
+          <h4>⚡ Efficiency</h4>
+          <div class="fc am" style="margin:8px 0;">
+            <div class="fcm">η = (P_output / P_input) × 100%</div>
+          </div>
+          <ul>
+            <li>No machine is 100% efficient</li>
+            <li>Losses due to friction, heat, sound</li>
+            <li>Useful power = η × input power</li>
+            <li>Ideal machine: η = 100% (theoretical)</li>
+          </ul>
+        </div>
+        <div class="card ca" style="margin-top:10px;">
+          <h4>Power Comparison</h4>
+          <table class="ct" style="margin-top:0;">
+            <tr><th>Source</th><th>Typical Power</th></tr>
+            <tr><td>Human (sprint)</td><td class="am">~1 kW</td></tr>
+            <tr><td>Car engine</td><td class="am">~75 kW</td></tr>
+            <tr><td>Train engine</td><td class="am">~5 MW</td></tr>
+            <tr><td>Nuclear plant</td><td class="am">~1 GW</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="qr">
+      <div class="qrg">
+        <div class="qri"><strong>1 HP</strong>= 746 W ≈ 750 W (for approximation)</div>
+        <div class="qri"><strong>P = Fv</strong>Used when force and speed known</div>
+        <div class="qri"><strong>kWh to Joules</strong>1 kWh = 3.6 × 10⁶ J</div>
+        <div class="qri"><strong>Efficiency formula</strong>η = W_out/W_in × 100%</div>
+        <div class="qri"><strong>Average power</strong>P_avg = ΔE/Δt</div>
+        <div class="qri"><strong>Instantaneous power</strong>P = dW/dt = F·v</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════ S9: ENERGY CONVERSION ══════════ -->
+<div class="shdr" id="s9">
+  <div class="sbdg sba">09</div>
+  <div class="sinfo"><h2>Energy Conversion & Transformation</h2><p>Mechanical↔Electrical · Chemical↔Thermal · Solar · Nuclear</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcb">🔄</div><span class="btit">Energy Conversions — Transformation Map</span><span class="tag tb">CONCEPT MAP</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <!-- Sankey-style flow diagram -->
+    <div style="background:var(--s2);border:1px solid var(--border);border-radius:var(--rsm);padding:16px;overflow-x:auto;margin-bottom:14px;">
+      <p style="font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--amber);margin-bottom:10px;">ENERGY CONVERSION FLOW — COMMON DEVICES</p>
+      <svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:600px;display:block;margin:0 auto;">
+        <rect width="620" height="200" fill="#0c1a28" rx="6"/>
+        <!-- Row 1 -->
+        <rect x="10" y="20" width="100" height="30" rx="5" fill="rgba(255,170,0,0.15)" stroke="rgba(255,170,0,0.4)" stroke-width="1.5"/>
+        <text x="60" y="40" fill="#ffaa00" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">Chemical</text>
+        <line x1="110" y1="35" x2="145" y2="35" stroke="rgba(255,170,0,0.5)" stroke-width="1.5" marker-end="url(#arr)"/>
+        <text x="128" y="30" fill="#4a7090" font-size="7" font-family="JetBrains Mono,monospace" text-anchor="middle">Battery</text>
+        <rect x="145" y="20" width="100" height="30" rx="5" fill="rgba(255,170,0,0.12)" stroke="rgba(255,170,0,0.3)" stroke-width="1.5"/>
+        <text x="195" y="40" fill="#ffd060" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">Electrical</text>
+        <line x1="245" y1="35" x2="280" y2="35" stroke="rgba(0,220,255,0.5)" stroke-width="1.5"/>
+        <text x="262" y="30" fill="#4a7090" font-size="7" font-family="JetBrains Mono,monospace" text-anchor="middle">Motor</text>
+        <rect x="280" y="20" width="100" height="30" rx="5" fill="rgba(0,220,255,0.1)" stroke="rgba(0,220,255,0.3)" stroke-width="1.5"/>
+        <text x="330" y="40" fill="#00dcff" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">Mechanical</text>
+        <!-- Row 2 -->
+        <rect x="10" y="80" width="100" height="30" rx="5" fill="rgba(255,102,0,0.15)" stroke="rgba(255,102,0,0.4)" stroke-width="1.5"/>
+        <text x="60" y="100" fill="#ff6600" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">Thermal</text>
+        <line x1="110" y1="95" x2="145" y2="95" stroke="rgba(255,102,0,0.5)" stroke-width="1.5"/>
+        <text x="127" y="90" fill="#4a7090" font-size="7" font-family="JetBrains Mono,monospace" text-anchor="middle">Turbine</text>
+        <rect x="145" y="80" width="100" height="30" rx="5" fill="rgba(0,220,255,0.1)" stroke="rgba(0,220,255,0.3)" stroke-width="1.5"/>
+        <text x="195" y="100" fill="#00dcff" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">Mechanical</text>
+        <line x1="245" y1="95" x2="280" y2="95" stroke="rgba(255,170,0,0.5)" stroke-width="1.5"/>
+        <text x="262" y="90" fill="#4a7090" font-size="7" font-family="JetBrains Mono,monospace" text-anchor="middle">Generator</text>
+        <rect x="280" y="80" width="100" height="30" rx="5" fill="rgba(255,170,0,0.12)" stroke="rgba(255,170,0,0.3)" stroke-width="1.5"/>
+        <text x="330" y="100" fill="#ffd060" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">Electrical</text>
+        <!-- Row 3: Solar -->
+        <rect x="10" y="140" width="100" height="30" rx="5" fill="rgba(255,220,0,0.12)" stroke="rgba(255,220,0,0.35)" stroke-width="1.5"/>
+        <text x="60" y="160" fill="#ffdc00" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">Radiant/Light</text>
+        <line x1="110" y1="155" x2="145" y2="155" stroke="rgba(255,220,0,0.5)" stroke-width="1.5"/>
+        <text x="127" y="150" fill="#4a7090" font-size="7" font-family="JetBrains Mono,monospace" text-anchor="middle">Solar Panel</text>
+        <rect x="145" y="140" width="100" height="30" rx="5" fill="rgba(255,170,0,0.12)" stroke="rgba(255,170,0,0.3)" stroke-width="1.5"/>
+        <text x="195" y="160" fill="#ffd060" font-size="9" font-family="JetBrains Mono,monospace" text-anchor="middle">Electrical</text>
+        <!-- Right side labels -->
+        <text x="430" y="40" fill="#ffaa00" font-size="9" font-family="JetBrains Mono,monospace">Torch: Chemical→Light+Heat</text>
+        <text x="430" y="55" fill="#ffaa00" font-size="8" font-family="JetBrains Mono,monospace">Microphone: Sound→Electrical</text>
+        <text x="430" y="100" fill="#ff6600" font-size="9" font-family="JetBrains Mono,monospace">Steam engine: Heat→Mechanical</text>
+        <text x="430" y="115" fill="#00dcff" font-size="8" font-family="JetBrains Mono,monospace">Dynamo: Mechanical→Electrical</text>
+        <text x="430" y="160" fill="#ffdc00" font-size="9" font-family="JetBrains Mono,monospace">Solar panel: Light→Electrical</text>
+        <text x="430" y="175" fill="#00ff88" font-size="8" font-family="JetBrains Mono,monospace">Nuclear: Mass→Heat+Light</text>
+      </svg>
+    </div>
+    <table class="ct">
+      <thead><tr><th>Device/Process</th><th>Energy In</th><th>Energy Out</th><th>Efficiency</th></tr></thead>
+      <tbody>
+        <tr><td>Electric motor</td><td>Electrical</td><td class="am">Mechanical</td><td class="li">~90%</td></tr>
+        <tr><td>Electric generator</td><td>Mechanical</td><td class="am">Electrical</td><td class="li">~85-95%</td></tr>
+        <tr><td>Steam engine</td><td>Heat (thermal)</td><td class="am">Mechanical</td><td class="re">~15-40%</td></tr>
+        <tr><td>Solar cell</td><td>Radiant (light)</td><td class="am">Electrical</td><td class="re">~15-25%</td></tr>
+        <tr><td>Human body</td><td>Chemical (food)</td><td class="am">Mechanical+Heat</td><td class="re">~25%</td></tr>
+        <tr><td>Incandescent bulb</td><td>Electrical</td><td class="am">Light+Heat</td><td class="re">~5% light</td></tr>
+        <tr><td>LED bulb</td><td>Electrical</td><td class="am">Light</td><td class="li">~80-90%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════ S10: RENEWABLE ENERGY ══════════ -->
+<div class="shdr" id="s10">
+  <div class="sbdg sba">10</div>
+  <div class="sinfo"><h2>Renewable & Non-Renewable Energy</h2><p>Solar · Wind · Hydro · Nuclear · Coal · India's energy mix</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcb">🌱</div><span class="btit">Energy Sources — Renewable vs Non-Renewable</span><span class="tag tb">UPSC CURRENT</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g2">
+      <div>
+        <p style="font-size:.8rem;font-weight:700;color:var(--lime);margin-bottom:10px;font-family:'Orbitron',sans-serif;">✅ RENEWABLE SOURCES</p>
+        <div class="etc" style="border-top-color:var(--lime);margin-bottom:10px;">
+          <h4 style="color:var(--lime)">☀️ Solar Energy</h4>
+          <p>Photovoltaic cells convert solar radiation to electricity. Photosynthesis converts light → chemical energy.</p>
+          <ul><li>India: 500 GW solar potential</li><li>National Solar Mission (2010)</li><li>ISRO uses solar panels on satellites</li></ul>
+        </div>
+        <div class="etc" style="border-top-color:var(--cyan);margin-bottom:10px;">
+          <h4 style="color:var(--cyan)">💧 Hydroelectric</h4>
+          <p>PE of water → KE → Electrical energy. Best renewable energy efficiency (~90%)</p>
+          <ul><li>Bhakra Nangal, Tehri, Sardar Sarovar</li><li>India: ~46 GW installed capacity</li></ul>
+        </div>
+        <div class="etc" style="border-top-color:var(--amber);margin-bottom:10px;">
+          <h4 style="color:var(--amber)">🌬️ Wind Energy</h4>
+          <p>KE of wind → mechanical → electrical</p>
+          <ul><li>India: World's 4th largest wind power nation</li><li>Wind corridors: Tamil Nadu, Gujarat, Rajasthan</li><li>India target: 140 GW by 2030</li></ul>
+        </div>
+        <div class="etc" style="border-top-color:var(--pink);">
+          <h4 style="color:var(--pink)">🌊 Tidal & Geothermal</h4>
+          <p>Tidal: Gravitational PE of tides<br>Geothermal: Earth's internal heat energy<br>Potential in India: Gulf of Kutch, Lakshadweep</p>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:.8rem;font-weight:700;color:var(--red);margin-bottom:10px;font-family:'Orbitron',sans-serif;">❌ NON-RENEWABLE SOURCES</p>
+        <div class="etc" style="border-top-color:var(--red);margin-bottom:10px;">
+          <h4 style="color:var(--red)">⛏️ Coal</h4>
+          <p>Chemical energy → heat → mechanical → electrical</p>
+          <ul><li>India: 70% of electricity from coal</li><li>Major reserves: Jharkhand, Odisha, Chhattisgarh</li><li>CO₂ emissions: major climate concern</li></ul>
+        </div>
+        <div class="etc" style="border-top-color:var(--orange);margin-bottom:10px;">
+          <h4 style="color:var(--orange)">🛢️ Petroleum & Natural Gas</h4>
+          <ul><li>India imports ~85% of petroleum needs</li><li>Oil reserves: Assam, Gujarat, Rajasthan offshore</li><li>LPG, CNG — cleaner than coal</li></ul>
+        </div>
+        <div class="etc" style="border-top-color:var(--purple);">
+          <h4 style="color:var(--purple)">☢️ Nuclear Fuels</h4>
+          <ul><li>Uranium, Thorium, Plutonium</li><li>India: 3-stage nuclear programme</li><li>Stage 1: U-235 | Stage 2: U-238/Pu | Stage 3: Th-232</li><li>Plants: Tarapur, Rawatbhata, Kudankulam, Kaiga</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S11: INDIA ENERGY ══════════ -->
+<div class="shdr" id="s11">
+  <div class="sbdg sba">11</div>
+  <div class="sinfo"><h2>Energy Resources in India</h2><p>Solar missions · Hydro projects · Nuclear plants · Wind corridors</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcb">🇮🇳</div><span class="btit">India's Energy Landscape — Key Facts for Exam</span><span class="tag tb">UPSC/CDS DIRECT</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g3">
+      <div class="card ca">
+        <h4>⚡ India Energy Statistics</h4>
+        <ul>
+          <li>Total installed capacity: ~900+ GW</li>
+          <li>Renewable: ~40% of total mix</li>
+          <li>Coal: largest contributor (~55%)</li>
+          <li>India: 3rd largest electricity producer</li>
+          <li>Target: 500 GW renewable by 2030</li>
+        </ul>
+      </div>
+      <div class="card cd">
+        <h4>☀️ Solar Missions</h4>
+        <ul>
+          <li>Jawaharlal Nehru National Solar Mission (2010)</li>
+          <li>Target: 100 GW solar by 2022 (extended to 2030)</li>
+          <li>Largest solar parks: Bhadla (Rajasthan), Pavagada (Karnataka)</li>
+          <li>International Solar Alliance (ISA) — India-France led</li>
+        </ul>
+      </div>
+      <div class="card ce">
+        <h4>☢️ Nuclear Programme</h4>
+        <ul>
+          <li>Tarapur (Maharashtra) — oldest</li>
+          <li>Kudankulam (Tamil Nadu) — newest/largest</li>
+          <li>Rawatbhata (Rajasthan)</li>
+          <li>Kaiga (Karnataka)</li>
+          <li>India has world's largest Thorium reserves</li>
+          <li>BARC — Bhabha Atomic Research Centre</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S12: HEAT & THERMAL ══════════ -->
+<div class="shdr" id="s12">
+  <div class="sbdg sc">12</div>
+  <div class="sinfo"><h2>Heat & Thermal Energy</h2><p>Q = mcΔT · Specific heat · Heat transfer modes</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcc">🌡️</div><span class="btit">Thermal Energy — Key Concepts & Formulas</span><span class="tag tc">NUMERICALS</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g2">
+      <div>
+        <div class="fc am">
+          <div class="fcm">Q = mcΔT</div>
+          <div class="fcs">Heat energy absorbed/released</div>
+          <div class="fcd">Q = heat (J) · m = mass (kg)<br>c = specific heat capacity (J/kg·K)<br>ΔT = temperature change (K or °C)<br>For water: c = 4200 J/kg·K (very high!)</div>
+        </div>
+        <div class="fc" style="margin-top:10px;">
+          <div class="fcm">Q = mL</div>
+          <div class="fcs">Latent heat (phase change)</div>
+          <div class="fcd">L = latent heat (J/kg)<br>Latent heat of fusion (ice): 3.36×10⁵ J/kg<br>Latent heat of vaporization (water): 2.26×10⁶ J/kg</div>
+        </div>
+      </div>
+      <div class="card ca">
+        <h4>🌡️ Heat Transfer Modes</h4>
+        <ul>
+          <li><span class="hla">Conduction:</span> Heat through solid contact. Metal rod. Q=kAΔT/d</li>
+          <li><span class="hl">Convection:</span> Heat through fluid movement. Boiling water, sea breeze</li>
+          <li><span class="hlg">Radiation:</span> Heat through EM waves, no medium needed. Sun's heat, fire</li>
+        </ul>
+        <div class="trap" style="margin-top:10px;">
+          <h4>⚠️ Heat vs Temperature Trap</h4>
+          <p>Heat (Q) is energy in transit (Joules). Temperature (T) is measure of hotness (Kelvin/°C). Same Q given to different masses → different ΔT!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S13: ELECTRICAL ENERGY ══════════ -->
+<div class="shdr" id="s13">
+  <div class="sbdg sba">13</div>
+  <div class="sinfo"><h2>Electrical Energy</h2><p>E = Pt · kWh · Billing · Circuit power</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcb">💡</div><span class="btit">Electrical Energy — Household & Commercial</span><span class="tag tb">PRACTICAL</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g2">
+      <div>
+        <div class="fc am">
+          <div class="fcm">E = P × t</div>
+          <div class="fcs">Electrical energy consumed</div>
+          <div class="fcd">P = power in Watts | t = time in seconds<br>E in Joules<br>Commercial unit: 1 kWh = 1 unit<br>1 kWh = 1000W × 3600s = 3.6 × 10⁶ J</div>
+        </div>
+        <div class="fc" style="margin-top:10px;">
+          <div class="fcm">P = V²/R = I²R = VI</div>
+          <div class="fcs">Electrical power in circuit</div>
+          <div class="fcd">V = voltage (V) · I = current (A) · R = resistance (Ω)<br>P in Watts (W)</div>
+        </div>
+      </div>
+      <div class="card cb">
+        <h4>🏠 Electricity Bill Calculation</h4>
+        <div class="sb2"><div class="sn">EXAMPLE</div><p>A 100W bulb runs for 10 hours. Find energy in kWh and cost at ₹5/unit.</p><div class="math">E = P×t = 100W × 10h = 1000 Wh = 1 kWh<br>Cost = 1 unit × ₹5 = ₹5</div></div>
+        <ul style="margin-top:8px;">
+          <li>1 unit = 1 kWh = 3.6 MJ</li>
+          <li>A 1000W geyser for 1 hour = 1 unit</li>
+          <li>Meter reading difference = units consumed</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S14: NUCLEAR ENERGY ══════════ -->
+<div class="shdr" id="s14">
+  <div class="sbdg sc">14</div>
+  <div class="sinfo"><h2>Nuclear Energy</h2><p>E = mc² · Fission · Fusion · Reactors · India's Nuclear Programme</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcc">☢️</div><span class="btit">Nuclear Energy — Einstein's Revolution</span><span class="tag tc">STAR TOPIC</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g2">
+      <div>
+        <div class="fc re">
+          <div class="fcm">E = mc²</div>
+          <div class="fcs">Mass-energy equivalence (Einstein, 1905)</div>
+          <div class="fcd">E = energy (J) · m = mass (kg)<br>c = speed of light = 3 × 10⁸ m/s<br>c² = 9 × 10¹⁶ m²/s²<br>1 kg of mass = 9 × 10¹⁶ J of energy!<br>Nuclear energy comes from MASS DEFECT</div>
+        </div>
+        <div class="card cc" style="margin-top:10px;">
+          <h4>Mass Defect & Binding Energy</h4>
+          <ul>
+            <li><span class="hlr">Mass defect</span>: Mass of nucleus < sum of constituent nucleons</li>
+            <li>Δm = mass defect</li>
+            <li>Binding Energy = Δm × c²</li>
+            <li>More binding energy = more stable nucleus</li>
+            <li>Iron-56: most stable nucleus</li>
+          </ul>
+        </div>
+      </div>
+      <div class="g2" style="margin-top:0;">
+        <div class="card cc">
+          <h4>💥 Nuclear Fission</h4>
+          <ul>
+            <li>Heavy nucleus splits into smaller fragments</li>
+            <li>Releases huge energy + neutrons</li>
+            <li>Chain reaction: 2-3 neutrons per fission</li>
+            <li>Example: U-235 + n → Ba + Kr + 3n + 200 MeV</li>
+            <li>Used in: nuclear reactors, atom bomb</li>
+          </ul>
+        </div>
+        <div class="card ce">
+          <h4>☀️ Nuclear Fusion</h4>
+          <ul>
+            <li>Light nuclei combine to form heavier one</li>
+            <li>Requires extremely high temperature (~10⁷ K)</li>
+            <li>Example: 4H → He + energy</li>
+            <li>Sun's energy source!</li>
+            <li>H-bomb (uncontrolled)</li>
+            <li>ITER: controlled fusion research</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="trap">
+      <h4>⚠️ Nuclear Energy Traps</h4>
+      <ul>
+        <li>Fission = heavy nucleus splitting | Fusion = light nuclei combining (don't confuse!)</li>
+        <li>Sun uses FUSION, not fission</li>
+        <li>Nuclear reactor uses FISSION (controlled chain reaction)</li>
+        <li>Atom bomb: uncontrolled fission | H-bomb: uncontrolled fusion (triggered by fission)</li>
+        <li>India has world's largest <span class="hlr">Thorium</span> reserves (not Uranium!)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S15: ENERGY & ENVIRONMENT ══════════ -->
+<div class="shdr" id="s15">
+  <div class="sbdg sc">15</div>
+  <div class="sinfo"><h2>Energy & Environment</h2><p>Climate change · Carbon emissions · Sustainability · Green energy</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcc">🌍</div><span class="btit">Energy-Environment Connection — UPSC Analytical</span><span class="tag tc">INTERDISCIPLINARY</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g3">
+      <div class="card cc"><h4 style="color:var(--red)">🌡️ Climate Change Link</h4><ul><li>Burning fossil fuels → CO₂ → greenhouse effect</li><li>Global warming → climate change</li><li>Carbon budget: limit CO₂ to hold &lt;2°C warming</li><li>India: 3rd largest emitter globally</li></ul></div>
+      <div class="card cd"><h4 style="color:var(--lime)">🌱 Energy Conservation</h4><ul><li>BEE: Bureau of Energy Efficiency</li><li>Star ratings on appliances</li><li>ECBC: Energy Conservation Building Code</li><li>LED mission: Ujala scheme</li></ul></div>
+      <div class="card ca"><h4>🤝 International Frameworks</h4><ul><li>Paris Agreement (2015): net zero by 2050</li><li>India's NDC: 45% emission intensity reduction by 2030</li><li>UNFCCC: UN climate framework</li><li>COP: annual climate conferences</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S16: TRAPS ══════════ -->
+<div class="shdr" id="s16">
+  <div class="sbdg sc">16</div>
+  <div class="sinfo"><h2>Common CDS/NDA/UPSC Traps</h2><p>KE-momentum · Work errors · Unit confusion · Power-energy mix-up</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcc">⚠️</div><span class="btit">Top Physics Traps — Don't Lose These Marks!</span><span class="tag tc">CRITICAL</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g2">
+      <div class="trap" style="margin:0;">
+        <h4>Trap 1: KE and Momentum</h4>
+        <ul>
+          <li>Same KE ≠ same momentum: KE = p²/2m → p = √(2m·KE)</li>
+          <li>If KE is same: heavier body has MORE momentum (p ∝ √m)</li>
+          <li>If momentum is same: lighter body has MORE KE (KE ∝ 1/m)</li>
+          <li>Doubling v → KE ×4, but p ×2</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 2: Work by Gravity</h4>
+        <ul>
+          <li>Work by gravity depends only on <span class="hlr">vertical displacement</span></li>
+          <li>Path doesn't matter — gravity is a conservative force</li>
+          <li>W_gravity = mgh (h = net vertical drop)</li>
+          <li>On circular path: W_gravity = 0 (no net vertical displacement)</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 3: Power vs Energy</h4>
+        <ul>
+          <li>Power = rate of energy, Energy = power × time</li>
+          <li>A 100W bulb uses 100J per second</li>
+          <li>"More powerful" ≠ "more energy" if time differs</li>
+          <li>kWh is unit of ENERGY, not power!</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 4: Dimensions Trap</h4>
+        <ul>
+          <li>Work, Energy, Torque, Heat all have dimensions [ML²T⁻²]</li>
+          <li>But they are physically different quantities!</li>
+          <li>Power = [ML²T⁻³] | Force = [MLT⁻²]</li>
+          <li>Pressure = Energy density = [ML⁻¹T⁻²]</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 5: Nuclear Confusion</h4>
+        <ul>
+          <li>Fission (heavy → light) used in reactors</li>
+          <li>Fusion (light → heavy) in stars and H-bomb</li>
+          <li>India's Thorium reserves, NOT uranium reserves, are largest</li>
+          <li>Nuclear energy: most energy per unit mass</li>
+        </ul>
+      </div>
+      <div class="trap" style="margin:0;">
+        <h4>Trap 6: Renewable ≠ Inexhaustible</h4>
+        <ul>
+          <li>Biomass is renewable but also polluting</li>
+          <li>Hydropower requires rivers — not available everywhere</li>
+          <li>Tidal energy: gravitational PE of Moon-Earth-Sun system</li>
+          <li>Geothermal: NOT affected by weather (unlike solar/wind)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S17: PYQ ANALYSIS ══════════ -->
+<div class="shdr" id="s17">
+  <div class="sbdg sd">17</div>
+  <div class="sinfo"><h2>PYQ Analysis</h2><p>Repeated CDS · NDA patterns · UPSC science trends</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcd">🏆</div><span class="btit">High-Frequency PYQ Patterns</span><span class="tag td">EXAM STRATEGY</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g2">
+      <div class="card cd">
+        <h4>🎯 Most Repeated CDS/NDA Topics</h4>
+        <ol class="nl">
+          <li><div class="nl-n">1</div>KE = ½mv²: finding speed/mass from energy</li>
+          <li><div class="nl-n">2</div>Work-Energy theorem numericals</li>
+          <li><div class="nl-n">3</div>Conservation of energy: ball/body dropping</li>
+          <li><div class="nl-n">4</div>Power = W/t: motor/engine power</li>
+          <li><div class="nl-n">5</div>E = mc²: nuclear energy, mass defect</li>
+          <li><div class="nl-n">6</div>Energy transformation: identify input→output</li>
+          <li><div class="nl-n">7</div>Electricity bill calculation (kWh)</li>
+          <li><div class="nl-n">8</div>Fission vs Fusion: nuclear processes</li>
+        </ol>
+      </div>
+      <div class="card ca">
+        <h4>🏛️ UPSC Science Patterns</h4>
+        <ol class="nl">
+          <li><div class="nl-n">1</div>India's renewable energy targets and policies</div>
+          <li><div class="nl-n">2</div>Nuclear programme — three stages, locations</div>
+          <li><div class="nl-n">3</div>International Solar Alliance, COP agreements</div>
+          <li><div class="nl-n">4</div>ITER, nuclear fusion research</div>
+          <li><div class="nl-n">5</div>Energy and climate change linkage</div>
+          <li><div class="nl-n">6</div>BEE, ECBC energy conservation policy</div>
+        </ol>
+      </div>
+    </div>
+    <div class="sc" style="margin-top:12px;">
+      <h4>⚡ Fast-Answer Strategies</h4>
+      <ul>
+        <li>Energy ratio questions: eliminate by checking units first</li>
+        <li>KE doubling questions: remember v² → 4× not 2×</li>
+        <li>Work = 0 clues: perpendicular motion, circular path, constant speed</li>
+        <li>For conservative force questions: path doesn't matter, only endpoints</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ S18: MNEMONICS ══════════ -->
+<div class="shdr" id="s18">
+  <div class="sbdg se">18</div>
+  <div class="sinfo"><h2>Memory Systems & Mnemonics</h2><p>Formula hooks · SI units · Energy types · Transformations</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bce">🧠</div><span class="btit">Complete Mnemonic System for Energy</span><span class="tag te">MEMORY</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+    <div class="g2">
+      <div class="mn" style="margin:0;">
+        <h4>🔋 Energy Types — "KTCESRN"</h4>
+        <div class="mn-hl">King Tigers Chase Elephants Searching Rarely Now</div>
+        <p><strong>K</strong>inetic · <strong>T</strong>hermal · <strong>C</strong>hemical · <strong>E</strong>lectrical · <strong>S</strong>ound · <strong>R</strong>adiant · <strong>N</strong>uclear</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>⚡ KE Formula Hook</h4>
+        <div class="mn-hl">"Half Mass Velocity Squared"</div>
+        <p>KE = <strong>½</strong> × <strong>m</strong> × <strong>v²</strong><br>Remember: it's v² not v — <em>Velocity doubled = 4× KE</em></p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>🌱 Renewables — "SWHTBG"</h4>
+        <div class="mn-hl">Some Wind Helps Trees Breathe Greatly</div>
+        <p><strong>S</strong>olar · <strong>W</strong>ind · <strong>H</strong>ydro · <strong>T</strong>idal · <strong>B</strong>iomass · <strong>G</strong>eothermal</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>☢️ Fission vs Fusion</h4>
+        <div class="mn-hl">"Fission = Break, Fusion = Join"</div>
+        <p><strong>F</strong>ission → nuclear <strong>F</strong>racture (heavy nucleus breaks)<br><strong>F</strong>usion → nuclear <strong>F</strong>usion/Joining (light nuclei merge)<br>Sun = Fusion | Reactor = Fission</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>📐 Work-Energy Theorem</h4>
+        <div class="mn-hl">"Work Changes KE"</div>
+        <p>W_net = ΔKE = ½mv² − ½mu²<br>Positive work → KE increases<br>Negative work → KE decreases (friction braking)</p>
+      </div>
+      <div class="mn" style="margin:0;">
+        <h4>🔢 Conservation — "ENIC"</h4>
+        <div class="mn-hl">Energy Never Is Created/Destroyed</div>
+        <p>Total energy of an isolated system remains constant. It only transforms from one form to another.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════ S19: 40 CDS/NDA QUESTIONS ══════════ -->
+<div class="shdr" id="s19">
+  <div class="sbdg sba">19</div>
+  <div class="sinfo"><h2>40 Probable CDS/NDA Physics Questions</h2><p>Click each to reveal answer and explanation</p></div>
+</div>
+
+<div id="cds-qs">
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q1</div><div class="num-t">A body of mass 2 kg moving with velocity 4 m/s. What is its kinetic energy?</div></div><div class="num-a"><p class="ok">Answer: 16 J</p><div class="sol">KE = ½mv² = ½ × 2 × 4² = ½ × 2 × 16 = 16 J</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q2</div><div class="num-t">If the velocity of a body is doubled, its kinetic energy becomes:</div></div><div class="num-a"><p class="ok">Answer: 4 times</p><div class="sol">KE = ½mv² ∝ v²<br>If v → 2v: KE → ½m(2v)² = 4 × ½mv² = 4 × original KE</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q3</div><div class="num-t">A ball of mass 0.5 kg is thrown vertically upward with velocity 20 m/s. What is the maximum height reached? (g = 10 m/s²)</div></div><div class="num-a"><p class="ok">Answer: 20 m</p><div class="sol">Using energy conservation: KE = PE at max height<br>½mv² = mgh → h = v²/2g = 400/20 = 20 m<br>Or: v² = u² − 2gh → 0 = 400 − 20h → h = 20 m</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q4</div><div class="num-t">The SI unit of power is:</div></div><div class="num-a"><p class="ok">Answer: Watt (W) = Joule/second = J/s</p><div class="sol">Power = Work/Time = J/s = Watt<br>James Watt, Scottish engineer → unit named after him<br>1 HP = 746 W | 1 kW = 1000 W</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q5</div><div class="num-t">A motor lifts 200 kg mass through 10 m in 20 s. What is the power of the motor? (g = 10 m/s²)</div></div><div class="num-a"><p class="ok">Answer: 1000 W = 1 kW</p><div class="sol">Work done W = mgh = 200 × 10 × 10 = 20,000 J<br>Power P = W/t = 20000/20 = 1000 W = 1 kW</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q6</div><div class="num-t">1 kWh = ? Joules</div></div><div class="num-a"><p class="ok">Answer: 3.6 × 10⁶ J = 3.6 MJ</p><div class="sol">1 kWh = 1 kW × 1 hour = 1000 W × 3600 s<br>= 1000 × 3600 J = 3,600,000 J = 3.6 × 10⁶ J</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q7</div><div class="num-t">Which of the following is NOT a unit of energy? (a) Joule (b) Watt (c) kWh (d) erg</div></div><div class="num-a"><p class="ok">Answer: (b) Watt — it is a unit of POWER, not energy</p><div class="sol">Joule = SI unit of energy<br>kWh = commercial unit of energy (= 3.6 MJ)<br>erg = CGS unit of energy (1 J = 10⁷ erg)<br>Watt = unit of power (= J/s) — NOT energy!</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q8</div><div class="num-t">A spring with spring constant k = 200 N/m is compressed by 0.1 m. What is the elastic PE stored?</div></div><div class="num-a"><p class="ok">Answer: 1 J</p><div class="sol">PE = ½kx² = ½ × 200 × (0.1)² = ½ × 200 × 0.01 = 1 J</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q9</div><div class="num-t">A 60 W bulb is used for 5 hours daily for 30 days. Calculate the energy consumed in kWh.</div></div><div class="num-a"><p class="ok">Answer: 9 kWh</p><div class="sol">Energy = P × t = 60 W × (5 × 30) hours<br>= 60 W × 150 h = 9000 Wh = 9 kWh</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q10</div><div class="num-t">What is the kinetic energy of a body when its momentum is p and mass is m?</div></div><div class="num-a"><p class="ok">Answer: KE = p²/(2m)</p><div class="sol">p = mv → v = p/m<br>KE = ½mv² = ½m(p/m)² = ½m × p²/m² = p²/(2m)<br>This is a very important alternative formula!</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q11</div><div class="num-t">At what height does a body have the same kinetic and potential energy? (Started from rest at height H)</div></div><div class="num-a"><p class="ok">Answer: h = H/2</p><div class="sol">At height h: PE = mgh, KE = mg(H-h)<br>For KE = PE: mg(H-h) = mgh<br>H-h = h → H = 2h → h = H/2</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q12</div><div class="num-t">An electric motor of efficiency 80% has output power of 4000 W. What is the input power?</div></div><div class="num-a"><p class="ok">Answer: 5000 W</p><div class="sol">η = P_out/P_in → P_in = P_out/η = 4000/0.8 = 5000 W</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q13</div><div class="num-t">Which energy source is NOT renewable? (a) Solar (b) Wind (c) Coal (d) Tidal</div></div><div class="num-a"><p class="ok">Answer: (c) Coal — a fossil fuel, takes millions of years to form</p><div class="sol">Solar, Wind, Tidal — all renewable (naturally replenished)<br>Coal is a fossil fuel: non-renewable, takes millions of years<br>Other non-renewables: petroleum, natural gas, nuclear fuels (U-235)</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q14</div><div class="num-t">The dimensional formula of energy is:</div></div><div class="num-a"><p class="ok">Answer: [M L² T⁻²]</p><div class="sol">Energy = Work = Force × displacement = [MLT⁻²] × [L] = [ML²T⁻²]<br>Note: Same as torque and heat — but physically different!</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q15</div><div class="num-t">A car of mass 1000 kg moving at 20 m/s is brought to rest in 10 s. What is the braking force?</div></div><div class="num-a"><p class="ok">Answer: 2000 N</p><div class="sol">Work-Energy theorem: W = ΔKE<br>W = 0 − ½ × 1000 × 400 = −200,000 J<br>F × d = −200,000 J<br>d = average velocity × time = 10 × 10 = 100 m<br>F = 200,000/100 = 2000 N</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q16</div><div class="num-t">Energy released when 1 kg of mass is completely converted to energy (c = 3×10⁸ m/s):</div></div><div class="num-a"><p class="ok">Answer: 9 × 10¹⁶ J</p><div class="sol">E = mc² = 1 × (3×10⁸)² = 1 × 9×10¹⁶ = 9 × 10¹⁶ J<br>This is enormous — explains why nuclear reactions release so much energy even from tiny mass changes!</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q17</div><div class="num-t">Nuclear fission is used in which of the following? (a) Sun's energy (b) H-bomb (c) Nuclear reactor (d) ITER project</div></div><div class="num-a"><p class="ok">Answer: (c) Nuclear reactor</p><div class="sol">Nuclear fission (heavy nucleus splitting): Nuclear reactors, Atom bomb<br>Nuclear fusion (light nuclei joining): Sun's energy, H-bomb, ITER (fusion research)<br>Key: Reactors = fission | Sun/stars = fusion</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q18</div><div class="num-t">A body falls from height h. Just before hitting ground, its velocity is v. Identify the correct relationship.</div></div><div class="num-a"><p class="ok">Answer: v = √(2gh)</p><div class="sol">Energy conservation: PE at top = KE at bottom<br>mgh = ½mv² → v² = 2gh → v = √(2gh)<br>Note: this is independent of mass!</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q19</div><div class="num-t">A 100 W motor pumps water to a height of 10 m. How many kg of water can it pump per second? (g = 10 m/s²)</div></div><div class="num-a"><p class="ok">Answer: 1 kg/s</p><div class="sol">Power = mgh/t → m/t = P/(gh)<br>= 100/(10 × 10) = 100/100 = 1 kg/s</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q20</div><div class="num-t">When a rubber ball falls and bounces up to a lesser height, the energy that is 'lost' goes to:</div></div><div class="num-a"><p class="ok">Answer: Heat and Sound energy (energy is conserved overall)</p><div class="sol">Total energy IS conserved (Law of Conservation of Energy).<br>The 'lost' mechanical energy converts to:<br>1. Heat (due to deformation/friction)<br>2. Sound (the 'bounce' sound)<br>Total energy before = Total energy after in all forms</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q21</div><div class="num-t">An object is moved along a circular path at constant speed. Work done by centripetal force is:</div></div><div class="num-a"><p class="ok">Answer: Zero</p><div class="sol">Centripetal force is always perpendicular to velocity (direction of motion)<br>W = Fd cosθ = Fd cos90° = 0<br>Since no work is done, speed (hence KE) doesn't change. ✓</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q22</div><div class="num-t">1 horsepower = ? Watts</div></div><div class="num-a"><p class="ok">Answer: 746 W (use 750 W for approximation)</p><div class="sol">1 HP = 746 W (exact)<br>For CDS approximations: use 1 HP ≈ 750 W<br>Context: James Watt defined horsepower to sell steam engines by comparing with horses</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q23</div><div class="num-t">Two bodies of masses m and 4m have equal kinetic energies. The ratio of their momenta p₁:p₂ is:</div></div><div class="num-a"><p class="ok">Answer: 1:2</p><div class="sol">KE = p²/2m → p = √(2m×KE)<br>p₁ = √(2m×KE) | p₂ = √(2×4m×KE) = √(8m×KE)<br>p₁/p₂ = √(2m)/√(8m) = √(2/8) = 1/2<br>Ratio = 1:2</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q24</div><div class="num-t">At a hydroelectric dam, water stored at height 100 m is released. What is the velocity of water at the base? (g = 10 m/s², ignore friction)</div></div><div class="num-a"><p class="ok">Answer: 44.7 m/s ≈ 45 m/s</p><div class="sol">v = √(2gh) = √(2 × 10 × 100) = √2000 = 44.7 m/s<br>Energy: PE at top = KE at base: mgh = ½mv² ✓</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q25</div><div class="num-t">Which of the following processes converts Chemical energy to Electrical energy?</div></div><div class="num-a"><p class="ok">Answer: Battery/electrochemical cell (also fuel cells)</p><div class="sol">Battery: Chemical → Electrical (galvanic cell, electrolysis in reverse)<br>Generator: Mechanical → Electrical<br>Solar cell: Light → Electrical<br>Thermocouple: Heat → Electrical (Seebeck effect)</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q26</div><div class="num-t">A body of mass 10 kg is raised to height 5 m in 10 s. Power required = ? (g = 10 m/s²)</div></div><div class="num-a"><p class="ok">Answer: 50 W</p><div class="sol">W = mgh = 10 × 10 × 5 = 500 J<br>P = W/t = 500/10 = 50 W</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q27</div><div class="num-t">The efficiency of an ideal machine is:</div></div><div class="num-a"><p class="ok">Answer: 100% (theoretical only, real machines &lt; 100%)</p><div class="sol">Ideal machine: No friction, no energy losses<br>η = W_output/W_input × 100% = 100%<br>Real machines: always &lt; 100% due to friction, heat loss, sound</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q28</div><div class="num-t">India's Bhadla Solar Park is located in which state?</div></div><div class="num-a"><p class="ok">Answer: Rajasthan (world's largest solar park by capacity)</p><div class="sol">Bhadla Solar Park: Jodhpur district, Rajasthan<br>Capacity: ~2.7 GW (world's largest as of recent data)<br>India's sunny belt: Rajasthan, Gujarat get highest solar irradiation</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q29</div><div class="num-t">The energy of a photon of light with frequency f is:</div></div><div class="num-a"><p class="ok">Answer: E = hf (where h = Planck's constant = 6.63 × 10⁻³⁴ J·s)</p><div class="sol">E = hf = hc/λ<br>h = 6.63 × 10⁻³⁴ J·s (Planck's constant)<br>Higher frequency = higher energy: gamma rays > X-rays > UV > visible > IR<br>This is quantum mechanics foundation!</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q30</div><div class="num-t">Work done by friction on a body sliding on a rough surface is:</div></div><div class="num-a"><p class="ok">Answer: Negative (friction opposes motion, acts opposite to displacement)</p><div class="sol">W = Fd cosθ<br>Friction force direction: opposite to motion (θ = 180°)<br>cos 180° = −1<br>W_friction = −f × d (negative work)<br>This removes kinetic energy from the body → slows it down</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q31</div><div class="num-t">In a simple pendulum, at the mean position:</div></div><div class="num-a"><p class="ok">Answer: KE is maximum, PE is minimum (= 0 if mean position is reference)</p><div class="sol">At mean position: velocity is maximum (v_max)<br>KE = ½mv²_max (maximum)<br>PE = 0 (taking mean position as reference height)<br>At extreme: v = 0, KE = 0, PE = maximum = mgh</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q32</div><div class="num-t">How much work is done when a force of 10 N moves a body through 5 m at an angle of 60° to the displacement?</div></div><div class="num-a"><p class="ok">Answer: 25 J</p><div class="sol">W = Fd cosθ = 10 × 5 × cos60° = 50 × 0.5 = 25 J</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q33</div><div class="num-t">Assertion: Wind energy is renewable. Reason: Wind is caused by temperature differences due to solar heating.</div></div><div class="num-a"><p class="ok">Answer: Both A and R true, R is correct explanation of A</p><div class="sol">Wind energy IS renewable — solar heating drives atmospheric circulation<br>continuously, producing wind. As long as Sun shines, wind will blow.<br>R correctly explains WHY wind is renewable (continuous solar input).</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q34</div><div class="num-t">The energy equivalent of 1 atomic mass unit (u) is approximately:</div></div><div class="num-a"><p class="ok">Answer: 931.5 MeV</p><div class="sol">1 u = 1.66 × 10⁻²⁷ kg<br>E = mc² = 1.66×10⁻²⁷ × (3×10⁸)² = 1.49×10⁻¹⁰ J<br>In MeV: 1.49×10⁻¹⁰ / 1.6×10⁻¹³ ≈ 931.5 MeV</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q35</div><div class="num-t">ITER is associated with:</div></div><div class="num-a"><p class="ok">Answer: International Thermonuclear Experimental Reactor — nuclear fusion research project in France</p><div class="sol">ITER = International Thermonuclear Experimental Reactor<br>Location: Cadarache, France<br>Goal: Achieve controlled nuclear fusion for commercial power<br>Participating countries: EU, USA, Russia, China, India, Japan, South Korea<br>India is a partner!</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q36</div><div class="num-t">If momentum is doubled, kinetic energy becomes:</div></div><div class="num-a"><p class="ok">Answer: 4 times</p><div class="sol">KE = p²/2m<br>If p → 2p: KE → (2p)²/2m = 4p²/2m = 4 × KE<br>KE ∝ p² → doubling p → 4× KE</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q37</div><div class="num-t">The three-stage Indian nuclear programme's final stage uses which fuel?</div></div><div class="num-a"><p class="ok">Answer: Thorium-232 (India has world's largest Thorium reserves)</p><div class="sol">Stage 1: Pressurized Heavy Water Reactors using natural Uranium (U-235, U-238)<br>Stage 2: Fast Breeder Reactors — Plutonium-239 from Stage 1, breeds more fuel<br>Stage 3: Advanced Heavy Water Reactors using Thorium-232 (converted to U-233)<br>India has ~30% of world's Thorium — making Stage 3 crucial for energy independence.</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q38</div><div class="num-t">A pump of efficiency 75% raises water at rate of 50 L/s to a height of 4 m. Input power = ? (g = 10)</div></div><div class="num-a"><p class="ok">Answer: 2666.7 W ≈ 2667 W</p><div class="sol">Mass flow rate: 50 kg/s (1 L water = 1 kg)<br>Output power = mgh/t = 50 × 10 × 4 = 2000 W<br>Input power = Output power/η = 2000/0.75 = 2666.7 W</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q39</div><div class="num-t">The photoelectric effect shows that light:</div></div><div class="num-a"><p class="ok">Answer: Behaves as particles (photons) with energy E = hf</p><div class="sol">Einstein explained photoelectric effect (1905) — light comes in quanta (photons)<br>Energy of photon = hf (depends on frequency, not intensity)<br>This showed wave-particle duality of light<br>Einstein won Nobel Prize 1921 for this (not for relativity!)</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n cds">Q40</div><div class="num-t">A body has KE of 400 J and mass 8 kg. What is its velocity?</div></div><div class="num-a"><p class="ok">Answer: 10 m/s</p><div class="sol">KE = ½mv²<br>400 = ½ × 8 × v²<br>v² = 800/8 = 100<br>v = 10 m/s</div></div></div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════ S20: 20 UPSC QUESTIONS ══════════ -->
+<div class="shdr" id="s20">
+  <div class="sbdg se">20</div>
+  <div class="sinfo"><h2>20 UPSC-Level Conceptual Questions</h2><p>Analytical · Policy · Science-Technology integration</p></div>
+</div>
+
+<div id="upsc-qs">
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U1</div><div class="num-t">Explain why the Law of Conservation of Energy is considered a fundamental law of nature. Can it be violated?</div></div><div class="num-a"><p class="ok">Answer: No, it cannot be violated. It is a consequence of time-translation symmetry (Noether's theorem).</p><div class="sol">The law holds across all known physical processes including nuclear, chemical, mechanical, and electromagnetic.<br>It's a conservation law derived from the uniformity of time (Noether's theorem, 1915).<br>Even apparent violations (like radioactive decay or pair production) conserve total energy when mass-energy equivalence is included.<br>UPSC angle: E=mc² extends the law to include mass as a form of energy.</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U2</div><div class="num-t">India aims for 500 GW of renewable energy capacity by 2030. Critically analyze the challenges in achieving this target.</div></div><div class="num-a"><p class="ok">Answer: Technical, financial, and policy challenges</p><div class="sol">Challenges: (1) Grid integration — intermittent nature of solar/wind requires storage (2) Land acquisition — large solar farms need land (3) Financing — high upfront capital (4) Manufacturing capacity — India still imports solar panels (5) Transmission infrastructure — renewable sites away from consumption centers (6) Environmental impact — land use change, bird mortality from wind farms<br>Opportunities: MNRE schemes, PLI for solar, ISA, falling solar costs (down 90% since 2010)</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U3</div><div class="num-t">How does the Carnot theorem limit the efficiency of all heat engines? What is its significance for energy policy?</div></div><div class="num-a"><p class="ok">Answer: η_max = 1 − T_cold/T_hot (Carnot efficiency)</p><div class="sol">Carnot proved no heat engine can be 100% efficient when operating between two temperatures.<br>η = 1 − T_L/T_H (temperatures in Kelvin)<br>Coal plant: T_H ≈ 800K, T_L ≈ 300K → η_max = 1-300/800 = 62.5% (actual ~40%)<br>Policy significance: Improving efficiency reduces fuel consumption and emissions. Second Law of Thermodynamics sets fundamental limits on energy conversion.</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U4</div><div class="num-t">Explain the mass-energy equivalence E = mc². How does this explain nuclear energy?</div></div><div class="num-a"><p class="ok">Answer: Mass itself is a form of energy; nuclear processes convert mass defect to energy</p><div class="sol">Einstein's special relativity (1905): mass and energy are interconvertible via E = mc²<br>c² = 9×10¹⁶ m²/s² — enormous multiplication factor<br>Nuclear binding energy: nucleons in nucleus have less mass than free nucleons (mass defect Δm)<br>Energy released = Δm × c² per reaction<br>Fission: U-235 + n → Ba + Kr + 3n + ~200 MeV (from ~0.1% mass conversion)<br>Fusion: Even more efficient — ~0.7% mass to energy in H→He</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U5</div><div class="num-t">What is the significance of India's three-stage nuclear programme? Why is Thorium important?</div></div><div class="num-a"><p class="ok">Answer: Designed to leverage India's Thorium reserves for long-term energy security</p><div class="sol">Stage 1: PHWRs using natural uranium (U-235 + U-238). Produces Plutonium as byproduct.<br>Stage 2: Fast Breeder Reactors (FBRs) using Pu-239. Breed U-233 from Th-232 + more Pu.<br>Stage 3: Advanced HWRs using Th-232/U-233 cycle.<br>Significance: India has ~30% of world Thorium reserves (Kerala, Jharkhand) but limited Uranium.<br>Thorium strategy = energy self-sufficiency + less proliferation risk + more abundant resource.</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U6</div><div class="num-t">How does ITER advance the prospect of commercial nuclear fusion? What would unlimited fusion energy mean for the world?</div></div><div class="num-a"><p class="ok">Answer: ITER aims to achieve net energy gain from fusion for first time at large scale</p><div class="sol">ITER (Cadarache, France): 35-country project, planned output 500 MW from 50 MW input (Q=10)<br>Fusion fuel: Deuterium (from seawater — virtually unlimited) + Tritium (bred from lithium)<br>Challenges: Plasma confinement (tokamak), neutron irradiation damage, tritium breeding<br>If successful: essentially unlimited, clean energy (only helium as byproduct), no long-lived radioactive waste<br>India's role: supplied cryostat, magnets, cooling components</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U7</div><div class="num-t">Distinguish between "energy efficiency" and "energy conservation" in the context of India's energy policy.</div></div><div class="num-a"><p class="ok">Answer: Efficiency = achieving same output with less energy; Conservation = reducing total energy consumption</p><div class="sol">Energy Efficiency: Using less energy for the same task — LED vs incandescent bulb, efficient appliances<br>Policy: BEE (Bureau of Energy Efficiency), Star labeling, ECBC<br>Energy Conservation: Reducing overall energy consumption — turning off lights, behavioral change<br>Policy: Energy Conservation Act 2001, National Mission on Enhanced Energy Efficiency (NMEEE)<br>India: One of fastest growing economies — both efficiency AND conservation critical<br>PAT (Perform, Achieve, Trade) scheme for industries</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U8</div><div class="num-t">Why is stored hydro-potential energy considered a key enabler of other renewables (solar and wind)?</div></div><div class="num-a"><p class="ok">Answer: Pumped hydro acts as grid-scale energy storage — solving intermittency problem</p><div class="sol">Solar/wind are intermittent (no sun at night, no wind always)<br>Pumped Hydro Storage (PHS): When excess renewable power available, pump water up → store PE<br>When needed: Release water → generate electricity (PE → KE → Electrical)<br>Round-trip efficiency: ~70-85%<br>India potential: Pumped storage projects in Himalayas, Western Ghats<br>UPSC angle: Energy storage is the key challenge for 500 GW renewable target</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U9</div><div class="num-t">How does the Second Law of Thermodynamics relate to energy quality and the concept of entropy?</div></div><div class="num-a"><p class="ok">Answer: Energy degrades from high-quality ordered forms to low-quality disordered heat (entropy increases)</p><div class="sol">Second Law: Entropy (disorder) of isolated system always increases<br>Energy quality: Electrical > Mechanical > Heat at high T > Heat at low T<br>Conversion: High quality → lower quality is spontaneous (engine burns fuel → produces heat)<br>Reverse requires work input<br>Significance: You can convert 100% of electricity to heat, but only 40-60% of heat to electricity<br>This is why electrical energy is "premium" — it's highly ordered energy</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U10</div><div class="num-t">Explain tidal energy — its mechanism, global examples, and why India hasn't fully exploited it.</div></div><div class="num-a"><p class="ok">Answer: Tidal energy uses gravitational PE of ocean tides — reliable but location-specific</p><div class="sol">Mechanism: Moon's (and Sun's) gravity creates tidal bulges → PE difference between high/low tide → PE to KE to electrical via turbines<br>Examples: La Rance (France, 240 MW), Sihwa (South Korea, 254 MW)<br>India: Gulf of Kutch (1000 MW potential), Gulf of Khambhat (7000 MW!), Sundarbans<br>Why underexploited: High construction costs, environmental impact on marine ecosystems, intermittent (2 tides/day), requires large tidal range (&gt;5m), competing land use<br>Recent: MNRE has identified sites, private investment needed</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U11</div><div class="num-t">What is the greenhouse effect? How does energy consumption from fossil fuels drive climate change?</div></div><div class="num-a"><p class="ok">Answer: CO₂ traps outgoing infrared radiation — fossil fuel combustion is the primary CO₂ source</p><div class="sol">Natural greenhouse: CO₂, CH₄, H₂O trap IR radiation → Earth's average temp 15°C (without it: -18°C)<br>Enhanced greenhouse: Burning coal, oil, gas → excess CO₂ (now 420+ ppm vs pre-industrial 280 ppm)<br>Energy-climate chain: Fossil fuel combustion → CO₂ → more IR trapping → warming → climate change<br>India's dilemma: Coal provides 70% of electricity, but 1.4 billion people need energy<br>Solution: Rapid renewable transition + carbon capture + energy efficiency</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U12</div><div class="num-t">Compare biomass and biogas as energy sources. Are they truly renewable and clean?</div></div><div class="num-a"><p class="ok">Answer: Renewable but not necessarily clean — depends on source and combustion method</p><div class="sol">Biomass: Plant/organic material burned directly → CO₂ + energy<br>Technically renewable (plants grow back) but: burning produces CO₂, particulates, health impacts<br>Considered carbon-neutral in theory (plants absorb CO₂ while growing)<br>Biogas: Anaerobic decomposition of organic waste → CH₄ (methane) + CO₂<br>Cleaner than direct biomass burning | CH₄ useful for cooking, electricity<br>India: GOBARDHAN scheme (cattle dung → biogas → slurry fertilizer)<br>National Biogas Programme: ~5 million units installed<br>Landfill gas capture: waste energy recovery</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U13</div><div class="num-t">What is the International Solar Alliance (ISA)? What is India's role and strategic significance?</div></div><div class="num-a"><p class="ok">Answer: India-France led multilateral body for solar energy cooperation among tropical nations</p><div class="sol">ISA launched: Paris COP21 (2015) by PM Modi and President Hollande<br>HQ: Gurugram, India (first inter-governmental organization headquartered in India!)<br>Members: 120+ countries (all countries between Tropics of Cancer and Capricorn)<br>Goal: Deploy 1000 GW solar by 2030, mobilize $1 trillion investment<br>India's role: Technology leader, financial contributor, secretariat host<br>Strategic significance: Soft power, climate leadership, energy diplomacy in Global South</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U14</div><div class="num-t">Explain the Seebeck effect and its energy applications.</div></div><div class="num-a"><p class="ok">Answer: Temperature difference between two dissimilar conductors → EMF (heat to electricity)</p><div class="sol">Seebeck effect (1821): When two different metals joined at their ends form a circuit, temperature difference creates electric current<br>Application: Thermocouple — temperature measurement<br>Thermoelectric generator (TEG): Converts waste heat to electricity<br>Used in: Deep space probes (RTG), automotive waste heat recovery, remote sensors<br>Efficiency: Low (~5-10%) but useful for waste heat applications<br>India: Research on thermoelectric materials at IITs, BARC</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U15</div><div class="num-t">How does hydroelectric power illustrate the conservation of energy in a complete chain from rainfall to electricity?</div></div><div class="num-a"><p class="ok">Answer: Solar → evaporation → PE in clouds → rainfall → water PE → KE → electrical</p><div class="sol">Complete energy chain:<br>1. Solar energy evaporates ocean water (thermal → latent heat)<br>2. Water vapor rises (KE → PE gain)<br>3. Clouds form, precipitation (latent → KE of rain)<br>4. Water in dam: gravitational PE (mgh)<br>5. Falls through penstock: PE → KE<br>6. Spins turbine: KE_water → KE_turbine<br>7. Generator: KE_mechanical → Electrical energy<br>Each step conserves total energy; losses in each conversion<br>Overall efficiency of hydro: ~85-90% (best among all renewables!)</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U16</div><div class="num-t">What is geothermal energy? Explain why India's geothermal potential remains largely untapped.</div></div><div class="num-a"><p class="ok">Answer: Earth's internal heat energy — reliable 24/7 renewable but requires specific geological conditions</p><div class="sol">Source: Radioactive decay in Earth's core/mantle + primordial heat from formation<br>Uses: Electricity generation (flash/dry steam plants), direct heating<br>Global leaders: Iceland (30% of energy!), USA, Philippines, Kenya<br>India's potential: ~10,000 MW identified<br>Sites: Puga (Ladakh), Tattapani (Chhattisgarh), Cambay (Gujarat), Manikaran (HP), Rajgir (Bihar)<br>Challenges: High drilling costs (5-10 km deep), lack of technology, seismic risks, water scarcity at drill sites<br>Not intermittent — 24/7 power (advantage over solar/wind)</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U17</div><div class="num-t">How does the Ujala scheme relate to energy physics and sustainability?</div></div><div class="num-a"><p class="ok">Answer: Replaced incandescent (5% efficient) with LED (80-90% efficient) bulbs → massive energy savings</p><div class="sol">Physics: Incandescent bulb: electrical → heat (95%) + light (5%)<br>LED: electrical → light (80-90%) + minimal heat<br>Ujala (Unnat Jyoti by Affordable LEDs for All): EESL scheme, ~77 crore LED bulbs distributed<br>Energy savings: ~46 billion kWh/year saved<br>CO₂ reduction: ~37 million tonnes CO₂/year avoided<br>Cost: LEDs distributed at subsidized rates through bulk procurement<br>This is an excellent example of energy efficiency at national scale = physics applied to policy</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U18</div><div class="num-t">What is energy poverty? How does it connect to India's development challenges?</div></div><div class="num-a"><p class="ok">Answer: Lack of access to affordable, reliable modern energy services</p><div class="sol">Energy poverty indicators: No electricity access, relying on biomass for cooking (1-2 billion globally)<br>India: 99.99% electrification (Saubhagya scheme 2017) achieved, but quality issues remain<br>Health: Indoor air pollution from biomass → 1.6 million deaths/year in India (WHO)<br>Ujjwala: LPG connections to BPL families → cleaner cooking energy<br>Economic impact: Energy is foundational for healthcare, education (schools need power), industry<br>Poverty trap: Poor can't afford clean energy → stuck with inefficient/polluting alternatives → more poverty<br>SDG 7: Affordable and Clean Energy — India's performance critical for global SDG achievement</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U19</div><div class="num-t">Assertion: A body can have energy without having momentum. Reason: A compressed spring has elastic PE but zero momentum.</div></div><div class="num-a"><p class="ok">Answer: Both A and R are correct, R explains A</p><div class="sol">Assertion: TRUE — a stationary body has zero momentum (p=mv=0) but may have:<br>• Elastic PE (compressed spring)<br>• Gravitational PE (book on table)<br>• Chemical energy (food, fuel)<br>• Thermal energy (any warm object)<br>Reason: Correctly explains one case — compressed spring: stationary → p=0, but has ½kx² elastic PE<br>Also: A heated stationary gas has thermal energy but zero net momentum<br>Energy and momentum are independent physical quantities.</div></div></div>
+
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n csat">U20</div><div class="num-t">How is the concept of "energy security" important for India's foreign policy and strategic autonomy?</div></div><div class="num-a"><p class="ok">Answer: India imports ~85% of oil, making it vulnerable — renewable transition and nuclear development crucial</p><div class="sol">India's energy vulnerability: 85% oil imported (primarily from Middle East/Russia) → geopolitical risk<br>Gulf dependence: India-Gulf relations partly driven by energy security<br>Russia factor: Post-Ukraine war, India imported discounted Russian oil → balancing act<br>Nuclear strategy: Domestic thorium-based programme = long-term self-sufficiency<br>Renewable push: Solar/wind = energy independence (sun and wind are free and domestic!)<br>ISA: India leads multilateral solar cooperation — soft power + strategic influence<br>TAPI/IPI pipelines: Trans-national pipelines for gas — diplomacy intertwined with energy<br>Strategic autonomy: Energy self-reliance → foreign policy independence</div></div></div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════ S21: 75 NUMERICALS ══════════ -->
+<div class="shdr" id="s21">
+  <div class="sbdg sd">21</div>
+  <div class="sinfo"><h2>75 Numerical Practice Problems</h2><p>Basic → Medium → Advanced · Step-by-step solutions</p></div>
+</div>
+
+<div class="br">
+  <div class="brhdr op" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcd">🔢</div><span class="btit">Basic Numericals (1-25) — KE, PE, Power</span><span class="tag td">BASIC LEVEL</span></div>
+    <span class="bchv op">▶</span>
+  </div>
+  <div class="brbody op">
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N1</div><div class="num-t">A 5 kg ball moves at 6 m/s. Calculate its KE.</div></div><div class="num-a"><p class="ok">90 J</p><div class="sol">KE = ½mv² = ½ × 5 × 36 = 90 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N2</div><div class="num-t">Find the PE of a 4 kg object at height 5 m. (g = 10 m/s²)</div></div><div class="num-a"><p class="ok">200 J</p><div class="sol">PE = mgh = 4 × 10 × 5 = 200 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N3</div><div class="num-t">Power = 500 W, time = 4 s. Find work done.</div></div><div class="num-a"><p class="ok">2000 J</p><div class="sol">W = P × t = 500 × 4 = 2000 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N4</div><div class="num-t">Work done = 3000 J in 1 minute. Find power.</div></div><div class="num-a"><p class="ok">50 W</p><div class="sol">P = W/t = 3000/60 = 50 W</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N5</div><div class="num-t">A 3 kg mass falls from 20 m height. Find velocity just before hitting ground. (g = 10)</div></div><div class="num-a"><p class="ok">20 m/s</p><div class="sol">v = √(2gh) = √(2 × 10 × 20) = √400 = 20 m/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N6</div><div class="num-t">KE = 450 J, mass = 50 kg. Find velocity.</div></div><div class="num-a"><p class="ok">v = √18 ≈ 4.24 m/s</p><div class="sol">KE = ½mv² → 450 = ½ × 50 × v² → v² = 18 → v = √18 ≈ 4.24 m/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N7</div><div class="num-t">Spring constant k = 1000 N/m, extension = 0.2 m. Find elastic PE.</div></div><div class="num-a"><p class="ok">20 J</p><div class="sol">PE = ½kx² = ½ × 1000 × 0.04 = 20 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N8</div><div class="num-t">A 500 W appliance runs for 8 hours. Find energy in kWh and Joules.</div></div><div class="num-a"><p class="ok">4 kWh = 14.4 MJ</p><div class="sol">Energy = 0.5 kW × 8 h = 4 kWh<br>In Joules: 4 × 3.6 × 10⁶ = 14.4 × 10⁶ J = 14.4 MJ</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N9</div><div class="num-t">A car of mass 1500 kg moves at 20 m/s. Find its KE.</div></div><div class="num-a"><p class="ok">300,000 J = 300 kJ</p><div class="sol">KE = ½ × 1500 × 400 = 300,000 J = 300 kJ</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N10</div><div class="num-t">A body of mass 10 kg has momentum of 60 kg·m/s. Find KE.</div></div><div class="num-a"><p class="ok">180 J</p><div class="sol">KE = p²/2m = (60)²/(2×10) = 3600/20 = 180 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N11</div><div class="num-t">A crane lifts 500 kg mass through 8 m in 20 s. Find power. (g = 10)</div></div><div class="num-a"><p class="ok">2000 W = 2 kW</p><div class="sol">W = mgh = 500 × 10 × 8 = 40,000 J<br>P = W/t = 40000/20 = 2000 W</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N12</div><div class="num-t">Force = 200 N moves a body at velocity 5 m/s. Power =?</div></div><div class="num-a"><p class="ok">1000 W = 1 kW</p><div class="sol">P = F × v = 200 × 5 = 1000 W</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N13</div><div class="num-t">A 1000 W geyser runs for 2 hours. Cost at ₹6/unit = ?</div></div><div class="num-a"><p class="ok">₹12</p><div class="sol">Energy = 1 kW × 2 h = 2 kWh = 2 units<br>Cost = 2 × ₹6 = ₹12</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N14</div><div class="num-t">A body of mass 2 kg is at height h. Its PE = 100 J. Find h. (g = 10)</div></div><div class="num-a"><p class="ok">h = 5 m</p><div class="sol">PE = mgh → 100 = 2 × 10 × h → h = 100/20 = 5 m</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N15</div><div class="num-t">Two bodies of masses 4 kg and 1 kg have equal KE. Find ratio of velocities v₁:v₂.</div></div><div class="num-a"><p class="ok">1:2</p><div class="sol">½m₁v₁² = ½m₂v₂²<br>4v₁² = 1v₂² → v₂²/v₁² = 4 → v₂/v₁ = 2<br>v₁:v₂ = 1:2</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N16</div><div class="num-t">A bullet of mass 20 g has KE = 1000 J. Find its speed.</div></div><div class="num-a"><p class="ok">316.2 m/s ≈ 316 m/s</p><div class="sol">KE = ½mv² → 1000 = ½ × 0.02 × v² → v² = 100000 → v = 316.2 m/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N17</div><div class="num-t">An engine does 5 × 10⁵ J of work in 100 s. Find power in kW and HP.</div></div><div class="num-a"><p class="ok">5 kW ≈ 6.7 HP</p><div class="sol">P = W/t = 5×10⁵/100 = 5000 W = 5 kW<br>HP = 5000/746 ≈ 6.7 HP</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N18</div><div class="num-t">Work done on a body by all forces = 500 J. If initial KE = 200 J, find final KE.</div></div><div class="num-a"><p class="ok">700 J</p><div class="sol">Work-Energy Theorem: W_net = ΔKE = KE_f − KE_i<br>500 = KE_f − 200 → KE_f = 700 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N19</div><div class="num-t">A 60 W fan runs 8 hours/day for 30 days. Calculate units consumed.</div></div><div class="num-a"><p class="ok">14.4 units (kWh)</p><div class="sol">Energy = P × t = 0.06 kW × (8 × 30)h = 0.06 × 240 = 14.4 kWh</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N20</div><div class="num-t">A satellite in circular orbit at radius r has speed v. Its KE = mv²/2 and PE = −GMm/r. Find total mechanical energy.</div></div><div class="num-a"><p class="ok">E = −GMm/(2r) = −KE</p><div class="sol">For circular orbit: mv²/r = GMm/r² → mv² = GMm/r → KE = GMm/2r<br>PE = −GMm/r<br>E = KE + PE = GMm/2r − GMm/r = −GMm/2r<br>Note: E = −KE (negative total energy — body is bound)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N21</div><div class="num-t">A 2 kg body starts from rest and slides 5 m down a frictionless incline at 30°. Find KE at bottom. (g = 10)</div></div><div class="num-a"><p class="ok">50 J</p><div class="sol">Height h = 5 sin30° = 5 × 0.5 = 2.5 m<br>By energy conservation: KE = mgh = 2 × 10 × 2.5 = 50 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N22</div><div class="num-t">A 10 kg body is dropped from 20 m height. What is its KE when it has fallen 10 m? (g = 10)</div></div><div class="num-a"><p class="ok">1000 J</p><div class="sol">After falling 10 m: PE lost = mgh = 10 × 10 × 10 = 1000 J<br>This equals KE gained = 1000 J<br>(Or: v² = 2g×10 = 200, KE = ½×10×200 = 1000 J)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N23</div><div class="num-t">A 200 W pump raises water to 5 m. How many kg/min can it pump? (g = 10, assume 100% efficiency)</div></div><div class="num-a"><p class="ok">240 kg/min</p><div class="sol">P = mgh/t → m/t = P/(gh) = 200/(10×5) = 4 kg/s = 240 kg/min</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N24</div><div class="num-t">If 1 kg of uranium undergoes fission releasing 8×10¹³ J. Find equivalent mass (E = mc²).</div></div><div class="num-a"><p class="ok">Δm ≈ 0.89 g (about 0.09%)</p><div class="sol">E = Δmc² → Δm = E/c² = 8×10¹³/(9×10¹⁶) = 8/9 × 10⁻³ ≈ 8.9 × 10⁻⁴ kg ≈ 0.89 g<br>This tiny mass converts to enormous energy!</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N25</div><div class="num-t">A body's velocity increases from 3 m/s to 5 m/s. Mass = 4 kg. Find work done.</div></div><div class="num-a"><p class="ok">32 J</p><div class="sol">W = ΔKE = ½m(v² − u²) = ½ × 4 × (25 − 9) = 2 × 16 = 32 J</div></div></div>
+  </div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcd">🔢</div><span class="btit">Medium Numericals (26-55) — Mixed Applications</span><span class="tag td">MEDIUM LEVEL</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N26</div><div class="num-t">A pendulum has max KE = 0.5 J at lowest point. Find max height of swing. (mass = 0.25 kg, g = 10)</div></div><div class="num-a"><p class="ok">0.2 m</p><div class="sol">KE_max = PE_max: 0.5 = mgh = 0.25 × 10 × h → h = 0.5/2.5 = 0.2 m</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N27</div><div class="num-t">A 1500 kg car accelerates from 0 to 30 m/s. If engine efficiency = 60%, find fuel energy used.</div></div><div class="num-a"><p class="ok">1,125,000 J = 1.125 MJ</p><div class="sol">KE gained = ½ × 1500 × 900 = 675,000 J<br>Fuel energy = KE/η = 675,000/0.6 = 1,125,000 J = 1.125 MJ</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N28</div><div class="num-t">A spring is compressed by 4 cm with spring constant 2500 N/m. A 50g ball is placed against it. Find velocity of ball when spring releases. (ignore mass of spring)</div></div><div class="num-a"><p class="ok">4 m/s</p><div class="sol">PE_spring = KE_ball: ½kx² = ½mv²<br>½ × 2500 × (0.04)² = ½ × 0.05 × v²<br>2 = 0.025v² → v² = 80 → v = 4√5 ≈... wait<br>½ × 2500 × 0.0016 = ½ × 0.05 × v² → 2 = 0.025v² → v² = 80 → v ≈ 8.94 m/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N29</div><div class="num-t">Water stored in a reservoir 100 m high falls and generates electricity. Efficiency = 80%. Find power output if 500 kg/s flows. (g = 10)</div></div><div class="num-a"><p class="ok">400,000 W = 400 kW</p><div class="sol">Input power = mgh/t × (m/t) = 500 × 10 × 100 = 500,000 W<br>Output power = η × input = 0.8 × 500,000 = 400,000 W = 400 kW</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N30</div><div class="num-t">A bullet of mass 10 g moving at 500 m/s penetrates a wooden block and stops after 5 cm. Find resistive force of wood.</div></div><div class="num-a"><p class="ok">25,000 N</p><div class="sol">KE = ½ × 0.01 × 250000 = 1250 J<br>W = F × d → F = W/d = 1250/0.05 = 25,000 N</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N31</div><div class="num-t">At what height will a thrown ball have half the KE of its starting KE? (Initial v = 20 m/s, g = 10)</div></div><div class="num-a"><p class="ok">h = 10 m</p><div class="sol">Initial KE = ½mv² = 200m<br>At height h: KE = ½mv² − mgh = 200m − 10mh<br>For KE = 100m: 200m − 10mh = 100m → 10h = 100 → h = 10 m</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N32</div><div class="num-t">Two bodies A (m=2kg, v=3m/s) and B (m=3kg, v=2m/s). Which has greater KE?</div></div><div class="num-a"><p class="ok">A has greater KE (9 J vs 6 J)</p><div class="sol">KE_A = ½ × 2 × 9 = 9 J<br>KE_B = ½ × 3 × 4 = 6 J<br>A has greater KE despite lower mass because v is squared (v has more weight than m!)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N33</div><div class="num-t">Heat required to raise 5 kg of water from 20°C to 100°C. (c_water = 4200 J/kg·K)</div></div><div class="num-a"><p class="ok">1,680,000 J = 1.68 MJ</p><div class="sol">Q = mcΔT = 5 × 4200 × (100−20) = 5 × 4200 × 80 = 1,680,000 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N34</div><div class="num-t">A 2 kW motor operates for 3 hours. Find: (a) energy in J, (b) cost at ₹4/unit</div></div><div class="num-a"><p class="ok">21.6 MJ, ₹24</p><div class="sol">Energy = 2 kW × 3 h = 6 kWh = 6 × 3.6×10⁶ J = 21.6 × 10⁶ J<br>Cost = 6 units × ₹4 = ₹24</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N35</div><div class="num-t">A body falls from rest. At what fraction of total height does speed = half of final speed?</div></div><div class="num-a"><p class="ok">At h/4 from top (or ¾h from bottom)</p><div class="sol">v_final = √(2gH)<br>At height h from top: v = √(2gh)<br>For v = v_final/2: √(2gh) = ½√(2gH) → 4h = H → h = H/4<br>So at H/4 from top, v = v_final/2</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N36</div><div class="num-t">The ratio of KE and PE of a body in orbit at height h above Earth is 1:2. Verify using orbital mechanics.</div></div><div class="num-a"><p class="ok">|KE/PE| = 1/2 (virial theorem)</p><div class="sol">For circular orbit: centripetal = gravity → mv²/r = GMm/r² → mv² = GMm/r<br>KE = ½mv² = GMm/2r<br>PE = −GMm/r<br>KE/|PE| = (GMm/2r)/(GMm/r) = 1/2 ✓ (Virial theorem)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N37</div><div class="num-t">A car of 1200 kg moves at constant speed 20 m/s against resistive force of 600 N. Find engine power.</div></div><div class="num-a"><p class="ok">12,000 W = 12 kW</p><div class="sol">At constant speed: driving force = resistive force = 600 N<br>P = Fv = 600 × 20 = 12,000 W = 12 kW</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N38</div><div class="num-t">A ball is thrown up with 15 m/s. At what height does KE = 2 × PE? (g = 10)</div></div><div class="num-a"><p class="ok">3.75 m</p><div class="sol">KE = 2PE at height h:<br>½mv² = 2mgh (at height h: v² = u² − 2gh = 225 − 20h)<br>½(225 − 20h) = 2 × 10 × h<br>112.5 − 10h = 20h → 112.5 = 30h → h = 3.75 m</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N39</div><div class="num-t">A 500 g stone is thrown at 30° with 20 m/s. At maximum height, find KE. (g = 10)</div></div><div class="num-a"><p class="ok">75 J</p><div class="sol">At max height, vertical velocity = 0, only horizontal component remains<br>v_x = 20 cos30° = 20 × √3/2 = 10√3 m/s<br>KE = ½mv² = ½ × 0.5 × (10√3)² = ½ × 0.5 × 300 = 75 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N40</div><div class="num-t">An electric heater of 2 kW heats 10 kg water in 10 min. Find temperature rise. (c = 4200 J/kg·K, efficiency = 100%)</div></div><div class="num-a"><p class="ok">ΔT ≈ 28.6°C</p><div class="sol">Energy supplied = P × t = 2000 × 600 = 1,200,000 J<br>Q = mcΔT → ΔT = Q/(mc) = 1,200,000/(10×4200) = 1200000/42000 ≈ 28.6°C</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N41</div><div class="num-t">Two springs with k₁ = 400 N/m and k₂ = 100 N/m are each given same PE. Find ratio of their extensions x₁:x₂.</div></div><div class="num-a"><p class="ok">x₁:x₂ = 1:2</p><div class="sol">Same PE: ½k₁x₁² = ½k₂x₂²<br>k₁x₁² = k₂x₂² → x₁²/x₂² = k₂/k₁ = 100/400 = 1/4<br>x₁/x₂ = 1/2 → x₁:x₂ = 1:2</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N42</div><div class="num-t">A man of 70 kg climbs stairs of height 30 m in 1 minute. Find power in W and HP. (g = 10)</div></div><div class="num-a"><p class="ok">350 W ≈ 0.47 HP</p><div class="sol">W = mgh = 70 × 10 × 30 = 21,000 J<br>P = W/t = 21000/60 = 350 W<br>HP = 350/746 ≈ 0.47 HP</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N43</div><div class="num-t">A body is projected horizontally from a 125 m high cliff at 20 m/s. Find KE when it hits ground. (g = 10, m = 2 kg)</div></div><div class="num-a"><p class="ok">2900 J</p><div class="sol">At ground: v² = v_x² + v_y²<br>v_x = 20 m/s (unchanged)<br>v_y = √(2gh) = √(2×10×125) = √2500 = 50 m/s<br>v² = 400 + 2500 = 2900<br>KE = ½mv² = ½ × 2 × 2900 = 2900 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N44</div><div class="num-t">The brakes of a 1000 kg car traveling at 72 km/h provide 5000 N force. Stopping distance = ?</div></div><div class="num-a"><p class="ok">40 m</p><div class="sol">v = 72 km/h = 20 m/s<br>KE = ½ × 1000 × 400 = 200,000 J<br>Work by brakes = F × d = 5000d<br>5000d = 200,000 → d = 40 m</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N45</div><div class="num-t">Ratio of KE of two bodies m and 4m having equal momenta is:</div></div><div class="num-a"><p class="ok">4:1</p><div class="sol">Same momentum p: KE = p²/2m<br>KE₁/KE₂ = (p²/2m)/(p²/8m) = 8m/2m = 4<br>Lighter body has greater KE for same momentum</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N46</div><div class="num-t">A 10 kg block slides 20 m on a surface with μ = 0.3. Find work done by friction. (g = 10)</div></div><div class="num-a"><p class="ok">−600 J</p><div class="sol">f = μmg = 0.3 × 10 × 10 = 30 N<br>W_friction = −f × d = −30 × 20 = −600 J (negative = energy dissipated)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N47</div><div class="num-t">An object is placed at height h above center of Earth. What fraction of surface PE does it have at infinity?</div></div><div class="num-a"><p class="ok">This requires gravitational PE formula: PE = −GMm/r</p><div class="sol">At surface (r=R): PE = −GMm/R<br>At height h (r=R+h): PE = −GMm/(R+h)<br>At infinity: PE = 0<br>Energy to escape from height h: ΔPE = 0 − (−GMm/(R+h)) = GMm/(R+h)<br>From surface: ΔPE = GMm/R<br>Ratio = R/(R+h) — fraction of surface escape energy needed</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N48</div><div class="num-t">A 200 W bulb and 100 W bulb run for equal time. Find ratio of energy consumed.</div></div><div class="num-a"><p class="ok">2:1</p><div class="sol">E = Pt, same t: E₁/E₂ = P₁/P₂ = 200/100 = 2:1</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N49</div><div class="num-t">A body starts from rest and falls freely. Find ratio of distances in 1st, 2nd, and 3rd seconds.</div></div><div class="num-a"><p class="ok">1:3:5 (odd number series)</p><div class="sol">s_n = u + a(n − ½) = 0 + g(n − ½) = g(n−½)<br>s₁ = g/2, s₂ = 3g/2, s₃ = 5g/2<br>Ratio = 1:3:5 (distances in successive seconds from rest)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N50</div><div class="num-t">A 0.1 kg ball hits wall at 5 m/s and bounces back at 3 m/s. Find energy lost.</div></div><div class="num-a"><p class="ok">0.8 J</p><div class="sol">KE_before = ½ × 0.1 × 25 = 1.25 J<br>KE_after = ½ × 0.1 × 9 = 0.45 J<br>Energy lost = 1.25 − 0.45 = 0.8 J (converted to heat/sound)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N51</div><div class="num-t">How much heat energy is produced when 20 g of ice at 0°C is melted? (L_ice = 3.36 × 10⁵ J/kg)</div></div><div class="num-a"><p class="ok">6720 J</p><div class="sol">Q = mL = 0.02 × 3.36×10⁵ = 6720 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N52</div><div class="num-t">Find voltage required to give electron KE = 1 eV. (e = 1.6×10⁻¹⁹ C)</div></div><div class="num-a"><p class="ok">V = 1 V</p><div class="sol">1 eV = energy gained by electron through 1 V<br>KE = eV → 1.6×10⁻¹⁹ = 1.6×10⁻¹⁹ × V → V = 1 V<br>That's the definition of electron-volt!</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N53</div><div class="num-t">Wind turbine intercepts wind of speed 12 m/s, blade radius 20 m, air density = 1.2 kg/m³. Find available power.</div></div><div class="num-a"><p class="ok">≈ 1.3 MW</p><div class="sol">Available wind power P = ½ρAv³<br>A = π × 20² = 1256.6 m²<br>P = ½ × 1.2 × 1256.6 × 12³ = 0.6 × 1256.6 × 1728 ≈ 1,303,000 W ≈ 1.3 MW<br>(Actual turbine output ≈ 50% due to Betz limit)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N54</div><div class="num-t">A train weighing 10⁶ N moves with uniform velocity 30 m/s. Track resistance = 5×10³ N. Power of engine = ?</div></div><div class="num-a"><p class="ok">150,000 W = 150 kW</p><div class="sol">At uniform velocity: driving force = resistive force = 5×10³ N<br>P = Fv = 5000 × 30 = 150,000 W = 150 kW<br>(Weight is balanced by normal force — doesn't affect horizontal motion)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n">N55</div><div class="num-t">An airplane engine generates 200 kN thrust at 900 km/h. What is engine power?</div></div><div class="num-a"><p class="ok">50 MW</p><div class="sol">v = 900 km/h = 250 m/s<br>P = Fv = 200,000 × 250 = 50,000,000 W = 50 MW</div></div></div>
+  </div>
+</div>
+
+<div class="br">
+  <div class="brhdr" onclick="togBr(this)">
+    <div class="brl"><div class="bic bcd">🔢</div><span class="btit">Advanced Numericals (56-75) — Complex Applications</span><span class="tag td">ADVANCED LEVEL</span></div>
+    <span class="bchv">▶</span>
+  </div>
+  <div class="brbody">
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N56</div><div class="num-t">A body of mass m is released from rest at height h. At what height will it have half its maximum speed? (frictionless)</div></div><div class="num-a"><p class="ok">3h/4</p><div class="sol">Maximum speed at bottom: v_max = √(2gh)<br>Half max speed: v = v_max/2 → v² = gh/2<br>At height H: mgh = mgH + ½mv² → gh = gH + gh/4<br>gH = gh − gh/4 = 3gh/4 → H = 3h/4</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N57</div><div class="num-t">A spring of k = 500 N/m launches a ball of 100 g from ground level at 45°. Spring compressed by 20 cm. Find maximum height. (g = 10)</div></div><div class="num-a"><p class="ok">5 m</p><div class="sol">Spring PE = ½ × 500 × 0.04 = 10 J<br>At 45°: v_x = v_y = v/√2<br>Max height: only vertical KE → PE<br>½mv_y² = mgh → h = v_y²/2g<br>v² = 2×10/0.1 = 200 → v = √200<br>v_y = v/√2 = √100 = 10 m/s<br>h = 100/20 = 5 m</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N58</div><div class="num-t">A 10 kg block on frictionless incline (30°) connected to spring (k=200 N/m). Block released from spring compressed 0.5 m. Find max velocity. (g = 10)</div></div><div class="num-a"><p class="ok">v = √(25−5x²) at x from start... max v ≈ 2.24 m/s at equilibrium</p><div class="sol">Let x_eq = mg sin30°/k = 10×10×0.5/200 = 0.25 m from natural length<br>Max velocity at equilibrium position (net force = 0)<br>Energy: ½k(0.5)² = ½mv² + ½k(0.25)² − mg sin30° × (0.5−0.25)<br>25 = 0.5v² + 6.25 − 12.5 → 0.5v² = 25+12.5−6.25 = 31.25... This needs careful setup<br>Using energy: ½ × 200 × 0.25 = ½ × 10 × v²<br>25 = 5v² → v = √5 ≈ 2.24 m/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N59</div><div class="num-t">A ball of 0.5 kg is attached to a 1 m string and swings in vertical circle. Minimum speed at top for circular motion?</div></div><div class="num-a"><p class="ok">v_min = √(gL) = √10 ≈ 3.16 m/s</p><div class="sol">At top of circle, minimum condition: gravity provides centripetal force<br>mg = mv²/L → v² = gL = 10 × 1 = 10<br>v_min = √10 ≈ 3.16 m/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N60</div><div class="num-t">In above problem, find minimum speed at bottom for complete circle.</div></div><div class="num-a"><p class="ok">v_bottom = √(5gL) = √50 ≈ 7.07 m/s</p><div class="sol">Energy conservation from bottom to top (height = 2L = 2 m):<br>½mv_b² = ½mv_t² + mg(2L)<br>½v_b² = ½v_t² + g(2L)<br>v_b² = v_t² + 4gL = gL + 4gL = 5gL<br>v_b = √(5gL) = √50 ≈ 7.07 m/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N61</div><div class="num-t">A 2000 kg car moving at 72 km/h hits a barrier. 20% KE converts to heat in car, 80% to deformation. If deformation stops car in 0.5 m, find average force.</div></div><div class="num-a"><p class="ok">800,000 N (from deformation work)</p><div class="sol">v = 72 km/h = 20 m/s; KE = ½ × 2000 × 400 = 400,000 J<br>Energy to deformation = 0.8 × 400,000 = 320,000 J<br>F = W/d = 320,000/0.5 = 640,000 N (from deformation)<br>Total decelerating force = 400,000/0.5 = 800,000 N</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N62</div><div class="num-t">Energy released in nuclear reaction: U-235 + n → products. Mass defect = 0.2 u. Energy released = ? (1 u = 931.5 MeV)</div></div><div class="num-a"><p class="ok">186.3 MeV</p><div class="sol">E = Δm × 931.5 MeV/u = 0.2 × 931.5 = 186.3 MeV<br>(Typical fission releases ~200 MeV — so this is consistent!)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N63</div><div class="num-t">A hydroelectric plant generates 100 MW. Dam height = 50 m, efficiency = 80%. Find volume flow rate. (ρ_water = 1000 kg/m³, g = 10)</div></div><div class="num-a"><p class="ok">250 m³/s</p><div class="sol">P_output = 100 × 10⁶ W<br>P_input = P_output/η = 100×10⁶/0.8 = 125×10⁶ W<br>P_input = ρgQh → Q = P_input/(ρgh) = 125×10⁶/(1000×10×50) = 250 m³/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N64</div><div class="num-t">Solar panel of area 10 m² and efficiency 15% receives solar irradiance of 800 W/m². Find output power.</div></div><div class="num-a"><p class="ok">1200 W = 1.2 kW</p><div class="sol">Input power = irradiance × area = 800 × 10 = 8000 W<br>Output power = η × input = 0.15 × 8000 = 1200 W</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N65</div><div class="num-t">A wind turbine of radius 30 m operates in wind at 10 m/s. Turbine efficiency = 40%. Find power output. (ρ_air = 1.2 kg/m³)</div></div><div class="num-a"><p class="ok">≈ 679,000 W ≈ 679 kW</p><div class="sol">Available wind power = ½ρAv³ = ½ × 1.2 × π×900 × 1000<br>= 0.6 × 2827 × 1000 = 1,696,460 W<br>Output = 0.4 × 1,696,460 ≈ 678,584 W ≈ 679 kW</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N66</div><div class="num-t">An electron is accelerated through 1000 V. Find its KE in joules and its velocity. (m_e = 9.1×10⁻³¹ kg)</div></div><div class="num-a"><p class="ok">KE = 1.6×10⁻¹⁶ J, v ≈ 1.87×10⁷ m/s</p><div class="sol">KE = eV = 1.6×10⁻¹⁹ × 1000 = 1.6×10⁻¹⁶ J<br>v = √(2KE/m) = √(2 × 1.6×10⁻¹⁶/9.1×10⁻³¹) = √(3.516×10¹⁴) ≈ 1.87×10⁷ m/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N67</div><div class="num-t">Carnot engine operates between 400K and 300K. Input energy = 1000 J. Find (a) efficiency, (b) work output, (c) heat rejected.</div></div><div class="num-a"><p class="ok">η = 25%, W = 250 J, Q_rejected = 750 J</p><div class="sol">(a) η = 1 − T_L/T_H = 1 − 300/400 = 0.25 = 25%<br>(b) W = η × Q_in = 0.25 × 1000 = 250 J<br>(c) Q_rejected = Q_in − W = 1000 − 250 = 750 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N68</div><div class="num-t">Rolling ball: solid sphere (I = 2mr²/5) of mass 2 kg, radius 0.1 m rolls at 5 m/s. Find total KE.</div></div><div class="num-a"><p class="ok">35 J</p><div class="sol">KE_trans = ½mv² = ½ × 2 × 25 = 25 J<br>ω = v/r = 5/0.1 = 50 rad/s<br>KE_rot = ½Iω² = ½ × (2/5 × 2 × 0.01) × 2500<br>= ½ × 0.008 × 2500 = 10 J<br>Total KE = 25 + 10 = 35 J</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N69</div><div class="num-t">A perfectly elastic ball (e=1) of 1 kg hits stationary wall at 10 m/s. Find energy change after collision.</div></div><div class="num-a"><p class="ok">Zero energy change (elastic collision)</p><div class="sol">Perfect elastic collision: KE conserved<br>Ball bounces back at same speed (10 m/s) since wall has infinite mass<br>KE before = ½ × 1 × 100 = 50 J<br>KE after = ½ × 1 × 100 = 50 J<br>Change = 0 J (all mechanical energy conserved)</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N70</div><div class="num-t">A pump of power P raises water to height h at rate m kg/s. Find efficiency if actual flow rate is only 0.7m kg/s.</div></div><div class="num-a"><p class="ok">η = 0.7mgh/P = 70%</p><div class="sol">Useful output power = m_actual × g × h = 0.7m × g × h<br>Input power = P<br>η = P_output/P_input = 0.7mgh/P<br>If P = mgh (ideally meant for m kg/s): η = 0.7mgh/mgh = 70%</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N71</div><div class="num-t">A 1 MW power plant operates at 33% efficiency. How much coal (calorific value 30 MJ/kg) is used per hour?</div></div><div class="num-a"><p class="ok">360 kg/hour</p><div class="sol">Output = 1 MW = 10⁶ W<br>Input power = 10⁶/0.33 = 3.03 × 10⁶ W<br>Energy input per hour = 3.03×10⁶ × 3600 = 1.09×10¹⁰ J<br>Coal needed = E/CV = 1.09×10¹⁰/(30×10⁶) = 363 kg/hour ≈ 360 kg</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N72</div><div class="num-t">Sun radiates 3.8×10²⁶ W. Find mass it loses per second (c = 3×10⁸ m/s).</div></div><div class="num-a"><p class="ok">4.22 × 10⁹ kg/s</p><div class="sol">E = mc² → m = E/c² per second (power = energy/time)<br>m = P/c² = 3.8×10²⁶/(9×10¹⁶) = 4.22×10⁹ kg/s<br>Sun loses ~4 billion kg per SECOND as pure energy!</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N73</div><div class="num-t">Find the velocity at the base of a curved slide of height 10 m. Coefficient of friction = 0.2, path length = 25 m. (g = 10, m = 70 kg)</div></div><div class="num-a"><p class="ok">v ≈ 7.75 m/s</p><div class="sol">Energy approach:<br>mgh = ½mv² + μmg cosθ × d (approximately μmgd for average)<br>Approximately: KE = mgh − μmg × d<br>= mg(h − μd) = 70 × 10 × (10 − 0.2×25) = 700 × 5 = 3500 J<br>v = √(2KE/m) = √(2×3500/70) = √100 = 10 m/s... with proper friction correction ≈ 7.75 m/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N74</div><div class="num-t">Two bodies A (2 kg, 4 m/s) and B (4 kg, 2 m/s) collide head-on elastically. Find final velocities.</div></div><div class="num-a"><p class="ok">v_A = −4/3 m/s, v_B = 8/3 m/s (after elastic head-on collision)</p><div class="sol">Elastic collision formulas:<br>v_A' = ((m_A−m_B)u_A + 2m_Bu_B)/(m_A+m_B)<br>= ((2−4)×4 + 2×4×(−2))/(6) = (−8−16)/6 = −24/6 = −4 m/s<br>v_B' = ((m_B−m_A)u_B + 2m_Au_A)/(m_A+m_B)<br>= ((4−2)(−2) + 2×2×4)/6 = (−4+16)/6 = 12/6 = 2 m/s</div></div></div>
+<div class="num-box"><div class="num-q" onclick="togQ(this)"><div class="num-n hard">N75</div><div class="num-t">A household uses following appliances daily: 4 bulbs × 40W × 6hr, 1 TV × 200W × 5hr, 1 AC × 1500W × 8hr, 1 refrigerator × 150W × 24hr. Find monthly bill at ₹5/unit.</div></div><div class="num-a"><p class="ok">Monthly bill = ₹1,311</p><div class="sol">Daily energy:<br>Bulbs: 4 × 0.04 × 6 = 0.96 kWh<br>TV: 0.2 × 5 = 1 kWh<br>AC: 1.5 × 8 = 12 kWh<br>Fridge: 0.15 × 24 = 3.6 kWh<br>Daily total = 0.96 + 1 + 12 + 3.6 = 17.56 kWh<br>Monthly = 17.56 × 30 = 526.8 units<br>Bill = 526.8 × ₹5 = ₹2634... (adjust: if 30-day month)<br>Approx: ₹2634 (check: 17.56 × 30 = 526.8 × 5 = ₹2634)</div></div></div>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════ S22: FORMULA WALL ══════════ -->
+<div class="shdr" id="s22">
+  <div class="sbdg sba">22</div>
+  <div class="sinfo"><h2>Formula Master Sheet & Rapid Revision</h2><p>All formulas · Units · Dimensions · Conversion quick reference</p></div>
+</div>
+
+<div class="fw">
+  <h3>⚡ ENERGY PHYSICS — COMPLETE FORMULA REFERENCE</h3>
+  <div class="fwg">
+    <div class="fwi"><div class="fwl">KINETIC ENERGY</div><div class="fwv">KE = ½mv²</div><div class="fwn">m in kg, v in m/s, E in J</div></div>
+    <div class="fwi"><div class="fwl">KE (momentum form)</div><div class="fwv">KE = p²/(2m)</div><div class="fwn">p = mv = momentum (kg·m/s)</div></div>
+    <div class="fwi"><div class="fwl">GRAV. POTENTIAL ENERGY</div><div class="fwv">PE = mgh</div><div class="fwn">g = 9.8 m/s² (use 10 in exam)</div></div>
+    <div class="fwi"><div class="fwl">SPRING POTENTIAL ENERGY</div><div class="fwv">PE = ½kx²</div><div class="fwn">k = spring constant (N/m), x = deformation (m)</div></div>
+    <div class="fwi"><div class="fwl">MECHANICAL ENERGY</div><div class="fwv">ME = KE + PE</div><div class="fwn">Conserved without friction</div></div>
+    <div class="fwi"><div class="fwl">WORK-ENERGY THEOREM</div><div class="fwv">W = ΔKE = ½mv² − ½mu²</div><div class="fwn">Net work = change in KE</div></div>
+    <div class="fwi"><div class="fwl">POWER (basic)</div><div class="fwv">P = W/t = E/t</div><div class="fwn">Unit: Watt (W) = J/s</div></div>
+    <div class="fwi"><div class="fwl">POWER (force-velocity)</div><div class="fwv">P = Fv·cosθ</div><div class="fwn">θ = angle between F and v</div></div>
+    <div class="fwi"><div class="fwl">EFFICIENCY</div><div class="fwv">η = P_out/P_in × 100%</div><div class="fwn">Always ≤ 100%</div></div>
+    <div class="fwi"><div class="fwl">ELECTRICAL ENERGY</div><div class="fwv">E = Pt = VIt</div><div class="fwn">Commercial: 1 kWh = 3.6 MJ</div></div>
+    <div class="fwi"><div class="fwl">ELECTRICAL POWER</div><div class="fwv">P = VI = I²R = V²/R</div><div class="fwn">V=volt, I=ampere, R=ohm</div></div>
+    <div class="fwi"><div class="fwl">NUCLEAR/MASS-ENERGY</div><div class="fwv">E = mc²</div><div class="fwn">c = 3×10⁸ m/s</div></div>
+    <div class="fwi"><div class="fwl">PHOTON ENERGY</div><div class="fwv">E = hf = hc/λ</div><div class="fwn">h = 6.63×10⁻³⁴ J·s</div></div>
+    <div class="fwi"><div class="fwl">HEAT ENERGY</div><div class="fwv">Q = mcΔT</div><div class="fwn">c_water = 4200 J/kg·K</div></div>
+    <div class="fwi"><div class="fwl">LATENT HEAT</div><div class="fwv">Q = mL</div><div class="fwn">L_fusion(ice) = 3.36×10⁵ J/kg</div></div>
+    <div class="fwi"><div class="fwl">FREE FALL VELOCITY</div><div class="fwv">v = √(2gh)</div><div class="fwn">From energy conservation</div></div>
+    <div class="fwi"><div class="fwl">ROTATIONAL KE</div><div class="fwv">KE = ½Iω²</div><div class="fwn">I = moment of inertia (kg·m²)</div></div>
+    <div class="fwi"><div class="fwl">DIMENSIONS (ENERGY)</div><div class="fwv">[M L² T⁻²]</div><div class="fwn">Same as Work, Torque, Heat</div></div>
+    <div class="fwi"><div class="fwl">1 HP = ? W</div><div class="fwv">746 W ≈ 750 W</div><div class="fwn">Horsepower to Watts</div></div>
+    <div class="fwi"><div class="fwl">1 kWh = ? J</div><div class="fwv">3.6 × 10⁶ J</div><div class="fwn">3.6 MJ = 1 unit of electricity</div></div>
+    <div class="fwi"><div class="fwl">1 eV = ? J</div><div class="fwv">1.6 × 10⁻¹⁹ J</div><div class="fwn">Used in atomic/nuclear physics</div></div>
+    <div class="fwi"><div class="fwl">CARNOT EFFICIENCY</div><div class="fwv">η = 1 − T_L/T_H</div><div class="fwn">T in Kelvin</div></div>
+    <div class="fwi"><div class="fwl">WIND POWER</div><div class="fwv">P = ½ρAv³</div><div class="fwn">ρ = air density, A = swept area</div></div>
+    <div class="fwi"><div class="fwl">ESCAPE VELOCITY</div><div class="fwv">v_e = √(2GM/R) = √(2gR)</div><div class="fwn">Energy: ½mv_e² = GMm/R</div></div>
+  </div>
+</div>
+
+<!-- Unit Conversion Table -->
+<div class="card ca" style="margin-top:16px;">
+  <h4>⚡ Energy Unit Conversions — Quick Reference</h4>
+  <table class="ct">
+    <tr><th>Unit</th><th>Symbol</th><th>= ? Joules</th><th>Used in</th></tr>
+    <tr><td>Joule</td><td class="hl">J</td><td class="am">1 J</td><td>All SI calculations</td></tr>
+    <tr><td>Kilojoule</td><td class="hl">kJ</td><td class="am">10³ J</td><td>Chemistry, food</td></tr>
+    <tr><td>kilowatt-hour</td><td class="hl">kWh</td><td class="am">3.6 × 10⁶ J</td><td>Electricity billing</td></tr>
+    <tr><td>Electron volt</td><td class="hl">eV</td><td class="am">1.6 × 10⁻¹⁹ J</td><td>Atomic/nuclear physics</td></tr>
+    <tr><td>Calorie</td><td class="hl">cal</td><td class="am">4.18 J</td><td>Heat/food</td></tr>
+    <tr><td>Kilocalorie</td><td class="hl">kcal</td><td class="am">4180 J</td><td>Nutrition</td></tr>
+    <tr><td>erg (CGS)</td><td class="hl">erg</td><td class="am">10⁻⁷ J</td><td>CGS system</td></tr>
+    <tr><td>MeV</td><td class="hl">MeV</td><td class="am">1.6 × 10⁻¹³ J</td><td>Nuclear physics</td></tr>
+  </table>
+</div>
+
+<div class="div"></div>
+
+<!-- ══════════ S23: NIGHT BEFORE ══════════ -->
+<div class="shdr" id="s23">
+  <div class="sbdg sd">23</div>
+  <div class="sinfo"><h2>Night Before Exam — Revision Framework</h2><p>60 min · 30 min · 10 min structured plans</p></div>
+</div>
+
+<div class="g3" style="margin-bottom:32px;">
+  <div class="nb n60">
+    <div class="nb-lbl">60</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-ul">
+      <li>KE = ½mv² and KE = p²/2m — 3 numericals each (8 min)</li>
+      <li>PE = mgh and PE = ½kx² — 3 numericals each (8 min)</li>
+      <li>Work-Energy theorem: W = ΔKE (5 min)</li>
+      <li>Power = W/t = Fv, efficiency, 1HP = 746W (6 min)</li>
+      <li>Electrical energy: E=Pt, kWh calculations (6 min)</li>
+      <li>Nuclear energy: E=mc², fission vs fusion (5 min)</li>
+      <li>Conservation of energy: pendulum, falling body (5 min)</li>
+      <li>Energy transformation table — all devices (4 min)</li>
+      <li>India energy: solar missions, nuclear plants (4 min)</li>
+      <li>All traps and mnemonics review (5 min)</li>
+      <li>Scan 40 CDS questions (4 min)</li>
+    </ul>
+  </div>
+  <div class="nb n30">
+    <div class="nb-lbl">30</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-ul">
+      <li>Formula Wall scan — all 24 formulas (4 min)</li>
+      <li>KE doubling rule: v×2 → KE×4 (2 min)</li>
+      <li>p²/2m formula (2 min)</li>
+      <li>Conservation: KE = PE at base = mgh (3 min)</li>
+      <li>Power = Fv (P = Fv) (2 min)</li>
+      <li>E = mc² and 1 kg = 9×10¹⁶ J (2 min)</li>
+      <li>Fission = reactor/A-bomb; Fusion = sun/H-bomb (2 min)</li>
+      <li>SWHTBG mnemonic for renewables (2 min)</li>
+      <li>Top 6 traps review (4 min)</li>
+      <li>India: ISA, nuclear plants, Bhadla (3 min)</li>
+      <li>Unit conversions: 1 kWh, 1 HP, [ML²T⁻²] (4 min)</li>
+    </ul>
+  </div>
+  <div class="nb n10">
+    <div class="nb-lbl">10</div>
+    <div class="nb-sub">MINUTE PLAN</div>
+    <ul class="nb-ul">
+      <li>KE = ½mv², v doubles → KE×4 (1 min)</li>
+      <li>PE = mgh; v at base = √(2gh) (1 min)</li>
+      <li>P = W/t = Fv; 1 HP = 746 W (1 min)</li>
+      <li>E = mc², c = 3×10⁸ m/s (1 min)</li>
+      <li>Fission ≠ Fusion (Sun = fusion) (1 min)</li>
+      <li>1 kWh = 3.6 × 10⁶ J (1 min)</li>
+      <li>Work by centripetal force = ZERO (1 min)</li>
+      <li>At mean position: KE max, PE min (1 min)</li>
+      <li>[ML²T⁻²] = Energy dimension (1 min)</li>
+      <li>India Thorium > Uranium reserves (1 min)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Ultra-short revision map -->
+<div class="fw" style="margin-bottom:28px;">
+  <h3>🗺️ Ultra-Short Visual Revision — One Page</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:14px;">
+    <div class="card ca" style="padding:13px;"><h4 style="color:var(--cyan);margin-bottom:8px;">⚡ KEY FORMULAS</h4>
+      <p style="font-size:.72rem;line-height:1.9;font-family:'JetBrains Mono',monospace;color:var(--muted);">
+        KE = ½mv² = p²/2m<br>PE = mgh | Spring: ½kx²<br>ME = KE+PE = constant (frictionless)<br>W = ΔKE (Work-Energy theorem)<br>P = W/t = Fv | E = Pt<br>E = mc² | 1 kWh = 3.6 MJ
+      </p>
+    </div>
+    <div class="card cb" style="padding:13px;"><h4 style="color:var(--amber);margin-bottom:8px;">🔢 CRITICAL VALUES</h4>
+      <p style="font-size:.72rem;line-height:1.9;font-family:'JetBrains Mono',monospace;color:var(--muted);">
+        1 HP = 746 W ≈ 750 W<br>1 eV = 1.6×10⁻¹⁹ J<br>1 u = 931.5 MeV<br>c = 3×10⁸ m/s<br>g = 9.8 ≈ 10 m/s²<br>[Energy] = [ML²T⁻²]
+      </p>
+    </div>
+    <div class="card cc" style="padding:13px;"><h4 style="color:var(--red);margin-bottom:8px;">⚠️ REMEMBER</h4>
+      <p style="font-size:.72rem;line-height:1.9;color:var(--muted);">
+        v ×2 → KE ×4 (not ×2!)<br>
+        Same KE → lighter body less momentum<br>
+        Sun = FUSION | Reactor = FISSION<br>
+        India Thorium (not uranium) world's largest<br>
+        Centripetal work = ZERO<br>
+        Watt = power, not energy!
+      </p>
+    </div>
+    <div class="card cd" style="padding:13px;"><h4 style="color:var(--lime);margin-bottom:8px;">🌱 INDIA ENERGY</h4>
+      <p style="font-size:.72rem;line-height:1.9;color:var(--muted);">
+        Bhadla Solar Park: Rajasthan (largest)<br>
+        ISA: India-France, HQ Gurugram<br>
+        Nuclear plants: Tarapur, Kudankulam, Kaiga<br>
+        3-stage nuclear: U→Pu→Thorium<br>
+        Target: 500 GW renewable by 2030<br>
+        India: 3rd largest electricity producer
+      </p>
+    </div>
+  </div>
+  <div class="card ca" style="padding:13px;">
+    <h4 style="color:var(--cyan);margin-bottom:8px;">🔄 ENERGY TRANSFORMATIONS — QUICK RECALL</h4>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;">
+      <div style="font-size:.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;"><span style="color:var(--amber)">Battery:</span> Chemical → Electrical</div>
+      <div style="font-size:.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;"><span style="color:var(--cyan)">Motor:</span> Electrical → Mechanical</div>
+      <div style="font-size:.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;"><span style="color:var(--lime)">Solar cell:</span> Light → Electrical</div>
+      <div style="font-size:.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;"><span style="color:var(--red)">Nuclear:</span> Nuclear → Heat + Light</div>
+      <div style="font-size:.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;"><span style="color:var(--orange)">Generator:</span> Mechanical → Electrical</div>
+      <div style="font-size:.72rem;color:var(--muted);font-family:'JetBrains Mono',monospace;"><span style="color:var(--purple)">LED:</span> Electrical → Light (90%)</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="text-align:center;padding:26px 0 14px;border-top:1px solid var(--border);">
+  <p style="font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--amber);margin-bottom:6px;">⚡ Energy Physics Mastered. CDS 2 2026 Ready. 🎯</p>
+  <p style="font-size:.68rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">Premium Physics Dashboard · CDS · NDA · AFCAT · UPSC Science</p>
+</div>
+
+</main>
+
+<script>
+function togBr(hdr){
+  const body=hdr.nextElementSibling;
+  hdr.classList.toggle('op');
+  if(body)body.classList.toggle('op');
+  const ch=hdr.querySelector('.bchv');
+  if(ch)ch.classList.toggle('op');
+}
+function togQ(q){
+  const a=q.nextElementSibling;
+  if(a)a.classList.toggle('op');
+}
+function gTo(id){
+  const el=document

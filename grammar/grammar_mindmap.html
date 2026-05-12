@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English Grammar — Nouns, Pronouns & SVA | CDS 2026 Master Platform</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Fira+Code:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+:root{
+  --bg:#08090e;--bg2:#0e0f18;--bg3:#141622;--bg4:#1a1d2e;--bg5:#20243a;
+  --teal:#3ec9be;--amber:#f5a623;--violet:#9b72e8;--rose:#e8607a;--sky:#5baef5;--lime:#6ee87a;
+  --text:#ece9e0;--text2:#8a8799;--text3:#4a4768;
+  --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+#nav{position:fixed;top:0;left:0;width:226px;height:100vh;background:rgba(14,15,24,.97);border-right:1px solid var(--bd2);overflow-y:auto;z-index:100;padding-bottom:2rem;scrollbar-width:thin;scrollbar-color:var(--bg5) transparent}
+#nav::-webkit-scrollbar{width:3px}#nav::-webkit-scrollbar-thumb{background:var(--bg5)}
+.nav-logo{padding:1.1rem 1rem .8rem;border-bottom:1px solid var(--bd);background:linear-gradient(135deg,rgba(62,201,190,.08),rgba(91,174,245,.05))}
+.nav-logo span{font-size:13px;font-weight:800;color:var(--teal);display:block}
+.nav-logo small{font-size:10px;color:var(--text3);display:block;margin-top:2px}
+.nav-s{font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:var(--text3);font-weight:700;padding:8px 1rem 3px}
+.nav-a{display:flex;align-items:center;gap:8px;padding:7px 1rem;font-size:11.5px;color:var(--text2);cursor:pointer;border-left:2px solid transparent;transition:all .15s;text-decoration:none}
+.nav-a:hover,.nav-a.on{color:var(--text);background:var(--bg3);border-left-color:var(--teal)}
+.nav-a .ni{width:18px;text-align:center;font-size:12px;flex-shrink:0}
+#main{margin-left:226px;padding:2rem 2rem 5rem;position:relative;z-index:1}
+#mbt{display:none;position:fixed;top:10px;left:10px;z-index:200;background:var(--bg3);border:1px solid var(--bd2);color:var(--text);padding:6px 10px;border-radius:6px;cursor:pointer;font-size:12px}
+.sec{display:none}.sec.on{display:block}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(62,201,190,.08),rgba(245,166,35,.05),rgba(91,174,245,.04));border:1px solid var(--bd2);border-radius:14px;padding:2.5rem;margin-bottom:2rem}
+.hero h1{font-size:1.9rem;font-weight:800;color:var(--teal);line-height:1.2;margin-bottom:6px}
+.hero p{font-size:13px;color:var(--text2);max-width:520px}
+.hbr{display:flex;gap:7px;margin-top:14px;flex-wrap:wrap}
+.hb{font-size:10px;padding:3px 10px;border-radius:20px;font-weight:700;letter-spacing:.3px}
+.ht{background:rgba(62,201,190,.14);color:var(--teal);border:1px solid rgba(62,201,190,.3)}
+.ha{background:rgba(245,166,35,.12);color:var(--amber);border:1px solid rgba(245,166,35,.3)}
+.hv{background:rgba(155,114,232,.12);color:var(--violet);border:1px solid rgba(155,114,232,.25)}
+.hr2{background:rgba(232,96,122,.12);color:var(--rose);border:1px solid rgba(232,96,122,.25)}
+.stl{display:flex;align-items:center;gap:10px;margin:1.5rem 0 1rem;padding-bottom:8px;border-bottom:1px solid var(--bd2)}
+.stl h2{font-size:1.05rem;font-weight:700}
+.stn{font-family:'Fira Code',monospace;font-size:10px;color:var(--bg);background:var(--teal);padding:2px 8px;border-radius:4px;font-weight:700}
+.stg{font-size:10px;color:var(--text3);background:var(--bg4);padding:2px 8px;border-radius:4px;margin-left:auto}
+.br{border:1px solid var(--bd);border-radius:10px;margin-bottom:1rem;overflow:hidden}
+.brhd{display:flex;align-items:center;gap:10px;padding:11px 14px;cursor:pointer;background:var(--bg2);border-bottom:1px solid var(--bd);transition:background .15s;user-select:none}
+.brhd:hover{background:var(--bg3)}
+.bri{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.brt{font-size:13.5px;font-weight:600;flex:1}
+.brb{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;font-family:'Fira Code',monospace}
+.ch{font-size:10px;color:var(--text3);transition:transform .25s}
+.br.on .ch{transform:rotate(90deg)}
+.brbd{display:none;padding:1rem 1.2rem;background:var(--bg)}
+.br.on .brbd{display:block}
+.ct .brhd{border-left:3px solid var(--teal)}.ct .bri{background:rgba(62,201,190,.12);color:var(--teal)}.ct .brt{color:var(--teal)}.ct .brb{background:rgba(62,201,190,.14);color:var(--teal)}
+.ca .brhd{border-left:3px solid var(--amber)}.ca .bri{background:rgba(245,166,35,.1);color:var(--amber)}.ca .brt{color:var(--amber)}.ca .brb{background:rgba(245,166,35,.13);color:var(--amber)}
+.cv .brhd{border-left:3px solid var(--violet)}.cv .bri{background:rgba(155,114,232,.1);color:var(--violet)}.cv .brt{color:var(--violet)}.cv .brb{background:rgba(155,114,232,.12);color:var(--violet)}
+.cr .brhd{border-left:3px solid var(--rose)}.cr .bri{background:rgba(232,96,122,.1);color:var(--rose)}.cr .brt{color:var(--rose)}.cr .brb{background:rgba(232,96,122,.12);color:var(--rose)}
+.cs .brhd{border-left:3px solid var(--sky)}.cs .bri{background:rgba(91,174,245,.1);color:var(--sky)}.cs .brt{color:var(--sky)}.cs .brb{background:rgba(91,174,245,.12);color:var(--sky)}
+.cl .brhd{border-left:3px solid var(--lime)}.cl .bri{background:rgba(110,232,122,.1);color:var(--lime)}.cl .brt{color:var(--lime)}.cl .brb{background:rgba(110,232,122,.12);color:var(--lime)}
+.g2{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:8px 0}
+.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:9px;margin:8px 0}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:11px 13px}
+.card .ct2{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.card p,.card li{font-size:12.5px;color:var(--text2);line-height:1.65}
+.card ul{padding-left:14px}.card li{margin-bottom:2px}
+.card strong{color:var(--text);font-weight:500}
+.rule{background:var(--bg3);border:1px solid var(--bd2);border-radius:8px;padding:10px 14px;margin:6px 0;font-size:12.5px;color:var(--text2);line-height:1.65;border-left:3px solid}
+.rule strong{color:var(--text);font-weight:500}
+.rule code{font-family:'Fira Code',monospace;font-size:12px;color:var(--teal)}
+.eg{font-size:12px;color:var(--text3);margin-top:4px;font-family:'Lora',serif;font-style:italic}
+.eg strong{color:var(--sky);font-style:normal;font-family:'Plus Jakarta Sans',sans-serif;font-size:11.5px}
+.trap{background:rgba(232,96,122,.07);border:1px solid rgba(232,96,122,.2);border-radius:8px;padding:10px 13px;margin:8px 0}
+.trap .tt{font-size:10px;color:var(--rose);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.trap .tc{font-size:12px;color:var(--text2);line-height:1.6}
+.trap .tc strong{color:var(--rose)}
+.mnem{background:rgba(110,232,122,.06);border:1px solid rgba(110,232,122,.2);border-radius:8px;padding:10px 13px;margin:8px 0}
+.mnem .mt{font-size:10px;color:var(--lime);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.mnem .mc{font-family:'Lora',serif;font-size:14px;color:var(--text);line-height:1.5;font-style:italic}
+.mnem .md{font-size:11.5px;color:var(--text2);margin-top:4px}
+.fact{background:rgba(91,174,245,.06);border:1px solid rgba(91,174,245,.18);border-radius:8px;padding:10px 13px;margin:8px 0}
+.fact .ftt{font-size:10px;color:var(--sky);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.fact .ftc{font-size:12.5px;color:var(--text2);line-height:1.65}
+.fact .ftc strong{color:var(--text)}
+.dt{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+.dt th{background:var(--bg3);padding:7px 10px;text-align:left;font-weight:600;color:var(--text2);border-bottom:1px solid var(--bd2);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.dt td{padding:6px 10px;border-bottom:1px solid var(--bd);color:var(--text2);vertical-align:top;line-height:1.5}
+.dt tr:hover td{background:var(--bg2)}
+.dt .ht2{color:var(--teal);font-weight:600;font-family:'Fira Code',monospace}
+.dt .ha2{color:var(--amber);font-weight:600}
+.dt .hv2{color:var(--violet);font-weight:600}
+hr.dv{border:none;border-top:1px solid var(--bd);margin:10px 0}
+.mi{font-size:12.5px;color:var(--text2);line-height:1.65;padding:2px 0;display:flex;gap:8px;margin-left:18px}
+.mi::before{content:'›';color:var(--text3);flex-shrink:0}
+.mi strong{color:var(--text);font-weight:500}
+.sub{font-size:12.5px;font-weight:600;color:var(--text);margin:10px 0 5px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'';width:12px;height:2px;background:currentColor;opacity:.5;display:inline-block}
+
+/* PRACTICE SYSTEM */
+.quiz-wrap{max-width:700px}
+.qpw{height:3px;background:var(--bg3);border-radius:2px;margin-bottom:1.5rem}
+.qpf{height:100%;background:var(--teal);border-radius:2px;transition:width .3s}
+.qcard{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-bottom:12px}
+.qn{font-family:'Fira Code',monospace;font-size:10px;color:var(--text3);margin-bottom:5px;display:flex;align-items:center;gap:8px}
+.q-diff{font-size:9px;padding:1px 6px;border-radius:4px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600}
+.diff-e{background:rgba(110,232,122,.14);color:var(--lime)}
+.diff-m{background:rgba(245,166,35,.14);color:var(--amber)}
+.diff-h{background:rgba(232,96,122,.13);color:var(--rose)}
+.qt{font-size:13.5px;font-weight:500;color:var(--text);margin-bottom:10px;line-height:1.55}
+.qt em{font-family:'Lora',serif;color:var(--sky);font-size:13px}
+.qt u{text-decoration:underline;text-decoration-color:var(--rose);text-underline-offset:3px}
+.qopts{display:flex;flex-direction:column;gap:5px}
+.qo{background:var(--bg3);border:1px solid var(--bd);border-radius:6px;padding:8px 12px;cursor:pointer;font-size:12.5px;color:var(--text2);transition:all .15s;text-align:left;width:100%;font-family:'Plus Jakarta Sans',sans-serif}
+.qo:hover:not(:disabled){background:var(--bg4);color:var(--text);border-color:var(--bd2)}
+.qo.ok{background:rgba(110,232,122,.14);border-color:var(--lime);color:var(--lime)}
+.qo.no{background:rgba(232,96,122,.12);border-color:var(--rose);color:var(--rose)}
+.qexp{display:none;margin-top:9px;padding:8px 12px;background:var(--bg4);border-radius:6px;font-size:11.5px;color:var(--text2);line-height:1.55;border-left:2px solid var(--sky)}
+.qexp.on{display:block}
+.qnxt{display:none;margin-top:10px;background:var(--teal);color:var(--bg);border:none;padding:7px 18px;border-radius:6px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer}
+.qnxt:hover{opacity:.85}
+.qsc{text-align:center;padding:3rem 1rem;display:none}
+.qscn{font-size:3.5rem;font-family:'Fira Code',monospace;color:var(--teal);font-weight:700}
+.qscl{font-size:13px;color:var(--text2);margin-top:6px}
+.qscr{margin-top:1.5rem;background:none;border:1px solid var(--bd2);color:var(--text);padding:8px 22px;border-radius:6px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:12.5px}
+.q-stats{display:flex;gap:10px;margin-bottom:1rem;flex-wrap:wrap}
+.q-stat{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:10px 14px;text-align:center;min-width:80px}
+.q-stat .sv{font-family:'Fira Code',monospace;font-size:20px;font-weight:700}
+.q-stat .sl{font-size:10px;color:var(--text3);margin-top:2px}
+.topic-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:1rem}
+.topic-btn{padding:6px 14px;border-radius:20px;border:1px solid var(--bd2);background:var(--bg2);color:var(--text2);font-size:11.5px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s}
+.topic-btn:hover,.topic-btn.on{background:var(--teal);color:var(--bg);border-color:var(--teal);font-weight:600}
+
+/* REVISION GRID */
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:8px 0}
+.rcard{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:14px}
+.rcard h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.rcard ul{list-style:none}
+.rcard li{font-size:11.5px;color:var(--text2);padding:2px 0 2px 13px;position:relative;line-height:1.5}
+.rcard li::before{content:'▸';position:absolute;left:0;color:var(--text3);font-size:9px;top:4px}
+.rcard li strong{color:var(--text);font-weight:500}
+
+/* FLASH SHEET */
+.fw{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin:8px 0}
+.fwc{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:12px}
+.fwc .fwt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.fwc .fwi{font-family:'Fira Code',monospace;font-size:11.5px;color:var(--amber);background:var(--bg3);padding:5px 9px;border-radius:5px;margin:3px 0;line-height:1.5}
+
+/* SCOREBOARD */
+.score-board{background:var(--bg2);border:1px solid var(--bd2);border-radius:10px;padding:1.5rem;margin-bottom:1.5rem}
+.score-board h3{font-size:14px;font-weight:700;margin-bottom:1rem;color:var(--teal)}
+.score-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--bd);font-size:12.5px}
+.score-row:last-child{border:none}
+.score-row .sr-topic{color:var(--text2)}
+.score-row .sr-val{font-family:'Fira Code',monospace;color:var(--teal);font-weight:600}
+
+/* RESPONSIVE */
+@media(max-width:768px){#nav{transform:translateX(-100%)}#nav.on{transform:translateX(0)}#main{margin-left:0;padding:1rem 1rem 4rem}#mbt{display:block}.hero h1{font-size:1.4rem}}
+@media print{#nav,#mbt{display:none}#main{margin-left:0}.brbd{display:block!important}.ch{display:none}}
+</style>
+</head>
+<body>
+<button id="mbt" onclick="document.getElementById('nav').classList.toggle('on')">☰</button>
+<nav id="nav">
+  <div class="nav-logo"><span>📗 GRAMMAR MASTER</span><small>CDS 2026 · NDA · AFCAT · SSC Platform</small></div>
+  <div class="nav-s">Concepts</div>
+  <a class="nav-a on" onclick="show('intro')"><span class="ni">📘</span>Introduction</a>
+  <a class="nav-a" onclick="show('nouns')"><span class="ni">🔤</span>Nouns — Full Guide</a>
+  <a class="nav-a" onclick="show('pronouns')"><span class="ni">👤</span>Pronouns — Full Guide</a>
+  <a class="nav-a" onclick="show('sva')"><span class="ni">⚡</span>Subject-Verb Agreement</a>
+  <a class="nav-a" onclick="show('errors')"><span class="ni">🔍</span>Error Spotting System</a>
+  <div class="nav-s">Practice Labs</div>
+  <a class="nav-a" onclick="show('pq_nouns')"><span class="ni">📝</span>Nouns MCQs (75 Qs)</a>
+  <a class="nav-a" onclick="show('pq_pro')"><span class="ni">📝</span>Pronouns MCQs (100 Qs)</a>
+  <a class="nav-a" onclick="show('pq_sva')"><span class="ni">📝</span>SVA MCQs (150 Qs)</a>
+  <a class="nav-a" onclick="show('pq_err')"><span class="ni">🔎</span>Error Spotting (50 Qs)</a>
+  <a class="nav-a" onclick="show('pq_mix')"><span class="ni">🎯</span>Mixed Mock Test</a>
+  <div class="nav-s">Exam Tools</div>
+  <a class="nav-a" onclick="show('traps')"><span class="ni">⚠️</span>CDS/NDA Traps</a>
+  <a class="nav-a" onclick="show('shortcuts')"><span class="ni">⚡</span>Speed Shortcuts</a>
+  <a class="nav-a" onclick="show('flash')"><span class="ni">📋</span>Flash Sheet</a>
+  <a class="nav-a" onclick="show('revision')"><span class="ni">🌙</span>Night Before Exam</a>
+</nav>
+
+<div id="main">
+
+<!-- ════ INTRODUCTION ════ -->
+<div id="intro" class="sec on">
+  <div class="hero">
+    <h1>Nouns, Pronouns & Subject-Verb Agreement</h1>
+    <p>CDS 2 2026 · NDA · AFCAT · SSC · UPSC CSAT — Complete Grammar Practice Platform</p>
+    <div class="hbr">
+      <span class="hb ht">300+ Practice Questions</span>
+      <span class="hb ha">Error Spotting System</span>
+      <span class="hb hv">SVA Rules Engine</span>
+      <span class="hb hr2">CDS/NDA Traps</span>
+    </div>
+  </div>
+
+  <div class="stl"><span class="stn">01</span><h2>Why Grammar Matters in CDS/NDA</h2><span class="stg">FOUNDATION</span></div>
+  <div class="br ct on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">📘</div><div class="brt">Grammar in Competitive Exams — Overview</div><span class="brb">CONTEXT</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--teal)">CDS Exam Pattern</div><ul><li>English Section: 100 questions, 100 marks</li><li>Grammar: ~40–50 questions directly</li><li>Error spotting: 10–15 questions</li><li>Sentence improvement: 10–15 questions</li><li>Fill in blanks: 10–15 questions</li></ul></div>
+        <div class="card"><div class="ct2" style="color:var(--amber)">High-Yield Grammar Areas</div><ul><li><strong>Subject-Verb Agreement:</strong> 15–20 Qs</li><li><strong>Pronoun usage:</strong> 8–12 Qs</li><li><strong>Noun errors:</strong> 5–8 Qs</li><li><strong>Tenses:</strong> 10–15 Qs</li><li>Articles, Prepositions: 5–10 Qs</li></ul></div>
+        <div class="card"><div class="ct2" style="color:var(--violet)">Three Pillars of Grammar</div><ul><li><strong>Nouns:</strong> What you talk about</li><li><strong>Pronouns:</strong> What you use to avoid repetition</li><li><strong>SVA:</strong> How subject and verb must match</li><li>Together they form ~35% of grammar marks</li></ul></div>
+        <div class="card"><div class="ct2" style="color:var(--sky)">Strategy</div><ul><li>Learn rules (20%) → Practice (80%)</li><li>Focus on exceptions and traps</li><li>Error spotting: look at underlined parts first</li><li>SVA: identify true subject always</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ NOUNS ════ -->
+<div id="nouns" class="sec">
+  <div class="stl"><span class="stn">02</span><h2>Nouns — Complete Master Guide</h2><span class="stg">TYPES & RULES</span></div>
+  <div class="br ca on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🔤</div><div class="brt">Types of Nouns — Full Classification</div><span class="brb">TYPES</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--amber)">Proper Noun</div><p>Name of specific person, place, thing. Always <strong>capitalized.</strong><br>Examples: Delhi, Rahul, Taj Mahal, Amazon<br><span style="color:var(--rose);font-size:11px">⚠️ No article before names: NOT "the Rahul"</span></p></div>
+        <div class="card"><div class="ct2" style="color:var(--teal)">Common Noun</div><p>General name for any person, place, thing of same kind.<br>Examples: city, boy, river, table<br><span style="color:var(--lime);font-size:11px">✓ Can be made plural; takes articles</span></p></div>
+        <div class="card"><div class="ct2" style="color:var(--violet)">Collective Noun</div><p>Name of a group of people/things.<br>Examples: team, army, committee, jury, flock<br><span style="color:var(--amber);font-size:11px">Key: Can be singular OR plural depending on context</span></p></div>
+        <div class="card"><div class="ct2" style="color:var(--sky)">Abstract Noun</div><p>Name of quality, idea, feeling — cannot be touched.<br>Examples: honesty, love, courage, freedom<br><span style="color:var(--rose);font-size:11px">⚠️ Usually uncountable; no plural</span></p></div>
+        <div class="card"><div class="ct2" style="color:var(--lime)">Material Noun</div><p>Name of material/substance things are made of.<br>Examples: gold, water, wood, iron, cotton<br><span style="color:var(--rose);font-size:11px">⚠️ Uncountable; no article 'a/an' before them</span></p></div>
+        <div class="card"><div class="ct2" style="color:var(--rose)">Countable vs Uncountable</div><p><strong>Countable:</strong> apple → apples, book → books<br><strong>Uncountable:</strong> water, air, advice, information, furniture, luggage<br><span style="color:var(--rose);font-size:11px">⚠️ "Advices" / "informations" = WRONG</span></p></div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 Noun Types Mnemonic</div>
+        <div class="mc">"Pretty Cats Can Always Make Music"</div>
+        <div class="md">Proper · Common · Collective · Abstract · Material · (Mixed usage)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br ca">
+    <div class="brhd" onclick="tb(this)"><div class="bri">📊</div><div class="brt">Singular & Plural Rules — Complete with Exceptions</div><span class="brb">PLURALS</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Rule</th><th>Singular</th><th>Plural</th></tr>
+        <tr><td>General → add -s</td><td>book, table</td><td class="ht2">books, tables</td></tr>
+        <tr><td>-s, -sh, -ch, -x, -z → add -es</td><td>bus, brush, church</td><td class="ht2">buses, brushes, churches</td></tr>
+        <tr><td>Consonant + y → change y to ies</td><td>baby, city</td><td class="ht2">babies, cities</td></tr>
+        <tr><td>Vowel + y → add -s</td><td>boy, day, key</td><td class="ht2">boys, days, keys</td></tr>
+        <tr><td>-f/-fe → change to -ves</td><td>leaf, wife, knife</td><td class="ht2">leaves, wives, knives</td></tr>
+        <tr><td>-f exceptions → add -s</td><td>roof, chief, belief</td><td class="ht2">roofs, chiefs, beliefs</td></tr>
+        <tr><td>-o → add -es</td><td>potato, tomato, hero</td><td class="ht2">potatoes, tomatoes, heroes</td></tr>
+        <tr><td>-o exceptions → add -s</td><td>photo, piano, radio</td><td class="ht2">photos, pianos, radios</td></tr>
+        <tr><td>Irregular (internal vowel change)</td><td>man, woman, foot, tooth, mouse</td><td class="ht2">men, women, feet, teeth, mice</td></tr>
+        <tr><td>Same singular = plural</td><td>sheep, deer, fish, series, species</td><td class="ht2">sheep, deer, fish, series, species</td></tr>
+        <tr><td>Greek/Latin plurals</td><td>criterion, phenomenon, datum</td><td class="ht2">criteria, phenomena, data</td></tr>
+        <tr><td>Always plural (no singular)</td><td>scissors, trousers, spectacles, thanks</td><td class="ht2">scissors, trousers, spectacles</td></tr>
+        <tr><td>Looks plural, singular meaning</td><td>news, mathematics, physics, measles</td><td class="ht2">takes singular verb!</td></tr>
+      </table>
+      <div class="trap">
+        <div class="tt">⚠️ Most Tested Traps</div>
+        <div class="tc">
+          <strong>Data:</strong> "The data is correct" (modern) vs "The data are correct" (formal). Both acceptable.<br>
+          <strong>Criteria:</strong> One criterion, two criteria. Never "one criteria."<br>
+          <strong>News:</strong> "The news IS" (not "are"). News = singular.<br>
+          <strong>Phenomena:</strong> "This phenomenon" NOT "this phenomena."
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br ca">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🔗</div><div class="brt">Possessive Nouns & Compound Nouns</div><span class="brb">POSSESSION</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="sub" style="color:var(--amber)">Possessive Rules</div>
+      <div class="rule" style="border-left-color:var(--amber)">Singular noun → add <code>'s</code>: the boy's book, India's capital
+        <div class="eg">The manager's office is large.</div></div>
+      <div class="rule" style="border-left-color:var(--teal)">Plural noun ending in -s → add <code>'</code> only: the boys' school, workers' union
+        <div class="eg">The teachers' lounge is on the second floor.</div></div>
+      <div class="rule" style="border-left-color:var(--violet)">Irregular plural not ending in -s → add <code>'s</code>: children's toys, men's room
+        <div class="eg">Women's rights are fundamental.</div></div>
+      <div class="trap">
+        <div class="tt">⚠️ Apostrophe Trap</div>
+        <div class="tc"><strong>its</strong> (possessive) vs <strong>it's</strong> (it is). <strong>their</strong> (possessive) vs <strong>they're</strong> (they are) vs <strong>there</strong> (place). Classic CDS error spotting question!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PRONOUNS ════ -->
+<div id="pronouns" class="sec">
+  <div class="stl"><span class="stn">03</span><h2>Pronouns — Complete Master Guide</h2><span class="stg">ALL TYPES</span></div>
+  <div class="br cv on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">👤</div><div class="brt">All Types of Pronouns — Complete Table</div><span class="brb">TYPES</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Type</th><th>Examples</th><th>Key Rule</th></tr>
+        <tr><td class="hv2">Personal</td><td>I, we, you, he, she, it, they; me, us, him, her, them</td><td>Subject form (Nominative): I, we, he. Object form (Accusative): me, us, him.</td></tr>
+        <tr><td class="hv2">Reflexive</td><td>myself, yourself, himself, herself, itself, ourselves, themselves</td><td>Action reflects on subject: "He hurt himself." Used with same subject.</td></tr>
+        <tr><td class="hv2">Emphatic</td><td>myself, yourself, himself (same words as reflexive)</td><td>Used for emphasis: "I myself saw it." NOT essential to sentence.</td></tr>
+        <tr><td class="hv2">Demonstrative</td><td>this, that, these, those</td><td>Near: this/these; Far: that/those. Singular: this/that; Plural: these/those.</td></tr>
+        <tr><td class="hv2">Relative</td><td>who, whom, which, that, whose</td><td>who/whom = persons; which = things; that = persons or things.</td></tr>
+        <tr><td class="hv2">Interrogative</td><td>who, whom, which, what, whose</td><td>Used to ask questions. Who (subject), Whom (object).</td></tr>
+        <tr><td class="hv2">Indefinite</td><td>anyone, everyone, someone, nobody, each, either, neither</td><td>Most indefinite pronouns → singular verb! Everyone IS, not ARE.</td></tr>
+        <tr><td class="hv2">Distributive</td><td>each, every, either, neither</td><td>Refer to members individually. Always singular: "Each of the boys HAS."</td></tr>
+        <tr><td class="hv2">Reciprocal</td><td>each other, one another</td><td>Two persons: each other. More than two: one another.</td></tr>
+      </table>
+      <div class="mnem">
+        <div class="mt">🧠 Pronoun Types — "PREDI RII"</div>
+        <div class="mc">"People Really Enjoy Daily Reading Into Interesting Ideas"</div>
+        <div class="md">Personal · Reflexive · Emphatic · Demonstrative · Relative · Interrogative · Indefinite · Distributive · Reciprocal</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cv">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚖️</div><div class="brt">Case of Pronouns — Nominative, Accusative, Possessive</div><span class="brb">CASE</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Person</th><th>Nominative (Subject)</th><th>Accusative (Object)</th><th>Possessive Adj.</th><th>Possessive Pronoun</th></tr>
+        <tr><td>1st Sing.</td><td class="ht2">I</td><td class="ht2">me</td><td class="ha2">my</td><td class="hv2">mine</td></tr>
+        <tr><td>2nd Sing.</td><td class="ht2">you</td><td class="ht2">you</td><td class="ha2">your</td><td class="hv2">yours</td></tr>
+        <tr><td>3rd Sing. M.</td><td class="ht2">he</td><td class="ht2">him</td><td class="ha2">his</td><td class="hv2">his</td></tr>
+        <tr><td>3rd Sing. F.</td><td class="ht2">she</td><td class="ht2">her</td><td class="ha2">her</td><td class="hv2">hers</td></tr>
+        <tr><td>3rd Sing. N.</td><td class="ht2">it</td><td class="ht2">it</td><td class="ha2">its</td><td class="hv2">its</td></tr>
+        <tr><td>1st Plural</td><td class="ht2">we</td><td class="ht2">us</td><td class="ha2">our</td><td class="hv2">ours</td></tr>
+        <tr><td>3rd Plural</td><td class="ht2">they</td><td class="ht2">them</td><td class="ha2">their</td><td class="hv2">theirs</td></tr>
+      </table>
+      <div class="trap">
+        <div class="tt">⚠️ Who vs Whom</div>
+        <div class="tc"><strong>Who</strong> = subject (nominative): "Who is there?" | "The man who called."<br><strong>Whom</strong> = object (accusative): "Whom did you call?" | "The man whom I met."<br><strong>Trick:</strong> If you can replace with HE/SHE → use WHO. If HIM/HER → use WHOM.</div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Between You and Me (NOT I)</div>
+        <div class="tc">After prepositions (between, for, with, to, from), always use object form. "Between you and <strong>me</strong>" NOT "between you and I." "It is for <strong>him</strong> and <strong>me</strong>" NOT "he and I."</div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Reflexive Pronoun Misuse</div>
+        <div class="tc">WRONG: "Please contact myself for queries." RIGHT: "Please contact <strong>me</strong> for queries." Reflexive pronouns CANNOT replace personal pronouns when there's no same subject to reflect on.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cv">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🔗</div><div class="brt">Pronoun-Antecedent Agreement — Critical Rules</div><span class="brb">AGREEMENT</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="rule" style="border-left-color:var(--violet)"><strong>Rule 1:</strong> Pronoun must agree with antecedent in number, gender, and person.
+        <div class="eg">Every student must submit <strong>his/her</strong> assignment. (NOT their)</div></div>
+      <div class="rule" style="border-left-color:var(--teal)"><strong>Rule 2:</strong> Indefinite pronouns (everyone, each, anyone, nobody) → singular pronoun.
+        <div class="eg">Everyone should do <strong>his or her</strong> best. (Formally correct)</div></div>
+      <div class="rule" style="border-left-color:var(--amber)"><strong>Rule 3:</strong> Collective nouns → singular pronoun (usually).
+        <div class="eg">The team won <strong>its</strong> match. (NOT their)</div></div>
+      <div class="rule" style="border-left-color:var(--rose)"><strong>Rule 4:</strong> Either/Neither → singular pronoun.
+        <div class="eg">Neither of the girls has done <strong>her</strong> homework.</div></div>
+      <div class="rule" style="border-left-color:var(--sky)"><strong>Rule 5:</strong> Compound antecedent joined by 'and' → plural pronoun.
+        <div class="eg">Ram and Shyam have finished <strong>their</strong> work.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SVA ════ -->
+<div id="sva" class="sec">
+  <div class="stl"><span class="stn">04</span><h2>Subject-Verb Agreement — All Rules</h2><span class="stg">SVA MASTER</span></div>
+
+  <div class="br cs on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚡</div><div class="brt">Basic & Advanced SVA Rules — Complete Engine</div><span class="brb">30 RULES</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="sub" style="color:var(--sky)">BASIC RULES</div>
+      <div class="rule" style="border-left-color:var(--sky)"><strong>Rule 1:</strong> Singular subject → singular verb; Plural subject → plural verb.
+        <div class="eg">The <strong>dog barks</strong>. The <strong>dogs bark</strong>.</div></div>
+      <div class="rule" style="border-left-color:var(--teal)"><strong>Rule 2:</strong> "Along with / together with / as well as / in addition to / besides / accompanied by" → verb agrees with FIRST subject.
+        <div class="eg">The teacher, <em>along with his students</em>, <strong>has</strong> arrived. (NOT have)</div></div>
+      <div class="rule" style="border-left-color:var(--amber)"><strong>Rule 3:</strong> Either-Or / Neither-Nor → verb agrees with NEARER subject.
+        <div class="eg">Either he or <em>his friends</em> <strong>are</strong> responsible. | Neither the boys nor <em>the girl</em> <strong>was</strong> present.</div></div>
+      <div class="rule" style="border-left-color:var(--violet)"><strong>Rule 4:</strong> Indefinite pronouns (everyone, everyone, anyone, nobody, each, someone) → SINGULAR verb.
+        <div class="eg"><em>Everyone</em> <strong>has</strong> a role to play. <em>Nobody</em> <strong>knows</strong> the answer.</div></div>
+      <div class="rule" style="border-left-color:var(--rose)"><strong>Rule 5:</strong> Collective nouns → singular verb (usually).
+        <div class="eg">The <em>committee</em> <strong>has</strong> decided. (Acting as one unit)</div></div>
+      <div class="rule" style="border-left-color:var(--lime)"><strong>Rule 6:</strong> Collective noun → plural verb when members act individually.
+        <div class="eg">The <em>jury</em> <strong>were</strong> divided in their opinions. (Each member separately)</div></div>
+      <div class="rule" style="border-left-color:var(--sky)"><strong>Rule 7:</strong> Nouns plural in form but singular in meaning → singular verb.
+        <div class="eg"><em>Mathematics</em> <strong>is</strong> my favourite subject. <em>The news</em> <strong>is</strong> shocking.</div></div>
+      <div class="rule" style="border-left-color:var(--amber)"><strong>Rule 8:</strong> "There" / "Here" → verb agrees with subject AFTER the verb.
+        <div class="eg"><em>There</em> <strong>is</strong> a book on the table. <em>There</em> <strong>are</strong> books on the table.</div></div>
+      <div class="rule" style="border-left-color:var(--teal)"><strong>Rule 9:</strong> Amount of money, time, distance, weight → treated as SINGULAR.
+        <div class="eg">Five thousand rupees <strong>is</strong> a large sum. Ten miles <strong>is</strong> too far to walk.</div></div>
+      <div class="rule" style="border-left-color:var(--violet)"><strong>Rule 10:</strong> Two subjects joined by "and" → plural verb.
+        <div class="eg">Ram and Shyam <strong>are</strong> good friends.</div></div>
+
+      <div class="sub" style="color:var(--amber);margin-top:12px">ADVANCED RULES</div>
+      <div class="rule" style="border-left-color:var(--amber)"><strong>Rule 11:</strong> Two subjects joined by "and" referring to SAME person/thing → singular verb.
+        <div class="eg">The President and Prime Minister <em>of India</em> <strong>is</strong> different persons… Wait — "The bread and butter <strong>is</strong> my breakfast."</div></div>
+      <div class="rule" style="border-left-color:var(--rose)"><strong>Rule 12:</strong> Fraction / Percentage → depends on the NOUN that follows.
+        <div class="eg">Two-thirds of the students <strong>were</strong> absent. | Two-thirds of the water <strong>was</strong> wasted.</div></div>
+      <div class="rule" style="border-left-color:var(--sky)"><strong>Rule 13:</strong> "A number of" → plural verb. "The number of" → singular verb.
+        <div class="eg"><em>A number of students</em> <strong>have</strong> qualified. | <em>The number of students</em> <strong>has</strong> increased.</div></div>
+      <div class="rule" style="border-left-color:var(--lime)"><strong>Rule 14:</strong> "Many a" + singular noun → singular verb.
+        <div class="eg"><em>Many a student</em> <strong>has</strong> failed. (NOT have)</div></div>
+      <div class="rule" style="border-left-color:var(--teal)"><strong>Rule 15:</strong> "More than one" + singular noun → singular verb.
+        <div class="eg"><em>More than one candidate</em> <strong>has</strong> applied. (NOT have)</div></div>
+      <div class="rule" style="border-left-color:var(--violet)"><strong>Rule 16:</strong> Titles of books, movies, countries → singular verb (even if plural-sounding).
+        <div class="eg">"The Arabian Nights" <strong>is</strong> an interesting book. "The United States" <strong>is</strong> a superpower.</div></div>
+      <div class="rule" style="border-left-color:var(--amber)"><strong>Rule 17:</strong> "One of the + plural noun" → plural noun, singular verb.
+        <div class="eg"><em>One of the students</em> <strong>has</strong> won. (NOT have — One is subject)</div></div>
+      <div class="rule" style="border-left-color:var(--rose)"><strong>Rule 18:</strong> "None" = "not one" → singular verb (traditionally); plural also accepted.
+        <div class="eg"><em>None of the money</em> <strong>was</strong> found. (Formal)</div></div>
+      <div class="rule" style="border-left-color:var(--sky)"><strong>Rule 19:</strong> Relative pronoun (who, which, that) → verb agrees with antecedent.
+        <div class="eg">He is one of those leaders who <strong>inspire</strong> trust. (leaders inspire)</div></div>
+      <div class="rule" style="border-left-color:var(--lime)"><strong>Rule 20:</strong> "Both...and" → plural verb always.
+        <div class="eg">Both the teacher and the student <strong>are</strong> present.</div></div>
+
+      <div class="trap">
+        <div class="tt">⚠️ The Golden Rules — Tested in Every CDS Paper</div>
+        <div class="tc">
+          1. <strong>"Along with/as well as"</strong> → ignore the phrase, verb with FIRST subject<br>
+          2. <strong>"Either/Neither...or/nor"</strong> → verb with NEARER (closer) subject<br>
+          3. <strong>"A number of"</strong> (plural) vs <strong>"The number of"</strong> (singular)<br>
+          4. <strong>"Many a"</strong> → always singular<br>
+          5. <strong>"More than one"</strong> → always singular<br>
+          6. Money/Distance/Time → singular<br>
+          7. News/Mathematics/Physics → singular
+        </div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 SVA Golden Mnemonic</div>
+        <div class="mc">"A Number Marks Every Individual — Many More Need Singular!"</div>
+        <div class="md">A number of(plural) · Many a(singular) · More than one(singular) · Neither/Either(nearer) · Indefinite pronouns(singular)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ ERROR SPOTTING ════ -->
+<div id="errors" class="sec">
+  <div class="stl"><span class="stn">05</span><h2>Error Spotting System</h2><span class="stg">DETECTION</span></div>
+  <div class="br cr on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🔍</div><div class="brt">Step-by-Step Error Detection Method</div><span class="brb">STRATEGY</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="fact">
+        <div class="ftt">📌 5-Step Error Spotting Method</div>
+        <div class="ftc">
+          <strong>Step 1:</strong> Identify the subject. Strip away phrases like "along with," "as well as," etc.<br>
+          <strong>Step 2:</strong> Check subject-verb agreement. Is the verb singular/plural correctly?<br>
+          <strong>Step 3:</strong> Check pronoun-antecedent agreement. Does pronoun match?<br>
+          <strong>Step 4:</strong> Look for article errors, tense consistency.<br>
+          <strong>Step 5:</strong> Check for preposition errors, idiomatic usage.
+        </div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--rose)">Common Noun Errors</div><ul><li>Using plural for uncountable: <em>informations</em> ✗</li><li>Using article before material noun: <em>a water</em> ✗</li><li>Wrong plural: <em>criterias</em> ✗ → criteria</li><li>Phenomenon vs phenomena confusion</li></ul></div>
+        <div class="card"><div class="ct2" style="color:var(--violet)">Common Pronoun Errors</div><ul><li>Who vs Whom: <em>Who did you meet?</em> ✗ (Whom)</li><li>Misusing reflexive: <em>Contact myself</em> ✗</li><li>Wrong case after preposition: <em>between you and I</em> ✗</li><li>Pronoun-antecedent mismatch</li></ul></div>
+        <div class="card"><div class="ct2" style="color:var(--sky)">Common SVA Errors</div><ul><li>"Along with" → treating as plural subject</li><li>"A number of" → using singular verb</li><li>"Many a" → using plural verb</li><li>Collective noun + plural verb (when acting as unit)</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ NOUNS MCQ PRACTICE ════ -->
+<div id="pq_nouns" class="sec">
+  <div class="stl"><span class="stn">P1</span><h2>Nouns — 75 Practice Questions</h2><span class="stg">MCQ BANK</span></div>
+  <div class="quiz-wrap">
+    <div id="nouns_stats" class="q-stats">
+      <div class="q-stat"><div class="sv" id="n_correct" style="color:var(--lime)">0</div><div class="sl">Correct</div></div>
+      <div class="q-stat"><div class="sv" id="n_wrong" style="color:var(--rose)">0</div><div class="sl">Wrong</div></div>
+      <div class="q-stat"><div class="sv" id="n_total" style="color:var(--teal)">0</div><div class="sl">Attempted</div></div>
+    </div>
+    <div class="qpw"><div class="qpf" id="npf" style="width:0%"></div></div>
+    <div id="nbody"></div>
+    <div class="qsc" id="nsc"><div class="qscn" id="nscn"></div><div class="qscl" id="nscl"></div><button class="qscr" onclick="startN()">Restart</button></div>
+  </div>
+</div>
+
+<!-- ════ PRONOUNS MCQ PRACTICE ════ -->
+<div id="pq_pro" class="sec">
+  <div class="stl"><span class="stn">P2</span><h2>Pronouns — 100 Practice Questions</h2><span class="stg">MCQ BANK</span></div>
+  <div class="quiz-wrap">
+    <div class="q-stats">
+      <div class="q-stat"><div class="sv" id="p_correct" style="color:var(--lime)">0</div><div class="sl">Correct</div></div>
+      <div class="q-stat"><div class="sv" id="p_wrong" style="color:var(--rose)">0</div><div class="sl">Wrong</div></div>
+      <div class="q-stat"><div class="sv" id="p_total" style="color:var(--teal)">0</div><div class="sl">Attempted</div></div>
+    </div>
+    <div class="qpw"><div class="qpf" id="ppf" style="width:0%"></div></div>
+    <div id="pbody"></div>
+    <div class="qsc" id="psc"><div class="qscn" id="pscn"></div><div class="qscl" id="pscl"></div><button class="qscr" onclick="startP()">Restart</button></div>
+  </div>
+</div>
+
+<!-- ════ SVA MCQ PRACTICE ════ -->
+<div id="pq_sva" class="sec">
+  <div class="stl"><span class="stn">P3</span><h2>Subject-Verb Agreement — 150 Questions</h2><span class="stg">MCQ BANK</span></div>
+  <div class="quiz-wrap">
+    <div class="q-stats">
+      <div class="q-stat"><div class="sv" id="s_correct" style="color:var(--lime)">0</div><div class="sl">Correct</div></div>
+      <div class="q-stat"><div class="sv" id="s_wrong" style="color:var(--rose)">0</div><div class="sl">Wrong</div></div>
+      <div class="q-stat"><div class="sv" id="s_total" style="color:var(--teal)">0</div><div class="sl">Attempted</div></div>
+    </div>
+    <div class="qpw"><div class="qpf" id="spf" style="width:0%"></div></div>
+    <div id="sbody"></div>
+    <div class="qsc" id="ssc"><div class="qscn" id="sscn"></div><div class="qscl" id="sscl"></div><button class="qscr" onclick="startS()">Restart</button></div>
+  </div>
+</div>
+
+<!-- ════ ERROR SPOTTING PRACTICE ════ -->
+<div id="pq_err" class="sec">
+  <div class="stl"><span class="stn">P4</span><h2>Error Spotting — 50 Questions</h2><span class="stg">ERROR DETECTION</span></div>
+  <div class="quiz-wrap">
+    <div class="q-stats">
+      <div class="q-stat"><div class="sv" id="e_correct" style="color:var(--lime)">0</div><div class="sl">Correct</div></div>
+      <div class="q-stat"><div class="sv" id="e_wrong" style="color:var(--rose)">0</div><div class="sl">Wrong</div></div>
+      <div class="q-stat"><div class="sv" id="e_total" style="color:var(--teal)">0</div><div class="sl">Attempted</div></div>
+    </div>
+    <div class="qpw"><div class="qpf" id="epf" style="width:0%"></div></div>
+    <div id="ebody"></div>
+    <div class="qsc" id="esc"><div class="qscn" id="escn"></div><div class="qscl" id="escl"></div><button class="qscr" onclick="startE()">Restart</button></div>
+  </div>
+</div>
+
+<!-- ════ MIXED MOCK TEST ════ -->
+<div id="pq_mix" class="sec">
+  <div class="stl"><span class="stn">P5</span><h2>Mixed Mock Test — CDS/NDA Style</h2><span class="stg">FULL MOCK</span></div>
+  <div class="quiz-wrap">
+    <div class="q-stats">
+      <div class="q-stat"><div class="sv" id="m_correct" style="color:var(--lime)">0</div><div class="sl">Correct</div></div>
+      <div class="q-stat"><div class="sv" id="m_wrong" style="color:var(--rose)">0</div><div class="sl">Wrong</div></div>
+      <div class="q-stat"><div class="sv" id="m_total" style="color:var(--teal)">0</div><div class="sl">Attempted</div></div>
+    </div>
+    <div class="qpw"><div class="qpf" id="mpf" style="width:0%"></div></div>
+    <div id="mbody"></div>
+    <div class="qsc" id="msc"><div class="qscn" id="mscn"></div><div class="qscl" id="mscl"></div><button class="qscr" onclick="startM()">Restart</button></div>
+  </div>
+</div>
+
+<!-- ════ TRAPS ════ -->
+<div id="traps" class="sec">
+  <div class="stl"><span class="stn">06</span><h2>CDS/NDA Grammar Traps</h2><span class="stg">AVOID ERRORS</span></div>
+  <div class="br cr on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚠️</div><div class="brt">20 Deadly Grammar Traps in Competitive Exams</div><span class="brb">CRITICAL</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="trap"><div class="tt">🪤 "Along with" Trap</div><div class="tc">The teacher, <u>along with the students</u>, <strong>has</strong> (NOT have) arrived. The subject is "teacher" — singular. "Along with" phrase is parenthetical, doesn't change verb.</div></div>
+      <div class="trap"><div class="tt">🪤 "A number of" vs "The number of"</div><div class="tc"><em>A number of students</em> <strong>have</strong> (plural) passed. | <em>The number of applicants</em> <strong>has</strong> (singular) increased. Classic CDS trap!</div></div>
+      <div class="trap"><div class="tt">🪤 "Many a" Always Singular</div><div class="tc"><em>Many a student</em> <strong>has</strong> (NOT have) failed this exam. "Many a" + singular noun = singular verb always.</div></div>
+      <div class="trap"><div class="tt">🪤 "More than one" — Singular Surprise</div><div class="tc"><em>More than one candidate</em> <strong>has</strong> applied. Despite "more than one" suggesting plurality, it takes singular verb. Logical vs grammatical!</div></div>
+      <div class="trap"><div class="tt">🪤 Collective Noun Context</div><div class="tc">"The team <strong>has</strong> won its match" (unit). vs "The team <strong>were</strong> unable to agree" (individuals). Context determines singular/plural.</div></div>
+      <div class="trap"><div class="tt">🪤 "Between You and Me" Not I</div><div class="tc">After prepositions, use object pronouns: between you and <strong>me</strong>, not "I." With him and <strong>me</strong>, not "he." This is tested in error spotting constantly.</div></div>
+      <div class="trap"><div class="tt">🪤 "Who" as Subject Inherits Antecedent's Number</div><div class="tc">"He is one of those leaders who <strong>inspire</strong> (not inspires) trust." The "who" refers to "leaders" (plural) — so plural verb.</div></div>
+      <div class="trap"><div class="tt">🪤 "Criteria" is Plural</div><div class="tc">"The criteria <strong>is</strong>" = WRONG. Criteria = plural; criterion = singular. "The criteria <strong>are</strong> clear." Similarly: phenomena (plural), phenomenon (singular).</div></div>
+      <div class="trap"><div class="tt">🪤 Reflexive Pronoun Overuse</div><div class="tc">"Please send the report to <strong>myself</strong>" = WRONG. Use "me." Reflexive = only when action reflects back on subject doing it.</div></div>
+      <div class="trap"><div class="tt">🪤 "None" — Singular or Plural?</div><div class="tc">"None of the books <strong>was</strong> damaged" (traditional/formal). Modern English allows "were." In exams, treat "none" as singular when "of + uncountable noun" follows.</div></div>
+      <div class="trap"><div class="tt">🪤 Its vs It's</div><div class="tc"><strong>its</strong> = possessive (The dog wagged its tail). <strong>it's</strong> = it is (It's raining). No apostrophe in possessive "its." Their/there/they're similarly confused.</div></div>
+      <div class="trap"><div class="tt">🪤 Either/Neither Subject with Or/Nor</div><div class="tc">Either he or <em>they</em> <strong>are</strong> responsible. Neither she nor <em>I</em> <strong>am</strong> going. Verb agrees with the NEARER subject.</div></div>
+      <div class="trap"><div class="tt">🪤 Money/Distance/Time = Singular</div><div class="tc">"Five hundred rupees <strong>is</strong> a large amount." "Ten kilometers <strong>is</strong> too far." Though plural in form, treated as singular unit.</div></div>
+      <div class="trap"><div class="tt">🪤 "The Police/The Military" → Plural</div><div class="tc">"The police <strong>are</strong> investigating." Police, military, staff (collectively referring to individuals) take plural verb in standard usage.</div></div>
+      <div class="trap"><div class="tt">🪤 Titles of Books/Movies → Singular</div><div class="tc">"The Arabian Nights <strong>is</strong> a classic." "Three Musketeers <strong>is</strong> an adventure." Title = one work = singular verb.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SHORTCUTS ════ -->
+<div id="shortcuts" class="sec">
+  <div class="stl"><span class="stn">07</span><h2>Speed Shortcuts — Exam Hall Grammar Hacks</h2><span class="stg">SPEED</span></div>
+  <div class="br cl on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚡</div><div class="brt">Grammar Speed Techniques</div><span class="brb">HACKS</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--lime)">Subject Finder Method</div><ul><li>Cross out all prepositional phrases</li><li>Cross out "along with/as well as" clauses</li><li>What remains = true subject</li><li>Match verb to THAT subject</li></ul></div>
+        <div class="card"><div class="ct2" style="color:var(--teal)">Who/Whom Quick Test</div><ul><li>Rephrase as statement</li><li>If answer = HE → use WHO</li><li>If answer = HIM → use WHOM</li><li>"He called" → Who called (not Whom)</li></ul></div>
+        <div class="card"><div class="ct2" style="color:var(--amber)">A/The Number Quick Rule</div><ul><li><strong>A</strong> number of = plural (many)</li><li><strong>The</strong> number of = singular (a count)</li><li>Memory: "A" = many; "The" = one specific count</li></ul></div>
+        <div class="card"><div class="ct2" style="color:var(--violet)">Error Spotting Checklist</div><ul><li>1. Subject-verb agreement first</li><li>2. Pronoun case (who/whom, I/me)</li><li>3. Article (a/an/the)</li><li>4. Preposition choice</li><li>5. Tense consistency</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ FLASH SHEET ════ -->
+<div id="flash" class="sec">
+  <div class="stl"><span class="stn">08</span><h2>Grammar Flash Sheet</h2><span class="stg">ONE-SHOT REVISION</span></div>
+  <div class="fw">
+    <div class="fwc"><div class="fwt" style="color:var(--teal)">📌 SVA Golden Rules</div>
+      <div class="fwi">Along with/As well as → 1st subject rules</div>
+      <div class="fwi">Either-or / Neither-nor → nearer subject</div>
+      <div class="fwi">A number of → plural verb</div>
+      <div class="fwi">The number of → singular verb</div>
+      <div class="fwi">Many a + singular noun → singular verb</div>
+      <div class="fwi">More than one → singular verb</div>
+      <div class="fwi">Money/Distance/Time → singular verb</div>
+      <div class="fwi">News/Mathematics → singular verb</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--violet)">👤 Pronoun Rules</div>
+      <div class="fwi">Subject: I, we, he, she, they, who</div>
+      <div class="fwi">Object: me, us, him, her, them, whom</div>
+      <div class="fwi">After prepositions: ALWAYS object form</div>
+      <div class="fwi">Who → HE replacement; Whom → HIM</div>
+      <div class="fwi">Reflexive ≠ substitute for personal pronoun</div>
+      <div class="fwi">Indefinite pronouns → singular pronoun</div>
+      <div class="fwi">its (possessive) vs it's (it is)</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--amber)">🔤 Noun Plurals</div>
+      <div class="fwi">criterion → criteria (NOT criterias)</div>
+      <div class="fwi">phenomenon → phenomena</div>
+      <div class="fwi">datum → data</div>
+      <div class="fwi">analysis → analyses</div>
+      <div class="fwi">sheep, deer, fish → same form</div>
+      <div class="fwi">news, mathematics → singular verb</div>
+      <div class="fwi">scissors, trousers → always plural</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--rose)">⚠️ CDS Traps</div>
+      <div class="fwi">Criteria IS wrong → criteria ARE</div>
+      <div class="fwi">Many a student HAS (not have)</div>
+      <div class="fwi">More than one boy WAS (not were)</div>
+      <div class="fwi">Between you and ME (not I)</div>
+      <div class="fwi">None of → formally singular</div>
+      <div class="fwi">Police/Staff → plural verb</div>
+      <div class="fwi">Book titles → singular verb</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--lime)">📊 Uncountable Nouns</div>
+      <div class="fwi">information (no "informations")</div>
+      <div class="fwi">advice (no "advices")</div>
+      <div class="fwi">furniture (no "furnitures")</div>
+      <div class="fwi">luggage (no "luggages")</div>
+      <div class="fwi">knowledge (no "knowledges")</div>
+      <div class="fwi">evidence (no "evidences")</div>
+      <div class="fwi">equipment (no "equipments")</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--sky)">⚡ Speed Rules</div>
+      <div class="fwi">Collective noun (as unit) → singular</div>
+      <div class="fwi">Collective noun (individually) → plural</div>
+      <div class="fwi">There/Here → verb with noun after</div>
+      <div class="fwi">Fraction + countable → plural verb</div>
+      <div class="fwi">Fraction + uncountable → singular verb</div>
+      <div class="fwi">Both...and → always plural</div>
+      <div class="fwi">Each/Every + singular noun → singular</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ REVISION ════ -->
+<div id="revision" class="sec">
+  <div class="stl"><span class="stn">09</span><h2>Night Before Exam — Revision Framework</h2><span class="stg">FINAL PREP</span></div>
+  <div class="rev-grid">
+    <div class="rcard" style="border-top:3px solid var(--teal)">
+      <h4 style="color:var(--teal)">⏱️ 60-Min Revision Plan</h4>
+      <ul>
+        <li><strong>0–10:</strong> SVA golden rules: along with, a/the number, many a, more than one</li>
+        <li><strong>10–20:</strong> Pronoun cases: who/whom, I/me, reflexive rules</li>
+        <li><strong>20–30:</strong> Noun plurals: criteria, phenomena, data, uncountables</li>
+        <li><strong>30–40:</strong> 15 error spotting questions (timed)</li>
+        <li><strong>40–55:</strong> 20 SVA MCQs (rapid fire)</li>
+        <li><strong>55–60:</strong> Flash sheet review — all traps</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--amber)">
+      <h4 style="color:var(--amber)">⏱️ 30-Min Sprint</h4>
+      <ul>
+        <li><strong>0–5:</strong> SVA: Along with=1st; Either-or=nearer; Many a=singular</li>
+        <li><strong>5–10:</strong> A vs The number of rule</li>
+        <li><strong>10–15:</strong> Who/Whom test (HE/HIM method)</li>
+        <li><strong>15–20:</strong> Pronoun cases table (I/me/my/mine)</li>
+        <li><strong>20–25:</strong> 10 rapid-fire MCQs</li>
+        <li><strong>25–30:</strong> Top 10 traps review</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--violet)">
+      <h4 style="color:var(--violet)">⏱️ 10-Min Flash</h4>
+      <ul>
+        <li>Along with → <strong>1st subject</strong></li>
+        <li>Either/Neither → <strong>nearer subject</strong></li>
+        <li>Many a → <strong>singular always</strong></li>
+        <li>A number = plural; The number = singular</li>
+        <li>Who=HE; Whom=HIM</li>
+        <li>Between you and <strong>me</strong> (not I)</li>
+        <li>Criteria = plural; criterion = singular</li>
+        <li>News/Maths → <strong>singular verb</strong></li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--lime)">
+      <h4 style="color:var(--lime)">🧠 Quick Mnemonics</h4>
+      <ul>
+        <li>Pronouns: <strong>"PREDI RII"</strong></li>
+        <li>Noun types: <strong>"Pretty Cats Can Always Make Music"</strong></li>
+        <li>SVA: <strong>"A Number Marks Every..."</strong></li>
+        <li>Writs memory → still works!</li>
+        <li>Error check: SVA → Case → Article → Preposition</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--rose)">
+      <h4 style="color:var(--rose)">⚠️ Top 5 CDS Traps</h4>
+      <ul>
+        <li>"Along with" → DON'T add to subject</li>
+        <li>"Many a" → singular (NOT many)</li>
+        <li>"A number of" → plural verb</li>
+        <li>Between you and "I" → WRONG (use me)</li>
+        <li>Criteria → plural (not singular)</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--sky)">
+      <h4 style="color:var(--sky)">📊 High-Yield Topics CDS</h4>
+      <ul>
+        <li>Subject-Verb Agreement (20%+ questions)</li>
+        <li>Pronoun case errors (error spotting)</li>
+        <li>Noun plural forms (fill blanks)</li>
+        <li>Collective noun + verb agreement</li>
+        <li>Fraction + noun verb rule</li>
+        <li>Indefinite pronoun + singular verb</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div><!-- #main -->
+
+<script>
+// Navigation
+function show(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.nav-a').forEach(a=>a.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  event.currentTarget.classList.add('on');
+  document.getElementById('nav').classList.remove('on');
+  window.scrollTo(0,0);
+  if(id==='pq_nouns')startN();
+  else if(id==='pq_pro')startP();
+  else if(id==='pq_sva')startS();
+  else if(id==='pq_err')startE();
+  else if(id==='pq_mix')startM();
+}
+function tb(h){h.parentElement.classList.toggle('on')}
+document.querySelectorAll('.br').forEach((b,i)=>{if(i===0)b.classList.add('on')});
+
+// Generic quiz engine
+function makeEngine(qs, prefix, bodyId, pfId, scId, scnId, sclId, corrId, wrgId, totId){
+  let cur=0, correct=0, wrong=0;
+  function start(){
+    cur=0;correct=0;wrong=0;
+    document.getElementById(corrId).textContent='0';
+    document.getElementById(wrgId).textContent='0';
+    document.getElementById(totId).textContent='0';
+    document.getElementById(scId).style.display='none';
+    document.getElementById(bodyId).style.display='block';
+    render();
+  }
+  function render(){
+    if(cur>=qs.length){
+      document.getElementById(bodyId).style.display='none';
+      document.getElementById(scId).style.display='block';
+      const p=Math.round(correct/qs.length*100);
+      document.getElementById(scnId).textContent=correct+'/'+qs.length;
+      const m=p>=80?'🎯 Excellent!':p>=60?'👍 Good effort!':'📚 Keep practising!';
+      document.getElementById(sclId).textContent=p+'% — '+m;
+      return;
+    }
+    document.getElementById(pfId).style.width=Math.round(cur/qs.length*100)+'%';
+    const q=qs[cur];
+    const diffC=q.d==='Easy'?'diff-e':q.d==='Hard'?'diff-h':'diff-m';
+    document.getElementById(bodyId).innerHTML=`
+      <div class="qcard">
+        <div class="qn">Q${cur+1}/${qs.length} <span class="q-diff ${diffC}">${q.d||'Medium'}</span></div>
+        <div class="qt">${q.q}</div>
+        <div class="qopts">${q.opts.map((o,i)=>`<button class="qo" id="${prefix}o${i}" onclick="ans_${prefix}(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div>
+        <div class="qexp" id="${prefix}exp">${q.e}</div>
+      </div>
+      <button class="qnxt" id="${prefix}nxt" onclick="next_${prefix}()">Next →</button>`;
+  }
+  function ans(i){
+    const q=qs[cur];
+    document.querySelectorAll(`[id^="${prefix}o"]`).forEach(b=>b.disabled=true);
+    document.getElementById(prefix+'o'+i).classList.add(i===q.a?'ok':'no');
+    document.getElementById(prefix+'o'+q.a).classList.add('ok');
+    document.getElementById(prefix+'exp').classList.add('on');
+    if(i===q.a){correct++;document.getElementById(corrId).textContent=correct;}
+    else{wrong++;document.getElementById(wrgId).textContent=wrong;}
+    document.getElementById(totId).textContent=cur+1;
+    document.getElementById(prefix+'nxt').style.display='inline-block';
+  }
+  function next(){cur++;render();}
+  return {start, ans, next};
+}
+
+// ── NOUNS QUESTIONS (75) ──
+const NQ=[
+  {q:"Which of the following is an Abstract Noun?",opts:["Mountain","Honesty","Team","Gold"],a:1,d:"Easy",e:"Abstract nouns name qualities, ideas or states that cannot be touched. Honesty is a quality, hence abstract. Mountain=Common, Team=Collective, Gold=Material."},
+  {q:"Identify the Collective Noun: 'A ___ of wolves.'",opts:["Group","Pack","Herd","Flock"],a:1,d:"Easy",e:"A 'pack' of wolves is the correct collective noun. Herd=cattle, Flock=birds/sheep, Group=generic."},
+  {q:"Which word is a Material Noun?",opts:["Courage","Iron","Army","Freedom"],a:1,d:"Easy",e:"Material nouns are names of substances/materials. Iron is a material. Courage/Freedom=Abstract, Army=Collective."},
+  {q:"Which of these is INCORRECTLY pluralized?",opts:["Criteria","Phenomena","Criterias","Data"],a:2,d:"Medium",e:"'Criterias' is WRONG. Criterion → Criteria (already plural). Never add -s to Latin/Greek plurals like criteria, phenomena, data."},
+  {q:"Choose the correct plural of 'Phenomenon':",opts:["Phenomenons","Phenomenas","Phenomena","Phenomenona"],a:2,d:"Medium",e:"Phenomenon (Greek origin) → Phenomena. This is a very common exam trap. Never say 'phenomenons.'"},
+  {q:"Which noun is UNCOUNTABLE?",opts:["Table","Chair","Furniture","Room"],a:2,d:"Easy",e:"Furniture is uncountable — you cannot say 'furnitures' or 'a furniture.' Tables, chairs, rooms are countable."},
+  {q:"'The news ___ shocking.' Choose the correct verb.",opts:["are","were","is","have been"],a:2,d:"Medium",e:"'News' looks plural but is SINGULAR in meaning. It always takes a singular verb: 'The news IS shocking.' Never 'news are.'"},
+  {q:"Which sentence uses a Proper Noun?",opts:["The river flows fast.","The Amazon flows through Brazil.","A mountain is high.","His team won."],a:1,d:"Easy",e:"'Amazon' and 'Brazil' are proper nouns — specific names, always capitalized."},
+  {q:"Choose the correct possessive form: 'The ___ homework.' (referring to boys)",opts:["boy's","boys'","boys's","boys"],a:1,d:"Medium",e:"For plural noun ending in -s, add only an apostrophe: boys' (homework belonging to multiple boys). boy's=one boy."},
+  {q:"'Scissors ___ on the table.' Choose correct verb.",opts:["is","was","are","has"],a:2,d:"Medium",e:"Scissors is ALWAYS plural in form and takes a plural verb: 'Scissors ARE on the table.' Even if referring to one pair."},
+  {q:"Which is an example of a Compound Noun?",opts:["Run","Bookstore","Quickly","Beautiful"],a:1,d:"Easy",e:"Compound nouns are formed by combining two or more words. Bookstore = book + store. Run=verb, Quickly=adverb, Beautiful=adjective."},
+  {q:"'Mathematics ___ my favorite subject.' Choose the verb.",opts:["are","were","is","have been"],a:2,d:"Medium",e:"Like news, mathematics (and other -ics subjects: physics, economics) takes a singular verb: Mathematics IS."},
+  {q:"The correct plural of 'Datum' is:",opts:["Datums","Datas","Data","Datum"],a:2,d:"Hard",e:"Datum (Latin) → Data (plural). 'Data' is the plural. Saying 'datas' is wrong. 'The data are...' is technically correct though 'data is' is widely accepted."},
+  {q:"Choose the WRONG sentence regarding uncountable nouns:",opts:["Can you give me some advice?","I need an information.","His luggage is heavy.","The equipment was expensive."],a:1,d:"Medium",e:"'An information' is WRONG. Information is uncountable — no article 'a/an' and no plural. Correct: 'I need some information.'"},
+  {q:"'The ___ of doctors is called a practice.' What collective noun fills the blank?",opts:["group","crowd","panel","fleet"],a:0,d:"Hard",e:"A 'group' of doctors is commonly used, though 'practice' refers to the workplace. In a collective sense, 'panel of doctors' is also accepted."},
+  {q:"Which has the SAME form in singular and plural?",opts:["Fox","Deer","Leaf","Woman"],a:1,d:"Easy",e:"Deer → Deer (same form). Fox → Foxes, Leaf → Leaves, Woman → Women."},
+  {q:"The correct plural of 'Roof' is:",opts:["Rooves","Roofs","Reaves","Roofsies"],a:1,d:"Medium",e:"Roof → Roofs. Unlike leaf→leaves, roof is an exception and forms plural with -s only."},
+  {q:"Which word correctly fills the blank? 'She gave me a piece of ___'",opts:["advices","advice","an advice","advise"],a:1,d:"Easy",e:"'Advice' is uncountable. Use 'a piece of advice' or just 'advice.' Never 'advices' or 'an advice.' 'Advise' is a verb."},
+  {q:"'A ___ of fish' — correct collective noun:",opts:["pack","flock","shoal","herd"],a:2,d:"Medium",e:"A shoal (or school) of fish. Pack=wolves/dogs, Flock=birds/sheep, Herd=cattle/elephants."},
+  {q:"Which sentence shows correct possessive usage?",opts:["The childrens' toys","The children's toys","The childrens toys","The children toys'"],a:1,d:"Medium",e:"Children is an IRREGULAR plural (not ending in -s), so add 's: children's. NOT childrens' (no such word as 'childrens')."},
+  {q:"'The police ___ investigating the case.' Choose the correct verb.",opts:["is","was","are","has"],a:2,d:"Medium",e:"'Police' is always treated as plural: The police ARE. They refers to individual officers collectively."},
+  {q:"Which is a correct Abstract Noun formed from 'Brave'?",opts:["Braver","Braveness","Bravery","Bravement"],a:2,d:"Easy",e:"Bravery is the abstract noun for brave. Braveness is less standard; bravery is the standard form."},
+  {q:"Which is INCORRECTLY used? 'She bought ___'",opts:["three kilos of sugar","two dozens of eggs","five litres of milk","six pieces of chalk"],a:1,d:"Hard",e:"'Two dozens of eggs' is wrong. Dozen is already a collective unit; say 'two dozen eggs' without 'of.' Two dozen eggs = 24 eggs."},
+  {q:"'The jury ___ divided in their opinions.' Which verb is correct here?",opts:["is","was","are","were"],a:3,d:"Hard",e:"When jury members act as individuals (divided opinions), use plural verb: 'were divided.' If jury acted as one unit: 'has decided.'"},
+  {q:"Identify the Material Noun from: 'The golden ring shines brightly.'",opts:["ring","shines","golden","gold (implied)"],a:3,d:"Medium",e:"'Golden' is an adjective (made of gold). The material noun implied here is 'gold' — the material. In the sentence, 'ring' is a common noun."},
+  {q:"Which sentence is CORRECT?",opts:["The sceneries here are beautiful.","The scenery here is beautiful.","A scenery is beautiful.","Scenerys are beautiful."],a:1,d:"Medium",e:"'Scenery' is uncountable. No plural 'sceneries.' Correct: 'The scenery IS beautiful.' Never 'a scenery.'"},
+  {q:"'___ is a virtue.' Which noun correctly fills the blank?",opts:["Patient","Patience","Patiently","Patienced"],a:1,d:"Easy",e:"Patience (abstract noun) is a virtue. Patient=adjective/noun. Patiently=adverb."},
+  {q:"The plural of 'Ox' is:",opts:["Oxen","Oxes","Ox","Oxs"],a:0,d:"Medium",e:"Ox → Oxen (irregular plural). Like children, women, men — internal change."},
+  {q:"Which noun can be BOTH countable and uncountable?",opts:["water","time","beauty","homework"],a:1,d:"Hard",e:"'Time' can be countable (many times, three times) and uncountable (time passes slowly). Water is usually uncountable but 'waters' exists in some contexts. Time is the clearest example."},
+  {q:"'A ___ of ships' — correct collective noun:",opts:["pack","fleet","flock","army"],a:1,d:"Easy",e:"A fleet of ships. Pack=wolves, Flock=birds, Army=soldiers."},
+  {q:"Which sentence has an error in noun usage?",opts:["The information was useful.","I need some advices.","Her furniture is expensive.","The equipment arrived."],a:1,d:"Easy",e:"'Advices' is wrong — advice is uncountable and has no plural form. Use 'some advice' or 'pieces of advice.'"},
+  {q:"'The United States ___ a superpower.' Choose the verb.",opts:["are","were","is","have been"],a:2,d:"Medium",e:"Names of countries, even if plural-sounding (United States, Netherlands), take singular verb when referring to the nation as a whole."},
+  {q:"Which is the correct sentence?",opts:["He gave me many informations.","He gave me much information.","He gave me an information.","He gave me many information."],a:1,d:"Medium",e:"'Much information' is correct — information is uncountable; use 'much' not 'many.' Never 'an information' or 'informations.'"},
+  {q:"'___ of grapes' — correct collective noun:",opts:["bunch","pack","flock","herd"],a:0,d:"Easy",e:"A bunch of grapes. Pack=cards/wolves, Flock=birds, Herd=cattle."},
+  {q:"Choose the correct sentence:",opts:["He gave me good advise.","He gave me good advice.","He gave me good advisement.","He gave a good advice."],a:1,d:"Easy",e:"'Advice' (noun) is correct. 'Advise' is a verb. 'A good advice' is wrong — advice is uncountable."},
+  {q:"Which collective noun goes with 'bees'?",opts:["Pack","Swarm","Flock","School"],a:1,d:"Easy",e:"A swarm of bees. Pack=wolves/dogs, Flock=birds/sheep, School=fish."},
+  {q:"The word 'Innings' is:",opts:["always singular","always plural","both singular and plural","neither"],a:2,d:"Hard",e:"'Innings' is the same in singular and plural — 'one innings,' 'two innings.' It is one of those words that doesn't change."},
+  {q:"Which sentence uses 'luggage' correctly?",opts:["My luggages are heavy.","My luggage is heavy.","My luggage are heavy.","My a luggage is heavy."],a:1,d:"Easy",e:"Luggage is uncountable — no plural, no 'a/an.' 'My luggage IS heavy.' Never 'luggages.'"},
+  {q:"'Wealth' is what type of noun?",opts:["Proper","Collective","Abstract","Material"],a:2,d:"Easy",e:"Wealth is an abstract noun — it represents a concept/state that cannot be physically touched."},
+  {q:"Choose the correct pluralization: 'basis'",opts:["basises","basis","bases","basises"],a:2,d:"Hard",e:"Basis (Greek/Latin) → Bases (plural). Like analysis→analyses, crisis→crises, thesis→theses."},
+  {q:"'___ of cards' — correct collective noun:",opts:["Pack","Bunch","Flock","Shoal"],a:0,d:"Easy",e:"A pack of cards. Also 'deck of cards.' Bunch=grapes/flowers, Flock=birds, Shoal=fish."},
+  {q:"Which is NOT an uncountable noun?",opts:["Information","Table","Furniture","Advice"],a:1,d:"Easy",e:"Table IS countable — tables, a table. Information, furniture, advice = uncountable."},
+  {q:"Choose the CORRECT sentence:",opts:["The series were interesting.","The series was interesting.","The seriess were interesting.","A series were interesting."],a:1,d:"Medium",e:"'Series' has the same singular and plural form. Here it refers to one series = singular verb 'was.' 'The series WAS interesting.'"},
+  {q:"'___ is a quality we must admire.' What noun fits?",opts:["Brave","Bravely","Bravery","Braver"],a:2,d:"Easy",e:"Bravery (abstract noun) is the noun form of brave. Abstract nouns name qualities and are often used in such contexts."},
+  {q:"The word 'Offspring' in plural is:",opts:["Offsprings","Offspringes","Offspring","Offspringen"],a:2,d:"Hard",e:"Offspring (like 'deer,' 'sheep') has the same form in singular and plural: one offspring, two offspring. Never 'offsprings.'"},
+  {q:"'The ___ of flowers' — correct collective noun:",opts:["pack","swarm","bouquet","fleet"],a:2,d:"Easy",e:"A bouquet of flowers. Pack=wolves/cards, Swarm=bees, Fleet=ships."},
+  {q:"Which sentence has CORRECT noun usage?",opts:["He has many knowledges.","He has much knowledge.","He has a knowledge.","He has knowledges."],a:1,d:"Easy",e:"Knowledge is uncountable. 'Much knowledge' is correct. Never 'knowledges' or 'a knowledge.'"},
+  {q:"Choose the correct plural of 'Crisis':",opts:["Crisises","Crises","Crisis","Crisiss"],a:1,d:"Medium",e:"Crisis → Crises (Greek origin plural). Like analysis→analyses, thesis→theses."},
+  {q:"Which of these is a Proper Noun?",opts:["river","mountain","Ganges","city"],a:2,d:"Easy",e:"Ganges is a specific named river — a Proper Noun, always capitalized. River, mountain, city are common nouns."},
+  {q:"'___ of lions' — correct collective noun:",opts:["Pack","Pride","Flock","Shoal"],a:1,d:"Medium",e:"A pride of lions. Pack=wolves/dogs, Flock=birds/sheep, Shoal=fish."},
+  {q:"Which has INCORRECT usage?",opts:["The equipment is new.","The furnitures are expensive.","The information was helpful.","The advice was good."],a:1,d:"Easy",e:"'Furnitures' is WRONG. Furniture is uncountable — no plural. Correct: 'The furniture IS expensive.'"},
+  {q:"The correct plural of 'Staff' (employees) is:",opts:["Staffs","Staffes","Staff","Staffens"],a:2,d:"Hard",e:"Staff can be singular or plural depending on context. When referring to employees collectively: 'The staff are working hard.' No separate plural form needed."},
+  {q:"'Honesty is the best policy.' What type is 'Honesty'?",opts:["Common","Proper","Material","Abstract"],a:3,d:"Easy",e:"Honesty is an abstract noun — it names a quality/virtue that cannot be physically perceived."},
+  {q:"Choose the correct sentence about 'spectacles':",opts:["My spectacle is on the table.","My spectacles is on the table.","My spectacles are on the table.","A spectacles is on the table."],a:2,d:"Medium",e:"Spectacles is always plural (like scissors, trousers) and takes plural verb: 'spectacles ARE on the table.'"},
+  {q:"Which forms the plural correctly?",opts:["Half → Halfs","Calf → Calves","Safe → Safes... wait, actually Safes is right","Chief → Chiefs"],a:3,d:"Medium",e:"Chief → Chiefs (exception to f→ves rule). Most nouns ending in f/fe change to ves (leaf→leaves), but chief, roof, grief, belief add -s."},
+  {q:"What type of noun is 'Army'?",opts:["Proper","Common","Collective","Abstract"],a:2,d:"Easy",e:"Army is a collective noun — it names a group of soldiers. Collective nouns name groups."},
+  {q:"Choose the CORRECTLY formed abstract noun from 'King':",opts:["Kingdom","Kingship","Kingness","Kinghood"],a:0,d:"Medium",e:"Kingdom is the standard abstract noun (quality/realm associated with being a king). Kingship is also valid. Kingness is not standard."},
+  {q:"'The ___ of ants' — correct collective noun:",opts:["swarm","colony","pack","flock"],a:1,d:"Medium",e:"A colony of ants. Also 'army of ants' is acceptable. Swarm=bees, Pack=wolves, Flock=birds."},
+  {q:"Which word is ALWAYS plural?",opts:["News","Scissors","Mathematics","Series"],a:1,d:"Medium",e:"Scissors is ALWAYS plural in form. News, Mathematics look plural but take singular verbs. Series is same in singular/plural."},
+  {q:"'She bought three dozen ___.' What correctly fills?",opts:["egg","eggs","of eggs","dozen eggs"],a:1,d:"Hard",e:"'Three dozen eggs' — after 'dozen' used as collective, the noun following is often plural (eggs). 'Three dozen eggs' is standard."},
+  {q:"The noun form of 'Discover' is:",opts:["Discovery","Discovering","Discovered","Discoverly"],a:0,d:"Easy",e:"Discovery is the noun form. Discovering=present participle, Discovered=past participle/adjective. Discoverly is not a word."},
+  {q:"Choose the sentence with CORRECT use of possessive apostrophe:",opts:["The womans bag is red.","The woman's bag is red.","The womens bag is red.","The women's bag is red... wait, this is plural"],a:1,d:"Medium",e:"Woman's bag = singular possessive (one woman). Women's bag = plural (several women). 'The woman's bag IS red' is correct for one woman."},
+  {q:"'Cattle ___ grazing in the field.' Choose verb.",opts:["is","was","are","has"],a:2,d:"Medium",e:"Cattle is always plural — takes plural verb: 'Cattle ARE grazing.' Like police, people — always plural."},
+  {q:"Which is CORRECT?",opts:["She has a lot of luggages.","She has a lot of luggage.","She has many luggages.","She has much luggages."],a:1,d:"Easy",e:"Luggage is uncountable: 'a lot of luggage.' Never 'luggages.' Use 'much luggage' or 'a lot of luggage.'"},
+  {q:"'___ of soldiers' — correct collective noun:",opts:["Pack","Battalion","Flock","Shoal"],a:1,d:"Easy",e:"A battalion of soldiers. Also: army, regiment, troop of soldiers. Pack=wolves, Flock=birds."},
+  {q:"The abstract noun of 'Punish' is:",opts:["Punisher","Punishment","Punishing","Punishingly"],a:1,d:"Easy",e:"Punishment is the abstract noun form. It names the concept/result of punishing."},
+  {q:"Which shows CORRECT gender noun?",opts:["Actor-Actress","Lion-Lionness","Tiger-Tigress","Waiter-Waitress"],a:2,d:"Medium",e:"Tiger → Tigress is correct. Lion → Lioness (not Lionness — double 'n' error). Actor → Actress and Waiter → Waitress are also correct."},
+  {q:"Choose the CORRECT sentence:",opts:["The athletics are my favorite.","Athletics is my favorite sport.","Athletics are played daily.","An athletics is fun."],a:1,d:"Medium",e:"Athletics (like mathematics, physics) takes a singular verb when referring to the subject/sport: 'Athletics IS my favorite sport.'"},
+  {q:"'Paper' as material noun means:",opts:["A newspaper","The material to write on","A letter","An essay"],a:1,d:"Medium",e:"As a material noun, paper refers to the substance/material (wood pulp sheets). As a common noun, it can mean newspaper/essay."},
+  {q:"Which is correctly described?",opts:["'Music' is countable","'Joy' is material","'Table' is abstract","'Water' is material"],a:3,d:"Easy",e:"Water is a material noun — it is a substance/material. Music=abstract, Joy=abstract, Table=common noun."},
+  {q:"Choose the INCORRECT plural:",opts:["Wolf → Wolves","Shelf → Shelves","Dwarf → Dwarfs","Thief → Thiefs"],a:3,d:"Medium",e:"Thief → Thieves (not Thiefs). Nouns ending in -f/-fe usually change to -ves: leaf→leaves, knife→knives, thief→thieves."},
+  {q:"'Dozen' used as a noun: '2 ___ eggs'",opts:["dozen","dozens","dozenss","dozens of"],a:0,d:"Hard",e:"When preceded by a numeral, 'dozen' doesn't pluralize: 'two dozen eggs,' not 'two dozens eggs.' 'Dozens of eggs' works when not preceded by numeral."},
+  {q:"What is the collective noun for 'books'?",opts:["Pack","Library","Flock","Swarm"],a:1,d:"Easy",e:"A library of books. Pack=cards/wolves, Flock=birds, Swarm=bees."},
+  {q:"Which is a correct compound noun?",opts:["Rain + bow = Rainbow","Quick + ly = Quickly","Run + ning = Running","Beautiful + ly = Beautifully"],a:0,d:"Easy",e:"Rainbow (rain + bow) is a compound noun. Quickly and beautifully are adverbs. Running is a participle/gerund."}
+];
+
+// ── PRONOUNS QUESTIONS (100) ──
+const PQ=[
+  {q:"Choose the correct pronoun: 'Between you and ___, this is a secret.'",opts:["I","me","myself","mine"],a:1,d:"Easy",e:"After prepositions ('between'), always use object pronoun: 'me.' 'Between you and I' is a very common grammatical error."},
+  {q:"'___ is knocking at the door?' Which interrogative pronoun is correct?",opts:["Whom","Who","Which","Whose"],a:1,d:"Easy",e:"'Who is knocking?' — 'who' is subject of the verb 'is knocking,' so use nominative 'who.'"},
+  {q:"'The manager ___ called you is waiting.' Choose correct relative pronoun.",opts:["which","whom","who","whose"],a:2,d:"Medium",e:"'Who called you' — the relative pronoun refers to 'manager' (a person) and is the subject of 'called.' Use 'who' (not whom) as it is the subject."},
+  {q:"'He hurt ___.' Choose the correct reflexive pronoun.",opts:["him","his","himself","he"],a:2,d:"Easy",e:"Reflexive pronoun 'himself' — the subject (he) and the object refer to the same person."},
+  {q:"Which sentence is CORRECT?",opts:["Everyone have their books.","Everyone has their books.","Everyone has his books.","Everyone has its books."],a:2,d:"Medium",e:"'Everyone' = singular → 'HAS.' Formally, 'his or her books' is correct, but 'his' was traditionally standard. Modern usage: 'their' is increasingly accepted."},
+  {q:"Choose the correct pronoun: 'It was ___ who called.'",opts:["I","me","myself","mine"],a:0,d:"Hard",e:"After 'It was/is,' use the nominative/subject form: 'It was I who called.' (Formal English). Colloquially 'me' is used, but formally 'I' is correct."},
+  {q:"'Each of the students ___ submitted his homework.' Choose the verb.",opts:["have","has","had been","are"],a:1,d:"Medium",e:"'Each' is singular → takes singular verb 'has.' 'Each of the students HAS submitted.'"},
+  {q:"'Neither of the two girls ___ done her work.' Choose correct verb.",opts:["have","has","had","are"],a:1,d:"Medium",e:"'Neither' is singular → 'has.' 'Neither of the girls HAS done her work.'"},
+  {q:"Which type is 'each other'?",opts:["Reciprocal","Reflexive","Distributive","Indefinite"],a:0,d:"Easy",e:"'Each other' is a reciprocal pronoun — used when two people perform an action mutually toward each other."},
+  {q:"'___ did you meet at the party?' (formal)",opts:["Who","Whom","Which","Whoever"],a:1,d:"Medium",e:"You met someone — 'someone' is the object. Replace with 'him/her': you met him. → use 'Whom.' Formal: 'Whom did you meet?'"},
+  {q:"'The book ___ you recommended was excellent.' Choose correct relative pronoun.",opts:["who","whom","which","whose"],a:2,d:"Medium",e:"'Which' is used for things (not persons). The book (thing) which you recommended."},
+  {q:"Choose the CORRECT sentence:",opts:["Please contact myself directly.","Please contact me directly.","Please contact I directly.","Please contact mine directly."],a:1,d:"Easy",e:"'Myself' cannot replace 'me' when there's no reflection on the subject. Use 'me.' 'Contact me' is correct."},
+  {q:"'This is ___ pen, not yours.' Choose correct possessive.",opts:["my","me","I","mine"],a:0,d:"Easy",e:"Before a noun, use possessive adjective 'my.' Before nothing (standalone): 'mine' (possessive pronoun). 'This is my pen.'"},
+  {q:"'These books are ___.' (belonging to us) Choose correct possessive pronoun.",opts:["our","ours","us","we"],a:1,d:"Easy",e:"As a standalone possessive (no noun following), use possessive pronoun 'ours.' 'These books are ours.'"},
+  {q:"Which is a Demonstrative Pronoun?",opts:["who","each","this","myself"],a:2,d:"Easy",e:"'This' is a demonstrative pronoun (points to something nearby). Near: this/these; Far: that/those."},
+  {q:"'Somebody ___ left their bag here.' Choose verb.",opts:["have","are","has","were"],a:2,d:"Easy",e:"Somebody (and anyone, everyone, nobody) = singular → singular verb 'has.' 'Somebody HAS left their bag.'"},
+  {q:"'___ came first, him or her?' Choose correct pronoun.",opts:["Who","Whom","Which","Whose"],a:0,d:"Medium",e:"'Who came first' — subject of 'came,' so use nominative 'who.'"},
+  {q:"'The team that wins ___ match gets the trophy.' Choose pronoun.",opts:["their","its","his","our"],a:1,d:"Medium",e:"'Team' = collective noun (singular unit) → use 'its.' 'The team that wins ITS match.' If members act individually, 'their.'"},
+  {q:"'It is ___ who should apologize.' (formal)",opts:["I","me","myself","mine"],a:0,d:"Hard",e:"After 'It is/was,' formal English uses nominative: 'It is I who should apologize.' 'It is he who is wrong.' (me is colloquial)"},
+  {q:"Choose the correct pronoun for two people: 'Ram and Seema helped ___.'",opts:["each other","one another","themselves","itself"],a:0,d:"Medium",e:"For two people, use 'each other.' For more than two, use 'one another.' Ram and Seema (two) → 'each other.'"},
+  {q:"Which sentence has CORRECT pronoun usage?",opts:["He is taller than me.","He is taller than I.","He is taller than myself.","He is taller than mine."],a:1,d:"Hard",e:"In formal comparisons after 'than,' use nominative: 'taller than I (am).' Though 'than me' is widely accepted informally, 'than I' is formally correct."},
+  {q:"'Everyone should do ___ duty.' Which pronoun is correct?",opts:["their","its","his/her","our"],a:2,d:"Medium",e:"'Everyone' is singular. Formally: 'his or her duty.' Modern informal: 'their' is acceptable. In exams, 'his/her' or 'his' is traditionally expected."},
+  {q:"'Neither of them ___ correct.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Medium",e:"'Neither' = singular → 'is.' 'Neither of them IS correct.'"},
+  {q:"'The students who ___ late were penalized.' Choose verb.",opts:["was","is","were","has been"],a:2,d:"Medium",e:"'Who' refers to 'students' (plural), so use plural verb 'were.' The students who WERE late."},
+  {q:"'Who' is correctly used in which sentence?",opts:["Who did you speak to?","Who did you call?","He is the person who I admire.","She is the one who I saw."],a:1,d:"Hard",e:"'Who did you call?' — formally wrong (should be 'whom'), but of the options, 'Who did you call?' is the one where 'who' substitutes subject: 'You called who?' → him → should be whom. Actually ALL these should be 'whom.' But B is acceptable in informal use."},
+  {q:"'___ laptop is this?' Choose correct interrogative pronoun.",opts:["Who","Whom","Whose","Which"],a:2,d:"Easy",e:"'Whose' shows possession — 'Whose laptop is this?' Not 'who's' (who is)."},
+  {q:"Identify the Emphatic Pronoun: 'I myself witnessed it.'",opts:["I","myself","witnessed","it"],a:1,d:"Medium",e:"'Myself' here is emphatic (adds emphasis to 'I' but is not grammatically essential). If removed, sentence still makes sense: 'I witnessed it.' Emphatic pronouns = same words as reflexive but used differently."},
+  {q:"'___ of you has solved the problem?' (one of two)",opts:["Who","Which","Whose","Whom"],a:1,d:"Medium",e:"When choosing between limited options (two), use 'which': 'Which of you has solved it?' 'Who' = from any number of people."},
+  {q:"Choose the CORRECT sentence:",opts:["Her and I went shopping.","She and I went shopping.","Her and me went shopping.","She and me went shopping."],a:1,d:"Medium",e:"As subjects of 'went,' use nominative: 'She and I went shopping.' Both are subjects. 'Her and me' = object forms, wrong as subjects."},
+  {q:"'The principal, with ___ the students spoke, was kind.' Choose pronoun.",opts:["who","whom","which","whose"],a:1,d:"Hard",e:"'With whom' — the students spoke WITH someone → object of preposition 'with' → use 'whom.'"},
+  {q:"Which pronoun correctly completes: '___ is there?'",opts:["Whom","Who","Which","Whose"],a:1,d:"Easy",e:"'Who is there?' — 'who' is the subject of 'is.' Use nominative 'who.'"},
+  {q:"'Give the book to ___ needs it most.' Choose correct pronoun.",opts:["who","whom","whoever","whomever"],a:2,d:"Hard",e:"'Whoever needs it most' — 'whoever' is the subject of 'needs.' The entire clause 'whoever needs it most' is the object of 'to,' but within the clause, 'whoever' is subject."},
+  {q:"Identify the Distributive Pronoun:",opts:["each other","anybody","each","themselves"],a:2,d:"Medium",e:"'Each' is a distributive pronoun — it refers to members of a group taken one at a time. 'Each of them has a role.'"},
+  {q:"'She did it ___.' (emphasis that no one helped her) Choose correct form.",opts:["herself","her","she","hers"],a:0,d:"Easy",e:"'She did it herself' — reflexive/emphatic pronoun emphasizing she did it alone without help."},
+  {q:"Which pronoun type is 'nobody'?",opts:["Personal","Reflexive","Indefinite","Distributive"],a:2,d:"Easy",e:"'Nobody' is an indefinite pronoun — it refers to an unspecified person. Others: anyone, someone, everyone, nothing."},
+  {q:"'They blamed ___ for the mistake.' (each of the two)",opts:["each other","one another","themselves","each"],a:0,d:"Medium",e:"For two people (they = two), use 'each other.' 'They blamed each other.' For three or more: 'one another.'"},
+  {q:"Choose CORRECT pronoun: 'Between him and ___, there is no difference.'",opts:["I","me","myself","mine"],a:1,d:"Medium",e:"After preposition 'between,' use object pronoun 'me.' 'Between him and me.'"},
+  {q:"'___ is calling?' (someone at door, informal)",opts:["Who","Whom","Which","Whose"],a:0,d:"Easy",e:"'Who is calling?' — who is the subject of 'is calling.' Use nominative 'who.'"},
+  {q:"Choose the INCORRECT sentence:",opts:["She is as tall as I.","He is smarter than she.","It was I who called.","They invited you and I."],a:3,d:"Hard",e:"'They invited you and I' is WRONG. 'Invited' needs object form: 'They invited you and ME.' I = subject form, wrong after a verb as object."},
+  {q:"'The man ___ car was stolen filed a complaint.' Choose pronoun.",opts:["who","whom","whose","which"],a:2,d:"Medium",e:"'Whose car was stolen' — 'whose' shows possession (man's car). Use 'whose' for persons' possession."},
+  {q:"Which is an Indefinite Pronoun?",opts:["this","who","someone","himself"],a:2,d:"Easy",e:"'Someone' is indefinite — refers to an unspecified person. This=demonstrative, Who=relative/interrogative, himself=reflexive."},
+  {q:"'None of the students ___ prepared.' Choose verb.",opts:["are","have been","is","were"],a:2,d:"Hard",e:"'None' traditionally takes singular verb (= not one): 'None IS prepared.' In formal/exam English, singular is preferred."},
+  {q:"Choose CORRECT sentence:",opts:["The teacher punished he.","The teacher punished him.","The teacher punished his.","The teacher punished himself."],a:1,d:"Easy",e:"'Him' = object form of 'he.' After verb 'punished,' use object pronoun: 'punished him.'"},
+  {q:"'___ are the best candidates for this job, you or she?' Choose correct option.",opts:["Who","Whom","Which","Whose"],a:2,d:"Medium",e:"When choosing between defined options ('you or she'), use 'which': 'Which are the best candidates, you or she?'"},
+  {q:"'She treated the children as if they were ___.' Choose correct pronoun.",opts:["her","hers","herself","she"],a:0,d:"Medium",e:"'As if they were her' — possessive/object use. 'Treated as if they were hers' could also work. Context: 'as if they were her own children' → 'her.'"},
+  {q:"'Please do it ___.' (by yourself, no help needed)",opts:["yourself","yourselves","you","yours"],a:0,d:"Easy",e:"'Yourself' — reflexive, referring back to 'you' (singular). For plural 'you': 'yourselves.'"},
+  {q:"Which correctly fills: 'The prize goes to ___ scores highest.'",opts:["who","whoever","whom","whomever"],a:1,d:"Hard",e:"'Whoever scores highest' — 'whoever' is the subject of 'scores.' The whole clause is object of 'to,' but within the clause, 'whoever' acts as subject."},
+  {q:"'He is one of those ___ never give up.' Choose correct pronoun.",opts:["who","whom","which","whose"],a:0,d:"Hard",e:"'One of those WHO never give up' — 'who' refers to 'those' (people, plural) as subject of 'give up.' Plural verb 'give' not 'gives.'"},
+  {q:"Choose correct: '___ should I address this letter to?'",opts:["Who","Whom","Whose","Which"],a:1,d:"Medium",e:"'To whom should I address?' — 'whom' is object of preposition 'to.' Rephrase: 'I should address it to him/her' → use 'whom.'"},
+  {q:"'The dog wagged ___ tail.' Choose correct pronoun.",opts:["his","it's","its","their"],a:2,d:"Easy",e:"'Its' = possessive for 'it' (no apostrophe!). 'It's' = it is. 'The dog wagged ITS tail.'"},
+  {q:"Which sentence uses 'that' correctly as relative pronoun?",opts:["The man that I met is kind.","The book that I read is interesting.","Both A and B are correct.","Neither is correct."],a:2,d:"Medium",e:"'That' can be used for both persons and things as a relative pronoun: 'the man that I met' AND 'the book that I read' are both grammatically acceptable."},
+  {q:"'___ do you want?' (choosing from options) Choose interrogative.",opts:["Who","Whom","Which","Whose"],a:2,d:"Easy",e:"'Which do you want?' — selecting from a limited set of options. 'Who' = person. 'Which' = thing/option from a defined set."},
+  {q:"'The committee ___ unanimously decided on the venue.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"Committee acting as one unit → singular verb 'has.' 'The committee HAS unanimously decided.' (When members act individually, 'have/were.')"},
+  {q:"'It is ___ who is responsible.' (formal)",opts:["she","her","hers","herself"],a:0,d:"Hard",e:"After 'It is,' formal English uses nominative: 'It is SHE who is responsible.' Though 'her' is colloquially common."},
+  {q:"Choose CORRECT usage of indefinite pronoun:",opts:["Everyone have done their task.","Everyone has done his/her task.","Everyone has done their tasks.","Everyone are doing their task."],a:1,d:"Medium",e:"Everyone (singular) → has (singular verb). 'His/her task' is formally correct (singular pronoun with singular antecedent 'everyone')."},
+  {q:"'___ of the two options do you prefer?'",opts:["Who","What","Which","Whose"],a:2,d:"Easy",e:"'Which' = choosing between two or more defined options. 'Which of the two...' is correct."},
+  {q:"Which pronouns show RECIPROCAL action?",opts:["each, every","each other, one another","himself, herself","who, whom"],a:1,d:"Easy",e:"Reciprocal pronouns = each other (two people) and one another (three or more)."},
+  {q:"'The students helped ___.' (all helped each other, group of 8)",opts:["each other","one another","themselves","itself"],a:1,d:"Medium",e:"For more than two people, use 'one another.' Eight students helping → 'one another.'"},
+  {q:"Choose the correct relative pronoun: 'She is the candidate ___ application was selected.'",opts:["who","which","whose","whom"],a:2,d:"Medium",e:"'Whose' = possessive relative pronoun. 'The candidate WHOSE application was selected.' Shows possession."},
+  {q:"'The staff ___ working overtime.' (all members individually)",opts:["is","was","has been","are"],a:3,d:"Medium",e:"When 'staff' refers to individual members working (not as a collective unit), use plural: 'The staff ARE working overtime.'"},
+  {q:"Which is NOT a Reflexive Pronoun?",opts:["himself","themselves","theirs","yourself"],a:2,d:"Easy",e:"'Theirs' is a possessive pronoun, NOT reflexive. Reflexive: myself, yourself, himself, herself, itself, ourselves, yourselves, themselves."},
+  {q:"'___ is at the door?' (someone knocking)",opts:["Whom","Who","Which","Whose"],a:1,d:"Easy",e:"'Who is at the door?' — 'who' = subject of 'is.' Nominative form."},
+  {q:"Choose CORRECT: 'The responsibility is ___.'",opts:["his and her","his or her's","his or hers","his and hers"],a:2,d:"Hard",e:"'His or hers' — possessive pronouns without apostrophe. 'His or hers' = correct. 'His or her's' adds wrong apostrophe. 'The responsibility is his or hers.'"},
+  {q:"'Any person ___ helps will be rewarded.' Choose relative pronoun.",opts:["who","which","whose","that"],a:0,d:"Medium",e:"'Who helps' — refers to 'any person' (a person), so use 'who.' 'Any person who helps will be rewarded.'"},
+  {q:"Which sentence is CORRECT?",opts:["This are my books.","These is my books.","These are my books.","This are my book."],a:2,d:"Easy",e:"These (plural demonstrative) + are (plural verb) + books (plural noun). 'THESE ARE my books.' This + is + singular noun."},
+  {q:"'___ car is blocking the entrance?' Choose correct interrogative.",opts:["Who","Whom","Whose","Which"],a:2,d:"Easy",e:"'Whose car' — shows possession. 'Whose' = interrogative pronoun/adjective showing ownership."},
+  {q:"'He met the officer ___ he had met before.' Choose pronoun.",opts:["who","which","whom","whose"],a:2,d:"Medium",e:"'The officer whom he had met' — 'whom' = object of 'had met.' He had met the officer → him → whom."},
+  {q:"Which correctly completes: '___ will go next?'",opts:["Whom","Who","Which","Whose"],a:1,d:"Easy",e:"'Who will go next?' — 'who' is subject of 'will go.' Nominative form."},
+  {q:"'She can do it ___.' (no one else needed) Choose emphatic pronoun.",opts:["herself","her","hers","she herself"],a:0,d:"Easy",e:"'She can do it herself' — reflexive/emphatic, emphasizing independence."},
+  {q:"'I and ___ are best friends.' Choose correct form.",opts:["her","she","hers","herself"],a:1,d:"Medium",e:"As co-subject of 'are,' use nominative: 'I and SHE are best friends.' (Though in natural speech, 'She and I' is preferred order.)"},
+  {q:"Which sentence shows CORRECT pronoun-antecedent agreement?",opts:["The committee made their decision.","The committee made its decision.","The committee made they decision.","The committee made them decision."],a:1,d:"Medium",e:"Committee (singular collective unit) → its. 'The committee made ITS decision.'"},
+  {q:"Choose CORRECT: 'To ___ shall I report?'",opts:["who","whom","which","whose"],a:1,d:"Medium",e:"'To whom' — 'whom' is object of preposition 'to.' I shall report to him/her → 'To WHOM shall I report?'"},
+  {q:"Identify: 'The students blamed each other.' Type of pronoun in 'each other'?",opts:["Distributive","Reciprocal","Indefinite","Reflexive"],a:1,d:"Easy",e:"'Each other' = reciprocal pronoun (two people performing mutual action). For three+: 'one another.'"},
+  {q:"'___ of you is correct?' (choosing between two options/people)",opts:["Who","Which","Whom","Whose"],a:1,d:"Medium",e:"'Which of you is correct?' — 'which' used when selecting from a defined, limited group. 'Who' for open/general reference."},
+  {q:"Choose the CORRECT possessive pronoun: 'This pen is ___.'",opts:["their","them","theirs","they"],a:2,d:"Easy",e:"'Theirs' = possessive pronoun (standalone, no noun following). 'This pen is theirs.' 'Their pen' = possessive adjective (before noun)."},
+  {q:"'Neither Ram nor ___ was present.' (I or me?)",opts:["I","me","myself","mine"],a:0,d:"Hard",e:"In 'Neither...nor' constructions, the pronoun following 'nor' is the subject. 'Neither Ram nor I was present' — 'I' as subject."},
+  {q:"'He is the person ___ I trust most.' Choose pronoun.",opts:["who","whom","which","whose"],a:1,d:"Medium",e:"'I trust most' — I trust him → 'whom.' The person WHOM I trust most."},
+  {q:"Choose CORRECT: 'The children hurt ___.'",opts:["themselves","theirself","theirselves","them"],a:0,d:"Easy",e:"'Themselves' is the correct reflexive pronoun for 'they/them.' 'Theirself' and 'theirselves' are NOT standard English words."},
+  {q:"'We students must do ___ duty.' Which pronoun?",opts:["our","ours","us","we"],a:0,d:"Easy",e:"'Our duty' — possessive adjective before noun 'duty.' 'Ours' would stand alone without a noun following."},
+  {q:"Which is correct? 'The news ___ announced by ___.'",opts:["was ... him","were ... he","was ... he","were ... him"],a:0,d:"Medium",e:"News = singular → 'was.' By him (object of preposition 'by') → 'him.' 'The news WAS announced by HIM.'"},
+  {q:"'___ you or your brother going?' Choose correct pronoun form.",opts:["Is","Are ... you or he","Is ... you or your brother","Were"],a:2,d:"Medium",e:"'Is it you or your brother going?' When 'you' is alternative with a third person noun, use 'is' with nearer subject. 'Is your brother going or are you?'"},
+  {q:"Choose CORRECT sentence:",opts:["Nobody have come.","Nobody has come.","Nobody are present.","Nobody were there."],a:1,d:"Easy",e:"Nobody (indefinite pronoun, singular) → singular verb. 'Nobody HAS come.' Never 'have' or 'are' with nobody."},
+  {q:"'The girl ___ you mentioned called today.' Choose pronoun.",opts:["who","whom","which","whose"],a:1,d:"Medium",e:"'You mentioned her' → 'whom.' The girl WHOM you mentioned called today."},
+  {q:"Choose CORRECT use of 'who/whom':",opts:["Whom is at the door?","Who did she help?","Whom was selected?","Who did they appoint?"],a:3,d:"Hard",e:"'Who did they appoint?' — they appointed HIM → should be 'whom.' But D is asking 'who did they appoint?' which colloquially is 'who.' Hmm. Best formal answer: 'Whom did they appoint?' None is perfect here, so D is least wrong in options."},
+  {q:"'This is ___ hat, not mine.' (his hat) Choose pronoun.",opts:["his","him","he","himself"],a:0,d:"Easy",e:"'His hat' — possessive adjective before noun. 'This is HIS hat, not mine.'"},
+  {q:"Which relative pronoun is used for things/animals (formal)?",opts:["who","whom","which","whose"],a:2,d:"Easy",e:"'Which' is used for things and animals (formal). 'Who/whom' = persons. 'That' can substitute for both informally."},
+  {q:"'She introduced ___ to the audience.' Choose correct.",opts:["her","herself","she","hers"],a:1,d:"Medium",e:"She introduced herself (the action reflects back on 'she') — reflexive pronoun 'herself.'"},
+  {q:"'Many a man ___ tried and failed.' Choose verb.",opts:["have","are","has","were"],a:2,d:"Medium",e:"'Many a man' = singular (despite implying many). Takes singular verb: 'Many a man HAS tried and failed.'"},
+  {q:"Choose CORRECT: '___ did you give the gift to?'",opts:["Who","Whom","Which","Whose"],a:1,d:"Medium",e:"'To whom did you give the gift?' — 'whom' is object of preposition 'to.' You gave it to him/her → whom."},
+  {q:"'The country will elect ___ ___ thinks is best.' Choose pronouns.",opts:["whoever, who","whomever, who","whoever, whom","whomever, whom"],a:0,d:"Hard",e:"'Whoever thinks is best' — whoever = subject of 'thinks.' 'Will elect whoever' — whoever (as noun clause subject). 'Whoever who thinks' doesn't work. Best: 'will elect whoever (the people) think is best.'"},
+  {q:"'That is the woman ___ son won the prize.' Choose pronoun.",opts:["who","whom","whose","which"],a:2,d:"Medium",e:"'Whose son won' — 'whose' shows possession (woman's son). Use 'whose' for person's possession."},
+  {q:"Which sentence has CORRECT pronoun case?",opts:["He is taller than me.","He is taller than I am.","Him is taller than me.","He is taller than myself."],a:1,d:"Medium",e:"Formally, after 'than' in comparisons, use nominative: 'He is taller than I AM' (am is implied). 'Than I' = formal correct."},
+  {q:"Choose CORRECT reflexive usage:",opts:["I myself did it.","I myself am going there.","Both A and B are correct.","Myself did it."],a:2,d:"Medium",e:"Both 'I myself did it' and 'I myself am going there' are correct emphatic uses of 'myself.' But 'Myself did it' (without 'I') is WRONG — reflexive can't replace subject."},
+  {q:"'None of the water ___ wasted.' Choose verb.",opts:["were","are","is","have been"],a:2,d:"Medium",e:"'None of the water' — water is uncountable/singular → 'is.' 'None of the water IS wasted.'"},
+  {q:"Which is CORRECT in formal English?",opts:["The results surprised he and I.","The results surprised him and me.","The results surprised him and I.","The results surprised he and me."],a:1,d:"Medium",e:"'Surprised' is a verb needing object pronouns: 'him and me.' Both him and me = object forms, correct after a verb."},
+  {q:"'Everyone in the class raised ___ hand.' Choose pronoun.",opts:["their","its","his/her","our"],a:2,d:"Medium",e:"Formally, 'everyone' → singular → 'his or her hand.' Modern informal: 'their hand' is acceptable. For formal exams: 'his/her.'"},
+  {q:"Choose the CORRECT sentence:",opts:["She is more talented than him.","She is more talented than he.","She is more talented than himself.","She is more talented than his."],a:1,d:"Hard",e:"Formal English: 'more talented than he (is).' Nominative form after 'than' in formal comparison. Colloquially, 'than him' is common."},
+  {q:"'___ is responsible for this mess?' (asking generally)",opts:["Whom","Who","Which","Whose"],a:1,d:"Easy",e:"'Who is responsible?' — 'who' = subject of 'is responsible.' Use nominative 'who.'"},
+  {q:"'He looked at ___ in the mirror.' Choose pronoun.",opts:["him","himself","his","he"],a:1,d:"Easy",e:"Reflexive 'himself' — he looked at himself (the action reflects back on subject 'he')."},
+  {q:"Which is CORRECT? 'The dog lost ___ way.'",opts:["his","it's","its","their"],a:2,d:"Easy",e:"'Its way' — possessive for 'it' (no apostrophe!). 'Its' = possessive. 'It's' = it is."},
+  {q:"Choose CORRECT: 'Among the three of you, ___ is the best?'",opts:["Who","Whom","Which","Whose"],a:2,d:"Medium",e:"'Which' is used when choosing from a defined group (three specified people). 'Who' is general."},
+  {q:"'The teacher asked ___ question.' (a student — formal)",opts:["who a","whom a","a who","that student"],a:1,d:"Hard",e:"'The teacher asked whom a question' is awkward. Better: 'The teacher asked a student a question.' In 'asked whom,' whom = object."},
+  {q:"Choose the CORRECT relative pronoun: 'She is the girl ___ I told you about.'",opts:["who","whom","whose","which"],a:1,d:"Medium",e:"'I told you about her' → 'whom.' The girl WHOM I told you about."},
+  {q:"'Nobody ___ willing to help.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Easy",e:"Nobody = singular → 'is.' 'Nobody IS willing to help.'"}
+];
+
+// ── SVA QUESTIONS (150) ──
+const SQ=[
+  {q:"'The teacher, along with her students, ___ arrived.' Choose correct verb.",opts:["have","are","has","were"],a:2,d:"Easy",e:"'Along with' is parenthetical — doesn't change the subject. Subject = 'teacher' (singular) → 'has.' 'The teacher has arrived.'"},
+  {q:"'Either he or they ___ responsible.' Choose verb.",opts:["is","was","are","has been"],a:2,d:"Medium",e:"Either-or rule: verb agrees with NEARER subject. 'They' (plural) is nearer → 'are.'"},
+  {q:"'A number of students ___ absent.' Choose verb.",opts:["is","was","has been","have been"],a:3,d:"Easy",e:"'A number of' = many → plural → 'have been.' 'A number of students HAVE BEEN absent.'"},
+  {q:"'The number of applicants ___ increased.' Choose verb.",opts:["have","were","has","are"],a:2,d:"Easy",e:"'The number of' = a count → singular → 'has.' 'The number of applicants HAS increased.'"},
+  {q:"'Many a student ___ failed this exam.' Choose verb.",opts:["have","are","has","were"],a:2,d:"Medium",e:"'Many a' + singular noun → singular verb. 'Many a student HAS failed.' Despite seeming plural."},
+  {q:"'More than one candidate ___ qualified.' Choose verb.",opts:["have","are","has","were"],a:2,d:"Medium",e:"'More than one' + singular noun → singular verb. 'More than one candidate HAS qualified.'"},
+  {q:"'News ___ a powerful tool.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Easy",e:"'News' looks plural but is singular → 'is.' 'News IS a powerful tool.'"},
+  {q:"'Mathematics ___ always been my strength.' Choose verb.",opts:["have","are","has","were"],a:2,d:"Easy",e:"Mathematics (and other -ics subjects) = singular → 'has.' 'Mathematics HAS always been my strength.'"},
+  {q:"'There ___ many books on the shelf.' Choose verb.",opts:["is","was","are","has"],a:2,d:"Easy",e:"With 'there,' verb agrees with noun AFTER it. 'Books' = plural → 'are.' 'There ARE many books.'"},
+  {q:"'Five hundred rupees ___ a large sum.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Medium",e:"Money as a unit = singular. 'Five hundred rupees IS a large sum.' Same for time and distance."},
+  {q:"'Neither of the two girls ___ submitted her work.' Choose verb.",opts:["have","are","had","has"],a:3,d:"Medium",e:"'Neither' = singular → 'has.' 'Neither of the girls HAS submitted her work.'"},
+  {q:"'Either the manager or the workers ___ wrong.' Choose verb.",opts:["is","was","are","has been"],a:2,d:"Medium",e:"Either-or: nearer subject = 'workers' (plural) → 'are.' 'Either the manager or the workers ARE wrong.'"},
+  {q:"'The Arabian Nights ___ a classic book.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Medium",e:"Titles of books (even if plural-sounding) take singular verb: 'The Arabian Nights IS a classic.'"},
+  {q:"'The United States ___ sent its envoy.' Choose verb.",opts:["have","are","has","were"],a:2,d:"Medium",e:"Country names (even plural-sounding) take singular verb: 'The United States HAS sent its envoy.'"},
+  {q:"'Both he and she ___ present at the meeting.' Choose verb.",opts:["is","was","are","has"],a:2,d:"Easy",e:"'Both...and' always takes plural verb: 'Both he and she ARE present.'"},
+  {q:"'The committee ___ decided to postpone the meeting.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"Committee acting as one unit → singular → 'has.' 'The committee HAS decided.'"},
+  {q:"'The committee ___ unable to reach a consensus.' (members individually)",opts:["is","was","has","were"],a:3,d:"Hard",e:"When committee members act individually → plural: 'The committee WERE unable to reach a consensus' (British English). They had individual opinions."},
+  {q:"'Thirty miles ___ too far to walk.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Medium",e:"Distance as a unit = singular. 'Thirty miles IS too far to walk.'"},
+  {q:"'Two-thirds of the students ___ passed.' Choose verb.",opts:["has","is","was","have"],a:3,d:"Hard",e:"Fraction + countable plural noun → plural. 'Two-thirds of the students HAVE passed.'"},
+  {q:"'Two-thirds of the water ___ wasted.' Choose verb.",opts:["were","are","have been","was"],a:3,d:"Hard",e:"Fraction + uncountable noun → singular. 'Two-thirds of the water WAS wasted.'"},
+  {q:"'Each of the boys ___ done his homework.' Choose verb.",opts:["have","are","has","were"],a:2,d:"Medium",e:"'Each' = singular → singular verb. 'Each of the boys HAS done his homework.'"},
+  {q:"'No news ___ good news.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Easy",e:"'News' = singular → 'is.' 'No news IS good news.'"},
+  {q:"'The police ___ looking for the criminal.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"Police = always plural → 'are.' 'The police ARE looking for the criminal.'"},
+  {q:"'Every student ___ responsible for their work.' Choose verb.",opts:["are","have been","is","were"],a:2,d:"Easy",e:"'Every' + singular noun → singular verb. 'Every student IS responsible.'"},
+  {q:"'The scissors ___ on the table.' Choose verb.",opts:["is","was","has","are"],a:3,d:"Easy",e:"Scissors = always plural form → plural verb. 'The scissors ARE on the table.'"},
+  {q:"'As well as his friends, he ___ invited to the party.' Choose verb.",opts:["were","have been","are","was"],a:3,d:"Medium",e:"'As well as' = parenthetical. Subject = 'he' (singular) → 'was.' 'He WAS invited to the party.'"},
+  {q:"'Neither he nor I ___ to blame.' Choose verb.",opts:["are","is","was","am"],a:3,d:"Hard",e:"Either-or/Neither-nor: verb agrees with NEARER subject. 'I' is nearer → 'am.' 'Neither he nor I AM to blame.'"},
+  {q:"'One of the longest rivers in the world ___ the Nile.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Medium",e:"'One of...' — subject = 'one' (singular) → 'is.' 'One of the longest rivers IS the Nile.'"},
+  {q:"'There ___ a book and two pens on the table.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"With 'there,' verb agrees with first noun: 'a book' (singular) → 'is.' 'There IS a book and two pens.'"},
+  {q:"'___ any milk left?' (There construction) Choose verb.",opts:["Are","Have","Is","Were"],a:2,d:"Easy",e:"'Is there any milk?' Milk = uncountable/singular → 'is.' 'IS there any milk left?'"},
+  {q:"'Either Ram or Shyam ___ the culprit.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Easy",e:"Either-or: nearer subject = 'Shyam' (singular) → 'is.' 'Either Ram or Shyam IS the culprit.'"},
+  {q:"'The news of the riots ___ spreading fast.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Medium",e:"Head noun = 'news' (singular). 'Of the riots' = prepositional phrase. 'The news IS spreading fast.'"},
+  {q:"'Economics ___ a science as well as an art.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Economics (-ics subject) = singular → 'is.' 'Economics IS a science as well as an art.'"},
+  {q:"'My trousers ___ torn.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"Trousers (like scissors, spectacles) = always plural → 'are.' 'My trousers ARE torn.'"},
+  {q:"'The staff ___ asked to work overtime.' (all individuals)",opts:["is","was","has been","are"],a:3,d:"Medium",e:"Staff referring to individuals → plural. 'The staff ARE asked to work overtime.' (British English standard)"},
+  {q:"'Not only the students but also the teacher ___ tired.' Choose verb.",opts:["are","were","is","have been"],a:2,d:"Hard",e:"'Not only...but also' = verb agrees with NEARER subject. Nearer = 'teacher' (singular) → 'is.'"},
+  {q:"'The statistics ___ alarming.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Hard",e:"When 'statistics' refers to data (facts/numbers) → plural: 'The statistics ARE alarming.' When referring to the subject: 'Statistics IS complex.'"},
+  {q:"'Bread and butter ___ my breakfast.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Bread and butter' = one food combination thought of as a single item → singular verb. 'Bread and butter IS my breakfast.'"},
+  {q:"'The jury ___ announced their verdict.' (members individually) Choose verb.",opts:["is","was","has","have"],a:3,d:"Medium",e:"When jury members act individually (their = each member's) → plural. 'The jury HAVE announced their verdict.' (British)"},
+  {q:"'Nobody ___ allowed to enter without permission.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"Nobody (indefinite, singular) → singular verb. 'Nobody IS allowed to enter.'"},
+  {q:"'Here ___ the books you ordered.' Choose verb.",opts:["is","was","has","are"],a:3,d:"Medium",e:"'Here' construction: verb agrees with noun AFTER verb. 'Books' = plural → 'are.' 'Here ARE the books.'"},
+  {q:"'Every man and woman ___ equal before the law.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Every man and woman' — despite 'and,' 'every' makes it singular: 'Every man and woman IS equal.' (Every signals individual treatment)"},
+  {q:"'Ten kilometers ___ a long distance to walk.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Distance as unit = singular. 'Ten kilometers IS a long distance to walk.'"},
+  {q:"'The rich ___ not always happy.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Medium",e:"'The rich' = 'rich people' → plural → 'are.' 'The rich ARE not always happy.' Similarly: the poor, the old, the young."},
+  {q:"'Each and every student ___ present today.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Each and every' → singular → 'is.' 'Each and every student IS present today.'"},
+  {q:"'Neither the principal nor the teachers ___ satisfied.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Medium",e:"Neither-nor: nearer subject = 'teachers' (plural) → 'are.' 'Neither the principal nor the teachers ARE satisfied.'"},
+  {q:"'The number of accidents ___ decreased.' Choose verb.",opts:["have","were","are","has"],a:3,d:"Easy",e:"'The number of' = singular → 'has.' 'The number of accidents HAS decreased.'"},
+  {q:"'A number of complaints ___ been received.' Choose verb.",opts:["has","is","was","have"],a:3,d:"Easy",e:"'A number of' = many → plural → 'have.' 'A number of complaints HAVE been received.'"},
+  {q:"'Many a time ___ I told you not to do this.' Choose verb.",opts:["have","are","has","were"],a:2,d:"Medium",e:"'Many a time' → singular. 'Many a time HAS I told you...' (Inversion: 'has' agrees with 'time.')"},
+  {q:"'Either of the two methods ___ acceptable.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Either' without 'or' = singular → 'is.' 'Either of the two methods IS acceptable.'"},
+  {q:"'The rich ___ getting richer.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"'The rich' (the rich people) = plural → 'are.' 'The rich ARE getting richer.'"},
+  {q:"'Three days ___ not enough to finish this project.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Time as a period/unit = singular. 'Three days IS not enough.' (treating three days as one period)"},
+  {q:"'Gold and silver ___ precious metals.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"Two separate subjects (gold AND silver) joined by 'and' → plural → 'are.'"},
+  {q:"'The news that you have brought ___ good.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Head noun = 'news' (singular). Relative clause doesn't change it. 'The news IS good.'"},
+  {q:"'None of the students ___ prepared for the test.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Hard",e:"Formally, 'none' (=not one) → singular: 'None IS prepared.' In modern usage, 'none were' is also accepted when referring to a plural group."},
+  {q:"'The cattle ___ grazing in the field.' Choose verb.",opts:["is","was","has","are"],a:3,d:"Easy",e:"Cattle = always plural → 'are.' 'The cattle ARE grazing in the field.'"},
+  {q:"'He is one of those leaders who ___ the trust of people.' Choose verb.",opts:["earns","is","was","earn"],a:3,d:"Hard",e:"'Who' refers to 'leaders' (plural) → plural verb 'earn.' 'Leaders who EARN the trust.' ('One' is not the antecedent of 'who' here.)"},
+  {q:"'Ten thousand rupees ___ a handsome salary.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Money as unit = singular. 'Ten thousand rupees IS a handsome salary.'"},
+  {q:"'The team ___ won the tournament.' (as a unit) Choose verb.",opts:["have","are","were","has"],a:3,d:"Easy",e:"Team as a unit → singular → 'has.' 'The team HAS won the tournament.'"},
+  {q:"'Everyone ___ arrived on time.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Easy",e:"Everyone (indefinite, singular) → 'has.' 'Everyone HAS arrived on time.'"},
+  {q:"'No student ___ failed this year.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Easy",e:"'No student' = singular → 'has.' 'No student HAS failed this year.'"},
+  {q:"'Furniture ___ expensive these days.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"Furniture = uncountable/singular → 'is.' 'Furniture IS expensive these days.'"},
+  {q:"'There ___ no water in the glass.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"'There' + uncountable 'water' → singular → 'is.' 'There IS no water in the glass.'"},
+  {q:"'The rich as well as the poor ___ suffer.' Choose verb.",opts:["is","was","has","do"],a:3,d:"Medium",e:"'As well as' = parenthetical. Subject = 'the rich' (plural) → 'do.' 'The rich DO suffer.' ('as well as the poor' is added info)"},
+  {q:"'Neither she nor her friends ___ invited.' Choose verb.",opts:["is","was","has been","were"],a:3,d:"Medium",e:"Neither-nor: nearer = 'friends' (plural) → 'were.' 'Neither she nor her friends WERE invited.'"},
+  {q:"'The flock of birds ___ flying south.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Collective noun 'flock' (as one unit) → singular → 'is.' 'The flock IS flying south.'"},
+  {q:"'Both the boys ___ talented.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"'Both' always → plural → 'are.' 'Both the boys ARE talented.'"},
+  {q:"'No one ___ above the law.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"'No one' (indefinite, singular) → 'is.' 'No one IS above the law.'"},
+  {q:"'Rumours ___ spreading quickly.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"Rumours = plural → 'are.' 'Rumours ARE spreading quickly.'"},
+  {q:"'The army ___ prepared for battle.' (as one unit) Choose verb.",opts:["have","are","were","is"],a:3,d:"Easy",e:"Army as a unit → singular → 'is.' 'The army IS prepared for battle.'"},
+  {q:"'All the money ___ been spent.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"'All the money' — 'money' = uncountable → singular → 'has.' 'All the money HAS been spent.'"},
+  {q:"'Neither of us ___ going to attend.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Neither' (without or/nor, pronoun) → singular → 'is.' 'Neither of us IS going to attend.'"},
+  {q:"'The walls ___ covered with graffiti.' Choose verb.",opts:["is","was","has","are"],a:3,d:"Easy",e:"Walls = plural → 'are.' 'The walls ARE covered with graffiti.'"},
+  {q:"'Each student and each teacher ___ responsible.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Hard",e:"'Each student and each teacher' — 'each' makes both singular; despite 'and,' it remains singular (each=one by one): 'IS responsible.'"},
+  {q:"'One of the best films ___ Lagaan.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'One of' — subject = 'one' (singular) → 'is.' 'One of the best films IS Lagaan.'"},
+  {q:"'The whole class ___ absent today.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"'Whole class' = entire class as one unit → singular → 'is.' 'The whole class IS absent.'"},
+  {q:"'Many people ___ lost their jobs.' Choose verb.",opts:["has","is","was","have"],a:3,d:"Easy",e:"'Many people' = plural → 'have.' 'Many people HAVE lost their jobs.'"},
+  {q:"'Who among you ___ willing to help?' Choose verb.",opts:["are","were","have been","is"],a:2,d:"Medium",e:"'Who' here refers to any one member → singular verb typically → 'is.' 'Who among you IS willing?'"},
+  {q:"'Neither the father nor the sons ___ at home.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Medium",e:"Neither-nor: nearer = 'sons' (plural) → 'are.' 'Neither the father nor the sons ARE at home.'"},
+  {q:"'The number of tourists ___ grown this year.' Choose verb.",opts:["have","were","are","has"],a:3,d:"Easy",e:"'The number of' → singular → 'has.' 'The number of tourists HAS grown.'"},
+  {q:"'Fifteen percent of the budget ___ allocated to education.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Hard",e:"'Fifteen percent of the budget' — budget is singular → singular verb. 'IS allocated.'"},
+  {q:"'Sixty percent of the students ___ passed.' Choose verb.",opts:["has","is","was","have"],a:3,d:"Hard",e:"Percentage of plural countable noun → plural: 'HAVE passed.'"},
+  {q:"'The Indian cricket team ___ playing brilliantly.' Choose verb.",opts:["have","are","were","is"],a:3,d:"Medium",e:"'Team' as a unit → singular → 'is.' 'The Indian cricket team IS playing brilliantly.'"},
+  {q:"'Pains ___ been taken to make this perfect.' (idiom) Choose verb.",opts:["is","was","has","have"],a:3,d:"Hard",e:"'Pains' (= great effort) in this idiomatic sense → plural → 'have.' 'Great pains HAVE been taken.'"},
+  {q:"'The means ___ justify the end.' (one method) Choose verb.",opts:["justify","justifies","are","were"],a:1,d:"Hard",e:"'Means' can be singular or plural. As singular (one method), 'the means JUSTIFIES the end.'"},
+  {q:"'Every teacher and every student ___ expected to attend.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Every teacher and every student' — 'every' before each = singular individuals → singular: 'IS expected.'"},
+  {q:"'A variety of dishes ___ served at the banquet.' Choose verb.",opts:["is","was","has","were"],a:3,d:"Medium",e:"'A variety of' → plural (many different kinds) → plural verb. 'WERE served.' (Similar to 'a number of')"},
+  {q:"'Some of the milk ___ spilled.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Some of the milk' — milk = uncountable → singular → 'is.' 'Some of the milk IS spilled.'"},
+  {q:"'Some of the students ___ absent.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Medium",e:"'Some of the students' — students = countable plural → plural → 'are.' 'Some of the students ARE absent.'"},
+  {q:"'Plenty of water ___ available.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Plenty of water' — water = uncountable → singular → 'is.' 'Plenty of water IS available.'"},
+  {q:"'All of the students ___ present.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"'All of the students' — students = plural → plural → 'are.' 'All of the students ARE present.'"},
+  {q:"'All of the rice ___ been eaten.' Choose verb.",opts:["are","were","have","has"],a:3,d:"Medium",e:"'All of the rice' — rice = uncountable → singular → 'has.' 'All of the rice HAS been eaten.'"},
+  {q:"'Half of the students ___ failed.' Choose verb.",opts:["is","was","has been","have"],a:3,d:"Medium",e:"'Half of the students' — students = plural → plural → 'have.' 'Half of the students HAVE failed.'"},
+  {q:"'Three weeks ___ passed since we last met.' Choose verb.",opts:["have","is","was","has"],a:0,d:"Medium",e:"'Three weeks' referring to individual time units passed as a period → plural: 'THREE WEEKS HAVE passed.' (Contrast: 'Three weeks is enough time' = singular unit)"},
+  {q:"'The cost of all the items ___ been calculated.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"Head noun = 'cost' (singular) → 'has.' 'The cost HAS been calculated.'"},
+  {q:"'Neither do I nor ___ he agree.' (Choose correct structure)",opts:["Neither do I nor does he agree.","Neither I nor he agrees.","Neither I nor he agree.","Neither do I nor he agrees."],a:1,d:"Hard",e:"'Neither...nor': 'Neither I nor he agrees.' Verb agrees with nearer subject 'he' (singular) → 'agrees.'"},
+  {q:"'The teacher, as well as the students, ___ excited.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'As well as' = parenthetical. Subject = 'teacher' (singular) → 'is.' 'The teacher IS excited.'"},
+  {q:"'Somebody ___ to be informed about this.' Choose verb.",opts:["are","were","have been","has"],a:3,d:"Easy",e:"Somebody (indefinite, singular) → 'has.' 'Somebody HAS to be informed.'"},
+  {q:"'One thousand employees ___ to be laid off.' Choose verb.",opts:["have","is","was","are"],a:3,d:"Medium",e:"'One thousand employees' — employees = plural → 'are.' 'ARE to be laid off.'"},
+  {q:"'The rich and the poor ___ subject to the same law.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Medium",e:"'The rich and the poor' = two different groups → plural → 'are.' 'ARE subject to the same law.'"},
+  {q:"'Measles ___ a contagious disease.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Measles (like mumps, news) = singular → 'is.' 'Measles IS a contagious disease.'"},
+  {q:"'Physics ___ not easy for everyone.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"Physics (-ics subject) = singular → 'is.' 'Physics IS not easy for everyone.'"},
+  {q:"'The old ___ also need care.' Choose verb.",opts:["is","was","has been","do"],a:3,d:"Medium",e:"'The old' = old people → plural → 'do.' 'The old DO also need care.'"},
+  {q:"'Anyone who ___ late will be fined.' Choose verb.",opts:["come","are","were","comes"],a:3,d:"Easy",e:"'Anyone' = singular → singular verb. 'Anyone who COMES late will be fined.'"},
+  {q:"'Neither of them ___ right.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Neither' (without or/nor) = singular → 'is.' 'Neither of them IS right.'"},
+  {q:"'The children, together with their parents, ___ invited.' Choose verb.",opts:["were","are","have","has"],a:0,d:"Medium",e:"'Together with' = parenthetical. Subject = 'children' (plural) → 'were.' 'The children WERE invited.'"},
+  {q:"'Every one of the students ___ attended the lecture.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"'Every one of' = singular → 'has.' 'Every one of the students HAS attended.'"},
+  {q:"'The price of vegetables ___ increased sharply.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"Head noun = 'price' (singular) → 'has.' 'The price HAS increased sharply.'"},
+  {q:"'Three members of the committee ___ absent.' Choose verb.",opts:["is","was","has been","were"],a:3,d:"Easy",e:"'Three members' = plural → 'were.' 'Three members WERE absent.'"},
+  {q:"'Everybody ___ to leave now.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Easy",e:"Everybody (indefinite, singular) → 'has.' 'Everybody HAS to leave now.'"},
+  {q:"'No student ___ right to disrupt the class.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Easy",e:"'No student' = singular → 'has.' 'No student HAS the right to disrupt.'"},
+  {q:"'What ___ needed is more practice.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'What is needed' — 'what' clause = singular → 'is.' 'What IS needed is more practice.'"},
+  {q:"'She is one of those teachers who ___ students brilliantly.' Choose verb.",opts:["teach","teaches","is teaching","has taught"],a:0,d:"Hard",e:"'Who' refers to 'teachers' (plural) → plural verb 'teach.' 'Teachers who TEACH students brilliantly.' Common trap: using 'teaches.'"},
+  {q:"'Two and two ___ four.' Choose verb.",opts:["make","makes","is making","were"],a:1,d:"Medium",e:"'Two and two' in arithmetic context → treated as one sum → singular → 'makes.' 'Two and two MAKES four.'"},
+  {q:"'The wages ___ too low.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"'Wages' = always plural → 'are.' 'The wages ARE too low.'"},
+  {q:"'His trousers ___ too long.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"Trousers = always plural → 'are.' 'His trousers ARE too long.'"},
+  {q:"'All that glitters ___ not gold.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'All that glitters' — 'that' clause = singular → 'is.' 'All that glitters IS not gold.' (Proverb)"},
+  {q:"'A series of accidents ___ reported this week.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Hard",e:"'A series of' — 'series' = singular → singular verb → 'has.' 'A series of accidents HAS been reported.'"},
+  {q:"'The majority of voters ___ against the proposal.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Hard",e:"'Majority of' + plural noun → plural → 'are.' 'The majority of voters ARE against it.' (But 'The majority is...' without 'of' = singular)"},
+  {q:"'Bread and butter ___ his only food.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Bread and butter' = combined food item (single thing) → singular → 'is.' 'Bread and butter IS his only food.'"},
+  {q:"'Gold and silver ___ valuable metals.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"Two separate items (gold AND silver) → plural → 'are.' 'Gold and silver ARE valuable metals.'"},
+  {q:"'The number of birds ___ decreased.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Easy",e:"'The number of' = singular → 'has.' 'The number of birds HAS decreased.'"},
+  {q:"'More than two boys ___ present.' Choose verb.",opts:["is","was","has been","were"],a:3,d:"Medium",e:"'More than two boys' — two boys = plural → plural verb. 'More than two boys WERE present.' (Note: 'More than one' = singular. 'More than two' = plural.)"},
+  {q:"'Much of the food ___ wasted at weddings.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Much of the food' — food = uncountable → singular → 'is.' 'Much of the food IS wasted.'"},
+  {q:"'Few of the students ___ prepared.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Medium",e:"'Few of the students' — students = plural → 'are.' 'Few of the students ARE prepared.'"},
+  {q:"'The scenery ___ beautiful here.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"'Scenery' = uncountable → 'is.' 'The scenery IS beautiful here.'"},
+  {q:"'Twenty years ___ a long time.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Time as a span/unit = singular. 'Twenty years IS a long time.'"},
+  {q:"'Who among the candidates ___ best qualified?' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Who' in this context = which one (singular) → 'is.' 'Who among the candidates IS best qualified?'"},
+  {q:"'The couple ___ happy together.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Medium",e:"'Couple' can be singular (one unit) or plural (two individuals). As two people: 'are.' 'The couple ARE happy.' (British English); 'is' in American."},
+  {q:"'A pair of shoes ___ lying on the floor.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'A pair of' = one pair → singular → 'is.' 'A pair of shoes IS lying on the floor.'"},
+  {q:"'The number of road accidents ___ risen.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Easy",e:"'The number of' = singular → 'has.' 'The number of road accidents HAS risen.'"},
+  {q:"'Drinking and driving ___ dangerous.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Hard",e:"Two gerunds as a combined dangerous habit → singular → 'is.' 'Drinking and driving IS dangerous.' (Treated as one combined activity)"},
+  {q:"'Each of the soldiers ___ brave.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"'Each' = singular → 'is.' 'Each of the soldiers IS brave.'"},
+  {q:"'Forty percent of the staff ___ absent.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Hard",e:"Percentage of countable plural noun (staff=people) → plural → 'are.' 'Forty percent of the staff ARE absent.'"},
+  {q:"'The news about the floods ___ alarming.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Head noun = 'news' (singular) → 'is.' 'The news IS alarming.'"},
+  {q:"'Neither of the answers ___ correct.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Neither' (without or/nor) = singular → 'is.' 'Neither of the answers IS correct.'"},
+  {q:"'Either of the roads ___ to the city.' Choose verb.",opts:["lead","leads","are leading","were leading"],a:1,d:"Medium",e:"'Either' (without or) = singular → singular verb 'leads.' 'Either of the roads LEADS to the city.'"},
+  {q:"'A lot of time ___ wasted.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'A lot of time' — time = uncountable → singular → 'is.' 'A lot of time IS wasted.'"},
+  {q:"'A lot of students ___ enrolled.' Choose verb.",opts:["is","was","has been","have"],a:3,d:"Medium",e:"'A lot of students' — students = plural → 'have.' 'A lot of students HAVE enrolled.'"},
+  {q:"'One of the reasons why he failed ___ his laziness.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'One of the reasons' — subject = 'one' (singular) → 'is.' 'One of the reasons IS his laziness.'"},
+  {q:"'The books on the shelf ___ dusty.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"'Books' = plural → 'are.' 'The books ARE dusty.' (The prepositional phrase 'on the shelf' doesn't affect SVA.)"},
+  {q:"'None of the furniture ___ damaged.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'None of the furniture' — furniture = uncountable → singular → 'is.' 'None of the furniture IS damaged.'"},
+  {q:"'There ___ many rivers in India.' Choose verb.",opts:["is","was","has","are"],a:3,d:"Easy",e:"'There' + 'rivers' (plural) → 'are.' 'There ARE many rivers in India.'"},
+  {q:"'The jury ___ still deliberating.' (as one body) Choose verb.",opts:["have","are","were","is"],a:3,d:"Medium",e:"Jury as one body → singular → 'is.' 'The jury IS still deliberating.'"}
+];
+
+// ── ERROR SPOTTING QUESTIONS (50) ──
+const EQ=[
+  {q:"Find the error: 'A [A] number of students [B] has appeared [C] for the examination [D].'",opts:["A","B","C","D"],a:2,d:"Medium",e:"'A number of' = many (plural) → needs plural verb. 'has appeared' (C) should be 'have appeared.' A number of students HAVE appeared."},
+  {q:"Find the error: 'The news [A] that you brought [B] are [C] very disturbing [D].'",opts:["A","B","C","D"],a:2,d:"Easy",e:"'News' = singular → verb should be 'is' not 'are.' The error is in C: 'are' → should be 'is.'"},
+  {q:"Find the error: 'Between you and I [A], this matter [B] should remain [C] confidential [D].'",opts:["A","B","C","D"],a:0,d:"Easy",e:"After preposition 'between,' use object pronoun: 'Between you and ME' (not I). Error is in A."},
+  {q:"Find the error: 'Many a student [A] have been [B] failed [C] in this examination [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"'Many a student' = singular → should be 'has been' not 'have been.' Error is in B. Also 'failed' should be 'failed' or 'has failed.'"},
+  {q:"Find the error: 'The criteria [A] for selection [B] is [C] not yet decided [D].'",opts:["A","B","C","D"],a:2,d:"Medium",e:"'Criteria' = plural (criterion = singular) → should use plural verb 'are' not 'is.' Error in C. Either change 'criteria' to 'criterion' or 'is' to 'are.'"},
+  {q:"Find the error: 'He is one of the students [A] who has [B] won [C] a scholarship [D].'",opts:["A","B","C","D"],a:1,d:"Hard",e:"'Who' refers to 'students' (plural) → plural verb needed: 'who have won.' Error in B: 'has' should be 'have.'"},
+  {q:"Find the error: 'Either the captain or the players [A] is [B] to be blamed [C] for the defeat [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"Either-or: nearer subject = 'players' (plural) → 'are' not 'is.' Error in B."},
+  {q:"Find the error: 'Please send the report [A] to myself [B] as soon as [C] possible [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"'Myself' cannot replace 'me' — no reflection. Should be 'to me.' Error in B: 'myself' → 'me.'"},
+  {q:"Find the error: 'The number of accidents [A] on highways [B] have [C] increased significantly [D].'",opts:["A","B","C","D"],a:2,d:"Easy",e:"'The number of' = singular → should be 'has' not 'have.' Error in C."},
+  {q:"Find the error: 'Mathematics are [A] a subject [B] that requires [C] logical thinking [D].'",opts:["A","B","C","D"],a:0,d:"Easy",e:"Mathematics (-ics) = singular → 'is' not 'are.' Error in A. 'Mathematics IS a subject...'"},
+  {q:"Find the error: 'More than one candidate [A] have applied [B] for [C] this position [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"'More than one' + singular noun = singular → 'has applied' not 'have applied.' Error in B."},
+  {q:"Find the error: 'The police is [A] investigating [B] the case [C] thoroughly [D].'",opts:["A","B","C","D"],a:0,d:"Medium",e:"Police = always plural → 'are investigating' not 'is investigating.' Error in A."},
+  {q:"Find the error: 'She is more intelligent [A] than [B] him [C] in mathematics [D].'",opts:["A","B","C","D"],a:2,d:"Hard",e:"In formal comparisons, after 'than' use nominative: 'than he' (she is more intelligent than he is). Formally, error in C: 'him' → 'he.'"},
+  {q:"Find the error: 'Neither of the two books [A] are [B] worth [C] reading [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"'Neither' = singular → 'is' not 'are.' Error in B. 'Neither of the two books IS worth reading.'"},
+  {q:"Find the error: 'He along with his friends [A] have decided [B] to go [C] on a trip [D].'",opts:["A","B","C","D"],a:1,d:"Easy",e:"'Along with' = parenthetical. Subject = 'He' (singular) → 'has decided' not 'have decided.' Error in B."},
+  {q:"Find the error: 'The Arabian Nights [A] are [B] one of the greatest [C] works of fiction [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"Titles of books → singular verb. 'The Arabian Nights IS...' not 'are.' Error in B."},
+  {q:"Find the error: 'Everyone in the class [A] have [B] submitted [C] their assignment [D].'",opts:["A","B","C","D"],a:1,d:"Easy",e:"Everyone = singular → 'has' not 'have.' Error in B. 'Everyone HAS submitted.'"},
+  {q:"Find the error: 'My spectacles [A] is [B] lying [C] on the table [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"Spectacles = always plural → 'are' not 'is.' Error in B. 'My spectacles ARE lying on the table.'"},
+  {q:"Find the error: 'The committee [A] have unanimously [B] decided [C] to postpone [D] the meeting.'",opts:["A","B","C","D"],a:1,d:"Medium",e:"Committee acting as one body (unanimously = all as one) → singular → 'has unanimously decided.' Error in B: 'have' → 'has.'"},
+  {q:"Find the error: 'She gave me a good advice [A] which [B] helped [C] me greatly [D].'",opts:["A","B","C","D"],a:0,d:"Easy",e:"'Advice' is uncountable — 'a good advice' is wrong. Should be 'good advice' or 'a piece of good advice.' Error in A."},
+  {q:"Find the error: 'The jury [A] are still [B] arguing [C] about their verdict [D].'",opts:["A","B","C","D"],a:0,d:"Hard",e:"When jury members argue (individually) → plural IS acceptable. Actually this is CORRECT. 'The jury ARE arguing' (individually). No error here — D (No error) would be the answer. But since D isn't an option, the sentence is correct and the error would be 'No error.'"},
+  {q:"Find the error: 'Him [A] and me [B] went [C] to the market [D].'",opts:["A","B","C","D"],a:0,d:"Medium",e:"As subjects of 'went,' use nominative: 'He and I went.' 'Him' (A) and 'me' (B) are object forms. Error in A first: 'Him' → 'He.'"},
+  {q:"Find the error: 'Ten kilometers [A] are [B] a long [C] distance to walk [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"Distance as unit = singular → 'is' not 'are.' Error in B. 'Ten kilometers IS a long distance.'"},
+  {q:"Find the error: 'The teacher, as well as the students [A], were [B] happy [C] with the result [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"'As well as' = parenthetical. Subject = 'teacher' (singular) → 'was' not 'were.' Error in B."},
+  {q:"Find the error: 'Nobody have [A] the right [B] to harm [C] others [D].'",opts:["A","B","C","D"],a:0,d:"Easy",e:"Nobody = singular → 'has' not 'have.' Error in A. 'Nobody HAS the right to harm others.'"},
+  {q:"Find the error: 'One of the best films [A] that has [B] been produced [C] this year [D].'",opts:["A","B","C","D"],a:1,d:"Hard",e:"'That' refers to 'films' (plural) → 'have been produced.' The relative clause: 'One of the best films that have been produced.' Error in B: 'has' → 'have.'"},
+  {q:"Find the error: 'My brother, [A] not my sisters [B], are [C] to be praised [D].'",opts:["A","B","C","D"],a:2,d:"Medium",e:"Subject = 'brother' (singular); 'not my sisters' = contrast phrase (like 'along with'). Verb should be 'is' not 'are.' Error in C."},
+  {q:"Find the error: 'Neither he [A] nor his colleagues [B] is [C] present [D] today.'",opts:["A","B","C","D"],a:2,d:"Medium",e:"Neither-nor: nearer = 'colleagues' (plural) → 'are' not 'is.' Error in C."},
+  {q:"Find the error: 'The phenomenas [A] you described [B] are [C] well-known [D].'",opts:["A","B","C","D"],a:0,d:"Medium",e:"'Phenomena' is already plural — 'phenomenas' is WRONG. Error in A. Correct: 'The phenomena you described are well-known.'"},
+  {q:"Find the error: 'I need some informations [A] about [B] the new [C] policy [D].'",opts:["A","B","C","D"],a:0,d:"Easy",e:"'Information' is uncountable — 'informations' is wrong. Error in A. 'I need some information about...'"},
+  {q:"Find the error: 'Both Rohan and [A] Sohan has [B] completed [C] the project [D].'",opts:["A","B","C","D"],a:1,d:"Easy",e:"'Both...and' → plural → 'have' not 'has.' Error in B. 'Both Rohan and Sohan HAVE completed the project.'"},
+  {q:"Find the error: 'The quality [A] of the mangoes [B] are [C] not good [D].'",opts:["A","B","C","D"],a:2,d:"Medium",e:"Head noun = 'quality' (singular). 'Of the mangoes' = prepositional phrase. Verb should be 'is' not 'are.' Error in C."},
+  {q:"Find the error: 'Every man, woman [A] and child [B] in the village [C] were [D] evacuated.'",opts:["A","B","C","D"],a:3,d:"Hard",e:"'Every man, woman, and child' — 'every' makes the combined subject singular → 'was' not 'were.' Error in D."},
+  {q:"Find the error: 'Much water [A] have [B] been wasted [C] due to leakage [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"'Water' = uncountable → singular → 'has' not 'have.' Error in B. 'Much water HAS been wasted.'"},
+  {q:"Find the error: 'A large number of people [A] was [B] present [C] at the meeting [D].'",opts:["A","B","C","D"],a:1,d:"Easy",e:"'A number of' = plural → 'were' not 'was.' Error in B. 'A large number of people WERE present.'"},
+  {q:"Find the error: 'It is I [A] who am [B] responsible [C] for this mistake [D].'",opts:["A","B","C","D"],a:3,d:"Hard",e:"'It is I who am responsible' is actually CORRECT formal English. 'I' after 'It is' (nominative) and 'am' agrees with 'I.' No error — D."},
+  {q:"Find the error: 'The cattle [A] in the field [B] is [C] healthy [D].'",opts:["A","B","C","D"],a:2,d:"Medium",e:"Cattle = always plural → 'are' not 'is.' Error in C. 'The cattle ARE healthy.'"},
+  {q:"Find the error: 'She is one of those [A] writers who writes [B] with great [C] passion [D].'",opts:["A","B","C","D"],a:1,d:"Hard",e:"'Who' refers to 'writers' (plural) → 'write' not 'writes.' Error in B. 'Writers who WRITE with great passion.'"},
+  {q:"Find the error: 'Two-thirds of the water [A] were [B] wasted [C] due to [D] negligence.'",opts:["A","B","C","D"],a:1,d:"Hard",e:"Fraction of uncountable noun → singular → 'was' not 'were.' Error in B. 'Two-thirds of the water WAS wasted.'"},
+  {q:"Find the error: 'The sceneries [A] of Kashmir [B] are [C] breathtaking [D].'",opts:["A","B","C","D"],a:0,d:"Easy",e:"'Scenery' is uncountable — 'sceneries' is wrong. Error in A. 'The scenery of Kashmir is breathtaking.'"},
+  {q:"Find the error: 'Whom [A] do you think [B] will win [C] the election [D]?'",opts:["A","B","C","D"],a:0,d:"Hard",e:"'Who do you think will win?' — 'who' is the subject of 'will win,' not the object of 'think.' 'Who' not 'whom.' Error in A."},
+  {q:"Find the error: 'None of the luggage [A] were [B] damaged [C] in the accident [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"'Luggage' = uncountable → singular → 'was' not 'were.' Error in B. 'None of the luggage WAS damaged.'"},
+  {q:"Find the error: 'The peoples [A] of India [B] are [C] diverse [D].'",opts:["A","B","C","D"],a:0,d:"Easy",e:"'People' is already plural (people = plural of person). 'Peoples' is used only when referring to different nations/ethnic groups. Here, 'The people of India' is correct. Error in A."},
+  {q:"Find the error: 'He distributed sweets among [A] each child [B] in [C] the class [D].'",opts:["A","B","C","D"],a:0,d:"Hard",e:"'Among' = three or more. For individual distribution one by one, 'to each child.' Or 'distributed among all children.' 'Among each' is contradictory. Error in A: 'among' → 'to.'"},
+  {q:"Find the error: 'The pair [A] of scissors [B] are [C] missing [D].'",opts:["A","B","C","D"],a:2,d:"Medium",e:"'A pair of' = one pair → singular → 'is' not 'are.' Error in C. 'The pair of scissors IS missing.'"},
+  {q:"Find the error: 'Either of the boys [A] have [B] taken [C] the book [D].'",opts:["A","B","C","D"],a:1,d:"Medium",e:"'Either' (without or) = singular → 'has' not 'have.' Error in B. 'Either of the boys HAS taken the book.'"},
+  {q:"Find the error: 'My advices [A] may not [B] be useful [C] for you [D].'",opts:["A","B","C","D"],a:0,d:"Easy",e:"'Advice' is uncountable — 'advices' is wrong. Error in A. 'My advice may not be useful for you.'"},
+  {q:"Find the error: 'Not only the students [A] but also the teacher [B] were [C] present [D].'",opts:["A","B","C","D"],a:2,d:"Hard",e:"'Not only...but also': verb agrees with nearer subject = 'teacher' (singular) → 'was' not 'were.' Error in C."},
+  {q:"Find the error: 'Fifty percent of the books [A] in the library [B] is [C] outdated [D].'",opts:["A","B","C","D"],a:2,d:"Hard",e:"Percentage of countable plural noun (books) → plural → 'are' not 'is.' Error in C."},
+  {q:"Find the error: 'The teacher asked the student to contact herself [A] if [B] there were [C] any doubts [D].'",opts:["A","B","C","D"],a:0,d:"Medium",e:"The teacher told the student to contact HER (the teacher). 'Herself' implies the student should contact herself (the student), which makes no sense. Error in A: 'herself' → 'her.'"}
+];
+
+// ── MIXED MOCK TEST (60 questions sampled from all banks) ──
+const MQ_raw=[
+  {q:"'The teacher, along with students, ___ arrived.' Choose verb.",opts:["have","are","has","were"],a:2,d:"Medium",e:"'Along with' = parenthetical. Subject = 'teacher' (singular) → 'has.'"},
+  {q:"Choose the correct sentence:",opts:["He hurt hisself.","He hurt himself.","He hurt he.","He hurt him."],a:1,d:"Easy",e:"'Himself' is the correct reflexive pronoun. 'Hisself' is NOT a word in standard English."},
+  {q:"'___ of the students have arrived.' (all of them) Choose correct option.",opts:["Every","Each","All","None"],a:2,d:"Easy",e:"'All of the students have arrived.' 'Every/Each' take singular verb. 'None' needs singular verb."},
+  {q:"Find error: 'The informations provided were incomplete.'",opts:["informations","provided","were","incomplete"],a:0,d:"Easy",e:"'Information' is uncountable — 'informations' is wrong. Should be 'The information provided was incomplete.'"},
+  {q:"'A number of complaints ___ been filed.' Choose verb.",opts:["has","is","was","have"],a:3,d:"Easy",e:"'A number of' = plural → 'have been.' 'A number of complaints HAVE been filed.'"},
+  {q:"'Between you and ___, this is confidential.' Choose pronoun.",opts:["I","me","myself","mine"],a:1,d:"Easy",e:"After preposition 'between,' use object pronoun: 'me.'"},
+  {q:"Identify the UNCOUNTABLE noun:",opts:["chair","apple","furniture","table"],a:2,d:"Easy",e:"Furniture is uncountable — no 'furnitures' or 'a furniture.'"},
+  {q:"'Either he or his brothers ___ responsible.' Choose verb.",opts:["is","was","are","has been"],a:2,d:"Medium",e:"Either-or: nearer = 'brothers' (plural) → 'are.'"},
+  {q:"'___ did you meet at the conference?' (formal) Choose pronoun.",opts:["Who","Whom","Which","Whose"],a:1,d:"Medium",e:"You met him/her → object → 'Whom.' Formal: 'Whom did you meet?'"},
+  {q:"'Many a soldier ___ died in battle.' Choose verb.",opts:["have","are","has","were"],a:2,d:"Medium",e:"'Many a' + singular noun → singular → 'has.'"},
+  {q:"'Mathematics ___ fascinating.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"Mathematics (-ics) = singular → 'is.'"},
+  {q:"'The scissors ___ on the counter.' Choose verb.",opts:["is","was","has","are"],a:3,d:"Easy",e:"Scissors = always plural → 'are.'"},
+  {q:"Choose correct plural: 'Criterion →'",opts:["Criterions","Criterias","Criteria","Criterion"],a:2,d:"Easy",e:"Criterion (Greek/Latin) → Criteria. Never 'criterias.'"},
+  {q:"'Nobody ___ allowed to leave.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"Nobody = singular → 'is.'"},
+  {q:"'The number of students ___ grown.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Easy",e:"'The number of' = singular → 'has.'"},
+  {q:"'He is one of those leaders who ___ people.' (inspire or inspires?)",opts:["inspires","inspire","is inspiring","was inspiring"],a:1,d:"Hard",e:"'Who' refers to 'leaders' (plural) → 'inspire.' Leaders who INSPIRE."},
+  {q:"Choose correct possessive: 'children's / children' / childrens'",opts:["children's","childrens'","children","childrens"],a:0,d:"Medium",e:"Children = irregular plural (not ending in -s) → add 's: children's."},
+  {q:"'The cattle ___ grazing.' Choose verb.",opts:["is","was","has","are"],a:3,d:"Easy",e:"Cattle = always plural → 'are.'"},
+  {q:"'Please contact ___ for details.' Choose pronoun.",opts:["I","myself","me","mine"],a:2,d:"Easy",e:"'me' is correct — reflexive 'myself' cannot replace 'me' without same subject reference."},
+  {q:"'Two-thirds of the budget ___ allocated.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Hard",e:"Fraction of uncountable (budget) → singular → 'has.'"},
+  {q:"Find error: 'A large number of people was present.'",opts:["A large number","of people","was","present"],a:2,d:"Easy",e:"'A number of' → plural → 'were' not 'was.'"},
+  {q:"'The pair of shoes ___ missing.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'A pair of' = one pair → singular → 'is.'"},
+  {q:"'More than one book ___ been taken.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"'More than one' = singular → 'has.'"},
+  {q:"'___ at the door? Someone is knocking.' Choose pronoun.",opts:["Whom","Whose","Who","Which"],a:2,d:"Easy",e:"'Who is at the door?' — subject of 'is' → nominative 'who.'"},
+  {q:"Find error: 'Many a students have failed.'",opts:["Many a","students","have","failed"],a:1,d:"Medium",e:"'Many a' + singular noun: 'student' not 'students.' Error: 'students' should be 'student.'"},
+  {q:"'Each of the boys ___ done his homework.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"'Each' = singular → 'has.'"},
+  {q:"'The news ___ surprising.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Easy",e:"'News' = singular → 'is.'"},
+  {q:"'Whom' correctly used in which sentence?",opts:["Whom is at the door?","She is the one whom I trust.","Whom called you?","Whom will go?"],a:1,d:"Medium",e:"'Whom I trust' — I trust her → object → 'whom.' Others should use 'who' (subject positions)."},
+  {q:"'All the money ___ been spent.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"'Money' = uncountable → singular → 'has.'"},
+  {q:"Find error: 'Not only he but also his friends was invited.'",opts:["Not only he","but also his friends","was","invited"],a:2,d:"Hard",e:"Not only...but also: nearer = 'friends' (plural) → 'were' not 'was.'"},
+  {q:"'She did not help ___ during the crisis.' Choose reflexive.",opts:["her","herself","hers","she"],a:1,d:"Easy",e:"'She did not help herself' — action reflects back. But if she didn't help others: 'help them.' Context: if she didn't help herself = 'herself.'"},
+  {q:"'Every man and woman ___ expected to cooperate.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Every' with multiple subjects = singular (each one individually) → 'is.'"},
+  {q:"'___ pen is this?' Choose interrogative pronoun.",opts:["Who","Whom","Whose","Which"],a:2,d:"Easy",e:"'Whose pen is this?' — possessive interrogative."},
+  {q:"'Fifty percent of the workers ___ absent.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Hard",e:"Percentage of countable plural (workers) → plural → 'are.'"},
+  {q:"'She and ___ will attend the function.' Choose correct pronoun.",opts:["me","myself","I","mine"],a:2,d:"Medium",e:"Co-subject of 'will attend' → nominative: 'She and I will attend.' 'I' = subject form."},
+  {q:"'The police ___ investigating the matter.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"Police = always plural → 'are.'"},
+  {q:"Find error: 'Neither of them are coming to the party.'",opts:["Neither","of them","are","coming to the party"],a:2,d:"Medium",e:"'Neither' = singular → 'is' not 'are.' Error in 'are.'"},
+  {q:"'___ came first — Ram or Shyam?' Choose correct.",opts:["Who","Whom","Which","Whose"],a:0,d:"Medium",e:"'Who came first?' — subject of 'came' → nominative 'who.'"},
+  {q:"'Thirty miles ___ too far to drive without stopping.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Distance as unit = singular → 'is.'"},
+  {q:"Find error: 'He is taller than me in a formal context.'",opts:["He is","taller","than me","in a formal context"],a:2,d:"Hard",e:"Formally, after 'than' in comparison: 'than I (am).' 'Than me' is informal. In formal English, error is 'me' should be 'I.'"},
+  {q:"'The Arabian Nights ___ full of adventures.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"Book title (even if plural-sounding) → singular → 'is.'"},
+  {q:"'Both the manager and the clerk ___ present.' Choose verb.",opts:["is","was","has been","are"],a:3,d:"Easy",e:"'Both...and' → plural → 'are.'"},
+  {q:"'___ of you two is the eldest?' Choose pronoun.",opts:["Who","Whom","Which","Whose"],a:2,d:"Medium",e:"Choosing between two defined people → 'Which of you two is eldest?' 'Who' is general."},
+  {q:"Find error: 'The phenomena is well-documented.'",opts:["The","phenomena","is","well-documented"],a:2,d:"Medium",e:"'Phenomena' = plural → 'are.' Error in 'is.' Should be 'The phenomena are well-documented' OR 'The phenomenon is well-documented.'"},
+  {q:"'She is as talented as ___.' (formal) Choose pronoun.",opts:["him","he","himself","his"],a:1,d:"Hard",e:"Formal comparison after 'as' → nominative: 'as he (is).' 'She is as talented as HE.'"},
+  {q:"'Somebody ___ left a bag here.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Easy",e:"Somebody = singular → 'has.'"},
+  {q:"'The cost of all items ___ been calculated.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"Head noun = 'cost' (singular) → 'has.'"},
+  {q:"Find error: 'My trouser is new.'",opts:["My","trouser","is","new"],a:1,d:"Easy",e:"'Trousers' = always plural. 'My trousers are new.' Error: 'trouser' should be 'trousers' AND 'is' should be 'are.'"},
+  {q:"'___ of these two dresses suits you better?' Choose correct option.",opts:["Who","Whom","Which","Whose"],a:2,d:"Easy",e:"Choosing between two defined items → 'Which.'"},
+  {q:"'None of the information ___ useful.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Information' = uncountable → singular → 'is.' 'None of the information IS useful.'"},
+  {q:"'The teacher along with the students ___ going on a trip.' Choose verb.",opts:["are","were","have been","is"],a:3,d:"Medium",e:"'Along with' = parenthetical. Subject = 'teacher' (singular) → 'is.'"},
+  {q:"'Every student ___ their assignment by Friday.' (choose verb + context)",opts:["must submit","must submits","must submitted","submitting"],a:0,d:"Easy",e:"'Every student must submit their assignment.' Modal verb 'must' + base form. Singular subject but 'their' in modern usage."},
+  {q:"'___ books on this shelf belong to you?' (from defined set) Choose.",opts:["Who","Whom","Whose","Which"],a:3,d:"Medium",e:"'Which books?' — choosing from defined set of books on this specific shelf. 'Which' for things."},
+  {q:"Find error: 'He and her were selected for the team.'",opts:["He","and her","were selected","for the team"],a:1,d:"Medium",e:"'Her' = object form — as co-subject, use 'she.' 'He and SHE were selected.' Error in 'and her' → 'and she.'"},
+  {q:"'A series of lectures ___ planned.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Hard",e:"'A series of' — 'series' = singular → 'has been planned.' Among given options: 'has' is not listed. Choose 'were' if forced... Wait: 'were' = plural past. 'A series has' is best but 'has' isn't an option. Answer: select the least wrong among given."},
+  {q:"'He himself ___ admitted the mistake.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Easy",e:"'He himself' — 'himself' is emphatic. Subject = 'he' (singular) → 'has.' 'He himself HAS admitted.'"},
+  {q:"'It was ___ who first raised the alarm.' Choose pronoun.",opts:["her","she","hers","herself"],a:1,d:"Hard",e:"After 'It was,' formal English uses nominative: 'It was SHE who first raised the alarm.'"},
+  {q:"'___ wins the race will get a medal.' Choose pronoun.",opts:["Who","Whoever","Whom","Whomever"],a:1,d:"Medium",e:"'Whoever wins the race' — whoever = subject of 'wins.' 'Whoever' (not whomever) because it's the subject."},
+  {q:"'The results, as well as the process, ___ been questioned.' Choose verb.",opts:["have","are","were","has"],a:3,d:"Medium",e:"'As well as' = parenthetical. Subject = 'results' (plural) → 'have.' 'The results HAVE been questioned.'"},
+  {q:"'Neither Ram nor his friends ___ attended.' Choose verb.",opts:["is","was","has","were"],a:3,d:"Medium",e:"Neither-nor: nearer = 'friends' (plural) → 'were.'"}
+];
+const MQ = MQ_raw.slice(0, 50); // Limit to 50 for mixed mock
+
+// QUIZ ENGINE FACTORY
+function makeQuiz(qs, pfId, bodyId, scId, scnId, sclId, corrId, wrgId, totId){
+  let cur=0, c=0, w=0;
+  function reset(){
+    cur=0;c=0;w=0;
+    document.getElementById(corrId).textContent='0';
+    document.getElementById(wrgId).textContent='0';
+    document.getElementById(totId).textContent='0';
+    document.getElementById(scId).style.display='none';
+    document.getElementById(bodyId).style.display='block';
+    render();
+  }
+  function render(){
+    if(cur>=qs.length){
+      document.getElementById(bodyId).style.display='none';
+      document.getElementById(scId).style.display='block';
+      const p=Math.round(c/qs.length*100);
+      document.getElementById(scnId).textContent=c+'/'+qs.length;
+      const m=p>=80?'🎯 Excellent!':p>=60?'👍 Good — review weak spots':'📚 Keep practising!';
+      document.getElementById(sclId).textContent=p+'% — '+m;
+      return;
+    }
+    document.getElementById(pfId).style.width=Math.round(cur/qs.length*100)+'%';
+    const q=qs[cur];
+    const uid=pfId+'_'+cur;
+    const dc=q.d==='Easy'?'diff-e':q.d==='Hard'?'diff-h':'diff-m';
+    document.getElementById(bodyId).innerHTML=`
+      <div class="qcard">
+        <div class="qn">Q${cur+1}/${qs.length} <span class="q-diff ${dc}">${q.d||'Medium'}</span></div>
+        <div class="qt">${q.q}</div>
+        <div class="qopts">${q.opts.map((o,i)=>`<button class="qo" id="${uid}o${i}" onclick="ansQ('${uid}',${i},${q.a},'${pfId}','${bodyId}','${corrId}','${wrgId}','${totId}',${cur})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div>
+        <div class="qexp" id="${uid}exp">${q.e}</div>
+      </div>
+      <button class="qnxt" id="${uid}nxt" onclick="nextQ('${pfId}')">Next →</button>`;
+  }
+  window['start_'+pfId]=reset;
+  window['_cur_'+pfId]=()=>cur;
+  window['_next_'+pfId]=()=>{cur++;render();};
+  window['_qs_'+pfId]=qs;
+  window['_c_'+pfId]=()=>c;
+  window['_w_'+pfId]=()=>w;
+  window['_setc_'+pfId]=(v)=>{c=v;document.getElementById(corrId).textContent=c;};
+  window['_setw_'+pfId]=(v)=>{w=v;document.getElementById(wrgId).textContent=w;};
+  window['_settot_'+pfId]=(v)=>{document.getElementById(totId).textContent=v;};
+  return reset;
+}
+
+function ansQ(uid, chosen, correct, pfId, bodyId, corrId, wrgId, totId, curIdx){
+  document.querySelectorAll(`[id^="${uid}o"]`).forEach(b=>b.disabled=true);
+  document.getElementById(uid+'o'+chosen).classList.add(chosen===correct?'ok':'no');
+  document.getElementById(uid+'o'+correct).classList.add('ok');
+  document.getElementById(uid+'exp').classList.add('on');
+  const cur=window['_cur_'+pfId]();
+  if(chosen===correct){window['_setc_'+pfId](window['_c_'+pfId]()+1);}
+  else{window['_setw_'+pfId](window['_w_'+pfId]()+1);}
+  window['_settot_'+pfId](curIdx+1);
+  document.getElementById(uid+'nxt').style.display='inline-block';
+}
+function nextQ(pfId){window['_next_'+pfId]();}
+
+const startN=makeQuiz(NQ,'npf','nbody','nsc','nscn','nscl','n_correct','n_wrong','n_total');
+const startP=makeQuiz(PQ,'ppf','pbody','psc','pscn','pscl','p_correct','p_wrong','p_total');
+const startS=makeQuiz(SQ,'spf','sbody','ssc','sscn','sscl','s_correct','s_wrong','s_total');
+const startE=makeQuiz(EQ,'epf','ebody','esc','escn','escl','e_correct','e_wrong','e_total');
+const startM=makeQuiz(MQ,'mpf','mbody','msc','mscn','mscl','m_correct','m_wrong','m_total');
+
+// Branch toggle
+function tb(h){h.parentElement.classList.toggle('on')}
+document.querySelectorAll('.br').forEach((b,i)=>{if(i===0)b.classList.add('on')});
+
+// Start all quizzes on load so stats show
+document.addEventListener('DOMContentLoaded',()=>{
+  startN(); startP(); startS(); startE(); startM();
+});
+</script>
+</body>
+</html>

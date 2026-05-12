@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Early INC (1885–1905) — CDS 2026 + UPSC Master Mind Map</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root{
+  --bg:#09080d;--bg2:#0f0e18;--bg3:#151423;--bg4:#1c1b30;--bg5:#23223c;
+  --saffron:#ff9f3a;--green:#3dba7a;--white-pure:#f0ece0;--teal:#36c9c0;
+  --gold:#e8b84b;--rose:#e05a7a;--blue:#5b9cf6;--purple:#9b6ee8;
+  --text:#ede9df;--text2:#8a8696;--text3:#4a4764;
+  --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{
+  content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse at 10% 20%,rgba(255,159,58,.03),transparent 60%),
+             radial-gradient(ellipse at 90% 80%,rgba(61,186,122,.03),transparent 60%);
+}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;width:228px;height:100vh;background:rgba(15,14,24,0.97);border-right:1px solid var(--bd2);overflow-y:auto;z-index:100;padding-bottom:2rem;scrollbar-width:thin;scrollbar-color:var(--bg5) transparent}
+#nav::-webkit-scrollbar{width:3px}#nav::-webkit-scrollbar-thumb{background:var(--bg5)}
+.nav-logo{padding:1.2rem 1rem .8rem;border-bottom:1px solid var(--bd);background:linear-gradient(135deg,rgba(255,159,58,.07),rgba(61,186,122,.05))}
+.nav-logo span{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:var(--saffron);display:block;letter-spacing:.3px}
+.nav-logo small{font-size:10px;color:var(--text3);display:block;margin-top:2px}
+.nav-sec{font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:var(--text3);font-weight:700;padding:8px 1rem 3px}
+.nav-lnk{display:flex;align-items:center;gap:8px;padding:7px 1rem;font-size:11.5px;color:var(--text2);cursor:pointer;border-left:2px solid transparent;transition:all .15s;text-decoration:none}
+.nav-lnk:hover,.nav-lnk.on{color:var(--text);background:var(--bg3);border-left-color:var(--saffron)}
+.nav-lnk .ni{width:18px;text-align:center;font-size:12px;flex-shrink:0}
+
+/* MAIN */
+#main{margin-left:228px;padding:2rem 2rem 5rem;position:relative;z-index:1}
+#mbb{display:none;position:fixed;top:10px;left:10px;z-index:200;background:var(--bg3);border:1px solid var(--bd2);color:var(--text);padding:6px 10px;border-radius:6px;cursor:pointer;font-size:12px;font-family:'Inter',sans-serif}
+
+/* SECTIONS */
+.sec{display:none}.sec.on{display:block}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(255,159,58,.08),rgba(61,186,122,.05),rgba(91,156,246,.04));border:1px solid var(--bd2);border-radius:14px;padding:2.5rem;margin-bottom:2rem}
+.hero::after{content:'1885';position:absolute;right:-15px;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:150px;font-weight:900;color:rgba(255,159,58,.04);line-height:1;pointer-events:none}
+.hero h1{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--saffron);line-height:1.2;margin-bottom:6px}
+.hero p{font-size:13px;color:var(--text2);max-width:520px}
+.hb-row{display:flex;gap:7px;margin-top:14px;flex-wrap:wrap}
+.hb{font-size:10px;padding:3px 10px;border-radius:20px;font-weight:600;letter-spacing:.3px}
+.hbs{background:rgba(255,159,58,.14);color:var(--saffron);border:1px solid rgba(255,159,58,.3)}
+.hbg{background:rgba(61,186,122,.12);color:var(--green);border:1px solid rgba(61,186,122,.25)}
+.hbt{background:rgba(54,201,192,.12);color:var(--teal);border:1px solid rgba(54,201,192,.25)}
+.hbr{background:rgba(224,90,122,.12);color:var(--rose);border:1px solid rgba(224,90,122,.25)}
+
+/* SECTION TITLE */
+.stl{display:flex;align-items:center;gap:10px;margin:1.5rem 0 1rem;padding-bottom:8px;border-bottom:1px solid var(--bd2)}
+.stl h2{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700}
+.stn{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bg);background:var(--saffron);padding:2px 8px;border-radius:4px;font-weight:700}
+.stg{font-size:10px;color:var(--text3);background:var(--bg4);padding:2px 8px;border-radius:4px;margin-left:auto}
+
+/* BRANCH */
+.br{border:1px solid var(--bd);border-radius:10px;margin-bottom:1rem;overflow:hidden}
+.brhd{display:flex;align-items:center;gap:10px;padding:11px 14px;cursor:pointer;background:var(--bg2);border-bottom:1px solid var(--bd);transition:background .15s;user-select:none}
+.brhd:hover{background:var(--bg3)}
+.bri{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.brt{font-size:13.5px;font-weight:600;flex:1}
+.brb{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;font-family:'JetBrains Mono',monospace}
+.ch{font-size:10px;color:var(--text3);transition:transform .25s}
+.br.on .ch{transform:rotate(90deg)}
+.brbd{display:none;padding:1rem 1.2rem;background:var(--bg)}
+.br.on .brbd{display:block}
+
+/* color sets */
+.cs .brhd{border-left:3px solid var(--saffron)}.cs .bri{background:rgba(255,159,58,.12);color:var(--saffron)}.cs .brt{color:var(--saffron)}.cs .brb{background:rgba(255,159,58,.14);color:var(--saffron)}
+.cg .brhd{border-left:3px solid var(--green)}.cg .bri{background:rgba(61,186,122,.1);color:var(--green)}.cg .brt{color:var(--green)}.cg .brb{background:rgba(61,186,122,.12);color:var(--green)}
+.ct .brhd{border-left:3px solid var(--teal)}.ct .bri{background:rgba(54,201,192,.1);color:var(--teal)}.ct .brt{color:var(--teal)}.ct .brb{background:rgba(54,201,192,.12);color:var(--teal)}
+.cr .brhd{border-left:3px solid var(--rose)}.cr .bri{background:rgba(224,90,122,.1);color:var(--rose)}.cr .brt{color:var(--rose)}.cr .brb{background:rgba(224,90,122,.12);color:var(--rose)}
+.cb .brhd{border-left:3px solid var(--blue)}.cb .bri{background:rgba(91,156,246,.1);color:var(--blue)}.cb .brt{color:var(--blue)}.cb .brb{background:rgba(91,156,246,.12);color:var(--blue)}
+.cp .brhd{border-left:3px solid var(--purple)}.cp .bri{background:rgba(155,110,232,.1);color:var(--purple)}.cp .brt{color:var(--purple)}.cp .brb{background:rgba(155,110,232,.12);color:var(--purple)}
+
+/* CONTENT */
+.g2{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:8px 0}
+.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:9px;margin:8px 0}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:11px 13px}
+.card .ch2{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.card p,.card li{font-size:12.5px;color:var(--text2);line-height:1.65}
+.card ul{padding-left:14px}.card li{margin-bottom:2px}
+.card strong{color:var(--text);font-weight:500}
+
+.fbox{background:var(--bg3);border:1px solid var(--bd2);border-radius:8px;padding:10px 14px;margin:8px 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);line-height:1.7}
+.fbox .fl{font-family:'Inter',sans-serif;font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.fbox .fe{font-family:'Inter',sans-serif;font-size:11.5px;color:var(--text2);margin-top:5px}
+
+.mnem{background:rgba(61,186,122,.06);border:1px solid rgba(61,186,122,.2);border-radius:8px;padding:10px 13px;margin:8px 0}
+.mnem .mt{font-size:10px;color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.mnem .mc{font-family:'Playfair Display',serif;font-size:14px;color:var(--text);line-height:1.5;font-style:italic}
+.mnem .md{font-size:11.5px;color:var(--text2);margin-top:4px}
+
+.trap{background:rgba(224,90,122,.07);border:1px solid rgba(224,90,122,.2);border-radius:8px;padding:10px 13px;margin:8px 0}
+.trap .tt{font-size:10px;color:var(--rose);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.trap .tc{font-size:12px;color:var(--text2);line-height:1.6}
+.trap .tc strong{color:var(--rose)}
+
+.fact{background:rgba(91,156,246,.06);border:1px solid rgba(91,156,246,.18);border-radius:8px;padding:10px 13px;margin:8px 0}
+.fact .ftt{font-size:10px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.fact .ftc{font-size:12.5px;color:var(--text2);line-height:1.65}
+.fact .ftc strong{color:var(--text)}
+
+.sh{background:rgba(232,184,75,.06);border:1px solid rgba(232,184,75,.2);border-radius:8px;padding:10px 13px;margin:8px 0}
+.sh .sht{font-size:10px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.sh .shc{font-size:12.5px;color:var(--text);line-height:1.65}
+.sh .shc code{font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:12px}
+
+.mi{font-size:12.5px;color:var(--text2);line-height:1.65;padding:2px 0;display:flex;gap:8px;margin-left:18px}
+.mi::before{content:'›';color:var(--text3);flex-shrink:0}
+.mi strong{color:var(--text);font-weight:500}
+.sub{font-size:12.5px;font-weight:600;color:var(--text);margin:10px 0 5px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'';width:12px;height:2px;background:currentColor;opacity:.5;display:inline-block}
+
+.tg{display:inline-block;font-size:10px;padding:1px 7px;border-radius:8px;margin:1px 2px;font-weight:600;font-family:'JetBrains Mono',monospace}
+.ts{background:rgba(255,159,58,.14);color:var(--saffron)}
+.tg2{background:rgba(61,186,122,.11);color:var(--green)}
+.tt2{background:rgba(54,201,192,.11);color:var(--teal)}
+.tr2{background:rgba(224,90,122,.12);color:var(--rose)}
+.tb{background:rgba(91,156,246,.12);color:var(--blue)}
+.tp{background:rgba(155,110,232,.11);color:var(--purple)}
+
+hr.dv{border:none;border-top:1px solid var(--bd);margin:10px 0}
+
+/* DATA TABLE */
+.dt{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+.dt th{background:var(--bg3);padding:7px 10px;text-align:left;font-weight:600;color:var(--text2);border-bottom:1px solid var(--bd2);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.dt td{padding:6px 10px;border-bottom:1px solid var(--bd);color:var(--text2);vertical-align:top;line-height:1.5}
+.dt tr:hover td{background:var(--bg2)}
+.dt .hs{color:var(--saffron);font-weight:600;font-family:'JetBrains Mono',monospace}
+.dt .hg{color:var(--green);font-weight:600}
+.dt .hr{color:var(--rose);font-weight:600}
+.dt .ht{color:var(--teal);font-weight:600}
+.dt .hb{color:var(--blue);font-weight:600}
+
+/* LEADER CARDS */
+.leader-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin:8px 0}
+.lcard{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;overflow:hidden}
+.lcard-hd{padding:12px 14px 8px;border-bottom:1px solid var(--bd)}
+.lcard-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--text)}
+.lcard-nick{font-size:11px;color:var(--saffron);margin-top:2px;font-weight:600}
+.lcard-body{padding:10px 14px}
+.lcard-body li{font-size:12px;color:var(--text2);line-height:1.6;padding:2px 0 2px 13px;position:relative;list-style:none}
+.lcard-body li::before{content:'▸';position:absolute;left:0;color:var(--text3);font-size:9px;top:4px}
+.lcard-body li strong{color:var(--text);font-weight:500}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:24px;margin:8px 0}
+.timeline::before{content:'';position:absolute;left:6px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--saffron),var(--teal),var(--green))}
+.tli{position:relative;margin-bottom:1rem;padding-left:20px}
+.tli::before{content:'';position:absolute;left:-18px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--bg3);border:2px solid var(--saffron);flex-shrink:0}
+.tli .tly{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);margin-bottom:2px}
+.tli .tle{font-size:13px;font-weight:600;color:var(--text)}
+.tli .tld{font-size:12px;color:var(--text2);line-height:1.55}
+
+/* SESSION TABLE */
+.sess-grid{display:grid;gap:8px;margin:8px 0}
+.sess-card{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:11px 14px;display:grid;grid-template-columns:80px 1fr;gap:10px;align-items:start}
+.sess-year{font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;color:var(--saffron);line-height:1}
+.sess-city{font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.sess-info .sess-pres{font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:3px}
+.sess-info .sess-note{font-size:12px;color:var(--text2);line-height:1.55}
+.sess-info .sess-sig{font-size:11px;color:var(--teal);margin-top:4px;font-style:italic}
+
+/* FLOW */
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0}
+.fb{background:var(--bg3);border:1px solid var(--bd2);border-radius:6px;padding:6px 12px;font-size:12px;color:var(--text);font-weight:500}
+.fa{font-size:14px;color:var(--saffron);flex-shrink:0}
+.fb.hs{background:rgba(255,159,58,.1);border-color:rgba(255,159,58,.25);color:var(--saffron)}
+.fb.hg{background:rgba(61,186,122,.08);border-color:rgba(61,186,122,.22);color:var(--green)}
+.fb.hr{background:rgba(224,90,122,.08);border-color:rgba(224,90,122,.22);color:var(--rose)}
+
+/* COMPARISON TABLE */
+.cmp{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+.cmp th{padding:8px 12px;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid var(--bd2)}
+.cmp td{padding:7px 12px;border-bottom:1px solid var(--bd);font-size:12px;color:var(--text2);vertical-align:top}
+.cmp .aspect{color:var(--text);font-weight:500;font-size:12px}
+.cmp tr:hover td{background:var(--bg2)}
+.th-m{color:var(--teal)}.th-e{color:var(--rose)}
+
+/* QUIZ */
+.qcard{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-bottom:12px}
+.qn{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);margin-bottom:5px}
+.qt{font-size:13.5px;font-weight:500;color:var(--text);margin-bottom:10px;line-height:1.55}
+.qopts{display:flex;flex-direction:column;gap:5px}
+.qo{background:var(--bg3);border:1px solid var(--bd);border-radius:6px;padding:8px 12px;cursor:pointer;font-size:12.5px;color:var(--text2);transition:all .15s;text-align:left;width:100%;font-family:'Inter',sans-serif}
+.qo:hover:not(:disabled){background:var(--bg4);color:var(--text);border-color:var(--bd2)}
+.qo.ok{background:rgba(61,186,122,.14);border-color:var(--green);color:var(--green)}
+.qo.no{background:rgba(224,90,122,.12);border-color:var(--rose);color:var(--rose)}
+.qexp{display:none;margin-top:9px;padding:8px 12px;background:var(--bg4);border-radius:6px;font-size:11.5px;color:var(--text2);line-height:1.55;border-left:2px solid var(--teal)}
+.qexp.on{display:block}
+.qnxt{display:none;margin-top:10px;background:var(--saffron);color:var(--bg);border:none;padding:7px 18px;border-radius:6px;font-family:'Inter',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer}
+.qnxt:hover{opacity:.85}
+.qsc{text-align:center;padding:3rem 1rem;display:none}
+.qscn{font-size:3.5rem;font-family:'JetBrains Mono',monospace;color:var(--saffron);font-weight:700}
+.qscl{font-size:13px;color:var(--text2);margin-top:6px}
+.qscr{margin-top:1.5rem;background:none;border:1px solid var(--bd2);color:var(--text);padding:8px 22px;border-radius:6px;cursor:pointer;font-family:'Inter',sans-serif;font-size:12.5px}
+.qpw{height:3px;background:var(--bg3);border-radius:2px;margin-bottom:1.5rem}
+.qpf{height:100%;background:var(--saffron);border-radius:2px;transition:width .3s}
+
+/* REVISION */
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:8px 0}
+.rcard{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:14px}
+.rcard h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.rcard ul{list-style:none}
+.rcard li{font-size:11.5px;color:var(--text2);padding:2px 0 2px 13px;position:relative;line-height:1.5}
+.rcard li::before{content:'▸';position:absolute;left:0;color:var(--text3);font-size:9px;top:4px}
+.rcard li strong{color:var(--text);font-weight:500}
+
+/* FACT WALL */
+.fw{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:10px;margin:8px 0}
+.fwc{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:12px}
+.fwc .fwt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.fwc .fwi{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--gold);background:var(--bg3);padding:5px 9px;border-radius:5px;margin:3px 0;line-height:1.5}
+.fwc .fwn{font-size:11px;color:var(--text3);margin-top:4px}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  #nav{transform:translateX(-100%)}
+  #nav.on{transform:translateX(0)}
+  #main{margin-left:0;padding:1rem 1rem 4rem}
+  #mbb{display:block}
+  .hero h1{font-size:1.4rem}
+}
+@media print{#nav,#mbb{display:none}#main{margin-left:0}.brbd{display:block!important}.ch{display:none}}
+</style>
+</head>
+<body>
+
+<button id="mbb" onclick="document.getElementById('nav').classList.toggle('on')">☰</button>
+
+<nav id="nav">
+  <div class="nav-logo">
+    <span>🏛️ EARLY INC (1885–1905)</span>
+    <small>CDS 2026 + UPSC + NDA Master Map</small>
+  </div>
+  <div class="nav-sec">Foundation</div>
+  <a class="nav-lnk on" onclick="show('intro')"><span class="ni">📜</span>Introduction</a>
+  <a class="nav-lnk" onclick="show('preconj')"><span class="ni">🏛️</span>Pre-Congress Bodies</a>
+  <a class="nav-lnk" onclick="show('formation')"><span class="ni">⭐</span>Formation of INC</a>
+  <div class="nav-sec">Moderate Era</div>
+  <a class="nav-lnk" onclick="show('moderate')"><span class="ni">🕊️</span>Moderate Phase</a>
+  <a class="nav-lnk" onclick="show('demands')"><span class="ni">📋</span>Demands & Methods</a>
+  <a class="nav-lnk" onclick="show('economy')"><span class="ni">💰</span>Economic Critique</a>
+  <a class="nav-lnk" onclick="show('sessions')"><span class="ni">📅</span>INC Sessions</a>
+  <div class="nav-sec">Rise of Extremism</div>
+  <a class="nav-lnk" onclick="show('british')"><span class="ni">⚔️</span>British Attitude</a>
+  <a class="nav-lnk" onclick="show('extremism')"><span class="ni">🔥</span>Rise of Extremism</a>
+  <a class="nav-lnk" onclick="show('bengal')"><span class="ni">🗺️</span>Partition of Bengal</a>
+  <a class="nav-lnk" onclick="show('swadeshi')"><span class="ni">🌿</span>Swadeshi & Boycott</a>
+  <div class="nav-sec">People & Ideas</div>
+  <a class="nav-lnk" onclick="show('leaders')"><span class="ni">👥</span>Leaders Profiles</a>
+  <a class="nav-lnk" onclick="show('press')"><span class="ni">📰</span>Press & Education</a>
+  <a class="nav-lnk" onclick="show('historian')"><span class="ni">📚</span>Historian Views</a>
+  <div class="nav-sec">Exam Tools</div>
+  <a class="nav-lnk" onclick="show('acts')"><span class="ni">⚖️</span>Acts & Policies</a>
+  <a class="nav-lnk" onclick="show('traps')"><span class="ni">⚠️</span>Traps & Errors</a>
+  <a class="nav-lnk" onclick="show('facts')"><span class="ni">📋</span>Fact Flash Sheet</a>
+  <a class="nav-lnk" onclick="show('revision')"><span class="ni">⚡</span>Quick Revision</a>
+  <a class="nav-lnk" onclick="show('quiz')"><span class="ni">✅</span>CDS Test (25 Qs)</a>
+  <a class="nav-lnk" onclick="show('upsc')"><span class="ni">🏛️</span>UPSC Qs (15)</a>
+</nav>
+
+<div id="main">
+
+<!-- ════ INTRODUCTION ════ -->
+<div id="intro" class="sec on">
+  <div class="hero">
+    <h1>Early Indian National Congress</h1>
+    <p>1885–1905 · CDS 2 2026 · UPSC · NDA — Complete Revision System</p>
+    <div class="hb-row">
+      <span class="hb hbs">Founded 1885</span>
+      <span class="hb hbg">Moderate Phase</span>
+      <span class="hb hbt">Constitutional Agitation</span>
+      <span class="hb hbr">Partition of Bengal 1905</span>
+    </div>
+  </div>
+
+  <div class="stl"><span class="stn">01</span><h2>Historical Background & Political Awakening</h2><span class="stg">FOUNDATION</span></div>
+
+  <div class="br cs on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">📜</div><div class="brt">Political Atmosphere Before 1885</div><span class="brb">CONTEXT</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--saffron)">Socio-Religious Reform Impact</div>
+          <p>Reform movements created educated middle class: <strong>Brahmo Samaj</strong> (Bengal), <strong>Prarthana Samaj</strong> (Bombay), <strong>Arya Samaj</strong> (Punjab). National consciousness emerged through reformist discourse.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--green)">Western Education Effect</div>
+          <p>English education created class aware of: Liberty, Equality, Rights, Constitutionalism. Led to awareness of contrast between British ideals and Indian reality. <strong>Macaulay's education policy → backfired on British.</strong></p></div>
+        <div class="card"><div class="ch2" style="color:var(--teal)">Economic Discontent</div>
+          <p>Deindustrialization, drain of wealth, high land taxes, recurring famines created mass discontent. Rising unemployment among educated Indians → fuel for nationalism.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--rose)">1857 Aftermath</div>
+          <p>1857 Revolt showed need for <strong>organised, systematic</strong> national movement. Government became more repressive. Indian intelligentsia sought constitutional, non-violent methods.</p></div>
+      </div>
+      <div class="timeline">
+        <div class="tli"><div class="tly">1836</div><div class="tle">Landholders' Society, Bengal</div><div class="tld">First political body. Dwarkanath Tagore & Prasanna Kumar Tagore.</div></div>
+        <div class="tli"><div class="tly">1851</div><div class="tle">British Indian Association, Bengal</div><div class="tld">Elite-dominated, zamindari interests. Debendranath Tagore.</div></div>
+        <div class="tli"><div class="tly">1867</div><div class="tle">Poona Sarvajanik Sabha</div><div class="tld">M.G. Ranade & Ganesh Vasudeo Joshi. Wider social base.</div></div>
+        <div class="tli"><div class="tly">1876</div><div class="tle">Indian Association, Calcutta</div><div class="tly-note">Surendranath Banerjee. First truly political body. All-India aspirations.</div></div>
+        <div class="tli"><div class="tly">1884</div><div class="tle">Madras Mahajan Sabha</div><div class="tld">M. Viraraghavachari, B. Subramania Aiyer, P. Ananda Charlu.</div></div>
+        <div class="tli"><div class="tly">1885</div><div class="tle">INDIAN NATIONAL CONGRESS — Founded</div><div class="tld">Bombay. A.O. Hume's initiative. W.C. Bonnerjee as first President.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cg">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚠️</div><div class="brt">Ilbert Bill Controversy (1883) — Immediate Trigger</div><span class="brb">CATALYST</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="fact">
+        <div class="ftt">📌 Ilbert Bill Context</div>
+        <div class="ftc">
+          <strong>Ilbert Bill (1883):</strong> Drafted by C.P. Ilbert (Legal Member of Viceroy's council under Ripon). Proposed that Indian judges could try European British subjects in criminal cases in mofussil courts.<br><br>
+          <strong>European reaction:</strong> Massive organized opposition. Europeans held meetings, petitioned, organized "White Mutiny." Press campaign against the bill.<br><br>
+          <strong>Compromise:</strong> Bill amended — jury of at least half European membership when Indian judge tries European. Showed organized British opposition could influence policy.<br><br>
+          <strong>Indian lesson:</strong> Indians saw organized agitation worked. Led directly to formation of INC to represent Indian interests systematically.
+        </div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ CDS Trap: Ilbert Bill</div>
+        <div class="tc">The Ilbert Bill was proposed under Viceroy <strong>Lord Ripon</strong> (1880–84), NOT Dufferin. A.O. Hume's INC idea developed during Dufferin's time (1884–88). Ripon was the reform-minded viceroy; Dufferin succeeded him.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PRE-CONGRESS BODIES ════ -->
+<div id="preconj" class="sec">
+  <div class="stl"><span class="stn">02</span><h2>Pre-Congress Political Associations</h2><span class="stg">PIONEERS</span></div>
+
+  <div class="br cs on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🏛️</div><div class="brt">All Pre-Congress Associations — Complete Table</div><span class="brb">COMPARISON</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Association</th><th>Year</th><th>Location</th><th>Founder(s)</th><th>Significance</th></tr>
+        <tr><td class="hs">Landholders' Society</td><td class="hs">1836</td><td>Bengal</td><td>Dwarkanath Tagore, Prasanna Kumar Tagore</td><td>First political body; zamindar interests</td></tr>
+        <tr><td class="hs">Bengal British India Society</td><td class="hs">1843</td><td>Bengal</td><td>William Adam, George Thompson</td><td>Both Indians & Europeans; limited scope</td></tr>
+        <tr><td class="hs">British Indian Association</td><td class="hs">1851</td><td>Bengal</td><td>Debendranath Tagore, Radhakanta Deb</td><td>Petitioned Parliament; upper-class body</td></tr>
+        <tr><td class="hs">East India Association</td><td class="hs">1866</td><td>London</td><td>Dadabhai Naoroji</td><td>First in London; lobbied British Parliament/public</td></tr>
+        <tr><td class="hs">Poona Sarvajanik Sabha</td><td class="hs">1867</td><td>Pune, Bombay</td><td>M.G. Ranade, G.V. Joshi</td><td>Wider base; peasant grievances too</td></tr>
+        <tr><td class="hs">Indian Society</td><td class="hs">1872</td><td>London</td><td>Anandamohan Bose</td><td>Indian students in Britain</td></tr>
+        <tr><td class="hs">Indian Association</td><td class="hs">1876</td><td>Calcutta</td><td>Surendranath Banerjee, Anandamohan Bose</td><td>Mass political org; Civil Service agitation; All-India aspiration</td></tr>
+        <tr><td class="hs">Madras Mahajan Sabha</td><td class="hs">1884</td><td>Madras</td><td>M. Viraraghavachari, B. Subramania Aiyer, P.A. Charlu</td><td>South India representation</td></tr>
+        <tr><td class="hs">Bombay Presidency Association</td><td class="hs">1885</td><td>Bombay</td><td>Pherozeshah Mehta, K.T. Telang, Badruddin Tyabji</td><td>Western India; merged into INC</td></tr>
+      </table>
+      <div class="mnem">
+        <div class="mt">🧠 Pre-Congress Timeline Mnemonic</div>
+        <div class="mc">"Lands Belong East — Poona Indians Made Bombay National"</div>
+        <div class="md">Landholders(1836) → British Indian Assoc(1851) → East India Assoc(1866) → Poona Sabha(1867) → Indian Assoc(1876) → Madras Sabha(1884) → Bombay Pres Assoc(1885) → National INC(1885)</div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Key Trap: Indian Association vs INC</div>
+        <div class="tc">Indian Association (1876, Surendranath Banerjee) ≠ Indian National Congress (1885, Hume). The Indian Association held its own National Conferences (1883, 1885) but merged with INC later. <strong>Surendranath Banerjee initially resisted INC</strong> but eventually joined.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ FORMATION ════ -->
+<div id="formation" class="sec">
+  <div class="stl"><span class="stn">03</span><h2>Formation of INC (1885)</h2><span class="stg">FOUNDING EVENT</span></div>
+
+  <div class="br cs on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⭐</div><div class="brt">A.O. Hume & INC Formation</div><span class="brb">FOUNDING</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--saffron)">A.O. Hume (1829–1912)</div>
+          <p><strong>Allan Octavian Hume</strong> — Retired British ICS officer. Called "Father of INC." Ornithologist. Met Viceroy Dufferin for guidance. Organized first session in Bombay (1885).<br><strong>Wrote circular to Calcutta graduates (1883)</strong> urging formation of national body.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--teal)">First Session (Dec 1885)</div>
+          <p><strong>Date:</strong> 28–30 December 1885.<br><strong>Venue:</strong> Gokuldas Tejpal Sanskrit College, Bombay.<br><strong>Delegates:</strong> 72 (originally planned for Pune, shifted due to cholera).<br><strong>President:</strong> W.C. Bonnerjee (Womesh Chandra Bonnerjee).</p></div>
+        <div class="card"><div class="ch2" style="color:var(--green)">Objectives of INC</div>
+          <ul>
+            <li>Consolidate national sentiment</li>
+            <li>Frame and present people's demands to government</li>
+            <li>Train Indians in political work</li>
+            <li>Promote friendly relations among nationalist workers</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--rose)">Safety Valve Theory</div>
+          <p><strong>Lala Lajpat Rai</strong> first called INC a "safety valve." Theory: British created INC to provide peaceful outlet for political discontent, preventing revolution.<br><strong>Evidence:</strong> Hume consulted Dufferin; initial British support.</p></div>
+      </div>
+      <div class="fact">
+        <div class="ftt">📌 First Session — Key Facts</div>
+        <div class="ftc">
+          <strong>Original plan:</strong> Pune (but cholera epidemic shifted it to Bombay). <strong>Delegates:</strong> 72 from all over India. <strong>No woman delegate</strong> in first session. <strong>W.C. Bonnerjee</strong> was a Calcutta barrister. Session also called "National Conference" initially. <strong>Dadabhai Naoroji</strong> proposed the name "Indian National Congress."
+        </div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Safety Valve Theory — UPSC Trap</div>
+        <div class="tc">Who gave Safety Valve Theory? <strong>Lala Lajpat Rai</strong> (in Young India, 1916). NOT Hume himself. Bipin Chandra Pal also supported this critique. The nationalist counter-argument: even if started as safety valve, it became the vehicle of India's freedom movement. <strong>This is a Mains question theme.</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SVG INC Formation Chart -->
+  <div style="display:flex;justify-content:center;margin:1rem 0">
+    <svg width="500" height="150" viewBox="0 0 500 150" xmlns="http://www.w3.org/2000/svg">
+      <!-- Boxes -->
+      <rect x="10" y="55" width="90" height="40" rx="6" fill="rgba(255,159,58,.15)" stroke="rgba(255,159,58,.4)" stroke-width="1"/>
+      <text x="55" y="73" text-anchor="middle" fill="rgba(255,159,58,.9)" font-size="9" font-family="Inter" font-weight="600">A.O. Hume</text>
+      <text x="55" y="85" text-anchor="middle" fill="rgba(255,159,58,.7)" font-size="8" font-family="Inter">ICS (Retd)</text>
+      <line x1="100" y1="75" x2="130" y2="75" stroke="rgba(255,159,58,.5)" stroke-width="1.5" marker-end="url(#arr)"/>
+
+      <rect x="130" y="55" width="90" height="40" rx="6" fill="rgba(54,201,192,.1)" stroke="rgba(54,201,192,.3)" stroke-width="1"/>
+      <text x="175" y="73" text-anchor="middle" fill="rgba(54,201,192,.9)" font-size="9" font-family="Inter" font-weight="600">Viceroy</text>
+      <text x="175" y="85" text-anchor="middle" fill="rgba(54,201,192,.7)" font-size="8" font-family="Inter">Dufferin</text>
+      <line x1="220" y1="75" x2="250" y2="75" stroke="rgba(54,201,192,.5)" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+      <rect x="250" y="40" width="100" height="70" rx="8" fill="rgba(61,186,122,.12)" stroke="rgba(61,186,122,.4)" stroke-width="1.5"/>
+      <text x="300" y="68" text-anchor="middle" fill="rgba(61,186,122,.9)" font-size="10" font-family="Inter" font-weight="700">INC</text>
+      <text x="300" y="82" text-anchor="middle" fill="rgba(61,186,122,.8)" font-size="8" font-family="JetBrains Mono">Dec 1885</text>
+      <text x="300" y="96" text-anchor="middle" fill="rgba(61,186,122,.6)" font-size="8" font-family="Inter">Bombay</text>
+      <line x1="350" y1="75" x2="380" y2="75" stroke="rgba(61,186,122,.5)" stroke-width="1.5" marker-end="url(#arr3)"/>
+
+      <rect x="380" y="55" width="110" height="40" rx="6" fill="rgba(91,156,246,.1)" stroke="rgba(91,156,246,.3)" stroke-width="1"/>
+      <text x="435" y="71" text-anchor="middle" fill="rgba(91,156,246,.9)" font-size="9" font-family="Inter" font-weight="600">W.C. Bonnerjee</text>
+      <text x="435" y="83" text-anchor="middle" fill="rgba(91,156,246,.7)" font-size="8" font-family="Inter">1st President</text>
+
+      <!-- Arrows -->
+      <defs>
+        <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="rgba(255,159,58,.6)"/></marker>
+        <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="rgba(54,201,192,.6)"/></marker>
+        <marker id="arr3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="rgba(61,186,122,.6)"/></marker>
+      </defs>
+      <text x="250" y="130" text-anchor="middle" fill="rgba(255,255,255,.3)" font-size="9" font-family="Inter">INC Formation Chain — Bombay, 28–30 Dec 1885</text>
+    </svg>
+  </div>
+</div>
+
+<!-- ════ MODERATE PHASE ════ -->
+<div id="moderate" class="sec">
+  <div class="stl"><span class="stn">04</span><h2>Moderate Phase (1885–1905)</h2><span class="stg">EARLY INC</span></div>
+
+  <div class="br ct on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🕊️</div><div class="brt">Moderate Ideology & Approach</div><span class="brb">IDEOLOGY</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--teal)">Core Beliefs</div>
+          <ul>
+            <li><strong>Faith in British justice</strong> and constitutional methods</li>
+            <li>British rule ultimately beneficial for India</li>
+            <li>Gradual reforms through peaceful agitation</li>
+            <li>Petitions, prayers, memorials to Parliament</li>
+            <li>Use of press & public opinion</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--saffron)">Political Methods</div>
+          <ul>
+            <li><strong>Petitions</strong> to Parliament and Councils</li>
+            <li><strong>Delegations</strong> to British officials</li>
+            <li><strong>Press campaigns</strong> to educate public</li>
+            <li><strong>Annual Congress sessions</strong> for deliberation</li>
+            <li><strong>Deputations to England</strong> (Dadabhai elected MP)</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--green)">Class Base</div>
+          <p>Largely educated middle class: lawyers, doctors, teachers, journalists. <strong>Limited mass contact.</strong> Constitutional liberalism strongly influenced by British political thought. Called "3P" policy: <strong>Petition, Prayer, Protest.</strong></p></div>
+        <div class="card"><div class="ch2" style="color:var(--rose)">Assessment</div>
+          <p>Bal Gangadhar Tilak criticized: "mendicancy." British were unresponsive. But moderates <strong>created political consciousness, established INC as institution, and articulated India's economic exploitation.</strong></p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cs">
+    <div class="brhd" onclick="tb(this)"><div class="bri">👤</div><div class="brt">Key Moderate Leaders — Quick Profiles</div><span class="brb">LEADERS</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="leader-grid">
+        <div class="lcard">
+          <div class="lcard-hd"><div class="lcard-name">Dadabhai Naoroji</div><div class="lcard-nick">Grand Old Man of India · Father of Indian Nationalism</div></div>
+          <div class="lcard-body">
+            <ul>
+              <li><strong>Drain Theory:</strong> Articulated economic exploitation in "Poverty and Un-British Rule in India" (1901)</li>
+              <li>Founded <strong>East India Association (1866)</strong> in London</li>
+              <li>First Indian elected to British Parliament (<strong>1892, Finsbury</strong>)</li>
+              <li>INC President: <strong>1886, 1893, 1906</strong></li>
+              <li>Coined the word <strong>"Swaraj"</strong> in 1906 Calcutta session</li>
+              <li><strong>Newspaper:</strong> Voice of India</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lcard">
+          <div class="lcard-hd"><div class="lcard-name">Gopal Krishna Gokhale</div><div class="lcard-nick">Gokhale — Gandhi's Political Guru · Servant of India</div></div>
+          <div class="lcard-body">
+            <ul>
+              <li>Founded <strong>Servants of India Society (1905)</strong></li>
+              <li>Moderate par excellence; <strong>Gandhi called him his political guru</strong></li>
+              <li>Emphasized social reform alongside political work</li>
+              <li>Member of Imperial Legislative Council; fought for education rights</li>
+              <li>INC President: <strong>1905 (Banaras)</strong></li>
+              <li>Favored cooperation with liberals in Britain (British Committee)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lcard">
+          <div class="lcard-hd"><div class="lcard-name">Surendranath Banerjee</div><div class="lcard-nick">Rashtraguru · Nation Maker</div></div>
+          <div class="lcard-body">
+            <ul>
+              <li>Founded <strong>Indian Association (1876)</strong> and <strong>Bengalee</strong> newspaper</li>
+              <li>Organized first National Conference (1883) — rivaled INC early</li>
+              <li>Dismissed from ICS (discriminatory exam age rule) — became nationalist</li>
+              <li>INC President: <strong>1895, 1902</strong></li>
+              <li>Later opposed non-cooperation — called <strong>"Surrender-not" Banerjee</strong> by critics</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lcard">
+          <div class="lcard-hd"><div class="lcard-name">Pherozeshah Mehta</div><div class="lcard-nick">Lion of Bombay · Uncrowned King of Bombay</div></div>
+          <div class="lcard-body">
+            <ul>
+              <li>One of founders of <strong>Bombay Presidency Association (1885)</strong></li>
+              <li>Dominated INC for 20+ years; powerful organizer</li>
+              <li>Newspaper: <strong>Bombay Chronicle</strong></li>
+              <li>INC President: <strong>1890</strong></li>
+              <li>Strong opponent of Tilak's extremist methods</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lcard">
+          <div class="lcard-hd"><div class="lcard-name">W.C. Bonnerjee</div><div class="lcard-nick">First Congress President</div></div>
+          <div class="lcard-body">
+            <ul>
+              <li><strong>First President of INC (1885, Bombay)</strong></li>
+              <li>Calcutta barrister, British-trained lawyer</li>
+              <li>INC President again: <strong>1892 (Allahabad)</strong></li>
+              <li>Represented constitutional moderate tradition</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lcard">
+          <div class="lcard-hd"><div class="lcard-name">Badruddin Tyabji</div><div class="lcard-nick">First Muslim President of INC</div></div>
+          <div class="lcard-body">
+            <ul>
+              <li>INC President: <strong>1887 (Madras)</strong> — first Muslim Congress President</li>
+              <li>Co-founder of <strong>Bombay Presidency Association</strong></li>
+              <li>Promoted Hindu-Muslim unity in early nationalism</li>
+              <li>Countered Sayyid Ahmad Khan's politics of separatism</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lcard">
+          <div class="lcard-hd"><div class="lcard-name">M.G. Ranade</div><div class="lcard-nick">Mahadev Govind Ranade — Moderate Reformer</div></div>
+          <div class="lcard-body">
+            <ul>
+              <li>Co-founded <strong>Poona Sarvajanik Sabha (1867)</strong></li>
+              <li>Backed Indian economics — wrote "Rise of Maratha Power"</li>
+              <li>Linked social reform with political reform</li>
+              <li>Mentor of Gokhale; opposed Tilak's conservative social views</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ DEMANDS ════ -->
+<div id="demands" class="sec">
+  <div class="stl"><span class="stn">05</span><h2>Demands & Methods of Moderates</h2><span class="stg">POLITICAL PROGRAMME</span></div>
+
+  <div class="br ct on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">📋</div><div class="brt">Key Demands of the Moderate Congress</div><span class="brb">DEMANDS</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--teal)">Constitutional Reforms</div>
+          <ul>
+            <li>Expansion of Legislative Councils</li>
+            <li>Elective principle in councils</li>
+            <li>More Indians in Imperial Council</li>
+            <li>Repeal of repressive laws</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--saffron)">Administrative Reforms</div>
+          <ul>
+            <li><strong>Indianization of Civil Services</strong> (ICS)</li>
+            <li>Simultaneous Civil Services exam in India and England</li>
+            <li>Separation of judiciary from executive</li>
+            <li>Freedom of speech and press</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--green)">Economic Demands</div>
+          <ul>
+            <li>Reduce military expenditure (drain on India)</li>
+            <li>Reduce Home Charges</li>
+            <li>Cotton excise duty removal</li>
+            <li>Protection of Indian industries</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--blue)">Other Demands</div>
+          <ul>
+            <li>Trial by jury for political cases</li>
+            <li>Arms Act abolition</li>
+            <li>Repeal of Vernacular Press Act</li>
+            <li>India Office cost to be borne by Britain</li>
+          </ul>
+        </div>
+      </div>
+      <div class="fact">
+        <div class="ftt">📌 Indian Councils Act 1892 — Moderate Achievement</div>
+        <div class="ftc">
+          Passed as partial response to INC demands. Expanded legislative councils. Allowed discussion of budget. Introduced <strong>indirect elections</strong> (not direct). Indians could nominate some members. <strong>Limitations:</strong> No real control over finances, no direct election, no control over executive. Moderates saw it as partial victory; critics called it inadequate.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ ECONOMY ════ -->
+<div id="economy" class="sec">
+  <div class="stl"><span class="stn">06</span><h2>Economic Critique of British Rule</h2><span class="stg">DRAIN THEORY</span></div>
+
+  <div class="br cs on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">💰</div><div class="brt">Drain of Wealth Theory — Dadabhai Naoroji</div><span class="brb">CORE THEORY</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="fbox">
+        <div class="fl">Core Argument</div>
+        "India's poverty is due to systematic draining of its wealth to Britain"
+        <div class="fe">Dadabhai Naoroji, "Poverty and Un-British Rule in India" (1901). R.C. Dutt "Economic History of India" (1902) supported this.</div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--saffron)">Channels of Drain</div>
+          <ul>
+            <li><strong>Home Charges:</strong> Salaries of British officials, pensions paid in England</li>
+            <li><strong>Guaranteed Railway Interest:</strong> Profits from railways built with Indian capital</li>
+            <li><strong>Trade surplus:</strong> India exported more than imported, but surplus didn't return as capital</li>
+            <li>Payment for India's wars in Asia + Africa</li>
+            <li>India Office cost borne by India</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--rose)">Deindustrialization</div>
+          <ul>
+            <li>British machine goods destroyed Indian handicrafts</li>
+            <li>Textile industry of Dacca, Surat, Murshidabad collapsed</li>
+            <li>Free trade policy favored Britain (not India)</li>
+            <li><strong>Cotton excise duties</strong> — India taxed own cotton goods</li>
+            <li>Agriculture overcrowding → poverty cycle</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--green)">Famines (Economic Impact)</div>
+          <ul>
+            <li>25+ famines 1765–1858; 12+ after 1857</li>
+            <li>1876–78: Madras/Bombay famine (5.5M deaths)</li>
+            <li>1899–1900: Famine under Curzon</li>
+            <li>Famine Commissions Reports — often ignored</li>
+            <li>Created anti-British sentiment + nationalist fuel</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--teal)">Economic Nationalists</div>
+          <ul>
+            <li><strong>Dadabhai Naoroji:</strong> Drain Theory, "Poverty and..."</li>
+            <li><strong>R.C. Dutt:</strong> "Economic History of India" (2 vols)</li>
+            <li><strong>G. Subramania Iyer:</strong> "Our Public Finance"</li>
+            <li><strong>M.G. Ranade:</strong> "Essays on Indian Economics"</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SESSIONS ════ -->
+<div id="sessions" class="sec">
+  <div class="stl"><span class="stn">07</span><h2>Important INC Sessions (1885–1905)</h2><span class="stg">CHRONOLOGY</span></div>
+
+  <div class="br cs on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">📅</div><div class="brt">Session-wise Timeline — Complete</div><span class="brb">ALL SESSIONS</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="sess-grid">
+        <div class="sess-card">
+          <div><div class="sess-year">1885</div><div class="sess-city">Bombay</div></div>
+          <div class="sess-info"><div class="sess-pres">W.C. Bonnerjee (1st President)</div><div class="sess-note">72 delegates; Gokuldas Tejpal College. Resolutions: expansion of councils, civil service reforms, military expenditure reduction.</div><div class="sess-sig">★ First session of INC — historic founding moment</div></div>
+        </div>
+        <div class="sess-card">
+          <div><div class="sess-year">1886</div><div class="sess-city">Calcutta</div></div>
+          <div class="sess-info"><div class="sess-pres">Dadabhai Naoroji</div><div class="sess-note">436 delegates; growth of Congress shown. Naoroji's maiden INC presidential address stressed economic exploitation.</div><div class="sess-sig">First time Dadabhai Naoroji as President</div></div>
+        </div>
+        <div class="sess-card">
+          <div><div class="sess-year">1887</div><div class="sess-city">Madras</div></div>
+          <div class="sess-info"><div class="sess-pres">Badruddin Tyabji</div><div class="sess-note">First Muslim president of INC. Over 600 delegates. Sayyid Ahmad Khan urged Muslims not to attend (Two-Nation Theory seeds).</div><div class="sess-sig">★ First Muslim Congress President — Hindu-Muslim unity symbol</div></div>
+        </div>
+        <div class="sess-card">
+          <div><div class="sess-year">1888</div><div class="sess-city">Allahabad</div></div>
+          <div class="sess-info"><div class="sess-pres">George Yule</div><div class="sess-note">First European/British President of INC. Showed INC's non-racial character. Resolutions on civil liberties and council reforms.</div><div class="sess-sig">First & only British Congress President</div></div>
+        </div>
+        <div class="sess-card">
+          <div><div class="sess-year">1892</div><div class="sess-city">Allahabad</div></div>
+          <div class="sess-info"><div class="sess-pres">W.C. Bonnerjee (2nd time)</div><div class="sess-note">Indian Councils Act 1892 passed this year. INC demanded more reforms. Surendranath Banerjee prominent figure.</div><div class="sess-sig">ICA 1892 enacted — partial response to INC demands</div></div>
+        </div>
+        <div class="sess-card">
+          <div><div class="sess-year">1895</div><div class="sess-city">Pune</div></div>
+          <div class="sess-info"><div class="sess-pres">Surendranath Banerjee</div><div class="sess-note">Tilak organized Shivaji festival (1895) & Ganapati festival — mobilizing masses outside Congress framework.</div><div class="sess-sig">Rise of Tilak's popular nationalism visible</div></div>
+        </div>
+        <div class="sess-card">
+          <div><div class="sess-year">1900</div><div class="sess-city">Lahore</div></div>
+          <div class="sess-info"><div class="sess-pres">N.G. Chandavarkar</div><div class="sess-note">Period of Curzon's repressive policies. Growing frustration with moderate methods. Extremists gaining ground.</div><div class="sess-sig">Curzon era — crisis for moderates</div></div>
+        </div>
+        <div class="sess-card">
+          <div><div class="sess-year">1905</div><div class="sess-city">Banaras (Varanasi)</div></div>
+          <div class="sess-info"><div class="sess-pres">Gopal Krishna Gokhale</div><div class="sess-note">Partition of Bengal announced (July 1905). Swadeshi movement begins. Gokhale condemned partition but maintained moderate approach.</div><div class="sess-sig">★ Last moderate-dominated session before Surat Split (1907)</div></div>
+        </div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 Presidents Mnemonic (1885–1905)</div>
+        <div class="mc">"Bonnerjee's Dada Tours All Great Cities Between Many Sessions Gathering"</div>
+        <div class="md">B=Bonnerjee(1885) · D=Dadabhai(1886) · T=Tyabji(1887) · A=Allahabad/Yule(1888) · G=GS Iyer(1894) · B=Bonnerjee again(1892)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ BRITISH ATTITUDE ════ -->
+<div id="british" class="sec">
+  <div class="stl"><span class="stn">08</span><h2>British Attitude Towards INC</h2><span class="stg">REACTION</span></div>
+
+  <div class="br cr on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚔️</div><div class="brt">Evolution of British Response</div><span class="brb">HOSTILITY GROWS</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="timeline">
+        <div class="tli"><div class="tly">1885–87</div><div class="tle">Initial Tolerance / Ambiguity</div><div class="tld">Viceroy Dufferin initially tolerant; saw INC as safety valve. Government did not actively oppose first sessions.</div></div>
+        <div class="tli"><div class="tly">1887–88</div><div class="tle">First Signs of Hostility</div><div class="tld">Dufferin called INC leaders "microscopic minority." Encouraged Muslim separatism (Sayyid Ahmad Khan). Discouraged civil servants from attending INC.</div></div>
+        <div class="tli"><div class="tly">1892</div><div class="tle">Tokenism — Indian Councils Act</div><div class="tld">Partial reforms given to show British responsiveness. ICA gave limited powers to councils but no real change of power.</div></div>
+        <div class="tli"><div class="tly">1899–1905</div><div class="tle">Curzon's Repression</div><div class="tld">Lord Curzon: most repressive policies. Calcutta Corporation Act (1899), Universities Act (1904), Partition of Bengal (1905). Open contempt for INC.</div></div>
+        <div class="tli"><div class="tly">1905</div><div class="tle">Partition of Bengal — Deliberate Challenge</div><div class="tld">Curzon used partition to divide nationalist movement along religious lines. Weakened Bengal — the heart of nationalism.</div></div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--rose)">Divide & Rule</div>
+          <p>British encouraged <strong>communal polarization:</strong> Sayyid Ahmad Khan's Muslim League politics actively supported. Separate electorates seeded (before 1905). Discouraged Hindu-Muslim joint platform.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--saffron)">Criticism of Congress</div>
+          <p>Lord Dufferin: "microscopic minority." Curzon: "seditious organization." British Committee (London) actively lobbied against INC demands in Parliament. Vernacular press censored.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ EXTREMISM ════ -->
+<div id="extremism" class="sec">
+  <div class="stl"><span class="stn">09</span><h2>Rise of Extremism & Lal-Bal-Pal</h2><span class="stg">ASSERTIVE NATIONALISM</span></div>
+
+  <div class="br cr on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🔥</div><div class="brt">Causes of Rise of Extremism</div><span class="brb">CAUSES</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="flow">
+        <div class="fb hr">Famines (1896–97, 1899–1900)</div><div class="fa">+</div>
+        <div class="fb hr">Plague epidemic & harsh measures</div><div class="fa">+</div>
+        <div class="fb hr">Curzon's repressive policies</div><div class="fa">+</div>
+        <div class="fb hr">Partition of Bengal 1905</div><div class="fa">+</div>
+        <div class="fb hr">Failure of moderate petitions</div><div class="fa">→</div>
+        <div class="fb hg">EXTREMIST NATIONALISM</div>
+      </div>
+      <div class="g2" style="margin-top:12px">
+        <div class="card"><div class="ch2" style="color:var(--rose)">Bal Gangadhar Tilak</div>
+          <ul>
+            <li>Founder of <strong>Ganapati (1893)</strong> & <strong>Shivaji (1895)</strong> festivals — mass mobilization</li>
+            <li>Newspapers: <strong>Kesari</strong> (Marathi), <strong>Mahratta</strong> (English)</li>
+            <li>Slogan: <strong>"Swaraj is my birthright and I shall have it"</strong></li>
+            <li>Tried for sedition in 1897 (Chaphekar brothers connection) and 1908</li>
+            <li>Called Extremist but not violent — believed in mass action</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--saffron)">Bipin Chandra Pal</div>
+          <ul>
+            <li>Called <strong>"Father of Revolutionary Thought"</strong></li>
+            <li>Newspaper: <strong>New India</strong></li>
+            <li>Advocated passive resistance and boycott</li>
+            <li>Along with Tilak and Lajpat Rai = <strong>"Lal-Bal-Pal"</strong> trio</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--green)">Lala Lajpat Rai</div>
+          <ul>
+            <li><strong>"Lion of Punjab"</strong> / <strong>Sher-e-Punjab</strong></li>
+            <li>Arya Samaj connection; strong in Punjab</li>
+            <li>Newspaper: <strong>Punjabee</strong></li>
+            <li>Deported to Burma 1907 without trial (Lal-Bal-Pal trio crackdown)</li>
+            <li>Died after lathi charge during Simon Commission (1928)</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--purple)">Aurobindo Ghosh</div>
+          <ul>
+            <li>Philosophical revolutionary; later spiritual leader</li>
+            <li>Newspaper: <strong>Yugantar, Kal (edited)</strong>, Pondicherry later</li>
+            <li>Advocated aggressive nationalism, boycott, mass action</li>
+            <li>Arrested in Alipore Bomb Case (1908); later retired to Pondicherry</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cmp" style="margin-top:12px">
+        <tr><th class="aspect">Aspect</th><th class="th-m">Moderates</th><th class="th-e">Extremists</th></tr>
+        <tr><td class="aspect">Goal</td><td>Self-government within British Empire</td><td>Complete Swaraj (independence)</td></tr>
+        <tr><td class="aspect">Methods</td><td>Petitions, prayers, resolutions</td><td>Boycott, swadeshi, passive resistance, mass action</td></tr>
+        <tr><td class="aspect">Faith in British</td><td>Strong faith in British justice</td><td>No faith; British rule exploitative</td></tr>
+        <tr><td class="aspect">Mass base</td><td>Educated middle class only</td><td>Sought mass mobilization</td></tr>
+        <tr><td class="aspect">Religion in politics</td><td>Keep separate</td><td>Used religious symbols (Tilak)</td></tr>
+        <tr><td class="aspect">Period</td><td>1885–1905</td><td>1905–1920 (dominant)</td></tr>
+        <tr><td class="aspect">Key leaders</td><td>Naoroji, Gokhale, Banerjee, Mehta</td><td>Tilak, Lajpat Rai, B.C. Pal, Aurobindo</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ════ BENGAL PARTITION ════ -->
+<div id="bengal" class="sec">
+  <div class="stl"><span class="stn">10</span><h2>Partition of Bengal (1905)</h2><span class="stg">TURNING POINT</span></div>
+
+  <div class="br cr on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🗺️</div><div class="brt">Bengal Partition — Complete Analysis</div><span class="brb">1905 EVENT</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--rose)">Official Justification</div>
+          <p>Bengal (1905) had <strong>78 million people</strong> — too large to administer efficiently. New partition: Bengal (West) + Assam (East). Curzon claimed administrative convenience.</p></div>
+        <div class="card"><div class="ch2" style="color:var(--saffron)">Real Motive</div>
+          <ul>
+            <li>Break the <strong>nationalist movement in Bengal</strong> (strongest)</li>
+            <li>Divide Hindus (West Bengal) and Muslims (East Bengal)</li>
+            <li><strong>Communal angle:</strong> Muslim-majority East Bengal appeased</li>
+            <li>Reduce Bengali babus' political influence</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--green)">Nationalist Response</div>
+          <ul>
+            <li>16 October 1905 = "Mourning Day" / "National Day"</li>
+            <li><strong>Rakhi Bandhan</strong> between Hindus & Muslims — Tagore's idea</li>
+            <li>Mass hartals, public meetings throughout India</li>
+            <li>Swadeshi & Boycott movement launched</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--teal)">Outcome</div>
+          <p>Partition <strong>annulled in 1911</strong> (Delhi Durbar). British capital shifted to Delhi from Calcutta. But Bengal was divided again in 1947 (India-Pakistan) and 1971 (Bangladesh). Shows colonial divide remains.</p></div>
+      </div>
+      <div class="fact">
+        <div class="ftt">📌 Bengal Partition — Key Dates</div>
+        <div class="ftc">
+          <strong>July 19, 1905:</strong> Partition announced by Curzon. <strong>October 16, 1905:</strong> Partition officially implemented = Day of Mourning. <strong>Tagore's response:</strong> "Amar Sonar Bangla" written as protest song (later became Bangladesh's national anthem). <strong>Annulled:</strong> December 12, 1911 at Delhi Durbar. British capital also shifted Delhi → Calcutta → Delhi.
+        </div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Bengal Partition Trap</div>
+        <div class="tc">Bengal was partitioned in <strong>1905</strong> (Curzon), <strong>annulled 1911</strong>. Don't confuse with 1947 partition (India-Pakistan) or 1971 (Bangladesh liberation). Also: <strong>Tagore's "Amar Sonar Bangla"</strong> written during 1905 anti-partition movement — now Bangladesh's national anthem!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ SWADESHI ════ -->
+<div id="swadeshi" class="sec">
+  <div class="stl"><span class="stn">11</span><h2>Swadeshi & Boycott Movement</h2><span class="stg">ECONOMIC NATIONALISM</span></div>
+
+  <div class="br cg on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🌿</div><div class="brt">Swadeshi Movement — Complete Analysis</div><span class="brb">MOVEMENT</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ch2" style="color:var(--green)">Swadeshi (Our Own Country)</div>
+          <ul>
+            <li>Use Indian-made goods; boycott British goods</li>
+            <li>Promoted <strong>indigenous industries:</strong> cotton, matches, salt</li>
+            <li>National schools established</li>
+            <li>Bengal National College founded (1906) — Aurobindo principal</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--saffron)">Boycott Programme</div>
+          <ul>
+            <li>Burn British cloth publicly</li>
+            <li>Refuse British manufactured goods</li>
+            <li>Boycott of British courts and councils (extremist version)</li>
+            <li>Public bonfires of foreign cloth (precursor to Gandhi's 1920 programme)</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--teal)">National Education</div>
+          <ul>
+            <li>Boycott government schools/colleges</li>
+            <li><strong>Bengal National College (1906)</strong></li>
+            <li>Aurobindo Ghosh as principal</li>
+            <li>Precursor to Gandhi's Non-Cooperation education policy</li>
+          </ul>
+        </div>
+        <div class="card"><div class="ch2" style="color:var(--rose)">Passive Resistance (Aurobindo)</div>
+          <ul>
+            <li>Non-cooperation with British administration</li>
+            <li>Refuse titles, awards, government posts</li>
+            <li>Civil disobedience elements</li>
+            <li>Influenced Gandhi's later Non-Cooperation Movement</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 Swadeshi 4 Pillars</div>
+        <div class="mc">"Boycott Swadeshi National Passive"</div>
+        <div class="md">B=Boycott of foreign goods · S=Swadeshi (use Indian goods) · N=National Education · P=Passive Resistance</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ LEADERS ════ -->
+<div id="leaders" class="sec">
+  <div class="stl"><span class="stn">12</span><h2>Leader Profiles — Extremist Leaders</h2><span class="stg">LAL-BAL-PAL</span></div>
+
+  <div class="br cr on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🔥</div><div class="brt">The Triumvirate — Lal-Bal-Pal</div><span class="brb">TRIO</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="sh">
+        <div class="sht">⚡ The Lal-Bal-Pal Trio — Quick Memory Card</div>
+        <div class="shc">
+          <code>LAL</code> = Lala Lajpat Rai (Punjab) — Lion of Punjab / Sher-e-Punjab — deported 1907<br>
+          <code>BAL</code> = Bal Gangadhar Tilak (Maharashtra) — Lokamanya — "Swaraj is my birthright"<br>
+          <code>PAL</code> = Bipin Chandra Pal (Bengal) — Father of Revolutionary Thought — passive resistance
+        </div>
+      </div>
+      <div class="leader-grid">
+        <div class="lcard">
+          <div class="lcard-hd" style="border-left:3px solid var(--rose)"><div class="lcard-name">Bal Gangadhar Tilak</div><div class="lcard-nick">Lokamanya · Father of Indian Unrest</div></div>
+          <div class="lcard-body">
+            <ul>
+              <li><strong>Newspapers:</strong> Kesari (Marathi), Mahratta (English)</li>
+              <li><strong>Festivals:</strong> Ganapati (1893), Shivaji Mahotsav (1895) — mass mobilization</li>
+              <li><strong>Books:</strong> Gita Rahasya, Arctic Home in the Vedas</li>
+              <li><strong>Slogan:</strong> "Swaraj is my birthright and I shall have it"</li>
+              <li><strong>Trials:</strong> Sedition 1897, 1908 (sentenced 6 years Mandalay)</li>
+              <li><strong>Home Rule League:</strong> Founded 1916</li>
+              <li>Opposed caste reform (differed from Ranade, Gokhale)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lcard">
+          <div class="lcard-hd" style="border-left:3px solid var(--saffron)"><div class="lcard-name">Lala Lajpat Rai</div><div class="lcard-nick">Sher-e-Punjab · Punjab Kesari</div></div>
+          <div class="lcard-body">
+            <ul>
+              <li><strong>Arya Samaj</strong> influence; Punjab-based leader</li>
+              <li><strong>Newspaper:</strong> Punjabee, Young India</li>
+              <li><strong>Books:</strong> "Young India" (gave safety valve theory of INC)</li>
+              <li>Deported to Mandalay (Burma) 1907 without trial</li>
+              <li>Died (1928) after lathi charge during <strong>Simon Commission protest</strong></li>
+              <li>Founded <strong>Punjab National Bank</strong> and Lala Lajpat Rai Trust</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lcard">
+          <div class="lcard-hd" style="border-left:3px solid var(--purple)"><div class="lcard-name">Aurobindo Ghosh</div><div class="lcard-nick">Rishi Aurobindo · Revolutionary-Philosopher</div></div>
+          <div class="lcard-body">
+            <ul>
+              <li>ICS aspirant; turned revolutionary nationalist</li>
+              <li><strong>Newspaper:</strong> Yugantar, Kal (associated)</li>
+              <li>Principal, <strong>Bengal National College (1906)</strong></li>
+              <li>Arrested in <strong>Alipore Bomb Case (1908)</strong>; acquitted</li>
+              <li>Retired to <strong>Pondicherry</strong> — founded Aurobindo Ashram</li>
+              <li>Concept of <strong>passive resistance</strong> influenced Gandhi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PRESS ════ -->
+<div id="press" class="sec">
+  <div class="stl"><span class="stn">13</span><h2>Press, Education & Political Awareness</h2><span class="stg">MEDIA</span></div>
+
+  <div class="br cb on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">📰</div><div class="brt">Newspapers & Their Leaders</div><span class="brb">PRESS MAP</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Newspaper</th><th>Language</th><th>Founded by / Editor</th><th>Political Stand</th></tr>
+        <tr><td class="hs">Kesari</td><td>Marathi</td><td class="hg">Bal Gangadhar Tilak (1881)</td><td>Extremist; mass mobilization; "fierce" against British</td></tr>
+        <tr><td class="hs">Mahratta</td><td>English</td><td class="hg">Bal Gangadhar Tilak (1881)</td><td>Extremist; English-reading audience</td></tr>
+        <tr><td class="hs">Bengalee</td><td>English</td><td class="hg">Surendranath Banerjee (1879)</td><td>Moderate; Bengali intelligentsia</td></tr>
+        <tr><td class="hs">Amrita Bazar Patrika</td><td>English (was Bengali)</td><td class="hg">Sisir Kumar Ghosh (1868)</td><td>Nationalist; anti-British; survived Vernacular Press Act by switching to English overnight</td></tr>
+        <tr><td class="hs">New India</td><td>English</td><td class="hg">Bipin Chandra Pal</td><td>Extremist; Swadeshi focus</td></tr>
+        <tr><td class="hs">Yugantar</td><td>Bengali</td><td class="hg">Bhupendranath Datta, Barindra Kumar Ghosh</td><td>Revolutionary; violent resistance ideas</td></tr>
+        <tr><td class="hs">Hindu</td><td>English</td><td class="hg">G. Subramania Iyer (1878)</td><td>Moderate; South India focus; later moderate-reformist</td></tr>
+        <tr><td class="hs">Voice of India</td><td>English</td><td class="hg">Dadabhai Naoroji (1883)</td><td>Drain theory advocacy; economic exploitation focus</td></tr>
+        <tr><td class="hs">Punjabee</td><td>English</td><td class="hg">Lala Lajpat Rai</td><td>Punjab nationalism; anti-partition</td></tr>
+        <tr><td class="hs">Indian Mirror</td><td>English</td><td class="hg">Keshab Chandra Sen</td><td>Brahmo Samaj influenced; moderate reformist</td></tr>
+      </table>
+      <div class="trap">
+        <div class="tt">⚠️ Amrita Bazar Patrika Trap</div>
+        <div class="tc">Amrita Bazar Patrika was originally in <strong>Bengali</strong> (1868). To escape the <strong>Vernacular Press Act (1878)</strong>, it converted to English <strong>overnight</strong>. This is a classic CDS question: "Which paper changed language to escape VPA?" = Amrita Bazar Patrika.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ HISTORIAN VIEWS ════ -->
+<div id="historian" class="sec">
+  <div class="stl"><span class="stn">14</span><h2>Historian Perspectives on Early INC</h2><span class="stg">HISTORIOGRAPHY</span></div>
+
+  <div class="br cp on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">📚</div><div class="brt">Major Historiographical Schools</div><span class="brb">INTERPRETATION</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>School</th><th>Key Historians</th><th>Interpretation of Early INC</th><th>Evidence Used</th></tr>
+        <tr><td class="hs">Nationalist/Indian</td><td class="hg">Bipan Chandra, Tara Chand, Pattabhi Sitaramayya</td><td>INC = genuine nationalist organization; represented all Indians; moderates were sincere reformers; INC grew organically from nationalist sentiment</td><td>Economic critique, mass sessions, anti-partition movement</td></tr>
+        <tr><td class="hs">Cambridge School</td><td class="ht">Anil Seal, John Gallagher, Gordon Johnson</td><td>INC = factional elite body; Congress leaders were self-interested; using nationalist rhetoric for personal advancement; no real mass base</td><td>Regional, caste, and class interests of Congress leaders</td></tr>
+        <tr><td class="hs">Marxist School</td><td class="hg">A.R. Desai, Rajni Palme Dutt, G. Adhikari</td><td>INC = bourgeois nationalist body; represented capitalist/trading class; moderated demands to protect class interests; not genuinely anti-imperialist initially</td><td>Drain theory as bourgeois economics; limited social programme</td></tr>
+        <tr><td class="hs">Subaltern Studies</td><td class="hr">Ranajit Guha, Partha Chatterjee, Dipesh Chakrabarty</td><td>Elite INC ignored subaltern (peasant, tribal, working class) voices; nationalism was elitist; real resistance was in peasant revolts, not INC sessions</td><td>Absence of peasants/workers from INC agenda</td></tr>
+        <tr><td class="hs">Safety Valve View</td><td class="hs">Lala Lajpat Rai, Bipin Chandra Pal</td><td>INC was created by British to provide safety valve for discontent; Hume-Dufferin connection proves it; INC moderated legitimate anger</td><td>Hume's consultation with Viceroy; early British support</td></tr>
+      </table>
+      <div class="fact">
+        <div class="ftt">📌 UPSC Mains Analytical Point</div>
+        <div class="ftc">
+          The most balanced view: INC, regardless of how or why it was formed, <strong>became the vehicle of India's independence movement</strong>. Even if it started as a safety valve, it transformed into a mass nationalist organization by Gandhi's era. This evolution itself shows the limits of colonial control over political processes they initiate.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ ACTS ════ -->
+<div id="acts" class="sec">
+  <div class="stl"><span class="stn">15</span><h2>Important Acts & Policies</h2><span class="stg">LEGISLATION</span></div>
+
+  <div class="br cb on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚖️</div><div class="brt">Key Acts — 1878–1905</div><span class="brb">LEGISLATION</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Act/Policy</th><th>Year</th><th>Viceroy</th><th>Key Provision</th><th>Nationalist Response</th></tr>
+        <tr><td class="hs">Vernacular Press Act</td><td class="hs">1878</td><td>Lord Lytton</td><td>Control of vernacular newspapers; magistrates could seize press printing seditious material</td><td>Amrita Bazar Patrika switched to English overnight. Repealed 1882 by Ripon.</td></tr>
+        <tr><td class="hs">Arms Act</td><td class="hs">1878</td><td>Lord Lytton</td><td>Indians required license to possess arms; Europeans exempted</td><td>Racial discrimination; became nationalist grievance</td></tr>
+        <tr><td class="hs">Ilbert Bill</td><td class="hs">1883</td><td>Lord Ripon</td><td>Indian judges could try Europeans; diluted after European opposition</td><td>Showed organized pressure worked; inspired Indian nationalists</td></tr>
+        <tr><td class="hs">Indian Councils Act</td><td class="hs">1892</td><td>Lord Lansdowne</td><td>Expanded councils; indirect elections; budget discussion allowed</td><td>Partial achievement of INC; criticized as inadequate</td></tr>
+        <tr><td class="hs">Calcutta Corporation Act</td><td class="hs">1899</td><td>Lord Curzon</td><td>Reduced elected Indian members in Calcutta Corporation</td><td>Curzon's anti-nationalist move; angered Bengal</td></tr>
+        <tr><td class="hs">Universities Act</td><td class="hs">1904</td><td>Lord Curzon</td><td>Government control over universities; reduced affiliated colleges</td><td>Seen as attack on Indian education autonomy; fueled nationalism</td></tr>
+        <tr><td class="hs">Partition of Bengal</td><td class="hs">1905</td><td>Lord Curzon</td><td>Bengal divided into two provinces: Bengal (West) + East Bengal & Assam</td><td>Swadeshi & Boycott movement; national day; Rakhi Bandhan</td></tr>
+        <tr><td class="hs">Official Secrets Act</td><td class="hs">1904</td><td>Lord Curzon</td><td>Restricted access to government information; controlled press</td><td>Anti-press freedom; added to grievances</td></tr>
+      </table>
+      <div class="mnem">
+        <div class="mt">🧠 Acts Timeline — Curzon's Package</div>
+        <div class="mc">"Calcutta Universities Officially Partitioned" = 1899 + 1904 + 1904 + 1905</div>
+        <div class="md">Calcutta Corporation Act(1899) → Universities Act(1904) → Official Secrets Act(1904) → Partition of Bengal(1905)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ TRAPS ════ -->
+<div id="traps" class="sec">
+  <div class="stl"><span class="stn">16</span><h2>CDS/UPSC Traps & Common Errors</h2><span class="stg">AVOID MISTAKES</span></div>
+
+  <div class="br cr on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚠️</div><div class="brt">15 Deadly History Traps — Early INC</div><span class="brb">CRITICAL</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="trap"><div class="tt">🪤 INC First Session Location Trap</div><div class="tc">First session was planned for <strong>Pune</strong> but shifted to <strong>Bombay</strong> due to cholera. Questions may say "first session was in Pune" — that's WRONG. It was Bombay (Gokuldas Tejpal College).</div></div>
+      <div class="trap"><div class="tt">🪤 First President Trap</div><div class="tc"><strong>W.C. Bonnerjee</strong> was first President (1885). NOT Dadabhai Naoroji (he was 2nd session, 1886). NOT A.O. Hume (he was founder, not president of first session).</div></div>
+      <div class="trap"><div class="tt">🪤 Safety Valve Theory Author</div><div class="tc">Safety Valve Theory coined by <strong>Lala Lajpat Rai</strong> (in Young India). NOT by British historians. Some questions attribute it to Bipin Chandra Pal or historians — Lajpat Rai was primary advocate.</div></div>
+      <div class="trap"><div class="tt">🪤 First Muslim President of INC</div><div class="tc"><strong>Badruddin Tyabji (1887)</strong> was first Muslim Congress President. NOT Muhammad Ali Jinnah. Jinnah presided much later (1916, Lucknow). Tyabji at Madras session.</div></div>
+      <div class="trap"><div class="tt">🪤 George Yule — First/Only British President</div><div class="tc">George Yule (1888, Allahabad) was the <strong>first and ONLY British/European President</strong> of INC. Often confused — people think A.O. Hume was a Congress President. Hume was organizer/founder, not president of any session.</div></div>
+      <div class="trap"><div class="tt">🪤 Amrita Bazar Patrika Language</div><div class="tc">Amrita Bazar Patrika was <strong>ORIGINALLY Bengali</strong>. Switched to English overnight to escape Vernacular Press Act (1878). Questions ask "which newspaper became English to escape VPA" — answer is ABP, not Bengalee.</div></div>
+      <div class="trap"><div class="tt">🪤 Dadabhai Naoroji's Parliament Seat</div><div class="tc">Naoroji was elected MP from <strong>Finsbury (Central), London</strong> in 1892. He was a <strong>Liberal Party</strong> MP. First Indian to be elected to British Parliament. Not from any Indian constituency obviously.</div></div>
+      <div class="trap"><div class="tt">🪤 Tilak's "Swaraj" Slogan</div><div class="tc">"Swaraj is my birthright and I shall have it" = <strong>Bal Gangadhar Tilak</strong>. Dadabhai Naoroji first USED the word Swaraj in INC (1906 Calcutta session). These are different — Tilak's slogan ≠ Naoroji first using the word.</div></div>
+      <div class="trap"><div class="tt">🪤 Bengal Partition Annulment</div><div class="tc">Bengal Partition (1905) was annulled in <strong>1911</strong> at Delhi Durbar. Don't say it was annulled because of movement alone — the British also shifted capital to Delhi simultaneously, balancing the decision politically.</div></div>
+      <div class="trap"><div class="tt">🪤 Amar Sonar Bangla</div><div class="tc">Rabindranath Tagore wrote "Amar Sonar Bangla" during the <strong>anti-partition movement of 1905</strong>. It later became the <strong>national anthem of Bangladesh</strong>. Jana Gana Mana (Tagore) = India's anthem. Don't mix these up!</div></div>
+      <div class="trap"><div class="tt">🪤 Indian Councils Act 1892 vs 1909</div><div class="tc">ICA 1892 (Lansdowne) = partial response to INC; indirect elections. ICA 1909 (Minto-Morley) = separate electorates for Muslims. These are completely different acts with different viceroys and implications. Very common confusion!</div></div>
+      <div class="trap"><div class="tt">🪤 Poona Sarvajanik Sabha Founder</div><div class="tc">Poona Sarvajanik Sabha (1867) founded by <strong>M.G. Ranade & G.V. Joshi</strong>. NOT Tilak. Tilak was associated later. Often attributed to Tilak due to Pune connection — incorrect.</div></div>
+      <div class="trap"><div class="tt">🪤 Gokhale's Organization</div><div class="tc">Gokhale founded <strong>Servants of India Society (1905)</strong>, NOT Poona Sarvajanik Sabha. His mentor Ranade founded PSS. Common confusion due to both being Pune-based.</div></div>
+      <div class="trap"><div class="tt">🪤 Tilak's Sedition Trials</div><div class="tc">Tilak was tried for sedition in <strong>1897</strong> (after Chaphekar brothers killed plague officer Rand) and <strong>1908</strong> (for Kesari articles after Muzaffarpur bomb case). 1908 trial → 6 years Mandalay jail. Don't say he was tried once.</div></div>
+      <div class="trap"><div class="tt">🪤 East India Association</div><div class="tc">East India Association (1866) was founded by <strong>Dadabhai Naoroji in London</strong> — NOT in India. It lobbied the British Parliament and public, not Indian audiences directly.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ FACTS SHEET ════ -->
+<div id="facts" class="sec">
+  <div class="stl"><span class="stn">17</span><h2>Fact Flash Sheet — One-Shot Revision</h2><span class="stg">MASTER FACTS</span></div>
+
+  <div class="fw">
+    <div class="fwc"><div class="fwt" style="color:var(--saffron)">🏛️ INC Formation Facts</div>
+      <div class="fwi">Founded: 1885, Bombay</div>
+      <div class="fwi">Founder: A.O. Hume (ICS retd.)</div>
+      <div class="fwi">1st President: W.C. Bonnerjee</div>
+      <div class="fwi">1st Session Venue: Gokuldas Tejpal College</div>
+      <div class="fwi">Delegates: 72 (1st session)</div>
+      <div class="fwi">Planned venue: Pune (shifted due to cholera)</div>
+      <div class="fwi">Name proposed by: Dadabhai Naoroji</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--green)">👥 Key Moderate Leaders</div>
+      <div class="fwi">Dadabhai Naoroji: Grand Old Man</div>
+      <div class="fwi">Gokhale: Gandhi's political guru</div>
+      <div class="fwi">Surendranath Banerjee: Rashtraguru</div>
+      <div class="fwi">Pherozeshah Mehta: Lion of Bombay</div>
+      <div class="fwi">Badruddin Tyabji: 1st Muslim President</div>
+      <div class="fwi">George Yule (1888): Only British Pres</div>
+      <div class="fwi">Gokhale pres 1905 Banaras session</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--rose)">🔥 Extremist Leaders</div>
+      <div class="fwi">Tilak: Lokamanya, Kesari/Mahratta</div>
+      <div class="fwi">Lajpat Rai: Sher-e-Punjab, Punjab Kesari</div>
+      <div class="fwi">Bipin Pal: Father of Revolutionary Thought</div>
+      <div class="fwi">Aurobindo: Revolutionary-philosopher</div>
+      <div class="fwi">Lal-Bal-Pal: Lajpat-Tilak-Pal trio</div>
+      <div class="fwi">Tilak's slogan: Swaraj is my birthright</div>
+      <div class="fwi">Aurobindo: principal, Bengal Natl College</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--teal)">📅 Critical Sessions</div>
+      <div class="fwi">1885 Bombay: W.C. Bonnerjee (1st)</div>
+      <div class="fwi">1886 Calcutta: Dadabhai Naoroji</div>
+      <div class="fwi">1887 Madras: Badruddin Tyabji (1st Muslim)</div>
+      <div class="fwi">1888 Allahabad: George Yule (British)</div>
+      <div class="fwi">1905 Banaras: Gokhale (last moderate)</div>
+      <div class="fwi">1906 Calcutta: Naoroji ("Swaraj" word)</div>
+      <div class="fwi">1907 Surat: Split (Moderate vs Extremist)</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--gold)">📰 Newspapers</div>
+      <div class="fwi">Kesari (Marathi): Tilak</div>
+      <div class="fwi">Mahratta (English): Tilak</div>
+      <div class="fwi">Bengalee: Surendranath Banerjee</div>
+      <div class="fwi">Amrita Bazar Patrika: Sisir Kumar Ghosh</div>
+      <div class="fwi">New India: Bipin Chandra Pal</div>
+      <div class="fwi">Yugantar: Bhupendranath Datta</div>
+      <div class="fwi">The Hindu: G. Subramania Iyer (1878)</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--blue)">⚖️ Key Acts</div>
+      <div class="fwi">Vernacular Press Act: 1878 (Lytton)</div>
+      <div class="fwi">Arms Act: 1878 (Lytton)</div>
+      <div class="fwi">Ilbert Bill: 1883 (Ripon)</div>
+      <div class="fwi">Indian Councils Act: 1892</div>
+      <div class="fwi">Universities Act: 1904 (Curzon)</div>
+      <div class="fwi">Partition of Bengal: 1905 (Curzon)</div>
+      <div class="fwi">Bengal Partition annulled: 1911</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--purple)">📚 Important Books</div>
+      <div class="fwi">Poverty & Un-British Rule: Naoroji (1901)</div>
+      <div class="fwi">Economic History of India: R.C. Dutt (1902)</div>
+      <div class="fwi">Gita Rahasya: Tilak</div>
+      <div class="fwi">Arctic Home in the Vedas: Tilak</div>
+      <div class="fwi">Rise of Maratha Power: M.G. Ranade</div>
+      <div class="fwi">Young India: Lala Lajpat Rai</div>
+      <div class="fwi">Essays on Indian Economics: Ranade</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--green)">🌿 Bengal 1905</div>
+      <div class="fwi">Partition: October 16, 1905</div>
+      <div class="fwi">Viceroy: Lord Curzon</div>
+      <div class="fwi">Day of Mourning: Oct 16 = Rakhi Bandhan</div>
+      <div class="fwi">Amar Sonar Bangla: Tagore (anti-partition)</div>
+      <div class="fwi">Annulled: 1911 (Delhi Durbar)</div>
+      <div class="fwi">Swadeshi: Boycott + national education</div>
+      <div class="fwi">Bengal Natl College: Aurobindo principal</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ REVISION ════ -->
+<div id="revision" class="sec">
+  <div class="stl"><span class="stn">18</span><h2>Night Before Exam — Revision Framework</h2><span class="stg">FINAL PREP</span></div>
+
+  <div class="rev-grid">
+    <div class="rcard" style="border-top:3px solid var(--saffron)">
+      <h4 style="color:var(--saffron)">⏱️ 60-Min Plan</h4>
+      <ul>
+        <li><strong>0–10:</strong> INC formation facts + Hume's role</li>
+        <li><strong>10–20:</strong> Moderate leaders + their nicknames/orgs</li>
+        <li><strong>20–30:</strong> Sessions timeline (1885–1907)</li>
+        <li><strong>30–40:</strong> Extremist leaders + Lal-Bal-Pal</li>
+        <li><strong>40–50:</strong> Bengal partition + Swadeshi</li>
+        <li><strong>50–60:</strong> Traps list + 10 practice MCQs</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--teal)">
+      <h4 style="color:var(--teal)">⏱️ 30-Min Sprint</h4>
+      <ul>
+        <li><strong>0–5:</strong> 1st session: Bombay, Bonnerjee, 1885, 72 delegates</li>
+        <li><strong>5–10:</strong> Session triad: 1885(Bonnerjee) 1887(Tyabji) 1888(Yule)</li>
+        <li><strong>10–15:</strong> Naoroji: Grand Old Man, drain theory, 1892 MP</li>
+        <li><strong>15–20:</strong> Lal-Bal-Pal profiles (1 min each)</li>
+        <li><strong>20–25:</strong> Bengal partition: 1905 Curzon, 1911 annulled</li>
+        <li><strong>25–30:</strong> 5 key traps only</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--green)">
+      <h4 style="color:var(--green)">⏱️ 10-Min Flash</h4>
+      <ul>
+        <li>INC: <strong>1885, Bombay, Bonnerjee</strong></li>
+        <li>1st Muslim pres: <strong>Tyabji 1887</strong></li>
+        <li>Only British pres: <strong>Yule 1888</strong></li>
+        <li>Naoroji: <strong>Grand Old Man</strong></li>
+        <li>Gokhale: <strong>Gandhi's guru</strong></li>
+        <li>Tilak: <strong>Lokamanya, Kesari</strong></li>
+        <li>Bengal: <strong>1905 Curzon, 1911 annulled</strong></li>
+        <li>Swadeshi: <strong>4 pillars mnemonic</strong></li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--rose)">
+      <h4 style="color:var(--rose)">🧠 Mnemonic Quick-Fire</h4>
+      <ul>
+        <li>Pre-Congress: <strong>"Lands Belong East..."</strong></li>
+        <li>Layers: <strong>"Can Monkeys Conquer..."</strong></li>
+        <li>Sessions: <strong>Bonnerjee→Naoroji→Tyabji→Yule</strong></li>
+        <li>Lal-Bal-Pal: Lajpat-Tilak-Pal</li>
+        <li>Swadeshi: <strong>"Boycott Swadeshi National Passive"</strong></li>
+        <li>Curzon Acts: <strong>"Calcutta Universities Officially Partitioned"</strong></li>
+        <li>ABP: English to escape <strong>VPA 1878</strong></li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--blue)">
+      <h4 style="color:var(--blue)">📊 CDS High-Yield Topics</h4>
+      <ul>
+        <li>INC formation year + venue + president</li>
+        <li>1st Muslim President of INC</li>
+        <li>Safety Valve Theory — who coined it</li>
+        <li>Naoroji's Parliament seat</li>
+        <li>Bengal Partition + annulment dates</li>
+        <li>Tilak's newspapers + trials</li>
+        <li>Amrita Bazar Patrika's language change</li>
+        <li>Gokhale's organization (Servants of India)</li>
+        <li>George Yule (1888)</li>
+        <li>1907 Surat Split context</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--purple)">
+      <h4 style="color:var(--purple)">🔢 Critical Numbers & Dates</h4>
+      <ul>
+        <li><strong>1885</strong> = INC founded</li>
+        <li><strong>72</strong> = delegates in 1st session</li>
+        <li><strong>1892</strong> = Naoroji becomes MP</li>
+        <li><strong>1901</strong> = "Poverty and Un-British Rule"</li>
+        <li><strong>Oct 16, 1905</strong> = Bengal partition effective</li>
+        <li><strong>1911</strong> = Bengal partition annulled</li>
+        <li><strong>1907</strong> = Surat Split</li>
+        <li><strong>1905</strong> = Servants of India Society</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ════ QUIZ ════ -->
+<div id="quiz" class="sec">
+  <div class="stl"><span class="stn">19</span><h2>CDS Practice Test — 25 Questions</h2><span class="stg">EXAM SIMULATION</span></div>
+  <div style="max-width:680px">
+    <div class="qpw"><div class="qpf" id="qpf" style="width:0%"></div></div>
+    <div id="qbody"></div>
+    <div class="qsc" id="qsc">
+      <div class="qscn" id="qscn"></div>
+      <div class="qscl" id="qscl"></div>
+      <button class="qscr" onclick="startQ()">Restart</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════ UPSC ════ -->
+<div id="upsc" class="sec">
+  <div class="stl"><span class="stn">20</span><h2>UPSC-Level Analytical Questions</h2><span class="stg">MAINS PREP</span></div>
+
+  <div class="br cp on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🏛️</div><div class="brt">15 UPSC Analytical Questions with Frameworks</div><span class="brb">SOLUTIONS</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="qcard"><div class="qn">UPSC Q1 · 10 marks</div><div class="qt">"The formation of the Indian National Congress in 1885 was the result of both colonial circumstances and genuine nationalist aspirations." Critically examine.</div>
+        <div class="fbox"><div class="fl">Answer Framework</div>Intro: Dual causation → colonial + nationalist. Colonial: Ilbert Bill, educated class, safety valve thesis. Nationalist: Pre-Congress associations, economic grievances, reform movements. Key: Even if British permitted/encouraged, it was filled with genuine nationalist content. Bipin Chandra's interpretation vs Cambridge School. Conclusion: Genesis doesn't determine character — INC's transformation into mass movement proves nationalist authenticity.<div class="fe">Key terms: Safety Valve, ICS discontent, A.O. Hume, nationalist historiography</div></div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q2 · Analytical</div><div class="qt">Evaluate the economic critique of British rule developed by early nationalist leaders. How did the "Drain Theory" shape Indian nationalist consciousness?</div>
+        <div class="fbox"><div class="fl">Answer Framework</div>Intro: Economic nationalism as intellectual foundation. Naoroji's Drain Theory: channels (Home Charges, railways, trade surplus). R.C. Dutt, M.G. Ranade contributions. Impact: gave scientific basis to anti-British sentiment; united different social classes; made "economic exploitation" central nationalist argument. Swadeshi as practical response to drain. Limitations of theory (some scholars debate quantum). Legacy: influences modern debate on colonial exploitation.<div class="fe">Economic History of India, "Poverty and Un-British Rule", Drain of Wealth channels</div></div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q3 · Compare</div><div class="qt">Compare and contrast the Moderate and Extremist phases of the Indian National Congress with reference to ideology, methods, social base, and historical contribution.</div>
+        <div class="fbox"><div class="fl">Answer Framework</div>Use comparison table structure: Ideology (partial self-govt vs complete Swaraj) · Methods (3P vs boycott/swadeshi) · Social base (elite middle class vs broader middle class + students) · Religion in politics (separate vs symbols used by Tilak) · Contribution: Moderates = institution building, economic critique, constitutional precedents; Extremists = mass mobilization, boycott tactics, emotional awakening. Not binary — complementary phases. Bipan Chandra's view: "Both were necessary stages." Gandhi synthesized both.<div class="fe">Lal-Bal-Pal, 3P policy, constitutional agitation, swadeshi movement</div></div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q4 · Contextual</div><div class="qt">How did the Partition of Bengal (1905) become a turning point in India's freedom struggle?</div>
+        <div class="fbox"><div class="fl">Answer Framework</div>Background: Curzon's real motive vs official justification. Bengali nationalist response. Swadeshi movement: boycott + national education + passive resistance. Communal dimension: Muslim League (1906) formed in its aftermath. Pan-Indian solidarity: anti-partition feeling spread beyond Bengal. Annulment (1911) = first major British concession to nationalist pressure. Long-term: Hindu-Muslim relations strained; seeds of 1947 partition. Legacy: Swadeshi methods influenced Gandhi's later programmes.<div class="fe">Oct 16 Day of Mourning, Tagore's Rakhi Bandhan, Bengal Natl College</div></div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q5–15 (Frameworks)</div>
+        <div class="qn" style="margin-top:8px">Q5: Critically analyze the "Safety Valve Theory" of INC's formation. Is it historically valid?</div>
+        <div class="qn">Q6: Explain the role of vernacular press in the rise of Indian nationalism. How did the Vernacular Press Act (1878) backfire?</div>
+        <div class="qn">Q7: "Bal Gangadhar Tilak gave nationalism a mass character." Elucidate.</div>
+        <div class="qn">Q8: How did the socio-religious reform movements contribute to the growth of political nationalism in India?</div>
+        <div class="qn">Q9: Assess the contributions of Dadabhai Naoroji to the Indian freedom struggle.</div>
+        <div class="qn">Q10: Examine Curzon's policies and their impact on the growth of extremism in INC.</div>
+        <div class="qn">Q11: What were the causes of the Surat Split (1907)? How did it affect the freedom movement?</div>
+        <div class="qn">Q12: Discuss the Cambridge School interpretation of early INC. How valid is it?</div>
+        <div class="qn">Q13: How did the Swadeshi movement lay the foundation for Gandhian methods of political agitation?</div>
+        <div class="qn">Q14: Evaluate Gopal Krishna Gokhale's contributions as "the most moderate of the moderates."</div>
+        <div class="qn">Q15: "The Indian National Congress, despite its limitations, was the most significant political development of 19th century India." Justify.</div>
+        <div class="fbox" style="margin-top:8px"><div class="fl">Q7 Answer Framework — Tilak's Mass Nationalism</div>Before Tilak: INC = elite sessions, English-speaking audience. Tilak's innovations: Ganapati festival (1893) — community mobilization; Shivaji Mahotsav (1895) — historical pride; Kesari in Marathi — vernacular reach; Deccan Education Society (1884); "Swaraj" as emotional rallying cry. Result: Students, peasants, artisans entered nationalist consciousness. Limitations: religious symbolism alienated Muslims. Balance: mass awakening with communal complications. Gandhi later universalized this mass approach without religious exclusivism.<div class="fe">Lokamanya, Ganapati festival, Kesari sedition trials</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- main -->
+
+<script>
+function show(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.nav-lnk').forEach(a=>a.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  event.currentTarget.classList.add('on');
+  document.getElementById('nav').classList.remove('on');
+  window.scrollTo(0,0);
+  if(id==='quiz')startQ();
+}
+function tb(h){h.parentElement.classList.toggle('on')}
+document.querySelectorAll('.br').forEach((b,i)=>{if(i===0)b.classList.add('on')});
+
+const QS=[
+  {q:"The Indian National Congress was founded in:",opts:["1881","1883","1885","1887"],a:2,e:"INC was founded on 28-30 December 1885 in Bombay. First session held at Gokuldas Tejpal Sanskrit College. 72 delegates attended."},
+  {q:"Who was the first President of the Indian National Congress?",opts:["Dadabhai Naoroji","A.O. Hume","W.C. Bonnerjee","Pherozeshah Mehta"],a:2,e:"W.C. Bonnerjee (Womesh Chandra Bonnerjee), a Calcutta barrister, was the first President of INC in 1885. A.O. Hume was the organizer/founder, not president."},
+  {q:"The 'Safety Valve Theory' regarding INC was propounded by:",opts:["A.O. Hume","Bipin Chandra Pal","Lala Lajpat Rai","Lord Dufferin"],a:2,e:"Lala Lajpat Rai coined the 'Safety Valve Theory' in his book Young India (1916), arguing INC was created by British to provide outlet for political discontent to prevent revolution."},
+  {q:"The first session of INC was originally planned to be held at:",opts:["Bombay","Calcutta","Poona/Pune","Madras"],a:2,e:"The first INC session was originally planned for Pune (Poona) but was shifted to Bombay due to a cholera epidemic. This is a very important CDS factual distinction."},
+  {q:"Who was the first Muslim President of the Indian National Congress?",opts:["Muhammad Ali Jinnah","Maulana Azad","Badruddin Tyabji","Sayyid Ahmad Khan"],a:2,e:"Badruddin Tyabji was the first Muslim President of INC at the Madras session of 1887. Jinnah presided much later in 1916 (Lucknow). Sayyid Ahmad Khan actually opposed INC."},
+  {q:"Which newspaper converted from Bengali to English to escape the Vernacular Press Act?",opts:["Bengalee","Amrita Bazar Patrika","Yugantar","New India"],a:1,e:"Amrita Bazar Patrika, originally a Bengali paper (founded 1868 by Sisir Kumar Ghosh), converted to English overnight to escape the Vernacular Press Act of 1878. Classic CDS question!"},
+  {q:"'Poverty and Un-British Rule in India' was written by:",opts:["R.C. Dutt","Gokhale","Dadabhai Naoroji","Surendranath Banerjee"],a:2,e:"Dadabhai Naoroji ('Grand Old Man of India') wrote 'Poverty and Un-British Rule in India' (1901) which systematically articulated the Drain of Wealth theory."},
+  {q:"The Servants of India Society was founded by:",opts:["Dadabhai Naoroji","M.G. Ranade","Gopal Krishna Gokhale","Tilak"],a:2,e:"Gopal Krishna Gokhale founded the Servants of India Society in 1905 to train Indian workers for national service. Gandhi considered Gokhale his political guru."},
+  {q:"The Partition of Bengal was announced by which Viceroy?",opts:["Lord Ripon","Lord Curzon","Lord Minto","Lord Dufferin"],a:1,e:"Lord Curzon announced the Partition of Bengal on July 19, 1905. It was implemented on October 16, 1905 (Day of Mourning). Curzon was the most repressive Viceroy of the period."},
+  {q:"The Bengal Partition (1905) was annulled in:",opts:["1906","1907","1909","1911"],a:3,e:"The Partition of Bengal was annulled in 1911 at the Delhi Durbar. The British capital was also simultaneously shifted from Calcutta to Delhi. Annulled 6 years after partition."},
+  {q:"'Amar Sonar Bangla' by Tagore was written during:",opts:["1857 revolt","Bengal famine","Anti-partition movement 1905","Non-cooperation movement"],a:2,e:"Rabindranath Tagore wrote 'Amar Sonar Bangla' during the anti-partition movement of 1905. It later became the national anthem of Bangladesh (1971)."},
+  {q:"Dadabhai Naoroji was elected to the British Parliament from which constituency?",opts:["Westminster","Finsbury Central","Manchester","Liverpool"],a:1,e:"Dadabhai Naoroji was elected to British Parliament from Finsbury Central, London in 1892 as a Liberal Party MP. He was the first Indian to be elected to the British Parliament."},
+  {q:"The Ganapati Festival was initiated by whom to mobilize masses?",opts:["Gokhale","Aurobindo","Bal Gangadhar Tilak","Lajpat Rai"],a:2,e:"Bal Gangadhar Tilak initiated the Ganapati (Ganesh) festival in 1893 as a public event to mobilize people politically under a cultural umbrella. He also started Shivaji Mahotsav in 1895."},
+  {q:"The Indian Association (1876) was founded by:",opts:["M.G. Ranade","A.O. Hume","Surendranath Banerjee","Dadabhai Naoroji"],a:2,e:"Surendranath Banerjee and Anandamohan Bose founded the Indian Association in Calcutta in 1876. It was the first truly political organization with all-India aspirations. Banerjee earned title 'Rashtraguru'."},
+  {q:"Which of the following was NOT a founding member/organizer of Bombay Presidency Association (1885)?",opts:["Pherozeshah Mehta","K.T. Telang","Badruddin Tyabji","Dadabhai Naoroji"],a:3,e:"The Bombay Presidency Association (1885) was founded by Pherozeshah Mehta, K.T. Telang, and Badruddin Tyabji. Dadabhai Naoroji had earlier founded the East India Association in London (1866), a different body."},
+  {q:"'Lal-Bal-Pal' refers to:",opts:["Three Congress sessions","Three Viceroy periods","Lajpat Rai, Tilak, and Bipin Pal","Three acts against press"],a:2,e:"'Lal-Bal-Pal' refers to the extremist triumvirate: Lala Lajpat Rai (Punjab/Lal), Bal Gangadhar Tilak (Maharashtra/Bal), and Bipin Chandra Pal (Bengal/Pal). They were the main faces of extremist nationalism."},
+  {q:"The Vernacular Press Act (1878) was passed during the viceroyalty of:",opts:["Lord Dufferin","Lord Lytton","Lord Ripon","Lord Curzon"],a:1,e:"The Vernacular Press Act was passed in 1878 under Lord Lytton (Viceroy 1876-80). It was also called 'Gagging Act'. It was repealed by the reformist Lord Ripon in 1882."},
+  {q:"Bengal National College (1906) during Swadeshi movement had which famous principal?",opts:["Bipin Chandra Pal","Surendranath Banerjee","Aurobindo Ghosh","Rabindranath Tagore"],a:2,e:"Aurobindo Ghosh was the principal of Bengal National College established in 1906 during the Swadeshi movement as an alternative to government educational institutions."},
+  {q:"The first and only British/European President of INC was:",opts:["A.O. Hume","William Wedderburn","George Yule","Henry Cotton"],a:2,e:"George Yule was the first and only European/British President of the Indian National Congress at the Allahabad session of 1888. A.O. Hume was founder/organizer but never served as Congress President."},
+  {q:"The slogan 'Swaraj is my birthright and I shall have it' was given by:",opts:["Dadabhai Naoroji","Bipin Chandra Pal","Gokhale","Bal Gangadhar Tilak"],a:3,e:"This iconic slogan was given by Bal Gangadhar Tilak (Lokamanya). Note: Dadabhai Naoroji first USED the word 'Swaraj' in INC's 1906 Calcutta session presidential address, but the slogan belongs to Tilak."},
+  {q:"The Drain of Wealth theory was primarily developed by:",opts:["M.G. Ranade","R.C. Dutt","Dadabhai Naoroji","Surendranath Banerjee"],a:2,e:"Dadabhai Naoroji first articulated the Drain of Wealth/Drain Theory systematically. R.C. Dutt supported it in 'Economic History of India' (1902). M.G. Ranade contributed to economic nationalism but did not develop Drain Theory primarily."},
+  {q:"Which Act was passed as a partial response to INC's demands for council reforms?",opts:["Government of India Act 1858","Indian Councils Act 1892","Montagu-Chelmsford Reforms","Morley-Minto Reforms"],a:1,e:"Indian Councils Act 1892 was passed as a partial response to INC's constitutional demands. It allowed indirect elections and budget discussions but was criticized as inadequate by nationalists."},
+  {q:"Poona Sarvajanik Sabha (1867) was founded by:",opts:["Tilak and Gokhale","M.G. Ranade and G.V. Joshi","Pherozeshah Mehta","Surendranath Banerjee"],a:1,e:"Poona Sarvajanik Sabha was founded in 1867 by Mahadev Govind Ranade and Ganesh Vasudeo Joshi. Tilak was NOT its founder — a common error due to his Pune connection."},
+  {q:"Which of the following newspapers was associated with Bipin Chandra Pal?",opts:["Kesari","Bengalee","New India","Amrita Bazar Patrika"],a:2,e:"Bipin Chandra Pal was associated with New India newspaper. Kesari (Marathi) belonged to Tilak. Bengalee was Surendranath Banerjee's paper. Amrita Bazar Patrika was founded by Sisir Kumar Ghosh."},
+  {q:"At which INC session did Dadabhai Naoroji first use the word 'Swaraj' in his presidential address?",opts:["1885 Bombay","1893 Lahore","1906 Calcutta","1905 Banaras"],a:2,e:"Dadabhai Naoroji first used the word 'Swaraj' in his presidential address at the 1906 Calcutta session of INC. This session was significant as it was the last time Naoroji presided (he presided 3 times: 1886, 1893, 1906)."}
+];
+
+let cur=0,sc=0;
+function startQ(){
+  cur=0;sc=0;
+  document.getElementById('qsc').style.display='none';
+  document.getElementById('qbody').style.display='block';
+  renderQ();
+}
+function renderQ(){
+  if(cur>=QS.length){
+    document.getElementById('qbody').style.display='none';
+    document.getElementById('qsc').style.display='block';
+    const p=Math.round(sc/QS.length*100);
+    document.getElementById('qscn').textContent=sc+'/'+QS.length;
+    const m=p>=80?'🎯 History Expert!':p>=60?'👍 Good — Review traps':'📚 Focus on key facts!';
+    document.getElementById('qscl').textContent=p+'% — '+m;
+    return;
+  }
+  document.getElementById('qpf').style.width=Math.round(cur/QS.length*100)+'%';
+  const q=QS[cur];
+  document.getElementById('qbody').innerHTML=`
+    <div class="qcard">
+      <div class="qn">Question ${cur+1} of ${QS.length}</div>
+      <div class="qt">${q.q}</div>
+      <div class="qopts">${q.opts.map((o,i)=>`<button class="qo" id="qo${i}" onclick="ans(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div>
+      <div class="qexp" id="qexp">${q.e}</div>
+    </div>
+    <button class="qnxt" id="qnxt" onclick="nxtQ()">Next →</button>`;
+}
+function ans(i){
+  const q=QS[cur];
+  document.querySelectorAll('.qo').forEach(b=>b.disabled=true);
+  document.getElementById('qo'+i).classList.add(i===q.a?'ok':'no');
+  document.getElementById('qo'+q.a).classList.add('ok');
+  document.getElementById('qexp').classList.add('on');
+  if(i===q.a)sc++;
+  document.getElementById('qnxt').style.display='inline-block';
+}
+function nxtQ(){cur++;renderQ();}
+startQ();
+</script>
+</body>
+</html>

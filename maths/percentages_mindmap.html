@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentages — CDS 2026 Master Mind Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0e1a;--bg2:#111526;--bg3:#171c30;--bg4:#1e2540;--bg5:#242b4a;
+  --accent:#f7c948;--accent2:#ff7c52;--accent3:#4fc3f7;--accent4:#69e8a0;--accent5:#c084fc;
+  --text:#f0eee8;--text2:#9b97a8;--text3:#5a576a;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --r:10px;--r2:7px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+
+/* ── SIDEBAR ── */
+#sidebar{
+  position:fixed;top:0;left:0;width:220px;height:100vh;
+  background:var(--bg2);border-right:1px solid var(--border2);
+  overflow-y:auto;z-index:200;padding:0 0 2rem;
+  transition:transform .3s;
+}
+#sidebar::-webkit-scrollbar{width:4px}
+#sidebar::-webkit-scrollbar-thumb{background:var(--bg5);border-radius:2px}
+.sb-logo{padding:1.2rem 1rem 1rem;border-bottom:1px solid var(--border);margin-bottom:.5rem}
+.sb-logo span{font-family:'Space Mono',monospace;font-size:11px;color:var(--accent);font-weight:700;letter-spacing:1px;display:block}
+.sb-logo small{font-size:10px;color:var(--text3);display:block;margin-top:3px}
+.sb-link{
+  display:flex;align-items:center;gap:8px;padding:7px 1rem;
+  font-size:11.5px;color:var(--text2);cursor:pointer;
+  border-left:2px solid transparent;transition:all .15s;text-decoration:none;
+}
+.sb-link:hover,.sb-link.active{color:var(--text);background:var(--bg3);border-left-color:var(--accent)}
+.sb-link .sb-icon{width:18px;text-align:center;font-size:12px;flex-shrink:0}
+.sb-section{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--text3);padding:8px 1rem 3px;font-weight:700}
+
+/* ── MAIN ── */
+#content{margin-left:220px;padding:2rem 2rem 5rem}
+#toggle-sb{display:none;position:fixed;top:12px;left:12px;z-index:300;background:var(--bg4);border:1px solid var(--border2);color:var(--text);padding:6px 10px;border-radius:6px;cursor:pointer;font-family:'Sora',sans-serif;font-size:12px}
+
+/* ── PAGE HEADER ── */
+.hero{
+  background:linear-gradient(135deg,rgba(247,201,72,.08),rgba(79,195,247,.05),rgba(255,124,82,.06));
+  border:1px solid var(--border2);border-radius:14px;padding:2.5rem;margin-bottom:2rem;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'%';position:absolute;right:-10px;top:50%;transform:translateY(-50%);
+  font-size:160px;font-weight:800;color:rgba(247,201,72,.04);line-height:1;pointer-events:none;
+  font-family:'Sora',sans-serif;
+}
+.hero h1{font-size:2rem;font-weight:800;color:var(--accent);line-height:1.2;margin-bottom:6px}
+.hero p{font-size:13px;color:var(--text2);max-width:500px}
+.hero-badges{display:flex;gap:7px;margin-top:14px;flex-wrap:wrap}
+.hb{font-size:10px;padding:3px 10px;border-radius:20px;font-weight:600;letter-spacing:.3px}
+.hb-y{background:rgba(247,201,72,.14);color:var(--accent);border:1px solid rgba(247,201,72,.3)}
+.hb-b{background:rgba(79,195,247,.12);color:var(--accent3);border:1px solid rgba(79,195,247,.25)}
+.hb-o{background:rgba(255,124,82,.12);color:var(--accent2);border:1px solid rgba(255,124,82,.25)}
+.hb-g{background:rgba(105,232,160,.12);color:var(--accent4);border:1px solid rgba(105,232,160,.25)}
+
+/* ── SECTION TITLE ── */
+.sec-title{
+  display:flex;align-items:center;gap:10px;margin:2rem 0 1rem;
+  padding-bottom:8px;border-bottom:1px solid var(--border2);
+}
+.sec-title h2{font-size:1.1rem;font-weight:700;color:var(--text)}
+.sec-title .st-num{
+  font-family:'Space Mono',monospace;font-size:10px;color:var(--bg);
+  background:var(--accent);padding:2px 8px;border-radius:4px;font-weight:700;
+}
+.sec-title .st-tag{font-size:10px;color:var(--text3);background:var(--bg4);padding:2px 8px;border-radius:4px;margin-left:auto}
+
+/* ── BRANCH (collapsible) ── */
+.branch{border:1px solid var(--border);border-radius:var(--r);margin-bottom:1rem;overflow:hidden}
+.branch-hd{
+  display:flex;align-items:center;gap:10px;padding:11px 14px;
+  cursor:pointer;background:var(--bg2);border-bottom:1px solid var(--border);
+  transition:background .15s;user-select:none;
+}
+.branch-hd:hover{background:var(--bg3)}
+.branch-icon{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.branch-title{font-size:13.5px;font-weight:600;flex:1}
+.branch-badge{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;font-family:'Space Mono',monospace}
+.chevron{font-size:10px;color:var(--text3);transition:transform .25s}
+.branch.open .chevron{transform:rotate(90deg)}
+.branch-body{display:none;padding:1.1rem 1.2rem;background:var(--bg)}
+.branch.open .branch-body{display:block}
+
+/* ── COLOR THEMES ── */
+.c-y .branch-hd{border-left:3px solid var(--accent)}
+.c-y .branch-icon{background:rgba(247,201,72,.12);color:var(--accent)}
+.c-y .branch-title{color:var(--accent)}
+.c-y .branch-badge{background:rgba(247,201,72,.14);color:var(--accent)}
+.c-o .branch-hd{border-left:3px solid var(--accent2)}
+.c-o .branch-icon{background:rgba(255,124,82,.1);color:var(--accent2)}
+.c-o .branch-title{color:var(--accent2)}
+.c-o .branch-badge{background:rgba(255,124,82,.13);color:var(--accent2)}
+.c-b .branch-hd{border-left:3px solid var(--accent3)}
+.c-b .branch-icon{background:rgba(79,195,247,.1);color:var(--accent3)}
+.c-b .branch-title{color:var(--accent3)}
+.c-b .branch-badge{background:rgba(79,195,247,.13);color:var(--accent3)}
+.c-g .branch-hd{border-left:3px solid var(--accent4)}
+.c-g .branch-icon{background:rgba(105,232,160,.1);color:var(--accent4)}
+.c-g .branch-title{color:var(--accent4)}
+.c-g .branch-badge{background:rgba(105,232,160,.12);color:var(--accent4)}
+.c-p .branch-hd{border-left:3px solid var(--accent5)}
+.c-p .branch-icon{background:rgba(192,132,252,.1);color:var(--accent5)}
+.c-p .branch-title{color:var(--accent5)}
+.c-p .branch-badge{background:rgba(192,132,252,.12);color:var(--accent5)}
+
+/* ── GRID CARDS ── */
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;margin:8px 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px;margin:8px 0}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:11px 13px}
+.card-hd{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.card p,.card li{font-size:12px;color:var(--text2);line-height:1.65}
+.card ul{padding-left:14px}
+.card li{margin-bottom:2px}
+.card strong{color:var(--text);font-weight:500}
+
+/* ── FORMULA BOX ── */
+.fbox{
+  background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r2);
+  padding:10px 14px;margin:8px 0;font-family:'Space Mono',monospace;
+  font-size:12px;color:var(--accent);line-height:1.7;
+}
+.fbox .flabel{font-family:'Sora',sans-serif;font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.fbox .fexplain{font-family:'Sora',sans-serif;font-size:11.5px;color:var(--text2);margin-top:5px}
+
+/* ── MNEMONIC ── */
+.mnem{background:rgba(105,232,160,.06);border:1px solid rgba(105,232,160,.2);border-radius:var(--r2);padding:10px 13px;margin:8px 0}
+.mnem .mn-t{font-size:10px;color:var(--accent4);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.mnem .mn-c{font-family:'Lora',serif;font-size:14px;color:var(--text);line-height:1.5}
+.mnem .mn-d{font-size:11.5px;color:var(--text2);margin-top:4px}
+
+/* ── TRAP BOX ── */
+.trap{background:rgba(255,124,82,.07);border:1px solid rgba(255,124,82,.22);border-radius:var(--r2);padding:10px 13px;margin:8px 0}
+.trap .tr-t{font-size:10px;color:var(--accent2);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.trap .tr-c{font-size:12px;color:var(--text2);line-height:1.6}
+.trap .tr-c strong{color:var(--accent2)}
+
+/* ── SHORTCUT CARD ── */
+.shortcut{background:rgba(247,201,72,.06);border:1px solid rgba(247,201,72,.2);border-radius:var(--r2);padding:10px 13px;margin:8px 0}
+.shortcut .sh-t{font-size:10px;color:var(--accent);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.shortcut .sh-c{font-size:12.5px;color:var(--text);line-height:1.65}
+.shortcut .sh-c code{font-family:'Space Mono',monospace;color:var(--accent);font-size:12px}
+
+/* ── CONVERSION TABLE ── */
+.ctable{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+.ctable th{background:var(--bg3);padding:7px 10px;text-align:left;font-weight:600;color:var(--text2);border-bottom:1px solid var(--border2);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.ctable td{padding:6px 10px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:middle}
+.ctable tr:hover td{background:var(--bg2)}
+.ctable .highlight{color:var(--accent);font-weight:600;font-family:'Space Mono',monospace}
+.ctable .hi-o{color:var(--accent2);font-weight:600;font-family:'Space Mono',monospace}
+.ctable .hi-b{color:var(--accent3);font-weight:600;font-family:'Space Mono',monospace}
+.ctable .hi-g{color:var(--accent4);font-weight:600;font-family:'Space Mono',monospace}
+
+/* ── INLINE ITEMS ── */
+.sub-hd{font-size:12.5px;font-weight:600;color:var(--text);margin:10px 0 5px;display:flex;align-items:center;gap:6px}
+.sub-hd::before{content:'';width:12px;height:2px;background:currentColor;opacity:.5;display:inline-block}
+.micro{margin-left:18px;margin-bottom:3px}
+.mi{font-size:12.5px;color:var(--text2);line-height:1.65;padding:2px 0;display:flex;gap:8px}
+.mi::before{content:'›';color:var(--text3);flex-shrink:0}
+.mi strong{color:var(--text);font-weight:500}
+.tag{display:inline-block;font-size:10px;padding:1px 7px;border-radius:8px;margin:1px 2px;font-weight:600;font-family:'Space Mono',monospace}
+.t-y{background:rgba(247,201,72,.14);color:var(--accent)}
+.t-o{background:rgba(255,124,82,.13);color:var(--accent2)}
+.t-b{background:rgba(79,195,247,.12);color:var(--accent3)}
+.t-g{background:rgba(105,232,160,.11);color:var(--accent4)}
+.t-p{background:rgba(192,132,252,.11);color:var(--accent5)}
+hr.div{border:none;border-top:1px solid var(--border);margin:10px 0}
+
+/* ── CONVERSION WALL ── */
+.conv-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin:8px 0}
+.conv-cell{
+  background:var(--bg3);border:1px solid var(--border);border-radius:8px;
+  padding:10px;text-align:center;transition:border-color .15s;
+}
+.conv-cell:hover{border-color:var(--border2)}
+.conv-cell .cv-frac{font-size:16px;font-family:'Space Mono',monospace;color:var(--accent);font-weight:700;line-height:1.3}
+.conv-cell .cv-eq{font-size:10px;color:var(--text3);margin:2px 0}
+.conv-cell .cv-pct{font-size:14px;font-weight:700;color:var(--accent4)}
+.conv-cell .cv-dec{font-size:10px;color:var(--text3);margin-top:2px}
+
+/* ── QUIZ SECTION ── */
+.qcard{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px;margin-bottom:12px}
+.q-num{font-family:'Space Mono',monospace;font-size:10px;color:var(--text3);margin-bottom:5px}
+.q-text{font-size:13.5px;font-weight:500;color:var(--text);margin-bottom:10px;line-height:1.55}
+.q-opts{display:flex;flex-direction:column;gap:5px}
+.q-opt{
+  background:var(--bg3);border:1px solid var(--border);border-radius:6px;
+  padding:7px 12px;cursor:pointer;font-size:12.5px;color:var(--text2);
+  transition:all .15s;text-align:left;width:100%;font-family:'Sora',sans-serif;
+}
+.q-opt:hover:not(:disabled){background:var(--bg4);border-color:var(--border2);color:var(--text)}
+.q-opt.correct{background:rgba(105,232,160,.14);border-color:var(--accent4);color:var(--accent4)}
+.q-opt.wrong{background:rgba(255,124,82,.12);border-color:var(--accent2);color:var(--accent2)}
+.q-exp{display:none;margin-top:9px;padding:8px 12px;background:var(--bg4);border-radius:6px;font-size:11.5px;color:var(--text2);line-height:1.55;border-left:2px solid var(--accent3)}
+.q-exp.show{display:block}
+.q-next{display:none;margin-top:10px;background:var(--accent);color:var(--bg);border:none;padding:7px 18px;border-radius:6px;font-family:'Sora',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer;transition:opacity .2s}
+.q-next:hover{opacity:.85}
+.q-score{text-align:center;padding:3rem 1rem;display:none}
+.qs-num{font-size:3.5rem;font-family:'Space Mono',monospace;color:var(--accent);font-weight:700}
+.qs-lbl{font-size:13px;color:var(--text2);margin-top:6px}
+.qs-restart{margin-top:1.5rem;background:none;border:1px solid var(--border2);color:var(--text);padding:8px 22px;border-radius:6px;cursor:pointer;font-family:'Sora',sans-serif;font-size:12.5px}
+.q-prog-wrap{height:3px;background:var(--bg3);border-radius:2px;margin-bottom:1.5rem}
+.q-prog-fill{height:100%;background:var(--accent);border-radius:2px;transition:width .3s}
+
+/* ── SPEED MATH SECTION ── */
+.speedgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin:8px 0}
+.speed-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);
+  padding:12px;border-top:3px solid var(--accent);
+}
+.speed-card .sc-title{font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.speed-card .sc-body{font-size:12px;color:var(--text2);line-height:1.6}
+.speed-card .sc-body strong{color:var(--text)}
+.speed-card .sc-body code{font-family:'Space Mono',monospace;font-size:11.5px;color:var(--accent3)}
+
+/* ── VISUAL BARS ── */
+.vis-bar-wrap{margin:8px 0}
+.vis-bar-row{display:flex;align-items:center;gap:10px;margin-bottom:5px}
+.vis-bar-label{font-size:11.5px;color:var(--text2);width:80px;flex-shrink:0;font-family:'Space Mono',monospace}
+.vis-bar-track{flex:1;height:8px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.vis-bar-fill{height:100%;border-radius:4px;background:var(--accent)}
+.vis-bar-pct{font-size:11px;color:var(--accent);font-family:'Space Mono',monospace;width:40px;text-align:right}
+
+/* ── FLOW DIAGRAM ── */
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0}
+.flow-box{background:var(--bg3);border:1px solid var(--border2);border-radius:6px;padding:6px 12px;font-size:12px;color:var(--text);font-weight:500}
+.flow-arrow{font-size:14px;color:var(--accent);flex-shrink:0}
+.flow-box.hi{background:rgba(247,201,72,.12);border-color:rgba(247,201,72,.3);color:var(--accent)}
+.flow-box.hi-g{background:rgba(105,232,160,.1);border-color:rgba(105,232,160,.25);color:var(--accent4)}
+.flow-box.hi-o{background:rgba(255,124,82,.1);border-color:rgba(255,124,82,.25);color:var(--accent2)}
+
+/* ── REVISION FRAMEWORK ── */
+.rev-frame{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:8px 0}
+.rev-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:14px}
+.rev-card h4{font-size:12px;font-weight:700;color:var(--accent);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:.5px}
+.rev-card ul{list-style:none}
+.rev-card li{font-size:11.5px;color:var(--text2);padding:2px 0 2px 13px;position:relative;line-height:1.5}
+.rev-card li::before{content:'▸';position:absolute;left:0;color:var(--text3);font-size:9px;top:4px}
+.rev-card li strong{color:var(--text);font-weight:500}
+
+/* ── FORMULA WALL ── */
+.fw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin:8px 0}
+.fw-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:12px}
+.fw-card .fw-cat{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.fw-card .fw-formula{font-family:'Space Mono',monospace;font-size:11.5px;color:var(--accent);background:var(--bg3);padding:6px 10px;border-radius:5px;margin:4px 0;line-height:1.5}
+.fw-card .fw-note{font-size:11px;color:var(--text3);margin-top:4px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  #sidebar{transform:translateX(-100%)}
+  #sidebar.open{transform:translateX(0)}
+  #content{margin-left:0;padding:1rem 1rem 4rem}
+  #toggle-sb{display:block}
+  .hero h1{font-size:1.5rem}
+}
+@media print{
+  #sidebar{display:none}
+  #content{margin-left:0}
+  .branch-body{display:block!important}
+  .chevron{display:none}
+}
+
+/* ── SECTION HEADERS for nav ── */
+.section{display:none}
+.section.active{display:block}
+</style>
+</head>
+<body>
+
+<button id="toggle-sb" onclick="document.getElementById('sidebar').classList.toggle('open')">☰ Menu</button>
+
+<nav id="sidebar">
+  <div class="sb-logo">
+    <span>% PERCENTAGES</span>
+    <small>CDS 2026 · UPSC CSAT Master Map</small>
+  </div>
+  <div class="sb-section">Foundation</div>
+  <a class="sb-link active" onclick="showSec('foundation')" href="#"><span class="sb-icon">📐</span>Foundation</a>
+  <a class="sb-link" onclick="showSec('conversions')" href="#"><span class="sb-icon">🔄</span>Conversions</a>
+  <a class="sb-link" onclick="showSec('increase')" href="#"><span class="sb-icon">📈</span>Increase & Decrease</a>
+  <a class="sb-link" onclick="showSec('successive')" href="#"><span class="sb-icon">⚡</span>Successive Changes</a>
+  <div class="sb-section">Applications</div>
+  <a class="sb-link" onclick="showSec('profitloss')" href="#"><span class="sb-icon">💰</span>Profit, Loss & Discount</a>
+  <a class="sb-link" onclick="showSec('applications')" href="#"><span class="sb-icon">🎯</span>Applications</a>
+  <a class="sb-link" onclick="showSec('di')" href="#"><span class="sb-icon">📊</span>Data Interpretation</a>
+  <a class="sb-link" onclick="showSec('advanced')" href="#"><span class="sb-icon">🔬</span>Advanced Concepts</a>
+  <div class="sb-section">Exam Weapons</div>
+  <a class="sb-link" onclick="showSec('speedmath')" href="#"><span class="sb-icon">🚀</span>Speed Math Zone</a>
+  <a class="sb-link" onclick="showSec('traps')" href="#"><span class="sb-icon">⚠️</span>Traps & Mistakes</a>
+  <a class="sb-link" onclick="showSec('formulas')" href="#"><span class="sb-icon">📋</span>Formula Master Sheet</a>
+  <div class="sb-section">Revision</div>
+  <a class="sb-link" onclick="showSec('revision')" href="#"><span class="sb-icon">⚡</span>Quick Revision</a>
+  <a class="sb-link" onclick="showSec('quiz')" href="#"><span class="sb-icon">✅</span>CDS Test (20 Qs)</a>
+  <a class="sb-link" onclick="showSec('upsc')" href="#"><span class="sb-icon">🏛️</span>UPSC-Level Qs</a>
+</nav>
+
+<div id="content">
+
+<!-- ════════════ FOUNDATION ════════════ -->
+<div id="foundation" class="section active">
+  <div class="hero">
+    <h1>Percentages — Master Mind Map</h1>
+    <p>CDS 2 2026 · UPSC CSAT · Complete Quantitative Aptitude System</p>
+    <div class="hero-badges">
+      <span class="hb hb-y">Part of 100</span>
+      <span class="hb hb-b">Speed Math</span>
+      <span class="hb hb-o">PYQ Patterns</span>
+      <span class="hb hb-g">Shortcut Engine</span>
+    </div>
+  </div>
+
+  <div class="sec-title"><span class="st-num">01</span><h2>Foundation of Percentages</h2><span class="st-tag">CORE</span></div>
+
+  <div class="branch c-y open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">📐</div>
+      <div class="branch-title">What is a Percentage?</div>
+      <span class="branch-badge">DEFINITION</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Core Definition</div>
+        Percentage = Per + Cent = "Per hundred"
+        <div class="fexplain">x% means x out of every 100 · x% = x/100 = 0.0x</div>
+      </div>
+      <div class="grid2">
+        <div class="card"><div class="card-hd" style="color:var(--accent)">As Fraction</div><p><strong>x% = x/100</strong><br>So 35% = 35/100 = 7/20<br>Always simplify the fraction</p></div>
+        <div class="card"><div class="card-hd" style="color:var(--accent3)">As Decimal</div><p><strong>x% = x ÷ 100</strong><br>So 35% = 0.35<br>Move decimal 2 places LEFT</p></div>
+        <div class="card"><div class="card-hd" style="color:var(--accent4)">As Ratio</div><p><strong>x% = x : 100</strong><br>So 25% = 25:100 = 1:4<br>Part to whole relationship</p></div>
+        <div class="card"><div class="card-hd" style="color:var(--accent2)">Base Value</div><p><strong>"% of WHAT?"</strong> always matters.<br>Base = the whole/original value.<br>Always identify base first!</p></div>
+      </div>
+      <div class="fbox" style="margin-top:10px">
+        <div class="flabel">Universal Formula</div>
+        Percentage = (Part / Whole) × 100
+        <div class="fexplain">Part = (Percentage × Whole) / 100 · Whole = (Part × 100) / Percentage</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">⚠️ Base Value Trap</div>
+        <div class="tr-c">60% of 50 ≠ 50% of 60? <strong>Actually they ARE equal!</strong> (both = 30) because a% of b = b% of a always. Use this to speed up calculations!</div>
+      </div>
+      <div class="mnem">
+        <div class="mn-t">🧠 Core Rule</div>
+        <div class="mn-c">"Percent = Part per Hundred"</div>
+        <div class="mn-d">Whenever confused, convert to fraction /100 first. This eliminates 80% of percentage errors.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-b">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🔗</div>
+      <div class="branch-title">Ratio–Percent Relationship</div>
+      <span class="branch-badge">BRIDGE</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">If ratio a:b, then percentage of a</div>
+        % of a = a/(a+b) × 100
+        <div class="fexplain">If ratio is a:b:c → % of a = a/(a+b+c) × 100</div>
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ Ratio to % Shortcut</div>
+        <div class="sh-c">Ratio 3:2 → Total parts = 5. First = <code>3/5×100 = 60%</code>, Second = <code>2/5×100 = 40%</code><br>Ratio 1:3:1 → 20%, 60%, 20%</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">⚠️ CDS Trap</div>
+        <div class="tr-c">"A's salary is <strong>25% more than B</strong>" vs "B's salary is <strong>25% less than A</strong>" — These are DIFFERENT! First: A = 1.25B. Second: B = 0.75A → A = B/0.75 = 1.333B. <strong>25% more ≠ 25% less from other side.</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ CONVERSIONS ════════════ -->
+<div id="conversions" class="section">
+  <div class="sec-title"><span class="st-num">02</span><h2>Percentage Conversions — Master Table</h2><span class="st-tag">MEMORIZE</span></div>
+
+  <div class="branch c-y open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🗂️</div>
+      <div class="branch-title">Fraction ↔ Percentage Conversion Wall</div>
+      <span class="branch-badge">FLASH CARDS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="mnem">
+        <div class="mn-t">🧠 Pattern Recognition Trick</div>
+        <div class="mn-c">"1/n = 100/n %"</div>
+        <div class="mn-d">1/4 = 25%, 1/5 = 20%, 1/6 = 16.67%, 1/7 = 14.28%, 1/8 = 12.5%, 1/9 = 11.11%, 1/10 = 10%</div>
+      </div>
+      <div class="conv-wall">
+        <div class="conv-cell"><div class="cv-frac">1/2</div><div class="cv-eq">=</div><div class="cv-pct">50%</div><div class="cv-dec">0.5</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/3</div><div class="cv-eq">=</div><div class="cv-pct">33.33%</div><div class="cv-dec">0.333</div></div>
+        <div class="conv-cell"><div class="cv-frac">2/3</div><div class="cv-eq">=</div><div class="cv-pct">66.67%</div><div class="cv-dec">0.667</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/4</div><div class="cv-eq">=</div><div class="cv-pct">25%</div><div class="cv-dec">0.25</div></div>
+        <div class="conv-cell"><div class="cv-frac">3/4</div><div class="cv-eq">=</div><div class="cv-pct">75%</div><div class="cv-dec">0.75</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/5</div><div class="cv-eq">=</div><div class="cv-pct">20%</div><div class="cv-dec">0.2</div></div>
+        <div class="conv-cell"><div class="cv-frac">2/5</div><div class="cv-eq">=</div><div class="cv-pct">40%</div><div class="cv-dec">0.4</div></div>
+        <div class="conv-cell"><div class="cv-frac">3/5</div><div class="cv-eq">=</div><div class="cv-pct">60%</div><div class="cv-dec">0.6</div></div>
+        <div class="conv-cell"><div class="cv-frac">4/5</div><div class="cv-eq">=</div><div class="cv-pct">80%</div><div class="cv-dec">0.8</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/6</div><div class="cv-eq">=</div><div class="cv-pct">16.67%</div><div class="cv-dec">0.1667</div></div>
+        <div class="conv-cell"><div class="cv-frac">5/6</div><div class="cv-eq">=</div><div class="cv-pct">83.33%</div><div class="cv-dec">0.8333</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/7</div><div class="cv-eq">=</div><div class="cv-pct">14.28%</div><div class="cv-dec">0.1428</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/8</div><div class="cv-eq">=</div><div class="cv-pct">12.5%</div><div class="cv-dec">0.125</div></div>
+        <div class="conv-cell"><div class="cv-frac">3/8</div><div class="cv-eq">=</div><div class="cv-pct">37.5%</div><div class="cv-dec">0.375</div></div>
+        <div class="conv-cell"><div class="cv-frac">5/8</div><div class="cv-eq">=</div><div class="cv-pct">62.5%</div><div class="cv-dec">0.625</div></div>
+        <div class="conv-cell"><div class="cv-frac">7/8</div><div class="cv-eq">=</div><div class="cv-pct">87.5%</div><div class="cv-dec">0.875</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/9</div><div class="cv-eq">=</div><div class="cv-pct">11.11%</div><div class="cv-dec">0.111</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/10</div><div class="cv-eq">=</div><div class="cv-pct">10%</div><div class="cv-dec">0.1</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/11</div><div class="cv-eq">=</div><div class="cv-pct">9.09%</div><div class="cv-dec">0.0909</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/12</div><div class="cv-eq">=</div><div class="cv-pct">8.33%</div><div class="cv-dec">0.0833</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/16</div><div class="cv-eq">=</div><div class="cv-pct">6.25%</div><div class="cv-dec">0.0625</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/20</div><div class="cv-eq">=</div><div class="cv-pct">5%</div><div class="cv-dec">0.05</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/25</div><div class="cv-eq">=</div><div class="cv-pct">4%</div><div class="cv-dec">0.04</div></div>
+        <div class="conv-cell"><div class="cv-frac">1/50</div><div class="cv-eq">=</div><div class="cv-pct">2%</div><div class="cv-dec">0.02</div></div>
+      </div>
+      <div class="shortcut" style="margin-top:12px">
+        <div class="sh-t">⚡ Speed Conversion Rules</div>
+        <div class="sh-c">
+          Fraction→%: Multiply by 100 | <code>3/8 → 3×100/8 = 37.5%</code><br>
+          %→Fraction: Divide by 100, simplify | <code>37.5% → 37.5/100 = 3/8</code><br>
+          Decimal→%: Multiply by 100 (shift decimal right 2) | <code>0.375 → 37.5%</code><br>
+          %→Decimal: Divide by 100 (shift decimal left 2) | <code>37.5% → 0.375</code>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-g">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🎯</div>
+      <div class="branch-title">Complement Method — Fast Calculation</div>
+      <span class="branch-badge">SHORTCUT</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="shortcut">
+        <div class="sh-t">⚡ Complement Principle</div>
+        <div class="sh-c">
+          If you know 1/n%, then (n-1)/n% = 100% - 1/n%<br>
+          Know <code>1/4=25%</code> → <code>3/4=75%</code> instantly<br>
+          Know <code>1/8=12.5%</code> → <code>7/8=87.5%</code> instantly<br>
+          <strong>Rule:</strong> Complementary fractions sum to 100%
+        </div>
+      </div>
+      <div class="mnem">
+        <div class="mn-t">🧠 Memory Pattern for Thirds</div>
+        <div class="mn-c">33.33, 66.67, 100 — Each step adds 33.33</div>
+        <div class="mn-d">1/3 = 33.33% · 2/3 = 66.67% · 3/3 = 100% — Pattern: multiply 1/3% by numerator</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ INCREASE/DECREASE ════════════ -->
+<div id="increase" class="section">
+  <div class="sec-title"><span class="st-num">03</span><h2>Percentage Increase & Decrease</h2><span class="st-tag">HIGH YIELD</span></div>
+
+  <div class="branch c-o open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">📈</div>
+      <div class="branch-title">Core Formulas — Increase & Decrease</div>
+      <span class="branch-badge">FORMULAS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="grid2">
+        <div class="fbox">
+          <div class="flabel">% Increase</div>
+          % Increase = [(New - Old) / Old] × 100
+          <div class="fexplain">New value is MORE than original</div>
+        </div>
+        <div class="fbox">
+          <div class="flabel">% Decrease</div>
+          % Decrease = [(Old - New) / Old] × 100
+          <div class="fexplain">New value is LESS than original</div>
+        </div>
+      </div>
+      <div class="fbox">
+        <div class="flabel">Multiplier Method (Fastest!)</div>
+        r% increase → Multiply by (1 + r/100) = (100+r)/100
+        r% decrease → Multiply by (1 - r/100) = (100-r)/100
+        <div class="fexplain">20% increase → multiply by 1.2 · 15% decrease → multiply by 0.85</div>
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ Multiplier Table — CDS Speed</div>
+        <div class="sh-c">
+          5% increase → ×1.05 | 10% → ×1.1 | 15% → ×1.15 | 20% → ×1.2 | 25% → ×1.25<br>
+          5% decrease → ×0.95 | 10% → ×0.9 | 15% → ×0.85 | 20% → ×0.8 | 25% → ×0.75<br>
+          <strong>50% increase → ×1.5 | 100% increase → ×2 | 200% increase → ×3</strong>
+        </div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">⚠️ Classic CDS Trap: Increase then Decrease</div>
+        <div class="tr-c">If price increases by 20% then decreases by 20%, net change is <strong>NOT zero!</strong><br>Net = 1.2 × 0.8 = 0.96 → <strong>4% decrease</strong>. General formula: Net = (1+a/100)(1-b/100) - 1</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-y">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">↔️</div>
+      <div class="branch-title">Reverse Percentage (Finding Original)</div>
+      <span class="branch-badge">REVERSE</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Reverse Formula — Find Original</div>
+        If after r% increase, new value = N → Original = N × 100/(100+r)
+        If after r% decrease, new value = N → Original = N × 100/(100-r)
+        <div class="fexplain">Example: After 20% increase, price = 240 → Original = 240 × 100/120 = 200</div>
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ Reverse % Quick Method</div>
+        <div class="sh-c">After 25% increase, value = 500. Original?<br><code>500 / 1.25 = 400</code> (Divide by multiplier)<br>After 20% decrease, value = 400. Original?<br><code>400 / 0.8 = 500</code></div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">⚠️ % of What? Always Identify Base!</div>
+        <div class="tr-c">"Salary increased by ₹600, which is 20% increase" → Original = 600/20 × 100 = <strong>₹3000</strong>, NOT ₹600+₹120</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-b">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🏘️</div>
+      <div class="branch-title">Population Growth & Decay</div>
+      <span class="branch-badge">APPLIED</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Population After n Years (r% growth)</div>
+        P(n) = P₀ × (1 + r/100)ⁿ
+        <div class="fexplain">P₀ = initial population · r = growth rate · n = years</div>
+      </div>
+      <div class="fbox">
+        <div class="flabel">Population Decrease/Decay</div>
+        P(n) = P₀ × (1 - r/100)ⁿ
+        <div class="fexplain">Used for depreciation, radioactive decay, disease spread</div>
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ 2-Year Compound Formula</div>
+        <div class="sh-c">Net % change for 2 years at r% = <code>2r + r²/100</code><br>Example: 10% for 2 years = 20 + 1 = <strong>21%</strong> net increase</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ SUCCESSIVE CHANGES ════════════ -->
+<div id="successive" class="section">
+  <div class="sec-title"><span class="st-num">04</span><h2>Successive Percentage Changes</h2><span class="st-tag">CRITICAL</span></div>
+
+  <div class="branch c-p open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">⚡</div>
+      <div class="branch-title">Net Percentage Change Formula</div>
+      <span class="branch-badge">MASTER FORMULA</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Two Successive Changes: a% then b%</div>
+        Net % = a + b + (a×b)/100
+        <div class="fexplain">+ve = increase, -ve = decrease · Works for any combination</div>
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ Examples — Commit to Memory</div>
+        <div class="sh-c">
+          +20% then +20% = 20+20+4 = <strong>+44%</strong><br>
+          +20% then -20% = 20-20-4 = <strong>-4%</strong><br>
+          +10% then -10% = 10-10-1 = <strong>-1%</strong><br>
+          -10% then -10% = -10-10+1 = <strong>-19%</strong><br>
+          +25% then -20% = 25-20-5 = <strong>0%</strong> (back to original!)
+        </div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">⚠️ Sign Rule for Successive %</div>
+        <div class="tr-c">In formula a + b + ab/100:<br>
+          If both increase → a×b/100 is <strong>positive</strong> (adds)<br>
+          If one increase, one decrease → a×b/100 is <strong>negative</strong> (subtracts)<br>
+          If both decrease → a×b/100 is <strong>positive</strong> (but a,b are both negative, so still net decrease)
+        </div>
+      </div>
+      <div class="fbox">
+        <div class="flabel">Three Successive Changes: a%, b%, c%</div>
+        Use multiplier: (1+a/100)(1+b/100)(1+c/100) - 1
+        <div class="fexplain">Fastest method for 3+ changes — multiply then subtract 1</div>
+      </div>
+      <div class="mnem">
+        <div class="mn-t">🧠 Memory Hook for Successive %</div>
+        <div class="mn-c">"Add, Add, then Add the Product÷100"</div>
+        <div class="mn-d">a + b + ab/100. The ab/100 term is always subtracted if signs differ. Remember: same signs → add the product, different signs → subtract.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-y">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🔄</div>
+      <div class="branch-title">Equivalent Single Percentage</div>
+      <span class="branch-badge">EQUIVALENT</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="shortcut">
+        <div class="sh-t">⚡ Key Equivalents — CDS Favorites</div>
+        <div class="sh-c">
+          Two equal increases of r% → Net = 2r + r²/100<br>
+          r% up then r% down → Net = <code>-r²/100</code> (always a loss!)<br>
+          r% up then same as making original = r/(100+r) × 100% decrease needed<br>
+          <strong>To cancel x% increase → need x/(100+x) × 100% decrease</strong>
+        </div>
+      </div>
+      <div class="fbox">
+        <div class="flabel">To Restore After x% Increase</div>
+        Required decrease % = x/(100+x) × 100
+        <div class="fexplain">After 25% increase → need 25/125 × 100 = 20% decrease to restore</div>
+      </div>
+      <div class="fbox">
+        <div class="flabel">To Restore After x% Decrease</div>
+        Required increase % = x/(100-x) × 100
+        <div class="fexplain">After 20% decrease → need 20/80 × 100 = 25% increase to restore</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">⚠️ Most Repeated CDS Question Type</div>
+        <div class="tr-c">"If length increases 20%, width decreases 20%, area changes by?" → Area = L×W, Net change = -4% (use successive formula). <strong>Area decreases by 4%!</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ PROFIT LOSS DISCOUNT ════════════ -->
+<div id="profitloss" class="section">
+  <div class="sec-title"><span class="st-num">05</span><h2>Profit, Loss & Discount — % Connection</h2><span class="st-tag">SCORING</span></div>
+
+  <div class="branch c-o open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">💰</div>
+      <div class="branch-title">Core Profit & Loss Formulas</div>
+      <span class="branch-badge">FORMULAS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="flow">
+        <div class="flow-box hi-o">Cost Price (CP)</div>
+        <div class="flow-arrow">→ Profit/Loss →</div>
+        <div class="flow-box hi">Selling Price (SP)</div>
+        <div class="flow-arrow">← Discount ←</div>
+        <div class="flow-box hi-g">Marked Price (MP)</div>
+      </div>
+      <div class="grid2" style="margin-top:10px">
+        <div class="fbox">
+          <div class="flabel">Profit %</div>
+          Profit% = (SP - CP)/CP × 100
+          <div class="fexplain">Base = CP always for profit/loss %</div>
+        </div>
+        <div class="fbox">
+          <div class="flabel">Loss %</div>
+          Loss% = (CP - SP)/CP × 100
+          <div class="fexplain">Base = CP always for profit/loss %</div>
+        </div>
+        <div class="fbox">
+          <div class="flabel">SP from Profit%</div>
+          SP = CP × (100 + P%)/100
+          <div class="fexplain">20% profit → SP = CP × 1.2</div>
+        </div>
+        <div class="fbox">
+          <div class="flabel">SP from Loss%</div>
+          SP = CP × (100 - L%)/100
+          <div class="fexplain">15% loss → SP = CP × 0.85</div>
+        </div>
+      </div>
+      <div class="fbox">
+        <div class="flabel">Discount Formula</div>
+        Discount% = (MP - SP)/MP × 100
+        SP = MP × (100 - D%)/100
+        <div class="fexplain">Base = MP always for discount% · Discount is ALWAYS on Marked Price</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">⚠️ Critical: Profit% vs Discount% Bases!</div>
+        <div class="tr-c"><strong>Profit% base = CP</strong> | <strong>Discount% base = MP</strong><br>These are DIFFERENT bases. Mixing them up is the #1 P&L error in CDS!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-g">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🏷️</div>
+      <div class="branch-title">Successive Discounts</div>
+      <span class="branch-badge">DISCOUNT CHAIN</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Two Successive Discounts a% and b%</div>
+        Net Discount = a + b - ab/100
+        <div class="fexplain">20% + 10% successive = 20+10-2 = 28% (NOT 30%!)</div>
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ Successive Discount Shortcuts</div>
+        <div class="sh-c">
+          20% + 20% = 36% net | 10% + 10% = 19% net<br>
+          25% + 20% = 40% net | 30% + 30% = 51% net<br>
+          <strong>Always less than arithmetic sum!</strong><br>
+          SP = MP × (1-a/100) × (1-b/100)
+        </div>
+      </div>
+      <div class="fbox">
+        <div class="flabel">Equivalent Single Discount for a% and b%</div>
+        = a + b - ab/100 (same as successive % formula!)
+        <div class="fexplain">Successive discounts use same formula as successive % changes</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-b">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🔗</div>
+      <div class="branch-title">MP–CP Relationship (Profit After Discount)</div>
+      <span class="branch-badge">COMBINED</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Finding MP when CP and Profit% and Discount% known</div>
+        MP = CP × (100 + Profit%) / (100 - Discount%)
+        <div class="fexplain">Example: CP=100, profit=20%, discount=10% → MP = 100×120/90 = 133.33</div>
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ Break-Even Trap — CDS Favorite</div>
+        <div class="sh-c">
+          Marked 40% above CP, discount 20% → Profit = ?<br>
+          SP = 1.4 × 0.8 = 1.12 × CP → <code>12% profit</code><br>
+          General: (1 + m/100)(1 - d/100) - 1 = net profit%
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ APPLICATIONS ════════════ -->
+<div id="applications" class="section">
+  <div class="sec-title"><span class="st-num">06</span><h2>Percentage Applications</h2><span class="st-tag">DIVERSE</span></div>
+
+  <div class="branch c-b open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">📝</div>
+      <div class="branch-title">Exam Marks & Scores</div>
+      <span class="branch-badge">CDS STAPLE</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Score → Percentage</div>
+        % = (Marks obtained / Total marks) × 100
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ Exam Marks Tricks</div>
+        <div class="sh-c">
+          Pass marks = P% of total → Min marks = T × P/100<br>
+          "x% more than pass" → Obtained = Pass + x% of Pass = Pass × (1 + x/100)<br>
+          "Failed by y marks" → Obtained = Pass - y<br>
+          "Needed y more to pass" → same as above
+        </div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">⚠️ Common Exam Marks Trap</div>
+        <div class="tr-c">"Student A scored 40% and B scored 30% more than A" → B's score = A's + 30% of A's = 1.3A, NOT A + 30%of total</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-g">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">💵</div>
+      <div class="branch-title">Income, Expenditure & Savings</div>
+      <span class="branch-badge">HIGH FREQ</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Key Relationship</div>
+        Savings = Income - Expenditure
+        If Income increases x%, Expenditure increases y% → Savings change = ?
+        <div class="fexplain">Calculate new income, new expenditure, then find new savings, then % change</div>
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ Income-Expenditure Shortcut</div>
+        <div class="sh-c">
+          Income = 100, Expenditure = 80, Savings = 20<br>
+          Income +20%, Expenditure +25% → New: 120, 100, Savings = 20 (no change!)<br>
+          <strong>Rule: % change in savings = (ΔIncome - ΔExpenditure) / Original Savings × 100</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-y">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🧪</div>
+      <div class="branch-title">Mixture & Alligation with % </div>
+      <span class="branch-badge">ANALYTICAL</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Mixture of two % concentrations</div>
+        New% = (Q1×C1 + Q2×C2) / (Q1 + Q2)
+        <div class="fexplain">Q1,Q2 = quantities; C1,C2 = concentrations as percentages</div>
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ Alligation for % Ratio</div>
+        <div class="sh-c">Mix solutions of 30% and 50% to get 40%:<br>Ratio = (50-40):(40-30) = 10:10 = <code>1:1</code><br>Higher%−Mean : Mean−Lower% gives mixing ratio</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ DATA INTERPRETATION ════════════ -->
+<div id="di" class="section">
+  <div class="sec-title"><span class="st-num">07</span><h2>Data Interpretation — % Techniques</h2><span class="st-tag">EXAM CRITICAL</span></div>
+
+  <div class="branch c-b open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">📊</div>
+      <div class="branch-title">DI Speed Techniques</div>
+      <span class="branch-badge">SPEED</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="speedgrid">
+        <div class="speed-card">
+          <div class="sc-title">10% Base Method</div>
+          <div class="sc-body">Find 10% first, then build: <code>15% = 10% + 5%</code>, <code>35% = 30% + 5%</code>, <code>125% = 100% + 25%</code>. Always start from 10%.</div>
+        </div>
+        <div class="speed-card">
+          <div class="sc-title">Percentage Share</div>
+          <div class="sc-body">% share = Part/Total × 100. In pie charts: each degree = <code>1/360 × 100 = 0.278%</code>. Or: <code>value = degree/360 × total</code>.</div>
+        </div>
+        <div class="speed-card">
+          <div class="sc-title">% Change in DI</div>
+          <div class="sc-body">For approx: if change is small, use <code>(Change/Original) × 100</code>. Round to nearest 5% for elimination. Exact calculation only if options are close.</div>
+        </div>
+        <div class="speed-card">
+          <div class="sc-title">Ratio Comparison</div>
+          <div class="sc-body">Compare a/b vs c/d without cross-multiplication: if <code>a/b > c/d</code> then a×d > b×c. Saves time in DI comparisons.</div>
+        </div>
+      </div>
+      <div class="fbox" style="margin-top:10px">
+        <div class="flabel">Pie Chart Formula</div>
+        Value of sector = (Degree/360) × Total
+        % of sector = (Degree/360) × 100
+        <div class="fexplain">1% = 3.6° · 10% = 36° · 25% = 90° · 50% = 180°</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">⚠️ DI Trap: % Change vs Percentage Point Change</div>
+        <div class="tr-c">
+          Market share: 30% → 36%<br>
+          <strong>Percentage POINT change = 36 - 30 = 6 percentage points</strong><br>
+          <strong>% change = (36-30)/30 × 100 = 20%</strong><br>
+          These are very different! CDS always tests this distinction.
+        </div>
+      </div>
+
+      <!-- Visual Bar Chart using CSS -->
+      <div class="sub-hd" style="color:var(--accent3);margin-top:12px">Sample DI Visualization</div>
+      <div class="vis-bar-wrap">
+        <div class="vis-bar-row"><div class="vis-bar-label">Q1: 25%</div><div class="vis-bar-track"><div class="vis-bar-fill" style="width:25%;background:var(--accent)"></div></div><div class="vis-bar-pct">25%</div></div>
+        <div class="vis-bar-row"><div class="vis-bar-label">Q2: 40%</div><div class="vis-bar-track"><div class="vis-bar-fill" style="width:40%;background:var(--accent3)"></div></div><div class="vis-bar-pct">40%</div></div>
+        <div class="vis-bar-row"><div class="vis-bar-label">Q3: 60%</div><div class="vis-bar-track"><div class="vis-bar-fill" style="width:60%;background:var(--accent4)"></div></div><div class="vis-bar-pct">60%</div></div>
+        <div class="vis-bar-row"><div class="vis-bar-label">Q4: 80%</div><div class="vis-bar-track"><div class="vis-bar-fill" style="width:80%;background:var(--accent2)"></div></div><div class="vis-bar-pct">80%</div></div>
+        <div class="vis-bar-row"><div class="vis-bar-label">Total</div><div class="vis-bar-track"><div class="vis-bar-fill" style="width:100%;background:var(--accent5)"></div></div><div class="vis-bar-pct">100%</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ ADVANCED ════════════ -->
+<div id="advanced" class="section">
+  <div class="sec-title"><span class="st-num">08</span><h2>Advanced Percentage Concepts</h2><span class="st-tag">UPSC LEVEL</span></div>
+
+  <div class="branch c-p open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🔬</div>
+      <div class="branch-title">Percentage Points vs Percentages</div>
+      <span class="branch-badge">ANALYTICAL</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Critical Distinction</div>
+        If X changes from 30% to 45%:
+        Percentage POINT change = 45 - 30 = 15 pp
+        % CHANGE in percentage = (45-30)/30 × 100 = 50%
+        <div class="fexplain">Always clarify: is the question asking % change or percentage point change?</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">⚠️ UPSC-CDS Confusion Zone</div>
+        <div class="tr-c">
+          "Inflation rose by 2 percentage points" = from say 5% to 7%<br>
+          "Inflation rose by 2%" = 5% × 1.02 = 5.1% (very different!)<br>
+          In economics/statistics: percentage POINT = absolute change in % values
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-y">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">⚖️</div>
+      <div class="branch-title">Net Effect Analysis (Area, Volume)</div>
+      <span class="branch-badge">GEOMETRY+%</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="fbox">
+        <div class="flabel">Rectangle Area Change</div>
+        If L increases a%, W increases b% → Area change = a + b + ab/100
+        If L increases a%, W decreases b% → Area change = a - b - ab/100
+      </div>
+      <div class="shortcut">
+        <div class="sh-t">⚡ Favorite CDS Area Questions</div>
+        <div class="sh-c">
+          L+20%, W-20% → Area change = 20-20-4 = <strong>-4%</strong><br>
+          L+10%, W+10% → Area change = 10+10+1 = <strong>+21%</strong><br>
+          L+50%, W-50% → Area change = 50-50-25 = <strong>-25%</strong><br>
+          Cube side +10% → Volume change = 3(10) + 3(1) + 0.001 ≈ <strong>+33.1%</strong>
+        </div>
+      </div>
+      <div class="fbox">
+        <div class="flabel">Cube Volume (side increases by r%)</div>
+        Volume change% ≈ 3r + 3r²/100 + r³/10000
+        <div class="fexplain">For small r, approximate as 3r%. For 10% → 33.1%</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ SPEED MATH ════════════ -->
+<div id="speedmath" class="section">
+  <div class="sec-title"><span class="st-num">09</span><h2>Speed Math Zone</h2><span class="st-tag">EXAM HALL</span></div>
+
+  <div class="branch c-y open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🚀</div>
+      <div class="branch-title">Mental % Calculation Hacks</div>
+      <span class="branch-badge">SPEED TRICKS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="speedgrid">
+        <div class="speed-card">
+          <div class="sc-title">10% Rule</div>
+          <div class="sc-body">10% = shift decimal left 1 place.<br><code>10% of 460 = 46</code><br><code>10% of 325 = 32.5</code><br>Build all % from 10%</div>
+        </div>
+        <div class="speed-card">
+          <div class="sc-title">1% Rule</div>
+          <div class="sc-body">1% = shift decimal left 2 places.<br><code>1% of 850 = 8.5</code><br>Useful for 7%, 11%, 13%, 17%<br>= 10%±some×1%</div>
+        </div>
+        <div class="speed-card">
+          <div class="sc-title">5% Shortcut</div>
+          <div class="sc-body">5% = half of 10%<br><code>5% of 840 = 42</code><br>25% = 5×5% or ÷4<br>15% = 10% + 5%</div>
+        </div>
+        <div class="speed-card">
+          <div class="sc-title">Symmetry Trick</div>
+          <div class="sc-body">a% of b = b% of a<br><code>7% of 50 = 50% of 7 = 3.5</code><br>Always use simpler side!<br>Huge time saver.</div>
+        </div>
+        <div class="speed-card">
+          <div class="sc-title">Anchor Method</div>
+          <div class="sc-body">37% of 200:<br>= 30% + 7% = 60 + 14 = <code>74</code><br>Break into tens + units</div>
+        </div>
+        <div class="speed-card">
+          <div class="sc-title">Fraction Swap</div>
+          <div class="sc-body">25% = ×1/4 · 50% = ×1/2<br>33.33% = ×1/3 · 75% = ×3/4<br>Multiply/divide instead of %</div>
+        </div>
+      </div>
+      <div class="shortcut" style="margin-top:10px">
+        <div class="sh-t">⚡ Build ANY % from Base Elements</div>
+        <div class="sh-c">
+          <code>17.5% = 10% + 5% + 2.5%</code><br>
+          <code>22.5% = 20% + 2.5% = 2×10% + 5%÷2</code><br>
+          <code>37.5% = 3/8 = 30% + 7.5%</code> OR just use <code>3×(10%)+ 7.5%</code><br>
+          <strong>Master rule: Any % = combinations of 10%, 5%, 1%, 0.5%</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="branch c-o">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🎯</div>
+      <div class="branch-title">Option Elimination — Exam Hall Tactics</div>
+      <span class="branch-badge">STRATEGY</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="speedgrid">
+        <div class="speed-card" style="border-top-color:var(--accent2)">
+          <div class="sc-title" style="color:var(--accent2)">Units Check</div>
+          <div class="sc-body">If answer should be %, eliminate non-% options. If asking for a number, % answers are wrong.</div>
+        </div>
+        <div class="speed-card" style="border-top-color:var(--accent2)">
+          <div class="sc-title" style="color:var(--accent2)">Approximation Filter</div>
+          <div class="sc-body">Round numbers to nearest 5 or 10 first. If exact options differ widely, approximation eliminates 2-3 choices instantly.</div>
+        </div>
+        <div class="speed-card" style="border-top-color:var(--accent2)">
+          <div class="sc-title" style="color:var(--accent2)">Sign Check</div>
+          <div class="sc-body">After successive changes (one+, one-), result is LESS than lower of the two changes. Eliminates wrong-sign options.</div>
+        </div>
+        <div class="speed-card" style="border-top-color:var(--accent2)">
+          <div class="sc-title" style="color:var(--accent2)">Base Sanity Check</div>
+          <div class="sc-body">% of something cannot exceed 100% unless explicitly stated. If answer >100%, it should be stated as "X times" not "X%".</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ TRAPS ════════════ -->
+<div id="traps" class="section">
+  <div class="sec-title"><span class="st-num">10</span><h2>CDS/UPSC Traps & Common Mistakes</h2><span class="st-tag">AVOID ERRORS</span></div>
+
+  <div class="branch c-o open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">⚠️</div>
+      <div class="branch-title">The 10 Deadliest Percentage Traps</div>
+      <span class="branch-badge">CRITICAL</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="trap">
+        <div class="tr-t">🪤 Trap 1: Percentage Points ≠ Percentage Change</div>
+        <div class="tr-c">Savings rate: 8% → 10%. Change = 2 percentage points, but <strong>25% increase</strong> in savings rate. Q will ask one, answer may reflect other.</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">🪤 Trap 2: Base Changes in Successive %</div>
+        <div class="tr-c">20% increase then 20% decrease ≠ 0. <strong>Net = -4%</strong>. Always use: a+b+ab/100 with signs.</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">🪤 Trap 3: Wrong Base for Profit% vs Discount%</div>
+        <div class="tr-c"><strong>Profit% base = CP. Discount% base = MP.</strong> Never mix these. A 20% discount on MP is very different from 20% profit on CP.</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">🪤 Trap 4: "X is Y% more than Z" Direction Matters</div>
+        <div class="tr-c">"A is 20% more than B" → A = 1.2B (B is base). "B is 20% less than A" → B = 0.8A → A = B/0.8 = 1.25B. DIFFERENT!</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">🪤 Trap 5: Population Increase Two Ways</div>
+        <div class="tr-c">10% per year for 2 years ≠ 20%. It's (1.1)² = 1.21 → <strong>21%</strong>. Compound vs simple interest-style thinking applies here.</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">🪤 Trap 6: "What % is A of B" vs "What % is B of A"</div>
+        <div class="tr-c">A=30, B=120. A is 25% of B. B is 400% of A. Direction completely changes the answer!</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">🪤 Trap 7: Discount on Discount ≠ Sum of Discounts</div>
+        <div class="tr-c">20% + 10% discount ≠ 30%. Actual = 20+10-2 = <strong>28%</strong>. Always apply successive discount formula.</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">🪤 Trap 8: Restoring After % Change</div>
+        <div class="tr-c">After 25% increase, to restore: need <strong>20% decrease</strong>, NOT 25%! Formula: x/(100+x) × 100.</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">🪤 Trap 9: 100% vs 200% Increase</div>
+        <div class="tr-c">100% increase = doubles = ×2. 200% increase = triples = ×3. "Increased by 100%" ≠ "increased to 100%". "Increased to 100%" means it IS 100, not increased by 100.</div>
+      </div>
+      <div class="trap">
+        <div class="tr-t">🪤 Trap 10: Fraction Rounding in Conversion</div>
+        <div class="tr-c">1/3 = 33.33%, NOT 33%. 2/3 = 66.67%, NOT 67%. Rounding errors compound in multi-step problems. Keep fractions as fractions till the last step.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ FORMULA SHEET ════════════ -->
+<div id="formulas" class="section">
+  <div class="sec-title"><span class="st-num">11</span><h2>Formula Master Sheet</h2><span class="st-tag">ONE-SHOT REVISION</span></div>
+
+  <div class="fw-grid">
+    <div class="fw-card"><div class="fw-cat" style="color:var(--accent)">📐 Core Definitions</div>
+      <div class="fw-formula">x% = x/100 = 0.0x</div>
+      <div class="fw-formula">% = (Part/Whole) × 100</div>
+      <div class="fw-formula">Part = (% × Whole)/100</div>
+      <div class="fw-formula">Whole = (Part × 100)/%</div>
+      <div class="fw-note">a% of b = b% of a (always!)</div>
+    </div>
+    <div class="fw-card"><div class="fw-cat" style="color:var(--accent2)">📈 Change Formulas</div>
+      <div class="fw-formula">% Inc = (New-Old)/Old × 100</div>
+      <div class="fw-formula">% Dec = (Old-New)/Old × 100</div>
+      <div class="fw-formula">New = Old × (100±r)/100</div>
+      <div class="fw-formula">Original = New×100/(100±r)</div>
+      <div class="fw-note">+r for increase, -r for decrease</div>
+    </div>
+    <div class="fw-card"><div class="fw-cat" style="color:var(--accent3)">⚡ Successive Changes</div>
+      <div class="fw-formula">Net% = a + b + ab/100</div>
+      <div class="fw-formula">3 changes: (1±a)(1±b)(1±c)-1</div>
+      <div class="fw-formula">Restore after +r% = r/(100+r)×100</div>
+      <div class="fw-formula">Restore after -r% = r/(100-r)×100</div>
+      <div class="fw-note">Sign of ab/100: same signs=+ve, diff=-ve</div>
+    </div>
+    <div class="fw-card"><div class="fw-cat" style="color:var(--accent4)">💰 Profit & Loss</div>
+      <div class="fw-formula">P% = (SP-CP)/CP × 100</div>
+      <div class="fw-formula">SP = CP(100+P%)/100</div>
+      <div class="fw-formula">CP = SP×100/(100+P%)</div>
+      <div class="fw-formula">Disc% = (MP-SP)/MP × 100</div>
+      <div class="fw-note">Profit base=CP · Discount base=MP</div>
+    </div>
+    <div class="fw-card"><div class="fw-cat" style="color:var(--accent5)">🏷️ Discount</div>
+      <div class="fw-formula">SP = MP(100-D%)/100</div>
+      <div class="fw-formula">2 disc: a+b-ab/100</div>
+      <div class="fw-formula">MP = CP(100+P%)/(100-D%)</div>
+      <div class="fw-formula">Net Profit = (1+m/100)(1-d/100)-1</div>
+      <div class="fw-note">m=markup%, d=discount%</div>
+    </div>
+    <div class="fw-card"><div class="fw-cat" style="color:var(--accent)">🏘️ Population</div>
+      <div class="fw-formula">P(n) = P₀(1+r/100)ⁿ</div>
+      <div class="fw-formula">Decay: P₀(1-r/100)ⁿ</div>
+      <div class="fw-formula">2yr net% = 2r + r²/100</div>
+      <div class="fw-formula">Compound: same as CI formula</div>
+      <div class="fw-note">r=annual rate, n=years</div>
+    </div>
+    <div class="fw-card"><div class="fw-cat" style="color:var(--accent3)">📐 Area/Volume</div>
+      <div class="fw-formula">Rect area: a+b+ab/100</div>
+      <div class="fw-formula">Cube vol: ≈3r+3r²/100+r³/10⁶</div>
+      <div class="fw-formula">Sphere: 3r% approx change</div>
+      <div class="fw-formula">Circle area: 2r+r²/100</div>
+      <div class="fw-note">r = % change in side/radius</div>
+    </div>
+    <div class="fw-card"><div class="fw-cat" style="color:var(--accent2)">🎯 Ratio-% Bridge</div>
+      <div class="fw-formula">a:b → a% = a/(a+b)×100</div>
+      <div class="fw-formula">a:b:c → a% = a/(a+b+c)×100</div>
+      <div class="fw-formula">Pie: sector = degree/360 × total</div>
+      <div class="fw-formula">1° = 1/360 × 100 = 0.278%</div>
+      <div class="fw-note">36°=10%, 90°=25%, 180°=50%</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ REVISION ════════════ -->
+<div id="revision" class="section">
+  <div class="sec-title"><span class="st-num">12</span><h2>Quick Revision Framework</h2><span class="st-tag">NIGHT BEFORE EXAM</span></div>
+
+  <div class="rev-frame">
+    <div class="rev-card" style="border-top:3px solid var(--accent)">
+      <h4>⏱️ 60-Min Revision Plan</h4>
+      <ul>
+        <li><strong>0–10 min:</strong> Fraction-% conversion wall (memorize)</li>
+        <li><strong>10–20 min:</strong> All core formulas (recite aloud)</li>
+        <li><strong>20–30 min:</strong> Successive % + restore formulas</li>
+        <li><strong>30–40 min:</strong> Profit-Loss-Discount chain</li>
+        <li><strong>40–50 min:</strong> 10 practice MCQs (timed)</li>
+        <li><strong>50–60 min:</strong> Revise traps & common errors list</li>
+      </ul>
+    </div>
+    <div class="rev-card" style="border-top:3px solid var(--accent3)">
+      <h4>⏱️ 30-Min Sprint</h4>
+      <ul>
+        <li><strong>0–5 min:</strong> Key fractions: 1/8, 1/6, 1/7, 1/9, 1/11</li>
+        <li><strong>5–10 min:</strong> Successive %: a+b+ab/100</li>
+        <li><strong>10–15 min:</strong> Multiplier method for ↑↓</li>
+        <li><strong>15–20 min:</strong> P&L base rule (CP vs MP)</li>
+        <li><strong>20–25 min:</strong> 5 rapid MCQs</li>
+        <li><strong>25–30 min:</strong> Top 5 traps</li>
+      </ul>
+    </div>
+    <div class="rev-card" style="border-top:3px solid var(--accent4)">
+      <h4>⏱️ 10-Min Flash Review</h4>
+      <ul>
+        <li>Net % formula: <strong>a+b+ab/100</strong></li>
+        <li>Reverse: <strong>÷ by multiplier</strong></li>
+        <li>Restore after +x%: <strong>x/(100+x)%</strong></li>
+        <li>Restore after -x%: <strong>x/(100-x)%</strong></li>
+        <li>Succ discount: <strong>same formula</strong></li>
+        <li>Profit base = <strong>CP</strong>, Disc base = <strong>MP</strong></li>
+        <li>%pt ≠ % change</li>
+        <li>a% of b = b% of a</li>
+      </ul>
+    </div>
+    <div class="rev-card" style="border-top:3px solid var(--accent2)">
+      <h4>🎯 Must-Memorize List</h4>
+      <ul>
+        <li><strong>1/8 = 12.5%</strong> | 1/6 = 16.67%</li>
+        <li><strong>1/7 = 14.28%</strong> | 1/9 = 11.11%</li>
+        <li><strong>1/11 = 9.09%</strong> | 1/12 = 8.33%</li>
+        <li>+25% then -20% = <strong>0% net</strong></li>
+        <li>+20% then -20% = <strong>-4% net</strong></li>
+        <li>Restore +25% → need <strong>20% decrease</strong></li>
+        <li>Restore -20% → need <strong>25% increase</strong></li>
+      </ul>
+    </div>
+    <div class="rev-card" style="border-top:3px solid var(--accent5)">
+      <h4>🧠 Mnemonic System</h4>
+      <ul>
+        <li><strong>"Half-Third-Quarter"</strong> = 50-33.33-25%</li>
+        <li><strong>"Eights: 12.5 increments"</strong> 12.5, 25, 37.5, 50...</li>
+        <li><strong>"Sixths: 16.67 increments"</strong> 16.67, 33.33, 50...</li>
+        <li><strong>"CP=Profit base, MP=Disc base"</strong></li>
+        <li><strong>"+ then - = always a loss"</strong></li>
+        <li><strong>"Restore: flip the formula"</strong></li>
+      </ul>
+    </div>
+    <div class="rev-card" style="border-top:3px solid var(--accent)">
+      <h4>📊 High-Yield Topics (CDS)</h4>
+      <ul>
+        <li>Successive % changes (every paper)</li>
+        <li>Reverse percentage problems</li>
+        <li>Profit+Discount combined</li>
+        <li>Income-expenditure-savings</li>
+        <li>Population growth (2 step)</li>
+        <li>Percentage vs percentage points</li>
+        <li>Area/Volume % change</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ QUIZ ════════════ -->
+<div id="quiz" class="section">
+  <div class="sec-title"><span class="st-num">13</span><h2>CDS Practice Test — 20 Questions</h2><span class="st-tag">TIMED PRACTICE</span></div>
+  <div style="max-width:680px">
+    <div class="q-prog-wrap"><div class="q-prog-fill" id="qprog" style="width:0%"></div></div>
+    <div id="qbody"></div>
+    <div class="q-score" id="qscore">
+      <div class="qs-num" id="qsnum"></div>
+      <div class="qs-lbl" id="qslbl"></div>
+      <button class="qs-restart" onclick="startQuiz()">Restart</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ UPSC Qs ════════════ -->
+<div id="upsc" class="section">
+  <div class="sec-title"><span class="st-num">14</span><h2>UPSC-Level Aptitude Questions</h2><span class="st-tag">ANALYTICAL</span></div>
+
+  <div class="branch c-p open">
+    <div class="branch-hd" onclick="tb(this)">
+      <div class="branch-icon">🏛️</div>
+      <div class="branch-title">10 UPSC CSAT Analytical Questions with Solutions</div>
+      <span class="branch-badge">SOLUTIONS</span>
+      <span class="chevron">▶</span>
+    </div>
+    <div class="branch-body">
+      <div class="qcard">
+        <div class="q-num">UPSC Q1 · 2 marks</div>
+        <div class="q-text">In an election, candidate A gets 40% of total votes. B gets 60% more votes than C. The total votes are 7000. Votes obtained by B, if B got 36% of total votes, is:</div>
+        <div class="fbox" style="margin-top:8px"><div class="flabel">Solution</div>B's votes = 36% of 7000 = 0.36 × 7000 = <strong>2520 votes</strong><div class="fexplain">Direct application. A=40%=2800, B=36%=2520, C=remaining=24%=1680. Check: B=60% more than C? 1680×1.6=2688 ≠ 2520. This means B got 36% is the given fact, not derived.</div></div>
+      </div>
+      <div class="qcard">
+        <div class="q-num">UPSC Q2 · Multi-step</div>
+        <div class="q-text">A shopkeeper marks his goods 40% above cost price and allows a discount of 25%. Find his profit or loss percentage.</div>
+        <div class="fbox" style="margin-top:8px"><div class="flabel">Solution — Multiplier Method</div>Let CP = 100. MP = 140. SP = 140 × 0.75 = 105. Profit = <strong>5%</strong><div class="fexplain">Net = (1 + 40/100)(1 - 25/100) - 1 = 1.4 × 0.75 - 1 = 1.05 - 1 = 0.05 = 5% profit</div></div>
+      </div>
+      <div class="qcard">
+        <div class="q-num">UPSC Q3 · Analytical</div>
+        <div class="q-text">The population of a town increases by 10% in the first year and decreases by 10% in the second year. If the population after 2 years is 99,000, what was the original population?</div>
+        <div class="fbox" style="margin-top:8px"><div class="flabel">Solution</div>Net change = 10 - 10 - 1 = -1%. So P × 0.99 = 99000. P = 99000/0.99 = <strong>1,00,000</strong><div class="fexplain">After +10% then -10%: multiplier = 1.1 × 0.9 = 0.99. So original = final/0.99.</div></div>
+      </div>
+      <div class="qcard">
+        <div class="q-num">UPSC Q4 · Income-Expenditure</div>
+        <div class="q-text">A person spends 75% of his income. If his income increases by 20% and expenditure increases by 15%, find the % increase in savings.</div>
+        <div class="fbox" style="margin-top:8px"><div class="flabel">Solution</div>Income=100, Exp=75, Savings=25. New Income=120, New Exp=75×1.15=86.25, New Savings=33.75. % increase = (33.75-25)/25 × 100 = <strong>35%</strong><div class="fexplain">Savings increase = ΔIncome - ΔExpenditure = 20 - (75×15/100) = 20 - 11.25 = 8.75. % change = 8.75/25 × 100 = 35%</div></div>
+      </div>
+      <div class="qcard">
+        <div class="q-num">UPSC Q5 · Three Successive Changes</div>
+        <div class="q-text">A number is first increased by 10%, then by 10% again, and then decreased by 10%. What is the net percentage change?</div>
+        <div class="fbox" style="margin-top:8px"><div class="flabel">Solution — Multiplier Chain</div>1.1 × 1.1 × 0.9 = 1.21 × 0.9 = 1.089. Net change = <strong>+8.9%</strong><div class="fexplain">Always use multiplier chain for 3+ successive changes. Convert each to multiplier, multiply all, subtract 1.</div></div>
+      </div>
+      <div class="qcard">
+        <div class="q-num">UPSC Q6 · Mixture</div>
+        <div class="q-text">Two vessels contain 60% and 40% acid solutions. In what ratio should they be mixed to get 52% acid solution?</div>
+        <div class="fbox" style="margin-top:8px"><div class="flabel">Solution — Alligation</div>Ratio = (52-40):(60-52) = 12:8 = <strong>3:2</strong><div class="fexplain">Alligation rule: (Mean-Lower):(Higher-Mean). Mix 3 parts of 60% with 2 parts of 40% → check: (3×60+2×40)/5 = (180+80)/5 = 260/5 = 52% ✓</div></div>
+      </div>
+      <div class="qcard">
+        <div class="q-num">UPSC Q7 · Reverse Percentage</div>
+        <div class="q-text">After successive discounts of 20% and 10%, the final price of an article is ₹720. Find the original marked price.</div>
+        <div class="fbox" style="margin-top:8px"><div class="flabel">Solution</div>SP = MP × 0.8 × 0.9 = MP × 0.72. So MP = 720/0.72 = <strong>₹1000</strong><div class="fexplain">Work backwards: reverse each discount by dividing. 720 ÷ 0.9 = 800 (after 1st discount reversed), then 800 ÷ 0.8 = 1000.</div></div>
+      </div>
+      <div class="qcard">
+        <div class="q-num">UPSC Q8 · Area Change</div>
+        <div class="q-text">If the length of a rectangle is increased by 20% and its breadth is decreased by 20%, what is the % change in area?</div>
+        <div class="fbox" style="margin-top:8px"><div class="flabel">Solution</div>Net % = 20 + (-20) + (20×(-20))/100 = 0 - 4 = <strong>-4%</strong> (decrease)<div class="fexplain">Use formula a+b+ab/100 with a=+20, b=-20. ab/100 = -400/100 = -4.</div></div>
+      </div>
+      <div class="qcard">
+        <div class="q-num">UPSC Q9 · % Points Distinction</div>
+        <div class="q-text">In 2022, party X won 45% votes. In 2023, it won 54% votes. By what percentage did its vote share INCREASE (not percentage points)?</div>
+        <div class="fbox" style="margin-top:8px"><div class="flabel">Solution</div>% point change = 9 pp. But % CHANGE = (54-45)/45 × 100 = 9/45 × 100 = <strong>20%</strong><div class="fexplain">Question asks "percentage increase" which means % change in the percentage = 20%, NOT 9 percentage points. Read carefully!</div></div>
+      </div>
+      <div class="qcard">
+        <div class="q-num">UPSC Q10 · Complex Combined</div>
+        <div class="q-text">A's salary is 20% more than B's, and B's salary is 25% less than C's. By what % is A's salary less than C's?</div>
+        <div class="fbox" style="margin-top:8px"><div class="flabel">Solution — Chain Method</div>Let C = 100. B = 100 × 0.75 = 75. A = 75 × 1.2 = 90. A is less than C by <strong>10%</strong><div class="fexplain">Set C=100. B=C×(1-25/100)=75. A=B×(1+20/100)=90. A less than C = (100-90)/100×100 = 10%.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- #content -->
+
+<script>
+// Navigation
+function showSec(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.sb-link').forEach(l=>l.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.closest('.sb-link').classList.add('active');
+  window.scrollTo(0,0);
+  if(id==='quiz') startQuiz();
+}
+
+// Branch toggle
+function tb(hd){ hd.parentElement.classList.toggle('open'); }
+
+// Open first branch in each section
+document.querySelectorAll('.branch').forEach((b,i)=>{ if(i===0) b.classList.add('open'); });
+
+// Quiz
+const Qs=[
+  {q:"What is 37.5% expressed as a fraction?",opts:["3/7","3/8","5/12","7/16"],a:1,e:"37.5% = 37.5/100 = 375/1000 = 3/8. Remember: 12.5% = 1/8, so 3×12.5% = 3/8 = 37.5%."},
+  {q:"A price increases by 20% then decreases by 20%. Net change is:",opts:["0%","-4%","+4%","-2%"],a:1,e:"Net = 20 + (-20) + (20×-20)/100 = -400/100 = -4%. Same sign trick: different signs → subtract ab/100."},
+  {q:"To restore original after 25% increase, decrease required is:",opts:["25%","20%","16.67%","12.5%"],a:1,e:"Restore after +25% = 25/(100+25) × 100 = 25/125 × 100 = 20%."},
+  {q:"1/6 is equal to:",opts:["16.33%","16.67%","15%","17.5%"],a:1,e:"1/6 = 100/6 = 16.666...% ≈ 16.67%. Remember: 1/6 is the 6th part of 100."},
+  {q:"Successive discounts of 20% and 25% give net discount of:",opts:["45%","40%","44%","42%"],a:1,e:"Net = 20+25-20×25/100 = 45-5 = 40%."},
+  {q:"If A's salary is 25% more than B's, then B's is what % less than A's?",opts:["25%","20%","16.67%","33.33%"],a:1,e:"A=1.25B → B=A/1.25=0.8A → B is 20% less than A. Formula: x/(100+x)×100 = 25/125×100=20%."},
+  {q:"15% of 240 = ?",opts:["36","38","34","32"],a:0,e:"15% of 240 = 10%+5% = 24+12 = 36."},
+  {q:"A shopkeeper marks 50% above CP and gives 20% discount. Profit% is:",opts:["20%","30%","24%","16%"],a:1,e:"SP = 1.5 × 0.8 × CP = 1.2 CP. Profit = 20%."},
+  {q:"Population grows 10% p.a. After 2 years from 10,000 it will be:",opts:["12,000","12,100","12,200","11,000"],a:1,e:"P = 10000 × (1.1)² = 10000 × 1.21 = 12,100."},
+  {q:"33.33% of 333 is approximately:",opts:["111","110","112","109"],a:0,e:"33.33% = 1/3. 333÷3 = 111."},
+  {q:"If 30% of x = 24% of y, then x:y =",opts:["5:4","4:5","3:4","4:3"],a:1,e:"0.3x = 0.24y → x/y = 0.24/0.3 = 4/5. So x:y = 4:5."},
+  {q:"Net % change: first +10%, then -10%, then +10%:",opts:["10%","8.9%","9%","10.9%"],a:1,e:"1.1 × 0.9 × 1.1 = 0.99 × 1.1 = 1.089. Net = 8.9%."},
+  {q:"A is 40% of B, B is 25% of C. A is what % of C?",opts:["10%","15%","12.5%","8%"],a:0,e:"A = 0.4B = 0.4×0.25C = 0.1C = 10% of C."},
+  {q:"What is 125% of 160?",opts:["200","250","180","220"],a:0,e:"125% = 1.25. 1.25×160 = 200. Or: 100%=160, 25%=40, total=200."},
+  {q:"In an exam, a student scored 252 marks out of 400. His percentage is:",opts:["62%","63%","63.5%","64%"],a:1,e:"252/400 × 100 = 63%."},
+  {q:"If 20% of A + 30% of B = 0.1A + 0.2B + 60, then:",opts:["A+B=600","A=B=600","A-B=600","Cannot determine"],a:0,e:"0.2A+0.3B = 0.1A+0.2B+60 → 0.1A+0.1B=60 → A+B=600."},
+  {q:"A's income is 20% less than B's. By what % is B's income more than A's?",opts:["20%","25%","16.67%","22%"],a:1,e:"A=0.8B → B=A/0.8=1.25A → B is 25% more than A. Formula: x/(100-x)×100 = 20/80×100=25%."},
+  {q:"A pie chart sector has 72°. Its percentage of the total is:",opts:["15%","18%","20%","22%"],a:2,e:"72/360 × 100 = 20%. Remember: 36°=10%, so 72°=20%."},
+  {q:"If price decreases 25%, to restore original price, % increase needed:",opts:["25%","30%","33.33%","40%"],a:2,e:"Restore after -25% = 25/(100-25)×100 = 25/75×100 = 33.33%."},
+  {q:"A number is 20% more than another. Their difference is 15. The smaller number is:",opts:["75","60","80","70"],a:0,e:"x×1.2 = y. y-x = 0.2x = 15 → x = 75. The smaller number is 75."}
+];
+
+let curr=0,sc=0;
+function startQuiz(){
+  curr=0;sc=0;
+  document.getElementById('qscore').style.display='none';
+  document.getElementById('qbody').style.display='block';
+  renderQ();
+}
+function renderQ(){
+  if(curr>=Qs.length){
+    document.getElementById('qbody').style.display='none';
+    const s=document.getElementById('qscore');
+    s.style.display='block';
+    const p=Math.round(sc/Qs.length*100);
+    document.getElementById('qsnum').textContent=sc+'/'+Qs.length;
+    const m=p>=80?'🎯 CDS Ready!':p>=60?'👍 Good — Review traps':'📚 Practice more!';
+    document.getElementById('qslbl').textContent=p+'% — '+m;
+    return;
+  }
+  document.getElementById('qprog').style.width=Math.round(curr/Qs.length*100)+'%';
+  const q=Qs[curr];
+  document.getElementById('qbody').innerHTML=`
+    <div class="qcard">
+      <div class="q-num">Question ${curr+1} of ${Qs.length}</div>
+      <div class="q-text">${q.q}</div>
+      <div class="q-opts">${q.opts.map((o,i)=>`<button class="q-opt" id="qo${i}" onclick="ans(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div>
+      <div class="q-exp" id="qexp">${q.e}</div>
+    </div>
+    <button class="q-next" id="qnext" onclick="nextQ()">Next →</button>`;
+}
+function ans(i){
+  const q=Qs[curr];
+  document.querySelectorAll('.q-opt').forEach(b=>b.disabled=true);
+  document.getElementById('qo'+i).classList.add(i===q.a?'correct':'wrong');
+  document.getElementById('qo'+q.a).classList.add('correct');
+  document.getElementById('qexp').classList.add('show');
+  if(i===q.a)sc++;
+  document.getElementById('qnext').style.display='inline-block';
+}
+function nextQ(){curr++;renderQ();}
+
+startQuiz();
+</script>
+</body>
+</html>

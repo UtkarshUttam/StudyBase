@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Union Executive — CDS 2026 + UPSC Master Mind Map</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+:root{
+  --bg:#080b12;--bg2:#0d1120;--bg3:#121929;--bg4:#192034;--bg5:#1f283f;
+  --gold:#e8b84b;--saffron:#f48c32;--teal:#3ec9be;--blue:#5baef5;--purple:#9b72e8;
+  --green:#4fc87a;--rose:#e8607a;--white:#e8e4da;
+  --text:#ede9e0;--text2:#8a8799;--text3:#4a4768;
+  --bd:rgba(255,255,255,0.07);--bd2:rgba(255,255,255,0.13);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Lexend',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse at 10% 20%,rgba(232,184,75,.03),transparent 60%),
+             radial-gradient(ellipse at 90% 80%,rgba(62,201,190,.03),transparent 60%)}
+#nav{position:fixed;top:0;left:0;width:232px;height:100vh;background:rgba(13,17,32,.97);border-right:1px solid var(--bd2);overflow-y:auto;z-index:100;padding-bottom:2rem;scrollbar-width:thin;scrollbar-color:var(--bg5) transparent}
+#nav::-webkit-scrollbar{width:3px}#nav::-webkit-scrollbar-thumb{background:var(--bg5)}
+.nav-logo{padding:1.1rem 1rem .8rem;border-bottom:1px solid var(--bd);background:linear-gradient(135deg,rgba(232,184,75,.08),rgba(91,174,245,.04))}
+.nav-logo span{font-size:13px;font-weight:700;color:var(--gold);display:block}
+.nav-logo small{font-size:10px;color:var(--text3);display:block;margin-top:2px}
+.nav-s{font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:var(--text3);font-weight:700;padding:8px 1rem 3px}
+.nav-a{display:flex;align-items:center;gap:8px;padding:7px 1rem;font-size:11.5px;color:var(--text2);cursor:pointer;border-left:2px solid transparent;transition:all .15s;text-decoration:none}
+.nav-a:hover,.nav-a.on{color:var(--text);background:var(--bg3);border-left-color:var(--gold)}
+.nav-a .ni{width:18px;text-align:center;font-size:12px;flex-shrink:0}
+#main{margin-left:232px;padding:2rem 2rem 5rem;position:relative;z-index:1}
+#mbt{display:none;position:fixed;top:10px;left:10px;z-index:200;background:var(--bg3);border:1px solid var(--bd2);color:var(--text);padding:6px 10px;border-radius:6px;cursor:pointer;font-size:12px}
+.sec{display:none}.sec.on{display:block}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,rgba(232,184,75,.08),rgba(91,174,245,.05),rgba(62,201,190,.04));border:1px solid var(--bd2);border-radius:14px;padding:2.5rem;margin-bottom:2rem}
+.hero::after{content:'🏛️';position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:100px;opacity:.06;pointer-events:none}
+.hero h1{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:900;color:var(--gold);line-height:1.2;margin-bottom:6px}
+.hero p{font-size:13px;color:var(--text2);max-width:520px}
+.hbr{display:flex;gap:7px;margin-top:14px;flex-wrap:wrap}
+.hb{font-size:10px;padding:3px 10px;border-radius:20px;font-weight:600;letter-spacing:.3px}
+.hbg{background:rgba(232,184,75,.14);color:var(--gold);border:1px solid rgba(232,184,75,.3)}
+.hbt{background:rgba(62,201,190,.12);color:var(--teal);border:1px solid rgba(62,201,190,.25)}
+.hbb{background:rgba(91,174,245,.12);color:var(--blue);border:1px solid rgba(91,174,245,.25)}
+.hbr2{background:rgba(232,96,122,.12);color:var(--rose);border:1px solid rgba(232,96,122,.25)}
+.stl{display:flex;align-items:center;gap:10px;margin:1.5rem 0 1rem;padding-bottom:8px;border-bottom:1px solid var(--bd2)}
+.stl h2{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700}
+.stn{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bg);background:var(--gold);padding:2px 8px;border-radius:4px;font-weight:700}
+.stg{font-size:10px;color:var(--text3);background:var(--bg4);padding:2px 8px;border-radius:4px;margin-left:auto}
+.br{border:1px solid var(--bd);border-radius:10px;margin-bottom:1rem;overflow:hidden}
+.brhd{display:flex;align-items:center;gap:10px;padding:11px 14px;cursor:pointer;background:var(--bg2);border-bottom:1px solid var(--bd);transition:background .15s;user-select:none}
+.brhd:hover{background:var(--bg3)}
+.bri{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.brt{font-size:13.5px;font-weight:600;flex:1}
+.brb{font-size:10px;padding:2px 8px;border-radius:10px;font-weight:600;font-family:'JetBrains Mono',monospace}
+.ch{font-size:10px;color:var(--text3);transition:transform .25s}
+.br.on .ch{transform:rotate(90deg)}
+.brbd{display:none;padding:1rem 1.2rem;background:var(--bg)}
+.br.on .brbd{display:block}
+.cg .brhd{border-left:3px solid var(--gold)}.cg .bri{background:rgba(232,184,75,.12);color:var(--gold)}.cg .brt{color:var(--gold)}.cg .brb{background:rgba(232,184,75,.14);color:var(--gold)}
+.ct .brhd{border-left:3px solid var(--teal)}.ct .bri{background:rgba(62,201,190,.1);color:var(--teal)}.ct .brt{color:var(--teal)}.ct .brb{background:rgba(62,201,190,.12);color:var(--teal)}
+.cb .brhd{border-left:3px solid var(--blue)}.cb .bri{background:rgba(91,174,245,.1);color:var(--blue)}.cb .brt{color:var(--blue)}.cb .brb{background:rgba(91,174,245,.12);color:var(--blue)}
+.cp .brhd{border-left:3px solid var(--purple)}.cp .bri{background:rgba(155,114,232,.1);color:var(--purple)}.cp .brt{color:var(--purple)}.cp .brb{background:rgba(155,114,232,.12);color:var(--purple)}
+.cr .brhd{border-left:3px solid var(--rose)}.cr .bri{background:rgba(232,96,122,.1);color:var(--rose)}.cr .brt{color:var(--rose)}.cr .brb{background:rgba(232,96,122,.12);color:var(--rose)}
+.cs .brhd{border-left:3px solid var(--saffron)}.cs .bri{background:rgba(244,140,50,.1);color:var(--saffron)}.cs .brt{color:var(--saffron)}.cs .brb{background:rgba(244,140,50,.12);color:var(--saffron)}
+.cn .brhd{border-left:3px solid var(--green)}.cn .bri{background:rgba(79,200,122,.1);color:var(--green)}.cn .brt{color:var(--green)}.cn .brb{background:rgba(79,200,122,.12);color:var(--green)}
+.g2{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin:8px 0}
+.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:9px;margin:8px 0}
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:11px 13px}
+.card .ct2{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.card p,.card li{font-size:12.5px;color:var(--text2);line-height:1.65}
+.card ul{padding-left:14px}.card li{margin-bottom:2px}
+.card strong{color:var(--text);font-weight:500}
+.fbox{background:var(--bg3);border:1px solid var(--bd2);border-radius:8px;padding:10px 14px;margin:8px 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--gold);line-height:1.7}
+.fbox .fl{font-family:'Lexend',sans-serif;font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.fbox .fe{font-family:'Lexend',sans-serif;font-size:11.5px;color:var(--text2);margin-top:5px}
+.mnem{background:rgba(79,200,122,.06);border:1px solid rgba(79,200,122,.2);border-radius:8px;padding:10px 13px;margin:8px 0}
+.mnem .mt{font-size:10px;color:var(--green);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.mnem .mc{font-family:'Playfair Display',serif;font-size:14px;color:var(--text);line-height:1.5;font-style:italic}
+.mnem .md{font-size:11.5px;color:var(--text2);margin-top:4px}
+.trap{background:rgba(232,96,122,.07);border:1px solid rgba(232,96,122,.2);border-radius:8px;padding:10px 13px;margin:8px 0}
+.trap .tt{font-size:10px;color:var(--rose);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.trap .tc{font-size:12px;color:var(--text2);line-height:1.6}
+.trap .tc strong{color:var(--rose)}
+.fact{background:rgba(91,174,245,.06);border:1px solid rgba(91,174,245,.18);border-radius:8px;padding:10px 13px;margin:8px 0}
+.fact .ftt{font-size:10px;color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.fact .ftc{font-size:12.5px;color:var(--text2);line-height:1.65}
+.fact .ftc strong{color:var(--text)}
+.dt{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0}
+.dt th{background:var(--bg3);padding:7px 10px;text-align:left;font-weight:600;color:var(--text2);border-bottom:1px solid var(--bd2);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.dt td{padding:6px 10px;border-bottom:1px solid var(--bd);color:var(--text2);vertical-align:top;line-height:1.5}
+.dt tr:hover td{background:var(--bg2)}
+.dt .hg2{color:var(--gold);font-weight:600;font-family:'JetBrains Mono',monospace}
+.dt .ht2{color:var(--teal);font-weight:600}
+.dt .hb2{color:var(--blue);font-weight:600}
+.dt .hr2{color:var(--rose);font-weight:600}
+.mi{font-size:12.5px;color:var(--text2);line-height:1.65;padding:2px 0;display:flex;gap:8px;margin-left:18px}
+.mi::before{content:'›';color:var(--text3);flex-shrink:0}
+.mi strong{color:var(--text);font-weight:500}
+.sub{font-size:12.5px;font-weight:600;color:var(--text);margin:10px 0 5px;display:flex;align-items:center;gap:6px}
+.sub::before{content:'';width:12px;height:2px;background:currentColor;opacity:.5;display:inline-block}
+hr.dv{border:none;border-top:1px solid var(--bd);margin:10px 0}
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin:8px 0}
+.fb{background:var(--bg3);border:1px solid var(--bd2);border-radius:6px;padding:6px 12px;font-size:12px;color:var(--text);font-weight:500}
+.fa{font-size:14px;color:var(--gold);flex-shrink:0}
+.fb.hg{background:rgba(232,184,75,.1);border-color:rgba(232,184,75,.3);color:var(--gold)}
+.fb.ht{background:rgba(62,201,190,.08);border-color:rgba(62,201,190,.25);color:var(--teal)}
+.fb.hr{background:rgba(232,96,122,.08);border-color:rgba(232,96,122,.25);color:var(--rose)}
+.art-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin:8px 0}
+.art-card{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;overflow:hidden}
+.art-num{padding:8px 14px;font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;border-bottom:1px solid var(--bd)}
+.art-title{font-size:11px;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.art-body{padding:10px 14px}
+.art-body li{font-size:12px;color:var(--text2);line-height:1.6;padding:2px 0 2px 13px;position:relative;list-style:none}
+.art-body li::before{content:'▸';position:absolute;left:0;color:var(--text3);font-size:9px;top:4px}
+.art-body li strong{color:var(--text);font-weight:500}
+.qcard{background:var(--bg2);border:1px solid var(--bd);border-radius:10px;padding:16px;margin-bottom:12px}
+.qn{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text3);margin-bottom:5px}
+.qt{font-size:13.5px;font-weight:500;color:var(--text);margin-bottom:10px;line-height:1.55}
+.qopts{display:flex;flex-direction:column;gap:5px}
+.qo{background:var(--bg3);border:1px solid var(--bd);border-radius:6px;padding:8px 12px;cursor:pointer;font-size:12.5px;color:var(--text2);transition:all .15s;text-align:left;width:100%;font-family:'Lexend',sans-serif}
+.qo:hover:not(:disabled){background:var(--bg4);color:var(--text);border-color:var(--bd2)}
+.qo.ok{background:rgba(79,200,122,.14);border-color:var(--green);color:var(--green)}
+.qo.no{background:rgba(232,96,122,.12);border-color:var(--rose);color:var(--rose)}
+.qexp{display:none;margin-top:9px;padding:8px 12px;background:var(--bg4);border-radius:6px;font-size:11.5px;color:var(--text2);line-height:1.55;border-left:2px solid var(--teal)}
+.qexp.on{display:block}
+.qnxt{display:none;margin-top:10px;background:var(--gold);color:var(--bg);border:none;padding:7px 18px;border-radius:6px;font-family:'Lexend',sans-serif;font-weight:700;font-size:12.5px;cursor:pointer}
+.qnxt:hover{opacity:.85}
+.qsc{text-align:center;padding:3rem 1rem;display:none}
+.qscn{font-size:3.5rem;font-family:'JetBrains Mono',monospace;color:var(--gold);font-weight:700}
+.qscl{font-size:13px;color:var(--text2);margin-top:6px}
+.qscr{margin-top:1.5rem;background:none;border:1px solid var(--bd2);color:var(--text);padding:8px 22px;border-radius:6px;cursor:pointer;font-family:'Lexend',sans-serif;font-size:12.5px}
+.qpw{height:3px;background:var(--bg3);border-radius:2px;margin-bottom:1.5rem}
+.qpf{height:100%;background:var(--gold);border-radius:2px;transition:width .3s}
+.rev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:8px 0}
+.rcard{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:14px}
+.rcard h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.rcard ul{list-style:none}
+.rcard li{font-size:11.5px;color:var(--text2);padding:2px 0 2px 13px;position:relative;line-height:1.5}
+.rcard li::before{content:'▸';position:absolute;left:0;color:var(--text3);font-size:9px;top:4px}
+.rcard li strong{color:var(--text);font-weight:500}
+.fw{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin:8px 0}
+.fwc{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;padding:12px}
+.fwc .fwt{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.fwc .fwi{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--gold);background:var(--bg3);padding:5px 9px;border-radius:5px;margin:3px 0;line-height:1.5}
+@media(max-width:768px){#nav{transform:translateX(-100%)}#nav.on{transform:translateX(0)}#main{margin-left:0;padding:1rem 1rem 4rem}#mbt{display:block}.hero h1{font-size:1.4rem}}
+@media print{#nav,#mbt{display:none}#main{margin-left:0}.brbd{display:block!important}.ch{display:none}}
+</style>
+</head>
+<body>
+<button id="mbt" onclick="document.getElementById('nav').classList.toggle('on')">☰</button>
+<nav id="nav">
+  <div class="nav-logo"><span>🏛️ UNION EXECUTIVE</span><small>CDS 2026 + UPSC + NDA Master Map</small></div>
+  <div class="nav-s">Executive Bodies</div>
+  <a class="nav-a on" onclick="show('intro')"><span class="ni">📜</span>Introduction</a>
+  <a class="nav-a" onclick="show('president')"><span class="ni">👑</span>President of India</a>
+  <a class="nav-a" onclick="show('pres_powers')"><span class="ni">⚡</span>Presidential Powers</a>
+  <a class="nav-a" onclick="show('veto')"><span class="ni">🛡️</span>Veto & Ordinance</a>
+  <a class="nav-a" onclick="show('emergency')"><span class="ni">🚨</span>Emergency Powers</a>
+  <a class="nav-a" onclick="show('vp')"><span class="ni">🏅</span>Vice President</a>
+  <a class="nav-a" onclick="show('pm')"><span class="ni">👤</span>Prime Minister</a>
+  <a class="nav-a" onclick="show('cabinet')"><span class="ni">🗂️</span>Council of Ministers</a>
+  <a class="nav-a" onclick="show('ag')"><span class="ni">⚖️</span>Attorney General</a>
+  <div class="nav-s">Concepts & Comparisons</div>
+  <a class="nav-a" onclick="show('articles')"><span class="ni">📋</span>Articles 52–78</a>
+  <a class="nav-a" onclick="show('cases')"><span class="ni">🏛️</span>Landmark Cases</a>
+  <a class="nav-a" onclick="show('compare')"><span class="ni">⚖️</span>Comparisons</a>
+  <div class="nav-s">Exam Tools</div>
+  <a class="nav-a" onclick="show('traps')"><span class="ni">⚠️</span>Traps & Errors</a>
+  <a class="nav-a" onclick="show('flash')"><span class="ni">📋</span>Flash Sheet</a>
+  <a class="nav-a" onclick="show('revision')"><span class="ni">⚡</span>Quick Revision</a>
+  <a class="nav-a" onclick="show('quiz')"><span class="ni">✅</span>CDS Test (30 Qs)</a>
+  <a class="nav-a" onclick="show('upsc')"><span class="ni">🏛️</span>UPSC Qs (20)</a>
+</nav>
+
+<div id="main">
+
+<!-- ════ INTRO ════ -->
+<div id="intro" class="sec on">
+  <div class="hero">
+    <h1>Union Executive — Indian Polity</h1>
+    <p>Articles 52–78 · CDS 2 2026 · UPSC · NDA — Complete Constitutional Revision System</p>
+    <div class="hbr">
+      <span class="hb hbg">Art 52–78</span><span class="hb hbt">Nominal vs Real Executive</span>
+      <span class="hb hbb">Cabinet System</span><span class="hb hbr2">Emergency Powers</span>
+    </div>
+  </div>
+
+  <div class="stl"><span class="stn">01</span><h2>Introduction to Union Executive</h2><span class="stg">FOUNDATION</span></div>
+  <div class="br cg on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">📜</div><div class="brt">Structure & Constitutional Basis</div><span class="brb">OVERVIEW</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--gold)">Union Executive — Composition</div><ul>
+          <li><strong>President of India</strong> (Art 52) — Nominal Executive Head</li>
+          <li><strong>Vice President</strong> (Art 63) — Rajya Sabha Chair</li>
+          <li><strong>Prime Minister</strong> — Real Executive Head</li>
+          <li><strong>Council of Ministers</strong> (Art 74) — Aid & Advice</li>
+          <li><strong>Attorney General</strong> (Art 76) — Legal Advisor</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--teal)">Parliamentary System Features</div><ul>
+          <li><strong>Nominal Executive:</strong> President — Constitutional Head</li>
+          <li><strong>Real Executive:</strong> PM + Cabinet — actual power</li>
+          <li><strong>Cabinet Responsibility</strong> to Lok Sabha</li>
+          <li><strong>Collective Responsibility</strong> of CoM to Lok Sabha</li>
+          <li>Dual executive (like UK Westminster model)</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--blue)">Constitutional Articles Range</div><ul>
+          <li><strong>Art 52–62:</strong> President (election, qualification, term)</li>
+          <li><strong>Art 63–71:</strong> Vice President</li>
+          <li><strong>Art 72:</strong> Pardoning Power</li>
+          <li><strong>Art 73:</strong> Executive Power of Union</li>
+          <li><strong>Art 74–75:</strong> Council of Ministers, PM</li>
+          <li><strong>Art 76:</strong> Attorney General</li>
+          <li><strong>Art 77–78:</strong> Government conduct of business</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--purple)">Key Constitutional Principles</div><ul>
+          <li>President acts on <strong>aid and advice</strong> of CoM (Art 74)</li>
+          <li>President = Constitutional/Nominal head</li>
+          <li>PM = Head of Government (real executive)</li>
+          <li><strong>44th Amendment 1978:</strong> President must act on CoM advice</li>
+          <li>India = Parliamentary democracy (Cabinet type)</li>
+        </ul></div>
+      </div>
+      <!-- Executive hierarchy SVG -->
+      <div style="display:flex;justify-content:center;margin:1.5rem 0">
+        <svg width="520" height="200" viewBox="0 0 520 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="180" y="10" width="160" height="45" rx="8" fill="rgba(232,184,75,.15)" stroke="rgba(232,184,75,.5)" stroke-width="1.5"/>
+          <text x="260" y="31" text-anchor="middle" fill="rgba(232,184,75,.9)" font-size="11" font-family="Lexend" font-weight="700">PRESIDENT</text>
+          <text x="260" y="47" text-anchor="middle" fill="rgba(232,184,75,.6)" font-size="9" font-family="JetBrains Mono">Art 52 | Nominal Executive</text>
+          <line x1="260" y1="55" x2="140" y2="90" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <line x1="260" y1="55" x2="260" y2="90" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <line x1="260" y1="55" x2="380" y2="90" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <rect x="60" y="90" width="160" height="40" rx="6" fill="rgba(62,201,190,.1)" stroke="rgba(62,201,190,.35)" stroke-width="1"/>
+          <text x="140" y="108" text-anchor="middle" fill="rgba(62,201,190,.9)" font-size="10" font-family="Lexend" font-weight="600">VICE PRESIDENT</text>
+          <text x="140" y="122" text-anchor="middle" fill="rgba(62,201,190,.6)" font-size="8" font-family="JetBrains Mono">Art 63 | RS Chairman</text>
+          <rect x="180" y="90" width="160" height="40" rx="6" fill="rgba(244,140,50,.1)" stroke="rgba(244,140,50,.35)" stroke-width="1"/>
+          <text x="260" y="108" text-anchor="middle" fill="rgba(244,140,50,.9)" font-size="10" font-family="Lexend" font-weight="700">PRIME MINISTER</text>
+          <text x="260" y="122" text-anchor="middle" fill="rgba(244,140,50,.6)" font-size="8" font-family="JetBrains Mono">Art 75 | Real Executive</text>
+          <rect x="300" y="90" width="160" height="40" rx="6" fill="rgba(91,174,245,.1)" stroke="rgba(91,174,245,.35)" stroke-width="1"/>
+          <text x="380" y="108" text-anchor="middle" fill="rgba(91,174,245,.9)" font-size="10" font-family="Lexend" font-weight="600">ATTORNEY GENERAL</text>
+          <text x="380" y="122" text-anchor="middle" fill="rgba(91,174,245,.6)" font-size="8" font-family="JetBrains Mono">Art 76 | Legal Advisor</text>
+          <line x1="260" y1="130" x2="260" y2="155" stroke="rgba(255,255,255,.15)" stroke-width="1"/>
+          <rect x="150" y="155" width="220" height="35" rx="6" fill="rgba(155,114,232,.1)" stroke="rgba(155,114,232,.3)" stroke-width="1"/>
+          <text x="260" y="170" text-anchor="middle" fill="rgba(155,114,232,.9)" font-size="10" font-family="Lexend" font-weight="600">COUNCIL OF MINISTERS</text>
+          <text x="260" y="183" text-anchor="middle" fill="rgba(155,114,232,.6)" font-size="8" font-family="JetBrains Mono">Art 74–75 | Aid & Advice</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PRESIDENT ════ -->
+<div id="president" class="sec">
+  <div class="stl"><span class="stn">02</span><h2>President of India — Constitutional Provisions</h2><span class="stg">ART 52–62</span></div>
+  <div class="br cg on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">👑</div><div class="brt">Qualifications, Election & Term</div><span class="brb">ART 52–62</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--gold)">Qualifications (Art 58)</div><ul>
+          <li>Indian citizen</li>
+          <li>Completed <strong>35 years</strong> of age</li>
+          <li>Qualified for election as <strong>member of Lok Sabha</strong></li>
+          <li>Must NOT hold any office of profit under Centre/State</li>
+          <li>Exception: Sitting President/VP, Governor, Union/State Minister not disqualified</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--teal)">Term & Re-election (Art 56–57)</div><ul>
+          <li><strong>Term:</strong> 5 years from date of entering office</li>
+          <li><strong>Re-election:</strong> Eligible for re-election (no limit)</li>
+          <li>Can resign by writing to <strong>Vice President</strong></li>
+          <li>Continues till successor enters office</li>
+          <li>Can be removed by <strong>impeachment</strong> (Art 61)</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--blue)">Electoral College (Art 54)</div><ul>
+          <li>Elected members of <strong>Lok Sabha + Rajya Sabha</strong></li>
+          <li>Elected members of <strong>State Legislative Assemblies</strong></li>
+          <li>Elected members of <strong>Union Territories with Assembly</strong> (Delhi, Puducherry, J&K after 2019)</li>
+          <li>NOT: Nominated MPs, MLCs, Rajya Sabha members from states</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--purple)">Election Formula (Art 55)</div><ul>
+          <li>Value of MLA vote = State Population ÷ (1000 × Total elected MLAs)</li>
+          <li>Value of MP vote = Total MLA votes ÷ Total elected MPs</li>
+          <li><strong>Single Transferable Vote</strong> system</li>
+          <li><strong>Proportional representation</strong> method</li>
+          <li>Secret ballot voting</li>
+        </ul></div>
+      </div>
+      <div class="fbox">
+        <div class="fl">Vote Value Formula</div>
+        MLA Vote Value = State Population ÷ (Elected MLAs × 1000)
+        MP Vote Value = Total MLA votes of all states ÷ Total elected MPs
+        <div class="fe">Uniformity of representation: Each state's MLAs should ideally have equal weight per population. MPs' votes are calibrated to balance this.</div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Electoral College Traps</div>
+        <div class="tc">
+          1. <strong>NOMINATED members</strong> of Lok Sabha, Rajya Sabha, State Assemblies do NOT participate in Presidential election.<br>
+          2. Members of <strong>State Legislative COUNCILS (MLCs)</strong> do NOT vote — only MLAs (Legislative Assembly).<br>
+          3. <strong>Only Union Territories WITH Legislatures</strong> participate (Delhi, Puducherry, J&K) — NOT all UTs.
+        </div>
+      </div>
+      <div class="sub" style="color:var(--gold)">Impeachment (Art 61)</div>
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--rose)">Impeachment Process</div><ul>
+          <li>On grounds of <strong>"violation of Constitution"</strong> only</li>
+          <li>Initiated in <strong>either House of Parliament</strong></li>
+          <li>Notice signed by <strong>1/4 of total members</strong> of that House</li>
+          <li><strong>14 days notice</strong> to President</li>
+          <li>Passed by <strong>2/3 majority of total membership</strong> of House</li>
+          <li>Other House investigates — if 2/3 majority → President removed</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--saffron)">Key Distinctions</div><ul>
+          <li>No impeachment in India yet (historically)</li>
+          <li>Both Houses VOTE on impeachment</li>
+          <li>Supreme Court judges removed by simple address of both Houses</li>
+          <li>Unlike US: not a political process, more judicial in character</li>
+          <li>Judiciary NOT involved in impeachment</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PRESIDENTIAL POWERS ════ -->
+<div id="pres_powers" class="sec">
+  <div class="stl"><span class="stn">03</span><h2>Presidential Powers — Complete Guide</h2><span class="stg">ALL POWERS</span></div>
+  <div class="br cg on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚡</div><div class="brt">Executive Powers of the President</div><span class="brb">EXECUTIVE</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--gold)">Executive Powers (Art 53)</div><ul>
+          <li>Executive power of Union vested in President</li>
+          <li>Appoints <strong>Prime Minister</strong> and other ministers</li>
+          <li>Appoints <strong>Governors, AG, CAG, CEC, UPSC Chairman</strong></li>
+          <li>Appoints <strong>Chief Justice and Judges of SC/HC</strong></li>
+          <li>Appoints <strong>National Commissions</strong> (minorities, SC/ST etc.)</li>
+          <li>Appoints <strong>Ambassadors and diplomatic representatives</strong></li>
+          <li>Appoints <strong>Finance Commission, Planning Commission</strong> etc.</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--teal)">Legislative Powers</div><ul>
+          <li>Summons, prorogues, dissolves Parliament</li>
+          <li>Addresses joint sitting of Parliament</li>
+          <li>Sends messages to Parliament</li>
+          <li>Nominates <strong>12 members to Rajya Sabha</strong> (art, science, literature, social service)</li>
+          <li>Nominates <strong>2 Anglo-Indians to Lok Sabha</strong> (removed by 104th Amend)</li>
+          <li>Promulgates <strong>Ordinances (Art 123)</strong></li>
+          <li>Gives assent, withholds assent, returns bills (veto)</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--purple)">Financial Powers</div><ul>
+          <li>Budget presented in his/her name to Parliament</li>
+          <li>Money Bills can be introduced in Lok Sabha only with recommendation</li>
+          <li>Constitutes <strong>Finance Commission</strong> every 5 years</li>
+          <li>Can make advances from <strong>Contingency Fund of India</strong></li>
+          <li>No demand for grant without his recommendation</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--blue)">Judicial Powers (Art 72)</div><ul>
+          <li><strong>Pardon:</strong> Complete forgiveness</li>
+          <li><strong>Reprieve:</strong> Temporary stay of sentence</li>
+          <li><strong>Respite:</strong> Lesser sentence (special circumstance)</li>
+          <li><strong>Remission:</strong> Reduction in severity of punishment</li>
+          <li><strong>Commutation:</strong> Substitute one punishment for another</li>
+          <li>Power over <strong>death sentences</strong></li>
+          <li>Offences against <strong>Union law or military courts</strong></li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--saffron)">Diplomatic Powers</div><ul>
+          <li>Represents India in international affairs</li>
+          <li>Treaties/agreements negotiated in his/her name</li>
+          <li>Sends/receives ambassadors</li>
+          <li>All international treaties require Parliamentary ratification</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--green)">Military Powers</div><ul>
+          <li>Supreme Commander of defence forces</li>
+          <li>Appoints <strong>Chief of Army Staff, Navy, Air Force</strong></li>
+          <li>Declaration of war/peace — in name of President</li>
+          <li>Regulated by Parliament through legislation</li>
+        </ul></div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 Presidential Powers — "ELFDJM"</div>
+        <div class="mc">"Every Leader Feels Deep Joy Mastering"</div>
+        <div class="md">Executive · Legislative · Financial · Diplomatic · Judicial · Military</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cs">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🙏</div><div class="brt">Pardoning Powers — Art 72 vs Governor Art 161</div><span class="brb">MERCY POWER</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Power</th><th>Meaning</th><th>Effect</th><th>Example</th></tr>
+        <tr><td class="hg2">Pardon</td><td>Complete forgiveness — removes conviction and sentence</td><td>All effects of conviction wiped out</td><td>Death sentence → released completely</td></tr>
+        <tr><td class="hg2">Reprieve</td><td>Temporary suspension of death sentence</td><td>Postpone sentence temporarily</td><td>Pending mercy petition</td></tr>
+        <tr><td class="hg2">Respite</td><td>Awarding lesser sentence than prescribed due to special circumstance</td><td>Reduced punishment</td><td>Pregnancy, age, illness</td></tr>
+        <tr><td class="hg2">Remission</td><td>Reducing quantum/severity without changing its character</td><td>Same type, less amount</td><td>5 years → 2 years imprisonment</td></tr>
+        <tr><td class="hg2">Commutation</td><td>Substituting one form of punishment with a lighter one</td><td>Different type punishment</td><td>Death → life imprisonment</td></tr>
+      </table>
+      <div class="trap">
+        <div class="tt">⚠️ President vs Governor Pardon Power</div>
+        <div class="tc">President (Art 72) pardons: Court martial/military offences AND offences against Union laws AND death sentence cases.<br>Governor (Art 161): Pardons offences against STATE laws ONLY. Governor CANNOT pardon death sentence — only President can.<br><strong>Key difference:</strong> Governor cannot pardon death sentence even if the crime was under state law!</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ VETO & ORDINANCE ════ -->
+<div id="veto" class="sec">
+  <div class="stl"><span class="stn">04</span><h2>Veto Powers & Ordinance Making</h2><span class="stg">LEGISLATIVE POWER</span></div>
+  <div class="br ct on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🛡️</div><div class="brt">Three Types of Veto Power</div><span class="brb">VETO</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Veto Type</th><th>Article</th><th>Mechanism</th><th>Effect</th><th>Example</th></tr>
+        <tr><td class="hg2">Absolute Veto</td><td>Art 111</td><td>President withholds assent to bill — permanently</td><td>Bill is dead — cannot be revived</td><td>Used for Private Member Bills; rare</td></tr>
+        <tr><td class="hg2">Suspensive Veto</td><td>Art 111</td><td>Returns bill to Parliament for reconsideration. Parliament passes again (simple majority). President MUST give assent.</td><td>Temporary delay; overridable by Parliament</td><td>Regular bills can be returned once</td></tr>
+        <tr><td class="hg2">Pocket Veto</td><td>Art 111</td><td>President neither gives assent nor returns bill — keeps it pending indefinitely (no time limit in Art 111)</td><td>Bill in limbo — constitutional question</td><td>Indian Postal Amendment Bill 1986 — Zail Singh</td></tr>
+      </table>
+      <div class="trap">
+        <div class="tt">⚠️ Key Veto Traps</div>
+        <div class="tc">
+          1. <strong>Money Bills</strong> — President CANNOT return. Only options: assent or withhold (absolute veto). No suspensive veto for Money Bills!<br>
+          2. <strong>Constitutional Amendment Bills</strong> — 24th Amendment mandates President MUST give assent. No veto possible.<br>
+          3. <strong>No time limit</strong> for President to exercise pocket veto (Art 111 doesn't specify duration).
+        </div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 Veto Memory</div>
+        <div class="mc">"Absolute Stops Permanently, Suspensive Stalls Temporarily, Pocket Pends Perpetually"</div>
+        <div class="md">Absolute=final death; Suspensive=can be overridden; Pocket=indefinite delay</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="br cb">
+    <div class="brhd" onclick="tb(this)"><div class="bri">📝</div><div class="brt">Ordinance Power — Article 123</div><span class="brb">ORDINANCE</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="fbox">
+        <div class="fl">Ordinance — Art 123 Conditions</div>
+        When Parliament is NOT in session + President satisfied immediate action needed
+        Ordinance has SAME FORCE as Act of Parliament
+        <div class="fe">Ordinance can be promulgated on any matter on which Parliament can legislate</div>
+      </div>
+      <div class="flow">
+        <div class="fb hg">Parliament not in session</div><div class="fa">→</div>
+        <div class="fb">President satisfied — urgent need</div><div class="fa">→</div>
+        <div class="fb hg">Ordinance promulgated</div><div class="fa">→</div>
+        <div class="fb">Parliament reconvenes</div><div class="fa">→</div>
+        <div class="fb hr">Lapses in 6 weeks OR disapproved</div>
+      </div>
+      <div class="g2" style="margin-top:10px">
+        <div class="card"><div class="ct2" style="color:var(--blue)">Key Rules</div><ul>
+          <li>Ordinance ceases if Parliament not convened within <strong>6 weeks</strong></li>
+          <li>Or if both Houses pass resolutions disapproving it</li>
+          <li>President acts on <strong>CoM advice</strong> for ordinance</li>
+          <li>Cannot amend Constitution via ordinance</li>
+          <li>Cannot be promulgated when Parliament is in session (both Houses)</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--rose)">Limitations & Judicial Review</div><ul>
+          <li>Ordinance cannot be promulgated when one House is in session and other is not (unclear)</li>
+          <li><strong>DC Wadhwa case (1987):</strong> Re-promulgating ordinances without Parliamentary approval is unconstitutional</li>
+          <li>Ordinance cannot override constitutional provisions</li>
+          <li>Ordinances subject to judicial review (Krishna Kumar Singh case, 2017)</li>
+        </ul></div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ Ordinance Critical Points</div>
+        <div class="tc">
+          <strong>Governor</strong> also has ordinance power (Art 213) — but subject to President's approval in some cases.<br>
+          <strong>"Both Houses"</strong> not in session — ordinance can be promulgated even if ONE House is in session (if the other isn't).<br>
+          <strong>6 weeks</strong> — from reassembly of Parliament; not 6 weeks from ordinance date.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ EMERGENCY ════ -->
+<div id="emergency" class="sec">
+  <div class="stl"><span class="stn">05</span><h2>Emergency Powers — Complete Guide</h2><span class="stg">ARTS 352, 356, 360</span></div>
+  <div class="br cr on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🚨</div><div class="brt">Three Types of Emergency</div><span class="brb">EMERGENCY</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Emergency</th><th>Article</th><th>Grounds</th><th>Approved by</th><th>Duration</th></tr>
+        <tr><td class="hg2">National Emergency</td><td class="hg2">Art 352</td><td>War, external aggression, <strong>armed rebellion</strong> (44th Amend changed 'internal disturbance')</td><td>Cabinet + Parliament by 2/3 special majority + absolute majority</td><td>Initially 1 month; each extension 6 months with Parliament approval</td></tr>
+        <tr><td class="hg2">President's Rule (State Emergency)</td><td class="hg2">Art 356</td><td>Constitutional machinery failed in state (Governor's report or President's own satisfaction)</td><td>Parliament by simple majority</td><td>6 months; max 3 years (with SC approval after 1 year)</td></tr>
+        <tr><td class="hg2">Financial Emergency</td><td class="hg2">Art 360</td><td>Threat to financial stability/credit of India</td><td>Parliament by simple majority</td><td>Indefinite — continues till revoked; Never imposed in India</td></tr>
+      </table>
+      <div class="fact">
+        <div class="ftt">📌 Critical Emergency Facts</div>
+        <div class="ftc">
+          <strong>44th Amendment 1978:</strong> Changed "internal disturbance" to "armed rebellion" for Art 352. Made proclamation harder.<br>
+          <strong>First National Emergency:</strong> 1962 (China War). <strong>Second:</strong> 1971 (Pakistan War). <strong>Third:</strong> 1975 (Internal, controversial — Indira Gandhi era).<br>
+          <strong>Art 358:</strong> Art 19 automatically suspended during National Emergency (external). <strong>Art 359:</strong> President can suspend other FRs (not Art 20 & 21).<br>
+          <strong>Financial Emergency:</strong> Never proclaimed in India's history!
+        </div>
+      </div>
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--rose)">National Emergency Effects</div><ul>
+          <li>Centre can give directions to states on any matter</li>
+          <li>Parliament can legislate on State List subjects</li>
+          <li>Art 19 automatically suspended (Art 358)</li>
+          <li>Lok Sabha term can be extended by 1 year at a time</li>
+          <li>State executive continues but Centre can direct</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--saffron)">President's Rule Effects (Art 356)</div><ul>
+          <li>President assumes functions of State government</li>
+          <li>State legislature dissolved or suspended</li>
+          <li>Parliament makes laws for the State</li>
+          <li>SR Bommai case (1994): Floor test needed before imposing</li>
+          <li>President's Rule subject to judicial review</li>
+        </ul></div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 Emergency Articles</div>
+        <div class="mc">"352 National War, 356 State Failed, 360 Financial Frail"</div>
+        <div class="md">352=National Emergency · 356=President's Rule · 360=Financial Emergency</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ VICE PRESIDENT ════ -->
+<div id="vp" class="sec">
+  <div class="stl"><span class="stn">06</span><h2>Vice President of India</h2><span class="stg">ART 63–71</span></div>
+  <div class="br ct on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🏅</div><div class="brt">Vice President — Complete Guide</div><span class="brb">ART 63–71</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--teal)">Qualifications & Election</div><ul>
+          <li>Indian citizen; <strong>35 years</strong> of age</li>
+          <li>Qualified to be member of <strong>Rajya Sabha</strong></li>
+          <li>Should not hold office of profit</li>
+          <li>Elected by <strong>both Houses of Parliament</strong> (not state legislatures)</li>
+          <li><strong>Single transferable vote</strong>, proportional representation</li>
+          <li>All MPs (elected + nominated) vote — unlike Presidential election</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--blue)">Term & Removal</div><ul>
+          <li><strong>Term:</strong> 5 years; eligible for re-election</li>
+          <li>Can resign by writing to <strong>President</strong></li>
+          <li>Removed by resolution of <strong>Rajya Sabha</strong> (effective majority + agreed by Lok Sabha)</li>
+          <li><strong>14 days notice</strong> required</li>
+          <li>No specific grounds mentioned — political process</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--purple)">Powers & Functions</div><ul>
+          <li><strong>Ex-officio Chairman of Rajya Sabha</strong></li>
+          <li>Acts as President when: office vacant, President away/ill</li>
+          <li>As Acting President: has all presidential powers</li>
+          <li>Does NOT resign from RS chairmanship when acting as President</li>
+          <li>Salary: as RS Chairman, not as VP (when VP only)</li>
+        </ul></div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ VP Election Traps</div>
+        <div class="tc">
+          1. VP election: <strong>BOTH Houses of Parliament</strong> vote — INCLUDING NOMINATED members. This differs from Presidential election (no nominated MPs).<br>
+          2. State legislators do NOT vote in VP election (unlike President's election).<br>
+          3. VP resignation: writes to <strong>President</strong> (not Rajya Sabha). President resignation: writes to VP.
+        </div>
+      </div>
+      <table class="dt" style="margin-top:12px">
+        <tr><th>Feature</th><th>President</th><th>Vice President</th></tr>
+        <tr><td>Elected by</td><td class="hg2">MPs + MLAs (elected)</td><td class="ht2">MPs only (elected + nominated)</td></tr>
+        <tr><td>Qualification</td><td class="hg2">Eligible for LS membership</td><td class="ht2">Eligible for RS membership</td></tr>
+        <tr><td>Oath by</td><td class="hg2">Chief Justice of India</td><td class="ht2">President of India</td></tr>
+        <tr><td>Resignation to</td><td class="hg2">Vice President</td><td class="ht2">President</td></tr>
+        <tr><td>Removal</td><td class="hg2">Impeachment (Art 61)</td><td class="ht2">RS resolution + LS agreement</td></tr>
+        <tr><td>Salary</td><td class="hg2">₹5 lakh/month (Art 59)</td><td class="ht2">As RS Chairman</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ════ PRIME MINISTER ════ -->
+<div id="pm" class="sec">
+  <div class="stl"><span class="stn">07</span><h2>Prime Minister of India</h2><span class="stg">ART 74–75</span></div>
+  <div class="br cs on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">👤</div><div class="brt">PM — Appointment, Powers & Role</div><span class="brb">REAL EXECUTIVE</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--saffron)">Appointment (Art 75)</div><ul>
+          <li>Appointed by <strong>President</strong></li>
+          <li>Must be <strong>member of either House of Parliament</strong></li>
+          <li>Must command majority in <strong>Lok Sabha</strong></li>
+          <li>If no clear majority: President exercises discretion</li>
+          <li>PM need not be from Lok Sabha — can be from Rajya Sabha (Dr. Manmohan Singh)</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--gold)">Powers & Functions</div><ul>
+          <li>Head of Council of Ministers</li>
+          <li>Chairs Cabinet meetings; coordinates policy</li>
+          <li>Principal communicator between President and Council</li>
+          <li>Allocation of portfolios to ministers</li>
+          <li>Can request President to dissolve Lok Sabha</li>
+          <li>Leader of Lok Sabha; governs Parliamentary proceedings</li>
+          <li>Key role in all appointments made by President</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--blue)">Position in Parliament</div><ul>
+          <li>De facto head of Parliamentary majority</li>
+          <li>Represents India in international forums</li>
+          <li>Leader of the House (Lok Sabha usually)</li>
+          <li>Controls Parliamentary agenda through party</li>
+          <li>No formal upper age limit or educational qualification</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--purple)">PM-President Relationship</div><ul>
+          <li>PM advises President on all appointments</li>
+          <li>President acts on PM/CoM advice (Art 74)</li>
+          <li><strong>44th Amendment:</strong> President CAN refer CoM advice for reconsideration ONCE — but must then accept</li>
+          <li>President acts on Cabinet advice even if advice is not in national interest (constitutionally)</li>
+        </ul></div>
+      </div>
+      <div class="fact">
+        <div class="ftt">📌 Key Facts about PM</div>
+        <div class="ftc">
+          <strong>Shamsher Singh case (1974):</strong> President must act on CoM advice. PM is real head.<br>
+          <strong>Article 75(3):</strong> CoM collectively responsible to Lok Sabha — PM heads this.<br>
+          <strong>Resignation:</strong> PM resigns → entire CoM falls. Individual minister resignation → only that minister falls.<br>
+          <strong>PM from Rajya Sabha:</strong> Can be PM but answers Question Hour from RS, not LS (limitation).
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ CABINET ════ -->
+<div id="cabinet" class="sec">
+  <div class="stl"><span class="stn">08</span><h2>Council of Ministers & Cabinet</h2><span class="stg">ART 74–75</span></div>
+  <div class="br cp on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🗂️</div><div class="brt">Council of Ministers — Categories & Principles</div><span class="brb">CoM</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--purple)">Three Categories (Art 75)</div><ul>
+          <li><strong>Cabinet Ministers:</strong> Heads of important ministries; attend Cabinet meetings; highest decision-making power</li>
+          <li><strong>Ministers of State:</strong> Independent charge OR assist Cabinet minister; may/may not attend Cabinet meetings</li>
+          <li><strong>Deputy Ministers:</strong> Assist Cabinet/MoS; do not attend Cabinet meetings</li>
+          <li><strong>Parliamentary Secretaries:</strong> Not mentioned in Constitution (Art 75)</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--gold)">Key Constitutional Principles</div><ul>
+          <li><strong>Art 74:</strong> CoM to aid and advise President — advice is binding</li>
+          <li><strong>Art 75(3):</strong> CoM collectively responsible to Lok Sabha</li>
+          <li><strong>Art 75(2):</strong> Ministers hold office during pleasure of President</li>
+          <li><strong>91st Amendment 2003:</strong> CoM size = max 15% of Lok Sabha strength (not below 12 for states)</li>
+          <li>Defectors cannot be ministers</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--teal)">Collective Responsibility</div><ul>
+          <li>Cabinet decisions binding on ALL ministers</li>
+          <li>Ministers must defend decisions in public or resign</li>
+          <li>No-confidence motion against entire CoM (not individual)</li>
+          <li>If PM loses majority → entire CoM falls</li>
+          <li>"Cabinet solidarity" principle</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--blue)">Individual Responsibility</div><ul>
+          <li>Each minister responsible for own ministry</li>
+          <li>Can be asked to resign for personal misconduct</li>
+          <li>PM can ask any minister to resign</li>
+          <li>Parliament can censure individual minister</li>
+          <li>Does NOT bring down entire CoM</li>
+        </ul></div>
+      </div>
+      <div class="fact">
+        <div class="ftt">📌 Cabinet vs Council of Ministers</div>
+        <div class="ftc">
+          <strong>Council of Ministers:</strong> Wide body — Cabinet Ministers + MoS + Deputy Ministers. Constitutionally described in Art 74-75.<br>
+          <strong>Cabinet:</strong> Smaller inner body of senior Cabinet Ministers. Not separately mentioned in Constitution — evolved conventionally.<br>
+          <strong>Kitchen Cabinet:</strong> Even smaller inner circle of trusted advisors to PM. Informal; no constitutional basis.
+        </div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ 91st Amendment 2003 — Size Limit</div>
+        <div class="tc">Maximum size of CoM = <strong>15% of total strength of lower House</strong>. For Lok Sabha = 15% of 543 = 81 ministers max. For state legislative assemblies — similarly capped. Minimum 12 for small states. This was to check coalition government excess.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ ATTORNEY GENERAL ════ -->
+<div id="ag" class="sec">
+  <div class="stl"><span class="stn">09</span><h2>Attorney General of India</h2><span class="stg">ART 76</span></div>
+  <div class="br cn on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚖️</div><div class="brt">Attorney General — Complete Guide</div><span class="brb">ART 76</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="g2">
+        <div class="card"><div class="ct2" style="color:var(--green)">Appointment & Qualifications</div><ul>
+          <li>Appointed by <strong>President of India</strong></li>
+          <li>Must be qualified to be a <strong>Judge of Supreme Court</strong></li>
+          <li>Meaning: High Court judge for 5 years OR advocate for 10 years</li>
+          <li>Holds office during <strong>pleasure of President</strong></li>
+          <li>No fixed tenure; no security of tenure like judges</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--teal)">Duties & Rights</div><ul>
+          <li>Give legal advice to Government of India</li>
+          <li>Appear in <strong>Supreme Court</strong> on behalf of Union</li>
+          <li>Represent Union in cases before SC/HC</li>
+          <li>Discharge functions assigned by President</li>
+          <li>Right of audience in all courts in India</li>
+          <li>Right to participate (not vote) in Parliament proceedings</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--gold)">Limitations</div><ul>
+          <li>Cannot advise or hold briefs <strong>against Government of India</strong></li>
+          <li>Cannot defend accused persons in criminal proceedings</li>
+          <li>Cannot accept appointment as a director in companies</li>
+          <li>NOT a whole-time government servant — can do private practice</li>
+          <li>Gets remuneration determined by President</li>
+        </ul></div>
+        <div class="card"><div class="ct2" style="color:var(--blue)">AG vs Solicitor General</div><ul>
+          <li><strong>AG:</strong> Constitutional post (Art 76)</li>
+          <li><strong>Solicitor General:</strong> Statutory post — NOT in Constitution</li>
+          <li>SG assists AG</li>
+          <li>There are also Additional SGs</li>
+          <li>AG = first law officer of India</li>
+        </ul></div>
+      </div>
+      <div class="trap">
+        <div class="tt">⚠️ AG Key Traps</div>
+        <div class="tc">
+          AG is NOT a full-time government servant — can do private legal practice (unlike a minister or civil servant).<br>
+          AG is NOT a member of Parliament — but has right to participate in debates (without voting rights).<br>
+          AG qualifications = same as SC Judge. State equivalent = Advocate General (Art 165) — qualifications = HC Judge.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ ARTICLES MASTER ════ -->
+<div id="articles" class="sec">
+  <div class="stl"><span class="stn">10</span><h2>Articles 52–78 — Complete Map</h2><span class="stg">ALL ARTICLES</span></div>
+  <div class="br cg on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">📋</div><div class="brt">Article-wise Complete Reference</div><span class="brb">ART 52–78</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="art-grid">
+        <div class="art-card"><div class="art-num" style="color:var(--gold);background:rgba(232,184,75,.08)">Art. 52<div class="art-title" style="color:var(--text3)">President of India</div></div><div class="art-body"><li>There shall be a <strong>President of India</strong></li><li>Constitutional basis for the office</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--teal);background:rgba(62,201,190,.07)">Art. 53<div class="art-title" style="color:var(--text3)">Executive Power vested in President</div></div><div class="art-body"><li>Executive power of Union vested in President</li><li>Exercised through CoM aid and advice</li><li>Supreme command of defence forces</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--blue);background:rgba(91,174,245,.07)">Art. 54<div class="art-title" style="color:var(--text3)">Election of President</div></div><div class="art-body"><li>Electoral College: elected MPs + elected MLAs + Delhi, Puducherry MLAs</li><li>NOT nominated members; NOT MLCs</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--purple);background:rgba(155,114,232,.07)">Art. 55<div class="art-title" style="color:var(--text3)">Manner of Election</div></div><div class="art-body"><li>Proportional representation + Single Transferable Vote</li><li>Vote value formula for MLAs and MPs</li><li>Uniformity between states</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--saffron);background:rgba(244,140,50,.07)">Art. 56<div class="art-title" style="color:var(--text3)">Term of Office</div></div><div class="art-body"><li><strong>5 years</strong> from entering office</li><li>Continues till successor enters</li><li>Can resign to Vice President</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--green);background:rgba(79,200,122,.07)">Art. 57<div class="art-title" style="color:var(--text3)">Eligibility for Re-election</div></div><div class="art-body"><li>President eligible for re-election — NO limit on terms</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--gold);background:rgba(232,184,75,.08)">Art. 58<div class="art-title" style="color:var(--text3)">Qualifications</div></div><div class="art-body"><li>Indian citizen; 35 years; eligible for LS</li><li>No office of profit</li><li>Sitting President/VP/Governor/Minister: not disqualified</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--teal);background:rgba(62,201,190,.07)">Art. 60<div class="art-title" style="color:var(--text3)">Oath of President</div></div><div class="art-body"><li>Oath administered by <strong>Chief Justice of India</strong></li><li>To preserve, protect, defend Constitution</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--blue);background:rgba(91,174,245,.07)">Art. 61<div class="art-title" style="color:var(--text3)">Impeachment</div></div><div class="art-body"><li>Ground: <strong>violation of Constitution</strong> only</li><li>1/4 members initiate; 14 days notice; 2/3 majority passes</li><li>Both Houses involved</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--purple);background:rgba(155,114,232,.07)">Art. 63<div class="art-title" style="color:var(--text3)">Vice President</div></div><div class="art-body"><li>There shall be a Vice President</li><li>Ex-officio Chairman of Rajya Sabha</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--rose);background:rgba(232,96,122,.07)">Art. 64<div class="art-title" style="color:var(--text3)">VP as RS Chairman</div></div><div class="art-body"><li>VP = ex-officio Chairman of Council of States (Rajya Sabha)</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--green);background:rgba(79,200,122,.07)">Art. 65<div class="art-title" style="color:var(--text3)">VP Acting as President</div></div><div class="art-body"><li>Acts as President when office vacant or President unable to discharge duties</li><li>Has all powers of President during this period</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--gold);background:rgba(232,184,75,.08)">Art. 66<div class="art-title" style="color:var(--text3)">VP Election</div></div><div class="art-body"><li>Elected by both Houses — elected + nominated MPs</li><li>Secret ballot, STV, proportional representation</li><li>State legislators do NOT vote</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--teal);background:rgba(62,201,190,.07)">Art. 72<div class="art-title" style="color:var(--text3)">Pardoning Power</div></div><div class="art-body"><li>Pardon, Reprieve, Respite, Remission, Commutation</li><li>For Union offences, military courts, death sentences</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--blue);background:rgba(91,174,245,.07)">Art. 74<div class="art-title" style="color:var(--text3)">CoM to aid and advise</div></div><div class="art-body"><li>CoM headed by PM to aid President</li><li>President shall act on advice</li><li>Can refer for reconsideration ONCE (44th Amendment)</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--purple);background:rgba(155,114,232,.07)">Art. 75<div class="art-title" style="color:var(--text3)">PM and Ministers</div></div><div class="art-body"><li>PM appointed by President; other ministers on PM's advice</li><li>Ministers hold office during President's pleasure</li><li><strong>CoM collectively responsible to Lok Sabha</strong></li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--saffron);background:rgba(244,140,50,.07)">Art. 76<div class="art-title" style="color:var(--text3)">Attorney General</div></div><div class="art-body"><li>Appointed by President; holds office during pleasure</li><li>Must be qualified for SC Judge</li><li>Gives legal advice, represents Union in SC</li></div></div>
+        <div class="art-card"><div class="art-num" style="color:var(--rose);background:rgba(232,96,122,.07)">Art. 123<div class="art-title" style="color:var(--text3)">Ordinance Power</div></div><div class="art-body"><li>President can promulgate ordinance when Parliament not in session</li><li>Same force as Parliament Act</li><li>Lapses after 6 weeks of Parliament's reassembly</li></div></div>
+      </div>
+      <div class="mnem">
+        <div class="mt">🧠 Article Family Memory</div>
+        <div class="mc">"52=Pres exists, 53=Power, 54=Electoral College, 55=How elected, 56=5yr term, 58=Qualifications, 61=Impeach, 63=VP, 72=Pardon, 74=CoM advises, 75=PM+Ministers, 76=AG, 123=Ordinance"</div>
+        <div class="md">Group: 52–62=President · 63–71=VP · 72=Pardon · 74–78=CoM+PM+AG · 123=Ordinance</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ LANDMARK CASES ════ -->
+<div id="cases" class="sec">
+  <div class="stl"><span class="stn">11</span><h2>Landmark Cases — Union Executive</h2><span class="stg">JURISPRUDENCE</span></div>
+  <div class="br cp on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🏛️</div><div class="brt">Key Supreme Court Cases</div><span class="brb">CASE LAW</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Case</th><th>Year</th><th>Issue</th><th>Judgment</th><th>Significance</th></tr>
+        <tr><td class="hg2">Shamsher Singh v State of Punjab</td><td>1974</td><td>Whether President/Governor must act on CoM advice</td><td>President and Governor MUST act on CoM/CM advice. They are constitutional/nominal heads. PM is real head.</td><td>Established parliamentary convention constitutionally. PM's primacy confirmed.</td></tr>
+        <tr><td class="hg2">S.R. Bommai v Union of India</td><td>1994</td><td>Art 356 — President's Rule validity</td><td>Art 356 subject to judicial review. Floor test must precede dismissal. Secularism = basic structure.</td><td>Restricted arbitrary imposition of President's Rule. Protected state governments.</td></tr>
+        <tr><td class="hg2">Ram Jawaya Kapoor v State of Punjab</td><td>1955</td><td>Scope of executive power</td><td>Executive power is coextensive with legislative power. Executive can act without express law if no prohibition.</td><td>Defined scope of Art 53 executive power.</td></tr>
+        <tr><td class="hg2">Kehar Singh v Union of India</td><td>1988</td><td>Judicial review of President's pardoning power</td><td>President's pardoning power under Art 72 cannot be reviewed by courts on merits. President acts on Cabinet advice.</td><td>Settled that pardoning power = presidential discretion via Cabinet; limited judicial review.</td></tr>
+        <tr><td class="hg2">DC Wadhwa v State of Bihar</td><td>1987</td><td>Re-promulgation of ordinances repeatedly</td><td>Repeated re-promulgation of ordinances without placing before legislature is unconstitutional fraud.</td><td>Limited the ordinance misuse. Art 123 cannot be used to bypass Parliament.</td></tr>
+        <tr><td class="hg2">Krishna Kumar Singh v State of Bihar</td><td>2017</td><td>Ordinance lapsing — rights created</td><td>Ordinances are subject to judicial review. Rights created under lapsed ordinances survive if legislation follows.</td><td>Strengthened judicial oversight of ordinance power.</td></tr>
+        <tr><td class="hg2">UNR Rao v Indira Gandhi</td><td>1971</td><td>Whether dissolved Lok Sabha PM can continue</td><td>PM and CoM can continue after Lok Sabha dissolution — "during pleasure" continues till alternative sworn in.</td><td>Constitutional continuity during elections.</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ════ COMPARISONS ════ -->
+<div id="compare" class="sec">
+  <div class="stl"><span class="stn">12</span><h2>Comparisons — President vs PM & Governor</h2><span class="stg">COMPARATIVE</span></div>
+  <div class="br cg on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚖️</div><div class="brt">PM vs President — Nominal vs Real</div><span class="brb">COMPARISON</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <table class="dt">
+        <tr><th>Feature</th><th>President</th><th>Prime Minister</th></tr>
+        <tr><td class="hg2">Constitutional Title</td><td>Head of State</td><td>Head of Government</td></tr>
+        <tr><td class="hg2">Nature of Power</td><td>Nominal/Constitutional — acts on advice</td><td>Real executive — makes actual decisions</td></tr>
+        <tr><td class="hg2">Appointment</td><td>Elected by electoral college (indirect)</td><td>Appointed by President (majority in LS)</td></tr>
+        <tr><td class="hg2">Accountability</td><td>Not accountable to Parliament</td><td>Collectively accountable to Lok Sabha</td></tr>
+        <tr><td class="hg2">Term</td><td>5 years (fixed)</td><td>Serves as long as majority in LS</td></tr>
+        <tr><td class="hg2">Removal</td><td>Impeachment (Art 61)</td><td>No-confidence motion in Lok Sabha</td></tr>
+        <tr><td class="hg2">Oath</td><td>By Chief Justice of India</td><td>By President of India</td></tr>
+        <tr><td class="hg2">Discretionary Power</td><td>Very limited (if any) in practice</td><td>Extensive actual power through party/Parliament</td></tr>
+      </table>
+      <hr class="dv">
+      <div class="sub" style="color:var(--gold)">President vs Governor — Key Differences</div>
+      <table class="dt">
+        <tr><th>Feature</th><th>President</th><th>Governor</th></tr>
+        <tr><td class="hg2">Constitutional Art</td><td>Art 52</td><td>Art 153</td></tr>
+        <tr><td class="hg2">Election</td><td>Indirectly elected by electoral college</td><td>Appointed by President</td></tr>
+        <tr><td class="hg2">Removal</td><td>Impeachment by Parliament</td><td>President can remove at pleasure</td></tr>
+        <tr><td class="hg2">Pardoning Power</td><td>Art 72 — death sentences, Union laws, military</td><td>Art 161 — state laws only; NOT death sentences</td></tr>
+        <tr><td class="hg2">Discretionary Power</td><td>Very limited (constitutional convention)</td><td>Wider — can reserve bills, act independently</td></tr>
+        <tr><td class="hg2">Emergency</td><td>Declares all 3 types of emergency</td><td>Reports to President for Art 356</td></tr>
+        <tr><td class="hg2">International role</td><td>Represents India internationally</td><td>No international role</td></tr>
+        <tr><td class="hg2">Simultaneous offices</td><td>Cannot hold other offices</td><td>Can be Governor of multiple states</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ════ TRAPS ════ -->
+<div id="traps" class="sec">
+  <div class="stl"><span class="stn">13</span><h2>CDS/UPSC Traps & Common Errors</h2><span class="stg">AVOID MISTAKES</span></div>
+  <div class="br cr on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">⚠️</div><div class="brt">20 Deadly Polity Traps — Union Executive</div><span class="brb">CRITICAL</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="trap"><div class="tt">🪤 Electoral College — Nominated MPs</div><div class="tc"><strong>Presidential election:</strong> Nominated MPs do NOT vote. <strong>VP election:</strong> Nominated MPs DO vote. One of the most tested distinctions!</div></div>
+      <div class="trap"><div class="tt">🪤 MLCs do NOT vote for President</div><div class="tc">Only <strong>elected members of State Legislative ASSEMBLIES (MLAs)</strong> vote in Presidential election. MLCs (upper house members) do NOT participate.</div></div>
+      <div class="trap"><div class="tt">🪤 Money Bills — No Suspensive Veto</div><div class="tc">President CANNOT return Money Bills for reconsideration. Options: give assent OR withhold assent. <strong>No suspensive veto</strong> for money bills — cannot be sent back.</div></div>
+      <div class="trap"><div class="tt">🪤 Constitutional Amendment — No Veto</div><div class="tc">24th Amendment mandates President MUST give assent to Constitutional Amendment Bills. <strong>No veto possible</strong> — not absolute, suspensive, or pocket.</div></div>
+      <div class="trap"><div class="tt">🪤 Governor Cannot Pardon Death Sentence</div><div class="tc">Governor's pardoning power (Art 161) covers only STATE law offences. Governor <strong>CANNOT pardon death sentences</strong> — that power rests exclusively with President (Art 72).</div></div>
+      <div class="trap"><div class="tt">🪤 Ordinance — "Both Houses not in session"</div><div class="tc">Ordinance can be promulgated when Parliament is not in session. The question of what happens when ONE House is in session is debated. Technically: if EITHER House is in session on that subject, ordinance power may be limited.</div></div>
+      <div class="trap"><div class="tt">🪤 Ordinance 6 Weeks — From Reassembly</div><div class="tc">6 weeks is counted from the date Parliament REASSEMBLES (reconvenes), not from the date of ordinance promulgation. This distinction affects its validity period.</div></div>
+      <div class="trap"><div class="tt">🪤 44th Amendment and Art 74</div><div class="tc">44th Amendment 1978 made it explicit: President CAN refer CoM advice back ONCE for reconsideration — but must then act on revised advice. President cannot indefinitely delay. Before this, advice was absolute.</div></div>
+      <div class="trap"><div class="tt">🪤 PM from Rajya Sabha is Allowed</div><div class="tc">PM need not be from Lok Sabha. <strong>Dr. Manmohan Singh</strong> was PM while being a Rajya Sabha member (2004–2014). Art 75 doesn't specify which House the PM must be from.</div></div>
+      <div class="trap"><div class="tt">🪤 Impeachment — Violation of Constitution ONLY</div><div class="tc">President can be impeached ONLY for "violation of Constitution" — not for any other reason (unlike US impeachment for high crimes and misdemeanors). Very specific ground.</div></div>
+      <div class="trap"><div class="tt">🪤 Attorney General — Not Full-Time</div><div class="tc">AG is NOT a full-time government servant. Can do private practice. Participates in Parliament (not votes). <strong>Solicitor General is NOT in Constitution</strong> — AG is (Art 76).</div></div>
+      <div class="trap"><div class="tt">🪤 Emergency Art 352 — Armed Rebellion (not Internal Disturbance)</div><div class="tc">44th Amendment 1978 changed "internal disturbance" to "<strong>armed rebellion</strong>" for Art 352. More stringent. Cannot declare National Emergency for just any internal disturbance.</div></div>
+      <div class="trap"><div class="tt">🪤 Financial Emergency — Never Imposed</div><div class="tc">Financial Emergency (Art 360) has <strong>NEVER been imposed</strong> in India's history. All three types of emergency facts are confused — national emergency was imposed 3 times; President's Rule many times.</div></div>
+      <div class="trap"><div class="tt">🪤 Resignation — President to VP, VP to President</div><div class="tc">President resigns → writes to <strong>Vice President</strong>. VP resigns → writes to <strong>President</strong>. These are reversed in many exam questions deliberately!</div></div>
+      <div class="trap"><div class="tt">🪤 91st Amendment — 15% Cap on CoM</div><div class="tc">91st Amendment 2003 capped CoM size at <strong>15% of Lok Sabha total strength</strong>. Also disqualified defectors from becoming ministers. Often confused with other amendments.</div></div>
+      <div class="trap"><div class="tt">🪤 Shamsher Singh Case — Not About Emergency</div><div class="tc">Shamsher Singh (1974) established that President and Governor must act on CoM/CM advice. Nothing to do with emergency. Often confused with SR Bommai (Art 356) by students.</div></div>
+      <div class="trap"><div class="tt">🪤 President's Oath — CJI Administers</div><div class="tc">President's oath is administered by <strong>Chief Justice of India</strong>. VP's oath is administered by <strong>President</strong>. PM's oath is administered by <strong>President</strong>. All Supreme Court judges' oaths: <strong>President</strong>.</div></div>
+      <div class="trap"><div class="tt">🪤 President's Rule Max Duration — 3 Years</div><div class="tc">Art 356 (President's Rule): Initially 6 months. Each extension requires Parliamentary approval. <strong>Maximum 3 years</strong> (SC imposed limit after SR Bommai case). After 1 year: requires SC's concurrence for extension.</div></div>
+      <div class="trap"><div class="tt">🪤 AG — Qualifications Same as SC Judge</div><div class="tc">AG must be qualified to be a Judge of the Supreme Court (not HC). SC Judge qualification: HC judge for 5 years OR advocate for 10 years OR distinguished jurist. Many confuse AG with HC judge qualification.</div></div>
+      <div class="trap"><div class="tt">🪤 Cabinet Secrecy — Art 75(3)</div><div class="tc">Art 75(3) says CoM is collectively responsible to Lok Sabha. Cabinet meetings are SECRET by convention. Cabinet discusses freely knowing debates won't be disclosed. Not from Constitution — conventional principle.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ FLASH SHEET ════ -->
+<div id="flash" class="sec">
+  <div class="stl"><span class="stn">14</span><h2>Flash Sheet — One-Shot Revision</h2><span class="stg">ALL FACTS</span></div>
+  <div class="fw">
+    <div class="fwc"><div class="fwt" style="color:var(--gold)">👑 President Key Facts</div>
+      <div class="fwi">Art 52: President of India exists</div>
+      <div class="fwi">Art 54: Electoral College (elected MPs + MLAs)</div>
+      <div class="fwi">Art 55: STV + proportional representation</div>
+      <div class="fwi">Art 56: 5-year term</div>
+      <div class="fwi">Art 58: 35 years; Indian citizen; LS eligible</div>
+      <div class="fwi">Art 60: Oath by CJI</div>
+      <div class="fwi">Art 61: Impeachment (violation of Constitution)</div>
+      <div class="fwi">Art 72: Pardon, Reprieve, Respite, Remission, Commute</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--teal)">🏅 Vice President</div>
+      <div class="fwi">Art 63: VP of India exists</div>
+      <div class="fwi">Art 64: Ex-officio RS Chairman</div>
+      <div class="fwi">Art 65: Acts as President when vacant</div>
+      <div class="fwi">Art 66: Elected by both Houses (incl. nominated)</div>
+      <div class="fwi">Resignation: writes to President</div>
+      <div class="fwi">Removal: RS resolution + LS agreement</div>
+      <div class="fwi">State legislators do NOT vote for VP</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--saffron)">👤 PM & Cabinet</div>
+      <div class="fwi">Art 74: CoM aids and advises President</div>
+      <div class="fwi">Art 75: PM appointed by President; CoM → LS</div>
+      <div class="fwi">Art 75(3): Collective responsibility to LS</div>
+      <div class="fwi">91st Amend: CoM max 15% of LS strength</div>
+      <div class="fwi">Cabinet: subset of CoM (no constitutional mention)</div>
+      <div class="fwi">PM from RS: allowed (Manmohan Singh)</div>
+      <div class="fwi">PM oath: by President</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--green)">⚖️ Attorney General</div>
+      <div class="fwi">Art 76: AG of India</div>
+      <div class="fwi">Appointed by President; pleasure tenure</div>
+      <div class="fwi">Qualification: SC Judge eligible</div>
+      <div class="fwi">Not full-time; can do private practice</div>
+      <div class="fwi">No voting right in Parliament</div>
+      <div class="fwi">Cannot defend accused persons</div>
+      <div class="fwi">Solicitor General: NOT in Constitution</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--blue)">🛡️ Veto & Ordinance</div>
+      <div class="fwi">Absolute veto: withholds assent permanently</div>
+      <div class="fwi">Suspensive veto: returns bill (overridable)</div>
+      <div class="fwi">Pocket veto: neither assents nor returns</div>
+      <div class="fwi">Money Bills: NO suspensive veto</div>
+      <div class="fwi">Const. Amend.: MUST assent (no veto)</div>
+      <div class="fwi">Ordinance: Art 123; lapses 6 weeks after reassembly</div>
+      <div class="fwi">DC Wadhwa: re-promulgation unconstitutional</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--rose)">🚨 Emergency Articles</div>
+      <div class="fwi">Art 352: National Emergency (armed rebellion)</div>
+      <div class="fwi">Art 356: President's Rule (state failure)</div>
+      <div class="fwi">Art 360: Financial Emergency (NEVER imposed)</div>
+      <div class="fwi">Art 358: Art 19 auto-suspended (ext. emergency)</div>
+      <div class="fwi">Art 359: Other FRs suspended (except 20 & 21)</div>
+      <div class="fwi">44th Amend: "armed rebellion" not "internal disturbance"</div>
+      <div class="fwi">SR Bommai: Floor test before Art 356</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--purple)">🏛️ Landmark Cases</div>
+      <div class="fwi">Shamsher Singh 1974: President acts on CoM advice</div>
+      <div class="fwi">SR Bommai 1994: Art 356 reviewable; floor test</div>
+      <div class="fwi">Ram Jawaya Kapoor 1955: Scope of executive power</div>
+      <div class="fwi">Kehar Singh 1988: Limited review of pardon power</div>
+      <div class="fwi">DC Wadhwa 1987: Re-ordinance unconstitutional</div>
+      <div class="fwi">UNR Rao 1971: Dissolved LS PM continues</div>
+    </div>
+    <div class="fwc"><div class="fwt" style="color:var(--gold)">🎯 Key Numbers</div>
+      <div class="fwi">President: 35 years min age</div>
+      <div class="fwi">Impeachment: 1/4 initiate; 2/3 pass</div>
+      <div class="fwi">Ordinance: 6 weeks from reassembly</div>
+      <div class="fwi">CoM cap: 15% of LS strength (91st Amend 2003)</div>
+      <div class="fwi">Nat. Emergency: 1962, 1971, 1975</div>
+      <div class="fwi">Financial Emergency: 0 times (never)</div>
+      <div class="fwi">Rajya Sabha nominations by Pres: 12 members</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ REVISION ════ -->
+<div id="revision" class="sec">
+  <div class="stl"><span class="stn">15</span><h2>Night Before Exam — Revision Framework</h2><span class="stg">FINAL PREP</span></div>
+  <div class="rev-grid">
+    <div class="rcard" style="border-top:3px solid var(--gold)">
+      <h4 style="color:var(--gold)">⏱️ 60-Min Plan</h4>
+      <ul>
+        <li><strong>0–10:</strong> Presidential qualifications, election, term, removal</li>
+        <li><strong>10–20:</strong> All presidential powers (ELFDJM)</li>
+        <li><strong>20–30:</strong> Veto types + Ordinance (Art 123)</li>
+        <li><strong>30–40:</strong> Emergency provisions (352, 356, 360)</li>
+        <li><strong>40–50:</strong> PM, CoM, AG complete</li>
+        <li><strong>50–60:</strong> All traps + 15 MCQs timed</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--teal)">
+      <h4 style="color:var(--teal)">⏱️ 30-Min Sprint</h4>
+      <ul>
+        <li><strong>0–5:</strong> Electoral college traps (nominated MPs)</li>
+        <li><strong>5–10:</strong> 3 veto types + money bill trap</li>
+        <li><strong>10–15:</strong> Emergency articles: 352 vs 356 vs 360</li>
+        <li><strong>15–20:</strong> Pardon powers: President vs Governor</li>
+        <li><strong>20–25:</strong> 5 landmark cases one-liners</li>
+        <li><strong>25–30:</strong> Top 10 traps only</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--blue)">
+      <h4 style="color:var(--blue)">⏱️ 10-Min Flash</h4>
+      <ul>
+        <li>Electoral college: elected MPs + MLAs (no nominated)</li>
+        <li>Ord. lapses: <strong>6 weeks</strong> from reassembly</li>
+        <li>Emergency: 352 (nat), 356 (state), 360 (fin-never)</li>
+        <li>VP election: includes nominated MPs</li>
+        <li>Money bill: no suspensive veto</li>
+        <li>AG: SC judge qualified; not full-time</li>
+        <li>Shamsher Singh: President acts on CoM advice</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--purple)">
+      <h4 style="color:var(--purple)">🧠 Mnemonic Quick-Fire</h4>
+      <ul>
+        <li>Powers: <strong>ELFDJM</strong></li>
+        <li>Pardon: <strong>Pa-Re-Re-Re-Co</strong> (Pardon, Reprieve, Respite, Remission, Commute)</li>
+        <li>Veto: Absolute-stops, Suspensive-stalls, Pocket-pends</li>
+        <li>Emergency: 352-War, 356-State, 360-Fin (never)</li>
+        <li>Articles: 52→Pres · 63→VP · 74→CoM · 76→AG · 123→Ord</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--rose)">
+      <h4 style="color:var(--rose)">📊 CDS High-Yield Topics</h4>
+      <ul>
+        <li>Presidential election — electoral college composition</li>
+        <li>Veto powers — especially money bill trap</li>
+        <li>Ordinance — 6 weeks rule and limitations</li>
+        <li>Emergency articles (352, 356, 360)</li>
+        <li>Pardon powers — President vs Governor</li>
+        <li>AG qualifications and limitations</li>
+        <li>SR Bommai case and Art 356</li>
+        <li>91st Amendment — CoM size cap</li>
+        <li>Shamsher Singh — binding advice</li>
+        <li>44th Amendment — emergency and veto changes</li>
+      </ul>
+    </div>
+    <div class="rcard" style="border-top:3px solid var(--green)">
+      <h4 style="color:var(--green)">🔢 Critical Numbers</h4>
+      <ul>
+        <li><strong>35 years</strong> = President's minimum age</li>
+        <li><strong>5 years</strong> = President's term</li>
+        <li><strong>1/4</strong> = members needed to initiate impeachment</li>
+        <li><strong>2/3</strong> = majority to pass impeachment</li>
+        <li><strong>6 weeks</strong> = ordinance validity after reassembly</li>
+        <li><strong>15%</strong> = max CoM size of LS (91st Amend)</li>
+        <li><strong>12</strong> = RS nominations by President</li>
+        <li><strong>3 years</strong> = max Art 356 duration</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ════ QUIZ ════ -->
+<div id="quiz" class="sec">
+  <div class="stl"><span class="stn">16</span><h2>CDS Practice Test — 30 Questions</h2><span class="stg">EXAM SIMULATION</span></div>
+  <div style="max-width:680px">
+    <div class="qpw"><div class="qpf" id="qpf" style="width:0%"></div></div>
+    <div id="qbody"></div>
+    <div class="qsc" id="qsc"><div class="qscn" id="qscn"></div><div class="qscl" id="qscl"></div><button class="qscr" onclick="startQ()">Restart Quiz</button></div>
+  </div>
+</div>
+
+<!-- ════ UPSC ════ -->
+<div id="upsc" class="sec">
+  <div class="stl"><span class="stn">17</span><h2>UPSC-Level Analytical Questions</h2><span class="stg">MAINS PREP</span></div>
+  <div class="br cp on">
+    <div class="brhd" onclick="tb(this)"><div class="bri">🏛️</div><div class="brt">20 UPSC Conceptual Questions with Frameworks</div><span class="brb">ANALYTICAL</span><span class="ch">▶</span></div>
+    <div class="brbd">
+      <div class="qcard"><div class="qn">UPSC Q1 · 10 marks GS-II</div><div class="qt">"The President of India is a constitutional figurehead, yet the office is indispensable to the functioning of Indian democracy." Examine.</div>
+        <div class="fbox"><div class="fl">Answer Framework</div>
+          Intro: Nominal head — acts on CoM advice (Art 74, Shamsher Singh 1974). Yet indispensable because:
+          (1) Constitutional continuity — government stability anchor;
+          (2) Emergency powers — Art 352, 356, 360 (though on advice);
+          (3) Pardoning power Art 72 — last resort mercy;
+          (4) Legislative role — ordinances, prorogation, dissolution;
+          (5) Diplomatic representation;
+          (6) Guardian of Constitution — can delay, refer, advise once.
+          Critical: 44th Amend makes advice binding. Yet President = symbol of national unity.
+          Conclusion: Constitutional monarchy equivalent — power lies in convention and prestige.
+        </div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q2 · Analytical</div><div class="qt">Critically analyze the emergency provisions under the Indian Constitution with special reference to the safeguards introduced after the 44th Amendment.</div>
+        <div class="fbox"><div class="fl">Answer Framework</div>
+          Pre-44th Amend: Emergency weak safeguards. 1975 Emergency misuse.
+          44th Amend safeguards: (1) "Armed rebellion" replaces "internal disturbance";
+          (2) Cabinet must advise in writing; (3) LS can revoke by simple majority resolution;
+          (4) Art 20 & 21 cannot be suspended.
+          SR Bommai: Floor test before President's Rule; judicial review of Art 356.
+          Financial Emergency (Art 360): Never imposed.
+          Remaining concerns: Governor's report discretion; Centre-state tensions.
+          Conclusion: Better but not perfect — constitutional morality depends on political culture.
+        </div>
+      </div>
+      <div class="qcard"><div class="qn">UPSC Q3–20 (Framework Questions)</div>
+        <div class="qn" style="margin-top:8px">Q3: Examine the role of the Prime Minister in India's parliamentary system. Is the PM more powerful than the President constitutionally?</div>
+        <div class="qn">Q4: Analyze the ordinance-making power of the President (Art 123). How has the Supreme Court checked its misuse?</div>
+        <div class="qn">Q5: Discuss the pardoning power under Art 72. How does it differ from the Governor's power under Art 161?</div>
+        <div class="qn">Q6: What is 'pocket veto'? Is it constitutionally valid? Discuss with reference to Zail Singh episode.</div>
+        <div class="qn">Q7: Examine the relevance of SR Bommai case in protecting federal principles of the Indian Constitution.</div>
+        <div class="qn">Q8: Discuss the principle of collective responsibility of the Council of Ministers under Art 75(3). How does it differ from individual responsibility?</div>
+        <div class="qn">Q9: Is the President of India a constitutional rubber stamp? Discuss the scope of Presidential discretion.</div>
+        <div class="qn">Q10: Analyze the role of the Vice President of India. Does the VP play an effective constitutional role?</div>
+        <div class="qn">Q11: How has the 91st Constitutional Amendment (2003) strengthened political accountability?</div>
+        <div class="qn">Q12: Critically examine the position of the Attorney General of India in the constitutional scheme.</div>
+        <div class="qn">Q13: Examine President's legislative powers with focus on the veto power and its constitutional limitations.</div>
+        <div class="qn">Q14: "The Indian President is elected, not selected, yet is a constitutional figurehead." Reconcile this paradox.</div>
+        <div class="qn">Q15: How does the electoral college system for Presidential election ensure federal balance?</div>
+        <div class="qn">Q16: Discuss the Cabinet system in India — its features, conventions, and constitutional basis.</div>
+        <div class="qn">Q17: Analyze the changes brought about by the 44th Amendment to India's emergency provisions.</div>
+        <div class="qn">Q18: Examine the judicial review of executive powers in India with reference to landmark judgments.</div>
+        <div class="qn">Q19: Compare the discretionary powers of the President and the Governor. Who has more discretion in practice?</div>
+        <div class="qn">Q20: Discuss the challenges in the relationship between the President and the Prime Minister in coalition governments.</div>
+        <div class="fbox" style="margin-top:8px"><div class="fl">Q3 Answer Framework — PM vs President Power</div>
+          Constitutionally: President is head of state, PM is head of government.
+          Art 74: President acts on CoM advice → PM holds real power.
+          Shamsher Singh (1974): Confirmed PM's supremacy.
+          PM powers: (1) Cabinet formation — controls appointments; (2) Parliamentary leadership; (3) Party leadership; (4) International representation; (5) All presidential appointments via advice.
+          President: ceremonial yet important for continuity, national unity.
+          PM appears to be more powerful in practice — but President can delay (once), refuse (extreme cases), and set constitutional parameters.
+          Coalition govt: President's role expands when no clear majority.
+          Conclusion: Constitutional theory gives President primacy; practical reality gives PM power.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- #main -->
+
+<script>
+function show(id){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.nav-a').forEach(a=>a.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  event.currentTarget.classList.add('on');
+  document.getElementById('nav').classList.remove('on');
+  window.scrollTo(0,0);
+  if(id==='quiz')startQ();
+}
+function tb(h){h.parentElement.classList.toggle('on')}
+document.querySelectorAll('.br').forEach((b,i)=>{if(i===0)b.classList.add('on')});
+
+const QS=[
+  {q:"Which of the following does NOT participate in the election of the President of India?",opts:["Elected members of Lok Sabha","Elected members of State Legislative Assemblies","Elected members of Rajya Sabha","Nominated members of Rajya Sabha"],a:3,e:"Nominated members of Parliament (both LS and RS) do NOT participate in Presidential election. Only ELECTED members of Parliament and elected MLAs participate. This is a classic exam trap!"},
+  {q:"The President of India is elected by the method of:",opts:["Direct election by all voters","Proportional representation with single transferable vote","Simple majority of Parliament","Two-thirds majority of electoral college"],a:1,e:"President is elected by proportional representation with single transferable vote (Art 55). It is indirect election through an electoral college."},
+  {q:"Which Constitutional article provides for the Council of Ministers to aid and advise the President?",opts:["Article 73","Article 74","Article 75","Article 76"],a:1,e:"Article 74 provides that there shall be a CoM with PM at the head to aid and advise the President. The 44th Amendment made presidential action on advice mandatory (though President can refer back once)."},
+  {q:"Which type of veto CANNOT be exercised by the President with respect to a Money Bill?",opts:["Absolute veto","Pocket veto","Suspensive veto","Both suspensive and pocket veto"],a:2,e:"Suspensive veto (returning the bill for reconsideration) CANNOT be used for Money Bills. The President can only give assent or withhold assent (absolute veto) for Money Bills. Cannot return them!"},
+  {q:"The ordinance promulgated by the President (Art 123) lapses if not approved by Parliament within:",opts:["3 weeks of reassembly","6 weeks of reassembly","3 months of reassembly","6 months of reassembly"],a:1,e:"An ordinance lapses 6 weeks from the date of Parliament's reassembly (not from the date of promulgation). The 6 weeks are counted from when Parliament reconvenes."},
+  {q:"Financial Emergency (Art 360) has been proclaimed in India:",opts:["Once (1962)","Twice (1962 and 1971)","Three times","Never"],a:3,e:"Financial Emergency under Art 360 has NEVER been proclaimed in India's history. National Emergency was proclaimed 3 times (1962, 1971, 1975). This is a frequently tested fact."},
+  {q:"Which case established that the President of India must act on the advice of the Council of Ministers?",opts:["SR Bommai case","Shamsher Singh case","Ram Jawaya Kapoor case","Kehar Singh case"],a:1,e:"Shamsher Singh v State of Punjab (1974) established that President and Governor must act on the advice of their respective CoM/Cabinet. This made the constitutional convention legally enforceable."},
+  {q:"Under Article 72, which of the following powers does the President have that the Governor does NOT?",opts:["Power of remission","Power of commutation","Power to pardon death sentences","Power of reprieve"],a:2,e:"The Governor (Art 161) can pardon, commute, remit offences against state law — but CANNOT pardon death sentences. That power belongs exclusively to the President (Art 72). This is the key difference!"},
+  {q:"The Vice President of India can be removed by:",opts:["Impeachment by Parliament","Resolution of Lok Sabha alone","Resolution of Rajya Sabha agreed to by Lok Sabha","President's order on PM's advice"],a:2,e:"VP can be removed by a resolution of Rajya Sabha passed by effective majority and agreed to by Lok Sabha. This differs from impeachment — no specific grounds needed, it's a political process."},
+  {q:"Which of the following is CORRECT about the election of the Vice President?",opts:["State MLAs also participate","Only elected MPs participate","Both elected and nominated MPs participate","Only Rajya Sabha members participate"],a:2,e:"Both ELECTED and NOMINATED members of both Houses (LS + RS) participate in VP election. This differs from Presidential election where NOMINATED members do NOT participate."},
+  {q:"The Attorney General of India holds office:",opts:["For 5 years","Until he reaches 65 years","During the pleasure of the President","During the pleasure of the Prime Minister"],a:2,e:"The AG holds office during the PLEASURE of the President (Art 76(4)). No fixed tenure. Can be removed anytime. This is different from SC judges who have security of tenure till 65 years."},
+  {q:"Which article of the Constitution provides for the impeachment of the President?",opts:["Article 58","Article 60","Article 61","Article 63"],a:2,e:"Article 61 provides for the impeachment of the President. Grounds: violation of Constitution only. Process: 1/4 members initiate, 14 days notice, 2/3 majority of total membership of each House."},
+  {q:"'Armed rebellion' as a ground for National Emergency replaced 'internal disturbance' by which amendment?",opts:["42nd Amendment 1976","44th Amendment 1978","91st Amendment 2003","86th Amendment 2002"],a:1,e:"44th Amendment 1978 (post-Emergency) changed 'internal disturbance' to 'armed rebellion' as grounds for Art 352. This made the threshold higher and more specific."},
+  {q:"Under SR Bommai case (1994), which of the following was held?",opts:["Art 356 is not justiciable","Floor test must precede imposition of President's Rule","Governor's report is final","President has absolute discretion under Art 356"],a:1,e:"SR Bommai case (1994) held that Art 356 is subject to judicial review, floor test (confidence vote) must be conducted before dismissing state government, and secularism is part of Basic Structure."},
+  {q:"The Council of Ministers is collectively responsible to:",opts:["The President","The Rajya Sabha","The Lok Sabha","Both Houses of Parliament"],a:2,e:"Art 75(3): The Council of Ministers is collectively responsible to the Lok Sabha — the popular House. No-confidence motion is moved against the entire Council."},
+  {q:"The maximum strength of the Council of Ministers as a percentage of Lok Sabha is fixed by:",opts:["Constitution originally","74th Amendment","91st Amendment 2003","101st Amendment"],a:2,e:"91st Constitutional Amendment 2003 capped the size of CoM at 15% of total strength of Lok Sabha (or state assembly). Also disqualified defectors from ministerial positions."},
+  {q:"The ordinance-making power of the President does NOT extend to:",opts:["Matters in Concurrent List","Amending the Constitution","Matters in State List in normal circumstances","Both B and C"],a:1,e:"Ordinance CANNOT be used to amend the Constitution — that requires the amendment procedure under Art 368. Ordinances can cover Union and Concurrent List subjects; State List only in special circumstances."},
+  {q:"Who administers the oath of office to the President of India?",opts:["The Speaker of Lok Sabha","The Chairman of Rajya Sabha (VP)","The Chief Justice of India","The Outgoing President"],a:2,e:"The oath of office of the President is administered by the Chief Justice of India (Art 60). If CJI is unavailable, senior most judge of SC. President's oath: preserve, protect, defend Constitution."},
+  {q:"Which of the following is a power of the President that is NOT subject to ministerial advice?",opts:["Promulgating ordinances","Dissolving Lok Sabha","Returning a bill for reconsideration","None — all require ministerial advice"],a:3,e:"Under Art 74 (as amended by 44th Amend), the President acts on CoM advice for ALL functions. Even the option to refer advice back for reconsideration is exercise of constitutional function — ultimately must act on revised advice."},
+  {q:"DC Wadhwa case (1987) related to:",opts:["President's pardoning power","Re-promulgation of ordinances","Art 356 President's Rule","Collective responsibility of Cabinet"],a:1,e:"DC Wadhwa v State of Bihar (1987): repeated re-promulgation of ordinances without placing before legislature is unconstitutional. Bihar government had been re-promulgating same ordinances for years — SC condemned this as fraud on Constitution."},
+  {q:"Which article states that the Prime Minister shall communicate all Cabinet decisions to the President?",opts:["Article 74","Article 75","Article 77","Article 78"],a:3,e:"Article 78 imposes a duty on the PM to: (a) communicate all decisions of CoM to President; (b) furnish information as required by President; (c) submit matters for Cabinet consideration if President requires."},
+  {q:"Which president exercised the 'pocket veto' in the context of the Indian Postal Amendment Bill?",opts:["Dr. Rajendra Prasad","V.V. Giri","Zail Singh","R. Venkataraman"],a:2,e:"President Zail Singh (1985-87) neither gave assent nor returned the Indian Postal Amendment Bill 1986 — effectively exercising pocket veto. This constitutional episode raised questions about the extent of presidential discretion."},
+  {q:"A nominated member of Rajya Sabha participates in:",opts:["Presidential election only","VP election only","Both Presidential and VP election","Neither election"],a:1,e:"Nominated members of Parliament participate ONLY in VP election (not Presidential election). Nominated MLAs also do not participate in Presidential election. Only ELECTED members vote for President."},
+  {q:"The President of India can be re-elected:",opts:["Only once","Only twice","Any number of times","Cannot be re-elected"],a:2,e:"Article 57 makes the President eligible for re-election — there is NO limit on the number of terms. However, no President has been re-elected in India's history except Dr. Rajendra Prasad."},
+  {q:"Which of the following is NOT one of President's pardoning powers under Article 72?",opts:["Acquittal","Remission","Commutation","Reprieve"],a:0,e:"'Acquittal' is NOT a presidential power — that is a court's function. Presidential pardoning powers under Art 72 are: Pardon, Reprieve, Respite, Remission, Commutation. Acquittal = court verdict of not guilty."},
+  {q:"The President's Rule under Art 356 in a state can be extended beyond one year only when:",opts:["PM recommends extension","Parliament passes special resolution and SC certifies national emergency exists or election cannot be held","3/4 of state assembly agrees","Governor reports emergency continues"],a:1,e:"Beyond 1 year, President's Rule requires: (1) Parliamentary special resolution AND (2) proclamation of National Emergency exists in the state OR EC certifies elections cannot be conducted. SR Bommai case strengthened judicial oversight."},
+  {q:"Which article gives the executive power of the Union to the President?",opts:["Article 52","Article 53","Article 54","Article 55"],a:1,e:"Article 53 vests the executive power of the Union in the President. Exercised directly by President or through subordinate officers per Constitution. Also establishes President as Supreme Commander."},
+  {q:"The President of India must be qualified to be elected as a member of:",opts:["Rajya Sabha","Lok Sabha","Either House","Supreme Court"],a:1,e:"Art 58(1)(b): President must be qualified to be elected as a MEMBER OF LOK SABHA (not Rajya Sabha). This means minimum age of 25, not 30. VP must be qualified for Rajya Sabha (30 years)."},
+  {q:"Which of the following constitutional amendment made Presidential action on CoM advice binding?",opts:["42nd Amendment 1976","44th Amendment 1978","61st Amendment 1989","73rd Amendment 1992"],a:1,e:"44th Amendment 1978 added proviso to Art 74(1): President can refer the advice back once, but must then act on revised advice. Before this, the binding nature was constitutional convention (Shamsher Singh made it legal)."},
+  {q:"The Rajya Sabha nominations made by the President are from which fields?",opts:["Any outstanding citizen","Literature, science, art, social service","Former judges and civil servants","Sports, culture, industry, education"],a:1,e:"Article 80(1)(a): President nominates 12 members to Rajya Sabha from persons having special knowledge/practical experience in literature, science, art, and social service. Currently 12 nominations are possible."}
+];
+
+let cur=0, sc=0;
+function startQ(){
+  cur=0; sc=0;
+  document.getElementById('qsc').style.display='none';
+  document.getElementById('qbody').style.display='block';
+  renderQ();
+}
+function renderQ(){
+  if(cur>=QS.length){
+    document.getElementById('qbody').style.display='none';
+    document.getElementById('qsc').style.display='block';
+    const p=Math.round(sc/QS.length*100);
+    document.getElementById('qscn').textContent=sc+'/'+QS.length;
+    const m=p>=80?'🎯 Constitution Expert!':p>=60?'👍 Good — Review traps':'📚 Revise key articles!';
+    document.getElementById('qscl').textContent=p+'% — '+m;
+    return;
+  }
+  document.getElementById('qpf').style.width=Math.round(cur/QS.length*100)+'%';
+  const q=QS[cur];
+  document.getElementById('qbody').innerHTML=`
+    <div class="qcard">
+      <div class="qn">Question ${cur+1} of ${QS.length}</div>
+      <div class="qt">${q.q}</div>
+      <div class="qopts">${q.opts.map((o,i)=>`<button class="qo" id="qo${i}" onclick="ans(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div>
+      <div class="qexp" id="qexp">${q.e}</div>
+    </div>
+    <button class="qnxt" id="qnxt" onclick="nxtQ()">Next →</button>`;
+}
+function ans(i){
+  const q=QS[cur];
+  document.querySelectorAll('.qo').forEach(b=>b.disabled=true);
+  document.getElementById('qo'+i).classList.add(i===q.a?'ok':'no');
+  document.getElementById('qo'+q.a).classList.add('ok');
+  document.getElementById('qexp').classList.add('on');
+  if(i===q.a)sc++;
+  document.getElementById('qnxt').style.display='inline-block';
+}
+function nxtQ(){cur++;renderQ();}
+startQ();
+</script>
+</body>
+</html>
